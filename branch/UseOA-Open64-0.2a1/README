@@ -1,0 +1,93 @@
+How to compile test-open64 executable
+
+Adapted from
+From 3/30/04 ish email from Nathan
+
+Michelle,
+
+Here are the relevant instructions (mostly copied from whirl2xaif/README).
+The build process is still a little spartan, but as long as the Open64 code
+doesn't break the compiler (like last time) it's not too hard.  If you can,
+use GCC 3.3.x.
+
+0. Obtaining
+--------------------
+
+Open64
+  cvs co Open64
+
+// for now don't need the current OpenAnalysis for test-open64, 
+// just need NewOA
+//OpenAnalysis
+//  cvs co OpenAnalysis
+cvs -d terra.mcs.anl.gov:/home/derivs2/mstrout/CVSRepository co NewOA
+cd NewOA
+make
+
+xercesc [if necessary, it isn't for test-open64]
+  cvs co xercesc
+
+whirl2xaif
+  cvs co whirl2xaif
+
+
+1. Building
+--------------------
+
+1. Prepare env using whirl2xaif/Sourceme-ACTS-csh/sh.
+
+   Open and make sure paths in first section are correct.  Then source
+   the file.
+
+   source whirl2xaif/Sourceme-ACTS-csh
+
+// 3/31/04, had to edit this somewhat
+
+2. Build Open64's mfef90 (Open64 front end) and whirl2f (Open64 backend).
+   Ensure the correct compiler is in your path.
+
+   cd ${OPEN64ROOT}/crayf90/sgi
+   make
+
+   cd ${OPEN64ROOT}/whirl2f
+   make
+
+   To build ir_b2a:
+
+     cd ${OPEN64ROOT}/ir_tools
+     make
+
+
+[No need to build whirl2xaif -- I copied all the necessary files into
+UseNewOA-Open64]
+
+3. NewOA
+% setenv CVSROOT /home/derivs2/mstrout/CVSRepository
+% cvs co NewOA
+% cd NewOA
+% setenv CXXFLAGS '-g -DOA_IRHANDLETYPE_UL -Wall'
+% make
+
+
+4. In UseNewOA-Open64
+   cvs -d terra.mcs.anl.gov:/home/derivs2/mstrout/CVSRepository co UseNewOA-Open64
+   edit the Makefile to set the NEWOA dir correctly
+   make
+
+2. Using
+--------------------
+
+// 4/2/04: ./whirl2xaif/test/programs/simple/*.f90
+
+
+  mfef90 file.f90  --> file.B
+
+  To see an ASCII dump of the WHIRL file
+    ir_b2a -pre file.B
+
+  To run various NewOA tests
+    ./test-open64 --oa-CFG file.B
+    ./test-open64 --oa-Alias file.B
+    ./test-open64 --oa-MemRefExpr file.B
+
+
