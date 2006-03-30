@@ -286,26 +286,28 @@ FindMemRefExprInPU(std::ostream& os, PU_Info* pu)
     OA::StmtHandle stmt = sIt->current();
     
     std::cout << "============================================" << std::endl;
-    std::cout << "OA::StmtHandle: ";
-    ir->dump(stmt, std::cout);
-    std::cout << "AliasStmtType: " 
-	      << ir->toString(ir->getAliasStmtType(stmt)) << std::endl;
-    std::cout << std::endl;
+    std::cout << "OA::StmtHandle: " << ir->toString(stmt) << std::endl;
+    //ir->dump(stmt, std::cout);
+    //std::cout << "AliasStmtType: " 
+	//      << ir->toString(ir->getAliasStmtType(stmt)) << std::endl;
+    //std::cout << std::endl;
     
     OA::OA_ptr<OA::MemRefHandleIterator> mrIt = ir->getAllMemRefs(stmt);
     for ( ; mrIt->isValid(); (*mrIt)++) {
       OA::MemRefHandle memref = mrIt->current();
       
       // print out the debugging information to give some context
-      std::cout << "  ***** OA::MemRefHandle: ";
-      ir->dump(memref, std::cout);
+      //std::cout << "  ***** OA::MemRefHandle: ";
+      //ir->dump(memref, std::cout);
       
       // get and print the memory reference expressions for this handle
       OA::OA_ptr<OA::MemRefExprIterator> mreIter 
           = ir->getMemRefExprIterator(memref);
       for ( ; mreIter->isValid(); (*mreIter)++ ) {
-	(mreIter->current())->output(ir);
-	std::cout << std::endl;
+        OA::OA_ptr<OA::MemRefExpr::MemRefExpr> mre = mreIter->current();
+        std::cout << "\tmre = ";
+        mre->output(ir);
+        std::cout << std::endl;
       }
     }
   }

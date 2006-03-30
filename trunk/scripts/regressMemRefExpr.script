@@ -1,0 +1,4 @@
+echo "Testing TestCases/MemRefExpr/arrays1.B, TestResults/MemRefExpr/arrays1.B.out checked by ??"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/arrays1.B > t
+diff t TestResults/MemRefExpr/arrays1.B.out
+
