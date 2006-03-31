@@ -7,10 +7,10 @@ driverexec::./test-open64 --oa-MemRefExpr
 
 # list of tests
 #       input file,    status
-test::  arrays1.B,     error
-test::  arrays5.B,     checked by ???
-test::  functions1.B,  checked by ???
-test::  globalActive_2.B,  checked by ???
-test::  head_tlm_driver_g.pre.B,  checked by ???
-test::  interalias_proc_call1.B,  checked by ???
+test::  arrays1.B,     error (email 3/29/06)
+test::  arrays5.B,     checked by MMS
+test::  functions1.B,  checked by MMS
+test::  globalActive_2.B,  checked by MMS
+test::  head_tlm_driver_g.pre.B,  MMS - don't want USE mres for ref params
+test::  interalias_proc_call1.B,  MMS - don't want USE mres for ref params
 
