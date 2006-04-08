@@ -1,0 +1,12 @@
+echo "Testing TestCases/Alias/interalias_proc_call1.B, TestResults/AliasMapBasic/interalias_proc_call1.B.out param aliasing not caught MMS 4/7/06"
+./test-open64 --oa-AliasMapBasic TestCases/Alias/interalias_proc_call1.B > t
+diff t TestResults/AliasMapBasic/interalias_proc_call1.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call2.B, TestResults/AliasMapBasic/interalias_proc_call2.B.out checked by MMS 4/7/06"
+./test-open64 --oa-AliasMapBasic TestCases/Alias/interalias_proc_call2.B > t
+diff t TestResults/AliasMapBasic/interalias_proc_call2.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasMapBasic/interalias_proc_call3.B.out param and global aliasing not caught MMS 4/7/06"
+./test-open64 --oa-AliasMapBasic TestCases/Alias/interalias_proc_call3.B > t
+diff t TestResults/AliasMapBasic/interalias_proc_call3.B.out
+

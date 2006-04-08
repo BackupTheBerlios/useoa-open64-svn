@@ -1,0 +1,12 @@
+# Regression tests for AliasMapBasic generation
+testname::AliasMapBasic
+inputdir::TestCases/Alias
+outputdir::TestResults/AliasMapBasic
+driverexec::./test-open64 --oa-AliasMapBasic
+
+# list of tests
+#       input file,                 status
+test::  interalias_proc_call1.B,    param aliasing not caught MMS 4/7/06
+test::  interalias_proc_call2.B,    checked by MMS 4/7/06
+test::  interalias_proc_call3.B,    param and global aliasing not caught MMS 4/7/06
+
