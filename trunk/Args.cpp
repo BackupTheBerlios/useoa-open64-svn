@@ -65,6 +65,8 @@ static const char* usage_details =
 "      --oa-AliasMapInter   test OA ManagerInsNoPtrInterAliasMap analysis\n"
 "      --oa-AliasMapXAIFBasic   test OA AliasMapXAIF from AliasMapBasic analysis\n"
 "      --oa-AliasMapXAIFInter   test OA AliasMapXAIF from ManagerInsNoPtrInterAliasMap analysis\n"
+"      --oa-AliasMapFIAlias   test OA ManagerFIAliasAliasMap analysis\n"
+"      --oa-AliasMapXAIFFIAlias   test OA AliasMapXAIF from FIAlias analysis\n"
 "\n"
 "Options:\n"
 "  -d, --dump          dump the WHIRL IR\n"
@@ -106,6 +108,9 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-AliasMapInter",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFBasic",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFInter",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AliasMapXAIFFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+//  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "oa-ujnum",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "whirl2f",    CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -236,6 +241,8 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-AliasMapInter")) { runMode = 24; }
     if (parser.IsOpt("oa-AliasMapXAIFBasic")) { runMode = 25; }
     if (parser.IsOpt("oa-AliasMapXAIFInter")) { runMode = 26; }
+    if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 27; }
+    if (parser.IsOpt("oa-AliasMapXAIFFIAlias")) { runMode = 28; }
     
     // Check for other options
     if (parser.IsOpt("dump")) { dumpIR = true; }

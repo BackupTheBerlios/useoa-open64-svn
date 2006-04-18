@@ -7,112 +7,126 @@ I8SRCTRIPLET
 OA::StmtHandle: X:0:anon_ptr.() =     2.500000
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(X))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(X)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: DEFUSE
-	mSymHandle: SymHandle(X))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEFUSE
+    mSymHandle: SymHandle(X)
+)
 
 ============================================
 OA::StmtHandle: Y:0:.predef_F8 =     3.500000000000000
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(Y))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(Y)
+)
 
 ============================================
 I8SRCTRIPLET
 OA::StmtHandle: IX:0:anon_ptr.() = 5
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(IX))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(IX)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: DEFUSE
-	mSymHandle: SymHandle(IX))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEFUSE
+    mSymHandle: SymHandle(IX)
+)
 
 ============================================
 OA::StmtHandle: I:0:.predef_I4 = 10
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(I))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(I)
+)
 
 ============================================
 OA::StmtHandle: X:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(4)+    3.141499996185303-Y:0:.predef_F8
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(X))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(X))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(Y))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(Y)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: DEF
-	mSymHandle: SymHandle(X))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(X)
+)
 
 ============================================
 OA::StmtHandle: IX:0:anon_ptr.(4) = II:0:.predef_I4+0:IX:0:anon_ptr.(1)/0:IX:0:anon_ptr.(2)
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(II))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(II)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(IX))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(IX)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(IX))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(IX)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: DEF
-	mSymHandle: SymHandle(IX))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(IX)
+)
 
 ============================================
 COMMENT <2,7,print *,'x(1) = ', x(1), '''ix(4)'' = ',ix(4)> # 
@@ -125,31 +139,35 @@ IO <22,FORMATTED_WRITE,cray> 2
 OA::StmtHandle: 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(<no-symbol>))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(<no-symbol>)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(X))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(<no-symbol>))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(<no-symbol>)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(IX))
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(IX)
+)
 
 ============================================
 PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP

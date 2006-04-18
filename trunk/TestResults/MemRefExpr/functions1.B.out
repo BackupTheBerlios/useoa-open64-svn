@@ -5,38 +5,49 @@ OA::StmtHandle:
 ============================================
 OA::StmtHandle: if (N:0:.predef_I4==1)
 	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(N))
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(N)
+    )
+    mNumDeref: 1
+)
 
 ============================================
 OA::StmtHandle: RES:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(RES))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(RES)
+)
 
 ============================================
 OA::StmtHandle: RES:0:.predef_I4 = 5
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(RES))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(RES)
+)
 
 ============================================
 OA::StmtHandle: return (RES:0:.predef_I4)
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(RES))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(RES)
+)
 
 ============================================
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -45,17 +56,19 @@ OA::StmtHandle:
 OA::StmtHandle: N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(N))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(N)
+)
 
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(N))
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: 
+    mSymHandle: SymHandle(N)
+)
 
 ============================================
 OA::StmtHandle: _END()

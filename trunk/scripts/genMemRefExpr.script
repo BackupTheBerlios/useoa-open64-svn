@@ -4,3 +4,5 @@
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalActive_2.B > TestResults/MemRefExpr/globalActive_2.B.out
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/head_tlm_driver_g.pre.B > TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call1.B > TestResults/MemRefExpr/interalias_proc_call1.B.out
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call2.B > TestResults/MemRefExpr/interalias_proc_call2.B.out
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > TestResults/MemRefExpr/interalias_proc_call3.B.out

@@ -1,5 +1,5 @@
 // -*-Mode: C++;-*-
-// $Header: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/test-open64.cpp,v 1.56 2005/08/08 20:02:25 mstrout Exp $
+// $Header$
 
 // * BeginCopyright *********************************************************
 // *********************************************************** EndCopyright *
@@ -7,7 +7,7 @@
 //***************************************************************************
 //
 // File:
-//   $Source: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/test-open64.cpp,v $
+//   $Source$
 //
 // Purpose:
 //   [The purpose of this file]
@@ -49,7 +49,8 @@
 #include <OpenAnalysis/CFG/ManagerCFGStandard.hpp>
 #include <OpenAnalysis/Alias/ManagerAliasMapBasic.hpp>
 #include <OpenAnalysis/Alias/ManagerInterAliasMapBasic.hpp>
-#include <OpenAnalysis/Alias/ManagerNoAddressOf.hpp>
+#include <OpenAnalysis/Alias/ManagerFIAliasAliasMap.hpp>
+//#include <OpenAnalysis/Alias/ManagerNoAddressOf.hpp>
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 #include <OpenAnalysis/SideEffect/ManagerSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/InterSideEffectStandard.hpp>
@@ -120,6 +121,14 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OACommonBlockVars(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface);
+
+static int
+TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface);
+
+static int
+TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface);
 
 static int
 TestIR_OAAliasMapXAIFInter(std::ostream& os, PU_Info* pu_forest,
@@ -222,11 +231,17 @@ main(int argc, char* argv[])
     case 22: // CommonBlock
       TestIR_OACommonBlockVars(std::cout, pu_forest, irInterface);
       break;
-    case 24: // AliasMapInter
-      TestIR_OAAliasMapInter(std::cout, pu_forest, irInterface);
+    //case 24: // AliasMapInter, requires isRefParam and is wrong anyway
+      //TestIR_OAAliasMapInter(std::cout, pu_forest, irInterface);
+      //break;
+    //case 26: // AliasMapXAIFInter
+      //TestIR_OAAliasMapXAIFInter(std::cout, pu_forest, irInterface);
+      //break;
+    case 27: // AliasMapFIAlias
+      TestIR_OAAliasMapFIAlias(std::cout, pu_forest, irInterface);
       break;
-    case 26: // AliasMapXAIFInter
-      TestIR_OAAliasMapXAIFInter(std::cout, pu_forest, irInterface);
+    case 28: // AliasMapXAIFFIAlias
+      TestIR_OAAliasMapXAIFFIAlias(std::cout, pu_forest, irInterface);
       break;
     case 1: // CFG
     //case 3: // Alias
@@ -806,6 +821,66 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
 }
 
 static int
+TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+  Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapFIAlias");
+  
+  // need a procedure iterator
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu_forest);
+
+  //FIAlias
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+  fialiasman->performAnalysis(procIter);
+  procIter->reset();
+  for(; procIter->isValid(); ++(*procIter)) {
+    OA::ProcHandle procHandle = procIter->current();
+    OA::OA_ptr<OA::Alias::AliasMap> aliasMap =
+      fialiasman->getAliasResults(procHandle);
+    aliasMap->output(irInterface);
+  }
+ 
+  return 0;
+}
+
+static int
+TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+  Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapXAIFFIAlias");
+
+  // need a procedure iterator
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu_forest);
+
+  //FIAlias
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+  fialiasman->performAnalysis(procIter);
+  procIter->reset();
+  for(; procIter->isValid(); ++(*procIter)) {
+    OA::ProcHandle procHandle = procIter->current();
+    OA::OA_ptr<OA::Alias::AliasMap> aliasMap =
+      fialiasman->getAliasResults(procHandle);
+
+    // XAIF AliasMap
+    OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
+    aliasmapxaifman = new OA::XAIF::ManagerAliasMapXAIF(irInterface);
+    OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF = 
+      aliasmapxaifman->performAnalysis(procHandle,aliasMap);
+
+    aliasMapXAIF->output(irInterface);
+  }
+ 
+  return 0;
+}
+
+
+static int
 TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
@@ -1271,6 +1346,7 @@ static int
 TestIR_OAAlias_ForEachWNPU(std::ostream& os, PU_Info* pu,
                          OA::OA_ptr<Open64IRInterface> irInterface)
 {
+    /*
   Diag_Set_Phase("WHIRL tester: TestIR_OAAlias");
 
   OA::OA_ptr<OA::Alias::ManagerNoAddressOf> aliasman;
@@ -1279,6 +1355,7 @@ TestIR_OAAlias_ForEachWNPU(std::ostream& os, PU_Info* pu,
       aliasman->performAnalysis((OA::irhandle_t)pu);
 
   equivSets->dump(std::cout, irInterface);
+  */
   return 0;
 }
 

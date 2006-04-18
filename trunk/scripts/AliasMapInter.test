@@ -6,7 +6,7 @@ driverexec::./test-open64 --oa-AliasMapInter
 
 # list of tests
 #       input file,                 status
-test::  interalias_proc_call1.B,    param aliasing not caught MMS 4/7/06
-test::  interalias_proc_call2.B,    checked by MMS 4/7/06
-test::  interalias_proc_call3.B,    param and global aliasing not caught MMS 4/7/06
+test::  interalias_proc_call1.B,    not relevant anymore
+test::  interalias_proc_call2.B,    not relevant anymore
+test::  interalias_proc_call3.B,    not relevant anymore
 

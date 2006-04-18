@@ -18,56 +18,11 @@ OA::StmtHandle:
 OA::StmtHandle: APASSIVEGLOBAL:0:.predef_F8 =     2.000000000000000
 	mre = 
 NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(APASSIVEGLOBAL))
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(APASSIVEGLOBAL)
+)
 
 ============================================
 OA::StmtHandle: AGLOBAL:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
-	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: DEF
-	mSymHandle: SymHandle(AGLOBAL))
-
-	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(X))
-
-	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: USE
-	mSymHandle: SymHandle(X))
-
-============================================
-OA::StmtHandle: Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8
-	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(AGLOBAL))
-
-	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 1
-	mMemRefType: USE
-	mSymHandle: SymHandle(APASSIVEGLOBAL))
-
-	mre = 
-NamedRef(
-	mAddressOf: 0
-	mFullAccuracy: 0
-	mMemRefType: DEF
-	mSymHandle: SymHandle(Y))
-
-============================================
-OA::StmtHandle: return

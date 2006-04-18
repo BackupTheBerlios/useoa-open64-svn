@@ -1,12 +1,12 @@
 // -*-Mode: C++;-*-
-// $Header: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/Open64IRInterface/Open64IRInterface.cpp,v 1.103 2006/03/16 03:48:55 mstrout Exp $
+// $Header$
 
 /*! \file
   
   \brief Implementation of abstract OA interfaces for Open64/WHIRL
 
   \authors Nathan Tallent, Michelle Strout
-  \version $Id: Open64IRInterface.cpp,v 1.103 2006/03/16 03:48:55 mstrout Exp $
+  \version $Id$
 
   Copyright ((c)) 2002, Rice University 
   All rights reserved.
@@ -322,7 +322,25 @@ Open64IRMemRefIterator::create(OA::StmtHandle stmt)
   // initializing the mapping of MemRefHandle's to a set of MemRefExprs,
   // and based off that map get all the MemRefHandle's
   if (Open64IRInterface::sStmt2allMemRefsMap[stmt].empty() ) {
-  
+      
+    // create an instance of Open64IRInterface so that we have access
+    // to all methods
+    Open64IRInterface tempIR;
+
+    // first loop through call sites for this statement
+    // to create a map of OPR_PARMs WNs to procedures they are calling
+    OA::OA_ptr<OA::IRCallsiteIterator> callIter 
+        = tempIR.getCallsites(stmt);
+    for ( ; callIter->isValid(); (*callIter)++ ) {
+        OA::CallHandle call = callIter->current();
+        OA::OA_ptr<OA::IRCallsiteParamIterator> paramIter 
+            = tempIR.getCallsiteParams(call);
+        for ( ; paramIter->isValid(); (*paramIter)++ ) {
+            OA::ExprHandle param = paramIter->current();
+            mParamToCallMap[param] = call;
+        }
+    }
+ 
     // get all the top memory references
     list<WN*>* topMemRefs = findTopMemRefs(wn);
     for (list<WN*>::iterator it = topMemRefs->begin(); 
@@ -426,6 +444,13 @@ Open64IRSymIterator::create(PU_Info* pu)
 
 }
 
+//---------------------------------------------------------------------------
+// Open64PtrAssignPairStmtIterator
+//---------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------
+// Open64ParamBindPtrAssignIterator
+//---------------------------------------------------------------------------
 
 //***************************************************************************
 // Abstract Interfaces
@@ -542,6 +567,22 @@ Open64IRInterface::toString(const OA::ConstValHandle h)
   return oss.str();
 }
 
+std::string 
+Open64IRInterface::toString(const OA::CallHandle h) 
+{
+  setCurrentProcToProcContext(h);
+  WN* wn = (WN*)h.hval();
+
+  std::ostringstream oss;
+  if (wn==0) {
+    oss << "CallHandle(0)";
+  } else {
+    DumpWN(wn, oss);
+  }
+  return oss.str();
+}
+
+
 void 
 Open64IRInterface::dump(OA::StmtHandle stmt, std::ostream& os)
 { 
@@ -650,6 +691,10 @@ bool Open64IRInterface::isRefParam(OA::SymHandle sym)
   }
   else if (ST_is_intent_in_argument(st)) {
     return false; // parameter: intent(in)
+    //return true; // when modeling reference params with ptrs, on 1/9/06
+                 // Jean came up with example where need to model intent(in)
+                 // as pass by reference, MMS
+                 // yeah but I can't find this example!!
   }
   else if (sclass == SCLASS_FORMAL_REF) {
     return true; // pass-by-ref parameter
@@ -1329,6 +1374,96 @@ Open64IRInterface::getAliasStmtType(OA::StmtHandle h)
   return OA::Alias::ANY_STMT;
 }
 
+OA::OA_ptr<OA::Alias::ParamBindPtrAssignIterator>
+Open64IRInterface::getParamBindPtrAssignIterator(OA::CallHandle call)
+{   
+    // FIXME: for now just assuming Fortran
+    bool isFortran = true;
+
+    // Setup context for caller
+    setCurrentProcToProcContext(call);
+
+    OA::OA_ptr<Open64ParamBindPtrAssignIterator> retval;
+    retval = new Open64ParamBindPtrAssignIterator;
+
+    // start at 0 because that is how Open64 starts counting
+    int count = 0;
+    // iterate over all the parameters for this call site
+    // and count off parameters
+    OA::OA_ptr<OA::IRCallsiteParamIterator> paramIter = getCallsiteParams(call);
+    for ( ; paramIter->isValid(); (*paramIter)++ ) {
+        OA::ExprHandle param = paramIter->current();
+
+        OA::OA_ptr<OA::ExprTree> eTreePtr = getExprTree(param);
+        OA::EvalToMemRefVisitor evalVisitor;
+        eTreePtr->acceptVisitor(evalVisitor);
+        if ( evalVisitor.isMemRef() ) {
+          OA::MemRefHandle memref = evalVisitor.getMemRef();
+
+          // get the MREs for this memref
+          OA::OA_ptr<OA::MemRefExprIterator> mreIter 
+              = getMemRefExprIterator(memref);
+          for ( ; mreIter->isValid(); (*mreIter)++ ) {
+              OA::OA_ptr<OA::MemRefExpr> mre = mreIter->current();
+              // if there is an address computation them we have a
+              // pointer assignment happening at parameter bind time
+              if (mre->hasAddressTaken()) {
+                  retval->insertParamBindPair(count,mre);
+              }
+              // FIXME: assuming all reference parameters are pass by
+              // reference.  I think this is correct, but needs checked.
+              if (isFortran) {
+                  mre->setAddressTaken();
+                  retval->insertParamBindPair(count,mre);
+              }
+          } // if is a memref
+
+          count++;
+        } // iterate over actuals
+
+    }
+ 
+    return retval;
+}
+
+OA::SymHandle Open64IRInterface::getFormalSym(OA::ProcHandle proc, int formalID)
+{
+    PU_Info* procPU = (PU_Info*)proc.hval();
+    OA::SymHandle retval;
+
+    PU_SetGlobalState(procPU);
+  
+    WN* wn_pu = PU_Info_tree_ptr(procPU);
+    int numParamsProc = WN_num_formals(wn_pu);  
+    if (formalID >= numParamsProc) {
+        retval = OA::SymHandle(0);
+    } else {
+        WN* formalWN = WN_formal(wn_pu, formalID);
+        if (!formalWN) {
+            retval = OA::SymHandle(0);
+        } else {
+            ST* formalST = WN_st(formalWN);
+            retval = (OA::irhandle_t)formalST;
+        }
+    }
+
+    return retval;
+}
+
+//! Given a procedure call create a memory reference expression
+//! to describe that call.  For example, a normal call is
+//! a NamedRef.  A call involving a function ptr is a Deref.
+OA::OA_ptr<OA::MemRefExpr> 
+Open64IRInterface::getCallMemRefExpr(OA::CallHandle h)
+{ 
+    // FIXME: this is not sufficient for function pointers
+    OA::OA_ptr<OA::MemRefExpr> retval; 
+    OA::SymHandle sym = getSymHandle(h);
+    retval = new OA::NamedRef(OA::MemRefExpr::USE,sym);
+    return retval; 
+}
+
+
 //-------------------------------------------------------------------------
 // ActivityIRInterface
 //-------------------------------------------------------------------------
@@ -1840,6 +1975,8 @@ bool Open64IRInterface::isParam(OA::SymHandle anOASymbolHandle){
 //! For the given symbol create a Location that indicates statically
 //! overlapping locations and information about whether the location
 //! is local or not, local means visible in only this procedure
+//! If the symbol is not visible within the current procedure then
+//! a null location is returned.
 //! FIXME: does Fortran90 allow nested procedures?  if so then
 //! variables visible to a nested procedure should not be labeled local
 OA::OA_ptr<OA::Location> 
@@ -1849,19 +1986,36 @@ Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
     bool isLocal, isUnique;
     bool hasNestedProc = (PU_Info_child(Current_PU_Info) != NULL);
     OA::OA_ptr<OA::NamedLoc> retval;
+    
+    // get a set of all referenced symbols in this procedure
+    // Using this to approximate what is visible in F90 because Open64
+    // module scoping is messed up and all module variables are put
+    // in the global scope
+    // FIXME: when open64 gets fixed
+    OA::OA_ptr<OA::IRSymIterator> symIter = getRefSymIterator(p);
+    std::set<OA::SymHandle> refSet;
+    for ( ; symIter->isValid(); (*symIter)++ ) {
+        refSet.insert(symIter->current());
+    }
 
+    // check that SymHandle isn't null
     if (s!=OA::SymHandle(0)) {
-      isLocal = (!hasNestedProc) && (ST_level((ST*)s.hval()) == CURRENT_SYMTAB);
-      isUnique = isLocal;
+      // make sure the symbol is visible within procedure
+      if (refSet.find(s)==refSet.end()) {
+        retval = NULL;
+      } else {
 
-      retval = new OA::NamedLoc(s, isLocal);
-      
-      // if it is a common block variable then need to make sure the same var
-      // name within the same common block indicates the other symbol handles
-      // for that same var name and common block that fully overlap
-      ST* st = (ST*)s.hval();
-      if (Stab_Is_Based_At_Common_Block(st) || Stab_Is_In_Module(st)) 
-      {
+        isLocal = (!hasNestedProc) && (ST_level((ST*)s.hval()) == CURRENT_SYMTAB);
+        isUnique = isLocal;
+
+        retval = new OA::NamedLoc(s, isLocal);
+        
+        // if it is a common block variable then need to make sure the same var
+        // name within the same common block indicates the other symbol handles
+        // for that same var name and common block that fully overlap
+        ST* st = (ST*)s.hval();
+        if (Stab_Is_Based_At_Common_Block(st) || Stab_Is_In_Module(st)) 
+        {
           fully_qualified_name fqn = create_fqn(s);
           if (sGlobalVarMap[fqn].empty()) {
             assert(0); // this symbol should have been put in there
@@ -1881,18 +2035,11 @@ Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
               //          << ") = " << toString(*setIter) << std::endl;
               retval->addFullOverlap(*setIter);
           }
-          
+        } 
       }
 
     } else {
-      // getting a 0 SymbolHandle doesn't make sense 
-      // this must be some logic flaw
-      ST* pu_st = ST_ptr(PU_Info_proc_sym(Current_PU_Info));
-      const char* pu_name = ST_name(pu_st);
-      std::cout << "FortTk: FATAL ERROR: trying to get a location for 0 symbol handle in " 
-           << pu_name 
-           << std::endl;
-      assert(0);
+      retval = NULL;
     }
     return retval;
 }
@@ -2269,6 +2416,13 @@ Open64IRMemRefIterator::findTopMemRefs(WN* wn)
 void 
 Open64IRMemRefIterator::findTopMemRefs(WN* wn, list<WN*>& topMemRefs)
 {
+  if (debug) {
+      std::cout << "======== findTopMemRefs" << std::endl;
+      std::cout << "\tWN =";
+      Open64IRInterface::DumpWNMemRef(wn,std::cout);
+      std::cout << std::endl;
+  }
+
   // Base case
   if (!wn) { return; }
   
@@ -2286,6 +2440,7 @@ Open64IRMemRefIterator::findTopMemRefs(WN* wn, list<WN*>& topMemRefs)
     case OPR_ARRAY:
     case OPR_ARRSECTION: 
     case OPR_ARRAYEXP:
+    case OPR_PARM:
       topMemRefs.push_back(wn);
       return;
 
@@ -2369,13 +2524,22 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
 {
   Language = LANG_F90; // FIXME: Open64's global var Language isn't set
 
+  if (debug) {
+      std::cout << "======== findAllMemRefsAndMapToMemRefExprs" << std::endl;
+      std::cout << "\tWN =";
+      Open64IRInterface::DumpWNMemRef(wn,std::cout);
+      std::cout << std::endl;
+  }
+
   enum { 
     flags_NONE              = 0x00000000,
     flags_EXPECT_ARRAY_BASE = 0x00000001, // passed down the call stack
     flags_EXPECT_FUNC_BASE  = 0x00000002, // passed down the call stack
 
     // FIXME: come up with a better name
-    flags_STORE_PARENT     = 0x00000004  // passed down the call stack
+    flags_STORE_PARENT     = 0x00000004,  // passed down the call stack
+
+    flags_PASS_BY_REF      = 0x00000008 // passed down the call stack
   };
 
   using namespace OA;
@@ -2438,6 +2602,18 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
     INT kid_beg = kid_end + 1; // by default do not examine kids
     
     switch(opr) {
+      // Actual parameters
+      case OPR_PARM:
+        // will make MRE in child
+        isMemRefExprXXX = false;
+
+        // Modeling pass by reference with pointer values
+        if (isPassByReference(wn)) {
+	  flags |= flags_PASS_BY_REF;
+        }    
+        childInfos = findAllMemRefsAndMapToMemRefExprs(WN_kid0(wn), memRefs, lvl+1, flags);
+        break;
+
       // Arrays: we want the return value when recuring on the array
       // reference, but do not care about it for the index expressions.
       // We do not even recur on dimension information.
@@ -2519,11 +2695,10 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
 
     // Sometimes -- e.g. because of the context -- a WHIRL node that
     // would typically be a mem-ref-expr should not be considered one.
-    // However, we may use its info to create a location block.
+    // However, we may use its info to create the correct MRE.
     bool isMemRefExpr = isMemRefExprXXX;
     
-    // Assume a source-ref-expr if level 0.  This will be corrected, if
-    // necessary, below.
+    // If the MemRefExpr is a top level store then it is a DEF.
     OA::MemRefExpr::MemRefType hty;
     if (lvl == 0) {
       hty = (flags & flags_STORE_PARENT) ? OA::MemRefExpr::DEF: 
@@ -2560,6 +2735,7 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
       offset = WN_load_offset(wn); // == WN_lda_offset()
     } 
     else if (OPERATOR_is_store(opr)) {
+      // this check might be extraneous
       if (lvl == 0) { hty = OA::MemRefExpr::DEF; }
       base_ty = WN_GetBaseObjType(wn);
       ref_ty = WN_GetRefObjType(wn);
@@ -2568,6 +2744,12 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
     
     if (OPERATOR_has_field_id(opr)) {
       field_id = WN_field_id(wn);
+    }
+    
+    // if in the parent we determined that this was a pass
+    // by reference actual then need to take the address
+    if (flags & flags_PASS_BY_REF) {
+      isAddrOf = true;
     }
     
     // special cases
@@ -2581,6 +2763,8 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
         if (!isFortran) {
           isAddrOf = true;
         }
+        // if accessing an array the no address taken
+        // FIXME: what if indirectly accessing an array?
         if ((flags & flags_EXPECT_ARRAY_BASE)) {
           ref_ty = (TY_Is_Pointer(ref_ty)) ? TY_pointed(ref_ty) : base_ty;
           isAddrOf = false; // implicitly dereference the address
@@ -2631,7 +2815,7 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
     // -------------------------------------------------------
     // c. Compute mem-ref-expr information and add to 'memRefs'
     // -------------------------------------------------------
-    // Create location block 
+    // Create location 
     // FIXME: not as accurate as it could be
     // FIXME: What to do with alloc?
     if (st) {
@@ -2646,6 +2830,16 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
 		 ST_sclass(st) != SCLASS_EXTERN);
       isUnique = isLocal;
       locSH = OA::SymHandle((irhandle_t)st);
+      if (debug) {
+          std::cout << "\tST_is_intent_in_argument(st) = " 
+                    << ST_is_intent_in_argument(st) << std::endl;
+          std::cout << "\tST_is_intent_out_argument(st) = " 
+                    << ST_is_intent_out_argument(st) << std::endl;
+          std::cout << "\tSCLASS_FORMAL_REF = " 
+                    << (ST_sclass(st) == SCLASS_FORMAL_REF) << std::endl;
+          std::cout << "\tSCLASS_FORMAL = " 
+                    << (ST_sclass(st) == SCLASS_FORMAL) << std::endl;
+      }
     } 
     else if (childSH) {
       locSH = childSH; 
@@ -2670,17 +2864,30 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
       
       // if there are 0 derefs then just create a NamedRef
       OA::OA_ptr<OA::MemRefExpr> mre;
-      if (derefs==0) {
+      Open64IRInterface tempIR;
+
+      if (derefs==0 && tempIR.isRefParam(locSH)) {
+        // go ahead and add a deref because modeling reference
+        // parameters as pointers
+        derefs = 1;
+        mre = new NamedRef(false, fullAccuracy, OA::MemRefExpr::USE, locSH);
+        mre = new Deref(false, fullAccuracy, hty, mre, derefs);
+
+      } else if (derefs==0) {
         mre = new NamedRef(isAddrOf,fullAccuracy,hty,locSH);
+
       } else {
         // create base named reference with no address of and full accuracy
         // and then a Deref
-        mre = new NamedRef(false, true, hty, locSH);
-        mre = new Deref(mre,derefs);
-        // if the reference isn't accurate then set partial accuracy on the deref
-        if (!fullAccuracy) { mre->setPartialAccuracy(); }
+        mre = new NamedRef(false, fullAccuracy, OA::MemRefExpr::USE, locSH);
+        mre = new Deref(false, fullAccuracy, hty, mre, derefs);
       }
-
+      if (debug) {
+          std::cout << "\tMRE = ";
+          mre->dump(std::cout);
+          std::cout << endl;
+      }
+     
       // mapping of MemRefHandle to MemRefExprs
       Open64IRInterface::sMemref2mreSetMap[OA::MemRefHandle((irhandle_t)wn)].insert(mre);
       // list of MemRefHandles we are building
@@ -2697,6 +2904,58 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
   
   return curMemRefExprInfos;
 }
+
+bool Open64IRMemRefIterator::isPassByReference(WN* opr_parm_wn) 
+{
+    bool retval;
+    assert(opr_parm_wn!=0);
+
+    OA::ExprHandle opr_parm = ((OA::irhandle_t)opr_parm_wn);
+
+    // create an instance of Open64IRInterface so that we have access
+    // to all methods
+    // FIXME: doesn't seem like I should have to do this
+    Open64IRInterface tempIR;
+
+    // get the formal symbol for this actual parameter
+    // we stored which call this is associated with mapped
+    // to the wn for the opr_parm
+    OA::SymHandle formal = tempIR.getFormalForActual(
+                              tempIR.sProcContext[opr_parm],
+                              mParamToCallMap[opr_parm],
+                              tempIR.getProcHandle(
+                                  tempIR.getSymHandle(
+                                      mParamToCallMap[opr_parm])),
+                              opr_parm );
+
+    // the symbol table entry for the formal parameter
+    tempIR.setCurrentProcToProcContext(formal);
+
+    /*
+    ST* st = (ST*)formal.hval();
+    ST_SCLASS sclass = ST_sclass(st);
+
+    // the only time we don't want to model an F90 param as
+    // a pointer is when its intent is in
+    if (ST_is_intent_in_argument(st)) {
+        retval= false;
+    } else {
+        retval= true;
+    }
+    */
+    // FIXME: this might be overly conservative in C programs
+    // because of how isRefParam is implemented
+    if (tempIR.isRefParam(formal)) {
+        retval= true;
+    } else {
+        retval= false;
+    }
+ 
+    // set context back to caller
+    tempIR.setCurrentProcToProcContext(opr_parm);
+    return retval;
+}
+
 
 /*!
    constant symbols get their strings from the TCON table?
