@@ -677,7 +677,6 @@ Open64IRInterface::getCallsiteParams(OA::ExprHandle h) {
 
 bool Open64IRInterface::isRefParam(OA::SymHandle sym)
 {
-  setCurrentProcToProcContext(sym);
   // "X"  inout: C_VAR S_FORMAL_REF (flg 0x80 0x0)
   // "Y"  inout: C_VAR S_FORMAL_REF (flg 0x80 0x0)
   // "AA" in   : C_VAR S_FORMAL_REF (flg 0x80 0x20[in])
