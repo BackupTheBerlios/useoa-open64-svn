@@ -2916,15 +2916,23 @@ bool Open64IRMemRefIterator::isPassByReference(WN* opr_parm_wn)
     // FIXME: doesn't seem like I should have to do this
     Open64IRInterface tempIR;
 
+    // if this is a call to an undefined function then just return true
+    // to be conservatively correct, don't know if the parameter is a
+    // reference or not
+    OA::ProcHandle callee = tempIR.getProcHandle(
+                                  tempIR.getSymHandle(
+                                      mParamToCallMap[opr_parm]));
+    if (callee == OA::ProcHandle(0)) {
+        return true;
+    }
+
     // get the formal symbol for this actual parameter
     // we stored which call this is associated with mapped
     // to the wn for the opr_parm
     OA::SymHandle formal = tempIR.getFormalForActual(
                               tempIR.sProcContext[opr_parm],
                               mParamToCallMap[opr_parm],
-                              tempIR.getProcHandle(
-                                  tempIR.getSymHandle(
-                                      mParamToCallMap[opr_parm])),
+                              callee,
                               opr_parm );
 
     // the symbol table entry for the formal parameter
