@@ -97,6 +97,8 @@ for line in filelines:
         inputfile = string.strip(string.split(tempstr,',')[0])
         status = string.strip(string.split(tempstr,',')[1])
 
+        genfile.write("echo \"Generating %s/%s\"\n" \
+            % (outputdir,inputfile+".out"))
         genfile.write("%s %s/%s > %s/%s\n" \
             % (driverexec,inputdir,inputfile,outputdir,inputfile+".out"))
         regfile.write("echo \"Testing %s/%s, %s/%s %s\"\n" \
