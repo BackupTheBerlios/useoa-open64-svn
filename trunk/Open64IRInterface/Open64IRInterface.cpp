@@ -2452,11 +2452,19 @@ Open64IRMemRefIterator::findTopMemRefs(WN* wn, list<WN*>& topMemRefs)
     case OPR_ARRAYEXP:
     case OPR_PARM:
       topMemRefs.push_back(wn);
+      if (debug) {
+          std::cout << "%%%%% findTopMemRefs" << std::endl;
+          std::cout << "\tWN = " << wn << ", and not recurring" << std::endl;
+      }
       return;
 
     case OPR_ICALL:
     case OPR_VFCALL:
       topMemRefs.push_back(wn); // represents function reference
+      if (debug) {
+          std::cout << "%%%%% findTopMemRefs" << std::endl;
+          std::cout << "\tWN = " << wn << std::endl;
+      }
       break; // recur on parameters (kids 0 ... n-2) below
       
     // Special base and recursive case
@@ -2466,6 +2474,10 @@ Open64IRMemRefIterator::findTopMemRefs(WN* wn, list<WN*>& topMemRefs)
     case OPR_ISTOREX:
     case OPR_ISTBITS:
       topMemRefs.push_back(wn); // represents LHS
+      if (debug) {
+          std::cout << "%%%%% findTopMemRefs" << std::endl;
+          std::cout << "\tWN = " << wn << std::endl;
+      }
       findTopMemRefs(WN_kid0(wn), topMemRefs); // recur on RHS
       return;
       
@@ -2908,6 +2920,14 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
       Open64IRInterface::sMemref2mreSetMap[OA::MemRefHandle((irhandle_t)wn)].insert(mre);
       // list of MemRefHandles we are building
       memRefs.push_back(OA::MemRefHandle((irhandle_t)wn));
+      if (debug) {
+          std::cout << "%%%%% findAllMemRefsAndMapToMemRefExprs" << std::endl;
+          std::cout << "\tMRE = (not yet)" << std::endl;
+          //mre->output(tempIR);
+          std::cout << "\tWN = " << wn << std::endl;
+      }
+
+
       
       //memRefExprs.push_back(OA::MemRefExprBasic(OA::MemRefHandle((irhandle_t)wn), 
 //							    hty, locSH, derefs,
