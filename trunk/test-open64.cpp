@@ -337,7 +337,7 @@ FindMemRefExprInPU(std::ostream& os, PU_Info* pu)
       for ( ; mreIter->isValid(); (*mreIter)++ ) {
         OA::OA_ptr<OA::MemRefExpr::MemRefExpr> mre = mreIter->current();
         std::cout << "\tmre = ";
-        mre->output(ir);
+        mre->output(*ir);
         std::cout << std::endl;
       }
     }
@@ -840,7 +840,7 @@ TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
     OA::ProcHandle procHandle = procIter->current();
     OA::OA_ptr<OA::Alias::AliasMap> aliasMap =
       fialiasman->getAliasResults(procHandle);
-    aliasMap->output(irInterface);
+    aliasMap->output(*irInterface);
   }
  
   return 0;
@@ -873,7 +873,7 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF = 
       aliasmapxaifman->performAnalysis(procHandle,aliasMap);
 
-    aliasMapXAIF->output(irInterface);
+    aliasMapXAIF->output(*irInterface);
   }
  
   return 0;
@@ -912,7 +912,7 @@ TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
   interAlias = interaliasmapman->performAnalysis(cgraph,parambind);
 
   //interAlias->dump(std::cout,irInterface);
-  interAlias->output(irInterface);
+  interAlias->output(*irInterface);
   
   return 0;
 }
@@ -966,7 +966,7 @@ TestIR_OAAliasMapXAIFInter(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF = 
       aliasmapxaifman->performAnalysis((OA::irhandle_t)pu,aliasMap);
 
-    aliasMapXAIF->output(irInterface);
+    aliasMapXAIF->output(*irInterface);
   }
  
   return 0;
@@ -1372,7 +1372,7 @@ TestIR_OAAliasMapBasic_ForEachWNPU(std::ostream& os, PU_Info* pu,
       aliasmapman->performAnalysis((OA::irhandle_t)pu);
 
   //aliasMap->dump(std::cout, irInterface);
-  aliasMap->output(irInterface);
+  aliasMap->output(*irInterface);
   return 0;
 }
 
@@ -1396,7 +1396,7 @@ TestIR_OAAliasMapXAIFBasic_ForEachWNPU(std::ostream& os, PU_Info* pu,
       aliasmapxaifman->performAnalysis((OA::irhandle_t)pu,aliasMap);
 
   //aliasMapXAIF->dump(std::cout, irInterface);
-  aliasMapXAIF->output(irInterface);
+  aliasMapXAIF->output(*irInterface);
 
   return 0;
 }
