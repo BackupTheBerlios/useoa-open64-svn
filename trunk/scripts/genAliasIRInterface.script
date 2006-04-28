@@ -1,0 +1,6 @@
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call1.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call1.B > TestResults/AliasIRInterface/interalias_proc_call1.B.out
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call2.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call2.B > TestResults/AliasIRInterface/interalias_proc_call2.B.out
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call3.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call3.B > TestResults/AliasIRInterface/interalias_proc_call3.B.out

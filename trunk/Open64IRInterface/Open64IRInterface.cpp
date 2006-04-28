@@ -328,7 +328,8 @@ Open64IRMemRefIterator::create(OA::StmtHandle stmt)
     Open64IRInterface tempIR;
 
     // first loop through call sites for this statement
-    // to create a map of OPR_PARMs WNs to procedures they are calling
+    // to create a map of actual parameters (OPR_PARMs WNs)
+    // to the call handle
     OA::OA_ptr<OA::IRCallsiteIterator> callIter 
         = tempIR.getCallsites(stmt);
     for ( ; callIter->isValid(); (*callIter)++ ) {
@@ -682,28 +683,37 @@ bool Open64IRInterface::isRefParam(OA::SymHandle sym)
   // "AA" in   : C_VAR S_FORMAL_REF (flg 0x80 0x20[in])
   // "BB" out  : C_VAR S_FORMAL_REF (flg 0x80 0x40[out])
 
+  // save off the current context and then switch to one for this sym
+  OA::ProcHandle currContext = getCurrentProcContext();
+  setCurrentProcToProcContext(sym);
+
   ST* st = (ST*)sym.hval();
   ST_SCLASS sclass = ST_sclass(st);
+  bool retval;
   
   if (ST_is_intent_out_argument(st)) {
-    return true; // parameter: intent(out)
+    retval = true; // parameter: intent(out)
   }
   else if (ST_is_intent_in_argument(st)) {
-    return false; // parameter: intent(in)
+    retval = false; // parameter: intent(in)
     //return true; // when modeling reference params with ptrs, on 1/9/06
                  // Jean came up with example where need to model intent(in)
                  // as pass by reference, MMS
                  // yeah but I can't find this example!!
   }
   else if (sclass == SCLASS_FORMAL_REF) {
-    return true; // pass-by-ref parameter
+    retval = true; // pass-by-ref parameter
   }
   else if (sclass == SCLASS_FORMAL) {
-    return true; // may be pass-by-ref in the source language
+    retval = true; // may be pass-by-ref in the source language
   }
   else {
-    return false; // not a parameter at all
+    retval = false; // not a parameter at all
   }
+
+  // reset the context
+  setCurrentProcContext(currContext);
+  return retval;
 }
                
 //! return the formal parameter that an actual parameter is associated with.
@@ -1404,6 +1414,7 @@ Open64IRInterface::getParamBindPtrAssignIterator(OA::CallHandle call)
               = getMemRefExprIterator(memref);
           for ( ; mreIter->isValid(); (*mreIter)++ ) {
               OA::OA_ptr<OA::MemRefExpr> mre = mreIter->current();
+
               // if there is an address computation them we have a
               // pointer assignment happening at parameter bind time
               if (mre->hasAddressTaken()) {
@@ -1411,10 +1422,10 @@ Open64IRInterface::getParamBindPtrAssignIterator(OA::CallHandle call)
               }
               // FIXME: assuming all reference parameters are pass by
               // reference.  I think this is correct, but needs checked.
-              if (isFortran) {
-                  mre->setAddressTaken();
-                  retval->insertParamBindPair(count,mre);
-              }
+              //if (isFortran) {
+              //    mre->setAddressTaken();
+              //    retval->insertParamBindPair(count,mre);
+              //}
           } // if is a memref
 
           count++;
@@ -2702,6 +2713,8 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
     if (lvl == 0) {
       hty = (flags & flags_STORE_PARENT) ? OA::MemRefExpr::DEF: 
 	                                   OA::MemRefExpr::USE;
+    } else {
+      hty = OA::MemRefExpr::USE;
     }
 
     unsigned derefs = childDerefs;
@@ -2842,7 +2855,11 @@ Open64IRMemRefIterator::findAllMemRefsAndMapToMemRefExprs(WN* wn,
     } 
     else if (childSH) {
       locSH = childSH; 
-    }
+    } 
+    //else {
+      //assert(0); // locSH is not going to be set
+    //  isMemRefExpr = false;
+   // }
     
     // Set accuracy
     if (offset == 0 && field_id == 0) { // we do not have a structure ref
@@ -3429,6 +3446,20 @@ void Open64IRInterface::setCurrentProcToProcContext(OA::IRHandle h)
       if ( Current_PU_Info  != pu && pu != NULL ) {
         PU_SetGlobalState(pu);
       }
+    }
+}
+
+OA::ProcHandle Open64IRInterface::getCurrentProcContext()
+{
+    return (OA::irhandle_t)Current_PU_Info;
+}
+
+void Open64IRInterface::setCurrentProcContext(OA::ProcHandle proc)
+{
+    PU_Info *pu = (PU_Info*)proc.hval();
+    // have to check what Open64 thinks is current context
+    if ( Current_PU_Info  != pu && pu != NULL ) {
+        PU_SetGlobalState(pu);
     }
 }
 

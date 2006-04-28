@@ -876,6 +876,8 @@ private:
   static void initProcContext(PU_Info* pu_forest, 
                               Open64IRProcIterator &procIter);
   static void setCurrentProcToProcContext(OA::IRHandle h);
+  static OA::ProcHandle getCurrentProcContext();
+  static void setCurrentProcContext(OA::ProcHandle);
 
   static fully_qualified_name create_fqn(OA::SymHandle sym);
 

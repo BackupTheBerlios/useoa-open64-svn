@@ -1,0 +1,13 @@
+# comment in file.test
+# Regression tests for AliasIRInterface generation
+testname::AliasIRInterface
+inputdir::TestCases/Alias
+outputdir::TestResults/AliasIRInterface
+driverexec::./FORTRANtoOA
+
+# list of tests
+#       input file,                 status
+test::  interalias_proc_call1.B,    checked by MMS 4/27/06
+test::  interalias_proc_call2.B,    checked by MMS 4/27/06
+test::  interalias_proc_call3.B,    checked by MMS 4/27/06
+

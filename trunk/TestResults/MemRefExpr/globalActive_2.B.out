@@ -26,3 +26,76 @@ NamedRef(
 
 ============================================
 OA::StmtHandle: AGLOBAL:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(AGLOBAL)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(AGLOBAL)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(APASSIVEGLOBAL)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return

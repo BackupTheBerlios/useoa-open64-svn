@@ -1,0 +1,12 @@
+echo "Testing TestCases/Alias/interalias_proc_call1.B, TestResults/AliasIRInterface/interalias_proc_call1.B.out checked by MMS 4/27/06"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call1.B > t
+diff t TestResults/AliasIRInterface/interalias_proc_call1.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call2.B, TestResults/AliasIRInterface/interalias_proc_call2.B.out checked by MMS 4/27/06"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call2.B > t
+diff t TestResults/AliasIRInterface/interalias_proc_call2.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasIRInterface/interalias_proc_call3.B.out checked by MMS 4/27/06"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call3.B > t
+diff t TestResults/AliasIRInterface/interalias_proc_call3.B.out
+
