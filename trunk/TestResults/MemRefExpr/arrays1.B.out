@@ -17,7 +17,7 @@ NamedRef(
 NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
-    mMemRefType: DEFUSE
+    mMemRefType: USE
     mSymHandle: SymHandle(X)
 )
 
@@ -46,7 +46,7 @@ NamedRef(
 NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
-    mMemRefType: DEFUSE
+    mMemRefType: USE
     mSymHandle: SymHandle(IX)
 )
 

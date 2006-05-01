@@ -48,7 +48,7 @@ OA::StmtHandle: bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)
 NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
-    mMemRefType: 
+    mMemRefType: USE
     mSymHandle: SymHandle(T1)
 )
 
@@ -56,7 +56,7 @@ NamedRef(
 NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
-    mMemRefType: 
+    mMemRefType: USE
     mSymHandle: SymHandle(T2)
 )
 
