@@ -1,0 +1,91 @@
+
+PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("X") >
+            < 1, SymHandle("F") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/mstrout/open64/UseNewOA-Open64/TestProgs/interalias_proc_call1.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8") =>
+        [
+            MemRefHandle("T1:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("T1"), F, full)
+            MemRefHandle("X:0:.predef_F8") => 
+                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, full)
+            MemRefHandle("F:0:.predef_F8") => 
+                Deref( USE, NamedRef( USE, SymHandle("F"), F, full), 1, F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("bar_(&T1:0:.predef_F8, &T1:0:.predef_F8)") =>
+        [
+            MemRefHandle("T1:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("T1"), T, full)
+            MemRefHandle("T1:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("T1"), T, full)
+        ] }
+    CALLSITES = { StmtHandle("bar_(&T1:0:.predef_F8, &T1:0:.predef_F8)") =>
+        [
+            CallHandle("bar_(&T1:0:.predef_F8, &T1:0:.predef_F8)") => 
+                NamedRef( USE, SymHandle("bar_"), F, full)
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&T1:0:.predef_F8, &T1:0:.predef_F8)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("T1"), T, full) >
+            < 1, NamedRef( USE, SymHandle("T1"), T, full) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000") =>
+        [
+            MemRefHandle("T3:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("T3"), F, full)
+            MemRefHandle("F:0:.predef_F8") => 
+                Deref( USE, NamedRef( USE, SymHandle("F"), F, full), 1, F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8") =>
+        [
+            MemRefHandle("F:0:.predef_F8") => 
+                Deref( DEF, NamedRef( USE, SymHandle("F"), F, full), 1, F, full)
+            MemRefHandle("T1:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("T1"), F, full)
+            MemRefHandle("T2:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("T2"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_"), not local > }
+    LOCATION = { < SymHandle("bar_"), not local > }
+    LOCATION = { < SymHandle("X"), local > }
+    LOCATION = { < SymHandle("F"), local > }
+    LOCATION = { < SymHandle("T1"), local > }
+    LOCATION = { < SymHandle("T2"), local > }
+    LOCATION = { < SymHandle("T3"), local > }
+
+PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("A") >
+            < 1, SymHandle("B") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("B:0:.predef_F8 = A:0:.predef_F8") =>
+        [
+            MemRefHandle("B:0:.predef_F8") => 
+                Deref( DEF, NamedRef( USE, SymHandle("B"), F, full), 1, F, full)
+            MemRefHandle("A:0:.predef_F8") => 
+                Deref( USE, NamedRef( USE, SymHandle("A"), F, full), 1, F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("bar_"), not local > }
+    LOCATION = { < SymHandle("A"), local > }
+    LOCATION = { < SymHandle("B"), local > }

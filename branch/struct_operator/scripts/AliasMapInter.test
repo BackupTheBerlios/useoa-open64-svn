@@ -1,0 +1,12 @@
+# Regression tests for AliasMapInter generation
+testname::AliasMapInter
+inputdir::TestCases/Alias
+outputdir::TestResults/AliasMapInter
+driverexec::./test-open64 --oa-AliasMapInter
+
+# list of tests
+#       input file,                 status
+test::  interalias_proc_call1.B,    not relevant anymore
+test::  interalias_proc_call2.B,    not relevant anymore
+test::  interalias_proc_call3.B,    not relevant anymore
+

@@ -1,0 +1,94 @@
+============================================
+ LOC 0 0 source files:	1	"/home/mstrout/open64/UseNewOA-Open64/TestProgs/arrays5.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+OA::StmtHandle: 
+============================================
+OA::StmtHandle: do_loop (J:0:.predef_I4<=10)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(J)
+)
+
+============================================
+OA::StmtHandle: J:0:.predef_I4 = 1
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(J)
+)
+
+============================================
+OA::StmtHandle: J:0:.predef_I4 = J:0:.predef_I4+1
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(J)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(J)
+)
+
+============================================
+OA::StmtHandle: R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4)
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(J)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(R)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(J)
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: return

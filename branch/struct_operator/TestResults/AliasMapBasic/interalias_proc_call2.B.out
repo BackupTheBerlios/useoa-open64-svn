@@ -1,0 +1,130 @@
+
+AliasMap(
+	mProcHandle: ProcHandle(head_)
+	mNumSets: 6
+	mStartId: 0		int	 => OA::OA_ptr<LocSet> 
+		0	 =>[ 
+		UnknownLoc(		) ] 
+		1	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(T1)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+		2	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(X)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+		3	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(F)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+		4	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(T2)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+		5	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(T3)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+
+		int	 => AliasResultType
+		0	 =>1
+		1	 =>2
+		2	 =>2
+		3	 =>2
+		4	 =>2
+		5	 =>2
+
+		int	 => MemRefSet
+		1	 =>[ MemRefHandle(T1:0:.predef_F8)    MemRefHandle(T1:0:.predef_F8)    MemRefHandle(T1:0:.predef_F8) ] 
+		2	 =>[ MemRefHandle(X:0:.predef_F8) ] 
+		3	 =>[ MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8) ] 
+		4	 =>[ MemRefHandle(T2:0:.predef_F8)    MemRefHandle(T2:0:.predef_F8) ] 
+		5	 =>[ MemRefHandle(T3:0:.predef_F8) ] 
+
+		int	 => MemRefExprSet
+		1	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: DEF
+			mSymHandle: SymHandle(T1)		) ] 
+		2	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: USE
+			mSymHandle: SymHandle(X)		) ] 
+		3	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: USE
+			mSymHandle: SymHandle(F)		) ] 
+		4	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: USE
+			mSymHandle: SymHandle(T2)		) ] 
+		5	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: DEF
+			mSymHandle: SymHandle(T3)		) ] 
+
+)
+
+AliasMap(
+	mProcHandle: ProcHandle(bar_)
+	mNumSets: 3
+	mStartId: 0		int	 => OA::OA_ptr<LocSet> 
+		0	 =>[ 
+		UnknownLoc(		) ] 
+		1	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(B)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+		2	 =>[ 
+		NamedLoc(
+			mSymHandle: SymHandle(A)
+			mLocal: 1
+			mFullOverlap: 
+			mPartOverlap: 		) ] 
+
+		int	 => AliasResultType
+		0	 =>1
+		1	 =>2
+		2	 =>2
+
+		int	 => MemRefSet
+		1	 =>[ MemRefHandle(B:0:.predef_F8) ] 
+		2	 =>[ MemRefHandle(A:0:.predef_F8) ] 
+
+		int	 => MemRefExprSet
+		1	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: DEF
+			mSymHandle: SymHandle(B)		) ] 
+		2	 =>[ 
+		NamedRef(
+			mAddressOf: 0
+			mFullAccuracy: 1
+			mMemRefType: USE
+			mSymHandle: SymHandle(A)		) ] 
+
+)
