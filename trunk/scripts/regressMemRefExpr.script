@@ -1,4 +1,4 @@
-echo "Testing TestCases/MemRefExpr/arrays1.B, TestResults/MemRefExpr/arrays1.B.out error (email 3/29/06)"
+echo "Testing TestCases/MemRefExpr/arrays1.B, TestResults/MemRefExpr/arrays1.B.out conservatively correct MMS 5/3/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/arrays1.B > t
 diff t TestResults/MemRefExpr/arrays1.B.out
 
@@ -14,7 +14,7 @@ echo "Testing TestCases/MemRefExpr/globalActive_2.B, TestResults/MemRefExpr/glob
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalActive_2.B > t
 diff t TestResults/MemRefExpr/globalActive_2.B.out
 
-echo "Testing TestCases/MemRefExpr/head_tlm_driver_g.pre.B, TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out not checked yet"
+echo "Testing TestCases/MemRefExpr/head_tlm_driver_g.pre.B, TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out not correct on defs to fields MMS 5/3/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/head_tlm_driver_g.pre.B > t
 diff t TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out
 

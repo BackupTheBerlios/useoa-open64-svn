@@ -452,18 +452,11 @@ NamedRef(
 )
 
 	mre = 
-Deref(
+NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
+    mSymHandle: SymHandle(Y)
 )
 
 ============================================
@@ -485,18 +478,11 @@ NamedRef(
 )
 
 	mre = 
-Deref(
+NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
+    mSymHandle: SymHandle(Y)
 )
 
 ============================================
@@ -518,18 +504,11 @@ NamedRef(
 )
 
 	mre = 
-Deref(
+NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
+    mSymHandle: SymHandle(Y)
 )
 
 ============================================
@@ -551,18 +530,11 @@ NamedRef(
 )
 
 	mre = 
-Deref(
+NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
+    mSymHandle: SymHandle(Y)
 )
 
 ============================================
@@ -721,4 +693,91 @@ NamedRef(
 
 ============================================
 OA::StmtHandle: ACTIVE_X:0:anon_ptr.(J:0:.predef_I4)+8 =     1.000000
-Signal: Segmentation fault
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(ACTIVE_X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(J)
+)
+
+============================================
+OA::StmtHandle: ACTIVE_X:0:anon_ptr.(J:0:.predef_I4)+8 =     0.000000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(ACTIVE_X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(J)
+)
+
+============================================
+MLOAD 0 T<33,anon_ptr.,8>
+OA::StmtHandle: head_(&, &ACTIVE_Y:0:ACTIVE1)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(ACTIVE_X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(ACTIVE_Y)
+)
+
+============================================
+OA::StmtHandle: G:0:anon_ptr.(I:0:.predef_I4) = ACTIVE_Y:8:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(ACTIVE_Y)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(G)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(I)
+)
+
+============================================
+OA::StmtHandle: return

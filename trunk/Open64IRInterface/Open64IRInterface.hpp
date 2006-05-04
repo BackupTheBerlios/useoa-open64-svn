@@ -247,17 +247,6 @@ public:
 
 private:
   void create(OA::StmtHandle h);
-  list<WN*>* findTopMemRefs(WN* wn);
-  void findTopMemRefs(WN* wn, list<WN*>& topMemRefs);
-
-  list<OA::MemRefHandle>*
-  findAllMemRefsAndMapToMemRefExprs(WN* wn);
-
-  typedef std::pair<unsigned, OA::SymHandle> MemRefExprInfo;
-  list<Open64IRMemRefIterator::MemRefExprInfo>
-  findAllMemRefsAndMapToMemRefExprs(WN* wn, list<OA::MemRefHandle>& memRefs,
-	                                unsigned lvl, unsigned flags);
-
 private:
   std::list<OA::MemRefHandle> mMemRefList;
   
@@ -266,9 +255,6 @@ private:
   std::list<OA::MemRefHandle>::iterator mMemRefIter;
   bool mValid;
   
-  // stuff to help with modeling reference vars with pointers
-  std::map<OA::ExprHandle,OA::CallHandle> mParamToCallMap;
-  bool isPassByReference(WN*);
 };
 
 
@@ -560,13 +546,19 @@ public:
   
   OA::SymHandle getSymHandle(OA::ExprHandle h) {
     WN* wn = (WN*)h.hval(); 
-    ST* st = ((OPERATOR_has_sym(WN_operator(wn))) ? WN_st(wn) : NULL);
+    ST* st = NULL;
+    if (wn) {
+      st = ((OPERATOR_has_sym(WN_operator(wn))) ? WN_st(wn) : NULL);
+    }
     return (OA::irhandle_t)st;
   }
 
   OA::SymHandle getSymHandle(OA::CallHandle h) {
     WN* wn = (WN*)h.hval(); 
-    ST* st = ((OPERATOR_has_sym(WN_operator(wn))) ? WN_st(wn) : NULL);
+    ST* st = NULL;
+    if (wn) {
+      st = ((OPERATOR_has_sym(WN_operator(wn))) ? WN_st(wn) : NULL);
+    }
     return (OA::irhandle_t)st;
   }
 
@@ -831,6 +823,8 @@ private:
   // mapping of symbol handles to strings used in getSideEffect
   static std::map<OA::SymHandle,std::string> sSymToVarStringMap;
 
+  // mapping of actual params (PR_PARMs WNs) to CallHandles
+  static std::map<OA::ExprHandle,OA::CallHandle> sParamToCallMap;
 
   //***************************************************************************
   // Helpers
@@ -840,6 +834,16 @@ private:
   //! During its creation it also sets up sStmt2allMemRefs 
   //! and memRefs2mreSetMap.
   OA::OA_ptr<OA::MemRefHandleIterator> getMemRefIterator(OA::StmtHandle h); 
+
+  // helper functions for getMemRefIterator
+  void findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
+    WN* wn, unsigned lvl, unsigned flags);
+  void createAndMapDerefs(OA::StmtHandle stmt, WN* wn, WN* subMemRef,
+    OA::MemRefExpr::MemRefType hty);
+  void createAndMapNamedRef(OA::StmtHandle stmt, WN* wn, ST*, bool isAddrOf,
+    bool fullAccuracy, OA::MemRefExpr::MemRefType hty);
+  bool isPassByReference(WN*);
+  ST* findBaseSymbol(WN*);
 
   void currentProc(OA::ProcHandle p) {
     assert(p!=OA::ProcHandle(0));
