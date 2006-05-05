@@ -14,7 +14,7 @@
 
 */
 
-static bool debug = false;
+static bool debug = true;
 
 //************************** System Include Files ***************************
 
@@ -1351,7 +1351,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
     flags_HAVE_STORE_PARENT = 0x00000004, 
 
-    flags_PASS_BY_REF       = 0x00000008 
+    flags_PASS_BY_REF       = 0x00000008,
+    flags_EXPECT_STRCT_BASE = 0x00000010
   };
 
 
@@ -1397,10 +1398,6 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
         }
       }
   } 
-  // this means there is an array above us
-//  if (flags & flags_EXPECT_ARRAY_BASE) {
-//      fullAccuracy = false;
-//  }
 
   // Determination of these is the same for most, exceptions dealt with
   // in the big switch stmt
@@ -1451,7 +1448,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // the array access should be given the same level 
       // FIXME: does WHIRL represent array accesses to int ptrs in C this way?
       if ((WN_operator(WN_kid0(wn)) == OPR_ARRAY) 
-          || (WN_operator(WN_kid0(wn)) == OPR_ARRAYEXP) ) 
+          || (WN_operator(WN_kid0(wn)) == OPR_ARRAYEXP)  
+          || (WN_operator(WN_kid1(wn)) == OPR_STRCTFLD) ) 
       {
           findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid0(wn), lvl, flags); 
           // do not create MRE for this wn
@@ -1478,8 +1476,6 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
     // Therefore at ARRAY don't actually create an MRE.
     case OPR_ARRAY:
     case OPR_ARRSECTION: 
-//      flags |= flags_EXPECT_ARRAY_BASE;
-//      findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl, flags); 
       {
         // get symbol for array
         ST* st = findBaseSymbol(WN_kid0(wn));
@@ -1506,11 +1502,24 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       }
       break;
 
-
     case OPR_ARRAYEXP:
       findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl, flags); 
       // don't actually create an MRE for this wn
       return;
+
+    case OPR_STRCTFLD:
+      //  U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1> <--MRE
+      //   U8LDA 0 <2,2,TYPED_Y> T<31,anon_ptr.,8>
+      // we are in a strct field like  x%v
+      // what comes below refers to x via an LDA
+      // unless x is a pointer we don't want to see it. 
+      {
+        // get symbol for array
+        ST* st = findBaseSymbol(WN_kid0(wn));
+        fullAccuracy = false;
+        createAndMapNamedRef(stmt, wn, st, isAddrOf, fullAccuracy, hty);
+      }
+      break;
 
     case OPR_PARM:
       // this operator just indicates an actual param, do not create
@@ -1558,7 +1567,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // that it is from a store parent
       // FIXME: does WHIRL represent array accesses to int ptrs in C this way?
       if ((WN_operator(WN_kid1(wn)) == OPR_ARRAY)
-          || (WN_operator(WN_kid1(wn)) == OPR_ARRAYEXP) ) 
+          || (WN_operator(WN_kid1(wn)) == OPR_ARRAYEXP)   
+          || (WN_operator(WN_kid1(wn)) == OPR_STRCTFLD) ) 
       {
           flags |= flags_HAVE_STORE_PARENT;
           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid1(wn), lvl, flags); 
