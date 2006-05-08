@@ -62,6 +62,11 @@ std::map<OA::SymHandle,OA::ProcHandle> Open64IRInterface::sCallSymToProc;
 std::map<fully_qualified_name,
          std::set<OA::SymHandle> > Open64IRInterface::sGlobalVarMap;
 
+std::map<fully_qualified_name,std::map<OA::ProcHandle,OA::SymHandle> >
+      Open64IRInterface::sFQNToProcToLocalSymMap;
+
+std::map<OA::SymHandle,fully_qualified_name> Open64IRInterface::sSymToFQNMap;
+
 std::map<OA::SymHandle,std::string> Open64IRInterface::sSymToVarStringMap;
 
 std::map<OA::ExprHandle,OA::CallHandle> Open64IRInterface::sParamToCallMap;
@@ -386,7 +391,7 @@ Open64IRSymIterator::create(PU_Info* pu)
     if (OPERATOR_has_sym(opr)) {
       ST* st = WN_st(curWN);
       if (ST_level(st) == GLOBAL_SYMTAB) {
-	symlist.push_back(st);
+        symlist.push_back(st);
       }
     }
   }
@@ -1653,7 +1658,20 @@ void Open64IRInterface::createAndMapNamedRef(OA::StmtHandle stmt, WN* wn,
 {
     using namespace OA;
     OA::OA_ptr<OA::MemRefExpr> mre;
+
+    // get symbol handle, need to use representative if a global or
+    // module var.  Going to use first sym in set as representative.
     SymHandle sym = SymHandle((irhandle_t)st);
+    if (Stab_Is_Based_At_Common_Block(st) || Stab_Is_In_Module(st)) {
+        std::set<SymHandle>::iterator setIter;
+        fully_qualified_name fqn = sSymToFQNMap[sym];
+        // store the local incarnation of the global sym for this procedure
+        sFQNToProcToLocalSymMap[fqn][getCurrentProcContext()] = sym;
+        // use the first symhandle in the set as a representative
+        setIter = sGlobalVarMap[fqn].begin();
+        sym = *setIter;
+    }
+
     // modeling accesses to reference parameters as derefs to pointers
     if (isRefParam(sym)) {
         if (isAddrOf==true) { // deref and addressOf cancel
@@ -2318,11 +2336,33 @@ bool Open64IRInterface::isParam(OA::SymHandle anOASymbolHandle){
 OA::OA_ptr<OA::Location> 
 Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
 {
+    if (debug) {
+      std::cout << std::endl << "mIR->toString(p) = " << toString(p) 
+              << ", <hval=" << p.hval() << std::endl;
+      std::cout << "mIR->toString(s) = " << toString(s) 
+              << ", <hval=" << s.hval() << std::endl;
+    }
+    // save off old context 
+    OA::ProcHandle currContext = getCurrentProcContext();
+
+    // change to context for the sym so can determine if it is global
     setCurrentProcToProcContext(s);
+
+    // if this symbol is global then it is a representative for all the 
+    // symbols in each different procedure for the same global
+    // need to get symbol specific to this procedure
+    ST* st = (ST*)s.hval();
+    if (Stab_Is_Based_At_Common_Block(st) || Stab_Is_In_Module(st)) {
+        fully_qualified_name fqn = sSymToFQNMap[s];
+        s = sFQNToProcToLocalSymMap[fqn][p];
+        // need context for this procedure now
+        setCurrentProcContext(p);
+    }
+    
     bool isLocal, isUnique;
     bool hasNestedProc = (PU_Info_child(Current_PU_Info) != NULL);
     OA::OA_ptr<OA::NamedLoc> retval;
-    
+
     // get a set of all referenced symbols in this procedure
     // Using this to approximate what is visible in F90 because Open64
     // module scoping is messed up and all module variables are put
@@ -2349,10 +2389,9 @@ Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
         // if it is a common block variable then need to make sure the same var
         // name within the same common block indicates the other symbol handles
         // for that same var name and common block that fully overlap
-        ST* st = (ST*)s.hval();
         if (Stab_Is_Based_At_Common_Block(st) || Stab_Is_In_Module(st)) 
         {
-          fully_qualified_name fqn = create_fqn(s);
+          fully_qualified_name fqn = sSymToFQNMap[s];
           if (sGlobalVarMap[fqn].empty()) {
             assert(0); // this symbol should have been put in there
                        // around line 3233
@@ -2377,6 +2416,9 @@ Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
     } else {
       retval = NULL;
     }
+    // reset the context
+    setCurrentProcContext(currContext);
+
     return retval;
 }
 
@@ -3382,7 +3424,8 @@ void Open64IRInterface::initProcContext(PU_Info* pu_forest,
     // Iterate over procedures in program
     bool globalSymsVisitFlag = false;
     OA::ProcHandle proc;
-    for ( ; procIter.isValid(); procIter++) {
+    procIter.reset();
+    for (; procIter.isValid(); procIter++) {
         proc = procIter.current();
         PU_Info* pu = (PU_Info*)proc.hval();
         WN *wn_pu = PU_Info_tree_ptr(pu);
@@ -3427,11 +3470,17 @@ void Open64IRInterface::initProcContext(PU_Info* pu_forest,
             // if they are module or common block variables
             if (Stab_Is_Based_At_Common_Block(st) || Stab_Is_In_Module(st)) 
             {
-                sGlobalVarMap[create_fqn(sym)].insert(sym);
+                fully_qualified_name fqn = create_fqn(sym);
+                sGlobalVarMap[fqn].insert(sym);
+                sSymToFQNMap[sym] = fqn;
                 if (debug) {
-                    fully_qualified_name fqn = create_fqn(sym);
                     std::cout << "create_fqn(" << createCharStarForST(st) << ") = "
                               << fqn.mVar << ", " << fqn.mContext << std::endl;
+                    std::cout << "\tsym = " << tempIR.toString(sym)
+                              << ", hval= " << sym.hval()
+                              << ", st = " << (unsigned int)st << std::endl;
+                    std::cout << "\tproc = " << tempIR.toString(proc)
+                              << ", hval= " << proc.hval();
                 }
             }
         }

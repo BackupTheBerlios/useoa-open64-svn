@@ -97,9 +97,9 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
+    LOCATION = { < SymHandle("G"), not local > }
     LOCATION = { < SymHandle("head_"), not local > }
     LOCATION = { < SymHandle("bar_"), not local > }
-    LOCATION = { < SymHandle("G"), not local > }
     LOCATION = { < SymHandle("X"), local > }
     LOCATION = { < SymHandle("F"), local > }
     LOCATION = { < SymHandle("T1"), local > }
@@ -131,7 +131,7 @@ PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("bar_"), not local > }
     LOCATION = { < SymHandle("G"), not local > }
+    LOCATION = { < SymHandle("bar_"), not local > }
     LOCATION = { < SymHandle("A"), local > }
     LOCATION = { < SymHandle("B"), local > }

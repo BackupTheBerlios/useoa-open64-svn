@@ -818,7 +818,14 @@ private:
 
   // mapping of fully qualified global variable names to a set of SymHandles
   // that all have that fully qualified name
+  // the first symbol in the set will be used to represent all the others
   static std::map<fully_qualified_name,std::set<OA::SymHandle> > sGlobalVarMap;
+  // the fully qualified name and procedure mapped to the localy symbol
+  // for the particular procedure
+  static std::map<fully_qualified_name,std::map<OA::ProcHandle,OA::SymHandle> >
+      sFQNToProcToLocalSymMap;
+  // mapping of each symbol handle to its fully qualified name
+  static std::map<OA::SymHandle,fully_qualified_name> sSymToFQNMap;
 
   // mapping of symbol handles to strings used in getSideEffect
   static std::map<OA::SymHandle,std::string> sSymToVarStringMap;

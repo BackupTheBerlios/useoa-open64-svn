@@ -55,7 +55,6 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("globals_"), not local > }
     LOCATION = { < SymHandle("AGLOBAL"), not local > }
     LOCATION = { < SymHandle("APASSIVEGLOBAL"), not local > }
     LOCATION = { < SymHandle("head_"), not local > }

@@ -6,7 +6,7 @@ echo "Testing TestCases/Alias/interalias_proc_call2.B, TestResults/AliasIRInterf
 ./FORTRANtoOA TestCases/Alias/interalias_proc_call2.B > t
 diff t TestResults/AliasIRInterface/interalias_proc_call2.B.out
 
-echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasIRInterface/interalias_proc_call3.B.out checked by MMS 4/27/06"
+echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasIRInterface/interalias_proc_call3.B.out checked by MMS 5/8/06"
 ./FORTRANtoOA TestCases/Alias/interalias_proc_call3.B > t
 diff t TestResults/AliasIRInterface/interalias_proc_call3.B.out
 
@@ -18,7 +18,7 @@ echo "Testing TestCases/Alias/functions1.B, TestResults/AliasIRInterface/functio
 ./FORTRANtoOA TestCases/Alias/functions1.B > t
 diff t TestResults/AliasIRInterface/functions1.B.out
 
-echo "Testing TestCases/Alias/globalActive_2.B, TestResults/AliasIRInterface/globalActive_2.B.out checked by MMS 4/28/06"
+echo "Testing TestCases/Alias/globalActive_2.B, TestResults/AliasIRInterface/globalActive_2.B.out checked by MMS 5/8/06"
 ./FORTRANtoOA TestCases/Alias/globalActive_2.B > t
 diff t TestResults/AliasIRInterface/globalActive_2.B.out
 
