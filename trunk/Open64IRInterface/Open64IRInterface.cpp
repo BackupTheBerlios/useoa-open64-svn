@@ -71,6 +71,9 @@ std::map<OA::SymHandle,std::string> Open64IRInterface::sSymToVarStringMap;
 
 std::map<OA::ExprHandle,OA::CallHandle> Open64IRInterface::sParamToCallMap;
 
+std::map<OA::ProcHandle,std::set<OA::SymHandle> > 
+    Open64IRInterface::sProcToSymRefSetMap;
+
 //***************************************************************************
 // Iterators
 //***************************************************************************
@@ -2336,6 +2339,12 @@ bool Open64IRInterface::isParam(OA::SymHandle anOASymbolHandle){
 OA::OA_ptr<OA::Location> 
 Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
 {
+    OA::OA_ptr<OA::NamedLoc> retval;
+    if (s==OA::SymHandle(0)) {
+        retval = NULL;
+        return retval;
+    }
+
     if (debug) {
       std::cout << std::endl << "mIR->toString(p) = " << toString(p) 
               << ", <hval=" << p.hval() << std::endl;
@@ -2361,23 +2370,11 @@ Open64IRInterface::getLocation(OA::ProcHandle p, OA::SymHandle s)
     
     bool isLocal, isUnique;
     bool hasNestedProc = (PU_Info_child(Current_PU_Info) != NULL);
-    OA::OA_ptr<OA::NamedLoc> retval;
-
-    // get a set of all referenced symbols in this procedure
-    // Using this to approximate what is visible in F90 because Open64
-    // module scoping is messed up and all module variables are put
-    // in the global scope
-    // FIXME: when open64 gets fixed
-    OA::OA_ptr<OA::IRSymIterator> symIter = getRefSymIterator(p);
-    std::set<OA::SymHandle> refSet;
-    for ( ; symIter->isValid(); (*symIter)++ ) {
-        refSet.insert(symIter->current());
-    }
 
     // check that SymHandle isn't null
     if (s!=OA::SymHandle(0)) {
       // make sure the symbol is visible within procedure
-      if (refSet.find(s)==refSet.end()) {
+      if (sProcToSymRefSetMap[p].find(s)==sProcToSymRefSetMap[p].end()) {
         retval = NULL;
       } else {
 
@@ -2475,6 +2472,7 @@ Open64IRInterface::initContextState(PU_Info* pu_forest)
     Open64IRProcIterator procIt(pu_forest);
     Open64IRInterface::initProcContext(pu_forest, procIt);
     Open64IRInterface::initCallSymToProcMap(procIt);
+    Open64IRInterface::initProcToSymRefSetMap(procIt);
   }
 }
 
@@ -3266,6 +3264,32 @@ void Open64IRInterface::initCallSymToProcMap(Open64IRProcIterator &procIter)
         Open64IRInterface::sCallSymToProc[sym] = proc;
     }
 }
+
+/*! creates a mapping of procedure handles to the set of symbols
+    referenced in that procedure
+    // get a set of all referenced symbols in this procedure
+    // Using this to approximate what is visible in F90 because Open64
+    // module scoping is messed up and all module variables are put
+    // in the global scope
+ */
+void Open64IRInterface::initProcToSymRefSetMap(Open64IRProcIterator &procIter)
+{
+    // create an instance of Open64IRInterface so that we have access
+    // to all methods
+    Open64IRInterface tempIR;
+    
+    // Iterate over procedures in program
+    OA::ProcHandle proc;
+    for (procIter.reset(); procIter.isValid(); procIter++) {
+        proc = procIter.current();
+        OA::OA_ptr<OA::IRSymIterator> symIter = tempIR.getRefSymIterator(proc);
+        std::set<OA::SymHandle> refSet;
+        for ( ; symIter->isValid(); (*symIter)++ ) {
+            sProcToSymRefSetMap[proc].insert(symIter->current());
+        }
+    }
+}
+
 
 	
 /*! 

@@ -833,6 +833,10 @@ private:
   // mapping of actual params (PR_PARMs WNs) to CallHandles
   static std::map<OA::ExprHandle,OA::CallHandle> sParamToCallMap;
 
+  // mapping of proc handles to a set of referenced symbols
+ static std::map<OA::ProcHandle,std::set<OA::SymHandle> > 
+     sProcToSymRefSetMap;
+
   //***************************************************************************
   // Helpers
   //***************************************************************************
@@ -894,6 +898,9 @@ private:
 
   // mapping of calls to procs
   static void initCallSymToProcMap(Open64IRProcIterator &procIter);
+
+  // getting set of symbols that are referenced within a particul procedure
+  static void initProcToSymRefSetMap(Open64IRProcIterator &procIter);
 
   // context information is initialized and used within some of the iterators
   // so they need to be friends
