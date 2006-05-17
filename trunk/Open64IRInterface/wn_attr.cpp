@@ -377,6 +377,14 @@ WN_Tree_Type(const WN* wn)
     case OPR_ALLOCA:
       ty = WN_ty(wn);
       break;
+
+    case OPR_STRCTFLD:
+      // we need to get the pointer here 
+      // because the whirl documentation 
+      // claims the STRCTFLD operator 
+      // returns a pointer to the field.
+      ty = Stab_Pointer_To(WN_ty(wn));
+      break;
       
     default:
       ASSERT_FATAL(false, (DIAG_A_STRING, "Programming Error."));
@@ -425,6 +433,7 @@ WN_GetRefObjType(const WN* wn)
     
     // STOREs represent the left-hand-side expression
     case OPR_STID:    // type of referenced lhs object
+    case OPR_PSTID:
     case OPR_STBITS:
       ty = WN_ty(wn);
       break;
@@ -435,6 +444,10 @@ WN_GetRefObjType(const WN* wn)
       ty = TY_pointed(WN_ty(wn));
       break;
     
+    case OPR_STRCTFLD:
+      ty = WN_ty(wn);           
+      break;
+
     default: 
       // NOTE: MLOAD, MSTORE are not supported
       ASSERT_FATAL(false, (DIAG_A_STRING, "Programming Error."));
@@ -523,6 +536,10 @@ WN_GetBaseObjType(const WN* wn)
       //              "Internal error: base pointer types are inconsistent");
       break;
     }
+    case OPR_STRCTFLD:
+      ty = WN_load_addr_ty(wn);           
+      break;
+
     
     default: 
       // NOTE: MLOAD, MSTORE are not supported
