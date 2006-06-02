@@ -1,6 +1,6 @@
 
 PROCEDURE = { < ProcHandle("testing_"), SymHandle("testing_") > }
-    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/Alias/interalias_proc_call3.f"
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/Alias/interalias_proc_call4.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
@@ -61,21 +61,21 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
             MemRefHandle("F:0:.predef_F8") => 
                 Deref( USE, NamedRef( USE, SymHandle("F"), F, full), 1, F, full)
         ] }
-    MEMREFEXPRS = { StmtHandle("bar_(&T1:0:.predef_F8, &G:0:.predef_F4)") =>
+    MEMREFEXPRS = { StmtHandle("bar_(&X:0:.predef_F8, &G:0:.predef_F4)") =>
         [
-            MemRefHandle("T1:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("T1"), T, full)
+            MemRefHandle("X:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("X"), F, full)
             MemRefHandle("G:0:.predef_F4") => 
                 NamedRef( USE, SymHandle("G"), T, full)
         ] }
-    CALLSITES = { StmtHandle("bar_(&T1:0:.predef_F8, &G:0:.predef_F4)") =>
+    CALLSITES = { StmtHandle("bar_(&X:0:.predef_F8, &G:0:.predef_F4)") =>
         [
-            CallHandle("bar_(&T1:0:.predef_F8, &G:0:.predef_F4)") => 
+            CallHandle("bar_(&X:0:.predef_F8, &G:0:.predef_F4)") => 
                 NamedRef( USE, SymHandle("bar_"), F, full)
         ] }
-    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&T1:0:.predef_F8, &G:0:.predef_F4)") =>
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&X:0:.predef_F8, &G:0:.predef_F4)") =>
         [
-            < 0, NamedRef( USE, SymHandle("T1"), T, full) >
+            < 0, NamedRef( USE, SymHandle("X"), F, full) >
             < 1, NamedRef( USE, SymHandle("G"), T, full) >
         ] }
     MEMREFEXPRS = { StmtHandle("T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000") =>
@@ -124,6 +124,11 @@ PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
                 NamedRef( USE, SymHandle("G"), F, full)
             MemRefHandle("A:0:.predef_F8") => 
                 Deref( USE, NamedRef( USE, SymHandle("A"), F, full), 1, F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("A:0:.predef_F8 =     3.000000000000000") =>
+        [
+            MemRefHandle("A:0:.predef_F8") => 
+                Deref( DEF, NamedRef( USE, SymHandle("A"), F, full), 1, F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

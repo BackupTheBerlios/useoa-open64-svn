@@ -10,6 +10,10 @@ echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasIRInterf
 ./FORTRANtoOA TestCases/Alias/interalias_proc_call3.B > t
 diff t TestResults/AliasIRInterface/interalias_proc_call3.B.out
 
+echo "Testing TestCases/Alias/interalias_proc_call4.B, TestResults/AliasIRInterface/interalias_proc_call4.B.out checked by MMS 5/17/06"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call4.B > t
+diff t TestResults/AliasIRInterface/interalias_proc_call4.B.out
+
 echo "Testing TestCases/Alias/arrays5.B, TestResults/AliasIRInterface/arrays5.B.out checked by MMS 4/28/06"
 ./FORTRANtoOA TestCases/Alias/arrays5.B > t
 diff t TestResults/AliasIRInterface/arrays5.B.out

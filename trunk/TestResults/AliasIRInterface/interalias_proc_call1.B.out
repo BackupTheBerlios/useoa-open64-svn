@@ -5,7 +5,7 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
             < 0, SymHandle("X") >
             < 1, SymHandle("F") >
         ] }
-    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/mstrout/open64/UseNewOA-Open64/TestProgs/interalias_proc_call1.f"
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/Alias/interalias_proc_call1.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [

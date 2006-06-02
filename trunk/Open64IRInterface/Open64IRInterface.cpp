@@ -1776,14 +1776,18 @@ Open64IRInterface::getParamBindPtrAssignIterator(OA::CallHandle call)
               // pointer assignment happening at parameter bind time
               if (mre->hasAddressTaken()) {
                   retval->insertParamBindPair(count,mre);
+
+              // if it is a named ref to a reference param in 
+              // the caller then we also have a ParamBindPair
+              } else if (mre->isaNamed()) {
+                  OA::OA_ptr<OA::NamedRef> nref = mre.convert<OA::NamedRef>();
+                  OA::SymHandle sym = nref->getSymHandle();
+                  if (isRefParam(sym)) {
+                      retval->insertParamBindPair(count,mre);
+                  }
               }
-              // FIXME: assuming all reference parameters are pass by
-              // reference.  I think this is correct, but needs checked.
-              //if (isFortran) {
-              //    mre->setAddressTaken();
-              //    retval->insertParamBindPair(count,mre);
-              //}
-          } // if is a memref
+
+          } 
 
           count++;
         } // iterate over actuals
