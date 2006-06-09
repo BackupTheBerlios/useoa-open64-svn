@@ -1,0 +1,16 @@
+echo "Testing TestCases/ReachDef/interalias_proc_call3_rd.B, TestResults/ReachDef/interalias_proc_call3_rd.B.out not checked yet"
+./test-open64 --oa-ReachDef TestCases/ReachDef/interalias_proc_call3_rd.B > t
+diff t TestResults/ReachDef/interalias_proc_call3_rd.B.out
+
+echo "Testing TestCases/ReachDef/reachdef_if1.B, TestResults/ReachDef/reachdef_if1.B.out not checked yet"
+./test-open64 --oa-ReachDef TestCases/ReachDef/reachdef_if1.B > t
+diff t TestResults/ReachDef/reachdef_if1.B.out
+
+echo "Testing TestCases/ReachDef/reachdef_if2.B, TestResults/ReachDef/reachdef_if2.B.out not checked yet"
+./test-open64 --oa-ReachDef TestCases/ReachDef/reachdef_if2.B > t
+diff t TestResults/ReachDef/reachdef_if2.B.out
+
+echo "Testing TestCases/ReachDef/reachdef_loopif1.B, TestResults/ReachDef/reachdef_loopif1.B.out not checked yet"
+./test-open64 --oa-ReachDef TestCases/ReachDef/reachdef_loopif1.B > t
+diff t TestResults/ReachDef/reachdef_loopif1.B.out
+

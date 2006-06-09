@@ -1,12 +1,12 @@
-echo "Testing TestCases/Alias/interalias_proc_call1.B, TestResults/AliasMapFIAlias/interalias_proc_call1.B.out checked by MMS 4/18/06"
+echo "Testing TestCases/Alias/interalias_proc_call1.B, TestResults/AliasMapFIAlias/interalias_proc_call1.B.out rechecked by MMS 6/9/06"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call1.B > t
 diff t TestResults/AliasMapFIAlias/interalias_proc_call1.B.out
 
-echo "Testing TestCases/Alias/interalias_proc_call2.B, TestResults/AliasMapFIAlias/interalias_proc_call2.B.out checked by MMS 4/18/06"
+echo "Testing TestCases/Alias/interalias_proc_call2.B, TestResults/AliasMapFIAlias/interalias_proc_call2.B.out rechecked by MMS 6/9/06"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call2.B > t
 diff t TestResults/AliasMapFIAlias/interalias_proc_call2.B.out
 
-echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasMapFIAlias/interalias_proc_call3.B.out checked by MMS 5/8/06"
+echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasMapFIAlias/interalias_proc_call3.B.out rechecked by MMS 6/9/06"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call3.B > t
 diff t TestResults/AliasMapFIAlias/interalias_proc_call3.B.out
 

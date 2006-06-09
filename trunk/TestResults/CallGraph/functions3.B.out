@@ -1,0 +1,34 @@
+
+graph DGraph:
+
+    Node 1: 
+        foo_ [defined]
+
+    Node 2: 
+        functiontest_ [defined]
+
+    Node 3: 
+        SIN [referenced]
+
+    Node 4: 
+        _END [referenced]
+
+    Edge: 2 => 1
+        
+
+    Edge: 2 => 3
+        
+
+    Edge: 2 => 4
+        
+
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="foo_ [defined]" ];
+    2 [ label="functiontest_ [defined]" ];
+    3 [ label="SIN [referenced]" ];
+    4 [ label="_END [referenced]" ];
+    2 -> 1 [ label="" ];
+    2 -> 3 [ label="" ];
+    2 -> 4 [ label="" ];}

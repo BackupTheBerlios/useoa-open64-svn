@@ -1,0 +1,18 @@
+
+graph DGraph:
+
+    Node 1: 
+        head_ [defined]
+
+    Node 2: 
+        bar_ [defined]
+
+    Edge: 1 => 2
+        
+
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="head_ [defined]" ];
+    2 [ label="bar_ [defined]" ];
+    1 -> 2 [ label="" ];}

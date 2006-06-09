@@ -1,0 +1,30 @@
+
+graph DGraph:
+
+    Node 1: 
+        factorial_ [defined]
+
+    Node 2: 
+        recfunc_ [defined]
+
+    Node 3: 
+        _END [referenced]
+
+    Edge: 1 => 1
+        
+
+    Edge: 2 => 1
+        
+
+    Edge: 2 => 3
+        
+
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="factorial_ [defined]" ];
+    2 [ label="recfunc_ [defined]" ];
+    3 [ label="_END [referenced]" ];
+    1 -> 1 [ label="" ];
+    2 -> 1 [ label="" ];
+    2 -> 3 [ label="" ];}

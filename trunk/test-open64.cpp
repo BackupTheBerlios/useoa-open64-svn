@@ -65,12 +65,12 @@
 //#include <OpenAnalysis/Activity/ManagerInterActive.hpp>
 #include <OpenAnalysis/CFG/EachCFGStandard.hpp>
 #include <OpenAnalysis/DataFlow/ManagerParamBindings.hpp>
-#include <OpenAnalysis/Alias/ManagerSymAliasSetsBottom.hpp>
-#include <OpenAnalysis/Alias/ManagerInsNoPtrInterAliasMap.hpp>
 #include <OpenAnalysis/Activity/ManagerInterDep.hpp>
 #include <OpenAnalysis/ICFG/ManagerICFGStandard.hpp>
 //#include <OpenAnalysis/Activity/ManagerICFGVary.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
+
+#include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
 #include <OpenAnalysis/Utils/SCC.hpp>
 
@@ -254,7 +254,7 @@ main(int argc, char* argv[])
     //case 11: // AliasMapXAIF
     case 12: // SideEffect
     case 14: // Activity
-    case 17: // SymAliasSets bottom
+    case 17: // SymAliasSets bottom, deprecated
     case 23: // AliasMapBasic
     case 25: // AliasMapXAIFBasic
       TestIR_OA(std::cout, pu_forest, args.runMode );
@@ -364,6 +364,7 @@ TestIR_OAAliasMapXAIFBasic_ForEachWNPU(std::ostream& os, PU_Info* pu,
 static int
 TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect);
 
 static int
@@ -394,9 +395,6 @@ TestIR_OAActivity_ForEachWNPU(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect);
 
-static int
-TestIR_OASymAliasSets_ForEachWNPU(std::ostream& os, PU_Info* pu,
-            OA::OA_ptr<Open64IRInterface> irInterface);
 
 static int
 TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
@@ -406,39 +404,46 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
 
   OA::OA_ptr<Open64IRInterface> irInterface; irInterface = new Open64IRInterface();
   
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu_forest);
+
   // Alias 
-  OA::OA_ptr<OA::Alias::ManagerInterAliasMapBasic> interaliasmapman;
-  interaliasmapman = new OA::Alias::ManagerInterAliasMapBasic(irInterface);
+//  OA::OA_ptr<OA::Alias::ManagerInterAliasMapBasic> interaliasmapman;
+//  interaliasmapman = new OA::Alias::ManagerInterAliasMapBasic(irInterface);
+//  OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+//  interAlias = interaliasmapman->performAnalysis();
+
+  //FIAlias
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
   OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
-  interAlias = interaliasmapman->performAnalysis();
+  interAlias = fialiasman->performAnalysis(procIter);
 
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-  OA::OA_ptr<Open64IRProcIterator> procIter;
-  procIter = new Open64IRProcIterator(pu_forest);
   OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
       cgraphman->performAnalysis(procIter);
 
   //cgraph->dump(std::cout, irInterface);
 
   // ParamBindings
-  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> parambindman;
-  parambindman = new OA::DataFlow::ManagerParamBindings(irInterface);
-  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind 
-      = parambindman->performAnalysis(cgraph);
+//  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> parambindman;
+//  parambindman = new OA::DataFlow::ManagerParamBindings(irInterface);
+//  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind 
+//      = parambindman->performAnalysis(cgraph);
 
   // Intra Side-Effect
-  OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
-  sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
+  //OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
+  //sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
 
   // InterSideEffect
-  OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
-  interSEman = new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+  //OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
+  //interSEman = new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
 
-  OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
-  interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
+  //OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
+  //interSE = interSEman->performAnalysis(cgraph, parambind,
+  //                                      interAlias, sideeffectman);
 
   //======================================== loop over procedures
   Open64IRProcIterator procIt(pu_forest);
@@ -459,31 +464,30 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
       //  TestIR_OAAliasMap_ForEachWNPU(os, pu, irInterface);
       //  break;
       case 6:
-        TestIR_OAReachDefs(os, pu, irInterface, interSE);
+        //TestIR_OAReachDefs(os, pu, irInterface, interAlias, interSE);
         break;
       case 7:
-        TestIR_OAUDDUChains(os, pu, irInterface, interSE);
+        //TestIR_OAUDDUChains(os, pu, irInterface, interSE);
         break;
       case 8:
-        TestIR_OAUDDUChainsXAIF(os, pu, irInterface, interSE);
+        //TestIR_OAUDDUChainsXAIF(os, pu, irInterface, interSE);
         break;
       case 9:
-        TestIR_OAExprTree(os, pu, irInterface);
+        //TestIR_OAExprTree(os, pu, irInterface);
         break;
       case 10:
-        TestIR_OAReachConsts(os, pu, irInterface, interSE);
+        //TestIR_OAReachConsts(os, pu, irInterface, interSE);
         break;
       //case 11: // AliasMapXAIF
       //  TestIR_OAAliasMapXAIF_ForEachWNPU(os, pu, irInterface);
       //  break;
       case 12: // SideEffect
-        TestIR_OASideEffect_ForEachWNPU(os, pu, irInterface);
+        //TestIR_OASideEffect_ForEachWNPU(os, pu, irInterface);
         break;
       case 14: // Activity
-        TestIR_OAActivity_ForEachWNPU(os, pu, irInterface, interSE);
+        //TestIR_OAActivity_ForEachWNPU(os, pu, irInterface, interSE);
         break;
-      case 17: // SymAliasSets bottom
-        TestIR_OASymAliasSets_ForEachWNPU(os, pu, irInterface);
+      case 17: // SymAliasSets bottom, deprecated
         break;
       case 23: // AliasMapBasic
         TestIR_OAAliasMapBasic_ForEachWNPU(os, pu, irInterface);
@@ -532,7 +536,14 @@ TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
       cgraphman->performAnalysis(procIter);
 
-  cgraph->dump(std::cout, irInterface);
+  // text output
+  cgraph->output(*irInterface);
+  // dot output
+  OA::OA_ptr<OA::OutputBuilder> outBuild;
+  outBuild = new OA::OutputBuilderDOT;
+  cgraph->configOutput(outBuild);
+  cgraph->output(*irInterface);
+
   return 0;
 }
 
@@ -565,7 +576,7 @@ TestIR_OAInterDep(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAInterDep");
-
+/*
   // iterate over all functions and call kludge
   Open64IRProcIterator procIt(pu_forest);  
   
@@ -624,7 +635,7 @@ TestIR_OAInterDep(std::ostream& os, PU_Info* pu_forest,
                                           interSE, eachCFG);
 
   interDep->dump(std::cout, irInterface);
-
+*/
   return 0;
 }
 
@@ -636,14 +647,9 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAInterSideEffect");
 
+  /*
   // iterate over all functions and call kludge
   Open64IRProcIterator procIt(pu_forest);  
-  /*
-  for ( ; procIt.isValid(); ++procIt) {
-    PU_Info* pu = (PU_Info*)procIt.current().hval();
-    irInterface->initMemRefExprKludge((OA::irhandle_t)pu);
-  }
-  */
   
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
@@ -683,7 +689,7 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
                                         interAlias, sideeffectman);
 
   interSE->dump(std::cout, irInterface);
-
+*/
   return 0;
 }
 
@@ -834,14 +840,9 @@ TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
   //FIAlias
   OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
   fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
-  fialiasman->performAnalysis(procIter);
-  procIter->reset();
-  for(; procIter->isValid(); ++(*procIter)) {
-    OA::ProcHandle procHandle = procIter->current();
-    OA::OA_ptr<OA::Alias::AliasMap> aliasMap =
-      fialiasman->getAliasResults(procHandle);
-    aliasMap->output(*irInterface);
-  }
+  OA::OA_ptr<OA::Alias::InterAliasMap> interAlias
+      = fialiasman->performAnalysis(procIter);
+  interAlias->output(*irInterface);
  
   return 0;
 }
@@ -860,12 +861,13 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
   //FIAlias
   OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
   fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
-  fialiasman->performAnalysis(procIter);
+  OA::OA_ptr<OA::Alias::InterAliasInterface> interAlias
+      = fialiasman->performAnalysis(procIter);
   procIter->reset();
   for(; procIter->isValid(); ++(*procIter)) {
     OA::ProcHandle procHandle = procIter->current();
-    OA::OA_ptr<OA::Alias::AliasMap> aliasMap =
-      fialiasman->getAliasResults(procHandle);
+    OA::OA_ptr<OA::Alias::AliasMap> aliasMap;
+    //FIXME    = interAlias->getAliasMapResults(procHandle);
 
     // XAIF AliasMap
     OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
@@ -886,7 +888,7 @@ TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
 {
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapInter");
-  
+/* 
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
@@ -913,7 +915,7 @@ TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
 
   //interAlias->dump(std::cout,irInterface);
   interAlias->output(*irInterface);
-  
+*/  
   return 0;
 }
 
@@ -923,7 +925,7 @@ TestIR_OAAliasMapXAIFInter(std::ostream& os, PU_Info* pu_forest,
 {
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapXAIFInter");
-  
+ /* 
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
@@ -968,7 +970,7 @@ TestIR_OAAliasMapXAIFInter(std::ostream& os, PU_Info* pu_forest,
 
     aliasMapXAIF->output(*irInterface);
   }
- 
+*/ 
   return 0;
 }
 
@@ -979,7 +981,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 {
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAICFGActivity");
-  
+ /* 
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
@@ -1033,7 +1035,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
   std::cout << "%%%%%%%%%%% ICFG constructed from input program" << std::endl;
   icfg->dump(std::cout, irInterface);
   icfg->dumpdot(std::cout, irInterface);
- 
+*/ 
   //--------------------- separate pieces
  /* 
   // create a Manager that generates interprocedure dep information
@@ -1065,7 +1067,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 */ 
 
   //--------------------- ICFGActivity analysis
-
+/*
   OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
   activeman = new OA::Activity::ManagerICFGActive(irInterface);
   OA::OA_ptr<OA::Activity::InterActive> active;
@@ -1073,7 +1075,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                 interAlias, interSE, eachCFG);
 
   active->dump(std::cout, irInterface);
-
+*/
   return 0;
 }
 
@@ -1317,6 +1319,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
 static int
 TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAReachDefs");
@@ -1327,18 +1330,24 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
 
   // Alias analysis
-  OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
-  aliasmapman = new OA::Alias::ManagerAliasMapBasic(irInterface);
-  OA::OA_ptr<OA::Alias::Interface> alias = 
-      aliasmapman->performAnalysis((OA::irhandle_t)pu);
+//  OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
+//  aliasmapman = new OA::Alias::ManagerAliasMapBasic(irInterface);
+//  OA::OA_ptr<OA::Alias::Interface> alias = 
+//      aliasmapman->performAnalysis((OA::irhandle_t)pu);
+
+  // get alias and side effect results for this procedure
+  OA::OA_ptr<OA::Alias::Interface> alias 
+      = interAlias->getAliasResults((OA::irhandle_t)pu);
+  OA::OA_ptr<OA::SideEffect::Interface> se;
+  //    = interSideEffect->getSideEffectResults((OA::irhandle_t)pu);
 
   // then can do ReachDefs
   OA::OA_ptr<OA::ReachDefs::ManagerStandard> rdman;
   rdman = new OA::ReachDefs::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
-      rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds; 
+      //FIXME = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,se);
 
-  rds->dump(std::cout, irInterface);
+  rds->output(*irInterface);
   return 0;
 }
 
@@ -1586,22 +1595,6 @@ TestIR_OAActivity_ForEachWNPU(std::ostream& os, PU_Info* pu,
 //  active->dump(std::cout, irInterface);
 */
  
-  return 0;
-}
-
-static int
-TestIR_OASymAliasSets_ForEachWNPU(std::ostream& os, PU_Info* pu,
-            OA::OA_ptr<Open64IRInterface> irInterface)
-{
-  Diag_Set_Phase("WHIRL tester: TestIR_OASymAliasSets");
-
-  // SymAliasSets bottom analysis
-  OA::OA_ptr<OA::Alias::ManagerSymAliasSetsBottom> sasBottMan;
-  sasBottMan = new OA::Alias::ManagerSymAliasSetsBottom(irInterface);
-  OA::OA_ptr<OA::Alias::SymAliasSets> symSets = 
-      sasBottMan->performAnalysis((OA::irhandle_t)pu);
-  symSets->dump(std::cout, irInterface);
-
   return 0;
 }
 

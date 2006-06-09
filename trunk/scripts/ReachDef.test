@@ -1,0 +1,14 @@
+# comment in file.test
+# Regression tests for ReachDef generation
+testname::ReachDef
+inputdir::TestCases/ReachDef
+outputdir::TestResults/ReachDef
+driverexec::./test-open64 --oa-ReachDef
+
+# list of tests
+#       input file,                 status
+test::  interalias_proc_call3_rd.B, not checked yet
+test::  reachdef_if1.B,             not checked yet
+test::  reachdef_if2.B,             not checked yet
+test::  reachdef_loopif1.B,         not checked yet
+
