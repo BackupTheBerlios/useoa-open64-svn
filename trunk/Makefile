@@ -14,7 +14,7 @@ OpenAnalysis = $(OPENANALYSISBASE)/$(PLATFORM)
 
 #CXXFLAGS += -g -O0 -DOA_IRHANDLETYPE_UL \
 
-CXXFLAGS += -pg -O2 -DOA_IRHANDLETYPE_UL \
+CXXFLAGS += -pg -O0 -DOA_IRHANDLETYPE_UL \
             -I. -I$(OpenAnalysis)/include -I$(OMEGALIBDIR)/include -I$(OMEGADIR)/basic/include $(USER_CXXFLAGS) $(OPEN64_IFLAGS)
 #LDFLAGS  += -g -I$(OpenAnalysis)/include -DOA_IRHANDLETYPE_UL -I$(OMEGALIBDIR)/include -I$(OMEGADIR)/basic/include
 

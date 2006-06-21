@@ -544,6 +544,7 @@ public:
   
   OA::SymHandle getProcSymHandle(OA::ProcHandle h);
   
+  /*
   OA::SymHandle getSymHandle(OA::ExprHandle h) {
     WN* wn = (WN*)h.hval(); 
     ST* st = NULL;
@@ -552,15 +553,9 @@ public:
     }
     return (OA::irhandle_t)st;
   }
+  */
 
-  OA::SymHandle getSymHandle(OA::CallHandle h) {
-    WN* wn = (WN*)h.hval(); 
-    ST* st = NULL;
-    if (wn) {
-      st = ((OPERATOR_has_sym(WN_operator(wn))) ? WN_st(wn) : NULL);
-    }
-    return (OA::irhandle_t)st;
-  }
+ 
 
 
   //-------------------------------------------------------------------------
@@ -909,7 +904,7 @@ private:
   friend class InitContextVisitor;
 
 
-public:
+private:
   //! returns true if given symbol is a pass by reference parameter 
   bool isRefParam(OA::SymHandle);
                
@@ -918,11 +913,22 @@ public:
   //! parameter within the call node that we want info about.
   OA::SymHandle getFormalForActual(OA::ProcHandle caller, OA::ExprHandle call, 
                                    OA::ProcHandle callee, OA::ExprHandle param);
+
+  OA::SymHandle getSymHandle(OA::CallHandle h) {
+    WN* wn = (WN*)h.hval(); 
+    ST* st = NULL;
+    if (wn) {
+      st = ((OPERATOR_has_sym(WN_operator(wn))) ? WN_st(wn) : NULL);
+    }
+    return (OA::irhandle_t)st;
+  }
  
+public:
   //! User is responsible for doing this.  It should not be part of
   // the Open64IRProcIterator
   static void initContextState(PU_Info* pu_forest);
 
+private:
   //! add a new IRHandle to the given procedure after context has
   //! already been initialized with initProcContext
   static void setContext(OA::IRHandle h, OA::ProcHandle proc)

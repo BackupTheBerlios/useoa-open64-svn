@@ -1,2 +1,4 @@
-3/??/06     UseOA-ROSE svn tag trunk r??    Michelle Strout
-    
+6/21/06     UseOA-Open64 svn trunk r31    Michelle Strout
+    CallGraph regression tests and all other regression tests in
+    regressAll.script pass after OpenAnalysis rev 118 changes
+    where the CallGraph now uses alias results.

@@ -423,7 +423,7 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
   OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
-      cgraphman->performAnalysis(procIter);
+      cgraphman->performAnalysis(procIter, interAlias);
 
   //cgraph->dump(std::cout, irInterface);
 
@@ -529,12 +529,19 @@ TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OACallGraph");
 
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
   OA::OA_ptr<Open64IRProcIterator> procIter;
   procIter = new Open64IRProcIterator(pu_forest);
+  
+  //FIAlias
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+  OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+  interAlias = fialiasman->performAnalysis(procIter);
+
+  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
   OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
-      cgraphman->performAnalysis(procIter);
+      cgraphman->performAnalysis(procIter,interAlias);
 
   // text output
   cgraph->output(*irInterface);
@@ -553,12 +560,20 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAParamBindings");
 
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
   OA::OA_ptr<Open64IRProcIterator> procIter;
   procIter = new Open64IRProcIterator(pu_forest);
+
+  //FIAlias
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+  OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+  interAlias = fialiasman->performAnalysis(procIter);
+
+  // CallGraph
+  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
   OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
-      cgraphman->performAnalysis(procIter);
+      cgraphman->performAnalysis(procIter, interAlias);
 
   cgraph->dump(std::cout, irInterface);
 
@@ -787,13 +802,20 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
     cfgman = new OA::CFG::ManagerStandard(irInterface);
     eachCFG = new OA::CFG::EachCFGStandard(cfgman);
     
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //FIAlias
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+    OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+    interAlias = fialiasman->performAnalysis(procIter);
+
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
     cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-    OA::OA_ptr<Open64IRProcIterator> procIter;
-    procIter = new Open64IRProcIterator(pu_forest);
     OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
-      cgraphman->performAnalysis(procIter);
+      cgraphman->performAnalysis(procIter, interAlias);
 
     cgraph->dump(std::cout, irInterface);
 
