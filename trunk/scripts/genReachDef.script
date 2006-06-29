@@ -1,8 +1,8 @@
-echo "Generating TestResults/ReachDef/interalias_proc_call3_rd.B.out"
-./test-open64 --oa-ReachDef TestCases/ReachDef/interalias_proc_call3_rd.B > TestResults/ReachDef/interalias_proc_call3_rd.B.out
-echo "Generating TestResults/ReachDef/reachdef_if1.B.out"
-./test-open64 --oa-ReachDef TestCases/ReachDef/reachdef_if1.B > TestResults/ReachDef/reachdef_if1.B.out
-echo "Generating TestResults/ReachDef/reachdef_if2.B.out"
-./test-open64 --oa-ReachDef TestCases/ReachDef/reachdef_if2.B > TestResults/ReachDef/reachdef_if2.B.out
-echo "Generating TestResults/ReachDef/reachdef_loopif1.B.out"
-./test-open64 --oa-ReachDef TestCases/ReachDef/reachdef_loopif1.B > TestResults/ReachDef/reachdef_loopif1.B.out
+echo "Generating TestResults/ReachDefsCFG/interalias_proc_call3_rd.B.out"
+./test-open64 --oa-CFG TestCases/ReachDefs/interalias_proc_call3_rd.B > TestResults/ReachDefsCFG/interalias_proc_call3_rd.B.out
+echo "Generating TestResults/ReachDefsCFG/reachdef_if1.B.out"
+./test-open64 --oa-CFG TestCases/ReachDefs/reachdef_if1.B > TestResults/ReachDefsCFG/reachdef_if1.B.out
+echo "Generating TestResults/ReachDefsCFG/reachdef_if2.B.out"
+./test-open64 --oa-CFG TestCases/ReachDefs/reachdef_if2.B > TestResults/ReachDefsCFG/reachdef_if2.B.out
+echo "Generating TestResults/ReachDefsCFG/reachdef_loopif1.B.out"
+./test-open64 --oa-CFG TestCases/ReachDefs/reachdef_loopif1.B > TestResults/ReachDefsCFG/reachdef_loopif1.B.out

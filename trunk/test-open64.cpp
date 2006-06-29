@@ -511,14 +511,19 @@ TestIR_OACFG_ForEachWNPU(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::CFG::CFGStandard> cfg
       = cfgmanstd->performAnalysis((OA::irhandle_t)pu);
   
-  //std::cout << "num_edges = " << cfg->num_edges() << std::endl;
-  cfg->dumpdot(std::cout, irInterface);
-  cfg->dumpdot(std::cout, irInterface);
-  
-  std::cout << "SCC sets" << std::endl;
-  OA::OA_ptr<OA::SCCSet> sccset;
-  sccset = new OA::SCCSet(cfg);
-  sccset->dump(std::cout);
+  // text output
+  cfg->output(*irInterface);
+  // dot output
+  std::cout << "--------Dot Graph Output--------" << std::endl;
+  OA::OA_ptr<OA::OutputBuilder> outBuild;
+  outBuild = new OA::OutputBuilderDOT;
+  cfg->configOutput(outBuild);
+  cfg->output(*irInterface);
+
+  //std::cout << "SCC sets" << std::endl;
+  //OA::OA_ptr<OA::SCCSet> sccset;
+  //sccset = new OA::SCCSet(cfg);
+  //sccset->dump(std::cout);
   
   return 0;
 }

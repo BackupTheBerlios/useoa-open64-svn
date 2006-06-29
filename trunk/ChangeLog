@@ -2,3 +2,13 @@
     CallGraph regression tests and all other regression tests in
     regressAll.script pass after OpenAnalysis rev 118 changes
     where the CallGraph now uses alias results.
+
+6/28/06     UseOA-Open64 svn trunk r32    Luis Ramos
+    test-open64.cpp, removed dump calls from cfg and replaced
+    them with cfg->output and outputDOT statements, as used for
+    regression tests.
+
+    ReachDefs regression tests results added for CFG analysis.
+    Files include: 
+    interalias_proc_call3_rd.B, reachdef_if1.B, reachdef_if2.B
+    reachdef_loopif1.B 
