@@ -563,7 +563,7 @@ public:
   //-------------------------------------------------------------------------
   // !Get IRCallsiteParamIterator for a callsite.
   // !Don't assume parameters are visited in any particular order
-  OA::OA_ptr<OA::IRCallsiteParamIterator> getCallsiteParams(OA::ExprHandle h);
+  OA::OA_ptr<OA::IRCallsiteParamIterator> getCallsiteParams(OA::CallHandle h);
 
   //-------------------------------------------------------------------------
   // CFGIRInterface
@@ -911,7 +911,7 @@ private:
   //! return the formal parameter that an actual parameter is associated with.
   //! 'call' is a handle to the call node; 'param' is the actual
   //! parameter within the call node that we want info about.
-  OA::SymHandle getFormalForActual(OA::ProcHandle caller, OA::ExprHandle call, 
+  OA::SymHandle getFormalForActual(OA::ProcHandle caller, OA::CallHandle call, 
                                    OA::ProcHandle callee, OA::ExprHandle param);
 
   OA::SymHandle getSymHandle(OA::CallHandle h) {

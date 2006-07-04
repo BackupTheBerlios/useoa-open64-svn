@@ -580,13 +580,13 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
-  cgraph->dump(std::cout, irInterface);
+  //cgraph->dump(std::cout, irInterface);
 
   OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
   pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
   OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
   parambind = pbman->performAnalysis(cgraph);
-  parambind->dump(std::cout, irInterface);
+  parambind->output(*irInterface);
 
   return 0;
 }

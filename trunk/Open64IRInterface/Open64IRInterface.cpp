@@ -624,7 +624,7 @@ Open64IRInterface::getCallsites(OA::StmtHandle h)
 //---------------------------------------------------------------------------
 // !Get IRCallsiteParamIterator for a callsite. 
 OA::OA_ptr<OA::IRCallsiteParamIterator> 
-Open64IRInterface::getCallsiteParams(OA::ExprHandle h) {
+Open64IRInterface::getCallsiteParams(OA::CallHandle h) {
   setCurrentProcToProcContext(h);
   WN* wn = (WN*)h.hval();
   OA::OA_ptr<OA::IRCallsiteParamIterator> retval;
@@ -678,7 +678,7 @@ bool Open64IRInterface::isRefParam(OA::SymHandle sym)
 //! return the formal parameter that an actual parameter is associated with.
 OA::SymHandle 
 Open64IRInterface::getFormalForActual(OA::ProcHandle caller, 
-                                      OA::ExprHandle call, 
+                                      OA::CallHandle call, 
                                       OA::ProcHandle callee, 
                                       OA::ExprHandle param)
 {

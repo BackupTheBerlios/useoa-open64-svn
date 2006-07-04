@@ -15,3 +15,9 @@
 
 6/29/06     UseOA-Open64 svn trunk r33    Luis Ramos
     New regressReachDefs with the new endline filter results
+
+7/4/06     UseOA-Open64 svn trunk r34    Michelle Strout
+    Minor edits to make things work with OpenAnalysis rev 126.
+    - Changed some ExprHandles to CallHandles
+    - Outputing the results of ParamBindings, but don't have
+      ParamBindings regression tests set up yet.
