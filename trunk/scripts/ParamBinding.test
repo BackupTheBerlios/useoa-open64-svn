@@ -1,0 +1,29 @@
+# comment in file.test
+# Regression tests for Parameter Binding
+testname::ParamBindings
+inputdir::TestCases/ParamBindings
+outputdir::TestResults/ParamBindings
+driverexec::./test-open64 --oa-ParamBindings
+
+# list of tests
+#       input file,                 status
+test::  functions2.B,               07/04/2006 PLM           
+test::  functions6.B,               07/04/2006 PLM
+test::  functions3.B,               07/04/2006 PLM
+test::  interalias_proc_call1.B,    07/04/2006 PLM
+test::  nested_calls_1.B,           07/04/2006 PLM
+test::  divide.B,                   07/04/2006 PLM 
+test::  solve.B,                    07/04/2006 PLM
+test::  stats.B,                    07/04/2006 PLM
+test::  Matrix_bits.B,              07/04/2006 PLM
+test::  stat_selection.B,           07/04/2006 PLM
+test::  gussian_elimination.B,      07/04/2006 PLM 
+test::  rung_kutta.B,               07/04/2006 PLM 
+test::  GCD.B,                      07/04/2006 PLM
+test::  ETOX.B,                     07/04/2006 PLM
+test::  swap.B,                     07/04/2006 PLM
+test::  readin.B,                   07/04/2006 PLM
+test::  array.B,                    07/04/2006 PLM
+test::  area_circle.B,              07/04/2006 PLM 
+test::  subroutine.B,               07/04/2006 PLM
+

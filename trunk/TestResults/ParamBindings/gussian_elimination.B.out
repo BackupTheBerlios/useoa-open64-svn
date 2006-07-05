@@ -1,0 +1,47 @@
+ LOC 0 0 source files:	1	"/s/parsons/b/others/malusare/UseOA-Open64/TestCases/ParamBinding/gussian_elimination.f90"
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(gaussian_elimination_(&0:A:0:anon_ptr., &N:0:.predef_I4, &0:B:0:anon_ptr., &0:X:0:anon_ptr., &SINGULAR:0:.log.4))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(gaussian_elimination_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(0:A:0:anon_ptr.)	 => SymHandle(A)
+                            MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(0:B:0:anon_ptr.)	 => SymHandle(B)
+                            MemRefHandle(0:X:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(SINGULAR:0:.log.4)	 => SymHandle(SINGULAR)
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(gaussian_elimination_(&0:A:0:anon_ptr., &N:0:.predef_I4, &0:B:0:anon_ptr., &0:X:0:anon_ptr., &SINGULAR:0:.log.4))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(A)	 => MemRefHandle(0:A:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+                    SymHandle(B)	 => MemRefHandle(0:B:0:anon_ptr.)
+                    SymHandle(X)	 => MemRefHandle(0:X:0:anon_ptr.)
+                    SymHandle(SINGULAR)	 => MemRefHandle(SINGULAR:0:.log.4)
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(gaussian_elimination_)	 => [ SymHandle(A)    SymHandle(N)    SymHandle(B)    SymHandle(X)    SymHandle(SINGULAR) ] 
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(gaussian_elimination_(&0:A:0:anon_ptr., &N:0:.predef_I4, &0:B:0:anon_ptr., &0:X:0:anon_ptr., &SINGULAR:0:.log.4))	 => [ MemRefHandle(0:A:0:anon_ptr.)    MemRefHandle(N:0:.predef_I4)    MemRefHandle(0:B:0:anon_ptr.)    MemRefHandle(0:X:0:anon_ptr.)    MemRefHandle(SINGULAR:0:.log.4) ] 
+)

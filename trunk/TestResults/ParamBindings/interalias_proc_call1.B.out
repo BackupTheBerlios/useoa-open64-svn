@@ -1,0 +1,20 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(bar_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(T1:0:.predef_F8)	 => SymHandle(A)
+                            MemRefHandle(T1:0:.predef_F8)	 => SymHandle(B)
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(A)	 => MemRefHandle(T1:0:.predef_F8)
+                    SymHandle(B)	 => MemRefHandle(T1:0:.predef_F8)
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(head_)	 => [ SymHandle(X)    SymHandle(F) ] 
+            ProcHandle(bar_)	 => [ SymHandle(A)    SymHandle(B) ] 
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => [ MemRefHandle(T1:0:.predef_F8)    MemRefHandle(T1:0:.predef_F8) ] 
+)
