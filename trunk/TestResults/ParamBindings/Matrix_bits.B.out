@@ -1,0 +1,25 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(matrix_bits_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(0:ONE:0:anon_ptr.)	 => SymHandle(A)
+                            MemRefHandle(0:TWO:0:anon_ptr.)	 => SymHandle(B)
+                            MemRefHandle(0:THREE:0:anon_ptr.)	 => SymHandle(C)
+                            MemRefHandle(0:ONE_T:0:anon_ptr.)	 => SymHandle(A_T)
+                            MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(A)	 => MemRefHandle(0:ONE:0:anon_ptr.)
+                    SymHandle(B)	 => MemRefHandle(0:TWO:0:anon_ptr.)
+                    SymHandle(C)	 => MemRefHandle(0:THREE:0:anon_ptr.)
+                    SymHandle(A_T)	 => MemRefHandle(0:ONE_T:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(matrix_bits_)	 => [ SymHandle(A)    SymHandle(B)    SymHandle(C)    SymHandle(A_T)    SymHandle(N)    SymHandle(MAX) ] 
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => [ MemRefHandle(0:ONE:0:anon_ptr.)    MemRefHandle(0:TWO:0:anon_ptr.)    MemRefHandle(0:THREE:0:anon_ptr.)    MemRefHandle(0:ONE_T:0:anon_ptr.)    MemRefHandle(N:0:.predef_I4) ] 
+)
