@@ -7,12 +7,12 @@ driverexec::./test-open64 --oa-MemRefExpr
 
 # list of tests
 #       input file,                 status
-test::  arrays1.B,                  conservatively correct MMS 5/3/06 
-test::  arrays5.B,                  checked by MMS 4/24/06       
-test::  functions1.B,               checked by MMS 4/24/06
-test::  globalActive_2.B,           checked by MMS 4/24/06
-test::  head_tlm_driver_g.pre.B,    not correct on defs to fields MMS 5/3/06
-test::  interalias_proc_call1.B,    checked by MMS 4/24/06
-test::  interalias_proc_call2.B,    checked by MMS 4/24/06
-test::  interalias_proc_call3.B,    checked by MMS 4/24/06
+test::  arrays1.B,                  conservatively correct MMS 7/5/06
+test::  arrays5.B,                  checked by MMS 7/5/06
+test::  functions1.B,               checked by MMS 7/5/06
+test::  globalActive_2.B,           checked by MMS 7/5/06
+test::  head_tlm_driver_g.pre.B,    not correct on defs to fields MMS 7/5/06
+test::  interalias_proc_call1.B,    checked by MMS 7/5/06
+test::  interalias_proc_call2.B,    checked by MMS 7/5/06
+test::  interalias_proc_call3.B,    checked by MMS 7/5/06
 

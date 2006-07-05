@@ -317,7 +317,11 @@ FindMemRefExprInPU(std::ostream& os, PU_Info* pu)
     OA::StmtHandle stmt = sIt->current();
     
     std::cout << "============================================" << std::endl;
-    std::cout << "OA::StmtHandle: " << ir->toString(stmt) << std::endl;
+    std::cout << "OA::StmtHandle: ";
+    // do not combine the line before and after this comment, with
+    // some g++ compilers that can result in certain statements being
+    // printed out before the OA::StmtHandle label, who knows MMS
+    std::cout << ir->toString(stmt) << std::endl;
     //ir->dump(stmt, std::cout);
     //std::cout << "AliasStmtType: " 
 	//      << ir->toString(ir->getAliasStmtType(stmt)) << std::endl;

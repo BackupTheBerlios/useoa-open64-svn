@@ -1,13 +1,13 @@
 ============================================
- LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/cvs/dev/OpenAD/tools/openad/head_tlm_driver_g.pre.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/cvs/dev/OpenAD/tools/openad/head_tlm_driver_g.pre.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-OA::StmtHandle: 
+
 ============================================
-USE <1,21,active1_module_>
-OA::StmtHandle: 
+OA::StmtHandle: USE <1,21,active1_module_>
+
 ============================================
-PRAGMA 0 188 <1,27,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 188 <1,27,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
 ============================================
 OA::StmtHandle: OPENAD1_SYMBOL_5:0:.predef_F8 = SQRT(&0:X:0:anon_ptr.(2))
 	mre = 
@@ -542,20 +542,20 @@ OA::StmtHandle: return
 ============================================
 OA::StmtHandle: return
 ============================================
-PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
 ============================================
-PRAGMA 0 189 <2,2,G> 0 (0x0) # OPENAD_DEPENDENT
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 189 <2,2,G> 0 (0x0) # OPENAD_DEPENDENT
+
 ============================================
-PRAGMA 0 188 <1,27,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 188 <1,27,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
 ============================================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 ============================================
-USE <1,21,active1_module_>
-OA::StmtHandle: 
+OA::StmtHandle: USE <1,21,active1_module_>
+
 ============================================
 OA::StmtHandle: do_loop (I:0:.predef_I4<=2)
 	mre = 
@@ -728,8 +728,8 @@ NamedRef(
 )
 
 ============================================
-MLOAD 0 T<33,anon_ptr.,8>
-OA::StmtHandle: head_(&, &ACTIVE_Y:0:ACTIVE1)
+OA::StmtHandle: MLOAD 0 T<33,anon_ptr.,8>
+head_(&, &ACTIVE_Y:0:ACTIVE1)
 	mre = 
 NamedRef(
     mAddressOf: 0

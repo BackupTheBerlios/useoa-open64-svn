@@ -1,7 +1,7 @@
 ============================================
- LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/functions1.f90"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/functions1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-OA::StmtHandle: 
+
 ============================================
 OA::StmtHandle: if (N:0:.predef_I4==1)
 	mre = 
@@ -50,8 +50,8 @@ NamedRef(
 )
 
 ============================================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 ============================================
 OA::StmtHandle: N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))
 	mre = 

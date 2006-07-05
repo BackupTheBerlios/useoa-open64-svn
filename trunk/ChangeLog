@@ -21,3 +21,10 @@
     - Changed some ExprHandles to CallHandles
     - Outputing the results of ParamBindings, but don't have
       ParamBindings regression tests set up yet.
+
+7/5/06     UseOA-Open64 svn trunk r35    Michelle Strout
+    - small change in an std::cout statement in test-open.cpp that 
+      was causing some ordering differences in the output when 
+      compared accross different compilers.
+      This might be similar to the issue that Luis is seeing in the CFG
+      output where the CFG node id appears after certain statements.

@@ -1,7 +1,7 @@
 ============================================
- LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/interalias_proc_call1.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/interalias_proc_call1.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-OA::StmtHandle: 
+
 ============================================
 OA::StmtHandle: T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8
 	mre = 
@@ -121,8 +121,8 @@ NamedRef(
 ============================================
 OA::StmtHandle: return
 ============================================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-OA::StmtHandle: 
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 ============================================
 OA::StmtHandle: B:0:.predef_F8 = A:0:.predef_F8
 	mre = 
