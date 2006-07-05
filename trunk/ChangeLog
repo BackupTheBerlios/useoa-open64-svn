@@ -28,3 +28,16 @@
       compared accross different compilers.
       This might be similar to the issue that Luis is seeing in the CFG
       output where the CFG node id appears after certain statements.
+	
+7/5/06     UseOA-Open64 svn trunk r39    Priyadarshini Malusare
+	    Added regression tests for Parameter Bindings .
+	    - Files Include
+	         area_circle.B.out, functions2.B.out, gussian_elimination.B.out,
+                 readin.B.out, stat_selection.B.out, array.B.out, functions3.B.out,
+	         interalias_proc_call1.B.out, rung_kutta.B.out, subroutine.B.out,
+	         divide.B.out, functions6.B.out, Matrix_bits.B.out, solve.B.out,
+	         swap.B.out, ETOX.B.out, GCD.B.out, nested_calls_1.B.out, stats.B.out
+	    - Added ParamBindings.test, genParamBindings.script,
+	      regressParamBinding.script
+	    - modified test-open64.cpp that has driver for ParamBindings
+	
