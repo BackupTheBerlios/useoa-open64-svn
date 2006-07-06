@@ -1,0 +1,4 @@
+echo "Testing TestCases/ICFG/nested_calls_1.B         checked by MMS 6/9/06, TestResults/ICFG/nested_calls_1.B         checked by MMS 6/9/06.out example only"
+./test-open64 --oa-ICFG TestCases/ICFG/nested_calls_1.B         checked by MMS 6/9/06 > t
+diff t TestResults/ICFG/nested_calls_1.B         checked by MMS 6/9/06.out
+

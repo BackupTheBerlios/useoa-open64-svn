@@ -1,0 +1,2 @@
+echo "Generating TestResults/ICFG/nested_calls_1.B         checked by MMS 6/9/06.out"
+./test-open64 --oa-ICFG TestCases/ICFG/nested_calls_1.B         checked by MMS 6/9/06 > TestResults/ICFG/nested_calls_1.B         checked by MMS 6/9/06.out

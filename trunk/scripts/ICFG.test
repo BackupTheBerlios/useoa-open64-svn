@@ -1,0 +1,10 @@
+# comment in file.test
+# Regression tests for ICFG generation
+testname::ICFG
+inputdir::TestCases/ICFG
+outputdir::TestResults/ICFG
+driverexec::./test-open64 --oa-ICFG
+
+# list of tests
+#       input file,                 status
+test::  nested_calls_1.B         checked by MMS 6/9/06, example only

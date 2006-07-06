@@ -41,3 +41,14 @@
 	      regressParamBinding.script
 	    - modified test-open64.cpp that has driver for ParamBindings
 	
+7/6/06     UseOA-Open64 svn trunk r40    Barbara Kreaseck
+     - added the beginnings of regression tests for ICFG
+	  - not yet ready for prime time in regressAll.script
+          - in script/
+                - added ICFG.test, genICFG.script, regressICFG.script
+          - in TestCases/
+                - added ICFG/, ICFG/nested_calls_1.f, ICFG/nested_calls_1.B
+          - in TestResults/
+                - added ICFG/
+
+
