@@ -9,6 +9,9 @@ ParamBindings(
                             MemRefHandle(B:0:.predef_F4)	 => SymHandle(BB)
                             MemRefHandle(C:0:.predef_F4)	 => SymHandle(CC)
                             MemRefHandle(S:0:.predef_F4)	 => SymHandle(SS)
+
+
+
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
@@ -16,9 +19,13 @@ ParamBindings(
                     SymHandle(BB)	 => MemRefHandle(B:0:.predef_F4)
                     SymHandle(CC)	 => MemRefHandle(C:0:.predef_F4)
                     SymHandle(SS)	 => MemRefHandle(S:0:.predef_F4)
+
+
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(sub1_)	 => [ SymHandle(A)    SymHandle(B)    SymHandle(C) ] 
             ProcHandle(sum_sq_)	 => [ SymHandle(AA)    SymHandle(BB)    SymHandle(CC)    SymHandle(SS) ] 
+
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => [ MemRefHandle(A:0:.predef_F4)    MemRefHandle(B:0:.predef_F4)    MemRefHandle(C:0:.predef_F4)    MemRefHandle(S:0:.predef_F4) ] 
+
 )

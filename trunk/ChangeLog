@@ -52,3 +52,12 @@
                 - added ICFG/
 
 
+7/7/06     UseOA-Open64 svn trunk r41    Barbara Kreaseck
+     - updated UseOA-Open64 regression outputs to work with OpenAnalysis
+       trunk r136, which has changes to CallGraph, and output from CallGraph,
+       and some extra spaces in outputting a map in general.
+
+        ==> significant output changes in TestResults/CallGraph/*
+        ==> spacing changes in outputs in TestResults/AliasMapFIAlias/*
+        ==> spacing changes in outputs in TestResults/ParamBindings/*
+

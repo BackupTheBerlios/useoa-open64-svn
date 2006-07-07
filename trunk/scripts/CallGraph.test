@@ -7,12 +7,12 @@ driverexec::./test-open64 --oa-CallGraph
 
 # list of tests
 #       input file,                 status
-test::  activity_proc_call1.B,      checked by MMS 6/9/06
-test::  boxmodel-small.B,           checked by MMS 6/9/06
-test::  functions2.B,               checked by MMS 6/9/06
-test::  functions3.B,               checked by MMS 6/9/06
-test::  functions4.B,               checked by MMS 6/9/06
-test::  functions5.B,               checked by MMS 6/9/06
-test::  functions6.B,               checked by MMS 6/9/06
-test::  interalias_proc_call1.B,    checked by MMS 6/9/06
-test::  nested_calls_1.B,           checked by MMS 6/9/06
+test::  activity_proc_call1.B,      checked by MMS 6/9/06 - map check BK 7/7/06
+test::  boxmodel-small.B,           checked by MMS 6/9/06 - map check BK 7/7/06
+test::  functions2.B,               checked by MMS 6/9/06 - map check BK 7/7/06
+test::  functions3.B,               checked by MMS 6/9/06 - map check BK 7/7/06
+test::  functions4.B,               checked by MMS 6/9/06 - map check BK 7/7/06
+test::  functions5.B,               checked by MMS 6/9/06 - map check BK 7/7/06
+test::  functions6.B,               checked by MMS 6/9/06 - map check BK 7/7/06
+test::  interalias_proc_call1.B,    checked by MMS 6/9/06 - map check BK 7/7/06
+test::  nested_calls_1.B,           checked by MMS 6/9/06 - map check BK 7/7/06

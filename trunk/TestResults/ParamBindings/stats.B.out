@@ -8,6 +8,8 @@ ParamBindings(
                             MemRefHandle(0:X:0:anon_ptr.)	 => SymHandle(X)
                             MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
                             MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+
+
             CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
@@ -15,6 +17,8 @@ ParamBindings(
                             MemRefHandle(0:Y:0:anon_ptr.)	 => SymHandle(X)
                             MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
                             MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+
+
             CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
@@ -22,6 +26,8 @@ ParamBindings(
                             MemRefHandle(0:Z:0:anon_ptr.)	 => SymHandle(X)
                             MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
                             MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+
+
             CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
@@ -29,32 +35,42 @@ ParamBindings(
                             MemRefHandle(0:T:0:anon_ptr.)	 => SymHandle(X)
                             MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
                             MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+
+
+
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(stats_(&0:X:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
                     SymHandle(X)	 => MemRefHandle(0:X:0:anon_ptr.)
                     SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
                     SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+
             CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
                     SymHandle(X)	 => MemRefHandle(0:Y:0:anon_ptr.)
                     SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
                     SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+
             CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
                     SymHandle(X)	 => MemRefHandle(0:Z:0:anon_ptr.)
                     SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
                     SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+
             CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
                     SymHandle(X)	 => MemRefHandle(0:T:0:anon_ptr.)
                     SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
                     SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+
+
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(stats_)	 => [ SymHandle(X)    SymHandle(N)    SymHandle(MEAN)    SymHandle(STD_DEV) ] 
+
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(stats_(&0:X:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(0:X:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
             CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(0:Y:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
             CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(0:Z:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
             CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(0:T:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
+
 )

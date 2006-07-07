@@ -9,6 +9,9 @@ ParamBindings(
                             MemRefHandle(0:A:0:anon_ptr.)	 => SymHandle(X)
                             MemRefHandle(0:B:0:anon_ptr.)	 => SymHandle(Y)
                             MemRefHandle(NOS:0:.predef_I4)	 => SymHandle(N)
+
+
+
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => 
             second: SymHandle	 => MemRefHandle
@@ -16,8 +19,12 @@ ParamBindings(
                     SymHandle(X)	 => MemRefHandle(0:A:0:anon_ptr.)
                     SymHandle(Y)	 => MemRefHandle(0:B:0:anon_ptr.)
                     SymHandle(N)	 => MemRefHandle(NOS:0:.predef_I4)
+
+
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(readin_)	 => [ SymHandle(NAME)    SymHandle(X)    SymHandle(Y)    SymHandle(N) ] 
+
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(FILENAME:0:anon_ptr.(0))    MemRefHandle(0:A:0:anon_ptr.)    MemRefHandle(0:B:0:anon_ptr.)    MemRefHandle(NOS:0:.predef_I4) ] 
+
 )

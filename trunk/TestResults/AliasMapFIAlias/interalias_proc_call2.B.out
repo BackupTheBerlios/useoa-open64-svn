@@ -50,6 +50,7 @@ InterAliasMap(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
+
         mIdToSetStatusMap: int	 => AliasResultType
                 0	 => 1
                 1	 => 2
@@ -58,11 +59,13 @@ InterAliasMap(
                 4	 => 2
                 5	 => 2
                 6	 => 2
+
         mIdToMemRefSetMap: int	 => MemRefSet
                 0	 => [ MemRefHandle(X:0:.predef_F8)    MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8) ] 
                 4	 => [ MemRefHandle(T1:0:.predef_F8)    MemRefHandle(T1:0:.predef_F8) ] 
                 5	 => [ MemRefHandle(T2:0:.predef_F8) ] 
                 6	 => [ MemRefHandle(T3:0:.predef_F8) ] 
+
         mIdToMRESetMap: int	 => MemRefExprSet
                 1	 => [ 
                     NamedRef(
@@ -106,6 +109,7 @@ InterAliasMap(
                         mMemRefType: DEF
                         mSymHandle: SymHandle(T3)
                     ) ] 
+
     )
     AliasMap(
         mProcHandle: ProcHandle(bar_)
@@ -170,6 +174,7 @@ InterAliasMap(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
+
         mIdToSetStatusMap: int	 => AliasResultType
                 0	 => 1
                 1	 => 2
@@ -177,9 +182,11 @@ InterAliasMap(
                 3	 => 2
                 4	 => 2
                 5	 => 2
+
         mIdToMemRefSetMap: int	 => MemRefSet
                 2	 => [ MemRefHandle(A:0:.predef_F8) ] 
                 3	 => [ MemRefHandle(B:0:.predef_F8) ] 
+
         mIdToMRESetMap: int	 => MemRefExprSet
                 1	 => [ 
                     NamedRef(
@@ -230,5 +237,6 @@ InterAliasMap(
                         mMemRefType: USE
                         mSymHandle: SymHandle(B)
                     ) ] 
+
     )
 )

@@ -6,12 +6,19 @@ ParamBindings(
                     ProcHandle(factorial_)	 => 
                     second: MemRefHandle	 => SymHandle
                             MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+
+
+
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(factorial_(&N:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
                     SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+
+
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(factorial_)	 => [ SymHandle(N) ] 
+
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(factorial_(&N:0:.predef_I4))	 => [ MemRefHandle(N:0:.predef_I4) ] 
+
 )
