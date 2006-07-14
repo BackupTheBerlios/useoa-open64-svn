@@ -32,7 +32,7 @@
 7/5/06     UseOA-Open64 svn trunk r39    Priyadarshini Malusare
 	    Added regression tests for Parameter Bindings .
 	    - Files Include
-	         area_circle.B.out, functions2.B.out, gussian_elimination.B.out,
+                 area_circle.B.out, functions2.B.out, gussian_elimination.B.out,
                  readin.B.out, stat_selection.B.out, array.B.out, functions3.B.out,
 	         interalias_proc_call1.B.out, rung_kutta.B.out, subroutine.B.out,
 	         divide.B.out, functions6.B.out, Matrix_bits.B.out, solve.B.out,
@@ -60,4 +60,9 @@
         ==> significant output changes in TestResults/CallGraph/*
         ==> spacing changes in outputs in TestResults/AliasMapFIAlias/*
         ==> spacing changes in outputs in TestResults/ParamBindings/*
+
+7/7/06     UseOA-Open64 svn trunk r42    Barbara Kreaseck
+    - added regression tests for ICFG, added to regressAll
+    - modified CFG and ReachDef output in test-open64.C
+    - works with OpenAnalysis r141
 

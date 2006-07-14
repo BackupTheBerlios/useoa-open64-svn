@@ -1,4 +1,4 @@
-echo "Testing TestCases/ReachDefs/interalias_proc_call3_rd.B, TestResults/ReachDefsCFG/interalias_proc_call3_rd.B.out Checked By LMR 6/28/2006"
+echo "Testing TestCases/ReachDefs/interalias_proc_call3_rd.B, TestResults/ReachDefsCFG/interalias_proc_call3_rd.B.out Checked By BK  7/13/2006"
 ./test-open64 --oa-CFG TestCases/ReachDefs/interalias_proc_call3_rd.B > t
 diff t TestResults/ReachDefsCFG/interalias_proc_call3_rd.B.out
 

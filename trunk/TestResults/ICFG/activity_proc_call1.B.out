@@ -1,0 +1,129 @@
+
+graph ICFG:
+
+subgraph cluster_head__0 {
+    label="head__0"
+    Node 1: 
+        ==  ICFG ENTRY_NODE 1 == (entry)
+
+
+    Node 2: 
+         LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/CallGraph/activity_proc_call1.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 2 ==
+
+T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8
+
+
+    Node 3: 
+        ==  ICFG CALL_NODE 3 ==
+bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)
+
+
+    Node 4: 
+        ==  ICFG RETURN_NODE 4 ==
+
+
+    Node 7: 
+        ==  ICFG CFLOW_NODE 7 ==
+T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000
+F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8
+return
+
+
+    Node 8: 
+        ==  ICFG EXIT_NODE 8 == (exit)
+
+
+    Edge: 2 => 3
+        
+
+    Edge: 3 => 4
+        
+
+    Edge: 4 => 7
+        
+
+    Edge: 1 => 2
+        
+
+    Edge: 7 => 8
+        
+
+}
+
+subgraph cluster_bar__1 {
+    label="bar__1"
+    Node 5: 
+        ==  ICFG ENTRY_NODE 5 ==
+
+
+    Node 6: 
+        ==  ICFG EXIT_NODE 6 ==
+
+
+    Node 9: 
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 9 ==
+
+B:0:.predef_F8 = A:0:.predef_F8
+return
+
+
+    Node 10: 
+        ==  ICFG CFLOW_NODE 10 == (entry)
+return
+
+
+    Edge: 9 => 6
+        
+
+    Edge: 10 => 6
+        
+
+    Edge: 5 => 9
+        
+
+}
+
+    Edge: 3 => 5
+        CALL_(bar_(&T1:0:.predef_F8, &T2:0:.predef_F8))
+
+    Edge: 6 => 4
+        RETURN_(bar_(&T1:0:.predef_F8, &T2:0:.predef_F8))
+
+
+digraph ICFG {
+    node [shape=rectangle];
+subgraph cluster_head__0 {
+    label="head__0"
+    1 [ label="==  ICFG ENTRY_NODE 1 == (entry)\n" ];
+    2 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 2 ==\n\nT1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8\n" ];
+    3 [ label="==  ICFG CALL_NODE 3 ==\nbar_(&T1:0:.predef_F8, &T2:0:.predef_F8)\n" ];
+    4 [ label="==  ICFG RETURN_NODE 4 ==\n" ];
+    7 [ label="==  ICFG CFLOW_NODE 7 ==\nT3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000\nF:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8\nreturn\n" ];
+    8 [ label="==  ICFG EXIT_NODE 8 == (exit)\n" ];
+    2 -> 3 [ label="" ];
+    3 -> 4 [ label="" ];
+    4 -> 7 [ label="" ];
+    1 -> 2 [ label="" ];
+    7 -> 8 [ label="" ];
+}
+
+subgraph cluster_bar__1 {
+    label="bar__1"
+    5 [ label="==  ICFG ENTRY_NODE 5 ==\n" ];
+    6 [ label="==  ICFG EXIT_NODE 6 ==\n" ];
+    9 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 9 ==\n\nB:0:.predef_F8 = A:0:.predef_F8\nreturn\n" ];
+    10 [ label="==  ICFG CFLOW_NODE 10 == (entry)\nreturn\n" ];
+    9 -> 6 [ label="" ];
+    10 -> 6 [ label="" ];
+    5 -> 9 [ label="" ];
+}
+
+    3 -> 5 [ label="CALL_(bar_(&T1:0:.predef_F8, &T2:0:.predef_F8))",style=dashed,color=red ];
+    6 -> 4 [ label="RETURN_(bar_(&T1:0:.predef_F8, &T2:0:.predef_F8))",style=dashed,color=blue ];}
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END

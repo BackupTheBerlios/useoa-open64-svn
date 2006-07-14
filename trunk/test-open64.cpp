@@ -516,12 +516,15 @@ TestIR_OACFG_ForEachWNPU(std::ostream& os, PU_Info* pu,
       = cfgmanstd->performAnalysis((OA::irhandle_t)pu);
   
   // text output
+  OA::OA_ptr<OA::OutputBuilder> outBuildText;
+  outBuildText = new OA::OutputBuilderText;
+  cfg->configOutput(outBuildText);
   cfg->output(*irInterface);
   // dot output
   std::cout << "--------Dot Graph Output--------" << std::endl;
-  OA::OA_ptr<OA::OutputBuilder> outBuild;
-  outBuild = new OA::OutputBuilderDOT;
-  cfg->configOutput(outBuild);
+  OA::OA_ptr<OA::OutputBuilder> outBuildDot;
+  outBuildDot = new OA::OutputBuilderDOT;
+  cfg->configOutput(outBuildDot);
   cfg->output(*irInterface);
 
   //std::cout << "SCC sets" << std::endl;
@@ -826,21 +829,37 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
-    cgraph->dump(std::cout, irInterface);
+    //cgraph->dump(std::cout, irInterface);
 
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
-    icfg = icfgman->performAnalysis(procIter,eachCFG);
+    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
-    std::cout << "%%%%%%%%%%% ICFG constructed from input program" << std::endl;
-    icfg->dump(std::cout, irInterface);
-    icfg->dumpdot(std::cout, irInterface);
+    //std::cout << "%%%%%%%% ICFG constructed from input program" << std::endl;
+    //icfg->dump(std::cout, irInterface);
+    //icfg->dumpdot(std::cout, irInterface);
     
+    // text output
+    icfg->output(*irInterface);
+    // dot output
+    OA::OA_ptr<OA::OutputBuilder> outBuild;
+    outBuild = new OA::OutputBuilderDOT;
+    icfg->configOutput(outBuild);
+    icfg->output(*irInterface);
+
+
     // debugging by BK
     {
-      std::cout << "%%%%%%%%%%% second ICFG constructed from input program"
-                << std::endl;
+      //icfg->output(*irInterface);
+      
+      //{
+      //  std::cout << "%%%%%%%%%%% second ICFG constructed from input program"
+      //            << std::endl;
+      //}
+
+      // dot files are saved in same path as application files
+      // this should not interfere with regression testing
       std::string icfgDotFileNm = dotFileNm;
       icfgDotFileNm.append(".ICFG.dot");
       std::ofstream dotFile;
@@ -852,6 +871,7 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
         cout << "\n\n could not open '" << icfgDotFileNm << "'\n\n";
       }
       dotFile.close();
+    
     }
 
     return 0;

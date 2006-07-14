@@ -1,4 +1,28 @@
-echo "Testing TestCases/ICFG/nested_calls_1.B         checked by MMS 6/9/06, TestResults/ICFG/nested_calls_1.B         checked by MMS 6/9/06.out example only"
-./test-open64 --oa-ICFG TestCases/ICFG/nested_calls_1.B         checked by MMS 6/9/06 > t
-diff t TestResults/ICFG/nested_calls_1.B         checked by MMS 6/9/06.out
+echo "Testing TestCases/ICFG/activity_proc_call1.B, TestResults/ICFG/activity_proc_call1.B.out checked by BK  7/13/06"
+./test-open64 --oa-ICFG TestCases/ICFG/activity_proc_call1.B > t
+diff t TestResults/ICFG/activity_proc_call1.B.out
+
+echo "Testing TestCases/ICFG/functions2.B, TestResults/ICFG/functions2.B.out checked by BK  7/13/06"
+./test-open64 --oa-ICFG TestCases/ICFG/functions2.B > t
+diff t TestResults/ICFG/functions2.B.out
+
+echo "Testing TestCases/ICFG/functions3.B, TestResults/ICFG/functions3.B.out checked by BK  7/13/06 (intrinsics)"
+./test-open64 --oa-ICFG TestCases/ICFG/functions3.B > t
+diff t TestResults/ICFG/functions3.B.out
+
+echo "Testing TestCases/ICFG/functions4.B, TestResults/ICFG/functions4.B.out checked by BK  7/13/06 (intrinsics)"
+./test-open64 --oa-ICFG TestCases/ICFG/functions4.B > t
+diff t TestResults/ICFG/functions4.B.out
+
+echo "Testing TestCases/ICFG/functions5.B, TestResults/ICFG/functions5.B.out checked by BK  7/13/06 (intrinsics)"
+./test-open64 --oa-ICFG TestCases/ICFG/functions5.B > t
+diff t TestResults/ICFG/functions5.B.out
+
+echo "Testing TestCases/ICFG/functions6.B, TestResults/ICFG/functions6.B.out checked by BK  7/13/06 (intrinsics)"
+./test-open64 --oa-ICFG TestCases/ICFG/functions6.B > t
+diff t TestResults/ICFG/functions6.B.out
+
+echo "Testing TestCases/ICFG/nested_calls_1.B, TestResults/ICFG/nested_calls_1.B.out checked by BK  7/13/06 (intrinsics)"
+./test-open64 --oa-ICFG TestCases/ICFG/nested_calls_1.B > t
+diff t TestResults/ICFG/nested_calls_1.B.out
 

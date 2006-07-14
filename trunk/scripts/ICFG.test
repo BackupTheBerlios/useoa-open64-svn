@@ -7,4 +7,12 @@ driverexec::./test-open64 --oa-ICFG
 
 # list of tests
 #       input file,                 status
-test::  nested_calls_1.B         checked by MMS 6/9/06, example only
+test::  activity_proc_call1.B,    checked by BK  7/13/06
+#test::  boxmodel-small.B,         superficially checked by BK  7/13/06
+test::  functions2.B,             checked by BK  7/13/06
+test::  functions3.B,             checked by BK  7/13/06 (intrinsics)
+test::  functions4.B,             checked by BK  7/13/06 (intrinsics)
+test::  functions5.B,             checked by BK  7/13/06 (intrinsics)
+test::  functions6.B,             checked by BK  7/13/06 (intrinsics)
+#test::  interalias_proc_call1.B,  checked by BK 7/13/06
+test::  nested_calls_1.B,         checked by BK  7/13/06 (intrinsics)
