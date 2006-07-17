@@ -69,6 +69,7 @@
 #include <OpenAnalysis/ICFG/ManagerICFGStandard.hpp>
 //#include <OpenAnalysis/Activity/ManagerICFGVary.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
+#include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
 
 #include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
@@ -113,6 +114,10 @@ static int
 TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
               OA::OA_ptr<Open64IRInterface> irInterface,
               std::string& dotFileNm);
+
+static int
+TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
+                 OA::OA_ptr<Open64IRInterface> irInterface);
 
 static int
 TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
@@ -242,6 +247,9 @@ main(int argc, char* argv[])
       break;
     case 28: // AliasMapXAIFFIAlias
       TestIR_OAAliasMapXAIFFIAlias(std::cout, pu_forest, irInterface);
+      break;
+    case 29: // ICFGDep
+      TestIR_OAICFGDep(std::cout, pu_forest, irInterface);
       break;
     case 1: // CFG
     //case 3: // Alias
@@ -731,80 +739,6 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFGStandard> icfg;
     icfg = new OA::ICFG::ICFGStandard();
 
-/*
-    //////// create simple example for testing
-    OA::OA_ptr<OA::CFG::CFGStandard::Node> cfgNode;
-    cfgNode = new OA::CFG::CFGStandard::Node;
-
-    // nodes
-    OA::OA_ptr<OA::ICFG::ICFGStandard::Node> entNode, callNode,
-        retNode, exNode, ent2Node, bod2Node, ex2Node;
-    entNode = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(1),
-                                               OA::ICFG::CFLOW_NODE, cfgNode);
-    callNode = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(1),
-                                               OA::ICFG::CALL_NODE, cfgNode);
-    retNode = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(1),
-                                               OA::ICFG::RETURN_NODE, cfgNode);
-    exNode = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(1),
-                                               OA::ICFG::CFLOW_NODE, cfgNode);
-    ent2Node = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(2),
-                                               OA::ICFG::CFLOW_NODE, cfgNode);
-    bod2Node = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(2),
-                                               OA::ICFG::CFLOW_NODE, cfgNode);
-    ex2Node = new OA::ICFG::ICFGStandard::Node(icfg, OA::ProcHandle(2),
-                                               OA::ICFG::CFLOW_NODE, cfgNode);
-
-    // adding them all to icfg
-    icfg->addNode(entNode);
-    icfg->addNode(exNode);
-    icfg->addNode(callNode);
-    icfg->addNode(retNode);
-    icfg->addNode(ent2Node);
-    icfg->addNode(bod2Node);
-    icfg->addNode(ex2Node);
-
-    // edges
-    OA::OA_ptr<OA::ICFG::ICFGStandard::Edge> icfgEdge;
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, entNode, callNode,
-            OA::ICFG::CFLOW_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, callNode, retNode,
-            OA::ICFG::CFLOW_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, retNode, exNode,
-            OA::ICFG::CFLOW_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, callNode, ent2Node,
-            OA::ICFG::CALL_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, ent2Node, bod2Node,
-            OA::ICFG::CFLOW_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, bod2Node, ex2Node,
-            OA::ICFG::CFLOW_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    icfgEdge = new OA::ICFG::ICFGStandard::Edge(icfg, ex2Node, retNode,
-            OA::ICFG::RETURN_EDGE);
-    icfg->addEdge(icfgEdge);
-
-    // output result
-    icfg->dumpdot(std::cout,irInterface);
-
-    // ReverPostDFS iterator
-    std::cout << "ReversePstDFSIterator order" << std::endl;
-    OA::OA_ptr<OA::ICFG::ICFGStandard::ReversePostDFSIterator> revPostIter;
-    revPostIter = icfg->getReversePostDFSIterator(OA::DGraph::DEdgeOrg);
-    for ( ; revPostIter->isValid(); (*revPostIter)++ ) {
-        OA::OA_ptr<OA::ICFG::ICFGStandard::Node> node = revPostIter->current();
-        node->dumpdot(*icfg,std::cout,irInterface);
-    }
-*/
     //===========================================================
     // Have the manager create one from the CFGs
     
@@ -878,6 +812,62 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
 }
 
 static int
+TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+  Diag_Set_Phase("WHIRL tester: TestIR_OAICFGDep");
+
+    // eachCFG 
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerStandard> cfgman;
+    cfgman = new OA::CFG::ManagerStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+    
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //FIAlias
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+    OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+    interAlias = fialiasman->performAnalysis(procIter);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+      cgraphman->performAnalysis(procIter, interAlias);
+
+    //cgraph->dump(std::cout, irInterface);
+
+    //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+    // ICFG
+    OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
+    icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
+    OA::OA_ptr<OA::ICFG::ICFGStandard> icfg;
+    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
+
+    //ICFGDep
+    OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
+    icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
+    OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
+    icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
+
+    // text output
+    //icfgDep->output(*irInterface);
+
+    return 0;
+}
+
+
+
+static int
 TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
@@ -897,6 +887,17 @@ TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
  
   return 0;
 }
+
+/*
+static int
+TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+  Diag_Set_Phase("WHIRL tester: TestIR_OAICFGActivity");
+
+}
+*/
 
 static int
 TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,

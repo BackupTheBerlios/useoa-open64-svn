@@ -61,8 +61,17 @@
         ==> spacing changes in outputs in TestResults/AliasMapFIAlias/*
         ==> spacing changes in outputs in TestResults/ParamBindings/*
 
-7/7/06     UseOA-Open64 svn trunk r42    Barbara Kreaseck
+7/14/06     UseOA-Open64 svn trunk r42    Barbara Kreaseck
     - added regression tests for ICFG, added to regressAll
     - modified CFG and ReachDef output in test-open64.C
     - works with OpenAnalysis r141
+
+7/14/06     UseOA-Open64 svn trunk r42    Barbara Kreaseck
+    - added regression tests for ICFG, added to regressAll
+    - modified CFG and ReachDef output in test-open64.C
+    - works with OpenAnalysis r141
+
+7/17/06     UseOA-Open64 svn trunk r43    Barbara Kreaseck
+    - re-gen'd ICFG regression output to work with OpenAnalysis trunk r147
+    - passes regressAll with OpenAnalysis r147 compiled on Okapi with gcc-3.2
 
