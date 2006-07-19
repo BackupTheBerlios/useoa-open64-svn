@@ -1,0 +1,15 @@
+# Regression tests for generation of AliasMapXAIF, it uses
+# FIAliasAliasMap in test-open64 as input but could take
+# any InterAliasInterface results
+testname::AliasMapXAIF
+inputdir::TestCases/Alias
+outputdir::TestResults/AliasMapXAIF
+driverexec::./test-open64 --oa-AliasMapXAIFFIAlias
+
+# list of tests
+#       input file,                 status
+test::  interalias_proc_call1.B,    
+test::  interalias_proc_call2.B,    
+test::  interalias_proc_call3.B,    
+test::  arrays5.B,    
+

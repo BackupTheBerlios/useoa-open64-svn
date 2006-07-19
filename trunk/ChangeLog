@@ -75,3 +75,7 @@
     - re-gen'd ICFG regression output to work with OpenAnalysis trunk r147
     - passes regressAll with OpenAnalysis r147 compiled on Okapi with gcc-3.2
 
+7/19/06     UseOA-Open64 svn trunk r44    Michelle Strout
+    - added stuff for regression testing AliasMapXAIF, but it isn't quite
+      working yet.  There is something wrong with InvisibleLocs.
+    - regressAll works with OpenAnalysis r153

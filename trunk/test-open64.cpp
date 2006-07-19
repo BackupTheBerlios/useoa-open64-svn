@@ -682,34 +682,29 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAInterSideEffect");
 
-  /*
-  // iterate over all functions and call kludge
-  Open64IRProcIterator procIt(pu_forest);  
-  
-  // call graph
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
   OA::OA_ptr<Open64IRProcIterator> procIter;
   procIter = new Open64IRProcIterator(pu_forest);
-  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
-      cgraphman->performAnalysis(procIter);
 
-  cgraph->dump(std::cout, irInterface);
-
-  // ParamBindings
-  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> parambindman;
-  parambindman = new OA::DataFlow::ManagerParamBindings(irInterface);
-  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind 
-      = parambindman->performAnalysis(cgraph);
-
-  parambind->dump(std::cout,irInterface);
-
-  // Alias 
-  OA::OA_ptr<OA::Alias::ManagerInsNoPtrInterAliasMap> interaliasmapman;
-  interaliasmapman = new OA::Alias::ManagerInsNoPtrInterAliasMap(irInterface);
+  //FIAlias
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
   OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
-  interAlias = interaliasmapman->performAnalysis(cgraph,parambind);
-  interAlias->dump(std::cout,irInterface);
+  interAlias = fialiasman->performAnalysis(procIter);
+
+  // CallGraph
+  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+      cgraphman->performAnalysis(procIter, interAlias);
+
+  //cgraph->dump(std::cout, irInterface);
+
+  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+  pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+  parambind = pbman->performAnalysis(cgraph);
+  parambind->output(*irInterface);
+
 
   // Intra Side-Effect
   OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
@@ -724,7 +719,7 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
                                         interAlias, sideeffectman);
 
   interSE->dump(std::cout, irInterface);
-*/
+
   return 0;
 }
 
@@ -915,17 +910,16 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
   fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
   OA::OA_ptr<OA::Alias::InterAliasInterface> interAlias
       = fialiasman->performAnalysis(procIter);
-  procIter->reset();
-  for(; procIter->isValid(); ++(*procIter)) {
+  for(procIter->reset(); procIter->isValid(); ++(*procIter)) {
     OA::ProcHandle procHandle = procIter->current();
-    OA::OA_ptr<OA::Alias::AliasMap> aliasMap;
-    //FIXME    = interAlias->getAliasMapResults(procHandle);
+    OA::OA_ptr<OA::Alias::Interface> alias
+        = interAlias->getAliasResults(procHandle);
 
     // XAIF AliasMap
     OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
     aliasmapxaifman = new OA::XAIF::ManagerAliasMapXAIF(irInterface);
     OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF = 
-      aliasmapxaifman->performAnalysis(procHandle,aliasMap);
+      aliasmapxaifman->performAnalysis(procHandle,alias);
 
     aliasMapXAIF->output(*irInterface);
   }
