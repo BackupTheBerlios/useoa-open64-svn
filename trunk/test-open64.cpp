@@ -855,7 +855,25 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
     icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
 
     // text output
-    //icfgDep->output(*irInterface);
+    OA::OA_ptr<OA::OutputBuilder> outBuild;
+
+    /*
+    outBuild = new OA::OutputBuilderText;
+    icfg->configOutput(outBuild);
+    icfg->output(*irInterface);
+
+    outBuild = new OA::OutputBuilderDOT;
+    icfg->configOutput(outBuild);
+    icfg->output(*irInterface);
+    
+    outBuild = new OA::OutputBuilderText;
+    icfgDep->configOutput(outBuild);
+    */
+
+    icfgDep->output(*irInterface);
+
+    // dump output
+    //icfgDep->dump(std::cout,irInterface);
 
     return 0;
 }
