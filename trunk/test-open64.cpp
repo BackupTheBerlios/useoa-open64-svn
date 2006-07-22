@@ -677,7 +677,7 @@ TestIR_OAInterDep(std::ostream& os, PU_Info* pu_forest,
 
 
 static int
-TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
+TestIR_OAInterSideEffec(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAInterSideEffect");
@@ -718,7 +718,8 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
   interSE = interSEman->performAnalysis(cgraph, parambind,
                                         interAlias, sideeffectman);
 
-  interSE->dump(std::cout, irInterface);
+  //interSE->dump(std::cout, irInterface);
+  interSE->output(*irInterface);
 
   return 0;
 }
@@ -1568,7 +1569,6 @@ TestIR_OASideEffect_ForEachWNPU(std::ostream& os, PU_Info* pu,
       sideman->performAnalysis((OA::irhandle_t)pu,alias,interSideEffect);
 
   sideEffect->dump(std::cout, irInterface);
-
   return 0;
 }
 

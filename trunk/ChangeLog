@@ -78,3 +78,14 @@
 7/20/06     UseOA-Open64 svn trunk r45    Barbara Kreaseck
     - added regression tests for ICFGDep, added to regressAll
     - regressAll works with OpenAnalysis r160 on Okapi with gcc-3.2
+
+7/22/06     UseOA-Open64 svn trunk r46    Luis Ramos
+    - added test cases/results for sideeffect analysis, files include:
+      -test.f90, swap.f90, stringcmp.f90
+    - added regression tests for SideEffect, added to regressAll
+    - removed swap.B and stringcmp.B from regressSideEffect due to
+      SideEffect not working with Arrays
+    - modified test-open64.cpp so that InterSideEffect option called
+      its routine and output routine 
+    - regressAll works with OpenAnalysis r160 on Okapi with gcc-3.2
+

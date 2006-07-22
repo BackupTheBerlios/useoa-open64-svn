@@ -1,0 +1,2 @@
+echo "Generating TestResults/SideEffect/test.B.out"
+./test-open64 --oa-InterSideEffect TestCases/SideEffect/test.B > TestResults/SideEffect/test.B.out
