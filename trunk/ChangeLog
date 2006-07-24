@@ -89,17 +89,20 @@
       its routine and output routine 
     - regressAll works with OpenAnalysis r160 on Okapi with gcc-3.2
 
-7/23/06     UseOA-Rose svn trunk r47   Priyadarshini Malusare
+7/23/06     UseOA-Open64 svn trunk r47   Priyadarshini Malusare
       - Added TestCases/ReachDefsTests/reachdef_if1.B, 
         TestCases/ReachDefsTests/reachdef_if2.B, TestCases/ReachDefsTests/reachdef_loopif1.B
       - added ReachDefs to regressAll 
 	  - passes regressAll with OpenAnalysis trunk r161 compiled on Okapi with gcc-3.2 
 
-7/24/06     UseOA-Rose svn trunk r48   Priyadarshini Malusare
+7/24/06     UseOA-Open64 svn trunk r48   Priyadarshini Malusare
       - Added TestCases/ReachDefsTests/reachdef_if1.B, TestCases/ReachDefsTests/reachdef_if2.B,
    	    TestCases/ReachDefsTests/reachdef_loopif1.B
       - added ReachDefs to regressAll
       - passes regressAll with OpenAnalysis trunk r161 compiled on Okapi with gcc-3.2
 
-7/24/06     UseOA-Rose svn trunk r48   Priyadarshini Malusare
+7/24/06     UseOA-Open64 svn trunk r49   Priyadarshini Malusare
 	  - Modified test-open64.cpp, there was typo in the SideEffect test. 					  
+
+07/24/06    UseOA-Open64 svn trunk r50 Priyadarshini Malusare
+      - Modified ChangeLog
