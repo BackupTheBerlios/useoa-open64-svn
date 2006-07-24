@@ -440,22 +440,22 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
   //cgraph->dump(std::cout, irInterface);
 
   // ParamBindings
-//  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> parambindman;
-//  parambindman = new OA::DataFlow::ManagerParamBindings(irInterface);
-//  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind 
-//      = parambindman->performAnalysis(cgraph);
+  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> parambindman;
+  parambindman = new OA::DataFlow::ManagerParamBindings(irInterface);
+  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind 
+      = parambindman->performAnalysis(cgraph);
 
   // Intra Side-Effect
-  //OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
-  //sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
+  sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
 
   // InterSideEffect
-  //OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
-  //interSEman = new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+  OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
+  interSEman = new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
 
-  //OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
-  //interSE = interSEman->performAnalysis(cgraph, parambind,
-  //                                      interAlias, sideeffectman);
+  OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
+  interSE = interSEman->performAnalysis(cgraph, parambind,
+                                        interAlias, sideeffectman);
 
   //======================================== loop over procedures
   Open64IRProcIterator procIt(pu_forest);
@@ -476,7 +476,7 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
       //  TestIR_OAAliasMap_ForEachWNPU(os, pu, irInterface);
       //  break;
       case 6:
-        //TestIR_OAReachDefs(os, pu, irInterface, interAlias, interSE);
+        TestIR_OAReachDefs(os, pu, irInterface, interAlias, interSE);
         break;
       case 7:
         //TestIR_OAUDDUChains(os, pu, irInterface, interSE);
@@ -1389,30 +1389,26 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAReachDefs");
 
-  // CFG
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu);
+
+//    FIAlias
+  OA::OA_ptr<OA::Alias::Interface> alias;
+  alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
+   
+     // CFG
   OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
   cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
   OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
-
-  // Alias analysis
-//  OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
-//  aliasmapman = new OA::Alias::ManagerAliasMapBasic(irInterface);
-//  OA::OA_ptr<OA::Alias::Interface> alias = 
-//      aliasmapman->performAnalysis((OA::irhandle_t)pu);
-
-  // get alias and side effect results for this procedure
-  OA::OA_ptr<OA::Alias::Interface> alias 
-      = interAlias->getAliasResults((OA::irhandle_t)pu);
-  OA::OA_ptr<OA::SideEffect::Interface> se;
-  //    = interSideEffect->getSideEffectResults((OA::irhandle_t)pu);
-
+    
+     
   // then can do ReachDefs
   OA::OA_ptr<OA::ReachDefs::ManagerStandard> rdman;
   rdman = new OA::ReachDefs::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds; 
-      //FIXME = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,se);
-
-  rds->output(*irInterface);
+  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
+  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+  rds->output(*irInterface);          
+    
   return 0;
 }
 
