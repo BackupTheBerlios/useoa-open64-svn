@@ -677,7 +677,7 @@ TestIR_OAInterDep(std::ostream& os, PU_Info* pu_forest,
 
 
 static int
-TestIR_OAInterSideEffec(std::ostream& os, PU_Info* pu_forest,
+TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAInterSideEffect");
