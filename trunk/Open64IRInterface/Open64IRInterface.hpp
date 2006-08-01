@@ -928,7 +928,6 @@ public:
   // the Open64IRProcIterator
   static void initContextState(PU_Info* pu_forest);
 
-private:
   //! add a new IRHandle to the given procedure after context has
   //! already been initialized with initProcContext
   static void setContext(OA::IRHandle h, OA::ProcHandle proc)

@@ -25,11 +25,11 @@
 
 //*************************** User Include Files ****************************
 
-#include "SymTab.h"
+#include "Open64IRInterface/SymTab.h"
 
-#include "stab_attr.h"
-#include "wn_attr.h"
-#include "diagnostics.h"
+#include "Open64IRInterface/stab_attr.h"
+#include "Open64IRInterface/wn_attr.h"
+#include "Open64IRInterface/diagnostics.h"
 
 //************************** Forward Declarations ***************************
 

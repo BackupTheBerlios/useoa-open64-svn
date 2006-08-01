@@ -23,7 +23,7 @@
 
 //*************************** User Include Files ****************************
 
-#include "WhirlGlobalStateUtils.h"
+#include "Open64IRInterface/WhirlGlobalStateUtils.h"
 
 //************************** Forward Declarations ***************************
 

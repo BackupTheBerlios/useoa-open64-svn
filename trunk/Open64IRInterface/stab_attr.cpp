@@ -1,76 +1,11 @@
 // -*-Mode: C++;-*-
-// $Header: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/Open64IRInterface/stab_attr.cpp,v 1.3 2006/03/16 03:48:55 mstrout Exp $
-
-// * BeginCopyright *********************************************************
-/*
-  Copyright (C) 2000, 2001 Silicon Graphics, Inc.  All Rights Reserved.
-
-  This program is free software; you can redistribute it and/or modify it
-  under the terms of version 2 of the GNU General Public License as
-  published by the Free Software Foundation.
-
-  This program is distributed in the hope that it would be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
-
-  Further, this software is distributed without any warranty that it is
-  free of the rightful claim of any third person regarding infringement 
-  or the like.  Any license provided herein, whether implied or 
-  otherwise, applies only to this software file.  Patent licenses, if 
-  any, provided herein do not apply to combinations of this program with 
-  other software, or any other product whatsoever.  
-
-  You should have received a copy of the GNU General Public License along
-  with this program; if not, write the Free Software Foundation, Inc., 59
-  Temple Place - Suite 330, Boston MA 02111-1307, USA.
-
-  Contact information:  Silicon Graphics, Inc., 1600 Amphitheatre Pky,
-  Mountain View, CA 94043, or:
-
-  http://www.sgi.com
-
-  For further information regarding this notice, see:
-
-  http://oss.sgi.com/projects/GenInfo/NoticeExplan
-*/
-// *********************************************************** EndCopyright *
-
-//***************************************************************************
-//
-// File:
-//   $Source: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/Open64IRInterface/stab_attr.cpp,v $
-//
-// Purpose:
-//   [The purpose of this file]
-//
-// Description:
-//   [The set of functions, macros, etc. defined in the file]
-//
-// Based on Open64 be/whirl2c/stab_attr.cxx
-//
-//***************************************************************************
-
-/* ====================================================================
- * ====================================================================
- *
- * Description:
- *
- *   Get symbol table (TY and ST) attributes, beyond those provided 
- *   through common/com/stab.h.
- *
- * ====================================================================
- * ====================================================================
- */
-
-//************************** System Include Files ***************************
-
-//************************** Open64 Include Files ***************************
+// $Header: /Volumes/cvsrep/developer/OpenADFortTk/src/lib/support/stab_attr.cxx,v 1.12 2005/07/28 15:46:51 eraxxon Exp $
 
 #include "Open64BasicTypes.h"
 
 //*************************** User Include Files ****************************
 
-#include "stab_attr.h"
+#include "Open64IRInterface/stab_attr.h"
 
 //************************** Forward Declarations ***************************
 
@@ -145,6 +80,31 @@ Stab_Reset_Referenced_Flag(SYMTAB_IDX symtab)
 
 
 //***************************************************************************
+// Active Information
+//***************************************************************************
+
+bool
+IsActivePU(ST* pu_st)
+{
+  bool active = true;
+
+  TY_IDX pu_ty = ST_pu_type(pu_st);
+  TY_IDX pu_ret_ty = TY_ret_type(pu_ty);
+
+  if (ST_is_in_module(pu_st) && !PU_is_nested_func(Pu_Table[ST_pu(pu_st)])) {
+    active = false; // module
+  } 
+  else if (pu_ret_ty != 0 && TY_kind(pu_ret_ty) != KIND_VOID) {
+    active = false; // function
+  }
+  
+  // assume subroutines are all active
+  
+  return active;
+}
+
+
+//***************************************************************************
 // Type Information
 //***************************************************************************
 
@@ -172,12 +132,13 @@ bool
 WN2F_Can_Assign_Types(TY_IDX ty1, TY_IDX ty2)
 {
   bool simple = Stab_Identical_Types(ty1, ty2, FALSE, /*check_quals*/
-                     FALSE, /*check_scalars*/ 
-                     TRUE); /*ptrs_as_scalars*/
-  bool special = (TY_Is_Array(ty1) && TY_is_character(ty1) &&
-          TY_Is_Array(ty2) && TY_is_character(ty2));
+				     FALSE, /*check_scalars*/ 
+				     TRUE); /*ptrs_as_scalars*/
+  bool special = (TY_Is_Array(ty1) && TY_is_character(ty1) && 
+		  TY_Is_Array(ty2) && TY_is_character(ty2));
   return (simple || special);
-}          
+}
+
 
 static BOOL
 Stab_Compare_Types(TY_IDX t1, TY_IDX t2, BOOL check_quals, 

@@ -65,13 +65,13 @@
 
 //************************** Open64 Include Files ***************************
 
-#include "Open64BasicTypes.h"
+#include "Open64IRInterface/Open64BasicTypes.h"
 
 //*************************** User Include Files ****************************
 
-#include "stab_attr.h"
-#include "wn_attr.h"
-#include "diagnostics.h"
+#include "Open64IRInterface/stab_attr.h"
+#include "Open64IRInterface/wn_attr.h"
+#include "Open64IRInterface/diagnostics.h"
 
 //************************** Forward Declarations ***************************
 
@@ -499,6 +499,7 @@ WN_GetBaseObjType(const WN* wn)
 
     // STOREs represent the left-hand-side expression
     case OPR_STID: 
+    case OPR_PSTID: 
     case OPR_STBITS:
       st = WN_st(wn);
       ty = ST_type(st);
@@ -536,10 +537,10 @@ WN_GetBaseObjType(const WN* wn)
       //              "Internal error: base pointer types are inconsistent");
       break;
     }
+
     case OPR_STRCTFLD:
       ty = WN_load_addr_ty(wn);           
       break;
-
     
     default: 
       // NOTE: MLOAD, MSTORE are not supported
@@ -732,47 +733,6 @@ WN_intrinsic_return_to_param(TY_IDX return_ty)
   return (TY_mtype(return_ty) == MTYPE_CQ);
 }
 
-
-//***************************************************************************
-bool 
-WN_isArrayRef(WN* wn)
-{
-  OPERATOR opr = WN_operator(wn);
-  
-  // Idioms: 
-  //   ISTORE/ILOAD (source code: A(j))
-  //     ARRAY
-  //
-  //   ISTORE/ILOAD (source code: A(j)%v)
-  //     ADD
-  //       ARRAY
-
-  if (opr == OPR_ISTORE) {
-    WN* kid = WN_kid1(wn); // lhs
-    if (WN_operator(kid) == OPR_ARRAY) {
-      return true;
-    }
-    else if (WN_operator(kid) == OPR_ADD 
-       && WN_operator(WN_kid0(kid)) == OPR_ARRAY) {
-      return true;
-    }
-  }
-  else if (opr == OPR_ILOAD) {
-    WN* kid = WN_kid0(wn);
-    if (WN_operator(kid) == OPR_ARRAY) {
-      return true;
-    }
-    else if (WN_operator(kid) == OPR_ADD 
-       && WN_operator(WN_kid0(kid)) == OPR_ARRAY) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-
- 
 
 WN *
 WN_Get_PtrAdd_Intconst(WN* wn0, WN* wn1, TY_IDX pointed_ty)

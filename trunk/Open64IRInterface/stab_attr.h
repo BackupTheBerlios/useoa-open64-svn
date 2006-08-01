@@ -1,5 +1,5 @@
 // -*-Mode: C++;-*-
-// $Header: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/Open64IRInterface/stab_attr.h,v 1.4 2006/03/16 03:48:55 mstrout Exp $
+// $Header: /Volumes/cvsrep/developer/OpenADFortTk/src/lib/support/stab_attr.h,v 1.13 2005/07/28 15:46:51 eraxxon Exp $
 
 // * BeginCopyright *********************************************************
 /*
@@ -38,7 +38,7 @@
 //***************************************************************************
 //
 // File:
-//   $Source: /home/derivs2/mstrout/CVSRepository/UseNewOA-Open64/Open64IRInterface/stab_attr.h,v $
+//   $Source: /Volumes/cvsrep/developer/OpenADFortTk/src/lib/support/stab_attr.h,v $
 //
 // Purpose:
 //   [The purpose of this file]
@@ -233,7 +233,7 @@
 
 //************************** Open64 Include Files ***************************
 
-#include "Open64BasicTypes.h"
+#include "Open64IRInterface/Open64BasicTypes.h"
 
 //*************************** User Include Files ****************************
 
@@ -244,6 +244,14 @@
 // Referenced Information (REMOVE/FIXME)
 extern void 
 Stab_Reset_Referenced_Flag(SYMTAB_IDX symtab);
+
+//***************************************************************************
+// Active Information
+//***************************************************************************
+
+// FIXME: temporary implementation and location
+bool
+IsActivePU(ST* pu_st);
 
 //***************************************************************************
 // Type Information

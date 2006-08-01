@@ -24,11 +24,11 @@
 
 //************************** Open64 Include Files ***************************
 
-#include "Open64BasicTypes.h"
+#include "Open64IRInterface/Open64BasicTypes.h"
 
 //*************************** User Include Files ****************************
 
-#include "WhirlGlobalStateUtils.h"
+#include "Open64IRInterface/WhirlGlobalStateUtils.h"
 
 //************************** Forward Declarations ***************************
 

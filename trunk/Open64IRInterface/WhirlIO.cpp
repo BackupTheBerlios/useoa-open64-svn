@@ -52,7 +52,7 @@
 
 //************************** Open64 Include Files ***************************
 
-#include "Open64BasicTypes.h"
+#include "Open64IRInterface/Open64BasicTypes.h"
 
 #include "ir_bread.h"	   // Read_Global_Info(), etc.
 #include "ir_bwrite.h"	   // Write_Global_Info(), etc.
@@ -70,9 +70,11 @@
 
 //*************************** User Include Files ****************************
 
-#include "WhirlIO.h"
-#include "WhirlGlobalStateUtils.h"
-#include "Open64IRInterface.hpp"
+#include "Open64IRInterface/WhirlIO.h"
+#include "Open64IRInterface/WhirlGlobalStateUtils.h"
+#include "Open64IRInterface/Open64IRInterface.hpp"
+
+#include "Open64IRInterface/diagnostics.h"
 
 //************************** Forward Declarations ***************************
 
@@ -90,6 +92,8 @@ ReadPU(PU_Info* pu);
 PU_Info*
 ReadIR(const char* irfilename)
 {
+  Diag_Set_Phase("WHIRL IO: Load IR");
+
   MEM_POOL_Push(&MEM_src_pool);
   MEM_POOL_Push(&MEM_src_nz_pool);
   Set_Error_Source(Src_File_Name);
@@ -103,7 +107,8 @@ ReadIR(const char* irfilename)
   
   // Open file, read PU info and setup symbol tables
   Open_Input_Info(irfilename);
-  Initialize_Symbol_Tables(FALSE);
+  Read_Global_Data = "bogus-value-as-argument-to-Initialize_Symbol_Tables";
+  Initialize_Symbol_Tables(FALSE /*reserve_index_zero*/);
   New_Scope(GLOBAL_SYMTAB, Malloc_Mem_Pool, FALSE);
   PU_Info *pu_forest = Read_Global_Info(NULL);
   Initialize_Special_Global_Symbols();
@@ -165,6 +170,8 @@ SetPUInfoState(PU_Info* pu, Subsect_State state);
 void 
 WriteIR(const char* irfilename, PU_Info* pu_forest)
 {
+  Diag_Set_Phase("WHIRL IO: Write IR");
+
   Open_Output_Info(irfilename);
 
   // -------------------------------------------------------
@@ -250,6 +257,8 @@ FreePU(PU_Info* pu);
 void
 FreeIR(PU_Info* pu_forest)
 {
+  Diag_Set_Phase("WHIRL IO: Free IR");
+  
   // -------------------------------------------------------
   // 1. Free PUs and local symbol tables
   // -------------------------------------------------------
@@ -300,6 +309,8 @@ FreePU(PU_Info* pu)
 void 
 PrepareIR(PU_Info* pu_forest)
 {
+  Diag_Set_Phase("WHIRL IO: Prepare IR");
+
   Open64IRProcIterator procIt(pu_forest);
   for ( ; procIt.isValid(); ++procIt) { 
     PU_Info* pu = (PU_Info*)procIt.current().hval();

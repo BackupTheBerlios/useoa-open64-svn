@@ -27,15 +27,15 @@ static bool debug = false;
 
 //************************** Open64 Include Files ***************************
 
-#include "Open64BasicTypes.h"
+#include "Open64IRInterface/Open64BasicTypes.h"
 #include "ir_reader.h" // for fdump_wn()
 
 //*************************** User Include Files ****************************
 
-#include "Open64IRInterface.hpp"
-#include "SymTab.h"
-#include "wn_attr.h"
-#include "stab_attr.h"
+#include "Open64IRInterface/Open64IRInterface.hpp"
+#include "Open64IRInterface/SymTab.h"
+#include "Open64IRInterface/wn_attr.h"
+#include "Open64IRInterface/stab_attr.h"
 
 //************************** Forward Declarations ***************************
 
