@@ -120,3 +120,17 @@
 8/01/06     UseOA-Open64 svn trunk r53    Michelle Strout
     Rechecked the alias analysis regression tests whose results
     changed due to r167 of OpenAnalysis.
+
+       
+8/01/06     UseOA-Open64 svn trunk r53   Priyadarshini Malusare
+      - included ReachConsts driver in test-open64.cpp
+      - Added TestCases for ReachConsts Analysis
+      - Files committed:
+	regressAll.script, genReachConsts.script, 
+	regressReachConsts.script, ReachConsts.test, 
+	TestResults/ReachConstsTests, test-open64.cpp
+      - Added Analysis for TestProgs/constprop_if1.c,
+        TestProgs/constprop_if1a.c, TestProgs/constprop_if1b.c,
+	TestProgs/constprop_if1c.c, TestProgs/constprop_loop1.c,
+	TestProgs/constprop_loop2.c
+	

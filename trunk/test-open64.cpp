@@ -143,6 +143,8 @@ static int
 TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
 
+
+
 //***************************************************************************
 
 int
@@ -259,6 +261,7 @@ main(int argc, char* argv[])
     case 8: // UDDUChainsXAIF
     case 9: // MPICFG
     case 10: // ReachConsts
+      
     //case 11: // AliasMapXAIF
     case 12: // SideEffect
     case 14: // Activity
@@ -488,7 +491,7 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
         //TestIR_OAExprTree(os, pu, irInterface);
         break;
       case 10:
-        //TestIR_OAReachConsts(os, pu, irInterface, interSE);
+        TestIR_OAReachConsts(os, pu, irInterface, interSE);
         break;
       //case 11: // AliasMapXAIF
       //  TestIR_OAAliasMapXAIF_ForEachWNPU(os, pu, irInterface);
@@ -1536,8 +1539,9 @@ TestIR_OAReachConsts(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::ReachConsts::ReachConstsStandard> reachConsts= 
     rcman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
 
-  reachConsts->dump(std::cout, irInterface);
-
+  //reachConsts->dump(std::cout, irInterface);
+  reachConsts->output(*irInterface);
+  
   return 0;
 }
 
