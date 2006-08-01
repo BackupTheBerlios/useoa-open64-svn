@@ -117,3 +117,6 @@
       - passes regressAll with OpenAnalysis trunk r166 compiled on Okapi with 
         gcc-3.2
 
+8/01/06     UseOA-Open64 svn trunk r53    Michelle Strout
+    Rechecked the alias analysis regression tests whose results
+    changed due to r167 of OpenAnalysis.
