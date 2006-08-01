@@ -94,7 +94,7 @@ return
             
 
         Edge: 9 => 10
-            
+            CALL_RETURN
 
         Edge: 10 => 11
             
@@ -145,7 +145,7 @@ digraph ICFG {
         12 [ label="==  ICFG CFLOW_NODE 12 == (entry)\nreturn\n" ];
         13 [ label="==  ICFG EXIT_NODE 13 == (exit)\n" ];
         8 -> 9 [ label="" ];
-        9 -> 10 [ label="" ];
+        9 -> 10 [ label="CALL_RETURN" ];
         10 -> 11 [ label="" ];
         7 -> 8 [ label="" ];
         11 -> 13 [ label="" ];

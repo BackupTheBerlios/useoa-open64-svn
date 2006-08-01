@@ -39,7 +39,7 @@ return (RES:0:.predef_I4)
 
 
         Edge: 4 => 5
-            
+            CALL_RETURN
 
         Edge: 4 => 1
             CALL_(factorial_(&N:0:.predef_I4+-1)),style=dashed,color=red
@@ -106,7 +106,7 @@ return
             
 
         Edge: 10 => 11
-            
+            CALL_RETURN
 
         Edge: 11 => 12
             
@@ -140,7 +140,7 @@ digraph ICFG {
         5 [ label="==  ICFG RETURN_NODE 5 ==\n" ];
         6 [ label="==  ICFG EXIT_NODE 6 ==\n" ];
         7 [ label="==  ICFG CFLOW_NODE 7 ==\nreturn (RES:0:.predef_I4)\n" ];
-        4 -> 5 [ label="" ];
+        4 -> 5 [ label="CALL_RETURN" ];
         4 -> 1 [ label="CALL_(factorial_(&N:0:.predef_I4+-1))",style=dashed,color=red ];
         6 -> 5 [ label="RETURN_(factorial_(&N:0:.predef_I4+-1))",style=dashed,color=blue ];
         1 -> 2 [ label="" ];
@@ -161,7 +161,7 @@ digraph ICFG {
         13 [ label="==  ICFG CFLOW_NODE 13 == (entry)\nreturn\n" ];
         14 [ label="==  ICFG EXIT_NODE 14 == (exit)\n" ];
         9 -> 10 [ label="" ];
-        10 -> 11 [ label="" ];
+        10 -> 11 [ label="CALL_RETURN" ];
         11 -> 12 [ label="" ];
         8 -> 9 [ label="" ];
         12 -> 14 [ label="" ];

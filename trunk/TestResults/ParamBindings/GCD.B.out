@@ -23,4 +23,20 @@ ParamBindings(
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => [ MemRefHandle(I:0:.predef_I4)    MemRefHandle(J:0:.predef_I4) ] 
 
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => [ ExprHandle(&I:0:.predef_I4)    ExprHandle(&J:0:.predef_I4) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&I:0:.predef_I4)	 => [ 
+                ET MemRefNode ( I:0:.predef_I4 ) ] 
+            ExprHandle(&J:0:.predef_I4)	 => [ 
+                ET MemRefNode ( J:0:.predef_I4 ) ] 
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(A)	 => ExprHandle(&I:0:.predef_I4)
+                    SymHandle(B)	 => ExprHandle(&J:0:.predef_I4)
+
+
 )

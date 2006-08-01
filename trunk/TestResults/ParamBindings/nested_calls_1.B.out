@@ -39,4 +39,30 @@ ParamBindings(
             CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => [ MemRefHandle(X:0:anon_ptr.(1))    MemRefHandle(X:0:anon_ptr.(2))    MemRefHandle(Y:0:anon_ptr.(1)) ] 
             CallHandle(bar_(&B:0:.predef_F8))	 => [ MemRefHandle(B:0:.predef_F8) ] 
 
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => [ ExprHandle(&X:0:anon_ptr.(1))    ExprHandle(&X:0:anon_ptr.(2))    ExprHandle(&Y:0:anon_ptr.(1)) ] 
+            CallHandle(bar_(&B:0:.predef_F8))	 => [ ExprHandle(&B:0:.predef_F8) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&X:0:anon_ptr.(1))	 => [ 
+                ET MemRefNode ( X:0:anon_ptr.(1) ) ] 
+            ExprHandle(&X:0:anon_ptr.(2))	 => [ 
+                ET MemRefNode ( X:0:anon_ptr.(2) ) ] 
+            ExprHandle(&Y:0:anon_ptr.(1))	 => [ 
+                ET MemRefNode ( Y:0:anon_ptr.(1) ) ] 
+            ExprHandle(&B:0:.predef_F8)	 => [ 
+                ET MemRefNode ( B:0:.predef_F8 ) ] 
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(A)	 => ExprHandle(&X:0:anon_ptr.(1))
+                    SymHandle(B)	 => ExprHandle(&X:0:anon_ptr.(2))
+                    SymHandle(C)	 => ExprHandle(&Y:0:anon_ptr.(1))
+
+            CallHandle(bar_(&B:0:.predef_F8))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(A)	 => ExprHandle(&B:0:.predef_F8)
+
+
 )

@@ -102,7 +102,18 @@
       - passes regressAll with OpenAnalysis trunk r161 compiled on Okapi with gcc-3.2
 
 7/24/06     UseOA-Open64 svn trunk r49   Priyadarshini Malusare
-	  - Modified test-open64.cpp, there was typo in the SideEffect test. 					  
+      - Modified test-open64.cpp, there was typo in the SideEffect test. 					  
 
 07/24/06    UseOA-Open64 svn trunk r50 Priyadarshini Malusare
       - Modified ChangeLog
+
+8/01/06     UseOA-Open64 svn trunk r52    Barbara Kreaseck
+      - changed Open64IRInterface::isParam() to not return true when the
+        SymHandle is not in the current symbol table
+      - updated ParamBindings regression tests to reflect updated/new output
+        associated with OpenAnalysis r166
+      - updated ICFG regression tests to reflect new output associated with
+        OpenAnalysis r166
+      - passes regressAll with OpenAnalysis trunk r166 compiled on Okapi with 
+        gcc-3.2
+

@@ -478,7 +478,256 @@ Open64IRInterface::toString(const OA::OpHandle h)
   WN* wn = (WN*)h.hval();
 
   std::ostringstream oss;
-  oss << wn;
+  if (wn==0) {
+    oss << "OpHandle(0)";
+  } else {
+    //    DumpWN(wn, oss);
+    //oss << OPCODE_name(WN_opcode(wn));
+    
+    OPERATOR opr = WN_operator(wn);
+    string op;
+    switch (opr) {
+      // Unary expression operations.
+    case OPR_CVT:
+    case OPR_CVTL:
+    case OPR_TAS:
+      oss << OPCODE_name(WN_opcode(wn)) << "(";
+      //    DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_PARM:
+      if (WN_flag(wn) & WN_PARM_BY_REFERENCE)
+        oss << "&"; 
+      //DumpWN(WN_kid0(wn), os);
+      break;
+    case OPR_ABS:
+      oss << "ABS(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_SQRT:
+      oss << "SQRT(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_RSQRT:
+      oss << "RSQRT(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_RECIP:
+      oss << "RECIP(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_PAREN:
+      oss << "(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_RND:
+      oss << "RND(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_TRUNC:
+      oss << "TRUNC(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_CEIL:
+      oss << "CEIL(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_FLOOR:
+      oss << "FLOOR(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ")";
+      break;
+    case OPR_NEG:
+      op = "-";
+      goto print_generic_unary;
+    case OPR_BNOT:
+      op = "~";
+      goto print_generic_unary;
+    case OPR_LNOT:
+      op = "!";
+      goto print_generic_unary;
+    print_generic_unary:
+      oss << op;
+      //DumpWN(WN_kid0(wn), os);
+      break;
+
+      // Binary expression operations.
+    case OPR_ADD:
+      op = "+";
+      goto print_generic_binary;
+    case OPR_SUB:
+      op = "-";
+      goto print_generic_binary;
+    case OPR_MPY:
+      op = "*";
+      goto print_generic_binary;
+    case OPR_DIV:
+      op = "/";
+      goto print_generic_binary;
+    case OPR_MOD:
+      oss << "MOD(";
+      //DumpWN(WN_kid0(wn), os);
+      //oss << ",";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")";
+      break;
+    case OPR_REM:
+      op = "%";
+      goto print_generic_binary;
+    case OPR_EQ:
+      op = "==";
+      goto print_generic_binary;
+    case OPR_NE:
+      op = "!=";
+      goto print_generic_binary;
+    case OPR_GE:
+      op = ">=";
+      goto print_generic_binary;
+    case OPR_LE:
+      op = "<=";
+      goto print_generic_binary;
+    case OPR_GT:
+      op = '>';
+      goto print_generic_binary;
+    case OPR_LT:
+      op = '<';
+      goto print_generic_binary;
+    case OPR_MAX:
+      oss << "MAX(";
+      //DumpWN(WN_kid0(wn), os);
+      //oss << ",";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")";
+      break;
+    case OPR_MIN:
+      oss << "MIN(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << ",";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")";
+      break;
+    case OPR_SHL:
+      op = "<<";
+      goto print_generic_binary;
+    case OPR_ASHR:
+    case OPR_LSHR:
+      op = ">>";
+      goto print_generic_binary;
+    case OPR_LAND:
+      op = "&&";
+      goto print_generic_binary;
+    case OPR_LIOR:
+      op = "||";
+      goto print_generic_binary;
+    case OPR_BAND:
+      op = "&";
+      goto print_generic_binary;
+    case OPR_BIOR:
+      op = "|";
+      goto print_generic_binary;
+    case OPR_BXOR:
+      op = "^";
+    print_generic_binary:
+      //DumpWN(WN_kid0(wn), os);
+      oss << op;
+      //DumpWN(WN_kid1(wn), os);
+      break;
+      
+      // Ternary operations.
+    case OPR_SELECT:
+      //DumpWN(WN_kid0(wn), os);
+      oss << " ? "; 
+      //DumpWN(WN_kid1(wn), os);
+      oss << " : "; 
+      //DumpWN(WN_kid2(wn), os);
+      break;
+    case OPR_MADD:
+      oss << "(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << "*";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")+";
+      //DumpWN(WN_kid2(wn), os);
+      break;
+    case OPR_MSUB:
+      oss << "(";
+      //DumpWN(WN_kid0(wn), os);
+      oss << "*";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")-";
+      //DumpWN(WN_kid2(wn), os);
+      break;
+    case OPR_NMADD:
+      oss << "-((";
+      //DumpWN(WN_kid0(wn), os);
+      oss << "*";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")+";
+      //DumpWN(WN_kid2(wn), os);
+      oss << ")";
+      break;
+    case OPR_NMSUB:
+      oss << "-((";
+      //DumpWN(WN_kid0(wn), os);
+      oss << "*";
+      //DumpWN(WN_kid1(wn), os);
+      oss << ")-";
+      //DumpWN(WN_kid2(wn), os);
+      oss << ")";
+      break;
+      
+      /* Don't know about these ...  
+    // N-ary operations.
+    case OPR_ARRAY: {
+      int ndims = WN_kid_count(wn) >> 1;
+      DumpWN(WN_kid0(wn), os);
+      os << "(";
+      for (int i = 0; i < ndims; i++) {
+        DumpWN(WN_kid(wn, i+ndims+1), os);
+        if (i < ndims-1) 
+          os << ",";
+      }
+      os << ")";
+      break;
+    }
+    case OPR_TRIPLET: // Output as LB:UB:STRIDE
+      DumpWN(WN_kid0(wn), os);
+      os << ":";
+      DumpWN(WN_kid2(wn), os);
+      os << ":";
+      DumpWN(WN_kid1(wn), os);
+      break; 
+    case OPR_ARRAYEXP:
+      DumpWN(WN_kid0(wn), os);
+      break; 
+    case OPR_ARRSECTION: {
+      int ndims = WN_kid_count(wn) >> 1;
+      DumpWN(WN_kid0(wn), os);
+      os << "(";
+      for (int i = 0; i < ndims; i++) {
+        DumpWN(WN_kid(wn, i+ndims+1), os);
+        if (i < ndims-1) 
+          os << ",";
+      }
+      os << ")";
+      break;
+    }
+      * Don't know about the above ...
+      */
+
+    default:
+      DumpWN(wn, oss);
+      break;
+    }
+  }
   return oss.str();
 }
 
@@ -511,7 +760,15 @@ Open64IRInterface::toString(const OA::ConstSymHandle h)
 {
   setCurrentProcToProcContext(h);
   std::ostringstream oss;
-  oss << h.hval();
+  //  oss << h.hval();
+
+  WN* wn = (WN*)h.hval();
+  if (wn==0) {
+    oss << "ConstSymHandle(0)";
+  } else {
+    DumpWN(wn, oss);
+  }
+
   return oss.str();
 }
 
@@ -519,8 +776,17 @@ std::string
 Open64IRInterface::toString(const OA::ConstValHandle h) 
 {
   setCurrentProcToProcContext(h);
+  WN* wn = (WN*)h.hval();
+
   std::ostringstream oss;
-  oss << h.hval();
+  //oss << h.hval();
+
+  if (wn==0) {
+    oss << "ConstValHandle(0)";
+  } else {
+    DumpWN(wn, oss);
+  }
+  
   return oss.str();
 }
 
@@ -2334,9 +2600,14 @@ Open64IRInterface::getExprTree(OA::ExprHandle h)
 //! returns true if given symbol is a parameter 
 bool Open64IRInterface::isParam(OA::SymHandle anOASymbolHandle){ 
   ST* anOpen64Symbol_p = (ST*)anOASymbolHandle.hval();
-  return ((ST_sclass(anOpen64Symbol_p)==SCLASS_FORMAL) 
-	  || 
-	  (ST_sclass(anOpen64Symbol_p)==SCLASS_FORMAL_REF)); 
+  return (((ST_sclass(anOpen64Symbol_p)==SCLASS_FORMAL) 
+           || 
+           (ST_sclass(anOpen64Symbol_p)==SCLASS_FORMAL_REF))
+          &&
+          (ST_level(anOpen64Symbol_p) == CURRENT_SYMTAB)); 
+  // BK:  added the &&(CURRENT_SYMTAB) to distinguish between parameters
+  //      in a global/enclosing subroutine versus a local parameters
+  //      now:  answers false for the former, and still true for the latter
 } 
 
 //---------------------------------------------------------------------------

@@ -20,8 +20,6 @@ echo "Generating TestResults/ParamBindings/stat_selection.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/stat_selection.B > TestResults/ParamBindings/stat_selection.B.out
 echo "Generating TestResults/ParamBindings/gussian_elimination.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/gussian_elimination.B > TestResults/ParamBindings/gussian_elimination.B.out
-echo "Generating TestResults/ParamBindings/rung_kutta.B.out"
-./test-open64 --oa-ParamBindings TestCases/ParamBindings/rung_kutta.B > TestResults/ParamBindings/rung_kutta.B.out
 echo "Generating TestResults/ParamBindings/GCD.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/GCD.B > TestResults/ParamBindings/GCD.B.out
 echo "Generating TestResults/ParamBindings/ETOX.B.out"

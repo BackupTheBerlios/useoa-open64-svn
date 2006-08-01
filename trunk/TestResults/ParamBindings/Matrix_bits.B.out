@@ -29,4 +29,32 @@ ParamBindings(
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => [ MemRefHandle(0:ONE:0:anon_ptr.)    MemRefHandle(0:TWO:0:anon_ptr.)    MemRefHandle(0:THREE:0:anon_ptr.)    MemRefHandle(0:ONE_T:0:anon_ptr.)    MemRefHandle(N:0:.predef_I4) ] 
 
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => [ ExprHandle(&0:ONE:0:anon_ptr.)    ExprHandle(&0:TWO:0:anon_ptr.)    ExprHandle(&0:THREE:0:anon_ptr.)    ExprHandle(&0:ONE_T:0:anon_ptr.)    ExprHandle(&N:0:.predef_I4)    ExprHandle(&10) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&0:ONE:0:anon_ptr.)	 => [ 
+                ET MemRefNode ( 0:ONE:0:anon_ptr. ) ] 
+            ExprHandle(&0:TWO:0:anon_ptr.)	 => [ 
+                ET MemRefNode ( 0:TWO:0:anon_ptr. ) ] 
+            ExprHandle(&0:THREE:0:anon_ptr.)	 => [ 
+                ET MemRefNode ( 0:THREE:0:anon_ptr. ) ] 
+            ExprHandle(&0:ONE_T:0:anon_ptr.)	 => [ 
+                ET MemRefNode ( 0:ONE_T:0:anon_ptr. ) ] 
+            ExprHandle(&N:0:.predef_I4)	 => [ 
+                ET MemRefNode ( N:0:.predef_I4 ) ] 
+            ExprHandle(&10)	 => [ 
+                ET ConstValNode ( 10 ) ] 
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(A)	 => ExprHandle(&0:ONE:0:anon_ptr.)
+                    SymHandle(B)	 => ExprHandle(&0:TWO:0:anon_ptr.)
+                    SymHandle(C)	 => ExprHandle(&0:THREE:0:anon_ptr.)
+                    SymHandle(A_T)	 => ExprHandle(&0:ONE_T:0:anon_ptr.)
+                    SymHandle(N)	 => ExprHandle(&N:0:.predef_I4)
+                    SymHandle(MAX)	 => ExprHandle(&10)
+
+
 )

@@ -1,4 +1,4 @@
-echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out Checked by LMR 7/22/2006"
+echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out Checked by BK 7/27/2006"
 ./test-open64 --oa-InterSideEffect TestCases/SideEffect/test.B > t
 diff t TestResults/SideEffect/test.B.out
 
