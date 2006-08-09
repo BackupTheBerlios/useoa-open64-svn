@@ -2106,15 +2106,17 @@ Open64IRInterface::getCallMemRefExpr(OA::CallHandle h)
 //-------------------------------------------------------------------------
   
 //! Return an iterator over all independent locations for given proc
-OA::OA_ptr<OA::LocIterator> 
-Open64IRInterface::getIndepLocIter(OA::ProcHandle h)
+OA::OA_ptr<OA::MemRefExprIterator> 
+Open64IRInterface::getIndepMemRefExprIter(OA::ProcHandle h)
 {
   PU_Info* pu = (PU_Info*)h.hval();
   currentProc(h);
-
-  // Get independent variables
-  OA::OA_ptr<OA::LocSet> indepSet;
-  indepSet = new OA::LocSet;
+  
+  // Get dependent variables
+  OA::OA_ptr<std::list<OA::OA_ptr<OA::MemRefExpr> > > indepList;
+  indepList = new std::list<OA::OA_ptr<OA::MemRefExpr> >;
+  
+  OA::OA_ptr<OA::MemRefExpr> mre;
   
   WN* pragmaBlk = WN_func_pragmas(PU_Info_tree_ptr(pu));
   for (WN* wn = WN_first(pragmaBlk); wn != NULL; wn = WN_next(wn)) {
@@ -2125,36 +2127,63 @@ Open64IRInterface::getIndepLocIter(OA::ProcHandle h)
     WN_PRAGMA_ID prag = (WN_PRAGMA_ID)WN_pragma(wn);
     if (prag == WN_PRAGMA_OPENAD_INDEPENDENT) {
       ST* st = WN_st(wn);
-      OA::OA_ptr<OA::Location> loc;
-      loc = getLocation((OA::irhandle_t)pu, (OA::irhandle_t)st);
-      indepSet->insert(loc);
+      OA::SymHandle sym = OA::SymHandle((OA::irhandle_t)st);
+      bool isAddrOf, fullAccuracy;
+      OA::MemRefExpr::MemRefType hty;
+      
+      // BK: just using false for isAddrOf, and fullAccuracy
+      //     and MemRefExpr::USE for hty
+      //     because we have no knowledge of actual from parent at this time
+      isAddrOf = false;
+      fullAccuracy = false;
+      hty = OA::MemRefExpr::USE;
+      
+      if (isRefParam(sym)) {
+        /*
+          if (isAddrOf==true) { // deref and addressOf cancel
+          isAddrOf = false;
+          mre = new NamedRef(isAddrOf, fullAccuracy, hty, sym);
+          } else {
+        */
+        mre = new OA::NamedRef(isAddrOf,fullAccuracy,OA::MemRefExpr::USE,sym);
+        //mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
+        mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
+        //}
+      } else {
+        mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
+      }
+
+      indepList->push_back(mre);
     }
   }
 
   // if set is empty then none were specified for this procedure
-  // so must put UknownLoc in set
+  // so must put UknownLoc in list
   /*
-  if (indepSet->empty()) {
+  if (indepList->empty()) {
     OA::OA_ptr<OA::Location> unknownLoc; 
     unknownLoc = new OA::UnknownLoc;
-    indepSet->insert(unknownLoc);
+    indepList->insert(unknownLoc);
   }
-*/
-  OA::OA_ptr<OA::LocSetIterator> indepIter;
-  indepIter = new OA::LocSetIterator(indepSet);
+  */
+  OA::OA_ptr<OA::MemRefExprIterator> indepIter;
+  indepIter = new Open64MemRefExprIterator(indepList);
   return indepIter;
+
 }
   
-//! Return an iterator over all dependent locations for given proc
-OA::OA_ptr<OA::LocIterator> 
-Open64IRInterface::getDepLocIter(OA::ProcHandle h)
+//! Return an iterator over all dependent MemRefExpr's for given proc
+OA::OA_ptr<OA::MemRefExprIterator> 
+Open64IRInterface::getDepMemRefExprIter(OA::ProcHandle h)
 {
+
   PU_Info* pu = (PU_Info*)h.hval();
   currentProc(h);
+  OA::OA_ptr<OA::MemRefExpr> mre;
 
   // Get dependent variables
-  OA::OA_ptr<OA::LocSet> depSet;
-  depSet = new OA::LocSet;
+  OA::OA_ptr<std::list<OA::OA_ptr<OA::MemRefExpr> > > depList;
+  depList = new std::list<OA::OA_ptr<OA::MemRefExpr> >;
   
   WN* pragmaBlk = WN_func_pragmas(PU_Info_tree_ptr(pu));
   for (WN* wn = WN_first(pragmaBlk); wn != NULL; wn = WN_next(wn)) {
@@ -2166,14 +2195,92 @@ Open64IRInterface::getDepLocIter(OA::ProcHandle h)
     
     if (prag == WN_PRAGMA_OPENAD_DEPENDENT) {
       ST* st = WN_st(wn);
-      OA::OA_ptr<OA::Location> loc;
-      loc = getLocation((OA::irhandle_t)pu, (OA::irhandle_t)st);
-      depSet->insert(loc);
+      OA::SymHandle sym = OA::SymHandle((OA::irhandle_t)st);
+      bool isAddrOf, fullAccuracy;
+      OA::MemRefExpr::MemRefType hty;
+
+      isAddrOf = false;
+      hty = OA::MemRefExpr::USE;
+
+      switch (TY_kind(ST_type(st))) {
+      case KIND_SCALAR:
+        if (debug) {
+          std::cout << "KIND_SCALAR: Sym(" << toString(sym) << ")\n";
+        }       
+        fullAccuracy = true;
+        break;
+      case KIND_ARRAY:
+        if (debug) {
+          std::cout << "KIND_ARRAY: Sym(" << toString(sym) << ")\n";
+        }
+        fullAccuracy = false;
+        break;
+      case KIND_STRUCT:
+        if (debug) {
+          std::cout << "KIND_STRUCT: Sym(" << toString(sym) << ")\n";
+        }       
+        fullAccuracy = false;
+        break;
+      case KIND_POINTER:
+        if (debug) {
+          std::cout << "KIND_POINTER: Sym(" << toString(sym) << ")\n";
+        }
+        fullAccuracy = false;  // arrays are appearing as KIND_POINTER
+        break;
+      case KIND_FUNCTION:
+        if (debug) {
+          std::cout << "KIND_FUNCTION: Sym(" << toString(sym) << ")\n";
+        }
+        assert(0);
+        // this type not handled correctly yet
+        fullAccuracy = false;
+        break;
+      case KIND_VOID:
+        if (debug) {
+          std::cout << "KIND_VOID: Sym(" << toString(sym) << ")\n";
+        }
+        assert(0);
+        // this type not handled correctly yet
+        fullAccuracy = false;
+        break;
+      case KIND_INVALID:
+        if (debug) {
+          std::cout << "KIND_INVALID: Sym(" << toString(sym) << ")\n";
+        }
+        assert(0);
+        //this type not handled correctly yet
+        fullAccuracy = false;
+        break;
+      default:
+        if (debug) {
+          std::cout << "KIND_??? hit default: Sym(" << toString(sym) << ")\n";
+        }
+        assert(0);
+        // shouldn't get here
+        fullAccuracy = false;
+        break;
+      }
+
+      if (isRefParam(sym)) {
+        
+        if (isAddrOf==true) { // deref and addressOf cancel
+          isAddrOf = false;
+          mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
+        } else { 
+          mre = new OA::NamedRef(isAddrOf,fullAccuracy,OA::MemRefExpr::USE,sym);
+        //mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
+          mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
+        }
+      } else {
+        mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
+      }
+
+      depList->push_back(mre);
     }
   }
 
-  OA::OA_ptr<OA::LocSetIterator> depIter;
-  depIter = new OA::LocSetIterator(depSet);
+  OA::OA_ptr<OA::MemRefExprIterator> depIter;
+  depIter = new Open64MemRefExprIterator(depList);
   return depIter;
 }
  

@@ -4,6 +4,7 @@ source scripts/regressAliasMapFIAlias.script
 source scripts/regressCallGraph.script
 source scripts/regressICFG.script
 source scripts/regressICFGDep.script
+source scripts/regressICFGUseful.script
 source scripts/regressParamBindings.script
 source scripts/regressSideEffect.script
 source scripts/regressReachDefs.script

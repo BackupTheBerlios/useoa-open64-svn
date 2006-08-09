@@ -133,4 +133,16 @@
         TestProgs/constprop_if1a.c, TestProgs/constprop_if1b.c,
 	TestProgs/constprop_if1c.c, TestProgs/constprop_loop1.c,
 	TestProgs/constprop_loop2.c
-	
+
+8/09/06     UseOA-Open64 svn trunk r56    Barbara Kreaseck
+      - revitalized the --oa-ICFGActivity test routine, currently testing
+        only ICFGUseful.
+      - added regression test for ICFGUseful and placed in regressAll script
+      - added appropriate TestResults/ICFGUseful subdirectory
+      - added TestCases/Activity subdirectory for testing ICFGUseful, and
+        in the future: ICFGVaryInActive and ICFGActive.
+      - in Open64IRInterface.*pp:
+          + replaced getIndepLocIter() with getIndepMemRefExprIter()
+          + replaced getDepLocIter() with getDepMemRefExprIter()
+      - passes regressAll with OpenAnalysis trunk r178 compiled on Okapi with 
+        gcc-3.2

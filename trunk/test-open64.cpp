@@ -67,9 +67,10 @@
 #include <OpenAnalysis/DataFlow/ManagerParamBindings.hpp>
 #include <OpenAnalysis/Activity/ManagerInterDep.hpp>
 #include <OpenAnalysis/ICFG/ManagerICFGStandard.hpp>
-//#include <OpenAnalysis/Activity/ManagerICFGVary.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
+#include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
+//#include <OpenAnalysis/Activity/ManagerICFGVary.hpp>
 
 #include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
@@ -832,6 +833,8 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
     interAlias = fialiasman->performAnalysis(procIter);
 
+    //interAlias->output(*irInterface);
+
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
     cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
@@ -1049,6 +1052,75 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 {
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAICFGActivity");
+
+    // eachCFG 
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerStandard> cfgman;
+    cfgman = new OA::CFG::ManagerStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+    
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //FIAlias
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+    OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+    interAlias = fialiasman->performAnalysis(procIter);
+
+    //interAlias->output(*irInterface);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+      cgraphman->performAnalysis(procIter, interAlias);
+
+    //cgraph->dump(std::cout, irInterface);
+
+    //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+    // ICFG
+    OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
+    icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
+    OA::OA_ptr<OA::ICFG::ICFGStandard> icfg;
+    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
+
+    //ICFGDep
+    OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
+    icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
+    OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
+    icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
+
+    // Intra Side-Effect
+    OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
+    sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
+    
+    // InterSideEffect
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
+    interSEman = new 
+      OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+    
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
+    interSE = interSEman->performAnalysis(cgraph, parambind,
+                                        interAlias, sideeffectman);
+    
+    // ----------------- testing separate pieces
+
+    // ICFGUseful   (for testing)
+    OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
+    usefulman = new OA::Activity::ManagerICFGUseful(irInterface);
+    OA::OA_ptr<OA::Activity::InterUseful> icfgUseful;
+    icfgUseful = usefulman->performAnalysis(icfg, parambind, interAlias, 
+                                            interSE, icfgDep);
+    icfgUseful->output(*irInterface);
+
+    // ----------------- Activity does the testing pieces above
+
  /* 
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
