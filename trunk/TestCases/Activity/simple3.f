@@ -6,17 +6,17 @@ c  y and z are INTENT::OUT
          double precision a, b, c
 c$openad INDEPENDENT(x)
 
-c                      [useful: x,w] [vary: x]         => [active: x]
+c                      [u: x,w] [v: x]         [iA: x]
          a = x + w
-c                      [useful: a]   [vary: x,a]       => [active: a]
+c                      [u: a]   [v: x,a]       [iA: a]
          b = a
-c                      [useful: a,b] [vary: x,a,b]     => [active: a,b]
+c                      [u: a,b] [v: x,a,b]     [iA: a,b]
          c = 2 + w
-c                      [useful: a,b] [vary: x,a,b]     => [active: a,b]
+c                      [u: a,b] [v: x,a,b]     [iA: a,b]
          z = 4 - c + a
-c                      [useful: a,b] [vary: x,a,b,z]   => [active: a,b]
+c                      [u: a,b] [v: x,a,b,z]   [iA: a,b]
          y = 3 * b + a
-c                      [useful: y]   [vary: x,a,b,z,y] => [active: y]
+c                      [u: y]   [v: x,a,b,z,y] [iA: y]
 
 c$openad DEPENDENT(y)
        end subroutine

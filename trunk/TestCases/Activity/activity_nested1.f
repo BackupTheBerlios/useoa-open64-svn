@@ -8,9 +8,9 @@
        subroutine biggerhead(x,f,g)
        double precision :: xbg, fbg, gbg
 
-c                             [useful: xbg,fbg]
+c                             [u: xbg,fbg] [v: ]          [iA: ]
        call head (xbg,fbg)
-c                             [useful: ]
+c                             [u: ]        [v: x,f]       [iA: ]
        end subroutine
 
        subroutine head(x, f) 
@@ -19,15 +19,15 @@ c                             [useful: ]
        double precision t1, t2, t3
 
 c$openad INDEPENDENT(x)
-c                             [useful: t2*,x,f]
+c                             [u: t2*,x,f] [v: x]         [iA: x]
        t1=x*f
-c                             [useful: t1,t2*]
+c                             [u: t1,t2*]  [v: x,t1]      [iA: t1]
        call bar(t1,t2)
-c                             [useful: t1,t2]
+c                             [u: t1,t2]   [v: x,t1,t2]   [iA: t1,t2]
        t3=f*30
-c                             [useful: t1,t2]
+c                             [u: t1,t2]   [v: x,t1,t2]   [iA: t1,t2]
        f=t1+t2
-c                             [useful: f]
+c                             [u: f]       [v: x,t1,t2,f] [iA: f]
 c$openad DEPENDENT(f)
 
        end subroutine
@@ -35,9 +35,9 @@ c$openad DEPENDENT(f)
        subroutine bar(a,b)
        double precision a,b
 
-c                             [useful: a]
+c                             [u: a]       [v: a]         [iA: a]
        b = a  
-c                             [useful: a,b]
+c                             [u: a,b]     [v: a,b]       [iA: a,b]
        return
-c                             [useful: a,b]
+
        end

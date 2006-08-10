@@ -70,7 +70,7 @@
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
-//#include <OpenAnalysis/Activity/ManagerICFGVary.hpp>
+#include <OpenAnalysis/Activity/ManagerICFGVaryInActive.hpp>
 
 #include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
@@ -1111,6 +1111,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     
     // ----------------- testing separate pieces
 
+    
     // ICFGUseful   (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
     usefulman = new OA::Activity::ManagerICFGUseful(irInterface);
@@ -1118,6 +1119,15 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     icfgUseful = usefulman->performAnalysis(icfg, parambind, interAlias, 
                                             interSE, icfgDep);
     icfgUseful->output(*irInterface);
+    
+
+    //ICFGVaryInActive    (for testing)
+    OA::OA_ptr<OA::Activity::ManagerICFGVaryInActive> varyman;
+    varyman = new OA::Activity::ManagerICFGVaryInActive(irInterface);
+    OA::OA_ptr<OA::Activity::InActivePerStmt> inActive;
+    inActive = varyman->performAnalysis(icfg, parambind,
+                                        interAlias, icfgDep, icfgUseful);
+    inActive->output(*irInterface);
 
     // ----------------- Activity does the testing pieces above
 

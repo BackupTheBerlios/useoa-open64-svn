@@ -6,47 +6,47 @@ c       subroutine head(x,y)
          double precision y1,y2
          integer i
 c$openad INDEPENDENT(x)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          i = 1
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          x1 = 3
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          x1 = 4 + x1
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          y2 = x1
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          y2 = x1 + y2
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          x(1) = 5
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          x(1) = 6 + x(1)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          x(2) = 7 + x(1)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x]   [iA: x]
          y(1) = x(1)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x,y] [iA: x,y]
          y(2) = x(i)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x,y] [iA: x,y]
          y(i) = x(2)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x,y] [iA: x,y]
          y(1) = x(i+1)
-c                              [useful: x,y]
+c                              [u: x,y] [v: x,y] [iA: x,y]
          y(i) = y(i) + x(i)
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
          if (i < 2) then
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
            y2 = x1
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
          else
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
            y1 = x2
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
          end if
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
          y2 = y1 * x1 + 3
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
          y2 = y1 * x1 + 3 + y2
-c                              [useful: y]
+c                              [u: y]   [v: x,y] [iA: y]
 c$openad DEPENDENT(y)
        end subroutine
 

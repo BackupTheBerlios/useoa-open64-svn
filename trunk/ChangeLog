@@ -146,3 +146,14 @@
           + replaced getDepLocIter() with getDepMemRefExprIter()
       - passes regressAll with OpenAnalysis trunk r178 compiled on Okapi with 
         gcc-3.2
+
+8/10/06     UseOA-Open64 svn trunk r57    Barbara Kreaseck
+      - updated the --oa-ICFGActivity test routine
+          + now testing ICFGUseful and ICFGVaryInActive
+      - added regression test for ICFGVaryInActive
+      - removed ICFGUseful regression from regressAll script (since it
+        is now broken due to no explicit test runMode for ICFGUseful: it
+        shares ICFGActivity)
+      - corrected getIndepLocIter() in Open64IRInterface.cpp
+      - passes regressAll with OpenAnalysis trunk r180 compiled on Okapi
+        with gcc-3.2
