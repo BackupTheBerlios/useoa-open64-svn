@@ -41,3 +41,7 @@ c* until we resolve the CALL_RETURN edge thingy, any varys above
 c  a call will be vary below a call unless the vary gets def'd
 c  at the call statement (function ...) and there are no varys in
 c  the actuals ??
+c
+c* why are call statements not allowed to be marked as active?
+c
+

@@ -157,3 +157,14 @@
       - corrected getIndepLocIter() in Open64IRInterface.cpp
       - passes regressAll with OpenAnalysis trunk r180 compiled on Okapi
         with gcc-3.2
+
+8/11/06     UseOA-Open64 svn trunk r58    Barbara Kreaseck
+      - updated the --oa-ICFGActivity test routine
+          + now does full (conservative) ICFGActive analysis
+      - added regression test for ICFGActive
+      - commented out three regression tests (SideEffect, ReachDefs, 
+	ReachConsts) from regressAll that were broken
+	due to OpenAnalysis trunk r181 (breaks will need to be resolved)
+      - passes regressAll with OpenAnalysis trunk r182 compiled on Okapi
+        with gcc-3.2
+

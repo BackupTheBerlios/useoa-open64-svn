@@ -1,0 +1,49 @@
+
+InterActive(
+    Procedure( head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(A)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(B)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(X)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(A:0:.predef_F8 = W:0:.predef_F8+X:0:.predef_F8)
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(Y:0:.predef_F8 = A:0:.predef_F8+B:0:.predef_F8*    3.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(A)
+            SymHandle(B)
+            SymHandle(X)
+            SymHandle(Y) ] 
+)
