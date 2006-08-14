@@ -168,3 +168,9 @@
       - passes regressAll with OpenAnalysis trunk r182 compiled on Okapi
         with gcc-3.2
 
+8/11/06     UseOA-Open64 svn trunk r59    Barbara Kreaseck
+      - re-added the three regression tests (SideEffect, ReachDefs,
+        ReachConsts) to regressAll (were not really broken)
+      - passes regressAll with OpenAnalysis trunk r185 compiled on Okapi
+        with gcc-3.2
+
