@@ -2,7 +2,3 @@ echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out Che
 ./test-open64 --oa-InterSideEffect TestCases/SideEffect/test.B > t
 diff t TestResults/SideEffect/test.B.out
 
-echo "Testing TestCases/SideEffect/Jean.B, TestResults/SideEffect/Jean.B.out "
-./test-open64 --oa-InterSideEffect TestCases/SideEffect/Jean.B > t
-diff t TestResults/SideEffect/Jean.B.out
-
