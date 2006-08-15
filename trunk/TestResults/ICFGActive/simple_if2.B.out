@@ -56,7 +56,6 @@ InterActive(
     ActiveStmtSet([ 
             StmtHandle(A:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000)
                 StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
-                StmtHandle(C:0:.predef_F8 =     3.000000000000000)
                 StmtHandle(C:0:.predef_F8 = -A:0:.predef_F8)
                 StmtHandle(Y:0:.predef_F8 = C:0:.predef_F8+B:0:.predef_F8*    3.000000000000000) ] 
     )
@@ -65,7 +64,6 @@ InterActive(
                 MemRefHandle(X:0:.predef_F8)
                 MemRefHandle(B:0:.predef_F8)
                 MemRefHandle(A:0:.predef_F8)
-                MemRefHandle(C:0:.predef_F8)
                 MemRefHandle(C:0:.predef_F8)
                 MemRefHandle(A:0:.predef_F8)
                 MemRefHandle(Y:0:.predef_F8)
@@ -76,4 +74,9 @@ InterActive(
         SymHandle(A)
             SymHandle(B)
             SymHandle(C) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
 )
+
+
+Total Iters: 6

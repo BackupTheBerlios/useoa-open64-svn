@@ -70,7 +70,7 @@
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
-#include <OpenAnalysis/Activity/ManagerICFGVaryInActive.hpp>
+#include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
 
 #include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
@@ -1122,10 +1122,10 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                                             interSE, icfgDep);
     icfgUseful->output(*irInterface);
     
-    //ICFGVaryInActive    (for testing)
-    OA::OA_ptr<OA::Activity::ManagerICFGVaryInActive> varyman;
-    varyman = new OA::Activity::ManagerICFGVaryInActive(irInterface);
-    OA::OA_ptr<OA::Activity::InActivePerStmt> inActive;
+    //ICFGVaryActive    (for testing)
+    OA::OA_ptr<OA::Activity::ManagerICFGVaryActive> varyman;
+    varyman = new OA::Activity::ManagerICFGVaryActive(irInterface);
+    OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind,
                                         interAlias, icfgDep, icfgUseful);
     inActive->output(*irInterface);
@@ -1141,6 +1141,12 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                                         interAlias, interSE);
     
     active->output(*irInterface);
+    
+    int numIterDep = 1;
+    int numIterActive = 1;
+    int numTotal = numIterDep + active->getNumIterUseful() 
+      + active->getNumIterVary() + numIterActive;
+    std::cout << "\n\nTotal Iters: " << numTotal << std::endl;
 
 
  /* 
