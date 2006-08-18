@@ -68,6 +68,7 @@ static const char* usage_details =
 "      --oa-AliasMapXAIFInter   test OA AliasMapXAIF from ManagerInsNoPtrInterAliasMap analysis\n"
 "      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-AliasMapXAIFFIAlias test OA AliasMapXAIF from FIAlias analysis\n"
+"      --oa-Linearity           test Linearity Analysis\n"
 "\n"
 "Options:\n"
 "  -d, --dump          dump the WHIRL IR\n"
@@ -112,6 +113,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-AliasMapXAIFInter",     CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFFIAlias",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-Linearity",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "oa-ujnum",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -246,6 +248,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 27; }
     if (parser.IsOpt("oa-AliasMapXAIFFIAlias")) { runMode = 28; }
     if (parser.IsOpt("oa-ICFGDep")) { runMode = 29; }
+    if (parser.IsOpt("oa-Linearity")) { runMode = 30; }
     
     // Check for other options
     if (parser.IsOpt("dump")) { dumpIR = true; }

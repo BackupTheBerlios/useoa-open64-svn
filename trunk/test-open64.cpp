@@ -69,6 +69,7 @@
 #include <OpenAnalysis/ICFG/ManagerICFGStandard.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
+#include <OpenAnalysis/Linearity/ManagerLinearityStandard.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
 
@@ -144,8 +145,6 @@ static int
 TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
 
-
-
 //***************************************************************************
 
 int
@@ -191,7 +190,6 @@ main(int argc, char* argv[])
   //PU_Info* pu_forest = ReadIR(whirlFileNm);
   PU_Info* pu_forest = ReadIR(args.whirlFileNm.c_str());
   PrepareIR(pu_forest); // used in whirl2xaif, xaif2whirl
-
   // -------------------------------------------------------
   // 4. Do something
   // -------------------------------------------------------  
@@ -269,6 +267,7 @@ main(int argc, char* argv[])
     case 17: // SymAliasSets bottom, deprecated
     case 23: // AliasMapBasic
     case 25: // AliasMapXAIFBasic
+    case 30: // Linearity
       TestIR_OA(std::cout, pu_forest, args.runMode );
       break;
   }
@@ -383,6 +382,11 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect);
 
+static int
+TestIR_OALinearity(std::ostream& os, PU_Info* pu,
+                       OA::OA_ptr<Open64IRInterface> irInterface,
+                       OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
+                       OA::OA_ptr<OA::DataFlow::ParamBindings> parambind);
 static int
 TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
@@ -510,6 +514,9 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
         break;
       case 25: // AliasMapXAIFBasic
         TestIR_OAAliasMapXAIFBasic_ForEachWNPU(os, pu, irInterface);
+        break;
+      case 30: // Linearity
+        TestIR_OALinearity(os, pu, irInterface, interAlias, parambind);
         break;
     }
   }
@@ -1824,6 +1831,47 @@ TestIR_OACommonBlockVars(std::ostream& os, PU_Info* pu,
 
   return 0;
   */
+}
+
+static int
+TestIR_OALinearity(std::ostream& os, PU_Info* pu,
+            OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
+            OA::OA_ptr<OA::DataFlow::ParamBindings> parambind)
+{
+    std::cout << "Linearity Analysis Start:\n";
+  
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu);
+
+    //FIAlias
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
+
+    // CFG
+    OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
+    cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+
+    OA::OA_ptr<OA::Linearity::ManagerStandard> linmanstd;
+    linmanstd = new OA::Linearity::ManagerStandard(irInterface);
+  
+/*  OA::OA_ptr<OA::Linearity::LinearityMatrix> LM
+     = linmanstd->performAnalysis((OA::irhandle_t)pu);
+  LM->output(*irInterface);
+
+  OA::OA_ptr<OA::Linearity::LinearityMatrix> LM2
+     = linmanstd->performAnalysis2((OA::irhandle_t)pu);
+  LM2->output(*irInterface);
+*/
+    OA::OA_ptr<OA::Linearity::LinearityMatrix> LM3
+       = linmanstd->performAnalysis((OA::irhandle_t)pu,cfg,alias,parambind);
+    std::cout << "\n\nDoes it get this far??\n\n";
+
+    LM3->output(*irInterface);
+
+  
+    return 0;
 }
 
 

@@ -190,3 +190,16 @@
         OpenAnalysis r186 which uses new ManagerICFGVaryActive
       - passes regressAll with OpenAnalysis trunk r186 compiled on Okapi
         with gcc-3.2
+8/18/06	    UseOA_Open64 svn trunk r64    Luis Ramos
+      - Args: Added Linearity Analysis Argument
+      - test-open64: 
+        -Added Linearity Analysis as runMode 30,
+        -Added Linearity Analysis OA Test Driver.
+      - Open64IRInterface: 
+        -Added Routines for LinearityIRInterface
+        -Routines are: getLinearityOpType, getLinearityStmtType
+        -Changed createExprTree, so that in the statement 
+	 if(OPERATOR_is_call(opr)) the root is created as a CallHandle
+	 into the CallNode(h) instead of an ExprHandle.
+      - TestCases: Added Linearity Test Cases subdirectory 
+         TestCases/Linearity, Simple.f90, Simple2.f90, TC1.f90, TC1f.f
