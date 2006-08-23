@@ -1,0 +1,8 @@
+echo "Generating TestResults/Linearity/TC1.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/TC1.B > TestResults/Linearity/TC1.B.out
+echo "Generating TestResults/Linearity/TC1f.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/TC1f.B > TestResults/Linearity/TC1f.B.out
+echo "Generating TestResults/Linearity/Simple.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Simple.B > TestResults/Linearity/Simple.B.out
+echo "Generating TestResults/Linearity/Simple2.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Simple2.B > TestResults/Linearity/Simple2.B.out

@@ -1,0 +1,264 @@
+Linearity Analysis Start:
+
+
+----------Beginning of PerformAnalysis??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+--||||||EXPR_STMT||||||--
+Statement:
+A:0:.predef_F8 =     0.000000000000000Expression Tree:
+[ 
+    ET ConstValNode (     0.000000000000000 ) ] 
+--visitConstValNode
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+B:0:.predef_F8 =     0.000000000000000Expression Tree:
+[ 
+    ET ConstValNode (     0.000000000000000 ) ] 
+--visitConstValNode
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+C:0:.predef_F8 =     0.000000000000000Expression Tree:
+[ 
+    ET ConstValNode (     0.000000000000000 ) ] 
+--visitConstValNode
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+A:0:.predef_F8 = B:0:.predef_F8Expression Tree:
+[ 
+    ET MemRefNode ( B:0:.predef_F8 ) ] 
+--visitMemRefNode
+MemRef::Loc: 
+NamedLoc(
+    mSymHandle: SymHandle(B)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+C:0:.predef_F8 = A:0:.predef_F8Expression Tree:
+[ 
+    ET MemRefNode ( A:0:.predef_F8 ) ] 
+--visitMemRefNode
+MemRef::Loc: 
+NamedLoc(
+    mSymHandle: SymHandle(A)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+
+===============================================
+===============================================
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+--||||||EXPR_STMT||||||--
+Statement:
+A:0:.predef_F8 =     0.000000000000000Expression Tree:
+[ 
+    ET ConstValNode (     0.000000000000000 ) ] 
+--visitConstValNode
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+B:0:.predef_F8 =     0.000000000000000Expression Tree:
+[ 
+    ET ConstValNode (     0.000000000000000 ) ] 
+--visitConstValNode
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+C:0:.predef_F8 =     0.000000000000000Expression Tree:
+[ 
+    ET ConstValNode (     0.000000000000000 ) ] 
+--visitConstValNode
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+A:0:.predef_F8 = B:0:.predef_F8Expression Tree:
+[ 
+    ET MemRefNode ( B:0:.predef_F8 ) ] 
+--visitMemRefNode
+MemRef::Loc: 
+NamedLoc(
+    mSymHandle: SymHandle(B)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+
+===============================================
+===============================================
+
+--||||||EXPR_STMT||||||--
+Statement:
+C:0:.predef_F8 = A:0:.predef_F8Expression Tree:
+[ 
+    ET MemRefNode ( A:0:.predef_F8 ) ] 
+--visitMemRefNode
+MemRef::Loc: 
+NamedLoc(
+    mSymHandle: SymHandle(A)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+
+===============================================
+===============================================
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+----------Beginning of Meet??
+
+
+
+Does it get this far??
+
+
+LinearityStandard(
+    mLMmap: OA_ptr<Location>	 => ,OA_ptr<std::set<OA_ptr<LinearityPair> > >
+
+            
+            NamedLoc(
+                mSymHandle: SymHandle(A)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(A)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(B)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Linear
+                ) ] 
+            
+            NamedLoc(
+                mSymHandle: SymHandle(C)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(C)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(A)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Linear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(C)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(B)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Linear
+                ) ] 
+
+)
