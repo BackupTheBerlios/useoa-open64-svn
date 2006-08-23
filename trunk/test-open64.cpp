@@ -493,7 +493,7 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
         //TestIR_OAUDDUChainsXAIF(os, pu, irInterface, interSE);
         break;
       case 9:
-        //TestIR_OAExprTree(os, pu, irInterface);
+        TestIR_OAExprTree(os, pu, irInterface);
         break;
       case 10:
         TestIR_OAReachConsts(os, pu, irInterface, interSE);
@@ -1595,6 +1595,7 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     std::cout << "stmt = " << ir->toString(stmt) << std::endl;
     //ir->dump(stmt,std::cout);
 
+    /*
     // iterate over all memory reference handles within the statement
     OA::OA_ptr<OA::MemRefHandleIterator> mrIterPtr = ir->getAllMemRefs(stmt);
     for (; mrIterPtr->isValid(); (*mrIterPtr)++ )
@@ -1603,6 +1604,7 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
       std::cout << "\tmemref = " << ir->toString(memref) << std::endl;
       //ir->dump(memref,std::cout);
     }
+    */
 
     // if the statement has an expression tree then dump that as well
     OA::ReachConsts::IRStmtType sType = ir->getReachConstsStmtType(stmt);
@@ -1615,8 +1617,34 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
         OA::ExprHandle expr = espIterPtr->currentSource();
         std::cout << "\texpr = " << ir->toString(expr) << std::endl;
         OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
-        eTreePtr->dump(std::cout,ir);
+        //eTreePtr->dump(std::cout,ir);
+        eTreePtr->output(*ir);
       }
+    }
+
+    // print out all of the ExprTrees for the parameters
+    // Iterate over procedure calls of a statement
+    OA::OA_ptr<OA::IRCallsiteIterator> callsiteItPtr = ir->getCallsites(stmt);
+    for ( ; callsiteItPtr->isValid(); ++(*callsiteItPtr)) {
+        OA::CallHandle call = callsiteItPtr->current();
+        //if (debug) {
+          std::cout << "\n        Call: ["
+                    << ir->toString(call) << "]";
+        //} 
+
+        OA::OA_ptr<OA::IRCallsiteParamIterator> paramIterPtr 
+            = ir->getCallsiteParams(call);
+        for ( ; paramIterPtr->isValid(); (*paramIterPtr)++ ) {
+            OA::ExprHandle param = paramIterPtr->current();
+
+            //if (debug) {
+              std::cout << "==== param = " << ir->toString(param) << std::endl;
+            //}
+
+            // get the expression tree for the parameter
+            OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(param);
+            eTreePtr->output(*ir);
+        }
     }
   }
 }

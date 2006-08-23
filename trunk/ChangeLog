@@ -203,3 +203,6 @@
 	 into the CallNode(h) instead of an ExprHandle.
       - TestCases: Added Linearity Test Cases subdirectory 
          TestCases/Linearity, Simple.f90, Simple2.f90, TC1.f90, TC1f.f
+
+8/22/06	    UseOA_Open64 svn trunk r65    Michelle Strout
+    - Made the --oa-ExprTree flag work again.
