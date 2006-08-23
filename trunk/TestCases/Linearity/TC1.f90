@@ -14,14 +14,8 @@
           f = 0.0
           do i=0,10
             a = a+x*x
-            t = func(a)
+            t = SIN(a)
             f = f+t
           end do
         end subroutine foo
-
-        function func(n) result(res)
-          double precision res
-          double precision n
-             res = n
-        end function func
 

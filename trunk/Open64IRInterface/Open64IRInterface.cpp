@@ -3010,7 +3010,7 @@ Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree> tree, WN* wn)
 	 || OPERATOR_is_expression(opr)) ) {
     return root;
   }
-  
+
   // 1a. FIXME: For now, eliminate PARM nodes from tree.
   if (opr == OPR_PARM) {
     if (WN_kid_count(wn) == 0) {

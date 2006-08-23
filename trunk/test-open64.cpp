@@ -1432,8 +1432,8 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
       aliasmapman->performAnalysis((OA::irhandle_t)pu);
 
   // then can do ReachDefs
-  OA::OA_ptr<OA::ReachDefs::ManagerStandard> rdman;
-  rdman = new OA::ReachDefs::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
+  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
       rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
   rds->dump(std::cout, irInterface);
@@ -1474,8 +1474,8 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
       aliasmapman->performAnalysis((OA::irhandle_t)pu);
 
   // then can do ReachDefs
-  OA::OA_ptr<OA::ReachDefs::ManagerStandard> rdman;
-  rdman = new OA::ReachDefs::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
+  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
       rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
 
@@ -1513,8 +1513,8 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
     
      
   // then can do ReachDefs
-  OA::OA_ptr<OA::ReachDefs::ManagerStandard> rdman;
-  rdman = new OA::ReachDefs::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
+  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
   rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
   rds->output(*irInterface);          
@@ -1881,8 +1881,8 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
     cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
     OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
 
-    OA::OA_ptr<OA::Linearity::ManagerStandard> linmanstd;
-    linmanstd = new OA::Linearity::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::Linearity::ManagerLinearity> linmanstd;
+    linmanstd = new OA::Linearity::ManagerLinearity(irInterface);
   
 /*  OA::OA_ptr<OA::Linearity::LinearityMatrix> LM
      = linmanstd->performAnalysis((OA::irhandle_t)pu);
