@@ -44,6 +44,7 @@
 #include <OpenAnalysis/IRInterface/ActivityIRInterface.hpp>
 #include <OpenAnalysis/IRInterface/ParamBindingsIRInterface.hpp>
 #include <OpenAnalysis/IRInterface/ICFGIRInterface.hpp>
+#include <OpenAnalysis/IRInterface/LinearityIRInterface.hpp>
 
 #include <OpenAnalysis/ExprTree/ExprTreeVisitor.hpp>
 #include <OpenAnalysis/ExprTree/EvalToMemRefVisitor.hpp>
@@ -502,7 +503,8 @@ class Open64IRInterface
     public OA::SideEffect::InterSideEffectIRInterfaceDefault,
     public virtual OA::DataFlow::ParamBindingsIRInterface,
     public virtual OA::ICFG::ICFGIRInterface,
-    public virtual OA::Activity::ActivityIRInterface
+    public virtual OA::Activity::ActivityIRInterface,
+    public virtual OA::Linearity::LinearityIRInterface
 {
 public:
   Open64IRInterface();
@@ -681,11 +683,15 @@ public:
   // ActivityIRInterface
   //-------------------------------------------------------------------------
   
-  //! Return an iterator over all independent locations for given proc
-  OA::OA_ptr<OA::LocIterator> getIndepLocIter(OA::ProcHandle h);
+  // Return an iterator over all independent locations for given proc
+  //OA::OA_ptr<OA::LocIterator> getIndepLocIter(OA::ProcHandle h);
+  //! Return an iterator over all independent MemRefExpr for given proc
+  OA::OA_ptr<OA::MemRefExprIterator> getIndepMemRefExprIter(OA::ProcHandle h);
   
-  //! Return an iterator over all dependent locations for given proc
-  OA::OA_ptr<OA::LocIterator> getDepLocIter(OA::ProcHandle h);
+  // Return an iterator over all dependent locations for given proc
+  //OA::OA_ptr<OA::LocIterator> getDepLocIter(OA::ProcHandle h);
+  //! Return an iterator over all dependent MemRefExpr for given proc
+  OA::OA_ptr<OA::MemRefExprIterator> getDepMemRefExprIter(OA::ProcHandle h);
  
   //! Given a statement, return its Activity::IRStmtType
   OA::Activity::IRStmtType getActivityStmtType(OA::StmtHandle h);
@@ -765,6 +771,18 @@ public:
   //! FIXME: temporary routine to find things out
   //! should be removed after testing
   int returnOpEnumValInt(OA::OpHandle op);
+
+  //---------------------------------------------------------------------------
+  // LinearityIRInterface.hpp
+  //---------------------------------------------------------------------------
+
+  //! get the operation type and returns a LinOpType
+  OA::Linearity::LinOpType
+      Open64IRInterface::getLinearityOpType(OA::OpHandle op);
+
+  OA::Linearity::IRStmtType 
+      Open64IRInterface::getLinearityStmtType(OA::StmtHandle h);
+
 
   //-------------------------------------------------------------------------
   // InterSideEffectIRInterface
