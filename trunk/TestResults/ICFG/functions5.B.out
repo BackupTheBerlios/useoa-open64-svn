@@ -3,180 +3,180 @@ graph ICFG:
 
     subgraph bar__0:
 
-        Node 1: 
-            ==  ICFG ENTRY_NODE 1 ==
-
-
-        Node 2: 
-             LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/CallGraph/functions5.f90"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 2 ==
-
-if (N:0:.predef_I4==1)
-
-
-        Node 3: 
-            ==  ICFG CFLOW_NODE 3 ==
-RES:0:.predef_I4 = 1
-
-
-        Node 4: 
-            ==  ICFG CFLOW_NODE 4 ==
-RES:0:.predef_I4 = 5
-
-
-        Node 5: 
-            ==  ICFG CFLOW_NODE 5 ==
-return (RES:0:.predef_I4)
-
-
-        Node 6: 
-            ==  ICFG EXIT_NODE 6 ==
-
-
-        Edge: 1 => 2
-            
-
-        Edge: 2 => 3
-            
-
-        Edge: 2 => 4
-            
-
-        Edge: 3 => 5
-            
-
-        Edge: 4 => 5
-            
-
-        Edge: 5 => 6
-            
-
-
-    subgraph foo__1:
-
-        Node 7: 
-            ==  ICFG ENTRY_NODE 7 ==
-
-
-        Node 8: 
-            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 8 ==
-
-if (N:0:.predef_I4==1)
-
-
-        Node 9: 
-            ==  ICFG CALL_NODE 9 ==
-RES:0:.predef_I4 = TRUNC(bar_(&1))
-
-
-        Node 10: 
-            ==  ICFG RETURN_NODE 10 ==
-
-
-        Node 11: 
-            ==  ICFG CFLOW_NODE 11 ==
-RES:0:.predef_I4 = 5
-
-
         Node 12: 
-            ==  ICFG CFLOW_NODE 12 ==
-return (RES:0:.predef_I4)
+            ==  ICFG ENTRY_NODE 12 ==
 
 
         Node 13: 
-            ==  ICFG EXIT_NODE 13 ==
+             LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/CallGraph/functions5.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 13 ==
+
+if (N:0:.predef_I4==1)
 
 
-        Edge: 9 => 10
-            CALL_RETURN
+        Node 14: 
+            ==  ICFG CFLOW_NODE 14 ==
+RES:0:.predef_I4 = 1
 
-        Edge: 7 => 8
-            
 
-        Edge: 8 => 9
-            
+        Node 15: 
+            ==  ICFG CFLOW_NODE 15 ==
+RES:0:.predef_I4 = 5
 
-        Edge: 8 => 11
-            
 
-        Edge: 10 => 12
-            
+        Node 16: 
+            ==  ICFG CFLOW_NODE 16 ==
+return (RES:0:.predef_I4)
 
-        Edge: 11 => 12
-            
+
+        Node 17: 
+            ==  ICFG EXIT_NODE 17 ==
+
 
         Edge: 12 => 13
             
 
+        Edge: 13 => 14
+            
 
-    subgraph functiontest__2:
+        Edge: 13 => 15
+            
 
-        Node 14: 
-            ==  ICFG ENTRY_NODE 14 == (entry)
-
-
-        Node 15: 
-            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 15 ==
-
-
-
-        Node 16: 
-            ==  ICFG CALL_NODE 16 ==
-N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))
-
-
-        Node 17: 
-            ==  ICFG RETURN_NODE 17 ==
-
-
-        Node 18: 
-            ==  ICFG CFLOW_NODE 18 ==
-X:0:.predef_F4 = SIN(&X:0:.predef_F4)
-_END()
-return
-
-
-        Node 19: 
-            ==  ICFG CFLOW_NODE 19 == (entry)
-return
-
-
-        Node 20: 
-            ==  ICFG EXIT_NODE 20 == (exit)
-
+        Edge: 14 => 16
+            
 
         Edge: 15 => 16
             
 
         Edge: 16 => 17
+            
+
+
+    subgraph foo__1:
+
+        Node 24: 
+            ==  ICFG ENTRY_NODE 24 ==
+
+
+        Node 25: 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 25 ==
+
+if (N:0:.predef_I4==1)
+
+
+        Node 28: 
+            ==  ICFG CALL_NODE 28 ==
+RES:0:.predef_I4 = TRUNC(bar_(&1))
+
+
+        Node 30: 
+            ==  ICFG RETURN_NODE 30 ==
+
+
+        Node 31: 
+            ==  ICFG CFLOW_NODE 31 ==
+RES:0:.predef_I4 = 5
+
+
+        Node 32: 
+            ==  ICFG CFLOW_NODE 32 ==
+return (RES:0:.predef_I4)
+
+
+        Node 33: 
+            ==  ICFG EXIT_NODE 33 ==
+
+
+        Edge: 28 => 30
             CALL_RETURN
 
-        Edge: 17 => 18
+        Edge: 24 => 25
             
 
-        Edge: 14 => 15
+        Edge: 25 => 28
             
 
-        Edge: 18 => 20
+        Edge: 25 => 31
             
 
-        Edge: 19 => 20
+        Edge: 30 => 32
+            
+
+        Edge: 31 => 32
+            
+
+        Edge: 32 => 33
             
 
 
-    Edge: 9 => 1
+    subgraph functiontest__2:
+
+        Node 38: 
+            ==  ICFG ENTRY_NODE 38 == (entry)
+
+
+        Node 42: 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 42 ==
+
+
+
+        Node 43: 
+            ==  ICFG CALL_NODE 43 ==
+N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))
+
+
+        Node 45: 
+            ==  ICFG RETURN_NODE 45 ==
+
+
+        Node 46: 
+            ==  ICFG CFLOW_NODE 46 ==
+X:0:.predef_F4 = SIN(&X:0:.predef_F4)
+_END()
+return
+
+
+        Node 47: 
+            ==  ICFG CFLOW_NODE 47 == (entry)
+return
+
+
+        Node 48: 
+            ==  ICFG EXIT_NODE 48 == (exit)
+
+
+        Edge: 42 => 43
+            
+
+        Edge: 43 => 45
+            CALL_RETURN
+
+        Edge: 45 => 46
+            
+
+        Edge: 38 => 42
+            
+
+        Edge: 46 => 48
+            
+
+        Edge: 47 => 48
+            
+
+
+    Edge: 28 => 12
         CALL_(bar_(&1)),style=dashed,color=red
 
-    Edge: 6 => 10
+    Edge: 17 => 30
         RETURN_(bar_(&1)),style=dashed,color=blue
 
-    Edge: 16 => 7
+    Edge: 43 => 24
         CALL_(foo_(&N:0:.predef_I4)),style=dashed,color=red
 
-    Edge: 13 => 17
+    Edge: 33 => 45
         RETURN_(foo_(&N:0:.predef_I4)),style=dashed,color=blue
 
 
@@ -184,59 +184,56 @@ digraph ICFG {
     node [shape=rectangle];
     subgraph cluster_bar__0 {
         label="bar__0"
-        1 [ label="==  ICFG ENTRY_NODE 1 ==\n" ];
-        2 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 2 ==\n\nif (N:0:.predef_I4==1)\n" ];
-        3 [ label="==  ICFG CFLOW_NODE 3 ==\nRES:0:.predef_I4 = 1\n" ];
-        4 [ label="==  ICFG CFLOW_NODE 4 ==\nRES:0:.predef_I4 = 5\n" ];
-        5 [ label="==  ICFG CFLOW_NODE 5 ==\nreturn (RES:0:.predef_I4)\n" ];
-        6 [ label="==  ICFG EXIT_NODE 6 ==\n" ];
-        1 -> 2 [ label="" ];
-        2 -> 3 [ label="" ];
-        2 -> 4 [ label="" ];
-        3 -> 5 [ label="" ];
-        4 -> 5 [ label="" ];
-        5 -> 6 [ label="" ];
+        12 [ label="==  ICFG ENTRY_NODE 12 ==\n" ];
+        13 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 13 ==\n\nif (N:0:.predef_I4==1)\n" ];
+        14 [ label="==  ICFG CFLOW_NODE 14 ==\nRES:0:.predef_I4 = 1\n" ];
+        15 [ label="==  ICFG CFLOW_NODE 15 ==\nRES:0:.predef_I4 = 5\n" ];
+        16 [ label="==  ICFG CFLOW_NODE 16 ==\nreturn (RES:0:.predef_I4)\n" ];
+        17 [ label="==  ICFG EXIT_NODE 17 ==\n" ];
+        12 -> 13 [ label="" ];
+        13 -> 14 [ label="" ];
+        13 -> 15 [ label="" ];
+        14 -> 16 [ label="" ];
+        15 -> 16 [ label="" ];
+        16 -> 17 [ label="" ];
     }
     subgraph cluster_foo__1 {
         label="foo__1"
-        7 [ label="==  ICFG ENTRY_NODE 7 ==\n" ];
-        8 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 8 ==\n\nif (N:0:.predef_I4==1)\n" ];
-        9 [ label="==  ICFG CALL_NODE 9 ==\nRES:0:.predef_I4 = TRUNC(bar_(&1))\n" ];
-        10 [ label="==  ICFG RETURN_NODE 10 ==\n" ];
-        11 [ label="==  ICFG CFLOW_NODE 11 ==\nRES:0:.predef_I4 = 5\n" ];
-        12 [ label="==  ICFG CFLOW_NODE 12 ==\nreturn (RES:0:.predef_I4)\n" ];
-        13 [ label="==  ICFG EXIT_NODE 13 ==\n" ];
-        9 -> 10 [ label="CALL_RETURN" ];
-        7 -> 8 [ label="" ];
-        8 -> 9 [ label="" ];
-        8 -> 11 [ label="" ];
-        10 -> 12 [ label="" ];
-        11 -> 12 [ label="" ];
-        12 -> 13 [ label="" ];
+        24 [ label="==  ICFG ENTRY_NODE 24 ==\n" ];
+        25 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 25 ==\n\nif (N:0:.predef_I4==1)\n" ];
+        28 [ label="==  ICFG CALL_NODE 28 ==\nRES:0:.predef_I4 = TRUNC(bar_(&1))\n" ];
+        30 [ label="==  ICFG RETURN_NODE 30 ==\n" ];
+        31 [ label="==  ICFG CFLOW_NODE 31 ==\nRES:0:.predef_I4 = 5\n" ];
+        32 [ label="==  ICFG CFLOW_NODE 32 ==\nreturn (RES:0:.predef_I4)\n" ];
+        33 [ label="==  ICFG EXIT_NODE 33 ==\n" ];
+        28 -> 30 [ label="CALL_RETURN" ];
+        24 -> 25 [ label="" ];
+        25 -> 28 [ label="" ];
+        25 -> 31 [ label="" ];
+        30 -> 32 [ label="" ];
+        31 -> 32 [ label="" ];
+        32 -> 33 [ label="" ];
     }
     subgraph cluster_functiontest__2 {
         label="functiontest__2"
-        14 [ label="==  ICFG ENTRY_NODE 14 == (entry)\n" ];
-        15 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 15 ==\n\n" ];
-        16 [ label="==  ICFG CALL_NODE 16 ==\nN:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))\n" ];
-        17 [ label="==  ICFG RETURN_NODE 17 ==\n" ];
-        18 [ label="==  ICFG CFLOW_NODE 18 ==\nX:0:.predef_F4 = SIN(&X:0:.predef_F4)\n_END()\nreturn\n" ];
-        19 [ label="==  ICFG CFLOW_NODE 19 == (entry)\nreturn\n" ];
-        20 [ label="==  ICFG EXIT_NODE 20 == (exit)\n" ];
-        15 -> 16 [ label="" ];
-        16 -> 17 [ label="CALL_RETURN" ];
-        17 -> 18 [ label="" ];
-        14 -> 15 [ label="" ];
-        18 -> 20 [ label="" ];
-        19 -> 20 [ label="" ];
+        38 [ label="==  ICFG ENTRY_NODE 38 == (entry)\n" ];
+        42 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 42 ==\n\n" ];
+        43 [ label="==  ICFG CALL_NODE 43 ==\nN:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))\n" ];
+        45 [ label="==  ICFG RETURN_NODE 45 ==\n" ];
+        46 [ label="==  ICFG CFLOW_NODE 46 ==\nX:0:.predef_F4 = SIN(&X:0:.predef_F4)\n_END()\nreturn\n" ];
+        47 [ label="==  ICFG CFLOW_NODE 47 == (entry)\nreturn\n" ];
+        48 [ label="==  ICFG EXIT_NODE 48 == (exit)\n" ];
+        42 -> 43 [ label="" ];
+        43 -> 45 [ label="CALL_RETURN" ];
+        45 -> 46 [ label="" ];
+        38 -> 42 [ label="" ];
+        46 -> 48 [ label="" ];
+        47 -> 48 [ label="" ];
     }
-    9 -> 1 [ label="CALL_(bar_(&1))",style=dashed,color=red ];
-    6 -> 10 [ label="RETURN_(bar_(&1))",style=dashed,color=blue ];
-    16 -> 7 [ label="CALL_(foo_(&N:0:.predef_I4))",style=dashed,color=red ];
-    13 -> 17 [ label="RETURN_(foo_(&N:0:.predef_I4))",style=dashed,color=blue ];}
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+    28 -> 12 [ label="CALL_(bar_(&1))",style=dashed,color=red ];
+    17 -> 30 [ label="RETURN_(bar_(&1))",style=dashed,color=blue ];
+    43 -> 24 [ label="CALL_(foo_(&N:0:.predef_I4))",style=dashed,color=red ];
+    33 -> 45 [ label="RETURN_(foo_(&N:0:.predef_I4))",style=dashed,color=blue ];}

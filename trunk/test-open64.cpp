@@ -45,8 +45,8 @@
 #include <Open64IRInterface/WhirlIO.h>
 #include <Open64IRInterface/diagnostics.h>
 
-#include <OpenAnalysis/CallGraph/ManagerCallGraphStandard.hpp>
-#include <OpenAnalysis/CFG/ManagerCFGStandard.hpp>
+#include <OpenAnalysis/CallGraph/ManagerCallGraph.hpp>
+#include <OpenAnalysis/CFG/ManagerCFG.hpp>
 #include <OpenAnalysis/Alias/ManagerAliasMapBasic.hpp>
 #include <OpenAnalysis/Alias/ManagerInterAliasMapBasic.hpp>
 #include <OpenAnalysis/Alias/ManagerFIAliasAliasMap.hpp>
@@ -55,18 +55,24 @@
 #include <OpenAnalysis/SideEffect/ManagerSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/InterSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/ManagerInterSideEffectStandard.hpp>
-#include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
+/* commented out by PLM 08/23/06
+ * #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
 #include <OpenAnalysis/XAIF/UDDUChainsXAIF.hpp>
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
+*/
 #include <OpenAnalysis/ReachConsts/ManagerReachConstsStandard.hpp>
+
+/*! commented out by PLM 08/23/06
 #include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
+*/
+
 #include <OpenAnalysis/Activity/ManagerActiveStandard.hpp>
 #include <OpenAnalysis/Activity/ManagerEachActive.hpp>
 //#include <OpenAnalysis/Activity/ManagerInterActive.hpp>
 #include <OpenAnalysis/CFG/EachCFGStandard.hpp>
 #include <OpenAnalysis/DataFlow/ManagerParamBindings.hpp>
 #include <OpenAnalysis/Activity/ManagerInterDep.hpp>
-#include <OpenAnalysis/ICFG/ManagerICFGStandard.hpp>
+#include <OpenAnalysis/ICFG/ManagerICFG.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
 #include <OpenAnalysis/Linearity/ManagerLinearityStandard.hpp>
@@ -75,7 +81,7 @@
 
 #include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
-#include <OpenAnalysis/Utils/SCC.hpp>
+//#include <OpenAnalysis/Utils/SCC.hpp>
 
 //************************** Forward Declarations ***************************
 
@@ -440,9 +446,9 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
   interAlias = fialiasman->performAnalysis(procIter);
 
   // call graph
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+  OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+  OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
   //cgraph->dump(std::cout, irInterface);
@@ -454,8 +460,8 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
       = parambindman->performAnalysis(cgraph);
 
   // Intra Side-Effect
-  OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
-  sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
+  sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
 
   // InterSideEffect
   OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
@@ -529,9 +535,9 @@ TestIR_OACFG_ForEachWNPU(std::ostream& os, PU_Info* pu,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OACFG");
 
-  OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CFG::CFGStandard> cfg
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFG> cfg
       = cfgmanstd->performAnalysis((OA::irhandle_t)pu);
   
   // text output
@@ -569,9 +575,9 @@ TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
   interAlias = fialiasman->performAnalysis(procIter);
 
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+  OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+  OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter,interAlias);
 
   // text output
@@ -600,10 +606,10 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
   interAlias = fialiasman->performAnalysis(procIter);
 
-  // CallGraph
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+      // CallGraph
+  OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+  OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
   //cgraph->dump(std::cout, irInterface);
@@ -703,9 +709,9 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
   interAlias = fialiasman->performAnalysis(procIter);
 
   // CallGraph
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+  OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+  OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
   //cgraph->dump(std::cout, irInterface);
@@ -718,8 +724,8 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
 
 
   // Intra Side-Effect
-  OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
-  sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
+  sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
 
   // InterSideEffect
   OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
@@ -743,16 +749,16 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
 
     Diag_Set_Phase("WHIRL tester: TestIR_OAICFG");
 
-    OA::OA_ptr<OA::ICFG::ICFGStandard> icfg;
-    icfg = new OA::ICFG::ICFGStandard();
+    OA::OA_ptr<OA::ICFG::ICFG> icfg;
+    icfg = new OA::ICFG::ICFG();
 
     //===========================================================
     // Have the manager create one from the CFGs
     
     // CFG 
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
-    OA::OA_ptr<OA::CFG::ManagerStandard> cfgman;
-    cfgman = new OA::CFG::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
     eachCFG = new OA::CFG::EachCFGStandard(cfgman);
     
     OA::OA_ptr<Open64IRProcIterator> procIter;
@@ -765,9 +771,9 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
     interAlias = fialiasman->performAnalysis(procIter);
 
     // call graph
-    OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-    cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-    OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
     //cgraph->dump(std::cout, irInterface);
@@ -827,8 +833,8 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
 
     // eachCFG 
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
-    OA::OA_ptr<OA::CFG::ManagerStandard> cfgman;
-    cfgman = new OA::CFG::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
     eachCFG = new OA::CFG::EachCFGStandard(cfgman);
     
     OA::OA_ptr<Open64IRProcIterator> procIter;
@@ -843,9 +849,9 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
     //interAlias->output(*irInterface);
 
     // call graph
-    OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-    cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-    OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
     //cgraph->dump(std::cout, irInterface);
@@ -859,7 +865,7 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
-    OA::OA_ptr<OA::ICFG::ICFGStandard> icfg;
+    OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
     //ICFGDep
@@ -931,6 +937,8 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
 
+  /*! Commented out by PLM 08/23/06  
+
   Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapXAIFFIAlias");
 
   // need a procedure iterator
@@ -955,6 +963,8 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
 
     aliasMapXAIF->output(*irInterface);
   }
+
+  */
  
   return 0;
 }
@@ -1062,8 +1072,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
     // eachCFG 
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
-    OA::OA_ptr<OA::CFG::ManagerStandard> cfgman;
-    cfgman = new OA::CFG::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
     eachCFG = new OA::CFG::EachCFGStandard(cfgman);
     
     OA::OA_ptr<Open64IRProcIterator> procIter;
@@ -1078,9 +1088,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     //interAlias->output(*irInterface);
 
     // call graph
-    OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-    cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-    OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
       cgraphman->performAnalysis(procIter, interAlias);
 
     //cgraph->dump(std::cout, irInterface);
@@ -1092,8 +1102,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     parambind = pbman->performAnalysis(cgraph);
 
     // Intra Side-Effect
-    OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
-    sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
+    sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
     
     // InterSideEffect
     OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
@@ -1107,7 +1117,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
-    OA::OA_ptr<OA::ICFG::ICFGStandard> icfg;
+    OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
     // ----------------- testing separate pieces
@@ -1421,9 +1431,9 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   Diag_Set_Phase("WHIRL tester: TestIR_OAUDDUChainsXAIF");
 
   // CFG
-  OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
 
   // Alias analysis
   OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
@@ -1439,6 +1449,7 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   rds->dump(std::cout, irInterface);
 
   // then UDDUChains
+  /*! commented out by PLM 08/23/06
   OA::OA_ptr<OA::UDDUChains::ManagerStandard> udman;
   udman = new OA::UDDUChains::ManagerStandard(irInterface);
   OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains= 
@@ -1451,6 +1462,7 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::XAIF::UDDUChainsXAIF> udduchainsXAIF= 
       udmanXAIF->performAnalysis((OA::irhandle_t)pu,cfg,udduchains);
   udduchainsXAIF->dump(std::cout, irInterface);
+  */
 
   return 0;
 }
@@ -1463,9 +1475,9 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
   Diag_Set_Phase("WHIRL tester: TestIR_OAUDDUChains");
 
   // CFG
-  OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
 
   // Alias analysis
   OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
@@ -1481,12 +1493,14 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
 
 
   // then UDDUChains
+  /*! commented out by PLM 08/23/06
   OA::OA_ptr<OA::UDDUChains::ManagerStandard> udman;
   udman = new OA::UDDUChains::ManagerStandard(irInterface);
   OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains= 
       udman->performAnalysis((OA::irhandle_t)pu,alias,rds,interSideEffect);
 
   udduchains->dump(std::cout, irInterface);
+  */
 
   return 0;
 }
@@ -1507,9 +1521,9 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
   alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
    
      // CFG
-  OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
     
      
   // then can do ReachDefs
@@ -1570,6 +1584,7 @@ TestIR_OAAliasMapXAIFBasic_ForEachWNPU(std::ostream& os, PU_Info* pu,
   //aliasMap->dump(std::cout, irInterface);
 
   // XAIF AliasMap
+  /*! commented out by PLM 08/23/06
   OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
   aliasmapxaifman = new OA::XAIF::ManagerAliasMapXAIF(irInterface);
   OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF = 
@@ -1577,6 +1592,7 @@ TestIR_OAAliasMapXAIFBasic_ForEachWNPU(std::ostream& os, PU_Info* pu,
 
   //aliasMapXAIF->dump(std::cout, irInterface);
   aliasMapXAIF->output(*irInterface);
+  */
 
   return 0;
 }
@@ -1658,9 +1674,9 @@ TestIR_OAReachConsts(std::ostream& os, PU_Info* pu,
   Diag_Set_Phase("WHIRL tester: TestIR_OAReachConsts");
 
   // CFG
-  OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
-  OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
 
   // Alias analysis
   OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
@@ -1669,13 +1685,17 @@ TestIR_OAReachConsts(std::ostream& os, PU_Info* pu,
       aliasmapman->performAnalysis((OA::irhandle_t)pu);
 
   // then can do ReachConsts
-  OA::OA_ptr<OA::ReachConsts::ManagerStandard> rcman;
-  rcman = new OA::ReachConsts::ManagerStandard(irInterface);
+  
+  /*! Temporarily commented out by PLM 08/23/06  
+  
+  OA::OA_ptr<OA::ReachConsts::ManagerReachConstsStandard> rcman;
+  rcman = new OA::ReachConsts::ManagerReachConstsStandard(irInterface);
   OA::OA_ptr<OA::ReachConsts::ReachConstsStandard> reachConsts= 
     rcman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
 
   //reachConsts->dump(std::cout, irInterface);
   reachConsts->output(*irInterface);
+  */
   
   return 0;
 }
@@ -1698,8 +1718,8 @@ TestIR_OASideEffect_ForEachWNPU(std::ostream& os, PU_Info* pu,
   interSideEffect = new OA::SideEffect::InterSideEffectStandard;
 
   // Intraprocedural Side-Effect Analysis
-  OA::OA_ptr<OA::SideEffect::ManagerStandard> sideman;
-  sideman = new OA::SideEffect::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideman;
+  sideman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
   OA::OA_ptr<OA::SideEffect::SideEffectStandard> sideEffect = 
       sideman->performAnalysis((OA::irhandle_t)pu,alias,interSideEffect);
 
@@ -1877,9 +1897,9 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
     alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
 
     // CFG
-    OA::OA_ptr<OA::CFG::ManagerStandard> cfgmanstd;
-    cfgmanstd = new OA::CFG::ManagerStandard(irInterface);
-    OA::OA_ptr<OA::CFG::Interface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+    cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+    OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
 
     OA::OA_ptr<OA::Linearity::ManagerLinearity> linmanstd;
     linmanstd = new OA::Linearity::ManagerLinearity(irInterface);
@@ -1907,13 +1927,14 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
 //***************************************************************************
 // just seeing if various calls to graph methods compile, tricky because
 // of multiple inheritance
-#include <OpenAnalysis/Utils/DGraph/DGraphStandard.hpp>
+#include <OpenAnalysis/Utils/DGraph/DGraphImplement.hpp>
 
 void graphCompile()
 {
-    OA::OA_ptr<OA::CFG::CFGStandard::Node> cn1, cn2;
-    cn1 = new OA::CFG::CFGStandard::Node;
-    cn2 = new OA::CFG::CFGStandard::Node;
+    /*! Commented out by PLM 08/23/06
+    OA::OA_ptr<OA::CFG::Node> cn1, cn2;
+    cn1 = new OA::CFG::Node;
+    cn2 = new OA::CFG::Node;
     if (cn1==cn2) {}
 
     OA::OA_ptr<OA::DGraph::DGraphStandard::Node> n1, n2;
@@ -1988,5 +2009,5 @@ void graphCompile()
     if (e1<be1) { }
     if (be1<e1) { }
     if (be1<be2) { }
-
+*/
 }

@@ -214,3 +214,9 @@
 8/23/06	    UseOA_Open64 svn trunk r67    Luis Ramos & Priyadarshini Malusare
     - Modified test-open64.cpp for ManagerLinearity and
       ManagerReachDefsStandard respectively.
+
+8/24/06     UseOA_Open64 svn trunk r68   Priyadarshini Malusare
+    - Modified test-open64.cpp for New GraphRefactor.
+	- Works with OpenAnalysis trunk r210 compiled on Okapi with gcc-3.2.
+	- ICFG TestCases are regenerated to satisfy Node Numbers of New
+	GraphRefactor.
