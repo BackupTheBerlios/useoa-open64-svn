@@ -1,0 +1,164 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/arrays1.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+X:0:anon_ptr.() =     2.500000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(X)
+)
+
+============================================
+OA::StmtHandle: Y:0:.predef_F8 =     3.500000000000000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(Y)
+)
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+IX:0:anon_ptr.() = 5
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(IX)
+)
+
+============================================
+OA::StmtHandle: I:0:.predef_I4 = 10
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(I)
+)
+
+============================================
+OA::StmtHandle: X:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(4)+    3.141499996185303-Y:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(Y)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(X)
+)
+
+============================================
+OA::StmtHandle: IX:0:anon_ptr.(4) = II:0:.predef_I4+0:IX:0:anon_ptr.(1)/0:IX:0:anon_ptr.(2)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(II)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(IX)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(IX)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(IX)
+)
+
+============================================
+OA::StmtHandle: COMMENT <2,7,print *,'x(1) = ', x(1), '''ix(4)'' = ',ix(4)> # 
+
+============================================
+OA::StmtHandle: PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+
+============================================
+OA::StmtHandle: IO <22,FORMATTED_WRITE,cray> 2
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(<no-symbol>)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(<no-symbol>)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(IX)
+)
+
+============================================
+OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+
+============================================
+OA::StmtHandle: _END()
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: return

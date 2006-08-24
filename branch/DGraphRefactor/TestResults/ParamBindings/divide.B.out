@@ -1,0 +1,47 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(divide_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(divide_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(A:0:.predef_F4)	 => SymHandle(A)
+                            MemRefHandle(B:0:.predef_F4)	 => SymHandle(B)
+                            MemRefHandle(C:0:.predef_F4)	 => SymHandle(C)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(divide_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(A)	 => MemRefHandle(A:0:.predef_F4)
+                    SymHandle(B)	 => MemRefHandle(B:0:.predef_F4)
+                    SymHandle(C)	 => MemRefHandle(C:0:.predef_F4)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(divide_)	 => [ SymHandle(A)    SymHandle(B)    SymHandle(C) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(divide_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4))	 => [ MemRefHandle(A:0:.predef_F4)    MemRefHandle(B:0:.predef_F4)    MemRefHandle(C:0:.predef_F4) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(divide_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4))	 => [ ExprHandle(&A:0:.predef_F4)    ExprHandle(&B:0:.predef_F4)    ExprHandle(&C:0:.predef_F4) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&A:0:.predef_F4)	 => [ 
+                ET MemRefNode ( A:0:.predef_F4 ) ] 
+            ExprHandle(&B:0:.predef_F4)	 => [ 
+                ET MemRefNode ( B:0:.predef_F4 ) ] 
+            ExprHandle(&C:0:.predef_F4)	 => [ 
+                ET MemRefNode ( C:0:.predef_F4 ) ] 
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(divide_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(A)	 => ExprHandle(&A:0:.predef_F4)
+                    SymHandle(B)	 => ExprHandle(&B:0:.predef_F4)
+                    SymHandle(C)	 => ExprHandle(&C:0:.predef_F4)
+
+
+)

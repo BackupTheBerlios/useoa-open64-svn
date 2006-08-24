@@ -1,0 +1,67 @@
+ LOC 0 0 source files:	1	"/s/parsons/b/others/malusare/UseOA-Open64/TestCases/ParamBinding/rung_kutta.f90"
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+I8SRCTRIPLET
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(runge_kutta_merson_(&0:Y:0:anon_ptr., &fun1_:0:anon_ptr., &IFAIL:0:.predef_I4, &N:0:.predef_I4, &A:0:.predef_F8, &B:0:.predef_F8, &TOL:0:.predef_F8))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(runge_kutta_merson_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(0:Y:0:anon_ptr.)	 => SymHandle(Y)
+                            MemRefHandle(IFAIL:0:.predef_I4)	 => SymHandle(IFAIL)
+                            MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(A:0:.predef_F8)	 => SymHandle(A)
+                            MemRefHandle(B:0:.predef_F8)	 => SymHandle(B)
+                            MemRefHandle(TOL:0:.predef_F8)	 => SymHandle(TOL)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(runge_kutta_merson_(&0:Y:0:anon_ptr., &fun1_:0:anon_ptr., &IFAIL:0:.predef_I4, &N:0:.predef_I4, &A:0:.predef_F8, &B:0:.predef_F8, &TOL:0:.predef_F8))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(Y)	 => MemRefHandle(0:Y:0:anon_ptr.)
+                    SymHandle(IFAIL)	 => MemRefHandle(IFAIL:0:.predef_I4)
+                    SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+                    SymHandle(A)	 => MemRefHandle(A:0:.predef_F8)
+                    SymHandle(B)	 => MemRefHandle(B:0:.predef_F8)
+                    SymHandle(TOL)	 => MemRefHandle(TOL:0:.predef_F8)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(runge_kutta_merson_)	 => [ SymHandle(Y)    SymHandle(IFAIL)    SymHandle(N)    SymHandle(A)    SymHandle(B)    SymHandle(TOL) ] 
+            ProcHandle(fun1_)	 => [ SymHandle(Y)    SymHandle(F) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(runge_kutta_merson_(&0:Y:0:anon_ptr., &fun1_:0:anon_ptr., &IFAIL:0:.predef_I4, &N:0:.predef_I4, &A:0:.predef_F8, &B:0:.predef_F8, &TOL:0:.predef_F8))	 => [ MemRefHandle(0:Y:0:anon_ptr.)    MemRefHandle(IFAIL:0:.predef_I4)    MemRefHandle(N:0:.predef_I4)    MemRefHandle(A:0:.predef_F8)    MemRefHandle(B:0:.predef_F8)    MemRefHandle(TOL:0:.predef_F8) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(runge_kutta_merson_(&0:Y:0:anon_ptr., &fun1_:0:anon_ptr., &IFAIL:0:.predef_I4, &N:0:.predef_I4, &A:0:.predef_F8, &B:0:.predef_F8, &TOL:0:.predef_F8))	 => [ ExprHandle(&0:Y:0:anon_ptr.)    ExprHandle(&fun1_:0:anon_ptr.)    ExprHandle(&IFAIL:0:.predef_I4)    ExprHandle(&N:0:.predef_I4)    ExprHandle(&A:0:.predef_F8)    ExprHandle(&B:0:.predef_F8)    ExprHandle(&TOL:0:.predef_F8) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&0:Y:0:anon_ptr.)	 => [ 
+                ET MemRefNode ( 0:Y:0:anon_ptr. ) ] 
+            ExprHandle(&fun1_:0:anon_ptr.)	 => [ 
+                ET OpNode ( fun1_:0:anon_ptr. ) ] 
+            ExprHandle(&IFAIL:0:.predef_I4)	 => [ 
+                ET MemRefNode ( IFAIL:0:.predef_I4 ) ] 
+            ExprHandle(&N:0:.predef_I4)	 => [ 
+                ET MemRefNode ( N:0:.predef_I4 ) ] 
+            ExprHandle(&A:0:.predef_F8)	 => [ 
+                ET MemRefNode ( A:0:.predef_F8 ) ] 
+            ExprHandle(&B:0:.predef_F8)	 => [ 
+                ET MemRefNode ( B:0:.predef_F8 ) ] 
+            ExprHandle(&TOL:0:.predef_F8)	 => [ 
+                ET MemRefNode ( TOL:0:.predef_F8 ) ] 
+
+    mActualExprToFormalMap: ExprHandle	 => SymHandle
+            ExprHandle(&0:Y:0:anon_ptr.)	 => SymHandle(Y)
+            ExprHandle(&IFAIL:0:.predef_I4)	 => SymHandle(IFAIL)
+            ExprHandle(&N:0:.predef_I4)	 => SymHandle(N)
+            ExprHandle(&A:0:.predef_F8)	 => SymHandle(A)
+            ExprHandle(&B:0:.predef_F8)	 => SymHandle(B)
+            ExprHandle(&TOL:0:.predef_F8)	 => SymHandle(TOL)
+
+)

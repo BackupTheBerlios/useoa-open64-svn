@@ -1,0 +1,50 @@
+
+PROCEDURE = { < ProcHandle("conj_grad_"), SymHandle("conj_grad_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("X") >
+            < 1, SymHandle("R") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/Alias/arrays5.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("do_loop (J:0:.predef_I4<=10)") =>
+        [
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("J"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
+        [
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("J"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = J:0:.predef_I4+1") =>
+        [
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("J"), F, full)
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("J"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4)") =>
+        [
+            MemRefHandle("X:0:anon_ptr.(J:0:.predef_I4)") => 
+                Deref( USE, NamedRef( USE, SymHandle("X"), F, part), 1, F, part)
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("J"), F, full)
+            MemRefHandle("R:0:anon_ptr.(J:0:.predef_I4)") => 
+                Deref( DEF, NamedRef( USE, SymHandle("R"), F, part), 1, F, part)
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("J"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("conj_grad_"), not local > }
+    LOCATION = { < SymHandle("X"), local > }
+    LOCATION = { < SymHandle("R"), local > }
+    LOCATION = { < SymHandle("J"), local > }

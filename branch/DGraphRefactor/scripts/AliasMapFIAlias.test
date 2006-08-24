@@ -1,0 +1,12 @@
+# Regression tests for AliasMapBasic generation
+testname::AliasMapFIAlias
+inputdir::TestCases/Alias
+outputdir::TestResults/AliasMapFIAlias
+driverexec::./test-open64 --oa-AliasMapFIAlias
+
+# list of tests
+#       input file,                 status
+test::  interalias_proc_call1.B,    rechecked by MMS 8/1/06
+test::  interalias_proc_call2.B,    rechecked by MMS 8/1/06
+test::  interalias_proc_call3.B,    rechecked by MMS 8/1/06
+

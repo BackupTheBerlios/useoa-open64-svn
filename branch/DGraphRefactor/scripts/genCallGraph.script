@@ -1,0 +1,18 @@
+echo "Generating TestResults/CallGraph/activity_proc_call1.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/activity_proc_call1.B > TestResults/CallGraph/activity_proc_call1.B.out
+echo "Generating TestResults/CallGraph/boxmodel-small.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/boxmodel-small.B > TestResults/CallGraph/boxmodel-small.B.out
+echo "Generating TestResults/CallGraph/functions2.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions2.B > TestResults/CallGraph/functions2.B.out
+echo "Generating TestResults/CallGraph/functions3.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions3.B > TestResults/CallGraph/functions3.B.out
+echo "Generating TestResults/CallGraph/functions4.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions4.B > TestResults/CallGraph/functions4.B.out
+echo "Generating TestResults/CallGraph/functions5.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions5.B > TestResults/CallGraph/functions5.B.out
+echo "Generating TestResults/CallGraph/functions6.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions6.B > TestResults/CallGraph/functions6.B.out
+echo "Generating TestResults/CallGraph/interalias_proc_call1.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/interalias_proc_call1.B > TestResults/CallGraph/interalias_proc_call1.B.out
+echo "Generating TestResults/CallGraph/nested_calls_1.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/nested_calls_1.B > TestResults/CallGraph/nested_calls_1.B.out

@@ -1,0 +1,36 @@
+echo "Testing TestCases/CallGraph/activity_proc_call1.B, TestResults/CallGraph/activity_proc_call1.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/activity_proc_call1.B > t
+diff t TestResults/CallGraph/activity_proc_call1.B.out
+
+echo "Testing TestCases/CallGraph/boxmodel-small.B, TestResults/CallGraph/boxmodel-small.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/boxmodel-small.B > t
+diff t TestResults/CallGraph/boxmodel-small.B.out
+
+echo "Testing TestCases/CallGraph/functions2.B, TestResults/CallGraph/functions2.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions2.B > t
+diff t TestResults/CallGraph/functions2.B.out
+
+echo "Testing TestCases/CallGraph/functions3.B, TestResults/CallGraph/functions3.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions3.B > t
+diff t TestResults/CallGraph/functions3.B.out
+
+echo "Testing TestCases/CallGraph/functions4.B, TestResults/CallGraph/functions4.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions4.B > t
+diff t TestResults/CallGraph/functions4.B.out
+
+echo "Testing TestCases/CallGraph/functions5.B, TestResults/CallGraph/functions5.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions5.B > t
+diff t TestResults/CallGraph/functions5.B.out
+
+echo "Testing TestCases/CallGraph/functions6.B, TestResults/CallGraph/functions6.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions6.B > t
+diff t TestResults/CallGraph/functions6.B.out
+
+echo "Testing TestCases/CallGraph/interalias_proc_call1.B, TestResults/CallGraph/interalias_proc_call1.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/interalias_proc_call1.B > t
+diff t TestResults/CallGraph/interalias_proc_call1.B.out
+
+echo "Testing TestCases/CallGraph/nested_calls_1.B, TestResults/CallGraph/nested_calls_1.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/nested_calls_1.B > t
+diff t TestResults/CallGraph/nested_calls_1.B.out
+

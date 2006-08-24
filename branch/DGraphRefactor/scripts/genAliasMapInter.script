@@ -1,0 +1,3 @@
+./test-open64 --oa-AliasMapInter TestCases/Alias/interalias_proc_call1.B > TestResults/AliasMapInter/interalias_proc_call1.B.out
+./test-open64 --oa-AliasMapInter TestCases/Alias/interalias_proc_call2.B > TestResults/AliasMapInter/interalias_proc_call2.B.out
+./test-open64 --oa-AliasMapInter TestCases/Alias/interalias_proc_call3.B > TestResults/AliasMapInter/interalias_proc_call3.B.out
