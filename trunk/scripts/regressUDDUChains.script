@@ -1,0 +1,12 @@
+echo "Testing TestCases/UDDUChainsTests/reachdef_if1.B, TestResults/UDDUChainsTests/reachdef_if1.B.out "
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_if1.B > t
+diff t TestResults/UDDUChainsTests/reachdef_if1.B.out
+
+echo "Testing TestCases/UDDUChainsTests/reachdef_if2.B, TestResults/UDDUChainsTests/reachdef_if2.B.out "
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_if2.B > t
+diff t TestResults/UDDUChainsTests/reachdef_if2.B.out
+
+echo "Testing TestCases/UDDUChainsTests/reachdef_loopif1.B, TestResults/UDDUChainsTests/reachdef_loopif1.B.out "
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_loopif1.B > t
+diff t TestResults/UDDUChainsTests/reachdef_loopif1.B.out
+

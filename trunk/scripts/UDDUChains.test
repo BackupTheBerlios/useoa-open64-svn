@@ -1,0 +1,13 @@
+# comment in file.test
+# Regression tests for ReachDef generation
+testname::UDDUChains
+inputdir::TestCases/UDDUChainsTests
+outputdir::TestResults/UDDUChainsTests
+driverexec::./test-open64 --oa-UDDUChains
+
+# list of tests
+#       input file,                 status
+test::  reachdef_if1.B,             
+test::  reachdef_if2.B,                
+test::  reachdef_loopif1.B,         
+

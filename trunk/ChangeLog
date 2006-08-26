@@ -190,7 +190,7 @@
         OpenAnalysis r186 which uses new ManagerICFGVaryActive
       - passes regressAll with OpenAnalysis trunk r186 compiled on Okapi
         with gcc-3.2
-8/18/06	    UseOA_Open64 svn trunk r64    Luis Ramos
+8/18/06	    UseOA-Open64 svn trunk r64    Luis Ramos
       - Args: Added Linearity Analysis Argument
       - test-open64: 
         -Added Linearity Analysis as runMode 30,
@@ -204,19 +204,25 @@
       - TestCases: Added Linearity Test Cases subdirectory 
          TestCases/Linearity, Simple.f90, Simple2.f90, TC1.f90, TC1f.f
 
-8/22/06	    UseOA_Open64 svn trunk r65    Michelle Strout
+8/22/06	    UseOA-Open64 svn trunk r65    Michelle Strout
     - Made the --oa-ExprTree flag work again.
 
-8/22/06	    UseOA_Open64 svn trunk r66    Luis Ramos
+8/22/06	    UseOA-Open64 svn trunk r66    Luis Ramos
     - Added Linearity.test, genLinearity.scrip, regressLinearity.scrip
     - Added Linearity TestResults
 
-8/23/06	    UseOA_Open64 svn trunk r67    Luis Ramos & Priyadarshini Malusare
+8/23/06	    UseOA-Open64 svn trunk r67    Luis Ramos & Priyadarshini Malusare
     - Modified test-open64.cpp for ManagerLinearity and
       ManagerReachDefsStandard respectively.
 
-8/24/06     UseOA_Open64 svn trunk r68   Priyadarshini Malusare
+8/24/06     UseOA-Open64 svn trunk r68   Priyadarshini Malusare
     - Modified test-open64.cpp for New GraphRefactor.
 	- Works with OpenAnalysis trunk r210 compiled on Okapi with gcc-3.2.
 	- ICFG TestCases are regenerated to satisfy Node Numbers of New
 	GraphRefactor.
+
+8/24/06     UseOA-Open64 svn trunk r70   Priyadarshini Malusare
+    - Added driver and TestCases for UDDUChains.
+    - passes regressAll with OpenAnalysis trunk r211 compiled on Okapi with
+      gcc-3.2
+   

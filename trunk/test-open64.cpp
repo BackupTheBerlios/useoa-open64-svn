@@ -55,11 +55,9 @@
 #include <OpenAnalysis/SideEffect/ManagerSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/InterSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/ManagerInterSideEffectStandard.hpp>
-/* commented out by PLM 08/23/06
- * #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
+#include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
 #include <OpenAnalysis/XAIF/UDDUChainsXAIF.hpp>
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
-*/
 #include <OpenAnalysis/ReachConsts/ManagerReachConstsStandard.hpp>
 
 /*! commented out by PLM 08/23/06
@@ -393,10 +391,17 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
                        OA::OA_ptr<Open64IRInterface> irInterface,
                        OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
                        OA::OA_ptr<OA::DataFlow::ParamBindings> parambind);
+/*static int
+TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
+            OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect);*/
+
 static int
 TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect);
+
 
 static int
 TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
@@ -493,7 +498,7 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
         TestIR_OAReachDefs(os, pu, irInterface, interAlias, interSE);
         break;
       case 7:
-        //TestIR_OAUDDUChains(os, pu, irInterface, interSE);
+        TestIR_OAUDDUChains(os, pu, irInterface, interAlias, interSE);
         break;
       case 8:
         //TestIR_OAUDDUChainsXAIF(os, pu, irInterface, interSE);
@@ -1470,11 +1475,12 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
 static int
 TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAUDDUChains");
 
-  // CFG
+/*  // CFG
   OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
   cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
   OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
@@ -1490,17 +1496,39 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
   rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
       rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+      */
+
+
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu);
+
+//    FIAlias
+  OA::OA_ptr<OA::Alias::Interface> alias;
+  alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
+
+     // CFG
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+
+
+  // then can do ReachDefs
+  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
+  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
+  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
+  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+
+
 
 
   // then UDDUChains
-  /*! commented out by PLM 08/23/06
-  OA::OA_ptr<OA::UDDUChains::ManagerStandard> udman;
-  udman = new OA::UDDUChains::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::UDDUChains::ManagerUDDUChainsStandard> udman;
+  udman = new OA::UDDUChains::ManagerUDDUChainsStandard(irInterface);
   OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains= 
       udman->performAnalysis((OA::irhandle_t)pu,alias,rds,interSideEffect);
 
-  udduchains->dump(std::cout, irInterface);
-  */
+//  udduchains->dump(std::cout, irInterface);
+  udduchains->output(*irInterface);
 
   return 0;
 }
