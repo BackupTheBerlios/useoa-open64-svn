@@ -1,3 +1,4 @@
+The Procedure istesting_
 
 AliasMapXAIF(ProcHandle(testing_)
     mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
@@ -5,6 +6,7 @@ AliasMapXAIF(ProcHandle(testing_)
     mMemRefToIdMap: MemRefHandle	 => int
 
 )
+The Procedure ishead_
 
 AliasMapXAIF(ProcHandle(head_)
     mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
@@ -65,6 +67,7 @@ AliasMapXAIF(ProcHandle(head_)
             MemRefHandle(T2:0:.predef_F8)	 => 5
 
 )
+The Procedure isbar_
 
 AliasMapXAIF(ProcHandle(bar_)
     mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >

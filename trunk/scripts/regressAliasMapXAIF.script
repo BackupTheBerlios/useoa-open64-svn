@@ -10,7 +10,15 @@ echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasMapXAIF/
 ./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/interalias_proc_call3.B > t
 diff t TestResults/AliasMapXAIF/interalias_proc_call3.B.out
 
+echo "Testing TestCases/Alias/interalias_proc_call5.B, TestResults/AliasMapXAIF/interalias_proc_call5.B.out "
+./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/interalias_proc_call5.B > t
+diff t TestResults/AliasMapXAIF/interalias_proc_call5.B.out
+
 echo "Testing TestCases/Alias/arrays5.B, TestResults/AliasMapXAIF/arrays5.B.out "
 ./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/arrays5.B > t
 diff t TestResults/AliasMapXAIF/arrays5.B.out
+
+echo "Testing TestCases/Alias/globalActive_2.B, TestResults/AliasMapXAIF/globalActive_2.B.out "
+./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/globalActive_2.B > t
+diff t TestResults/AliasMapXAIF/globalActive_2.B.out
 

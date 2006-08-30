@@ -60,9 +60,7 @@
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
 #include <OpenAnalysis/ReachConsts/ManagerReachConstsStandard.hpp>
 
-/*! commented out by PLM 08/23/06
 #include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
-*/
 
 #include <OpenAnalysis/Activity/ManagerActiveStandard.hpp>
 #include <OpenAnalysis/Activity/ManagerEachActive.hpp>
@@ -942,7 +940,6 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
 
-  /*! Commented out by PLM 08/23/06  
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapXAIFFIAlias");
 
@@ -969,7 +966,6 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
     aliasMapXAIF->output(*irInterface);
   }
 
-  */
  
   return 0;
 }

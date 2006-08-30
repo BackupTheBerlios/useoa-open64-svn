@@ -1,3 +1,4 @@
+The Procedure isconj_grad_
 
 AliasMapXAIF(ProcHandle(conj_grad_)
     mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
@@ -5,10 +6,28 @@ AliasMapXAIF(ProcHandle(conj_grad_)
                 LocTuple(
                     mRange: 
                     LocRange(
+                        mStart: 3
+                        mEnd: 3
+                    )
+                    mFullOverlap: 1
+                ) ] 
+            2	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
                         mStart: 1
                         mEnd: 1
                     )
-                    mFullOverlap: 1
+                    mFullOverlap: 0
+                ) ] 
+            3	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 2
+                        mEnd: 2
+                    )
+                    mFullOverlap: 0
                 ) ] 
 
     mMemRefToIdMap: MemRefHandle	 => int
@@ -16,9 +35,9 @@ AliasMapXAIF(ProcHandle(conj_grad_)
             MemRefHandle(J:0:.predef_I4)	 => 1
             MemRefHandle(J:0:.predef_I4)	 => 1
             MemRefHandle(J:0:.predef_I4)	 => 1
-            MemRefHandle(X:0:anon_ptr.(J:0:.predef_I4))	 => 0
+            MemRefHandle(X:0:anon_ptr.(J:0:.predef_I4))	 => 2
             MemRefHandle(J:0:.predef_I4)	 => 1
-            MemRefHandle(R:0:anon_ptr.(J:0:.predef_I4))	 => 0
+            MemRefHandle(R:0:anon_ptr.(J:0:.predef_I4))	 => 3
             MemRefHandle(J:0:.predef_I4)	 => 1
 
 )
