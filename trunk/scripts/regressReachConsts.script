@@ -1,24 +1,24 @@
-echo "Testing TestProgs//constprop_if1a.B, TestResults/ReachConstsTests/constprop_if1a.B.out Added by PLM 07/28/06"
-./test-open64 --oa-ReachConsts TestProgs//constprop_if1a.B > t
+echo "Testing TestCases/ReachConsts/constprop_if1a.B, TestResults/ReachConstsTests/constprop_if1a.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ReachConsts TestCases/ReachConsts/constprop_if1a.B > t
 diff t TestResults/ReachConstsTests/constprop_if1a.B.out
 
-echo "Testing TestProgs//constprop_if1.B, TestResults/ReachConstsTests/constprop_if1.B.out Added by PLM 07/28/06"
-./test-open64 --oa-ReachConsts TestProgs//constprop_if1.B > t
+echo "Testing TestCases/ReachConsts/constprop_if1.B, TestResults/ReachConstsTests/constprop_if1.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ReachConsts TestCases/ReachConsts/constprop_if1.B > t
 diff t TestResults/ReachConstsTests/constprop_if1.B.out
 
-echo "Testing TestProgs//constprop_if1b.B, TestResults/ReachConstsTests/constprop_if1b.B.out Added by PLM 07/28/06"
-./test-open64 --oa-ReachConsts TestProgs//constprop_if1b.B > t
+echo "Testing TestCases/ReachConsts/constprop_if1b.B, TestResults/ReachConstsTests/constprop_if1b.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ReachConsts TestCases/ReachConsts/constprop_if1b.B > t
 diff t TestResults/ReachConstsTests/constprop_if1b.B.out
 
-echo "Testing TestProgs//constprop_if1c.B, TestResults/ReachConstsTests/constprop_if1c.B.out Added by PLM 07/28/06"
-./test-open64 --oa-ReachConsts TestProgs//constprop_if1c.B > t
+echo "Testing TestCases/ReachConsts/constprop_if1c.B, TestResults/ReachConstsTests/constprop_if1c.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ReachConsts TestCases/ReachConsts/constprop_if1c.B > t
 diff t TestResults/ReachConstsTests/constprop_if1c.B.out
 
-echo "Testing TestProgs//constprop_loop1.B, TestResults/ReachConstsTests/constprop_loop1.B.out Added by PLM 07/28/06"
-./test-open64 --oa-ReachConsts TestProgs//constprop_loop1.B > t
+echo "Testing TestCases/ReachConsts/constprop_loop1.B, TestResults/ReachConstsTests/constprop_loop1.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ReachConsts TestCases/ReachConsts/constprop_loop1.B > t
 diff t TestResults/ReachConstsTests/constprop_loop1.B.out
 
-echo "Testing TestProgs//constprop_loop2.B, TestResults/ReachConstsTests/constprop_loop2.B.out Added by PLM 07/28/06"
-./test-open64 --oa-ReachConsts TestProgs//constprop_loop2.B > t
+echo "Testing TestCases/ReachConsts/constprop_loop2.B, TestResults/ReachConstsTests/constprop_loop2.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ReachConsts TestCases/ReachConsts/constprop_loop2.B > t
 diff t TestResults/ReachConstsTests/constprop_loop2.B.out
 

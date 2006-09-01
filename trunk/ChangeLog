@@ -229,3 +229,8 @@
 8/30/06     UseOA-Open64 svn trunk r72   Priyadarshini Malusare
     - Added TestCase fnd TestResult for AliasMapXAIF (interalias_proc_call5.B) 
    
+9/1/06     UseOA-Open64 svn trunk r73   Barbara Kreaseck
+    - Added ICFGReachConsts regression test
+    - passes regressAll with OpenAnalysis trunk r221 compiled on Okapi
+        with gcc-3.2
+

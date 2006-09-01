@@ -59,6 +59,7 @@
 #include <OpenAnalysis/XAIF/UDDUChainsXAIF.hpp>
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
 #include <OpenAnalysis/ReachConsts/ManagerReachConstsStandard.hpp>
+#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
 
 #include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
 
@@ -118,6 +119,10 @@ static int
 TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
               OA::OA_ptr<Open64IRInterface> irInterface,
               std::string& dotFileNm);
+
+static int
+TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
+              OA::OA_ptr<Open64IRInterface> irInterface);
 
 static int
 TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
@@ -253,6 +258,9 @@ main(int argc, char* argv[])
       break;
     case 29: // ICFGDep
       TestIR_OAICFGDep(std::cout, pu_forest, irInterface);
+      break;
+    case 31: // ICFGReachConsts
+      TestIR_OAICFGReachConsts(std::cout, pu_forest, irInterface);
       break;
     case 1: // CFG
     //case 3: // Alias
@@ -897,6 +905,74 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
 
     // dump output
     //icfgDep->dump(std::cout,irInterface);
+
+    return 0;
+}
+
+static int
+TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
+                         OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+  Diag_Set_Phase("WHIRL tester: TestIR_OAICFGReachConsts");
+
+    // eachCFG 
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+    
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //FIAlias
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+    OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+    interAlias = fialiasman->performAnalysis(procIter);
+
+    //interAlias->output(*irInterface);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph = 
+      cgraphman->performAnalysis(procIter, interAlias);
+
+    //cgraph->dump(std::cout, irInterface);
+
+    //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+    // ICFG
+    OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
+    icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
+    OA::OA_ptr<OA::ICFG::ICFG> icfg;
+    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
+
+    // Intra Side-Effect
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
+    sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+    
+    // InterSideEffect
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
+    interSEman = new 
+      OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+    
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
+    interSE = interSEman->performAnalysis(cgraph, parambind,
+                                        interAlias, sideeffectman);
+    
+    // ICFGReachConsts
+    OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
+    ircsman = new OA::ReachConsts::ManagerICFGReachConsts(irInterface);
+    OA::OA_ptr<OA::ReachConsts::InterReachConsts> ircs
+      = ircsman->performAnalysis(icfg,parambind,interAlias,interSE);
+
+    ircs->output(*irInterface);
 
     return 0;
 }
@@ -1728,7 +1804,7 @@ static int
 TestIR_OASideEffect_ForEachWNPU(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface)
 {
-  Diag_Set_Phase("WHIRL tester: TestIR_OAAliasMapXAIF");
+  Diag_Set_Phase("WHIRL tester: TestIR_OASideEffect_ForEachWNPU");
 
   // Alias analysis
   OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;

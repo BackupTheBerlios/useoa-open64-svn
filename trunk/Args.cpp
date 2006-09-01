@@ -61,6 +61,7 @@ static const char* usage_details =
 "      --oa-InterDep            test differentiable deps analysis\n"
 "      --oa-ICFG                test ICFG analysis\n"
 "      --oa-ICFGDep             test ICFGDep analysis\n"
+"      --oa-ICFGReachConsts     test ICFGReachConsts analysis\n"
 "      --oa-CommonBlock         learning about common blocks\n"
 "      --oa-AliasMapBasic       test OA AliasMapBasic analysis\n"
 "      --oa-AliasMapInter       test OA ManagerInsNoPtrInterAliasMap analysis\n"
@@ -106,6 +107,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-InterDep",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ICFG",                  CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ICFGDep",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ICFGReachConsts",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CommonBlock",           CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapBasic",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapInter",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -249,6 +251,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-AliasMapXAIFFIAlias")) { runMode = 28; }
     if (parser.IsOpt("oa-ICFGDep")) { runMode = 29; }
     if (parser.IsOpt("oa-Linearity")) { runMode = 30; }
+    if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 31; }
     
     // Check for other options
     if (parser.IsOpt("dump")) { dumpIR = true; }
