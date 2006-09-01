@@ -234,3 +234,8 @@
     - passes regressAll with OpenAnalysis trunk r221 compiled on Okapi
         with gcc-3.2
 
+9/1/06     UseOA-Open64 svn trunk r74  Priyadarshini Malusare
+    - Removed ICFG_ReachConsts till linker problem with the ReachConsts get solved.
+	- passes regressAll with OpenAnalysis trunk r222 compiled on okapi with
+	gcc-3.2
+

@@ -58,8 +58,8 @@
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
 #include <OpenAnalysis/XAIF/UDDUChainsXAIF.hpp>
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
-#include <OpenAnalysis/ReachConsts/ManagerReachConstsStandard.hpp>
-#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
+//#include <OpenAnalysis/ReachConsts/ManagerReachConstsStandard.hpp>
+//#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
 
 #include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
 
@@ -916,6 +916,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAICFGReachConsts");
 
+  /*! commented out by PLM 09/31/06
     // eachCFG 
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
     OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
@@ -973,6 +974,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
       = ircsman->performAnalysis(icfg,parambind,interAlias,interSE);
 
     ircs->output(*irInterface);
+    */
 
     return 0;
 }
