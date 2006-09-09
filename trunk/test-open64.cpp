@@ -412,7 +412,9 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
 static int
 TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect);
+
 
 static int
 TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
@@ -507,7 +509,7 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
         TestIR_OAUDDUChains(os, pu, irInterface, interAlias, interSE);
         break;
       case 8:
-        //TestIR_OAUDDUChainsXAIF(os, pu, irInterface, interSE);
+        TestIR_OAUDDUChainsXAIF(os, pu, irInterface, interAlias, interSE);
         break;
       case 9:
         TestIR_OAExprTree(os, pu, irInterface);
@@ -1503,10 +1505,11 @@ TestIR_OAEachActivity(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> irInterface,
+            OA::OA_ptr<OA::Alias::InterAliasMap> interAlias,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAUDDUChainsXAIF");
-
+/*
   // CFG
   OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
   cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
@@ -1523,15 +1526,38 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
       rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
-  rds->dump(std::cout, irInterface);
+//  rds->dump(std::cout, irInterface);
 
+*/
+
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu);
+
+//    FIAlias
+  OA::OA_ptr<OA::Alias::Interface> alias;
+  alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
+
+     // CFG
+  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
+  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
+  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
+
+
+  // then can do ReachDefs
+  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
+  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
+  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
+  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+
+
+
+  
   // then UDDUChains
-  /*! commented out by PLM 08/23/06
-  OA::OA_ptr<OA::UDDUChains::ManagerStandard> udman;
-  udman = new OA::UDDUChains::ManagerStandard(irInterface);
+  OA::OA_ptr<OA::UDDUChains::ManagerUDDUChainsStandard> udman;
+  udman = new OA::UDDUChains::ManagerUDDUChainsStandard(irInterface);
   OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains= 
       udman->performAnalysis((OA::irhandle_t)pu,alias,rds,interSideEffect);
-  udduchains->dump(std::cout, irInterface);
+//  udduchains->dump(std::cout, irInterface);
 
   // and finally UDDUChainsXAIF
   OA::OA_ptr<OA::XAIF::ManagerStandard> udmanXAIF;
@@ -1539,7 +1565,6 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::XAIF::UDDUChainsXAIF> udduchainsXAIF= 
       udmanXAIF->performAnalysis((OA::irhandle_t)pu,cfg,udduchains);
   udduchainsXAIF->dump(std::cout, irInterface);
-  */
 
   return 0;
 }
