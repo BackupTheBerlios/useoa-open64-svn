@@ -1810,9 +1810,7 @@ TestIR_OAReachConsts(std::ostream& os, PU_Info* pu,
       aliasmapman->performAnalysis((OA::irhandle_t)pu);
 
   // then can do ReachConsts
-  
-  /*! Temporarily commented out by PLM 08/23/06  
-  
+    
   OA::OA_ptr<OA::ReachConsts::ManagerReachConstsStandard> rcman;
   rcman = new OA::ReachConsts::ManagerReachConstsStandard(irInterface);
   OA::OA_ptr<OA::ReachConsts::ReachConstsStandard> reachConsts= 
@@ -1820,7 +1818,6 @@ TestIR_OAReachConsts(std::ostream& os, PU_Info* pu,
 
   //reachConsts->dump(std::cout, irInterface);
   reachConsts->output(*irInterface);
-  */
   
   return 0;
 }

@@ -8,8 +8,8 @@ source scripts/regressICFGActive.script
 source scripts/regressParamBindings.script
 source scripts/regressSideEffect.script
 source scripts/regressReachDefs.script
-#source scripts/regressReachConsts.script
+source scripts/regressReachConsts.script
 source scripts/regressUDDUChains.script
-#source scripts/regressICFGReachConsts.script
+source scripts/regressICFGReachConsts.script
 
 

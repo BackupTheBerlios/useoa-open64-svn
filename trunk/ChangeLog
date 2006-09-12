@@ -247,5 +247,11 @@
     - removed regressICFGReachConsts.script from regressAll.script
       (temporarily, as I work on the output)
 
-	
+9/11/06    UseOA-Open64 svn trunk r78 Barbara Kreaseck
+    - re-instated regressReachConsts.script and regressICFGReachConsts.script
+      into regressAll.script
+    - removed 'Tests' from following subdirectory names (seemed redundant ...)
+       + TestCases/ReachConstsTests
+       + TestResults/ReachConstsTests
+
 

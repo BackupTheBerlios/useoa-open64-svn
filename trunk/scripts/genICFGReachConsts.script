@@ -1,0 +1,16 @@
+echo "Generating TestResults/ICFGReachConsts/constprop_if1a.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1a.B > TestResults/ICFGReachConsts/constprop_if1a.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_if1.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1.B > TestResults/ICFGReachConsts/constprop_if1.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_if1b.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1b.B > TestResults/ICFGReachConsts/constprop_if1b.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_if1c.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1c.B > TestResults/ICFGReachConsts/constprop_if1c.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_loop1.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_loop1.B > TestResults/ICFGReachConsts/constprop_loop1.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_loop2.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_loop2.B > TestResults/ICFGReachConsts/constprop_loop2.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_proc1.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc1.B > TestResults/ICFGReachConsts/constprop_proc1.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_proc2.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc2.B > TestResults/ICFGReachConsts/constprop_proc2.B.out

@@ -2,7 +2,7 @@
 # Regression tests for ReachDef generation
 testname::ReachConsts
 inputdir::TestCases/ReachConsts
-outputdir::TestResults/ReachConstsTests
+outputdir::TestResults/ReachConsts
 driverexec::./test-open64 --oa-ReachConsts
 
 # list of tests
