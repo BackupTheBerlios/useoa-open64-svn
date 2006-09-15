@@ -2379,6 +2379,14 @@ Open64IRInterface::getDefMemRefs(OA::StmtHandle stmt)
          mreIter != sMemref2mreSetMap[memref].end(); mreIter++ ) 
     {
         OA::OA_ptr<OA::MemRefExpr> mre = *mreIter;
+
+        //! ================================================
+        //! only map those MREs that do not involve an addressOf operation
+        //! added by PLM 09/14/06
+        //! ================================================
+
+        if (mre->hasAddressTaken()) { continue; }
+
         if (mre->isDef()) {
           retList->push_back(memref);
           break;
@@ -2433,13 +2441,22 @@ Open64IRInterface::getUseMemRefs(OA::StmtHandle stmt)
   OA::OA_ptr<OA::MemRefHandleIterator> mIter = getMemRefIterator(stmt);
   for ( ; mIter->isValid(); (*mIter)++ ) {
     OA::MemRefHandle memref = mIter->current();
-
+    
     // loop over memory reference expressions for this memref handle
     set<OA::OA_ptr<OA::MemRefExpr> >::iterator mreIter;
     for (mreIter = sMemref2mreSetMap[memref].begin();
          mreIter != sMemref2mreSetMap[memref].end(); mreIter++ ) 
     {
         OA::OA_ptr<OA::MemRefExpr> mre = *mreIter;
+        
+        
+        //! ================================================ 
+        //! only map those MREs that do not involve an addressOf operation
+        //! added by PLM 09/14/06 
+        //! ================================================ 
+
+        if (mre->hasAddressTaken()) { continue; }
+          
         if (mre->isUse()) {
           retList->push_back(memref);
           break;
