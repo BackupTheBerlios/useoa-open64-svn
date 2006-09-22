@@ -1723,7 +1723,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // FIXME: does WHIRL represent array accesses to int ptrs in C this way?
       if ((WN_operator(WN_kid0(wn)) == OPR_ARRAY) 
           || (WN_operator(WN_kid0(wn)) == OPR_ARRAYEXP)  
-          || (WN_operator(WN_kid0(wn)) == OPR_STRCTFLD) ) 
+          || (WN_operator(WN_kid0(wn)) == OPR_STRCTFLD)  
+          || (WN_operator(WN_kid0(wn)) == OPR_LDA) )
       {
           findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid0(wn), lvl, flags); 
           // do not create MRE for this wn

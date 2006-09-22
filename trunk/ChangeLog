@@ -259,4 +259,9 @@
       checks so that IRInterface should not report the parameters Passed by
       Reference or Address.
 
+9/21/06     UseOA-Open64 svn trunk r80 Priyadarshini Malusare
+    - For Open64IRInterface in the function findAllMemRefsAndMapToMemRefExprs
+      added check (WN_operator(WN_kid0(wn)) == OPR_LDA) ) for OPR_ILOADX.
+
+    - Added testCase for MemRefExpr
 

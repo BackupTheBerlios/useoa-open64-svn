@@ -30,3 +30,7 @@ echo "Testing TestCases/MemRefExpr/interalias_proc_call3.B, TestResults/MemRefEx
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > t
 diff t TestResults/MemRefExpr/interalias_proc_call3.B.out
 
+echo "Testing TestCases/MemRefExpr/test.B, TestResults/MemRefExpr/test.B.out checked by PLM 9/21/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/test.B > t
+diff t TestResults/MemRefExpr/test.B.out
+

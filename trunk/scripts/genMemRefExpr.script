@@ -14,3 +14,5 @@ echo "Generating TestResults/MemRefExpr/interalias_proc_call2.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call2.B > TestResults/MemRefExpr/interalias_proc_call2.B.out
 echo "Generating TestResults/MemRefExpr/interalias_proc_call3.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > TestResults/MemRefExpr/interalias_proc_call3.B.out
+echo "Generating TestResults/MemRefExpr/test.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/test.B > TestResults/MemRefExpr/test.B.out
