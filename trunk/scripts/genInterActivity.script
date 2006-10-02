@@ -1,0 +1,10 @@
+echo "Generating TestResults/CSFIActivity/simple0.B.out"
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple0.B > TestResults/CSFIActivity/simple0.B.out
+echo "Generating TestResults/CSFIActivity/simple1.B.out"
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple1.B > TestResults/CSFIActivity/simple1.B.out
+echo "Generating TestResults/CSFIActivity/simple2.B.out"
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple2.B > TestResults/CSFIActivity/simple2.B.out
+echo "Generating TestResults/CSFIActivity/simple3.B.out"
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple3.B > TestResults/CSFIActivity/simple3.B.out
+echo "Generating TestResults/CSFIActivity/argumentArrayIndex2.B.out"
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentArrayIndex2.B > TestResults/CSFIActivity/argumentArrayIndex2.B.out

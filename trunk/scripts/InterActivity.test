@@ -1,0 +1,15 @@
+# comment in file.test
+# Regression tests for Context-Sensitive and Flow-Insensitive Activity Analysis 
+testname::InterActivity
+inputdir::TestCases/CSFIActivity
+outputdir::TestResults/CSFIActivity
+driverexec::./test-open64 --oa-InterActivity
+
+# list of tests
+#       input file,                 status
+test::  simple0.B,             
+test::  simple1.B,                
+test::  simple2.B,
+test::  simple3.B,
+test::  argumentArrayIndex2.B,
+

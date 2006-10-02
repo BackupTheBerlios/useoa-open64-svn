@@ -217,51 +217,75 @@
 
 8/24/06     UseOA-Open64 svn trunk r68   Priyadarshini Malusare
     - Modified test-open64.cpp for New GraphRefactor.
-	- Works with OpenAnalysis trunk r210 compiled on Okapi with gcc-3.2.
-	- ICFG TestCases are regenerated to satisfy Node Numbers of New
-	GraphRefactor.
+	- Works with OpenAnalysis trunk r210 compiled on Okapi 
+      with gcc-3.2.
+	- ICFG TestCases are regenerated to satisfy Node Numbers 
+      of New GraphRefactor.
 
 8/24/06     UseOA-Open64 svn trunk r70   Priyadarshini Malusare
     - Added driver and TestCases for UDDUChains.
-    - passes regressAll with OpenAnalysis trunk r211 compiled on Okapi with
-      gcc-3.2
+    - passes regressAll with OpenAnalysis trunk r211 compiled 
+      on Okapi with gcc-3.2
 
 8/30/06     UseOA-Open64 svn trunk r72   Priyadarshini Malusare
-    - Added TestCase fnd TestResult for AliasMapXAIF (interalias_proc_call5.B) 
+    - Added TestCase fnd TestResult for AliasMapXAIF 
+      (interalias_proc_call5.B) 
    
 9/1/06     UseOA-Open64 svn trunk r73   Barbara Kreaseck
     - Added ICFGReachConsts regression test
-    - passes regressAll with OpenAnalysis trunk r221 compiled on Okapi
-        with gcc-3.2
+    - passes regressAll with OpenAnalysis trunk r221 compiled 
+      on Okapi with gcc-3.2
 
 9/1/06     UseOA-Open64 svn trunk r74  Priyadarshini Malusare
-    - Removed ICFG_ReachConsts till linker problem with the ReachConsts get solved.
-	- passes regressAll with OpenAnalysis trunk r222 compiled on okapi with
-	gcc-3.2
+    - Removed ICFG_ReachConsts till linker problem with the 
+      ReachConsts get solved.
+	- passes regressAll with OpenAnalysis trunk r222 compiled 
+      on okapi with gcc-3.2
 
 9/8/06     UseOA-Open64 svn trunk r74 Priyadarshini Malusare
     - Added TestCases and TestResults for UDDUChainsXAIF
-    - Added regressAllUDDUChainsXAIF.script, genUDDUChainsXAIF.script, UDDUChains.script
+    - Added regressAllUDDUChainsXAIF.script, 
+      genUDDUChainsXAIF.script, UDDUChains.script
 
 9/8/06     UseOA-Open64 scv trunk r77 Barbara Kreaseck
     - removed regressICFGReachConsts.script from regressAll.script
       (temporarily, as I work on the output)
 
 9/11/06    UseOA-Open64 svn trunk r78 Barbara Kreaseck
-    - re-instated regressReachConsts.script and regressICFGReachConsts.script
-      into regressAll.script
-    - removed 'Tests' from following subdirectory names (seemed redundant ...)
+    - re-instated regressReachConsts.script and 
+      regressICFGReachConsts.script into regressAll.script
+    - removed 'Tests' from following subdirectory 
+      names (seemed redundant ...)
        + TestCases/ReachConstsTests
        + TestResults/ReachConstsTests
 
 9/14/06     UseOA-Open64 svn trunk r79 Priyadarshini Malusare
-    - In Open64IRInterface, in getUseMemRefs() and getDefsMemRefs() added
-      checks so that IRInterface should not report the parameters Passed by
-      Reference or Address.
+    - In Open64IRInterface, in getUseMemRefs() and getDefsMemRefs() 
+      added checks so that IRInterface should not report the
+      parameters Passed by Reference or Address.
 
 9/21/06     UseOA-Open64 svn trunk r80 Priyadarshini Malusare
-    - For Open64IRInterface in the function findAllMemRefsAndMapToMemRefExprs
-      added check (WN_operator(WN_kid0(wn)) == OPR_LDA) ) for OPR_ILOADX.
-
+    - For Open64IRInterface in the function 
+      findAllMemRefsAndMapToMemRefExprs added check 
+      (WN_operator(WN_kid0(wn)) == OPR_LDA) ) for OPR_ILOADX.
     - Added testCase for MemRefExpr
+
+10/01/06   UseOA-Open64 svn trunk r81 Priyadarshini Malusare
+    - Added driver for Context-Sensitive and Flow-Insensitive 
+      Activity Analysis in test-open64.cpp under option 
+      InterActive.
+    - Added 2 header files in the test-open64.cpp
+      #include <OpenAnalysis/DUG/ManagerDUGStandard.hpp>
+      #include <OpenAnalysis/duaa/ManagerDUActive.hpp>
+    - Added #include <OpenAnalysis/IRInterface/DUGIRInterface.hpp>
+      in Open64IRInterface.hpp
+    - Modify Open64IRInterface class to inherit virtually from
+      OA::DUG::DUGIRInterface.
+    - Added testCases from OpenAD into TestCases/CSFIActivity 
+      Context-Sensitive, Flow-Insensitive Activity 
+    - Added scripts InterActive.test and genInterActive.script 
+      and regressInterActive.script. 
+
+   
+ 	
 

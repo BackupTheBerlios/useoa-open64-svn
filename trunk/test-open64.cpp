@@ -78,6 +78,12 @@
 
 #include <OpenAnalysis/Utils/OutputBuilderDOT.hpp>
 
+
+/*! Header files for Context-Sensitive and Flow-inSensitive Activity Analysis */
+#include <OpenAnalysis/DUG/ManagerDUGStandard.hpp>
+#include <OpenAnalysis/duaa/ManagerDUActive.hpp>
+
+
 //#include <OpenAnalysis/Utils/SCC.hpp>
 
 //************************** Forward Declarations ***************************
@@ -229,7 +235,7 @@ main(int argc, char* argv[])
     case 18: // InterDep
       TestIR_OAInterDep(std::cout, pu_forest, irInterface);
       break;
-    case 19: // InterActivit
+    case 19: // InterActivity
       TestIR_OAInterActivity(std::cout, pu_forest, irInterface);
       break;
     case 20: // ICFG
@@ -1344,6 +1350,88 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 }
 
 
+static int
+TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+    Diag_Set_Phase("WHIRL tester: TestIR_OAInterAActivity (Context-Sensitive and Flow-Insensitive)");
+
+    // eachCFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //FIAlias
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasMap> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasMap(irInterface);
+    OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
+    interAlias = fialiasman->performAnalysis(procIter);
+
+    //interAlias->output(*irInterface);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
+      cgraphman->performAnalysis(procIter, interAlias);
+
+    //cgraph->dump(std::cout, irInterface);
+
+    //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+    // Intra Side-Effect
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
+    sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+
+    // InterSideEffect
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
+    interSEman = new
+      OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
+    interSE = interSEman->performAnalysis(cgraph, parambind,
+                                        interAlias, sideeffectman);
+
+    // ICFG
+    OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
+    icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
+    OA::OA_ptr<OA::ICFG::ICFG> icfg;
+    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
+
+    // Context-Sensitive and Flow-inSensitive Activity Analysis
+   
+    // Def-Use Graph
+
+    OA::OA_ptr<OA::DUG::ManagerDUGStandard> dugman;
+    dugman = new OA::DUG::ManagerDUGStandard(irInterface, irInterface);
+    OA::OA_ptr<OA::DUG::DUGStandard> dug
+        = dugman->performAnalysis(procIter, icfg, parambind, interAlias, cgraph);
+    dugman->transitiveClosureDepMatrix(cgraph);
+    dug->dumpdot(cout, irInterface);
+
+    // Def-Use Activity Analysis
+    OA::OA_ptr<OA::Activity::ManagerDUActive> duactiveman;
+    duactiveman = new OA::Activity::ManagerDUActive(irInterface, dug);
+    OA::OA_ptr<OA::Activity::InterActive> duactive;
+    duactive = duactiveman->performAnalysis(icfg, parambind, interAlias);
+
+    duactive->dump(cout, irInterface);
+
+}
+
+
+/*! Michelle's Activity Analysis. 
+ * Commented out by PLM 100106 and replaced temporarily by Jaewook's 
+ * Activity Analysis Driver.
 
 static int
 TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
@@ -1351,7 +1439,7 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
 {
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAInterActivity");
- /* 
+  
   // call graph
   OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
@@ -1404,9 +1492,9 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
                 interAlias, interSE, eachCFG);
 
   active->dump(std::cout, irInterface);
-*/
   return 0;
 }
+*/
 
 
 static int
