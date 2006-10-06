@@ -1416,7 +1416,10 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::DUG::DUGStandard> dug
         = dugman->performAnalysis(procIter, icfg, parambind, interAlias, cgraph);
     dugman->transitiveClosureDepMatrix(cgraph);
-    dug->dumpdot(cout, irInterface);
+    //dug->dumpdot(cout, irInterface);
+    std::cout << "Printing DUG" << std::endl;
+    dug->output(*irInterface);
+    std::cout << "Done Printing DUG" << std::endl;
 
     // Def-Use Activity Analysis
     OA::OA_ptr<OA::Activity::ManagerDUActive> duactiveman;

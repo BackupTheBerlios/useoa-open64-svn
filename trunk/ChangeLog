@@ -286,6 +286,17 @@
     - Added scripts InterActive.test and genInterActive.script 
       and regressInterActive.script. 
 
-   
+10/01/06   UseOA-Open64 svn trunk r82 Priyadarshini Malusare
+    - added TestCases and TestResults for Context-Sensitive and Flow
+      insensitive Activity Analysis. new directories are 
+      TestCases/CSFIActivity and TestCases/CSFIActivity
+    - added scripts for this analysis as follows:
+      script/InterActive.test, script/genInterActive.script,
+      script/regressInterActive.script.
+    - Works with OpenAnalysis trunk r210 compiled on Okapi
+      with gcc-3.2.
+
+
+	 
  	
 

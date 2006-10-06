@@ -18,3 +18,271 @@ echo "Testing TestCases/CSFIActivity/argumentArrayIndex2.B, TestResults/CSFIActi
 ./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentArrayIndex2.B > t
 diff t TestResults/CSFIActivity/argumentArrayIndex2.B.out
 
+echo "Testing TestCases/CSFIActivity/argumentArrayIndex3.B, TestResults/CSFIActivity/argumentArrayIndex3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentArrayIndex3.B > t
+diff t TestResults/CSFIActivity/argumentArrayIndex3.B.out
+
+echo "Testing TestCases/CSFIActivity/argumentArrayIndex4.B, TestResults/CSFIActivity/argumentArrayIndex4.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentArrayIndex4.B > t
+diff t TestResults/CSFIActivity/argumentArrayIndex4.B.out
+
+echo "Testing TestCases/CSFIActivity/argumentArrayIndex.B, TestResults/CSFIActivity/argumentArrayIndex.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentArrayIndex.B > t
+diff t TestResults/CSFIActivity/argumentArrayIndex.B.out
+
+echo "Testing TestCases/CSFIActivity/argumentConversion_1.B, TestResults/CSFIActivity/argumentConversion_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentConversion_1.B > t
+diff t TestResults/CSFIActivity/argumentConversion_1.B.out
+
+echo "Testing TestCases/CSFIActivity/argumentConversion_2.B, TestResults/CSFIActivity/argumentConversion_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentConversion_2.B > t
+diff t TestResults/CSFIActivity/argumentConversion_2.B.out
+
+echo "Testing TestCases/CSFIActivity/argumentConversion_3.B, TestResults/CSFIActivity/argumentConversion_3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentConversion_3.B > t
+diff t TestResults/CSFIActivity/argumentConversion_3.B.out
+
+echo "Testing TestCases/CSFIActivity/argumentConversion_4.B, TestResults/CSFIActivity/argumentConversion_4.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/argumentConversion_4.B > t
+diff t TestResults/CSFIActivity/argumentConversion_4.B.out
+
+echo "Testing TestCases/CSFIActivity/bat.B, TestResults/CSFIActivity/bat.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/bat.B > t
+diff t TestResults/CSFIActivity/bat.B.out
+
+echo "Testing TestCases/CSFIActivity/cast1.B, TestResults/CSFIActivity/cast1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/cast1.B > t
+diff t TestResults/CSFIActivity/cast1.B.out
+
+echo "Testing TestCases/CSFIActivity/ConstFoldSimp0.B, TestResults/CSFIActivity/ConstFoldSimp0.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/ConstFoldSimp0.B > t
+diff t TestResults/CSFIActivity/ConstFoldSimp0.B.out
+
+echo "Testing TestCases/CSFIActivity/constPrec.B, TestResults/CSFIActivity/constPrec.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/constPrec.B > t
+diff t TestResults/CSFIActivity/constPrec.B.out
+
+echo "Testing TestCases/CSFIActivity/daerfj.B, TestResults/CSFIActivity/daerfj.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/daerfj.B > t
+diff t TestResults/CSFIActivity/daerfj.B.out
+
+echo "Testing TestCases/CSFIActivity/directDependency1.B, TestResults/CSFIActivity/directDependency1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/directDependency1.B > t
+diff t TestResults/CSFIActivity/directDependency1.B.out
+
+echo "Testing TestCases/CSFIActivity/directDependency2.B, TestResults/CSFIActivity/directDependency2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/directDependency2.B > t
+diff t TestResults/CSFIActivity/directDependency2.B.out
+
+echo "Testing TestCases/CSFIActivity/directDependency3.B, TestResults/CSFIActivity/directDependency3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/directDependency3.B > t
+diff t TestResults/CSFIActivity/directDependency3.B.out
+
+echo "Testing TestCases/CSFIActivity/float_intrinsic.B, TestResults/CSFIActivity/float_intrinsic.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/float_intrinsic.B > t
+diff t TestResults/CSFIActivity/float_intrinsic.B.out
+
+echo "Testing TestCases/CSFIActivity/globalActive_1.B, TestResults/CSFIActivity/globalActive_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_1.B > t
+diff t TestResults/CSFIActivity/globalActive_1.B.out
+
+echo "Testing TestCases/CSFIActivity/globalActive_2.B, TestResults/CSFIActivity/globalActive_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_2.B > t
+diff t TestResults/CSFIActivity/globalActive_2.B.out
+
+echo "Testing TestCases/CSFIActivity/globalActive_3.B, TestResults/CSFIActivity/globalActive_3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_3.B > t
+diff t TestResults/CSFIActivity/globalActive_3.B.out
+
+echo "Testing TestCases/CSFIActivity/globalActive_4.B, TestResults/CSFIActivity/globalActive_4.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_4.B > t
+diff t TestResults/CSFIActivity/globalActive_4.B.out
+
+echo "Testing TestCases/CSFIActivity/globalActive_7.B, TestResults/CSFIActivity/globalActive_7.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_7.B > t
+diff t TestResults/CSFIActivity/globalActive_7.B.out
+
+echo "Testing TestCases/CSFIActivity/If_Loop1.B, TestResults/CSFIActivity/If_Loop1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/If_Loop1.B > t
+diff t TestResults/CSFIActivity/If_Loop1.B.out
+
+echo "Testing TestCases/CSFIActivity/If_Loop2.B, TestResults/CSFIActivity/If_Loop2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/If_Loop2.B > t
+diff t TestResults/CSFIActivity/If_Loop2.B.out
+
+echo "Testing TestCases/CSFIActivity/If_Loop3.B, TestResults/CSFIActivity/If_Loop3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/If_Loop3.B > t
+diff t TestResults/CSFIActivity/If_Loop3.B.out
+
+echo "Testing TestCases/CSFIActivity/If_Loop4.B, TestResults/CSFIActivity/If_Loop4.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/If_Loop4.B > t
+diff t TestResults/CSFIActivity/If_Loop4.B.out
+
+echo "Testing TestCases/CSFIActivity/If_Loop5.B, TestResults/CSFIActivity/If_Loop5.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/If_Loop5.B > t
+diff t TestResults/CSFIActivity/If_Loop5.B.out
+
+echo "Testing TestCases/CSFIActivity/IfStatement_1.B, TestResults/CSFIActivity/IfStatement_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/IfStatement_1.B > t
+diff t TestResults/CSFIActivity/IfStatement_1.B.out
+
+echo "Testing TestCases/CSFIActivity/IfStatement_2.B, TestResults/CSFIActivity/IfStatement_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/IfStatement_2.B > t
+diff t TestResults/CSFIActivity/IfStatement_2.B.out
+
+echo "Testing TestCases/CSFIActivity/lion.B, TestResults/CSFIActivity/lion.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/lion.B > t
+diff t TestResults/CSFIActivity/lion.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_1.B, TestResults/CSFIActivity/Loop_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_1.B > t
+diff t TestResults/CSFIActivity/Loop_1.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_2.B, TestResults/CSFIActivity/Loop_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_2.B > t
+diff t TestResults/CSFIActivity/Loop_2.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_3.B, TestResults/CSFIActivity/Loop_3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_3.B > t
+diff t TestResults/CSFIActivity/Loop_3.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_1a.b, TestResults/CSFIActivity/Loop_simple_1a.b.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_1a.b > t
+diff t TestResults/CSFIActivity/Loop_simple_1a.b.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_1.B, TestResults/CSFIActivity/Loop_simple_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_1.B > t
+diff t TestResults/CSFIActivity/Loop_simple_1.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_2a.B, TestResults/CSFIActivity/Loop_simple_2a.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_2a.B > t
+diff t TestResults/CSFIActivity/Loop_simple_2a.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_2.B, TestResults/CSFIActivity/Loop_simple_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_2.B > t
+diff t TestResults/CSFIActivity/Loop_simple_2.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_3.B, TestResults/CSFIActivity/Loop_simple_3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_3.B > t
+diff t TestResults/CSFIActivity/Loop_simple_3.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_4.B, TestResults/CSFIActivity/Loop_simple_4.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_4.B > t
+diff t TestResults/CSFIActivity/Loop_simple_4.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_5.B, TestResults/CSFIActivity/Loop_simple_5.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_5.B > t
+diff t TestResults/CSFIActivity/Loop_simple_5.B.out
+
+echo "Testing TestCases/CSFIActivity/Loop_simple_6.B, TestResults/CSFIActivity/Loop_simple_6.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Loop_simple_6.B > t
+diff t TestResults/CSFIActivity/Loop_simple_6.B.out
+
+echo "Testing TestCases/CSFIActivity/mini1.B, TestResults/CSFIActivity/mini1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/mini1.B > t
+diff t TestResults/CSFIActivity/mini1.B.out
+
+echo "Testing TestCases/CSFIActivity/nested_calls_1.B, TestResults/CSFIActivity/nested_calls_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/nested_calls_1.B > t
+diff t TestResults/CSFIActivity/nested_calls_1.B.out
+
+echo "Testing TestCases/CSFIActivity/nested_calls_2.B, TestResults/CSFIActivity/nested_calls_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/nested_calls_2.B > t
+diff t TestResults/CSFIActivity/nested_calls_2.B.out
+
+echo "Testing TestCases/CSFIActivity/nested_calls_3.B, TestResults/CSFIActivity/nested_calls_3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/nested_calls_3.B > t
+diff t TestResults/CSFIActivity/nested_calls_3.B.out
+
+echo "Testing TestCases/CSFIActivity/nested_calls_4.B, TestResults/CSFIActivity/nested_calls_4.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/nested_calls_4.B > t
+diff t TestResults/CSFIActivity/nested_calls_4.B.out
+
+echo "Testing TestCases/CSFIActivity/NestedIf.B, TestResults/CSFIActivity/NestedIf.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/NestedIf.B > t
+diff t TestResults/CSFIActivity/NestedIf.B.out
+
+echo "Testing TestCases/CSFIActivity/NestedLoopIf.B, TestResults/CSFIActivity/NestedLoopIf.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/NestedLoopIf.B > t
+diff t TestResults/CSFIActivity/NestedLoopIf.B.out
+
+echo "Testing TestCases/CSFIActivity/NestedLoops.B, TestResults/CSFIActivity/NestedLoops.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/NestedLoops.B > t
+diff t TestResults/CSFIActivity/NestedLoops.B.out
+
+echo "Testing TestCases/CSFIActivity/passiveStatement.B, TestResults/CSFIActivity/passiveStatement.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/passiveStatement.B > t
+diff t TestResults/CSFIActivity/passiveStatement.B.out
+
+echo "Testing TestCases/CSFIActivity/passiveSubroutine.B, TestResults/CSFIActivity/passiveSubroutine.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/passiveSubroutine.B > t
+diff t TestResults/CSFIActivity/passiveSubroutine.B.out
+
+echo "Testing TestCases/CSFIActivity/readWrite1.B, TestResults/CSFIActivity/readWrite1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/readWrite1.B > t
+diff t TestResults/CSFIActivity/readWrite1.B.out
+
+echo "Testing TestCases/CSFIActivity/readWrite2.B, TestResults/CSFIActivity/readWrite2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/readWrite2.B > t
+diff t TestResults/CSFIActivity/readWrite2.B.out
+
+echo "Testing TestCases/CSFIActivity/Select_1.B, TestResults/CSFIActivity/Select_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Select_1.B > t
+diff t TestResults/CSFIActivity/Select_1.B.out
+
+echo "Testing TestCases/CSFIActivity/Select_2.B, TestResults/CSFIActivity/Select_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/Select_2.B > t
+diff t TestResults/CSFIActivity/Select_2.B.out
+
+echo "Testing TestCases/CSFIActivity/SeqOfIfs.B, TestResults/CSFIActivity/SeqOfIfs.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/SeqOfIfs.B > t
+diff t TestResults/CSFIActivity/SeqOfIfs.B.out
+
+echo "Testing TestCases/CSFIActivity/SeqOfLoops.B, TestResults/CSFIActivity/SeqOfLoops.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/SeqOfLoops.B > t
+diff t TestResults/CSFIActivity/SeqOfLoops.B.out
+
+echo "Testing TestCases/CSFIActivity/sideEffect_1.B, TestResults/CSFIActivity/sideEffect_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/sideEffect_1.B > t
+diff t TestResults/CSFIActivity/sideEffect_1.B.out
+
+echo "Testing TestCases/CSFIActivity/sideEffect_2.B, TestResults/CSFIActivity/sideEffect_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/sideEffect_2.B > t
+diff t TestResults/CSFIActivity/sideEffect_2.B.out
+
+echo "Testing TestCases/CSFIActivity/sideEffect_3.B, TestResults/CSFIActivity/sideEffect_3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/sideEffect_3.B > t
+diff t TestResults/CSFIActivity/sideEffect_3.B.out
+
+echo "Testing TestCases/CSFIActivity/simple0.B, TestResults/CSFIActivity/simple0.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple0.B > t
+diff t TestResults/CSFIActivity/simple0.B.out
+
+echo "Testing TestCases/CSFIActivity/simple1.B, TestResults/CSFIActivity/simple1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple1.B > t
+diff t TestResults/CSFIActivity/simple1.B.out
+
+echo "Testing TestCases/CSFIActivity/simple2.B, TestResults/CSFIActivity/simple2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple2.B > t
+diff t TestResults/CSFIActivity/simple2.B.out
+
+echo "Testing TestCases/CSFIActivity/simple3.B, TestResults/CSFIActivity/simple3.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/simple3.B > t
+diff t TestResults/CSFIActivity/simple3.B.out
+
+echo "Testing TestCases/CSFIActivity/speelpenning.B, TestResults/CSFIActivity/speelpenning.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/speelpenning.B > t
+diff t TestResults/CSFIActivity/speelpenning.B.out
+
+echo "Testing TestCases/CSFIActivity/tanh_f_arg.B, TestResults/CSFIActivity/tanh_f_arg.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/tanh_f_arg.B > t
+diff t TestResults/CSFIActivity/tanh_f_arg.B.out
+
+echo "Testing TestCases/CSFIActivity/u_def_struct_1.B, TestResults/CSFIActivity/u_def_struct_1.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/u_def_struct_1.B > t
+diff t TestResults/CSFIActivity/u_def_struct_1.B.out
+
+echo "Testing TestCases/CSFIActivity/u_def_struct_2.B, TestResults/CSFIActivity/u_def_struct_2.B.out "
+./test-open64 --oa-InterActivity TestCases/CSFIActivity/u_def_struct_2.B > t
+diff t TestResults/CSFIActivity/u_def_struct_2.B.out
+

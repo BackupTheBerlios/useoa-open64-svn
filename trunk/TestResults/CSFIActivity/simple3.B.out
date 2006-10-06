@@ -1,0 +1,42 @@
+Before DUGStandard performAnalysis
+Before CallGraphIterator
+Inside CallGraphIterator
+Before assignActiveStandard
+After assignActiveStandard
+before mProcsOfInterest.find
+The Procedure name ishead_
+Inside CallGraphIterator
+Before assignActiveStandard
+After assignActiveStandard
+before mProcsOfInterest.find
+The Procedure name isProcHandle(0)
+After DUGStandard PerformAnalysis
+Printing DUG
+
+graph DGraph:
+
+Done Printing DUG
+Inside ManagerDUActive markUseful
+before dep Iter
+Outside dep Iter
+before Danger duaa
+after danger duaa
+before activity results for each procedure into InterActive
+Inside activity results for each procedure into InterActive
+Inside activity results for each procedure into InterActive
+before printing active syms iterators retval
+====================== InterActive
+Procedure( ProcHandle(0) )
+	ActiveLocSet = 
+	ActiveStmtList = 
+
+	ActiveMemRefList = 
+
+Procedure( head_ )
+	ActiveLocSet = 
+	ActiveStmtList = 
+
+	ActiveMemRefList = 
+
+	ActiveSymList
+	getActiveSizeInBytes() = 0
