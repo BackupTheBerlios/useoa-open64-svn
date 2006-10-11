@@ -1,0 +1,202 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/argumentConversion_3.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: T:0:.predef_F8 = BARX:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(T)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(BARX)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: BARX:0:.predef_F8 = BARY:0:.predef_F8
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(BARX)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(BARY)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: BARY:0:.predef_F8 = T:0:.predef_F8
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(BARY)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(T)
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: USE <1,20,globals_>
+
+============================================
+OA::StmtHandle: bar_(&GX:0:.predef_F8, &GY:0:.predef_F8)
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(GX)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(GY)
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 188 <1,26,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: USE <1,20,globals_>
+
+============================================
+OA::StmtHandle: GX:0:.predef_F8 = 0:X:0:anon_ptr.(1)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(GX)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: GY:0:.predef_F8 = GX:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(GY)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(GX)
+)
+
+============================================
+OA::StmtHandle: Y:0:anon_ptr.(1) = GY:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(GY)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return

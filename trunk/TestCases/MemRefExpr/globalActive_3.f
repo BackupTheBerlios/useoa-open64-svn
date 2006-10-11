@@ -1,9 +1,17 @@
 	module globals
 
 	  double precision aGlobal
-	  double precision aPassiveGlobal
 
 	end module
+
+
+c$openad XXX Template ad_template.f
+	subroutine foo(x,y) 
+
+	  double precision, dimension(2) :: x
+	  double precision y
+	  y=x(1)*x(2)
+	end subroutine
 
 c$openad XXX Template ad_template.f
 	subroutine head(x,y) 
@@ -13,8 +21,7 @@ c$openad XXX Template ad_template.f
 	  double precision, dimension(2) :: x
 	  double precision, dimension(1) :: y
 c$openad INDEPENDENT(x)
-	  aPassiveGlobal=2.0
-	  aGlobal=x(1)*x(2)
-          y(1)=aGlobal*aPassiveGlobal
+	  call foo(x,aGlobal)
+          y(1)=aGlobal
 c$openad DEPENDENT(y)
 	end subroutine

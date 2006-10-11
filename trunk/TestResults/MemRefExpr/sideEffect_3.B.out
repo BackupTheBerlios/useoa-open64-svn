@@ -1,0 +1,114 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/sideEffect_3.f"
+PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: D:0:.predef_F8 = C:0:.predef_F8*C:0:.predef_F8
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(D)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(C)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(C)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: bar_(&A:0:.predef_F8, &B:0:.predef_F8)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(A)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(B)
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: foo_(&X:0:anon_ptr.(1), &Y:0:anon_ptr.(1))
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(Y)
+)
+
+============================================
+OA::StmtHandle: return

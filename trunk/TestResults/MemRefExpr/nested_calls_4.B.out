@@ -1,0 +1,233 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/nested_calls_4.f"
+PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 188 <1,22,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: P:0:.predef_F8 =     2.000000000000000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(P)
+)
+
+============================================
+OA::StmtHandle: foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &C:0:.predef_F8, &D:0:.predef_F8)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(C)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(D)
+)
+
+============================================
+OA::StmtHandle: foo_(&X:0:anon_ptr.(1), &P:0:.predef_F8, &C:0:.predef_F8, &D:0:.predef_F8)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(P)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(C)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(D)
+)
+
+============================================
+OA::StmtHandle: Y:0:anon_ptr.(3) = C:0:.predef_F8*D:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(C)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(D)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: Y:0:anon_ptr.(4) = C:0:.predef_F8+D:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(C)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(D)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 188 <1,22,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8)
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(C)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(A)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(B)
+)
+
+============================================
+OA::StmtHandle: D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8)
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(D)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(A)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(B)
+)
+
+============================================
+OA::StmtHandle: return
