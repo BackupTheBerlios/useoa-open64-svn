@@ -10,12 +10,10 @@
         double precision y
         double precision, dimension(2) :: p,q
         integer k,l
-c$openad INDEPENDENT(x)
         k=1
         call foo(x(k),y)
         p(1)=1.0
         l=1
         call foo(p(k),q(l))
-c$openad DEPENDENT(y)
        end subroutine
 

@@ -1,0 +1,107 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/test3.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: K:0:.predef_I4 = 1
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(K)
+)
+
+============================================
+OA::StmtHandle: P:0:anon_ptr.(1) =     1.000000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(P)
+)
+
+============================================
+OA::StmtHandle: Q:0:anon_ptr.(1) =     2.000000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(Q)
+)
+
+============================================
+OA::StmtHandle: foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(K:0:.predef_I4))
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(P)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(K)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(Q)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(K)
+)
+
+============================================
+OA::StmtHandle: return

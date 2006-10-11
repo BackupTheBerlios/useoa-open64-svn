@@ -1,5 +1,5 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/If_Loop1.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/If_Loop0.f"
 PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
 
 ============================================
@@ -14,11 +14,18 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
 )
 
 	mre = 
@@ -94,11 +101,18 @@ NamedRef(
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*0:Y:0:anon_ptr.(1)
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
 )
 
 	mre = 
@@ -149,11 +163,18 @@ Deref(
 )
 
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
 )
 
 	mre = 

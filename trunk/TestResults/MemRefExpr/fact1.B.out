@@ -1,5 +1,5 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/functions2.f90"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/fact1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
@@ -76,7 +76,7 @@ NamedRef(
 OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
-OA::StmtHandle: N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))
+OA::StmtHandle: N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))
 	mre = 
 NamedRef(
     mAddressOf: 0
