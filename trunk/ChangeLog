@@ -297,6 +297,18 @@
       with gcc-3.2.
     - Added TestCases and TestResults for MemRefExpr
 
+10/13/06   UseOA-Open64 svn trunk r88 Priyadarshini Malusare
+    - Modifications in Open64IRInterface.cpp
+    - any operations that don't have an lval will go to default 
+      case in findAllMemRefsAndMapToMemRefExprs, if there is something 
+      being passed by reference that does not have an lval then we
+      generate an UnnamedRef set its address flag for use as the 
+      parameter.  
+    - In the createExprTree check if 
+      sMemRef2mreSetMap[MemRefHandle((OA::irhandle_t)wn)] is not empty.  
+      If it is not empty then create a MemRefNode instead of an OpNode.
+      This is just a temporary adjustment. We are going to replace this 
+      with Assignment Pairs.
 
 
 	 

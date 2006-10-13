@@ -4,21 +4,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
 OA::StmtHandle: if (N:0:.predef_I4==1)
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(N)
-    )
-    mNumDeref: 1
-)
-
 ============================================
 OA::StmtHandle: RES:0:.predef_I4 = 1
 	mre = 
@@ -39,21 +24,6 @@ NamedRef(
     mSymHandle: SymHandle(TEMP)
 )
 
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(N)
-    )
-    mNumDeref: 1
-)
-
 ============================================
 OA::StmtHandle: RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&TEMP:0:.predef_I4)
 	mre = 
@@ -62,29 +32,6 @@ NamedRef(
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(RES)
-)
-
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(N)
-    )
-    mNumDeref: 1
-)
-
-	mre = 
-NamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(TEMP)
 )
 
 ============================================
@@ -107,14 +54,6 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(N)
-)
-
-	mre = 
-NamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
     mSymHandle: SymHandle(N)
 )
 

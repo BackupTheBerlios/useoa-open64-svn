@@ -1880,7 +1880,26 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       } else {
 
         for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++) {
-          findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,kidno),lvl+1,flags);
+
+            // any operations that don't have an lval will go to this 
+            // default case, if there is something
+            // being passed by reference that does not have an lval then 
+            // we need to generate an UnnamedRef set its address flag 
+            // for use as the parameter. 
+            // e.g. foo(n+1, k). We set UnnamedMemRef for (n+1)
+            
+           if (flags & flags_PASS_BY_REF) {
+
+             bool addressTaken = true;
+             bool accuracy = true;
+             OA::MemRefExpr::MemRefType mrType = OA::MemRefExpr::USE;
+             OA::OA_ptr<OA::MemRefExpr> lhs_tmp_mre;
+             lhs_tmp_mre = new OA::UnnamedRef(addressTaken, accuracy, mrType, stmt);
+ 
+             sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(lhs_tmp_mre);
+             sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
+           }
+           findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,kidno),lvl+1,flags);
         }
 
       }
@@ -1928,6 +1947,7 @@ void Open64IRInterface::createAndMapDerefs(OA::StmtHandle stmt,
         OA_ptr<MemRefExpr> submre = *mreIter; 
         OA_ptr<MemRefExpr> mre; 
         mre = new Deref(false, submre->hasFullAccuracy(), hty, submre, 1);
+
         sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(mre);
         sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
     }
@@ -2023,8 +2043,10 @@ Open64IRInterface::getParamBindPtrAssignIterator(OA::CallHandle call)
     int count = 0;
     // iterate over all the parameters for this call site
     // and count off parameters
+    
     OA::OA_ptr<OA::IRCallsiteParamIterator> paramIter = getCallsiteParams(call);
     for ( ; paramIter->isValid(); (*paramIter)++ ) {
+
         OA::ExprHandle param = paramIter->current();
 
         OA::OA_ptr<OA::ExprTree> eTreePtr = getExprTree(param);
@@ -2060,7 +2082,7 @@ Open64IRInterface::getParamBindPtrAssignIterator(OA::CallHandle call)
         } // iterate over actuals
 
     }
- 
+
     return retval;
 }
 
@@ -3018,6 +3040,8 @@ Open64IRInterface::createExprTree(WN* wn)
 OA::OA_ptr<OA::ExprTree::Node>
 Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree> tree, WN* wn)
 {
+
+    
   OA::OA_ptr<OA::ExprTree::Node> root; root = NULL;
   if (!wn) { return root; }
   
@@ -3096,10 +3120,29 @@ Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree> tree, WN* wn)
     // end of HACK!
   }
   else /*if ()*/ { 
-    // Note: for now we just make everything else an operator
-    // is expr, not a const, not a mem-ref (&& not a type conversion)
-    OA::OpHandle h((OA::irhandle_t)wn);
-    root = new OA::ExprTree::OpNode(h);
+    
+    // We had a problem where we did not get ParamBinding pairs for 
+    // the formal parameters passed as actuals in the expression.
+    // e.g. foo(n+1, k)
+    // In order to deal with this problem we made changes as below
+    // Before : 
+    //                  + (OpNode)
+    //               /     \
+    // (MemRefNode)n        1 (ConstNode) 
+    // After
+    //                  + (MemRefNode)
+    //               /     \
+    // (MemRefNode)n        1 (ConstNode)
+    // This is just a temporary change. This will be replaced by Assignment pairs
+    // in the future. 
+    
+    if(!(sMemref2mreSetMap[OA::MemRefHandle((OA::irhandle_t)wn)].empty())) {
+       OA::MemRefHandle h((OA::irhandle_t)wn);
+       root = new OA::ExprTree::MemRefNode(h);
+    } else { 
+       OA::OpHandle h((OA::irhandle_t)wn);
+       root = new OA::ExprTree::OpNode(h);
+    }
   }
   //else {
   //  root = Node();
