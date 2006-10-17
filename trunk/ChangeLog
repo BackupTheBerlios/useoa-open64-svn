@@ -310,6 +310,17 @@
       This is just a temporary adjustment. We are going to replace this 
       with Assignment Pairs.
 
+10/16/06   UseOA-Open64 svn trunk r89 Priyadarshini Malusare
+    - Missing Parameter binding for variables New_Y_1 and S2 at 
+      Callsite FUN(T+H3,New_Y_1,S2,N). In order to get Param Binding
+      pairs, in the Open64IRInterface, we removed this condition  
+      "if (opr == OPR_ILOAD && WN_operator(WN_kid0(wn)) == OPR_ARRAY)",
+      we created a seperate findTopMemRefHandle() which call
+      itself recursively to find MemRefHandle that is mapped to 
+      sMemref2mreSetMap. In Open64IRInterface::createExpr(), 
+      if opr=ILOAD we call findTopMemRefExpr to find correct 
+      MemRefHandle for the root node.
+
 
 	 
  	

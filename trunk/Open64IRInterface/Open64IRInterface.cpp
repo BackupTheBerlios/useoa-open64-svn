@@ -3023,6 +3023,33 @@ Open64IRInterface::initContextState(PU_Info* pu_forest)
 
 // NOTE: Could be relocated to a more general library
 
+// This function will Call itself recursively until it finds
+// MemRefHandle mapped to sMemref2mreSetMap. 
+// For the case where ParamBinding returns &0:S2:0:anon_ptr
+// and we are looking for MemRefHandle = S2:0:anon_ptr mapped
+// to sMemref2mreSetMap. Please notice corresponding changes in
+// createExprTree in the switch option : OPERATOR_is_load(opr).
+// PLM 10/15/06
+
+OA::MemRefHandle Open64IRInterface::findTopMemRefHandle(WN *wn)
+{
+  OA::MemRefHandle h;
+  if (wn==0) {
+    return OA::MemRefHandle(0);
+  }
+
+  h = (OA::irhandle_t)WN_kid0(wn);
+
+  if(sMemref2mreSetMap[h].empty()) {
+      wn = h.hval();
+      findTopMemRefHandle(wn);
+  } else {
+       return h;
+  }
+ }
+
+ 
+
 // createExprTree: Given 'wn' return a possibly empty expression tree.
 OA::OA_ptr<OA::ExprTree>
 Open64IRInterface::createExprTree(WN* wn)
@@ -3110,12 +3137,45 @@ Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree> tree, WN* wn)
     } 
     else {
       // special case for ILOAD - ARRAY idiom
-      if (opr == OPR_ILOAD && WN_operator(WN_kid0(wn)) == OPR_ARRAY) {
-	h = (OA::irhandle_t)WN_kid0(wn);
-      }
-      root = new OA::ExprTree::MemRefNode(h);
+
+       /*! OPR_ILOAD can get WN_kid0 = OPR_LDA instead of OPR_ARRAY
+           and we need irhandle to its kid0. e.g.
+           (PARM U8 V ((oflg 0x8001) (ty ".predef_F8" 11 8))
+             (ILOAD F8 F8 (0 0 (ty ".predef_F8" 11 8) (ty "anon_ptr." 34 8))
+               (LDA U8 V ((st "S2" 2 20) 0 (ty "anon_ptr." 39 8) 0))))   
+
+            In this case, MemRefHandle(wn) where wn=ILOAD will give us 
+            &0:S2:0:anon_ptr and MemRefHandle to WN_kid0(wn) where wn=ILOAD
+            will give us MemRefHandle to S2:0:anon_ptr.
+            Please refer rung_kutta.f example for the case 
+            fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., 
+                  &0:S2:0:anon_ptr., &N:0:.predef_I4) where we missed
+            paramBinding Pairs because we did not find MemRefHandle for 
+            &0:S2:0:anon_ptr in the sMemref2mreSetMap.
+            findToMemRefHandle will call itself recursively to get correct 
+            MemRefHandle in sMemref2mreSetMap.
+            opr=OPR_ILOAD conditional is modifies as follows.
+            PLM 10/05/06
+
+           if (opr == OPR_ILOAD && WN_operator(WN_kid0(wn)) == OPR_ARRAY) {
+        	  h = (OA::irhandle_t)WN_kid0(wn);
+           }
+      */  
+      if (opr == OPR_ILOAD) {
+         OA::MemRefHandle m = findTopMemRefHandle(wn);
+         WN* wn = (WN*)h.hval();
+         if (wn!=0) {
+            root = new OA::ExprTree::MemRefNode(m);
+         } else {
+            root = new OA::ExprTree::MemRefNode(h);
+         }
+       } else {
+         root = new OA::ExprTree::MemRefNode(h);
+       }
+        
       bypassRecursion = true; // MemRefNodes are leaves
     }
+
     //
     // end of HACK!
   }
