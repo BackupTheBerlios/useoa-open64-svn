@@ -1,0 +1,32 @@
+echo "Testing TestCases/ReachConsts/constprop_if1a.B, TestResults/ICFGReachConsts/constprop_if1a.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1a.B > t
+diff t TestResults/ICFGReachConsts/constprop_if1a.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_if1.B, TestResults/ICFGReachConsts/constprop_if1.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1.B > t
+diff t TestResults/ICFGReachConsts/constprop_if1.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_if1b.B, TestResults/ICFGReachConsts/constprop_if1b.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1b.B > t
+diff t TestResults/ICFGReachConsts/constprop_if1b.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_if1c.B, TestResults/ICFGReachConsts/constprop_if1c.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_if1c.B > t
+diff t TestResults/ICFGReachConsts/constprop_if1c.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_loop1.B, TestResults/ICFGReachConsts/constprop_loop1.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_loop1.B > t
+diff t TestResults/ICFGReachConsts/constprop_loop1.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_loop2.B, TestResults/ICFGReachConsts/constprop_loop2.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_loop2.B > t
+diff t TestResults/ICFGReachConsts/constprop_loop2.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_proc1.B, TestResults/ICFGReachConsts/constprop_proc1.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc1.B > t
+diff t TestResults/ICFGReachConsts/constprop_proc1.B.out
+
+echo "Testing TestCases/ReachConsts/constprop_proc2.B, TestResults/ICFGReachConsts/constprop_proc2.B.out Checked by BK 08/29/06"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc2.B > t
+diff t TestResults/ICFGReachConsts/constprop_proc2.B.out
+

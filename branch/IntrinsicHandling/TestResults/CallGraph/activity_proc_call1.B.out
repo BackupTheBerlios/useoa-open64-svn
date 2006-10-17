@@ -1,0 +1,24 @@
+
+graph DGraph:
+
+    Node 1: 
+        head_ [defined]
+
+    Node 2: 
+        bar_ [defined]
+
+    Edge: 1 => 2
+        bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)
+
+
+mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
+        bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)	 => [ bar_ ] 
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="head_ [defined]" ];
+    2 [ label="bar_ [defined]" ];
+    1 -> 2 [ label="bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)" ];}
+
+mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
+        bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)	 => [ bar_ ] 

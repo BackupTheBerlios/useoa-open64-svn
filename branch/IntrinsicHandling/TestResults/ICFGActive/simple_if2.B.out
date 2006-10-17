@@ -1,0 +1,82 @@
+
+InterActive(
+    Procedure( head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(A)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(B)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(C)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(A:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000)
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(C:0:.predef_F8 = -A:0:.predef_F8)
+                StmtHandle(Y:0:.predef_F8 = C:0:.predef_F8+B:0:.predef_F8*    3.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(A)
+            SymHandle(B)
+            SymHandle(C) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)
+
+
+Total Iters: 6

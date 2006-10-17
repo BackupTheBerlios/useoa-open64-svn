@@ -1,0 +1,11 @@
+# comment in file.test
+# Regression tests for ReachDef generation
+testname::CFG
+inputdir::TestCases/CFGtests
+outputdir::TestResults/CFGtests
+driverexec::./test-open64 --oa-CFG
+
+# list of tests
+#       input file,                 status
+test::  NestedIf.B,         
+

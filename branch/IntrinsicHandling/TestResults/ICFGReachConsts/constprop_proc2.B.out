@@ -1,0 +1,75 @@
+
+mProcToReachConstsMap: ProcHandle	 => ReachConsts
+        ProcHandle(head_)	 => 
+        ReachConstStandard: 
+        ReachConstsStandard(
+            mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
+                    
+                    Statement: StmtHandle( LOC 0 0 source files:	1	"/home/kreaseck/OPEN64/UseOA-Open64/TestCases/ReachConsts/constprop_proc2.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(M:0:.predef_I4 = 2)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(P:0:.predef_I4 = 5)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(M:0:.predef_I4 = 2)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(P:0:.predef_I4 = 5)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(bar_(&P:0:.predef_I4, &V:0:.predef_I4, &M:0:.predef_I4, &X:0:.predef_I4))	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(return)	 => 
+                    ConstDefSet([  ] 
+                    )
+
+        )
+
+        ProcHandle(bar_)	 => 
+        ReachConstStandard: 
+        ReachConstsStandard(
+            mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
+                    
+                    Statement: StmtHandle(PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(return)	 => 
+                    ConstDefSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(return)	 => 
+                    ConstDefSet([  ] 
+                    )
+
+        )
+

@@ -1,0 +1,11 @@
+To compile test-open64, which tests many of the OpenAnalysis analysis algorithms.
+
+1) set the following environment variables appropriate to your environment
+    % setenv OPEN64BASE /home/mstrout/open64/OpenAD/Open64/osprey1.0
+    % setenv OPEN64TARG /home/mstrout/open64/OpenAD/Open64/osprey1.0/targ_ia32_ia64_linux
+    % setenv OPENANALYSISBASE /home/mstrout/open64/NewOA
+    % setenv PLATFORM i686-Linux
+
+2) make
+    % make
+

@@ -1,0 +1,171 @@
+
+graph ICFG:
+
+    subgraph factorial__0:
+
+        Node 10: 
+            ==  ICFG ENTRY_NODE 10 ==
+
+
+        Node 11: 
+             LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/CallGraph/functions2.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 11 ==
+
+if (N:0:.predef_I4==1)
+
+
+        Node 12: 
+            ==  ICFG CFLOW_NODE 12 ==
+RES:0:.predef_I4 = 1
+
+
+        Node 15: 
+            ==  ICFG CALL_NODE 15 ==
+RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)
+
+
+        Node 17: 
+            ==  ICFG RETURN_NODE 17 ==
+
+
+        Node 18: 
+            ==  ICFG EXIT_NODE 18 ==
+
+
+        Node 19: 
+            ==  ICFG CFLOW_NODE 19 ==
+return (RES:0:.predef_I4)
+
+
+        Edge: 15 => 17
+            CALL_RETURN
+
+        Edge: 15 => 10
+            CALL_(factorial_(&N:0:.predef_I4+-1)),style=dashed,color=red
+
+        Edge: 18 => 17
+            RETURN_(factorial_(&N:0:.predef_I4+-1)),style=dashed,color=blue
+
+        Edge: 10 => 11
+            
+
+        Edge: 11 => 12
+            
+
+        Edge: 11 => 15
+            
+
+        Edge: 19 => 18
+            
+
+        Edge: 12 => 19
+            
+
+        Edge: 17 => 19
+            
+
+
+    subgraph recfunc__1:
+
+        Node 24: 
+            ==  ICFG ENTRY_NODE 24 == (entry)
+
+
+        Node 28: 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 28 ==
+
+
+
+        Node 29: 
+            ==  ICFG CALL_NODE 29 ==
+N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))
+
+
+        Node 31: 
+            ==  ICFG RETURN_NODE 31 ==
+
+
+        Node 32: 
+            ==  ICFG CFLOW_NODE 32 ==
+_END()
+return
+
+
+        Node 33: 
+            ==  ICFG CFLOW_NODE 33 == (entry)
+return
+
+
+        Node 34: 
+            ==  ICFG EXIT_NODE 34 == (exit)
+
+
+        Edge: 28 => 29
+            
+
+        Edge: 29 => 31
+            CALL_RETURN
+
+        Edge: 31 => 32
+            
+
+        Edge: 24 => 28
+            
+
+        Edge: 32 => 34
+            
+
+        Edge: 33 => 34
+            
+
+
+    Edge: 29 => 10
+        CALL_(factorial_(&N:0:.predef_I4)),style=dashed,color=red
+
+    Edge: 18 => 31
+        RETURN_(factorial_(&N:0:.predef_I4)),style=dashed,color=blue
+
+
+digraph ICFG {
+    node [shape=rectangle];
+    subgraph cluster_factorial__0 {
+        label="factorial__0"
+        10 [ label="==  ICFG ENTRY_NODE 10 ==\n" ];
+        11 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 11 ==\n\nif (N:0:.predef_I4==1)\n" ];
+        12 [ label="==  ICFG CFLOW_NODE 12 ==\nRES:0:.predef_I4 = 1\n" ];
+        15 [ label="==  ICFG CALL_NODE 15 ==\nRES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)\n" ];
+        17 [ label="==  ICFG RETURN_NODE 17 ==\n" ];
+        18 [ label="==  ICFG EXIT_NODE 18 ==\n" ];
+        19 [ label="==  ICFG CFLOW_NODE 19 ==\nreturn (RES:0:.predef_I4)\n" ];
+        15 -> 17 [ label="CALL_RETURN" ];
+        15 -> 10 [ label="CALL_(factorial_(&N:0:.predef_I4+-1))",style=dashed,color=red ];
+        18 -> 17 [ label="RETURN_(factorial_(&N:0:.predef_I4+-1))",style=dashed,color=blue ];
+        10 -> 11 [ label="" ];
+        11 -> 12 [ label="" ];
+        11 -> 15 [ label="" ];
+        19 -> 18 [ label="" ];
+        12 -> 19 [ label="" ];
+        17 -> 19 [ label="" ];
+    }
+    subgraph cluster_recfunc__1 {
+        label="recfunc__1"
+        24 [ label="==  ICFG ENTRY_NODE 24 == (entry)\n" ];
+        28 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 28 ==\n\n" ];
+        29 [ label="==  ICFG CALL_NODE 29 ==\nN:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))\n" ];
+        31 [ label="==  ICFG RETURN_NODE 31 ==\n" ];
+        32 [ label="==  ICFG CFLOW_NODE 32 ==\n_END()\nreturn\n" ];
+        33 [ label="==  ICFG CFLOW_NODE 33 == (entry)\nreturn\n" ];
+        34 [ label="==  ICFG EXIT_NODE 34 == (exit)\n" ];
+        28 -> 29 [ label="" ];
+        29 -> 31 [ label="CALL_RETURN" ];
+        31 -> 32 [ label="" ];
+        24 -> 28 [ label="" ];
+        32 -> 34 [ label="" ];
+        33 -> 34 [ label="" ];
+    }
+    29 -> 10 [ label="CALL_(factorial_(&N:0:.predef_I4))",style=dashed,color=red ];
+    18 -> 31 [ label="RETURN_(factorial_(&N:0:.predef_I4))",style=dashed,color=blue ];}

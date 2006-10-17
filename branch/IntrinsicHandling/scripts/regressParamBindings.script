@@ -1,0 +1,72 @@
+echo "Testing TestCases/ParamBindings/functions2.B, TestResults/ParamBindings/functions2.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/functions2.B > t
+diff t TestResults/ParamBindings/functions2.B.out
+
+echo "Testing TestCases/ParamBindings/functions6.B, TestResults/ParamBindings/functions6.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/functions6.B > t
+diff t TestResults/ParamBindings/functions6.B.out
+
+echo "Testing TestCases/ParamBindings/functions3.B, TestResults/ParamBindings/functions3.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/functions3.B > t
+diff t TestResults/ParamBindings/functions3.B.out
+
+echo "Testing TestCases/ParamBindings/interalias_proc_call1.B, TestResults/ParamBindings/interalias_proc_call1.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/interalias_proc_call1.B > t
+diff t TestResults/ParamBindings/interalias_proc_call1.B.out
+
+echo "Testing TestCases/ParamBindings/nested_calls_1.B, TestResults/ParamBindings/nested_calls_1.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/nested_calls_1.B > t
+diff t TestResults/ParamBindings/nested_calls_1.B.out
+
+echo "Testing TestCases/ParamBindings/divide.B, TestResults/ParamBindings/divide.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/divide.B > t
+diff t TestResults/ParamBindings/divide.B.out
+
+echo "Testing TestCases/ParamBindings/solve.B, TestResults/ParamBindings/solve.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/solve.B > t
+diff t TestResults/ParamBindings/solve.B.out
+
+echo "Testing TestCases/ParamBindings/stats.B, TestResults/ParamBindings/stats.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/stats.B > t
+diff t TestResults/ParamBindings/stats.B.out
+
+echo "Testing TestCases/ParamBindings/Matrix_bits.B, TestResults/ParamBindings/Matrix_bits.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/Matrix_bits.B > t
+diff t TestResults/ParamBindings/Matrix_bits.B.out
+
+echo "Testing TestCases/ParamBindings/stat_selection.B, TestResults/ParamBindings/stat_selection.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/stat_selection.B > t
+diff t TestResults/ParamBindings/stat_selection.B.out
+
+echo "Testing TestCases/ParamBindings/gussian_elimination.B, TestResults/ParamBindings/gussian_elimination.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/gussian_elimination.B > t
+diff t TestResults/ParamBindings/gussian_elimination.B.out
+
+echo "Testing TestCases/ParamBindings/GCD.B, TestResults/ParamBindings/GCD.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/GCD.B > t
+diff t TestResults/ParamBindings/GCD.B.out
+
+echo "Testing TestCases/ParamBindings/ETOX.B, TestResults/ParamBindings/ETOX.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/ETOX.B > t
+diff t TestResults/ParamBindings/ETOX.B.out
+
+echo "Testing TestCases/ParamBindings/swap.B, TestResults/ParamBindings/swap.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/swap.B > t
+diff t TestResults/ParamBindings/swap.B.out
+
+echo "Testing TestCases/ParamBindings/readin.B, TestResults/ParamBindings/readin.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/readin.B > t
+diff t TestResults/ParamBindings/readin.B.out
+
+echo "Testing TestCases/ParamBindings/array.B, TestResults/ParamBindings/array.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/array.B > t
+diff t TestResults/ParamBindings/array.B.out
+
+echo "Testing TestCases/ParamBindings/area_circle.B, TestResults/ParamBindings/area_circle.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/area_circle.B > t
+diff t TestResults/ParamBindings/area_circle.B.out
+
+echo "Testing TestCases/ParamBindings/subroutine.B, TestResults/ParamBindings/subroutine.B.out Checked by BK 07/27/2006"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/subroutine.B > t
+diff t TestResults/ParamBindings/subroutine.B.out
+

@@ -1,0 +1,52 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(foo_(&N:0:.predef_I4))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(foo_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(foo_(&N:0:.predef_I4))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(bar_)	 => [ SymHandle(N) ] 
+            ProcHandle(foo_)	 => [ SymHandle(N) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(foo_(&N:0:.predef_I4))	 => [ MemRefHandle(N:0:.predef_I4) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(foo_(&5))	 => [ ExprHandle(&5) ] 
+            CallHandle(bar_(&1))	 => [ ExprHandle(&1) ] 
+            CallHandle(foo_(&N:0:.predef_I4))	 => [ ExprHandle(&N:0:.predef_I4) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&5)	 => [ 
+                ET ConstValNode ( 5 ) ] 
+            ExprHandle(&1)	 => [ 
+                ET ConstValNode ( 1 ) ] 
+            ExprHandle(&N:0:.predef_I4)	 => [ 
+                ET MemRefNode ( N:0:.predef_I4 ) ] 
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(foo_(&5))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(N)	 => ExprHandle(&5)
+
+            CallHandle(bar_(&1))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(N)	 => ExprHandle(&1)
+
+            CallHandle(foo_(&N:0:.predef_I4))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(N)	 => ExprHandle(&N:0:.predef_I4)
+
+
+)

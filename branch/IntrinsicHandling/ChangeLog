@@ -1,0 +1,327 @@
+6/21/06     UseOA-Open64 svn trunk r31    Michelle Strout
+    CallGraph regression tests and all other regression tests in
+    regressAll.script pass after OpenAnalysis rev 118 changes
+    where the CallGraph now uses alias results.
+
+6/28/06     UseOA-Open64 svn trunk r32    Luis Ramos
+    test-open64.cpp, removed dump calls from cfg and replaced
+    them with cfg->output and outputDOT statements, as used for
+    regression tests.
+
+    ReachDefs regression tests results added for CFG analysis.
+    Files include: 
+    interalias_proc_call3_rd.B, reachdef_if1.B, reachdef_if2.B
+    reachdef_loopif1.B 
+
+6/29/06     UseOA-Open64 svn trunk r33    Luis Ramos
+    New regressReachDefs with the new endline filter results
+
+7/4/06     UseOA-Open64 svn trunk r34    Michelle Strout
+    Minor edits to make things work with OpenAnalysis rev 126.
+    - Changed some ExprHandles to CallHandles
+    - Outputing the results of ParamBindings, but don't have
+      ParamBindings regression tests set up yet.
+
+7/5/06     UseOA-Open64 svn trunk r35    Michelle Strout
+    - small change in an std::cout statement in test-open.cpp that 
+      was causing some ordering differences in the output when 
+      compared accross different compilers.
+      This might be similar to the issue that Luis is seeing in the CFG
+      output where the CFG node id appears after certain statements.
+	
+7/5/06     UseOA-Open64 svn trunk r39    Priyadarshini Malusare
+	    Added regression tests for Parameter Bindings .
+	    - Files Include
+                 area_circle.B.out, functions2.B.out, gussian_elimination.B.out,
+                 readin.B.out, stat_selection.B.out, array.B.out, functions3.B.out,
+	         interalias_proc_call1.B.out, rung_kutta.B.out, subroutine.B.out,
+	         divide.B.out, functions6.B.out, Matrix_bits.B.out, solve.B.out,
+	         swap.B.out, ETOX.B.out, GCD.B.out, nested_calls_1.B.out, stats.B.out
+	    - Added ParamBindings.test, genParamBindings.script,
+	      regressParamBinding.script
+	    - modified test-open64.cpp that has driver for ParamBindings
+	
+7/6/06     UseOA-Open64 svn trunk r40    Barbara Kreaseck
+     - added the beginnings of regression tests for ICFG
+	  - not yet ready for prime time in regressAll.script
+          - in script/
+                - added ICFG.test, genICFG.script, regressICFG.script
+          - in TestCases/
+                - added ICFG/, ICFG/nested_calls_1.f, ICFG/nested_calls_1.B
+          - in TestResults/
+                - added ICFG/
+
+
+7/7/06     UseOA-Open64 svn trunk r41    Barbara Kreaseck
+     - updated UseOA-Open64 regression outputs to work with OpenAnalysis
+       trunk r136, which has changes to CallGraph, and output from CallGraph,
+       and some extra spaces in outputting a map in general.
+
+        ==> significant output changes in TestResults/CallGraph/*
+        ==> spacing changes in outputs in TestResults/AliasMapFIAlias/*
+        ==> spacing changes in outputs in TestResults/ParamBindings/*
+
+7/14/06     UseOA-Open64 svn trunk r42    Barbara Kreaseck
+    - added regression tests for ICFG, added to regressAll
+    - modified CFG and ReachDef output in test-open64.C
+    - works with OpenAnalysis r141
+
+7/17/06     UseOA-Open64 svn trunk r43    Barbara Kreaseck
+    - re-gen'd ICFG regression output to work with OpenAnalysis trunk r147
+    - passes regressAll with OpenAnalysis r147 compiled on Okapi with gcc-3.2
+
+7/19/06     UseOA-Open64 svn trunk r44    Michelle Strout
+    - added stuff for regression testing AliasMapXAIF, but it isn't quite
+      working yet.  There is something wrong with InvisibleLocs.
+    - regressAll works with OpenAnalysis r153
+
+7/20/06     UseOA-Open64 svn trunk r45    Barbara Kreaseck
+    - added regression tests for ICFGDep, added to regressAll
+    - regressAll works with OpenAnalysis r160 on Okapi with gcc-3.2
+
+7/22/06     UseOA-Open64 svn trunk r46    Luis Ramos
+    - added test cases/results for sideeffect analysis, files include:
+      -test.f90, swap.f90, stringcmp.f90
+    - added regression tests for SideEffect, added to regressAll
+    - removed swap.B and stringcmp.B from regressSideEffect due to
+      SideEffect not working with Arrays
+    - modified test-open64.cpp so that InterSideEffect option called
+      its routine and output routine 
+    - regressAll works with OpenAnalysis r160 on Okapi with gcc-3.2
+
+7/23/06     UseOA-Open64 svn trunk r47   Priyadarshini Malusare
+      - Added TestCases/ReachDefsTests/reachdef_if1.B, 
+        TestCases/ReachDefsTests/reachdef_if2.B, TestCases/ReachDefsTests/reachdef_loopif1.B
+      - added ReachDefs to regressAll 
+	  - passes regressAll with OpenAnalysis trunk r161 compiled on Okapi with gcc-3.2 
+
+7/24/06     UseOA-Open64 svn trunk r48   Priyadarshini Malusare
+      - Added TestCases/ReachDefsTests/reachdef_if1.B, TestCases/ReachDefsTests/reachdef_if2.B,
+   	    TestCases/ReachDefsTests/reachdef_loopif1.B
+      - added ReachDefs to regressAll
+      - passes regressAll with OpenAnalysis trunk r161 compiled on Okapi with gcc-3.2
+
+7/24/06     UseOA-Open64 svn trunk r49   Priyadarshini Malusare
+      - Modified test-open64.cpp, there was typo in the SideEffect test. 					  
+
+07/24/06    UseOA-Open64 svn trunk r50 Priyadarshini Malusare
+      - Modified ChangeLog
+
+8/01/06     UseOA-Open64 svn trunk r52    Barbara Kreaseck
+      - changed Open64IRInterface::isParam() to not return true when the
+        SymHandle is not in the current symbol table
+      - updated ParamBindings regression tests to reflect updated/new output
+        associated with OpenAnalysis r166
+      - updated ICFG regression tests to reflect new output associated with
+        OpenAnalysis r166
+      - passes regressAll with OpenAnalysis trunk r166 compiled on Okapi with 
+        gcc-3.2
+
+8/01/06     UseOA-Open64 svn trunk r53    Michelle Strout
+    Rechecked the alias analysis regression tests whose results
+    changed due to r167 of OpenAnalysis.
+
+       
+8/01/06     UseOA-Open64 svn trunk r53   Priyadarshini Malusare
+      - included ReachConsts driver in test-open64.cpp
+      - Added TestCases for ReachConsts Analysis
+      - Files committed:
+	regressAll.script, genReachConsts.script, 
+	regressReachConsts.script, ReachConsts.test, 
+	TestResults/ReachConstsTests, test-open64.cpp
+      - Added Analysis for TestProgs/constprop_if1.c,
+        TestProgs/constprop_if1a.c, TestProgs/constprop_if1b.c,
+	TestProgs/constprop_if1c.c, TestProgs/constprop_loop1.c,
+	TestProgs/constprop_loop2.c
+
+8/09/06     UseOA-Open64 svn trunk r56    Barbara Kreaseck
+      - revitalized the --oa-ICFGActivity test routine, currently testing
+        only ICFGUseful.
+      - added regression test for ICFGUseful and placed in regressAll script
+      - added appropriate TestResults/ICFGUseful subdirectory
+      - added TestCases/Activity subdirectory for testing ICFGUseful, and
+        in the future: ICFGVaryInActive and ICFGActive.
+      - in Open64IRInterface.*pp:
+          + replaced getIndepLocIter() with getIndepMemRefExprIter()
+          + replaced getDepLocIter() with getDepMemRefExprIter()
+      - passes regressAll with OpenAnalysis trunk r178 compiled on Okapi with 
+        gcc-3.2
+
+8/10/06     UseOA-Open64 svn trunk r57    Barbara Kreaseck
+      - updated the --oa-ICFGActivity test routine
+          + now testing ICFGUseful and ICFGVaryInActive
+      - added regression test for ICFGVaryInActive
+      - removed ICFGUseful regression from regressAll script (since it
+        is now broken due to no explicit test runMode for ICFGUseful: it
+        shares ICFGActivity)
+      - corrected getIndepLocIter() in Open64IRInterface.cpp
+      - passes regressAll with OpenAnalysis trunk r180 compiled on Okapi
+        with gcc-3.2
+
+8/11/06     UseOA-Open64 svn trunk r58    Barbara Kreaseck
+      - updated the --oa-ICFGActivity test routine
+          + now does full (conservative) ICFGActive analysis
+      - added regression test for ICFGActive
+      - commented out three regression tests (SideEffect, ReachDefs, 
+	ReachConsts) from regressAll that were broken
+	due to OpenAnalysis trunk r181 (breaks will need to be resolved)
+      - passes regressAll with OpenAnalysis trunk r182 compiled on Okapi
+        with gcc-3.2
+
+8/11/06     UseOA-Open64 svn trunk r59    Barbara Kreaseck
+      - re-added the three regression tests (SideEffect, ReachDefs,
+        ReachConsts) to regressAll (were not really broken)
+      - passes regressAll with OpenAnalysis trunk r185 compiled on Okapi
+        with gcc-3.2
+
+8/14/06     UseoA-Open64 svn trunk r60   Priyadarshini Malusare
+      -Added TestCase for SideEffect Analysis
+
+8/14/06     UseoA-Open64 svn trunk r61   Priyadarshini Malusare
+     -Added Example in the Testcases/SideEffect and its results in
+	  TestResult/Sideeffect.
+
+8/14/06     UseOA-Open64 svn trunk r62   Priyadarshini Malusare
+     -Fortran2OA output of TestCase Jean.B for SideEffect Analysis.
+
+8/15/06     UseOA-Open64 svn trunk r63    Barbara Kreaseck
+      - updated --oa-ICFGActivity test to display iteration numbers
+      - updated TestResults/ICFGActivity to match new output from
+        OpenAnalysis r186 which uses new ManagerICFGVaryActive
+      - passes regressAll with OpenAnalysis trunk r186 compiled on Okapi
+        with gcc-3.2
+8/18/06	    UseOA-Open64 svn trunk r64    Luis Ramos
+      - Args: Added Linearity Analysis Argument
+      - test-open64: 
+        -Added Linearity Analysis as runMode 30,
+        -Added Linearity Analysis OA Test Driver.
+      - Open64IRInterface: 
+        -Added Routines for LinearityIRInterface
+        -Routines are: getLinearityOpType, getLinearityStmtType
+        -Changed createExprTree, so that in the statement 
+	 if(OPERATOR_is_call(opr)) the root is created as a CallHandle
+	 into the CallNode(h) instead of an ExprHandle.
+      - TestCases: Added Linearity Test Cases subdirectory 
+         TestCases/Linearity, Simple.f90, Simple2.f90, TC1.f90, TC1f.f
+
+8/22/06	    UseOA-Open64 svn trunk r65    Michelle Strout
+    - Made the --oa-ExprTree flag work again.
+
+8/22/06	    UseOA-Open64 svn trunk r66    Luis Ramos
+    - Added Linearity.test, genLinearity.scrip, regressLinearity.scrip
+    - Added Linearity TestResults
+
+8/23/06	    UseOA-Open64 svn trunk r67    Luis Ramos & Priyadarshini Malusare
+    - Modified test-open64.cpp for ManagerLinearity and
+      ManagerReachDefsStandard respectively.
+
+8/24/06     UseOA-Open64 svn trunk r68   Priyadarshini Malusare
+    - Modified test-open64.cpp for New GraphRefactor.
+	- Works with OpenAnalysis trunk r210 compiled on Okapi 
+      with gcc-3.2.
+	- ICFG TestCases are regenerated to satisfy Node Numbers 
+      of New GraphRefactor.
+
+8/24/06     UseOA-Open64 svn trunk r70   Priyadarshini Malusare
+    - Added driver and TestCases for UDDUChains.
+    - passes regressAll with OpenAnalysis trunk r211 compiled 
+      on Okapi with gcc-3.2
+
+8/30/06     UseOA-Open64 svn trunk r72   Priyadarshini Malusare
+    - Added TestCase fnd TestResult for AliasMapXAIF 
+      (interalias_proc_call5.B) 
+   
+9/1/06     UseOA-Open64 svn trunk r73   Barbara Kreaseck
+    - Added ICFGReachConsts regression test
+    - passes regressAll with OpenAnalysis trunk r221 compiled 
+      on Okapi with gcc-3.2
+
+9/1/06     UseOA-Open64 svn trunk r74  Priyadarshini Malusare
+    - Removed ICFG_ReachConsts till linker problem with the 
+      ReachConsts get solved.
+	- passes regressAll with OpenAnalysis trunk r222 compiled 
+      on okapi with gcc-3.2
+
+9/8/06     UseOA-Open64 svn trunk r74 Priyadarshini Malusare
+    - Added TestCases and TestResults for UDDUChainsXAIF
+    - Added regressAllUDDUChainsXAIF.script, 
+      genUDDUChainsXAIF.script, UDDUChains.script
+
+9/8/06     UseOA-Open64 scv trunk r77 Barbara Kreaseck
+    - removed regressICFGReachConsts.script from regressAll.script
+      (temporarily, as I work on the output)
+
+9/11/06    UseOA-Open64 svn trunk r78 Barbara Kreaseck
+    - re-instated regressReachConsts.script and 
+      regressICFGReachConsts.script into regressAll.script
+    - removed 'Tests' from following subdirectory 
+      names (seemed redundant ...)
+       + TestCases/ReachConstsTests
+       + TestResults/ReachConstsTests
+
+9/14/06     UseOA-Open64 svn trunk r79 Priyadarshini Malusare
+    - In Open64IRInterface, in getUseMemRefs() and getDefsMemRefs() 
+      added checks so that IRInterface should not report the
+      parameters Passed by Reference or Address.
+
+9/21/06     UseOA-Open64 svn trunk r80 Priyadarshini Malusare
+    - For Open64IRInterface in the function 
+      findAllMemRefsAndMapToMemRefExprs added check 
+      (WN_operator(WN_kid0(wn)) == OPR_LDA) ) for OPR_ILOADX.
+    - Added testCase for MemRefExpr
+
+10/01/06   UseOA-Open64 svn trunk r81 Priyadarshini Malusare
+    - Added driver for Context-Sensitive and Flow-Insensitive 
+      Activity Analysis in test-open64.cpp under option 
+      InterActive.
+    - Added 2 header files in the test-open64.cpp
+      #include <OpenAnalysis/DUG/ManagerDUGStandard.hpp>
+      #include <OpenAnalysis/duaa/ManagerDUActive.hpp>
+    - Added #include <OpenAnalysis/IRInterface/DUGIRInterface.hpp>
+      in Open64IRInterface.hpp
+    - Modify Open64IRInterface class to inherit virtually from
+      OA::DUG::DUGIRInterface.
+    - Added testCases from OpenAD into TestCases/CSFIActivity 
+      Context-Sensitive, Flow-Insensitive Activity 
+    - Added scripts InterActive.test and genInterActive.script 
+      and regressInterActive.script. 
+
+10/01/06   UseOA-Open64 svn trunk r82 Priyadarshini Malusare
+    - added TestCases and TestResults for Context-Sensitive and Flow
+      insensitive Activity Analysis. new directories are 
+      TestCases/CSFIActivity and TestCases/CSFIActivity
+    - added scripts for this analysis as follows:
+      script/InterActive.test, script/genInterActive.script,
+      script/regressInterActive.script.
+    - Works with OpenAnalysis trunk r210 compiled on Okapi
+      with gcc-3.2.
+    - Added TestCases and TestResults for MemRefExpr
+
+10/13/06   UseOA-Open64 svn trunk r88 Priyadarshini Malusare
+    - Modifications in Open64IRInterface.cpp
+    - any operations that don't have an lval will go to default 
+      case in findAllMemRefsAndMapToMemRefExprs, if there is something 
+      being passed by reference that does not have an lval then we
+      generate an UnnamedRef set its address flag for use as the 
+      parameter.  
+    - In the createExprTree check if 
+      sMemRef2mreSetMap[MemRefHandle((OA::irhandle_t)wn)] is not empty.  
+      If it is not empty then create a MemRefNode instead of an OpNode.
+      This is just a temporary adjustment. We are going to replace this 
+      with Assignment Pairs.
+
+10/16/06   UseOA-Open64 svn trunk r89 Priyadarshini Malusare
+    - Missing Parameter binding for variables New_Y_1 and S2 at 
+      Callsite FUN(T+H3,New_Y_1,S2,N). In order to get Param Binding
+      pairs, in the Open64IRInterface, we removed this condition  
+      "if (opr == OPR_ILOAD && WN_operator(WN_kid0(wn)) == OPR_ARRAY)",
+      we created a seperate findTopMemRefHandle() which call
+      itself recursively to find MemRefHandle that is mapped to 
+      sMemref2mreSetMap. In Open64IRInterface::createExpr(), 
+      if opr=ILOAD we call findTopMemRefExpr to find correct 
+      MemRefHandle for the root node.
+
+
+	 
+ 	
+

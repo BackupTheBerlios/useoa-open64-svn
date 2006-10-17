@@ -1,0 +1,14 @@
+# comment in file.test
+# Regression tests for Linearity generation
+testname::Linearity
+inputdir::TestCases/Linearity
+outputdir::TestResults/Linearity
+driverexec::./test-open64 --oa-Linearity
+
+# list of tests
+#       input file,                 status
+test::  TC1.B,                      Not Working by LMR 08/22/06
+test::  TC1f.B,                     Checked by LMR 08/22/06   
+test::  Simple.B,                   Checked by LMR 08/22/06
+test::  Simple2.B,                  Checked by LMR 08/22/06
+

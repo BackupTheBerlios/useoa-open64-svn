@@ -1,0 +1,40 @@
+
+graph DGraph:
+
+    Node 1: 
+        factorial_ [defined]
+
+    Node 2: 
+        recfunc_ [defined]
+
+    Node 3: 
+        _END [referenced]
+
+    Edge: 1 => 1
+        factorial_(&N:0:.predef_I4+-1)
+
+    Edge: 2 => 1
+        factorial_(&N:0:.predef_I4)
+
+    Edge: 2 => 3
+        _END()
+
+
+mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
+        factorial_(&N:0:.predef_I4+-1)	 => [ factorial_ ] 
+        factorial_(&N:0:.predef_I4)	 => [ factorial_ ] 
+        _END()	 => [ ProcHandle(0) ] 
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="factorial_ [defined]" ];
+    2 [ label="recfunc_ [defined]" ];
+    3 [ label="_END [referenced]" ];
+    1 -> 1 [ label="factorial_(&N:0:.predef_I4+-1)" ];
+    2 -> 1 [ label="factorial_(&N:0:.predef_I4)" ];
+    2 -> 3 [ label="_END()" ];}
+
+mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
+        factorial_(&N:0:.predef_I4+-1)	 => [ factorial_ ] 
+        factorial_(&N:0:.predef_I4)	 => [ factorial_ ] 
+        _END()	 => [ ProcHandle(0) ] 
