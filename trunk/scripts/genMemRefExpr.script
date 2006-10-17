@@ -16,3 +16,39 @@ echo "Generating TestResults/MemRefExpr/interalias_proc_call3.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > TestResults/MemRefExpr/interalias_proc_call3.B.out
 echo "Generating TestResults/MemRefExpr/test.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/test.B > TestResults/MemRefExpr/test.B.out
+echo "Generating TestResults/MemRefExpr/formal_actual_expression.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > TestResults/MemRefExpr/formal_actual_expression.B.out
+echo "Generating TestResults/MemRefExpr/local_actual_expression.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression.B > TestResults/MemRefExpr/local_actual_expression.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual.B > TestResults/MemRefExpr/formal_array_subscript_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_array_subscript_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_subscript_actual.B > TestResults/MemRefExpr/local_array_subscript_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual.B > TestResults/MemRefExpr/formal_scalar_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_scalar_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_scalar_actual.B > TestResults/MemRefExpr/local_scalar_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual.B > TestResults/MemRefExpr/formal_array_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_array_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_actual.B > TestResults/MemRefExpr/local_array_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_in.B > TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_out.B > TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_inout.B > TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_in.B > TestResults/MemRefExpr/formal_array_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_out.B > TestResults/MemRefExpr/formal_array_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_inout.B > TestResults/MemRefExpr/formal_array_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/local_actual_expression_assignment.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression_assignment.B > TestResults/MemRefExpr/local_actual_expression_assignment.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_in.B > TestResults/MemRefExpr/formal_scalar_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_out.B > TestResults/MemRefExpr/formal_scalar_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > TestResults/MemRefExpr/formal_scalar_actual_inout.B.out

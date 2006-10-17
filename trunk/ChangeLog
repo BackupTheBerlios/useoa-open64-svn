@@ -321,6 +321,10 @@
       if opr=ILOAD we call findTopMemRefExpr to find correct 
       MemRefHandle for the root node.
 
+10/16/06   UseOA-Open64 svn trunk r89 Priyadarshini Malusare
+    - Modified small bug while converting MemRefHandle to whirl node
+	  in findtopMemRefHandle that my compiler 3.3.2 did not catch
+      but Jeans compiler gave error.
 
 	 
  	
