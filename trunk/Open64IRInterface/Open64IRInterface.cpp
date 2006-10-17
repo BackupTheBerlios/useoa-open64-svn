@@ -3041,7 +3041,7 @@ OA::MemRefHandle Open64IRInterface::findTopMemRefHandle(WN *wn)
   h = (OA::irhandle_t)WN_kid0(wn);
 
   if(sMemref2mreSetMap[h].empty()) {
-      wn = h.hval();
+      WN* wn = (WN*)h.hval();
       findTopMemRefHandle(wn);
   } else {
        return h;
