@@ -12,9 +12,9 @@ class IntrinsicInfo {
 public:
   
   /** 
-   * for a call operator, is the called procedure an intrinsic?
+   * is this an intrinsic?
    */
-  static bool callIsIntrinsic(WN* aWN_p); 
+  static bool isIntrinsic(WN* aWN_p); 
 
   /** 
    * strips machine type information from the name

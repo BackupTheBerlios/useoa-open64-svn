@@ -97,23 +97,35 @@ const IntrinsicInfo::IntrinsicMap& IntrinsicInfo::getMap() {
   return ourIntrinsicInfoMap;
 } 
 
-bool IntrinsicInfo::callIsIntrinsic(WN* aWN_p) { 
+bool IntrinsicInfo::isIntrinsic(WN* aWN_p) { 
   OPERATOR opr = WN_operator(aWN_p);
-  ASSERT_FATAL(OPERATOR_is_call(opr),(DIAG_A_STRING,"IntrinsicInfo::isCallIntrinsic: unexpected input"));
   if (opr==OPR_INTRINSIC_CALL) { 
     // get the name and strip machine type information 
     const char* inm = intrinsicBaseName(WN_intrinsic(aWN_p));
-    return (getMap().find(Key(opr,inm))==getMap().end()?false:true);
+    if (getMap().find(Key(opr,inm))==getMap().end()) { 
+      DIE("IntrinsicInfo::isIntrinsic: no entry for OPR_INTRINSIC_CALL ",inm);
+    }
+    return true;
+  }
+  else if (opr==OPR_INTRINSIC_OP) { 
+    // get the name and strip machine type information
+    const char* inm = intrinsicBaseName(WN_intrinsic(aWN_p));
+    if (getMap().find(Key(opr,inm))==getMap().end()) {
+      DIE("IntrinsicInfo::isIntrinsic: no entry for OPR_INTRINSIC_OP ",inm);
+    }
+    return true;
   }
   else if (opr==OPR_CALL) { 
     // get the name
     ST* st = WN_st(aWN_p);
     const char* funcNm = ST_name(st);
-    return (getMap().find(Key(opr,funcNm))==getMap().end()? false: true);
+    // if we don't find it in the table we either forgot to add an entry
+    // or the call is not to an intrinsic
+    return (getMap().find(Key(opr,funcNm))!=getMap().end());
   }
-  else
-    // this could be OPR_PICCALL, OPR_VFCALL, OPR_ICALL
-    return false;
+  // the rest is for the OPERATORs without name which we 
+  // hopefully have complete
+  return (getMap().find(Key(opr,NULL))!=getMap().end());
 } 
 
 bool IntrinsicInfo::KeyLT::operator()(const IntrinsicInfo::Key& k1, const IntrinsicInfo::Key& k2) const {
