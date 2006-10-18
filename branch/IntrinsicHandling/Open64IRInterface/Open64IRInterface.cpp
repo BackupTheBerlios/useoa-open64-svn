@@ -243,7 +243,7 @@ Open64IRCallsiteIterator::build_func_call_list(WN *wn)
   OPERATOR opr = WN_operator(wn);
 
   // Add calls to call list but filter out calls to intrinsics
-  if (!(IntrinsicInfo::isIntrinsic(wn)) ) {
+  if (OPERATOR_is_call(opr) && !(IntrinsicInfo::isIntrinsic(wn)) ) {
     wnlist.push_back(wn);
   }
   
