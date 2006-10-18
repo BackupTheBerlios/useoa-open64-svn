@@ -6,8 +6,8 @@ ParamBindings(
                     ProcHandle(readin_)	 => 
                     second: MemRefHandle	 => SymHandle
                             MemRefHandle(FILENAME:0:anon_ptr.(0))	 => SymHandle(NAME)
-                            MemRefHandle(0:A:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(0:B:0:anon_ptr.)	 => SymHandle(Y)
+                            MemRefHandle(A:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(B:0:anon_ptr.)	 => SymHandle(Y)
                             MemRefHandle(NOS:0:.predef_I4)	 => SymHandle(N)
 
 
@@ -16,8 +16,8 @@ ParamBindings(
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => 
             second: SymHandle	 => MemRefHandle
                     SymHandle(NAME)	 => MemRefHandle(FILENAME:0:anon_ptr.(0))
-                    SymHandle(X)	 => MemRefHandle(0:A:0:anon_ptr.)
-                    SymHandle(Y)	 => MemRefHandle(0:B:0:anon_ptr.)
+                    SymHandle(X)	 => MemRefHandle(A:0:anon_ptr.)
+                    SymHandle(Y)	 => MemRefHandle(B:0:anon_ptr.)
                     SymHandle(N)	 => MemRefHandle(NOS:0:.predef_I4)
 
 
@@ -25,7 +25,7 @@ ParamBindings(
             ProcHandle(readin_)	 => [ SymHandle(NAME)    SymHandle(X)    SymHandle(Y)    SymHandle(N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(FILENAME:0:anon_ptr.(0))    MemRefHandle(0:A:0:anon_ptr.)    MemRefHandle(0:B:0:anon_ptr.)    MemRefHandle(NOS:0:.predef_I4) ] 
+            CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(FILENAME:0:anon_ptr.(0))    MemRefHandle(A:0:anon_ptr.)    MemRefHandle(B:0:anon_ptr.)    MemRefHandle(NOS:0:.predef_I4) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ ExprHandle(&FILENAME:0:anon_ptr.(0))    ExprHandle(&0:A:0:anon_ptr.)    ExprHandle(&0:B:0:anon_ptr.)    ExprHandle(&NOS:0:.predef_I4)    ExprHandle(20) ] 
@@ -34,9 +34,9 @@ ParamBindings(
             ExprHandle(&FILENAME:0:anon_ptr.(0))	 => [ 
                 ET MemRefNode ( FILENAME:0:anon_ptr.(0) ) ] 
             ExprHandle(&0:A:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( 0:A:0:anon_ptr. ) ] 
+                ET MemRefNode ( A:0:anon_ptr. ) ] 
             ExprHandle(&0:B:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( 0:B:0:anon_ptr. ) ] 
+                ET MemRefNode ( B:0:anon_ptr. ) ] 
             ExprHandle(&NOS:0:.predef_I4)	 => [ 
                 ET MemRefNode ( NOS:0:.predef_I4 ) ] 
             ExprHandle(20)	 => [ 

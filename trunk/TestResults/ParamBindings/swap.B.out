@@ -5,32 +5,32 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(swap_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(0:A:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(0:B:0:anon_ptr.)	 => SymHandle(Y)
+                            MemRefHandle(A:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(B:0:anon_ptr.)	 => SymHandle(Y)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(0:A:0:anon_ptr.)
-                    SymHandle(Y)	 => MemRefHandle(0:B:0:anon_ptr.)
+                    SymHandle(X)	 => MemRefHandle(A:0:anon_ptr.)
+                    SymHandle(Y)	 => MemRefHandle(B:0:anon_ptr.)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(swap_)	 => [ SymHandle(X)    SymHandle(Y) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => [ MemRefHandle(0:A:0:anon_ptr.)    MemRefHandle(0:B:0:anon_ptr.) ] 
+            CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => [ MemRefHandle(A:0:anon_ptr.)    MemRefHandle(B:0:anon_ptr.) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => [ ExprHandle(&0:A:0:anon_ptr.)    ExprHandle(&0:B:0:anon_ptr.) ] 
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
             ExprHandle(&0:A:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( 0:A:0:anon_ptr. ) ] 
+                ET MemRefNode ( A:0:anon_ptr. ) ] 
             ExprHandle(&0:B:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( 0:B:0:anon_ptr. ) ] 
+                ET MemRefNode ( B:0:anon_ptr. ) ] 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => 

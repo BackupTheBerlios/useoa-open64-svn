@@ -12,7 +12,7 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(etox_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(0:Y:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(Y:0:anon_ptr.)	 => SymHandle(X)
 
 
 
@@ -23,7 +23,7 @@ ParamBindings(
 
             CallHandle(etox_(&0:Y:0:anon_ptr.))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(0:Y:0:anon_ptr.)
+                    SymHandle(X)	 => MemRefHandle(Y:0:anon_ptr.)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
@@ -31,7 +31,7 @@ ParamBindings(
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(etox_(&X:0:.predef_F4))	 => [ MemRefHandle(X:0:.predef_F4) ] 
-            CallHandle(etox_(&0:Y:0:anon_ptr.))	 => [ MemRefHandle(0:Y:0:anon_ptr.) ] 
+            CallHandle(etox_(&0:Y:0:anon_ptr.))	 => [ MemRefHandle(Y:0:anon_ptr.) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(etox_(&X:0:.predef_F4))	 => [ ExprHandle(&X:0:.predef_F4) ] 
@@ -41,7 +41,7 @@ ParamBindings(
             ExprHandle(&X:0:.predef_F4)	 => [ 
                 ET MemRefNode ( X:0:.predef_F4 ) ] 
             ExprHandle(&0:Y:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( 0:Y:0:anon_ptr. ) ] 
+                ET MemRefNode ( Y:0:anon_ptr. ) ] 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(etox_(&X:0:.predef_F4))	 => 

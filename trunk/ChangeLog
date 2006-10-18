@@ -323,9 +323,17 @@
 
 10/16/06   UseOA-Open64 svn trunk r89 Priyadarshini Malusare
     - Modified small bug while converting MemRefHandle to whirl node
-	  in findtopMemRefHandle that my compiler 3.3.2 did not catch
+      in findtopMemRefHandle that my compiler 3.3.2 did not catch
       but Jeans compiler gave error.
 
-	 
+10/18/06   UseOA-Open64 svn trunk r97 Priyadarshini Malusare
+    - Regerated ParamBinding Tests because modifications in 
+      open64IRInterface e.g. findTopMemRefHandle caused slight
+      changes in the representation of ParamBinding Analysis.
+      as follows:
+      SymHandle(A)   => MemRefHandle(0:A:0:anon_ptr.) Changed to
+      SymHandle(A)   => MemRefHandle(A:0:anon_ptr.)
+
+ 
  	
 
