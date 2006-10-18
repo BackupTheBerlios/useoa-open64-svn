@@ -11,9 +11,6 @@ graph DGraph:
         functiontest_ [defined]
 
     Node 4: 
-        SIN [referenced]
-
-    Node 5: 
         _END [referenced]
 
     Edge: 1 => 2
@@ -26,9 +23,6 @@ graph DGraph:
         foo_(&N:0:.predef_I4)
 
     Edge: 3 => 4
-        SIN(&X:0:.predef_F4)
-
-    Edge: 3 => 5
         _END()
 
 
@@ -36,7 +30,6 @@ mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> >
         foo_(&5)	 => [ foo_ ] 
         bar_(&1)	 => [ bar_ ] 
         foo_(&N:0:.predef_I4)	 => [ foo_ ] 
-        SIN(&X:0:.predef_F4)	 => [ ProcHandle(0) ] 
         _END()	 => [ ProcHandle(0) ] 
 
 digraph DGraph {
@@ -44,17 +37,14 @@ digraph DGraph {
     1 [ label="bar_ [defined]" ];
     2 [ label="foo_ [defined]" ];
     3 [ label="functiontest_ [defined]" ];
-    4 [ label="SIN [referenced]" ];
-    5 [ label="_END [referenced]" ];
+    4 [ label="_END [referenced]" ];
     1 -> 2 [ label="foo_(&5)" ];
     2 -> 1 [ label="bar_(&1)" ];
     3 -> 2 [ label="foo_(&N:0:.predef_I4)" ];
-    3 -> 4 [ label="SIN(&X:0:.predef_F4)" ];
-    3 -> 5 [ label="_END()" ];}
+    3 -> 4 [ label="_END()" ];}
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
         foo_(&5)	 => [ foo_ ] 
         bar_(&1)	 => [ bar_ ] 
         foo_(&N:0:.predef_I4)	 => [ foo_ ] 
-        SIN(&X:0:.predef_F4)	 => [ ProcHandle(0) ] 
         _END()	 => [ ProcHandle(0) ] 

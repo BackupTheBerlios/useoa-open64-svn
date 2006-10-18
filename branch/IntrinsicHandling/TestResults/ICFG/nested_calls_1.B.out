@@ -3,136 +3,136 @@ graph ICFG:
 
     subgraph head__0:
 
-        Node 9: 
-            ==  ICFG ENTRY_NODE 9 == (entry)
+        Node 7: 
+            ==  ICFG ENTRY_NODE 7 == (entry)
 
 
-        Node 13: 
-             LOC 0 0 source files:	1	"/home/mstrout/open64/UseNewOA-Open64/TestProgs/nested_calls_1.f"
+        Node 11: 
+             LOC 0 0 source files:	1	"/home/malusare/intrinsic/UseOA-Open64-IntrinsicHandling/TestCases/ICFG/nested_calls_1.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 13 ==
+==  ICFG CFLOW_NODE 11 ==
 
 
 
-        Node 14: 
-            ==  ICFG CALL_NODE 14 ==
+        Node 12: 
+            ==  ICFG CALL_NODE 12 ==
 foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))
 
 
-        Node 16: 
-            ==  ICFG RETURN_NODE 16 ==
+        Node 14: 
+            ==  ICFG RETURN_NODE 14 ==
 
 
-        Node 22: 
-            ==  ICFG CFLOW_NODE 22 ==
+        Node 20: 
+            ==  ICFG CFLOW_NODE 20 ==
 Y:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))
 Y:0:anon_ptr.(3) = SIN(&X:0:anon_ptr.(3))
 Y:0:anon_ptr.(4) = COS(&X:0:anon_ptr.(4))
 return
 
 
-        Node 23: 
-            ==  ICFG EXIT_NODE 23 == (exit)
+        Node 21: 
+            ==  ICFG EXIT_NODE 21 == (exit)
 
 
-        Edge: 13 => 14
+        Edge: 11 => 12
             
 
-        Edge: 14 => 16
+        Edge: 12 => 14
             CALL_RETURN
 
-        Edge: 16 => 22
+        Edge: 14 => 20
             
 
-        Edge: 9 => 13
+        Edge: 7 => 11
             
 
-        Edge: 22 => 23
+        Edge: 20 => 21
             
 
 
     subgraph foo__1:
 
-        Node 20: 
-            ==  ICFG ENTRY_NODE 20 ==
+        Node 18: 
+            ==  ICFG ENTRY_NODE 18 ==
 
 
-        Node 21: 
-            ==  ICFG EXIT_NODE 21 ==
+        Node 19: 
+            ==  ICFG EXIT_NODE 19 ==
 
 
-        Node 27: 
+        Node 25: 
             PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 27 ==
+==  ICFG CFLOW_NODE 25 ==
 
 
 
-        Node 28: 
-            ==  ICFG CALL_NODE 28 ==
+        Node 26: 
+            ==  ICFG CALL_NODE 26 ==
 bar_(&B:0:.predef_F8)
 
 
-        Node 30: 
-            ==  ICFG RETURN_NODE 30 ==
+        Node 28: 
+            ==  ICFG RETURN_NODE 28 ==
 
 
-        Node 36: 
-            ==  ICFG CFLOW_NODE 36 ==
+        Node 34: 
+            ==  ICFG CFLOW_NODE 34 ==
 C:0:.predef_F8 = B:0:.predef_F8+A:0:.predef_F8*A:0:.predef_F8
 return
 
 
-        Edge: 27 => 28
+        Edge: 25 => 26
             
 
-        Edge: 28 => 30
+        Edge: 26 => 28
             CALL_RETURN
 
-        Edge: 30 => 36
+        Edge: 28 => 34
             
 
-        Edge: 36 => 21
+        Edge: 34 => 19
             
 
-        Edge: 20 => 27
+        Edge: 18 => 25
             
 
 
     subgraph bar__2:
 
-        Node 34: 
-            ==  ICFG ENTRY_NODE 34 ==
+        Node 32: 
+            ==  ICFG ENTRY_NODE 32 ==
+
+
+        Node 33: 
+            ==  ICFG EXIT_NODE 33 ==
 
 
         Node 35: 
-            ==  ICFG EXIT_NODE 35 ==
-
-
-        Node 37: 
             PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 37 ==
+==  ICFG CFLOW_NODE 35 ==
 
 A:0:.predef_F8 = COS(&A:0:.predef_F8*A:0:.predef_F8)
 return
 
 
-        Edge: 37 => 35
+        Edge: 35 => 33
             
 
-        Edge: 34 => 37
+        Edge: 32 => 35
             
 
 
-    Edge: 14 => 20
+    Edge: 12 => 18
         CALL_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))),style=dashed,color=red
 
-    Edge: 21 => 16
+    Edge: 19 => 14
         RETURN_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))),style=dashed,color=blue
 
-    Edge: 28 => 34
+    Edge: 26 => 32
         CALL_(bar_(&B:0:.predef_F8)),style=dashed,color=red
 
-    Edge: 35 => 30
+    Edge: 33 => 28
         RETURN_(bar_(&B:0:.predef_F8)),style=dashed,color=blue
 
 
@@ -140,44 +140,44 @@ digraph ICFG {
     node [shape=rectangle];
     subgraph cluster_head__0 {
         label="head__0"
-        9 [ label="==  ICFG ENTRY_NODE 9 == (entry)\n" ];
-        13 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 13 ==\n\n" ];
-        14 [ label="==  ICFG CALL_NODE 14 ==\nfoo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))\n" ];
-        16 [ label="==  ICFG RETURN_NODE 16 ==\n" ];
-        22 [ label="==  ICFG CFLOW_NODE 22 ==\nY:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))\nY:0:anon_ptr.(3) = SIN(&X:0:anon_ptr.(3))\nY:0:anon_ptr.(4) = COS(&X:0:anon_ptr.(4))\nreturn\n" ];
-        23 [ label="==  ICFG EXIT_NODE 23 == (exit)\n" ];
-        13 -> 14 [ label="" ];
-        14 -> 16 [ label="CALL_RETURN" ];
-        16 -> 22 [ label="" ];
-        9 -> 13 [ label="" ];
-        22 -> 23 [ label="" ];
+        7 [ label="==  ICFG ENTRY_NODE 7 == (entry)\n" ];
+        11 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 11 ==\n\n" ];
+        12 [ label="==  ICFG CALL_NODE 12 ==\nfoo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))\n" ];
+        14 [ label="==  ICFG RETURN_NODE 14 ==\n" ];
+        20 [ label="==  ICFG CFLOW_NODE 20 ==\nY:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))\nY:0:anon_ptr.(3) = SIN(&X:0:anon_ptr.(3))\nY:0:anon_ptr.(4) = COS(&X:0:anon_ptr.(4))\nreturn\n" ];
+        21 [ label="==  ICFG EXIT_NODE 21 == (exit)\n" ];
+        11 -> 12 [ label="" ];
+        12 -> 14 [ label="CALL_RETURN" ];
+        14 -> 20 [ label="" ];
+        7 -> 11 [ label="" ];
+        20 -> 21 [ label="" ];
     }
     subgraph cluster_foo__1 {
         label="foo__1"
-        20 [ label="==  ICFG ENTRY_NODE 20 ==\n" ];
-        21 [ label="==  ICFG EXIT_NODE 21 ==\n" ];
-        27 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 27 ==\n\n" ];
-        28 [ label="==  ICFG CALL_NODE 28 ==\nbar_(&B:0:.predef_F8)\n" ];
-        30 [ label="==  ICFG RETURN_NODE 30 ==\n" ];
-        36 [ label="==  ICFG CFLOW_NODE 36 ==\nC:0:.predef_F8 = B:0:.predef_F8+A:0:.predef_F8*A:0:.predef_F8\nreturn\n" ];
-        27 -> 28 [ label="" ];
-        28 -> 30 [ label="CALL_RETURN" ];
-        30 -> 36 [ label="" ];
-        36 -> 21 [ label="" ];
-        20 -> 27 [ label="" ];
+        18 [ label="==  ICFG ENTRY_NODE 18 ==\n" ];
+        19 [ label="==  ICFG EXIT_NODE 19 ==\n" ];
+        25 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 25 ==\n\n" ];
+        26 [ label="==  ICFG CALL_NODE 26 ==\nbar_(&B:0:.predef_F8)\n" ];
+        28 [ label="==  ICFG RETURN_NODE 28 ==\n" ];
+        34 [ label="==  ICFG CFLOW_NODE 34 ==\nC:0:.predef_F8 = B:0:.predef_F8+A:0:.predef_F8*A:0:.predef_F8\nreturn\n" ];
+        25 -> 26 [ label="" ];
+        26 -> 28 [ label="CALL_RETURN" ];
+        28 -> 34 [ label="" ];
+        34 -> 19 [ label="" ];
+        18 -> 25 [ label="" ];
     }
     subgraph cluster_bar__2 {
         label="bar__2"
-        34 [ label="==  ICFG ENTRY_NODE 34 ==\n" ];
-        35 [ label="==  ICFG EXIT_NODE 35 ==\n" ];
-        37 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-==  ICFG CFLOW_NODE 37 ==\n\nA:0:.predef_F8 = COS(&A:0:.predef_F8*A:0:.predef_F8)\nreturn\n" ];
-        37 -> 35 [ label="" ];
-        34 -> 37 [ label="" ];
+        32 [ label="==  ICFG ENTRY_NODE 32 ==\n" ];
+        33 [ label="==  ICFG EXIT_NODE 33 ==\n" ];
+        35 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 35 ==\n\nA:0:.predef_F8 = COS(&A:0:.predef_F8*A:0:.predef_F8)\nreturn\n" ];
+        35 -> 33 [ label="" ];
+        32 -> 35 [ label="" ];
     }
-    14 -> 20 [ label="CALL_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))",style=dashed,color=red ];
-    21 -> 16 [ label="RETURN_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))",style=dashed,color=blue ];
-    28 -> 34 [ label="CALL_(bar_(&B:0:.predef_F8))",style=dashed,color=red ];
-    35 -> 30 [ label="RETURN_(bar_(&B:0:.predef_F8))",style=dashed,color=blue ];}
+    12 -> 18 [ label="CALL_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))",style=dashed,color=red ];
+    19 -> 14 [ label="RETURN_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))",style=dashed,color=blue ];
+    26 -> 32 [ label="CALL_(bar_(&B:0:.predef_F8))",style=dashed,color=red ];
+    33 -> 28 [ label="RETURN_(bar_(&B:0:.predef_F8))",style=dashed,color=blue ];}
