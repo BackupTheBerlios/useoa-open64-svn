@@ -1924,7 +1924,6 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // General case: recur on parameters (kids 0 ... n-1) 
       } else {
 
-          std::cout << "In the default case" << std::endl;  
         for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++) {
 
             // any operations that don't have an lval will go to this 
