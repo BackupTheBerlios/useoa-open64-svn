@@ -1626,8 +1626,12 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
     flags_HAVE_STORE_PARENT = 0x00000004, 
 
-    flags_PASS_BY_REF       = 0x00000008,
-    flags_EXPECT_STRCT_BASE = 0x00000010
+    //flags_PASS_BY_REF       = 0x00000008,
+    flags_MODEL_PASS_BY_REF = 0x00000008, 
+        
+    flags_EXPECT_STRCT_BASE = 0x00000010,
+
+    flags_INTRINSIC_PARAM = 0x00000020
   };
 
 
@@ -1685,7 +1689,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
   bool isAddrOf = false;
   // if in the parent we determined that this was a pass
   // by reference actual then need to take the address
-  if (flags & flags_PASS_BY_REF) {
+  //if (flags & flags_PASS_BY_REF) {
+  if(flags & flags_MODEL_PASS_BY_REF) {
       isAddrOf = true;
   }
   
@@ -1699,8 +1704,24 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
     
     case OPR_LDID:
     case OPR_LDBITS: 
+
+        /*
+        std::cout << "In the LDID case" << std::endl;
+    if((flags & flags_MODEL_PASS_BY_REF) && (flags & flags_INTRINSIC_PARAM))
+    //if( flags & flags_INTRINSIC_PARAM )
+    {
+         bool addressTaken = false;
+         bool accuracy = true;
+         OA::MemRefExpr::MemRefType mrType = OA::MemRefExpr::USE;
+         OA::OA_ptr<OA::MemRefExpr> lhs_tmp_mre;
+         lhs_tmp_mre = new OA::UnnamedRef(addressTaken, accuracy, mrType, stmt);
+         sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(lhs_tmp_mre);
+         sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
+    } else {
       createAndMapNamedRef(stmt, wn, WN_st(wn), isAddrOf, fullAccuracy, hty);
-      break;
+    } */
+      createAndMapNamedRef(stmt, wn, WN_st(wn), isAddrOf, fullAccuracy, hty);
+    break;
 
     case OPR_LDA:
     case OPR_LDMA:
@@ -1712,6 +1733,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 //        isAddrOf = false; // implicitly dereference the address
 //        fullAccuracy = false;  // don't know what part of array referencing
 //      }
+
       createAndMapNamedRef(stmt, wn, WN_st(wn), isAddrOf, fullAccuracy, hty);
       break;
 
@@ -1801,9 +1823,19 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // this operator just indicates an actual param, do not create
       // a MemRefHandle for it, however determine if the parameter is
       // pass by reference and if so set flags for its child
+      /*
       if (isPassByReference(wn)) {
-        flags |= flags_PASS_BY_REF;
-      }    
+        //flags |= flags_PASS_BY_REF;
+        flags |= flags_MODEL_PASS_BY_REF;
+      } 
+      */
+
+    // will model all reference parameters as pass by reference 
+    // except those to intrinsic functions
+      if (isPassByReference(wn) && ! (flags & flags_INTRINSIC_PARAM)) {
+          flags |= flags_MODEL_PASS_BY_REF;
+      } 
+   
       findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl+1, flags); 
       return;
 
@@ -1860,7 +1892,19 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // recur on RHS
       findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid0(wn),lvl,0); 
       break;
-      
+
+    case OPR_INTRINSIC_CALL:
+    case OPR_CALL:
+      //if (IntrinsicInfo::callsIntrinsic(wn))  {
+      if(IntrinsicInfo::isIntrinsic(wn)) {
+        flags |= flags_INTRINSIC_PARAM;
+      }
+      // recur on parameters (kids 0 ... n-2) to find other MemRefHandles
+      for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++) {
+          findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl+1,flags);
+      }
+      break; 
+
     case OPR_BLOCK:
     case OPR_REGION:
       return; // Do not recur into BLOCKs
@@ -1880,6 +1924,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // General case: recur on parameters (kids 0 ... n-1) 
       } else {
 
+          std::cout << "In the default case" << std::endl;  
         for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++) {
 
             // any operations that don't have an lval will go to this 
@@ -1889,8 +1934,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
             // for use as the parameter. 
             // e.g. foo(n+1, k). We set UnnamedMemRef for (n+1)
             
-           if (flags & flags_PASS_BY_REF) {
-
+           //if (flags & flags_PASS_BY_REF) {
+           if((flags & flags_MODEL_PASS_BY_REF) && !(flags & flags_INTRINSIC_PARAM)) {
              bool addressTaken = true;
              bool accuracy = true;
              OA::MemRefExpr::MemRefType mrType = OA::MemRefExpr::USE;
@@ -1899,7 +1944,18 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
  
              sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(lhs_tmp_mre);
              sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
+           } else if(!(flags & flags_MODEL_PASS_BY_REF) && (flags & flags_INTRINSIC_PARAM))
+           {
+             bool addressTaken = false;
+             bool accuracy = true;
+             OA::MemRefExpr::MemRefType mrType = OA::MemRefExpr::USE;
+             OA::OA_ptr<OA::MemRefExpr> lhs_tmp_mre;
+             lhs_tmp_mre = new OA::UnnamedRef(addressTaken, accuracy, mrType, stmt);
+
+             sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(lhs_tmp_mre);
+             sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
            }
+
            findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,kidno),lvl+1,flags);
         }
 
