@@ -40,14 +40,6 @@ NamedRef(
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))
 	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(Y:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)))
-)
-
-	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
@@ -259,14 +251,6 @@ Deref(
         mSymHandle: SymHandle(A)
     )
     mNumDeref: 1
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(A:0:.predef_F8 = COS(&A:0:.predef_F8*A:0:.predef_F8))
 )
 
 	mre = 
