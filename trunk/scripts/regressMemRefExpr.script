@@ -10,10 +10,6 @@ echo "Testing TestCases/MemRefExpr/functions1.B, TestResults/MemRefExpr/function
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/functions1.B > t
 diff t TestResults/MemRefExpr/functions1.B.out
 
-echo "Testing TestCases/MemRefExpr/globalActive_2.B, TestResults/MemRefExpr/globalActive_2.B.out checked by MMS 7/5/06"
-./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalActive_2.B > t
-diff t TestResults/MemRefExpr/globalActive_2.B.out
-
 echo "Testing TestCases/MemRefExpr/head_tlm_driver_g.pre.B, TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out not correct on defs to fields MMS 7/5/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/head_tlm_driver_g.pre.B > t
 diff t TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out
@@ -29,10 +25,6 @@ diff t TestResults/MemRefExpr/interalias_proc_call2.B.out
 echo "Testing TestCases/MemRefExpr/interalias_proc_call3.B, TestResults/MemRefExpr/interalias_proc_call3.B.out checked by MMS 7/5/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > t
 diff t TestResults/MemRefExpr/interalias_proc_call3.B.out
-
-echo "Testing TestCases/MemRefExpr/test.B, TestResults/MemRefExpr/test.B.out checked by PLM 9/21/06"
-./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/test.B > t
-diff t TestResults/MemRefExpr/test.B.out
 
 echo "Testing TestCases/MemRefExpr/formal_actual_expression.B, TestResults/MemRefExpr/formal_actual_expression.B.out checked by PLM 10/16/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > t
