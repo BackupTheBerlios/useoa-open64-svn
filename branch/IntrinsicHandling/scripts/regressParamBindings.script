@@ -70,3 +70,27 @@ echo "Testing TestCases/ParamBindings/subroutine.B, TestResults/ParamBindings/su
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/subroutine.B > t
 diff t TestResults/ParamBindings/subroutine.B.out
 
+echo "Testing TestCases/ParamBindings/mean_median.B, TestResults/ParamBindings/mean_median.B.out core dump PLM 10/20/06"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/mean_median.B > t
+diff t TestResults/ParamBindings/mean_median.B.out
+
+echo "Testing TestCases/ParamBindings/merge_sort.B, TestResults/ParamBindings/merge_sort.B.out core dump PLM 10/20/06"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/merge_sort.B > t
+diff t TestResults/ParamBindings/merge_sort.B.out
+
+echo "Testing TestCases/ParamBindings/new_position.B, TestResults/ParamBindings/new_position.B.out core dump PLM 10/20/06"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/new_position.B > t
+diff t TestResults/ParamBindings/new_position.B.out
+
+echo "Testing TestCases/ParamBindings/quick_sort, TestResults/ParamBindings/quick_sort.out core dump PLM 10/20/06"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/quick_sort > t
+diff t TestResults/ParamBindings/quick_sort.out
+
+echo "Testing TestCases/ParamBindings/running_average, TestResults/ParamBindings/running_average.out core dump PLM 10/20/06"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/running_average > t
+diff t TestResults/ParamBindings/running_average.out
+
+echo "Testing TestCases/ParamBindings/stat_find, TestResults/ParamBindings/stat_find.out core dump PLM 10/20/06"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/stat_find > t
+diff t TestResults/ParamBindings/stat_find.out
+

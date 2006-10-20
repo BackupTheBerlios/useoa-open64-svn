@@ -98,3 +98,7 @@ echo "Testing TestCases/CallGraph/readWrite1.B, TestResults/CallGraph/readWrite1
 ./test-open64 --oa-CallGraph TestCases/CallGraph/readWrite1.B > t
 diff t TestResults/CallGraph/readWrite1.B.out
 
+echo "Testing TestCases/CallGraph/funcCallAsActual.B, TestResults/CallGraph/funcCallAsActual.B.out checked by PLM 10/20/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/funcCallAsActual.B > t
+diff t TestResults/CallGraph/funcCallAsActual.B.out
+

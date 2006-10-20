@@ -7,27 +7,33 @@ driverexec::./test-open64 --oa-ParamBindings
 
 # list of tests
 #       input file,                 status
-test::  functions2.B,               Checked by BK 07/27/2006           
-test::  functions6.B,               Checked by BK 07/27/2006
-test::  functions3.B,               Checked by BK 07/27/2006
-test::  interalias_proc_call1.B,    Checked by BK 07/27/2006
-test::  nested_calls_1.B,           Checked by BK 07/27/2006
+test::functions2.B,               Checked by BK 07/27/2006           
+test::functions6.B,               Checked by BK 07/27/2006
+test::functions3.B,               Checked by BK 07/27/2006
+test::interalias_proc_call1.B,    Checked by BK 07/27/2006
+test::nested_calls_1.B,           Checked by BK 07/27/2006
 #
 # source of following test cases: (lots more)
 # http://www.kcl.ac.uk/kis/support/cit/fortran/f2003_book_examples/index.html
 #
-test::  divide.B,                   Checked by BK 07/27/2006 
-test::  solve.B,                    Checked by BK 07/27/2006
-test::  stats.B,                    Checked by BK 07/27/2006
-test::  Matrix_bits.B,              Checked by BK 07/27/2006
-test::  stat_selection.B,           Checked by BK 07/27/2006
-test::  gussian_elimination.B,      Checked by BK 07/27/2006 
+test::divide.B,                   Checked by BK 07/27/2006 
+test::solve.B,                    Checked by BK 07/27/2006
+test::stats.B,                    Checked by BK 07/27/2006
+test::Matrix_bits.B,              Checked by BK 07/27/2006
+test::stat_selection.B,           Checked by BK 07/27/2006
+test::gussian_elimination.B,      Checked by BK 07/27/2006 
 #test::  rung_kutta.B,               Checked by BK //2006 ERROR?? found func ptr not handled correctly (appears Alias and then CallGraph not correctly formed)
-test::  GCD.B,                      Checked by BK 07/27/2006
-test::  ETOX.B,                     Checked by BK 07/27/2006
-test::  swap.B,                     Checked by BK 07/27/2006
-test::  readin.B,                   Checked by BK 07/27/2006
-test::  array.B,                    Checked by BK 07/27/2006
-test::  area_circle.B,              Checked by BK 07/27/2006 
-test::  subroutine.B,               Checked by BK 07/27/2006
+test::GCD.B,                      Checked by BK 07/27/2006
+test::ETOX.B,                     Checked by BK 07/27/2006
+test::swap.B,                     Checked by BK 07/27/2006
+test::readin.B,                   Checked by BK 07/27/2006
+test::array.B,                    Checked by BK 07/27/2006
+test::area_circle.B,              Checked by BK 07/27/2006 
+test::subroutine.B,               Checked by BK 07/27/2006
+test::mean_median.B,              core dump PLM 10/20/06, Please see wiki for error details
+test::merge_sort.B,               core dump PLM 10/20/06, Please see wiki for error details
+test::new_position.B,             core dump PLM 10/20/06, Please see wiki for error details
+test::quick_sort,                 core dump PLM 10/20/06, Please see wiki for error details
+test::running_average,            core dump PLM 10/20/06, Please see wiki for error details
+test::stat_find,                  core dump PLM 10/20/06, Please see wiki for error details
 

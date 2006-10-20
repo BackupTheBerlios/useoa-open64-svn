@@ -14,3 +14,11 @@ echo "Testing TestCases/Alias/activity_int4ai.B, TestResults/AliasMapFIAlias/act
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/activity_int4ai.B > t
 diff t TestResults/AliasMapFIAlias/activity_int4ai.B.out
 
+echo "Testing TestCases/Alias/interalias_proc_call5.B, TestResults/AliasMapFIAlias/interalias_proc_call5.B.out checked by PLM 10/20/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call5.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call5.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call4.B, TestResults/AliasMapFIAlias/interalias_proc_call4.B.out checked by PLM 10/20/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call4.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call4.B.out
+

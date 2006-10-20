@@ -1,0 +1,101 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/globalActive_2.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: USE <1,20,globals_>
+
+============================================
+OA::StmtHandle: APASSIVEGLOBAL:0:.predef_F8 =     2.000000000000000
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(APASSIVEGLOBAL)
+)
+
+============================================
+OA::StmtHandle: AGLOBAL:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(AGLOBAL)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(AGLOBAL)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(APASSIVEGLOBAL)
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return

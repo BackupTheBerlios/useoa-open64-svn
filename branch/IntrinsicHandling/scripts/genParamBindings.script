@@ -34,3 +34,15 @@ echo "Generating TestResults/ParamBindings/area_circle.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/area_circle.B > TestResults/ParamBindings/area_circle.B.out
 echo "Generating TestResults/ParamBindings/subroutine.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/subroutine.B > TestResults/ParamBindings/subroutine.B.out
+echo "Generating TestResults/ParamBindings/mean_median.B.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/mean_median.B > TestResults/ParamBindings/mean_median.B.out
+echo "Generating TestResults/ParamBindings/merge_sort.B.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/merge_sort.B > TestResults/ParamBindings/merge_sort.B.out
+echo "Generating TestResults/ParamBindings/new_position.B.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/new_position.B > TestResults/ParamBindings/new_position.B.out
+echo "Generating TestResults/ParamBindings/quick_sort.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/quick_sort > TestResults/ParamBindings/quick_sort.out
+echo "Generating TestResults/ParamBindings/running_average.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/running_average > TestResults/ParamBindings/running_average.out
+echo "Generating TestResults/ParamBindings/stat_find.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/stat_find > TestResults/ParamBindings/stat_find.out

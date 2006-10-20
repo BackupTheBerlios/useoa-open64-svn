@@ -14,8 +14,6 @@ echo "Generating TestResults/MemRefExpr/interalias_proc_call2.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call2.B > TestResults/MemRefExpr/interalias_proc_call2.B.out
 echo "Generating TestResults/MemRefExpr/interalias_proc_call3.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > TestResults/MemRefExpr/interalias_proc_call3.B.out
-echo "Generating TestResults/MemRefExpr/test.B.out"
-./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/test.B > TestResults/MemRefExpr/test.B.out
 echo "Generating TestResults/MemRefExpr/formal_actual_expression.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > TestResults/MemRefExpr/formal_actual_expression.B.out
 echo "Generating TestResults/MemRefExpr/local_actual_expression.B.out"
@@ -84,3 +82,11 @@ echo "Generating TestResults/MemRefExpr/constPrec.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/constPrec.B > TestResults/MemRefExpr/constPrec.B.out
 echo "Generating TestResults/MemRefExpr/readWrite1.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/readWrite1.B > TestResults/MemRefExpr/readWrite1.B.out
+echo "Generating TestResults/MemRefExpr/rung_kutta.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/rung_kutta.B > TestResults/MemRefExpr/rung_kutta.B.out
+echo "Generating TestResults/MemRefExpr/scalar_local.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/scalar_local.B > TestResults/MemRefExpr/scalar_local.B.out
+echo "Generating TestResults/MemRefExpr/struct_simple.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple.B > TestResults/MemRefExpr/struct_simple.B.out
+echo "Generating TestResults/MemRefExpr/struct_simple_local.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple_local.B > TestResults/MemRefExpr/struct_simple_local.B.out

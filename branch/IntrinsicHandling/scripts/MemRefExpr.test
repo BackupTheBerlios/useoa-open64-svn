@@ -15,7 +15,6 @@ test::head_tlm_driver_g.pre.B,                not correct on defs to fields MMS 
 test::interalias_proc_call1.B,                checked by MMS 7/5/06
 test::interalias_proc_call2.B,                checked by MMS 7/5/06
 test::interalias_proc_call3.B,                checked by MMS 7/5/06
-test::test.B,                                 checked by PLM 9/21/06
 test::formal_actual_expression.B,             checked by PLM 10/16/06
 test::local_actual_expression.B,              checked by PLM 10/16/06
 test::formal_array_subscript_actual.B,        checked by PLM 10/16/06
@@ -34,22 +33,30 @@ test::local_actual_expression_assignment.B,   checked by PLM 10/16/06
 test::formal_scalar_actual_in.B,              checked by PLM 10/16/06
 test::formal_scalar_actual_out.B,             checked by PLM 10/16/06
 test::formal_scalar_actual_inout.B,           checked by PLM 10/16/06
-test::If_Loop4.B,
-test::passiveStatement.B,
-test::simple1.B,
-test::If_Loop5.B,
-test::simple2.B,
-test::simple3.B,
-test::float_intrinsic.B,
-test::lion.B,
-test::tanh_f_arg.B,
-test::nested_calls_1.B,
-test::bat.B,
-test::nested_calls_3.B,
-test::cast1.B,
-test::nested_calls_4.B,
-test::constPrec.B,
-test::readWrite1.B,
+test::If_Loop4.B,                             checked by PLM 10/16/06
+test::passiveStatement.B,                     checked by PLM 10/16/06
+test::simple1.B,                              checked by PLM 10/16/06 
+test::If_Loop5.B,                             checked by PLM 10/16/06
+test::simple2.B,                              checked by PLM 10/16/06
+test::simple3.B,                              checked by PLM 10/16/06 
+test::float_intrinsic.B,                      checked by PLM 10/16/06  
+test::lion.B,                                 checked by PLM 10/16/06
+test::tanh_f_arg.B,                           checked by PLM 10/16/06
+test::nested_calls_1.B,                       checked by PLM 10/16/06 
+test::bat.B,                                  checked by PLM 10/16/06 
+test::nested_calls_3.B,                       checked  by PLM 10/16/06
+test::cast1.B,                                checked by PLM 10/16/06 
+test::nested_calls_4.B,                       checked by PLM 10/16/06
+test::constPrec.B,                            checked by PLM 10/16/06
+test::readWrite1.B,                           checked by PLM 10/16/06
+test::rung_kutta.B,                           checked by PLM 10/19/06
+test::scalar_local.B,                         checked by PLM 10/19/06
+# test::scalar_pointer.B,                       causes core_dump PLM 10/19/06, check wiki for error details.
+# test::struct_array.B,                         causes core dump PLM 10/19/06, check wiki for error details.
+# test::struct_nested_local.B,                  causes core dump PLM 10/19/06, check wiki for error details.
+# test::struct_pointer.B,                       causes core dump PLM 10/19/06, check wiki for error details.
+test::struct_simple.B,                        checked by PLM 10/19/06
+test::struct_simple_local.B,                  checked by PLM 10/19/06
 
 
 

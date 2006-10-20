@@ -48,3 +48,5 @@ echo "Generating TestResults/CallGraph/constPrec.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/constPrec.B > TestResults/CallGraph/constPrec.B.out
 echo "Generating TestResults/CallGraph/readWrite1.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/readWrite1.B > TestResults/CallGraph/readWrite1.B.out
+echo "Generating TestResults/CallGraph/funcCallAsActual.B.out"
+./test-open64 --oa-CallGraph TestCases/CallGraph/funcCallAsActual.B > TestResults/CallGraph/funcCallAsActual.B.out
