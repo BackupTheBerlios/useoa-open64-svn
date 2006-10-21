@@ -40,9 +40,6 @@ graph DGraph:
     Node 13: 
         box_main_ [defined]
 
-    Node 14: 
-        _END [referenced]
-
     Edge: 2 => 3
         box_density_(&0:TNOW:0:anon_ptr., &0:SNOW:0:anon_ptr., &0:RHO:0:anon_ptr.)
 
@@ -91,9 +88,6 @@ graph DGraph:
     Edge: 13 => 11
         box_model_body_()
 
-    Edge: 13 => 14
-        _END()
-
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
         box_density_(&0:TNOW:0:anon_ptr., &0:SNOW:0:anon_ptr., &0:RHO:0:anon_ptr.)	 => [ box_density_ ] 
@@ -112,7 +106,6 @@ mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> >
         box_model_body_()	 => [ box_model_body_ ] 
         box_final_state_()	 => [ box_final_state_ ] 
         box_model_body_()	 => [ box_model_body_ ] 
-        _END()	 => [ ProcHandle(0) ] 
 
 digraph DGraph {
     node [shape=rectangle];
@@ -129,7 +122,6 @@ digraph DGraph {
     11 [ label="box_model_body_ [defined]" ];
     12 [ label="box_update_ [defined]" ];
     13 [ label="box_main_ [defined]" ];
-    14 [ label="_END [referenced]" ];
     2 -> 3 [ label="box_density_(&0:TNOW:0:anon_ptr., &0:SNOW:0:anon_ptr., &0:RHO:0:anon_ptr.)" ];
     2 -> 4 [ label="box_transport_(&0:RHO:0:anon_ptr., &UVEL:0:.predef_F8)" ];
     2 -> 5 [ label="box_timestep_(&GAMMA_T:0:.predef_F8, &0:TSTAR:0:anon_ptr., &0:NULLFORCE:0:anon_ptr., &UVEL:0:.predef_F8, &0:TNOW:0:anon_ptr., &0:TOLD:0:anon_ptr., &0:TNEW:0:anon_ptr.)" ];
@@ -145,8 +137,7 @@ digraph DGraph {
     13 -> 10 [ label="box_ini_params_()" ];
     13 -> 11 [ label="box_model_body_()" ];
     13 -> 8 [ label="box_final_state_()" ];
-    13 -> 11 [ label="box_model_body_()" ];
-    13 -> 14 [ label="_END()" ];}
+    13 -> 11 [ label="box_model_body_()" ];}
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
         box_density_(&0:TNOW:0:anon_ptr., &0:SNOW:0:anon_ptr., &0:RHO:0:anon_ptr.)	 => [ box_density_ ] 
@@ -165,4 +156,3 @@ mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> >
         box_model_body_()	 => [ box_model_body_ ] 
         box_final_state_()	 => [ box_final_state_ ] 
         box_model_body_()	 => [ box_model_body_ ] 
-        _END()	 => [ ProcHandle(0) ] 

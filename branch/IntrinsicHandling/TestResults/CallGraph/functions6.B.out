@@ -10,9 +10,6 @@ graph DGraph:
     Node 3: 
         functiontest_ [defined]
 
-    Node 4: 
-        _END [referenced]
-
     Edge: 1 => 2
         foo_(&5)
 
@@ -22,29 +19,22 @@ graph DGraph:
     Edge: 3 => 2
         foo_(&N:0:.predef_I4)
 
-    Edge: 3 => 4
-        _END()
-
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
         foo_(&5)	 => [ foo_ ] 
         bar_(&1)	 => [ bar_ ] 
         foo_(&N:0:.predef_I4)	 => [ foo_ ] 
-        _END()	 => [ ProcHandle(0) ] 
 
 digraph DGraph {
     node [shape=rectangle];
     1 [ label="bar_ [defined]" ];
     2 [ label="foo_ [defined]" ];
     3 [ label="functiontest_ [defined]" ];
-    4 [ label="_END [referenced]" ];
     1 -> 2 [ label="foo_(&5)" ];
     2 -> 1 [ label="bar_(&1)" ];
-    3 -> 2 [ label="foo_(&N:0:.predef_I4)" ];
-    3 -> 4 [ label="_END()" ];}
+    3 -> 2 [ label="foo_(&N:0:.predef_I4)" ];}
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
         foo_(&5)	 => [ foo_ ] 
         bar_(&1)	 => [ bar_ ] 
         foo_(&N:0:.predef_I4)	 => [ foo_ ] 
-        _END()	 => [ ProcHandle(0) ] 

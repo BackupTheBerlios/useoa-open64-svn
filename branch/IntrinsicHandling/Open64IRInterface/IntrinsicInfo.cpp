@@ -39,6 +39,7 @@ const IntrinsicInfo::IntrinsicMap& IntrinsicInfo::getMap() {
     ourIntrinsicInfoMap[Key( OPR_CALL,         "DCOSH")   ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "TANH")    ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "DTANH")   ]=Info(1);
+    ourIntrinsicInfoMap[Key( OPR_CALL,         "_END")    ]=Info(1);
     // exp/log
     ourIntrinsicInfoMap[Key( OPR_CALL,         "EXP")     ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "DEXP")    ]=Info(1);

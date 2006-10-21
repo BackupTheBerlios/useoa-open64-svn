@@ -102,3 +102,7 @@ echo "Testing TestCases/CallGraph/funcCallAsActual.B, TestResults/CallGraph/func
 ./test-open64 --oa-CallGraph TestCases/CallGraph/funcCallAsActual.B > t
 diff t TestResults/CallGraph/funcCallAsActual.B.out
 
+echo "Testing TestCases/CallGraph/functions2_stub.B, TestResults/CallGraph/functions2_stub.B.out checked by PLM 10/20/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions2_stub.B > t
+diff t TestResults/CallGraph/functions2_stub.B.out
+
