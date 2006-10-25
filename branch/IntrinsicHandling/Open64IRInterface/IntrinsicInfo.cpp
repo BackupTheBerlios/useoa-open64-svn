@@ -39,7 +39,6 @@ const IntrinsicInfo::IntrinsicMap& IntrinsicInfo::getMap() {
     ourIntrinsicInfoMap[Key( OPR_CALL,         "DCOSH")   ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "TANH")    ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "DTANH")   ]=Info(1);
-    ourIntrinsicInfoMap[Key( OPR_CALL,         "_END")    ]=Info(1);
     // exp/log
     ourIntrinsicInfoMap[Key( OPR_CALL,         "EXP")     ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "DEXP")    ]=Info(1);
@@ -53,6 +52,8 @@ const IntrinsicInfo::IntrinsicMap& IntrinsicInfo::getMap() {
     ourIntrinsicInfoMap[Key( OPR_INTRINSIC_OP, "CGTEXPR") ]=Info(2);
     ourIntrinsicInfoMap[Key( OPR_INTRINSIC_OP, "CLEEXPR") ]=Info(2);
     ourIntrinsicInfoMap[Key( OPR_INTRINSIC_OP, "CLTEXPR") ]=Info(2);
+    // string assignment
+    ourIntrinsicInfoMap[Key( OPR_INTRINSIC_CALL,"CASSIGNSTMT")]=Info(1);
     // rounding and conversion
     ourIntrinsicInfoMap[Key( OPR_ABS,          NULL)      ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_CALL,         "ABS")     ]=Info(1);
@@ -91,6 +92,8 @@ const IntrinsicInfo::IntrinsicMap& IntrinsicInfo::getMap() {
     ourIntrinsicInfoMap[Key( OPR_CALL,         "LEN")     ]=Info(1);
     ourIntrinsicInfoMap[Key( OPR_SHL,           NULL)     ]=Info(2);
     ourIntrinsicInfoMap[Key( OPR_ASHR,          NULL)     ]=Info(2); 
+    // compiler internal routine for cleanup at the end of PROGRAM
+    ourIntrinsicInfoMap[Key( OPR_CALL,         "_END")    ]=Info(0);
     // max/min
     ourIntrinsicInfoMap[Key( OPR_MAX,           NULL)     ]=Info(2); 
     ourIntrinsicInfoMap[Key( OPR_MIN,           NULL)     ]=Info(2); 
