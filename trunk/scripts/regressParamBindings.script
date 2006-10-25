@@ -1,20 +1,20 @@
-echo "Testing TestCases/ParamBindings/functions2.B, TestResults/ParamBindings/functions2.B.out Checked by BK 07/27/2006"
+echo "Testing TestCases/ParamBindings/functions2.B, TestResults/ParamBindings/functions2.B.out Checked by LMR 10/25/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/functions2.B > t
 diff t TestResults/ParamBindings/functions2.B.out
 
-echo "Testing TestCases/ParamBindings/functions6.B, TestResults/ParamBindings/functions6.B.out Checked by BK 07/27/2006"
+echo "Testing TestCases/ParamBindings/functions6.B, TestResults/ParamBindings/functions6.B.out Checked by LMR 10/25/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/functions6.B > t
 diff t TestResults/ParamBindings/functions6.B.out
 
-echo "Testing TestCases/ParamBindings/functions3.B, TestResults/ParamBindings/functions3.B.out Checked by BK 07/27/2006"
+echo "Testing TestCases/ParamBindings/functions3.B, TestResults/ParamBindings/functions3.B.out Checked by LMR 10/25/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/functions3.B > t
 diff t TestResults/ParamBindings/functions3.B.out
 
-echo "Testing TestCases/ParamBindings/interalias_proc_call1.B, TestResults/ParamBindings/interalias_proc_call1.B.out Checked by BK 07/27/2006"
+echo "Testing TestCases/ParamBindings/interalias_proc_call1.B, TestResults/ParamBindings/interalias_proc_call1.B.out Checked by LMR 10/25/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/interalias_proc_call1.B > t
 diff t TestResults/ParamBindings/interalias_proc_call1.B.out
 
-echo "Testing TestCases/ParamBindings/nested_calls_1.B, TestResults/ParamBindings/nested_calls_1.B.out Checked by BK 07/27/2006"
+echo "Testing TestCases/ParamBindings/nested_calls_1.B, TestResults/ParamBindings/nested_calls_1.B.out Checked by LMR 10/25/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/nested_calls_1.B > t
 diff t TestResults/ParamBindings/nested_calls_1.B.out
 

@@ -1,0 +1,14 @@
+echo "Generating TestResults/ExprTree/SimpleBalanced.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleBalanced.B > TestResults/ExprTree/SimpleBalanced.B.out
+echo "Generating TestResults/ExprTree/SimpleUnbalanced.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleUnbalanced.B > TestResults/ExprTree/SimpleUnbalanced.B.out
+echo "Generating TestResults/ExprTree/SimpleCall.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleCall.B > TestResults/ExprTree/SimpleCall.B.out
+echo "Generating TestResults/ExprTree/SimpleSin.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleSin.B > TestResults/ExprTree/SimpleSin.B.out
+echo "Generating TestResults/ExprTree/ExprCall.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCall.B > TestResults/ExprTree/ExprCall.B.out
+echo "Generating TestResults/ExprTree/ExprCallf.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallf.B > TestResults/ExprTree/ExprCallf.B.out
+echo "Generating TestResults/ExprTree/ExprCallIntent.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallIntent.B > TestResults/ExprTree/ExprCallIntent.B.out

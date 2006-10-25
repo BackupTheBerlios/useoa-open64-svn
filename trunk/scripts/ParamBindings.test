@@ -7,11 +7,11 @@ driverexec::./test-open64 --oa-ParamBindings
 
 # list of tests
 #       input file,                 status
-test::  functions2.B,               Checked by BK 07/27/2006           
-test::  functions6.B,               Checked by BK 07/27/2006
-test::  functions3.B,               Checked by BK 07/27/2006
-test::  interalias_proc_call1.B,    Checked by BK 07/27/2006
-test::  nested_calls_1.B,           Checked by BK 07/27/2006
+test::  functions2.B,               Checked by LMR 10/25/2006           
+test::  functions6.B,               Checked by LMR 10/25/2006
+test::  functions3.B,               Checked by LMR 10/25/2006
+test::  interalias_proc_call1.B,    Checked by LMR 10/25/2006
+test::  nested_calls_1.B,           Checked by LMR 10/25/2006
 #
 # source of following test cases: (lots more)
 # http://www.kcl.ac.uk/kis/support/cit/fortran/f2003_book_examples/index.html

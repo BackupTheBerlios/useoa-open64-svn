@@ -62,16 +62,31 @@ ParamBindings(
             CallHandle(gaussian_elimination_(&0:A:0:anon_ptr., &N:0:.predef_I4, &0:B:0:anon_ptr., &0:X:0:anon_ptr., &SINGULAR:0:.log.4))	 => [ ExprHandle(&0:A:0:anon_ptr.)    ExprHandle(&N:0:.predef_I4)    ExprHandle(&0:B:0:anon_ptr.)    ExprHandle(&0:X:0:anon_ptr.)    ExprHandle(&SINGULAR:0:.log.4) ] 
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
-            ExprHandle(&0:A:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( A:0:anon_ptr. ) ] 
-            ExprHandle(&N:0:.predef_I4)	 => [ 
-                ET MemRefNode ( N:0:.predef_I4 ) ] 
-            ExprHandle(&0:B:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( B:0:anon_ptr. ) ] 
-            ExprHandle(&0:X:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( X:0:anon_ptr. ) ] 
-            ExprHandle(&SINGULAR:0:.log.4)	 => [ 
-                ET MemRefNode ( SINGULAR:0:.log.4 ) ] 
+            ExprHandle(&0:A:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( A:0:anon_ptr. )
+
+            ExprHandle(&N:0:.predef_I4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( N:0:.predef_I4 )
+
+            ExprHandle(&0:B:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( B:0:anon_ptr. )
+
+            ExprHandle(&0:X:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( X:0:anon_ptr. )
+
+            ExprHandle(&SINGULAR:0:.log.4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( SINGULAR:0:.log.4 )
+
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(gaussian_elimination_(&0:A:0:anon_ptr., &N:0:.predef_I4, &0:B:0:anon_ptr., &0:X:0:anon_ptr., &SINGULAR:0:.log.4))	 => 

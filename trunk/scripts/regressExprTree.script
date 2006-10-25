@@ -1,0 +1,28 @@
+echo "Testing TestCases/ExprTree/SimpleBalanced.B, TestResults/ExprTree/SimpleBalanced.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleBalanced.B > t
+diff t TestResults/ExprTree/SimpleBalanced.B.out
+
+echo "Testing TestCases/ExprTree/SimpleUnbalanced.B, TestResults/ExprTree/SimpleUnbalanced.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleUnbalanced.B > t
+diff t TestResults/ExprTree/SimpleUnbalanced.B.out
+
+echo "Testing TestCases/ExprTree/SimpleCall.B, TestResults/ExprTree/SimpleCall.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleCall.B > t
+diff t TestResults/ExprTree/SimpleCall.B.out
+
+echo "Testing TestCases/ExprTree/SimpleSin.B, TestResults/ExprTree/SimpleSin.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleSin.B > t
+diff t TestResults/ExprTree/SimpleSin.B.out
+
+echo "Testing TestCases/ExprTree/ExprCall.B, TestResults/ExprTree/ExprCall.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCall.B > t
+diff t TestResults/ExprTree/ExprCall.B.out
+
+echo "Testing TestCases/ExprTree/ExprCallf.B, TestResults/ExprTree/ExprCallf.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallf.B > t
+diff t TestResults/ExprTree/ExprCallf.B.out
+
+echo "Testing TestCases/ExprTree/ExprCallIntent.B, TestResults/ExprTree/ExprCallIntent.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallIntent.B > t
+diff t TestResults/ExprTree/ExprCallIntent.B.out
+

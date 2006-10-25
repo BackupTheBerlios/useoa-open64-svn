@@ -334,6 +334,17 @@
       SymHandle(A)   => MemRefHandle(0:A:0:anon_ptr.) Changed to
       SymHandle(A)   => MemRefHandle(A:0:anon_ptr.)
 
- 
- 	
+10/25/06   UseOA-Open64 svn trunk r110 Luis Ramos
+    - Added OutputExprTreeVisitor for visiting the ExprTree
+    - Modified ExprTree so that the output routine accepts
+      a OutputExprTreeVisitor to it's root node and traverses
+      the tree outputing each node it visits for more accurate
+      output
+    - ExprTree::Output now more closely represents that of a
+      tree. It includes node numbers and edges if needed.
+    - Added several different tests for ExprTree
+    - Added ExprTree TestCases and TestResults Folder and made
+      it part of the regressAll.script
+    - Regenerated ParamBindings and SideEffect Tests due to 
+      changes in ExprTree::output routines
 

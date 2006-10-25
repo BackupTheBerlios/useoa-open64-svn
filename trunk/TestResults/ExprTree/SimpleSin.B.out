@@ -1,0 +1,89 @@
+
+========================stmt============================
+ LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/SimpleSin.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+stmt = 
+
+========================stmt============================
+
+stmt = foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)
+
+	--Call-----------------------------------------
+	  Call: [foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)]
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( A:0:.predef_F8 )
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( F:0:.predef_F8 )
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( X:0:.predef_F8 )
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( T:0:.predef_F8 )
+
+========================stmt============================
+
+stmt = _END()
+
+	--Call-----------------------------------------
+	  Call: [_END()]
+	----------------------------------------------
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+stmt = 
+
+========================stmt============================
+
+stmt = A:0:.predef_F8 = (SIN(&T:0:.predef_F8)+(A:0:.predef_F8*X:0:.predef_F8))
+
+	--expr----------------------------------------
+	  expr = (SIN(&T:0:.predef_F8)+(A:0:.predef_F8*X:0:.predef_F8))
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( () )
+    Edge: 
+        0 => 
+        Node 1: ET OpNode ( + )
+        Edge: 
+            1 => 
+            Node 2: ET CallNode ( SIN(&T:0:.predef_F8) )
+        Edge: 
+            1 => 
+            Node 3: ET OpNode ( () )
+            Edge: 
+                3 => 
+                Node 4: ET OpNode ( * )
+                Edge: 
+                    4 => 
+                    Node 5: ET MemRefNode ( A:0:.predef_F8 )
+                Edge: 
+                    4 => 
+                    Node 6: ET MemRefNode ( X:0:.predef_F8 )
+
+	--Call-----------------------------------------
+	  Call: [SIN(&T:0:.predef_F8)]
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( T:0:.predef_F8 )
+
+========================stmt============================
+
+stmt = return

@@ -38,16 +38,31 @@ ParamBindings(
             CallHandle(SELECTION())	 => [  expr List is Empty  ] 
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
-            ExprHandle(&0:X:0:anon_ptr.)	 => [ 
-                ET MemRefNode ( X:0:anon_ptr. ) ] 
-            ExprHandle(&N:0:.predef_I4)	 => [ 
-                ET MemRefNode ( N:0:.predef_I4 ) ] 
-            ExprHandle(&M:0:.predef_F4)	 => [ 
-                ET MemRefNode ( M:0:.predef_F4 ) ] 
-            ExprHandle(&SD:0:.predef_F4)	 => [ 
-                ET MemRefNode ( SD:0:.predef_F4 ) ] 
-            ExprHandle(&MEDIAN:0:.predef_F4)	 => [ 
-                ET MemRefNode ( MEDIAN:0:.predef_F4 ) ] 
+            ExprHandle(&0:X:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( X:0:anon_ptr. )
+
+            ExprHandle(&N:0:.predef_I4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( N:0:.predef_I4 )
+
+            ExprHandle(&M:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( M:0:.predef_F4 )
+
+            ExprHandle(&SD:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( SD:0:.predef_F4 )
+
+            ExprHandle(&MEDIAN:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( MEDIAN:0:.predef_F4 )
+
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 

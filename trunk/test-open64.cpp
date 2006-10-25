@@ -1824,7 +1824,8 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
   for ( ; sIt->isValid(); (*sIt)++) {
     OA::StmtHandle stmt = sIt->current();
         
-    std::cout << "stmt = " << ir->toString(stmt) << std::endl;
+    std::cout << "\n========================stmt============================\n";
+    std::cout << "\nstmt = " << ir->toString(stmt) << std::endl;
     //ir->dump(stmt,std::cout);
 
     /*
@@ -1847,8 +1848,11 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
         // unbundle pair
         OA::MemRefHandle mref = espIterPtr->currentTarget();
         OA::ExprHandle expr = espIterPtr->currentSource();
-        std::cout << "\texpr = " << ir->toString(expr) << std::endl;
+        std::cout << "\n\t--expr----------------------------------------\n";
+        std::cout << "\t  expr = " << ir->toString(expr) << std::endl;
+	std::cout << "\t----------------------------------------------";
         OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
+	//std::cout << "ETREE DUMP: ";
         //eTreePtr->dump(std::cout,ir);
         eTreePtr->output(*ir);
       }
@@ -1860,8 +1864,9 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     for ( ; callsiteItPtr->isValid(); ++(*callsiteItPtr)) {
         OA::CallHandle call = callsiteItPtr->current();
         //if (debug) {
-          std::cout << "\n        Call: ["
-                    << ir->toString(call) << "]";
+        std::cout << "\n\t--Call-----------------------------------------\n";
+        std::cout << "\t  Call: [" << ir->toString(call) << "]\n";
+	std::cout << "\t----------------------------------------------";
         //} 
 
         OA::OA_ptr<OA::IRCallsiteParamIterator> paramIterPtr 
@@ -1870,7 +1875,7 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
             OA::ExprHandle param = paramIterPtr->current();
 
             //if (debug) {
-              std::cout << "==== param = " << ir->toString(param) << std::endl;
+             // std::cout << "==== param = " << ir->toString(param) << std::endl;
             //}
 
             // get the expression tree for the parameter

@@ -28,12 +28,21 @@ ParamBindings(
             CallHandle(foo_(&N:0:.predef_I4))	 => [ ExprHandle(&N:0:.predef_I4) ] 
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
-            ExprHandle(&5)	 => [ 
-                ET ConstValNode ( 5 ) ] 
-            ExprHandle(&1)	 => [ 
-                ET ConstValNode ( 1 ) ] 
-            ExprHandle(&N:0:.predef_I4)	 => [ 
-                ET MemRefNode ( N:0:.predef_I4 ) ] 
+            ExprHandle(&5)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET ConstValNode ( 5 )
+
+            ExprHandle(&1)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET ConstValNode ( 1 )
+
+            ExprHandle(&N:0:.predef_I4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( N:0:.predef_I4 )
+
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(foo_(&5))	 => 

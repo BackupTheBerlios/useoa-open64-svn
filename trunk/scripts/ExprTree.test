@@ -1,0 +1,17 @@
+# comment in file.test
+# Regression tests for ExprTree generation
+testname::ExprTree
+inputdir::TestCases/ExprTree
+outputdir::TestResults/ExprTree
+driverexec::./test-open64 --oa-ExprTree
+
+# list of tests
+#       input file,                 status
+test::  SimpleBalanced.B,           Checked by LMR 10/24/06
+test::  SimpleUnbalanced.B,         Checked by LMR 10/24/06   
+test::  SimpleCall.B,               Checked by LMR 10/24/06
+test::  SimpleSin.B,                Checked by LMR 10/24/06
+test::  ExprCall.B,		    Checked by LMR 10/24/06
+test::  ExprCallf.B,		    Checked by LMR 10/24/06
+test::  ExprCallIntent.B,	    Checked by LMR 10/24/06
+
