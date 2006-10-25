@@ -107,7 +107,7 @@ bool IntrinsicInfo::isIntrinsic(WN* aWN_p) {
     // get the name and strip machine type information 
     const char* inm = intrinsicBaseName(WN_intrinsic(aWN_p));
     if (getMap().find(Key(opr,inm))==getMap().end()) { 
-      DIE("IntrinsicInfo::isIntrinsic: no entry for OPR_INTRINSIC_CALL ",inm);
+      DIE("IntrinsicInfo::isIntrinsic: no entry for OPR_INTRINSIC_CALL %s ",inm);
     }
     return true;
   }
@@ -115,7 +115,7 @@ bool IntrinsicInfo::isIntrinsic(WN* aWN_p) {
     // get the name and strip machine type information
     const char* inm = intrinsicBaseName(WN_intrinsic(aWN_p));
     if (getMap().find(Key(opr,inm))==getMap().end()) {
-      DIE("IntrinsicInfo::isIntrinsic: no entry for OPR_INTRINSIC_OP ",inm);
+      DIE("IntrinsicInfo::isIntrinsic: no entry for OPR_INTRINSIC_OP %s ",inm);
     }
     return true;
   }
