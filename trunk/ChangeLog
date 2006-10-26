@@ -348,3 +348,13 @@
     - Regenerated ParamBindings and SideEffect Tests due to 
       changes in ExprTree::output routines
 
+10/26/06   UseOA-Open64 svn trunk r111 Priyadarshini Malusare
+    - There is output sequence mismatch for La-Serra machine and 
+      okapi. As okapi is main regression machine, output for
+      ExprTree is regenerated for okapi.
+    - passes regressAll with OpenAnalysis trunk r247 compiled
+      on Okapi with gcc-3.2
+
+
+
+

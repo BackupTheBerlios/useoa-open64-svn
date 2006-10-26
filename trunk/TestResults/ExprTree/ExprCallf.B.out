@@ -1,9 +1,9 @@
 
 ========================stmt============================
- LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/ExprCallf.f90"
+
+stmt =  LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/ExprCallf.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = 
 
 ========================stmt============================
 
@@ -44,9 +44,9 @@ stmt = return
 stmt = return
 
 ========================stmt============================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = 
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 
 ========================stmt============================
 
@@ -90,9 +90,9 @@ graph EXPRESSION TREE:
 stmt = return
 
 ========================stmt============================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = 
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 
 ========================stmt============================
 
