@@ -57,11 +57,6 @@ PROCEDURE = { < ProcHandle("functiontest_"), SymHandle("functiontest_") > }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [
         ] }
-    CALLSITES = { StmtHandle("_END()") =>
-        [
-            CallHandle("_END()") => 
-                NamedRef( USE, SymHandle("_END"), F, full)
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
@@ -70,5 +65,4 @@ PROCEDURE = { < ProcHandle("functiontest_"), SymHandle("functiontest_") > }
         ] }
     LOCATION = { < SymHandle("foo_"), not local > }
     LOCATION = { < SymHandle("functiontest_"), not local > }
-    LOCATION = { < SymHandle("_END"), not local > }
     LOCATION = { < SymHandle("N"), local > }

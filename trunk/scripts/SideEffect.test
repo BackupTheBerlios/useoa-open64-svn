@@ -7,5 +7,8 @@ driverexec::./test-open64 --oa-InterSideEffect
 
 # list of tests
 #       input file,                 status
-#test::  swap.B,             Not Checked (Not Working with Arrays)
-test::  test.B,             Checked by LMR 10/25/2006
+#test::swap.B,            Not Checked (Not Working with Arrays)
+test::test.B,             Checked by BK 7/27/2006
+#test::Jean.B,            Not Checked
+#test::stringcmp.B,       core dump PLM 10/20/06, Please see wiki for error details
+

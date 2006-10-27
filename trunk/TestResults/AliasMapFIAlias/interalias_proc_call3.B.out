@@ -2,7 +2,7 @@
 InterAliasMap(
     AliasMap(
         mProcHandle: ProcHandle(testing_)
-        mNumSets: 5
+        mNumSets: 4
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
@@ -17,19 +17,12 @@ InterAliasMap(
                     ) ] 
                 2	 => [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(_END)
-                        mLocal: 0
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    ) ] 
-                3	 => [ 
-                    NamedLoc(
                         mSymHandle: SymHandle(T1)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                4	 => [ 
+                3	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(T2)
                         mLocal: 1
@@ -42,7 +35,6 @@ InterAliasMap(
                 1	 => 2
                 2	 => 2
                 3	 => 2
-                4	 => 2
 
         mIdToMemRefSetMap: int	 => MemRefSet
 
@@ -59,16 +51,9 @@ InterAliasMap(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
-                        mSymHandle: SymHandle(_END)
-                    ) ] 
-                3	 => [ 
-                    NamedRef(
-                        mAddressOf: 0
-                        mFullAccuracy: 1
-                        mMemRefType: USE
                         mSymHandle: SymHandle(T1)
                     ) ] 
-                4	 => [ 
+                3	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1

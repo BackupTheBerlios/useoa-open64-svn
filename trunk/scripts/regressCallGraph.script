@@ -1,36 +1,108 @@
-echo "Testing TestCases/CallGraph/activity_proc_call1.B, TestResults/CallGraph/activity_proc_call1.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/activity_proc_call1.B, TestResults/CallGraph/activity_proc_call1.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/activity_proc_call1.B > t
 diff t TestResults/CallGraph/activity_proc_call1.B.out
 
-echo "Testing TestCases/CallGraph/boxmodel-small.B, TestResults/CallGraph/boxmodel-small.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/boxmodel-small.B, TestResults/CallGraph/boxmodel-small.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/boxmodel-small.B > t
 diff t TestResults/CallGraph/boxmodel-small.B.out
 
-echo "Testing TestCases/CallGraph/functions2.B, TestResults/CallGraph/functions2.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/functions2.B, TestResults/CallGraph/functions2.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/functions2.B > t
 diff t TestResults/CallGraph/functions2.B.out
 
-echo "Testing TestCases/CallGraph/functions3.B, TestResults/CallGraph/functions3.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/functions3.B, TestResults/CallGraph/functions3.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/functions3.B > t
 diff t TestResults/CallGraph/functions3.B.out
 
-echo "Testing TestCases/CallGraph/functions4.B, TestResults/CallGraph/functions4.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/functions4.B, TestResults/CallGraph/functions4.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/functions4.B > t
 diff t TestResults/CallGraph/functions4.B.out
 
-echo "Testing TestCases/CallGraph/functions5.B, TestResults/CallGraph/functions5.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/functions5.B, TestResults/CallGraph/functions5.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/functions5.B > t
 diff t TestResults/CallGraph/functions5.B.out
 
-echo "Testing TestCases/CallGraph/functions6.B, TestResults/CallGraph/functions6.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/functions6.B, TestResults/CallGraph/functions6.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/functions6.B > t
 diff t TestResults/CallGraph/functions6.B.out
 
-echo "Testing TestCases/CallGraph/interalias_proc_call1.B, TestResults/CallGraph/interalias_proc_call1.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/interalias_proc_call1.B, TestResults/CallGraph/interalias_proc_call1.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/interalias_proc_call1.B > t
 diff t TestResults/CallGraph/interalias_proc_call1.B.out
 
-echo "Testing TestCases/CallGraph/nested_calls_1.B, TestResults/CallGraph/nested_calls_1.B.out checked by MMS 6/9/06 - map check BK 7/7/06"
+echo "Testing TestCases/CallGraph/nested_calls_1.B, TestResults/CallGraph/nested_calls_1.B.out checked by MMS 6/9/06 - map check BK 7/7/06 - PLM 10/17/06"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/nested_calls_1.B > t
 diff t TestResults/CallGraph/nested_calls_1.B.out
+
+echo "Testing TestCases/CallGraph/If_Loop4.B, TestResults/CallGraph/If_Loop4.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/If_Loop4.B > t
+diff t TestResults/CallGraph/If_Loop4.B.out
+
+echo "Testing TestCases/CallGraph/passiveStatement.B, TestResults/CallGraph/passiveStatement.B.out checked by PLM 10/17/06 Intrinsic INT"
+./test-open64 --oa-CallGraph TestCases/CallGraph/passiveStatement.B > t
+diff t TestResults/CallGraph/passiveStatement.B.out
+
+echo "Testing TestCases/CallGraph/simple1.B, TestResults/CallGraph/simple1.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/simple1.B > t
+diff t TestResults/CallGraph/simple1.B.out
+
+echo "Testing TestCases/CallGraph/If_Loop5.B, TestResults/CallGraph/If_Loop5.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/If_Loop5.B > t
+diff t TestResults/CallGraph/If_Loop5.B.out
+
+echo "Testing TestCases/CallGraph/simple2.B, TestResults/CallGraph/simple2.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/simple2.B > t
+diff t TestResults/CallGraph/simple2.B.out
+
+echo "Testing TestCases/CallGraph/simple3.B, TestResults/CallGraph/simple3.B.out checked by PLM 10/17/06 Intrinsic sin"
+./test-open64 --oa-CallGraph TestCases/CallGraph/simple3.B > t
+diff t TestResults/CallGraph/simple3.B.out
+
+echo "Testing TestCases/CallGraph/float_intrinsic.B, TestResults/CallGraph/float_intrinsic.B.out checked by PLM 10/17/06 Intrinsic float"
+./test-open64 --oa-CallGraph TestCases/CallGraph/float_intrinsic.B > t
+diff t TestResults/CallGraph/float_intrinsic.B.out
+
+echo "Testing TestCases/CallGraph/lion.B, TestResults/CallGraph/lion.B.out checked by PLM 10/17/06 Intrinsic exp"
+./test-open64 --oa-CallGraph TestCases/CallGraph/lion.B > t
+diff t TestResults/CallGraph/lion.B.out
+
+echo "Testing TestCases/CallGraph/tanh_f_arg.B, TestResults/CallGraph/tanh_f_arg.B.out checked by PLM 10/17/06 Intrinsic tanh"
+./test-open64 --oa-CallGraph TestCases/CallGraph/tanh_f_arg.B > t
+diff t TestResults/CallGraph/tanh_f_arg.B.out
+
+echo "Testing TestCases/CallGraph/nested_calls_1.B, TestResults/CallGraph/nested_calls_1.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/nested_calls_1.B > t
+diff t TestResults/CallGraph/nested_calls_1.B.out
+
+echo "Testing TestCases/CallGraph/bat.B, TestResults/CallGraph/bat.B.out checked by PLM 10/17/06 Intrinsic sin"
+./test-open64 --oa-CallGraph TestCases/CallGraph/bat.B > t
+diff t TestResults/CallGraph/bat.B.out
+
+echo "Testing TestCases/CallGraph/nested_calls_3.B, TestResults/CallGraph/nested_calls_3.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/nested_calls_3.B > t
+diff t TestResults/CallGraph/nested_calls_3.B.out
+
+echo "Testing TestCases/CallGraph/cast1.B, TestResults/CallGraph/cast1.B.out checked by PLM 10/17/06 Intrinsic INT"
+./test-open64 --oa-CallGraph TestCases/CallGraph/cast1.B > t
+diff t TestResults/CallGraph/cast1.B.out
+
+echo "Testing TestCases/CallGraph/nested_calls_4.B, TestResults/CallGraph/nested_calls_4.B.out checked by PLM 10/17/06 Intrinsic sin and cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/nested_calls_4.B > t
+diff t TestResults/CallGraph/nested_calls_4.B.out
+
+echo "Testing TestCases/CallGraph/constPrec.B, TestResults/CallGraph/constPrec.B.out checked by PLM 10/17/06 Intrinsic cos"
+./test-open64 --oa-CallGraph TestCases/CallGraph/constPrec.B > t
+diff t TestResults/CallGraph/constPrec.B.out
+
+echo "Testing TestCases/CallGraph/readWrite1.B, TestResults/CallGraph/readWrite1.B.out checked by PLM 10/17/06 I/O functions like Read"
+./test-open64 --oa-CallGraph TestCases/CallGraph/readWrite1.B > t
+diff t TestResults/CallGraph/readWrite1.B.out
+
+echo "Testing TestCases/CallGraph/funcCallAsActual.B, TestResults/CallGraph/funcCallAsActual.B.out checked by PLM 10/20/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/funcCallAsActual.B > t
+diff t TestResults/CallGraph/funcCallAsActual.B.out
+
+echo "Testing TestCases/CallGraph/functions2_stub.B, TestResults/CallGraph/functions2_stub.B.out checked by PLM 10/20/06"
+./test-open64 --oa-CallGraph TestCases/CallGraph/functions2_stub.B > t
+diff t TestResults/CallGraph/functions2_stub.B.out
 

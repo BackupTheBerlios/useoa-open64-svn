@@ -32,9 +32,6 @@ graph EXPRESSION TREE:
 
 stmt = _END()
 
-	--Call-----------------------------------------
-	  Call: [_END()]
-	----------------------------------------------
 ========================stmt============================
 
 stmt = return
@@ -76,13 +73,6 @@ graph EXPRESSION TREE:
                 Edge: 
                     4 => 
                     Node 6: ET MemRefNode ( X:0:.predef_F8 )
-
-	--Call-----------------------------------------
-	  Call: [SIN(&T:0:.predef_F8)]
-	----------------------------------------------
-graph EXPRESSION TREE:
-
-    Node 0: ET MemRefNode ( T:0:.predef_F8 )
 
 ========================stmt============================
 

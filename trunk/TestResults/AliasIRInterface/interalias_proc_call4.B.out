@@ -25,11 +25,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [
         ] }
-    CALLSITES = { StmtHandle("_END()") =>
-        [
-            CallHandle("_END()") => 
-                NamedRef( USE, SymHandle("_END"), F, full)
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
@@ -38,7 +33,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ] }
     LOCATION = { < SymHandle("testing_"), not local > }
     LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("_END"), not local > }
     LOCATION = { < SymHandle("T1"), local > }
     LOCATION = { < SymHandle("T2"), local > }
 

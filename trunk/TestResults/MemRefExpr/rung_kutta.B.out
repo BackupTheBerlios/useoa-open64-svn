@@ -1139,35 +1139,8 @@ NamedRef(
 OA::StmtHandle: I8SRCTRIPLET
 ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000)
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(I8SRCTRIPLET
-ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000))
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(I8SRCTRIPLET
-ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000))
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(I8SRCTRIPLET
-ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000))
-)
-
-	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(NEW_Y_1)
@@ -1175,7 +1148,7 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(NEW_Y_2)
@@ -1237,7 +1210,7 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H2)
@@ -1247,7 +1220,7 @@ NamedRef(
 OA::StmtHandle: ABS(&H2:0:.predef_F8)
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H2)
@@ -1631,7 +1604,7 @@ OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 OA::StmtHandle: STOP_F90(&"", 0)
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(<no-symbol>)
@@ -2065,7 +2038,7 @@ OA::StmtHandle: USE <1,20,precisions_>
 OA::StmtHandle: F:0:anon_ptr.(1) = TAN(&Y:0:anon_ptr.(3))
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(Y)
@@ -2098,7 +2071,7 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(Y)

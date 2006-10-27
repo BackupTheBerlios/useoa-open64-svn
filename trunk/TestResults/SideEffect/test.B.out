@@ -826,16 +826,3 @@ InterSideEffectStandard(
                         mUnknownLocSet: [ 
                             UnknownLoc(
                             ) ] 
-                        CallHandle(_END())	 => 
-                        SideEffectStandard(
-                            mLMODSet: [  ] 
-                            mMODSet: [  ] 
-                            mLDEFSet: [  ] 
-                            mDEFSet: [  ] 
-                            mLUSESet: [  ] 
-                            mUSESet: [  ] 
-                            mLREFSet: [  ] 
-                            mREFSet: [  ] 
-                            mUnknownLocSet: [ 
-                                UnknownLoc(
-                                ) ] 

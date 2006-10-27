@@ -10,6 +10,10 @@ echo "Testing TestCases/MemRefExpr/functions1.B, TestResults/MemRefExpr/function
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/functions1.B > t
 diff t TestResults/MemRefExpr/functions1.B.out
 
+echo "Testing TestCases/MemRefExpr/globalActive_2.B, TestResults/MemRefExpr/globalActive_2.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalActive_2.B > t
+diff t TestResults/MemRefExpr/globalActive_2.B.out
+
 echo "Testing TestCases/MemRefExpr/head_tlm_driver_g.pre.B, TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out not correct on defs to fields MMS 7/5/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/head_tlm_driver_g.pre.B > t
 diff t TestResults/MemRefExpr/head_tlm_driver_g.pre.B.out
@@ -97,4 +101,84 @@ diff t TestResults/MemRefExpr/formal_scalar_actual_out.B.out
 echo "Testing TestCases/MemRefExpr/formal_scalar_actual_inout.B, TestResults/MemRefExpr/formal_scalar_actual_inout.B.out checked by PLM 10/16/06"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > t
 diff t TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/If_Loop4.B, TestResults/MemRefExpr/If_Loop4.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/If_Loop4.B > t
+diff t TestResults/MemRefExpr/If_Loop4.B.out
+
+echo "Testing TestCases/MemRefExpr/passiveStatement.B, TestResults/MemRefExpr/passiveStatement.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/passiveStatement.B > t
+diff t TestResults/MemRefExpr/passiveStatement.B.out
+
+echo "Testing TestCases/MemRefExpr/simple1.B, TestResults/MemRefExpr/simple1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple1.B > t
+diff t TestResults/MemRefExpr/simple1.B.out
+
+echo "Testing TestCases/MemRefExpr/If_Loop5.B, TestResults/MemRefExpr/If_Loop5.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/If_Loop5.B > t
+diff t TestResults/MemRefExpr/If_Loop5.B.out
+
+echo "Testing TestCases/MemRefExpr/simple2.B, TestResults/MemRefExpr/simple2.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple2.B > t
+diff t TestResults/MemRefExpr/simple2.B.out
+
+echo "Testing TestCases/MemRefExpr/simple3.B, TestResults/MemRefExpr/simple3.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple3.B > t
+diff t TestResults/MemRefExpr/simple3.B.out
+
+echo "Testing TestCases/MemRefExpr/float_intrinsic.B, TestResults/MemRefExpr/float_intrinsic.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/float_intrinsic.B > t
+diff t TestResults/MemRefExpr/float_intrinsic.B.out
+
+echo "Testing TestCases/MemRefExpr/lion.B, TestResults/MemRefExpr/lion.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/lion.B > t
+diff t TestResults/MemRefExpr/lion.B.out
+
+echo "Testing TestCases/MemRefExpr/tanh_f_arg.B, TestResults/MemRefExpr/tanh_f_arg.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/tanh_f_arg.B > t
+diff t TestResults/MemRefExpr/tanh_f_arg.B.out
+
+echo "Testing TestCases/MemRefExpr/nested_calls_1.B, TestResults/MemRefExpr/nested_calls_1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_1.B > t
+diff t TestResults/MemRefExpr/nested_calls_1.B.out
+
+echo "Testing TestCases/MemRefExpr/bat.B, TestResults/MemRefExpr/bat.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/bat.B > t
+diff t TestResults/MemRefExpr/bat.B.out
+
+echo "Testing TestCases/MemRefExpr/nested_calls_3.B, TestResults/MemRefExpr/nested_calls_3.B.out checked  by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_3.B > t
+diff t TestResults/MemRefExpr/nested_calls_3.B.out
+
+echo "Testing TestCases/MemRefExpr/cast1.B, TestResults/MemRefExpr/cast1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/cast1.B > t
+diff t TestResults/MemRefExpr/cast1.B.out
+
+echo "Testing TestCases/MemRefExpr/nested_calls_4.B, TestResults/MemRefExpr/nested_calls_4.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_4.B > t
+diff t TestResults/MemRefExpr/nested_calls_4.B.out
+
+echo "Testing TestCases/MemRefExpr/constPrec.B, TestResults/MemRefExpr/constPrec.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/constPrec.B > t
+diff t TestResults/MemRefExpr/constPrec.B.out
+
+echo "Testing TestCases/MemRefExpr/readWrite1.B, TestResults/MemRefExpr/readWrite1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/readWrite1.B > t
+diff t TestResults/MemRefExpr/readWrite1.B.out
+
+echo "Testing TestCases/MemRefExpr/rung_kutta.B, TestResults/MemRefExpr/rung_kutta.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/rung_kutta.B > t
+diff t TestResults/MemRefExpr/rung_kutta.B.out
+
+echo "Testing TestCases/MemRefExpr/scalar_local.B, TestResults/MemRefExpr/scalar_local.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/scalar_local.B > t
+diff t TestResults/MemRefExpr/scalar_local.B.out
+
+echo "Testing TestCases/MemRefExpr/struct_simple.B, TestResults/MemRefExpr/struct_simple.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple.B > t
+diff t TestResults/MemRefExpr/struct_simple.B.out
+
+echo "Testing TestCases/MemRefExpr/struct_simple_local.B, TestResults/MemRefExpr/struct_simple_local.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple_local.B > t
+diff t TestResults/MemRefExpr/struct_simple_local.B.out
 
