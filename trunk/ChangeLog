@@ -355,6 +355,13 @@
     - passes regressAll with OpenAnalysis trunk r247 compiled
       on Okapi with gcc-3.2
 
+10/27/06   UseOA-Open64 svn trunk r113 Priyadarshini Malusare
+    - Merged te memRefExprRefactor branch into the trunk in
+      revision r112.
+
+10/27/06   UseOA-Open64 svn trunk r115 Priyadarshini Malusare
+    - Added convertSymToMemRefExpr(OA::SymHandle sym) for
+      activity lookup.
 
 
 

@@ -875,6 +875,12 @@ private:
   bool isPassByReference(WN*);
   ST* findBaseSymbol(WN*);
 
+
+  // Added by PLM 10/27/06 for Activity lookup
+  OA::OA_ptr<OA::MemRefExpr>
+   convertSymToMemRefExpr(OA::SymHandle sym);
+
+
   void currentProc(OA::ProcHandle p) {
     assert(p!=OA::ProcHandle(0));
     PU_Info* pu = (PU_Info*)p.hval();
