@@ -819,6 +819,10 @@ public:
 
   //-------------------------------------------------------------------------
 
+  // for Activity lookup
+  OA::OA_ptr<OA::MemRefExpr>
+   convertSymToMemRefExpr(OA::SymHandle sym);
+
 private:
   
   // assumption is that StmtHandles and MemRefHandles are unique across
@@ -874,12 +878,6 @@ private:
     bool fullAccuracy, OA::MemRefExpr::MemRefType hty);
   bool isPassByReference(WN*);
   ST* findBaseSymbol(WN*);
-
-
-  // Added by PLM 10/27/06 for Activity lookup
-  OA::OA_ptr<OA::MemRefExpr>
-   convertSymToMemRefExpr(OA::SymHandle sym);
-
 
   void currentProc(OA::ProcHandle p) {
     assert(p!=OA::ProcHandle(0));
