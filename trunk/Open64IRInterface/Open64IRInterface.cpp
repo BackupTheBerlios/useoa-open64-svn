@@ -1728,7 +1728,8 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       if ((WN_operator(WN_kid0(wn)) == OPR_ARRAY) 
           || (WN_operator(WN_kid0(wn)) == OPR_ARRAYEXP)  
           || (WN_operator(WN_kid0(wn)) == OPR_STRCTFLD)  
-          || (WN_operator(WN_kid0(wn)) == OPR_LDA) )
+          || (WN_operator(WN_kid0(wn)) == OPR_LDA) 
+          || (WN_operator(WN_kid0(wn)) == OPR_LDID) )
       {
           findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid0(wn), lvl, flags); 
           // do not create MRE for this wn
