@@ -1725,6 +1725,11 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       // won't have MemRefHandle for this wn but will for array access
       // the array access should be given the same level 
       // FIXME: does WHIRL represent array accesses to int ptrs in C this way?
+      
+      // FIXME: formal parameters that are arrays, result in an ILOAD, LDID
+      // when passed as actual parameters. Not sure where else this pattern 
+      // might occur. 
+
       if ((WN_operator(WN_kid0(wn)) == OPR_ARRAY) 
           || (WN_operator(WN_kid0(wn)) == OPR_ARRAYEXP)  
           || (WN_operator(WN_kid0(wn)) == OPR_STRCTFLD)  
