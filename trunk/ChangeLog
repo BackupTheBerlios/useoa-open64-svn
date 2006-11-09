@@ -370,7 +370,17 @@
       1. formal_array_actual, 2. formal_array_actual_in,
       3. formal_array_actual_out 4. formal_array_actual_inout
       5. rung_kutta
-
+ 
+11/09/06   UseO-Open64 svn trunk r120 Luis Ramos
+    - Changed how expression tress are genarated in respect to 
+      intrinsic calls. An intrinsic call is not an OpNode other
+      than a CallNode. Sin(a+b) is now OpNode(sin) with Children
+      OpNode(+) with Children MemRef(a) and MemRef(b).
+    - Regenerated the TestCases for ExprTree and others affected
+      by this change.
+    - Added two more TestCases to test the difference between
+      intrinsics and regular functions.
+					  
  
 
 

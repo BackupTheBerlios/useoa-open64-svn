@@ -26,3 +26,11 @@ echo "Testing TestCases/ExprTree/ExprCallIntent.B, TestResults/ExprTree/ExprCall
 ./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallIntent.B > t
 diff t TestResults/ExprTree/ExprCallIntent.B.out
 
+echo "Testing TestCases/ExprTree/SinExpr.B, TestResults/ExprTree/SinExpr.B.out Checked by LMR 11/09/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SinExpr.B > t
+diff t TestResults/ExprTree/SinExpr.B.out
+
+echo "Testing TestCases/ExprTree/SinFuncExpr.B, TestResults/ExprTree/SinFuncExpr.B.out Checked by LMR 11/09/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SinFuncExpr.B > t
+diff t TestResults/ExprTree/SinFuncExpr.B.out
+

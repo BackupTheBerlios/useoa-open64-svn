@@ -1,9 +1,9 @@
 
 ========================stmt============================
-
-stmt =  LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/SimpleUnbalanced.f"
+ LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/SimpleUnbalanced.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
+stmt = 
 
 ========================stmt============================
 
@@ -41,9 +41,9 @@ stmt = return
 stmt = return
 
 ========================stmt============================
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-
+stmt = 
 
 ========================stmt============================
 

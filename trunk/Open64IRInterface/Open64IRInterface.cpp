@@ -3138,7 +3138,11 @@ Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree> tree, WN* wn)
   // is important here.  *Note* OPR_ICALL and OPR_VFCALL will be
   // classified as calls instead of mem-refs.
   bool bypassRecursion = false;
-  if (OPERATOR_is_call(opr)) {
+  if (IntrinsicInfo::isIntrinsic(wn)) {
+    OA::OpHandle h((OA::irhandle_t)wn);
+    root = new OA::ExprTree::OpNode(h);
+  }
+  else if (OPERATOR_is_call(opr)) {
     OA::CallHandle h((OA::irhandle_t)wn);
     root = new OA::ExprTree::CallNode(h);
   }

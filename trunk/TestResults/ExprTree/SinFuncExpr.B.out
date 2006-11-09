@@ -1,6 +1,6 @@
 
 ========================stmt============================
- LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/ExprCallf.f90"
+ LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/SinFuncExpr.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 stmt = 
@@ -47,40 +47,42 @@ stmt =
 
 ========================stmt============================
 
-stmt = A:0:.predef_F8 = OPC_F8F4CVT(func_(&F:0:.predef_F8*X:0:.predef_F8, &T:0:.predef_F8))+A:0:.predef_F8
+stmt = A:0:.predef_F8 = SIN(&OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8)/OPC_F8F4CVT(func_(&F:0:.predef_F8))
 
 	--expr----------------------------------------
-	  expr = OPC_F8F4CVT(func_(&F:0:.predef_F8*X:0:.predef_F8, &T:0:.predef_F8))+A:0:.predef_F8
+	  expr = SIN(&OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8)/OPC_F8F4CVT(func_(&F:0:.predef_F8))
 	----------------------------------------------
 graph EXPRESSION TREE:
 
-    Node 0: ET OpNode ( + )
+    Node 0: ET OpNode ( / )
     Edge: 
         0 => 
-        Node 1: ET OpNode ( OPC_F8F4CVT() )
+        Node 1: ET OpNode ( SIN(&OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8) )
         Edge: 
             1 => 
-            Node 2: ET CallNode ( func_(&F:0:.predef_F8*X:0:.predef_F8, &T:0:.predef_F8) )
+            Node 2: ET OpNode ( + )
+            Edge: 
+                2 => 
+                Node 3: ET OpNode ( OPC_F8F4CVT() )
+                Edge: 
+                    3 => 
+                    Node 4: ET MemRefNode ( B:0:.predef_F4 )
+            Edge: 
+                2 => 
+                Node 6: ET MemRefNode ( A:0:.predef_F8 )
     Edge: 
         0 => 
-        Node 4: ET MemRefNode ( A:0:.predef_F8 )
+        Node 8: ET OpNode ( OPC_F8F4CVT() )
+        Edge: 
+            8 => 
+            Node 9: ET CallNode ( func_(&F:0:.predef_F8) )
 
 	--Call-----------------------------------------
-	  Call: [func_(&F:0:.predef_F8*X:0:.predef_F8, &T:0:.predef_F8)]
+	  Call: [func_(&F:0:.predef_F8)]
 	----------------------------------------------
 graph EXPRESSION TREE:
 
-    Node 0: ET OpNode ( * )
-    Edge: 
-        0 => 
-        Node 1: ET MemRefNode ( F:0:.predef_F8 )
-    Edge: 
-        0 => 
-        Node 2: ET MemRefNode ( X:0:.predef_F8 )
-
-graph EXPRESSION TREE:
-
-    Node 0: ET MemRefNode ( T:0:.predef_F8 )
+    Node 0: ET MemRefNode ( F:0:.predef_F8 )
 
 ========================stmt============================
 
