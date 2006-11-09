@@ -211,21 +211,6 @@ NamedRef(
 )
 
 	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
-)
-
-	mre = 
 NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1

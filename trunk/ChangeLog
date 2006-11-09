@@ -363,5 +363,14 @@
     - Added convertSymToMemRefExpr(OA::SymHandle sym) for
       activity lookup.
 
+11/09/06   UseOA-Open64 svn trunk r119 Priyadarshini Malusare
+    - Regenerated following testcases for MemRefExpr after 
+      fixing the problem of MemRefExpr for formal Parameters
+      as Actuals in the Procedure.
+      1. formal_array_actual, 2. formal_array_actual_in,
+      3. formal_array_actual_out 4. formal_array_actual_inout
+      5. rung_kutta
+
+ 
 
 

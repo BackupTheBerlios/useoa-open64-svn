@@ -58,41 +58,11 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ============================================
 OA::StmtHandle: foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)
 	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 1
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(X)
-    )
-    mNumDeref: 1
-)
-
-	mre = 
 NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(X)
-)
-
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 1
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
 )
 
 	mre = 
