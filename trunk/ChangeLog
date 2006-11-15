@@ -371,7 +371,7 @@
       3. formal_array_actual_out 4. formal_array_actual_inout
       5. rung_kutta
  
-11/09/06   UseO-Open64 svn trunk r120 Luis Ramos
+11/09/06   UseOA-Open64 svn trunk r120 Luis Ramos
     - Changed how expression tress are genarated in respect to 
       intrinsic calls. An intrinsic call is not an OpNode other
       than a CallNode. Sin(a+b) is now OpNode(sin) with Children
@@ -381,6 +381,9 @@
     - Added two more TestCases to test the difference between
       intrinsics and regular functions.
 					  
- 
+11/15/06   UseOA-Open64 svn trunk r121 Luis Ramos
+    - Regenerated ICFGDep test cases. Before intrinsics did not
+      generate any DEFS or USES but after the Intrinsic change
+      ICFGDep reports correct DEFS and USES for intrinsic calls.
 
 
