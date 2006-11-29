@@ -1,0 +1,33 @@
+
+PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("X") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarraydefwholearray.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
+I8SRCTRIPLET
+X:0:anon_ptr.() = 0:Y:0:anon_ptr.()") =>
+        [
+            MemRefHandle("I8SRCTRIPLET
+X:0:anon_ptr.()") => 
+                Deref( DEF, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
+            MemRefHandle("I8SRCTRIPLET
+0:Y:0:anon_ptr.()") => 
+                NamedRef( USE, SymHandle("Y"), F, part)
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
+I8SRCTRIPLET
+X:0:anon_ptr.() = 0:Y:0:anon_ptr.()") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_"), not local > }
+    LOCATION = { < SymHandle("X"), local > }
+    LOCATION = { < SymHandle("Y"), local > }

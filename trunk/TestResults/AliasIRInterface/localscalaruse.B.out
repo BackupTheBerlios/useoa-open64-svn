@@ -1,0 +1,20 @@
+
+PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/localscalaruse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("T2:0:.predef_F8 = X:0:.predef_F8") =>
+        [
+            MemRefHandle("T2:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("T2"), F, full)
+            MemRefHandle("X:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("X"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_"), not local > }
+    LOCATION = { < SymHandle("T2"), local > }
+    LOCATION = { < SymHandle("X"), local > }

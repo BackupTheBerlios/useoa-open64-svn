@@ -1,0 +1,56 @@
+
+PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/localarraysubscriptactualcalleedef.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("bar_(&X:0:anon_ptr.(I:0:.predef_I4))") =>
+        [
+            MemRefHandle("&X:0:anon_ptr.(I:0:.predef_I4)") => 
+                NamedRef( USE, SymHandle("X"), T, part)
+            MemRefHandle("I:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("I"), F, full)
+        ] }
+    CALLSITES = { StmtHandle("bar_(&X:0:anon_ptr.(I:0:.predef_I4))") =>
+        [
+            CallHandle("bar_(&X:0:anon_ptr.(I:0:.predef_I4))") => 
+                NamedRef( USE, SymHandle("bar_"), F, full)
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&X:0:anon_ptr.(I:0:.predef_I4))") =>
+        [
+            < 0, NamedRef( USE, SymHandle("X"), T, part) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_"), not local > }
+    LOCATION = { < SymHandle("bar_"), not local > }
+    LOCATION = { < SymHandle("I"), local > }
+    LOCATION = { < SymHandle("X"), local > }
+
+PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("A") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("A:0:anon_ptr.(1) = B:0:.predef_F8") =>
+        [
+            MemRefHandle("A:0:anon_ptr.(1)") => 
+                Deref( DEF, NamedRef( USE, SymHandle("A"), F, full), 1, F, part)
+            MemRefHandle("B:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("B"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("bar_"), not local > }
+    LOCATION = { < SymHandle("A"), local > }
+    LOCATION = { < SymHandle("B"), local > }

@@ -1,0 +1,57 @@
+
+PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("X") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalscalaractualcalleedefout.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("bar_(&X:0:.predef_F8)") =>
+        [
+            MemRefHandle("&X:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("X"), F, full)
+        ] }
+    CALLSITES = { StmtHandle("bar_(&X:0:.predef_F8)") =>
+        [
+            CallHandle("bar_(&X:0:.predef_F8)") => 
+                NamedRef( USE, SymHandle("bar_"), F, full)
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&X:0:.predef_F8)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("X"), F, full) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_"), not local > }
+    LOCATION = { < SymHandle("bar_"), not local > }
+    LOCATION = { < SymHandle("X"), local > }
+
+PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("A") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("A:0:.predef_F8 = B:0:.predef_F8") =>
+        [
+            MemRefHandle("A:0:.predef_F8") => 
+                Deref( DEF, NamedRef( USE, SymHandle("A"), F, full), 1, F, full)
+            MemRefHandle("B:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("B"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("bar_"), not local > }
+    LOCATION = { < SymHandle("A"), local > }
+    LOCATION = { < SymHandle("B"), local > }
