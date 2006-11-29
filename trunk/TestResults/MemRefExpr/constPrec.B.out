@@ -17,28 +17,28 @@ OA::StmtHandle: Y:0:anon_ptr.(1) = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
-    mMemRefType: USE
+    mMemRefType: DEF
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(Y)
     )
     mNumDeref: 1
 )
 
 	mre = 
 Deref(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: DEF
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(X)
     )
     mNumDeref: 1
 )

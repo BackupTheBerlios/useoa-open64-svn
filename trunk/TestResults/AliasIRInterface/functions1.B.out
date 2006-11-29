@@ -42,7 +42,7 @@ PROCEDURE = { < ProcHandle("functiontest_"), SymHandle("functiontest_") > }
         [
             MemRefHandle("N:0:.predef_I4") => 
                 NamedRef( DEF, SymHandle("N"), F, full)
-            MemRefHandle("N:0:.predef_I4") => 
+            MemRefHandle("&N:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("N"), T, full)
         ] }
     CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))") =>

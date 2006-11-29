@@ -7,9 +7,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ] }
     MEMREFEXPRS = { StmtHandle("head_(&T1:0:.predef_F8, &T2:0:.predef_F8)") =>
         [
-            MemRefHandle("T1:0:.predef_F8") => 
+            MemRefHandle("&T1:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("T1"), T, full)
-            MemRefHandle("T2:0:.predef_F8") => 
+            MemRefHandle("&T2:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("T2"), T, full)
         ] }
     CALLSITES = { StmtHandle("head_(&T1:0:.predef_F8, &T2:0:.predef_F8)") =>
@@ -57,9 +57,9 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
         ] }
     MEMREFEXPRS = { StmtHandle("bar_(&X:0:.predef_F8, &G:0:.predef_F4)") =>
         [
-            MemRefHandle("X:0:.predef_F8") => 
+            MemRefHandle("&X:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("X"), F, full)
-            MemRefHandle("G:0:.predef_F4") => 
+            MemRefHandle("&G:0:.predef_F4") => 
                 NamedRef( USE, SymHandle("G"), T, full)
         ] }
     CALLSITES = { StmtHandle("bar_(&X:0:.predef_F8, &G:0:.predef_F4)") =>

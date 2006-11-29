@@ -29,7 +29,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -44,7 +44,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -69,7 +69,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -84,7 +84,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -120,6 +120,21 @@ NamedRef(
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(1) = T1:0:.predef_F8*T3:0:.predef_F8
 	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
 NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
@@ -135,32 +150,9 @@ NamedRef(
     mSymHandle: SymHandle(T3)
 )
 
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: DEF
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 0
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
-)
-
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(2) = RECIP(T3:0:.predef_F8)
 	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(T3)
-)
-
-	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
@@ -168,7 +160,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(Y)
     )
@@ -178,13 +170,30 @@ Deref(
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(3) = SIN(&T3:0:.predef_F8)
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(T3)
 )
 
+============================================
+OA::StmtHandle: Y:0:anon_ptr.(4) = T2:0:.predef_F8*T3:0:.predef_F8
 	mre = 
 Deref(
     mAddressOf: 0
@@ -193,15 +202,13 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(Y)
     )
     mNumDeref: 1
 )
 
-============================================
-OA::StmtHandle: Y:0:anon_ptr.(4) = T2:0:.predef_F8*T3:0:.predef_F8
 	mre = 
 NamedRef(
     mAddressOf: 0
@@ -216,21 +223,6 @@ NamedRef(
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(T3)
-)
-
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: DEF
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 0
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
 )
 
 ============================================

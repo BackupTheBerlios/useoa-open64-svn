@@ -1,18 +1,40 @@
 
 ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(foo_(&5))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(foo_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&5)	 => SymHandle(N)
+
+
+            CallHandle(bar_(&1))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(bar_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&1)	 => SymHandle(N)
+
+
             CallHandle(foo_(&N:0:.predef_I4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(foo_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(N)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(foo_(&5))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(N)	 => MemRefHandle(&5)
+
+            CallHandle(bar_(&1))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(N)	 => MemRefHandle(&1)
+
             CallHandle(foo_(&N:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+                    SymHandle(N)	 => MemRefHandle(&N:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
@@ -20,7 +42,9 @@ ParamBindings(
             ProcHandle(foo_)	 => [ SymHandle(N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(foo_(&N:0:.predef_I4))	 => [ MemRefHandle(N:0:.predef_I4) ] 
+            CallHandle(foo_(&5))	 => [ MemRefHandle(&5) ] 
+            CallHandle(bar_(&1))	 => [ MemRefHandle(&1) ] 
+            CallHandle(foo_(&N:0:.predef_I4))	 => [ MemRefHandle(&N:0:.predef_I4) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(foo_(&5))	 => [ ExprHandle(&5) ] 
@@ -31,17 +55,17 @@ ParamBindings(
             ExprHandle(&5)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 5 )
+                Node 0: ET MemRefNode ( &5 )
 
             ExprHandle(&1)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 1 )
+                Node 0: ET MemRefNode ( &1 )
 
             ExprHandle(&N:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( N:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &N:0:.predef_I4 )
 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap

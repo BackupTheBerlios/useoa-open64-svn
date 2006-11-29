@@ -52,11 +52,18 @@ NamedRef(
 ============================================
 OA::StmtHandle: foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:anon_ptr.(K:0:.predef_I4))
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 1
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(X)
+    )
+    mNumDeref: 1
 )
 
 	mre = 
@@ -68,11 +75,18 @@ NamedRef(
 )
 
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 1
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(Y)
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
 )
 
 	mre = 

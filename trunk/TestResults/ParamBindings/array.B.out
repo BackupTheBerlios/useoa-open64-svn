@@ -5,21 +5,23 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(sub01_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(A:0:anon_ptr.)	 => SymHandle(A)
+                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(A)
+                            MemRefHandle(&10)	 => SymHandle(ARRAY_SIZE)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(A)	 => MemRefHandle(A:0:anon_ptr.)
+                    SymHandle(A)	 => MemRefHandle(&0:A:0:anon_ptr.)
+                    SymHandle(ARRAY_SIZE)	 => MemRefHandle(&10)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(sub01_)	 => [ SymHandle(A)    SymHandle(ARRAY_SIZE) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => [ MemRefHandle(A:0:anon_ptr.) ] 
+            CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => [ MemRefHandle(&0:A:0:anon_ptr.)    MemRefHandle(&10) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => [ ExprHandle(&0:A:0:anon_ptr.)    ExprHandle(&10) ] 
@@ -28,12 +30,12 @@ ParamBindings(
             ExprHandle(&0:A:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( A:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:A:0:anon_ptr. )
 
             ExprHandle(&10)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 10 )
+                Node 0: ET MemRefNode ( &10 )
 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap

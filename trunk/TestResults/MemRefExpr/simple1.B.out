@@ -29,7 +29,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -44,7 +44,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -54,14 +54,6 @@ Deref(
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(1) = SIN(&T:0:.predef_F8)
 	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(T)
-)
-
-	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
@@ -69,24 +61,24 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(Y)
     )
     mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(T)
 )
 
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(2) = COS(&T:0:.predef_F8)
 	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(T)
-)
-
-	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
@@ -94,11 +86,19 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(Y)
     )
     mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(T)
 )
 
 ============================================

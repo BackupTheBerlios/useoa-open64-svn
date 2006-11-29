@@ -5,27 +5,29 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(readin_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(FILENAME:0:anon_ptr.(0))	 => SymHandle(NAME)
-                            MemRefHandle(A:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(B:0:anon_ptr.)	 => SymHandle(Y)
-                            MemRefHandle(NOS:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(&FILENAME:0:anon_ptr.(0))	 => SymHandle(NAME)
+                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(&0:B:0:anon_ptr.)	 => SymHandle(Y)
+                            MemRefHandle(&NOS:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(20)	 => SymHandle(.len)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(NAME)	 => MemRefHandle(FILENAME:0:anon_ptr.(0))
-                    SymHandle(X)	 => MemRefHandle(A:0:anon_ptr.)
-                    SymHandle(Y)	 => MemRefHandle(B:0:anon_ptr.)
-                    SymHandle(N)	 => MemRefHandle(NOS:0:.predef_I4)
+                    SymHandle(NAME)	 => MemRefHandle(&FILENAME:0:anon_ptr.(0))
+                    SymHandle(.len)	 => MemRefHandle(20)
+                    SymHandle(X)	 => MemRefHandle(&0:A:0:anon_ptr.)
+                    SymHandle(Y)	 => MemRefHandle(&0:B:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(&NOS:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(readin_)	 => [ SymHandle(NAME)    SymHandle(X)    SymHandle(Y)    SymHandle(N) ] 
+            ProcHandle(readin_)	 => [ SymHandle(N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(FILENAME:0:anon_ptr.(0))    MemRefHandle(A:0:anon_ptr.)    MemRefHandle(B:0:anon_ptr.)    MemRefHandle(NOS:0:.predef_I4) ] 
+            CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(&FILENAME:0:anon_ptr.(0))    MemRefHandle(&0:A:0:anon_ptr.)    MemRefHandle(&0:B:0:anon_ptr.)    MemRefHandle(&NOS:0:.predef_I4)    MemRefHandle(20) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ ExprHandle(&FILENAME:0:anon_ptr.(0))    ExprHandle(&0:A:0:anon_ptr.)    ExprHandle(&0:B:0:anon_ptr.)    ExprHandle(&NOS:0:.predef_I4)    ExprHandle(20) ] 
@@ -34,27 +36,27 @@ ParamBindings(
             ExprHandle(&FILENAME:0:anon_ptr.(0))	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( FILENAME:0:anon_ptr.(0) )
+                Node 0: ET MemRefNode ( &FILENAME:0:anon_ptr.(0) )
 
             ExprHandle(&0:A:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( A:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:A:0:anon_ptr. )
 
             ExprHandle(&0:B:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( B:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:B:0:anon_ptr. )
 
             ExprHandle(&NOS:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( NOS:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &NOS:0:.predef_I4 )
 
             ExprHandle(20)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 20 )
+                Node 0: ET MemRefNode ( 20 )
 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap

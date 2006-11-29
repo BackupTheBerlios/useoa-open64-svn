@@ -1,0 +1,65 @@
+
+PROCEDURE = { < ProcHandle("foo_"), SymHandle("foo_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("X") >
+            < 1, SymHandle("Y") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/formal_array_actual_inout.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)*    2.000000000000000") =>
+        [
+            MemRefHandle("Y:0:anon_ptr.(I:0:.predef_I4)") => 
+                Deref( DEF, NamedRef( USE, SymHandle("Y"), F, full), 1, F, part)
+            MemRefHandle("0:X:0:anon_ptr.(I:0:.predef_I4)") => 
+                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
+            MemRefHandle("I:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("I"), F, full)
+            MemRefHandle("I:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("I"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("foo_"), not local > }
+    LOCATION = { < SymHandle("X"), local > }
+    LOCATION = { < SymHandle("Y"), local > }
+    LOCATION = { < SymHandle("I"), local > }
+
+PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("X") >
+            < 1, SymHandle("Y") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") =>
+        [
+            MemRefHandle("&0:X:0:anon_ptr.") => 
+                NamedRef( USE, SymHandle("X"), F, full)
+            MemRefHandle("&0:Y:0:anon_ptr.") => 
+                NamedRef( USE, SymHandle("Y"), F, full)
+        ] }
+    CALLSITES = { StmtHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") =>
+        [
+            CallHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") => 
+                NamedRef( USE, SymHandle("foo_"), F, full)
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("X"), F, full) >
+            < 1, NamedRef( USE, SymHandle("Y"), F, full) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("foo_"), not local > }
+    LOCATION = { < SymHandle("head_"), not local > }
+    LOCATION = { < SymHandle("X"), local > }
+    LOCATION = { < SymHandle("Y"), local > }

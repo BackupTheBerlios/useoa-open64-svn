@@ -1,0 +1,62 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/localarrayofarraydef.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+I8SRCTRIPLET
+A:0:anon_ptr.(0:VECTOR:0:anon_ptr.()) = 0:B:0:anon_ptr.()
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(A)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(B)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(VECTOR)
+)
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+I8SRCTRIPLET
+A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(A)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(B)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(t__1)
+)
+
+============================================
+OA::StmtHandle: return

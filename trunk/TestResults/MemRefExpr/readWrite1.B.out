@@ -20,14 +20,6 @@ OA::StmtHandle: PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
 ============================================
 OA::StmtHandle: IO <27,OPEN,cray> 2
 
-	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: USE
-    mSymHandle: SymHandle(<no-symbol>)
-)
-
 ============================================
 OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 
@@ -39,29 +31,6 @@ OA::StmtHandle: PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
 
 ============================================
 OA::StmtHandle: IO <22,FORMATTED_WRITE,cray> 2
-
-	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: USE
-    mSymHandle: SymHandle(<no-symbol>)
-)
-
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 0
-        mMemRefType: USE
-        mSymHandle: SymHandle(X)
-    )
-    mNumDeref: 1
-)
 
 ============================================
 OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
@@ -87,14 +56,6 @@ OA::StmtHandle: PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
 ============================================
 OA::StmtHandle: IO <27,OPEN,cray> 2
 
-	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: USE
-    mSymHandle: SymHandle(<no-symbol>)
-)
-
 ============================================
 OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 
@@ -106,29 +67,6 @@ OA::StmtHandle: PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
 
 ============================================
 OA::StmtHandle: IO <23,FORMATTED_READ,cray> 2
-
-	mre = 
-NamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: USE
-    mSymHandle: SymHandle(<no-symbol>)
-)
-
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: USE
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 0
-        mMemRefType: USE
-        mSymHandle: SymHandle(X)
-    )
-    mNumDeref: 1
-)
 
 ============================================
 OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
@@ -151,13 +89,13 @@ OA::StmtHandle: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
-    mMemRefType: USE
+    mMemRefType: DEF
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(Y)
     )
     mNumDeref: 1
 )
@@ -166,13 +104,13 @@ Deref(
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
-    mMemRefType: DEF
+    mMemRefType: USE
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(X)
     )
     mNumDeref: 1
 )

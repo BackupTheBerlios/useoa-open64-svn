@@ -26,3 +26,423 @@ echo "Testing TestCases/Alias/globalActive_2.B, TestResults/AliasIRInterface/glo
 ./FORTRANtoOA TestCases/Alias/globalActive_2.B > t
 diff t TestResults/AliasIRInterface/globalActive_2.B.out
 
+echo "Testing TestCases/Alias/formalarrayactual.B, TestResults/AliasIRInterface/formalarrayactual.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactual.B > t
+diff t TestResults/AliasIRInterface/formalarrayactual.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualin.B, TestResults/AliasIRInterface/formalarrayactualin.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualin.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualin.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualout.B, TestResults/AliasIRInterface/formalarrayactualout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualout.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualinout.B, TestResults/AliasIRInterface/formalarrayactualinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualinout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualinout.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualsubscript.B, TestResults/AliasIRInterface/formalarrayactualsubscript.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscript.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualsubscript.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualsubscriptin.B, TestResults/AliasIRInterface/formalarrayactualsubscriptin.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptin.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualsubscriptin.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualsubscriptout.B, TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualsubscriptinout.B, TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptinout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out
+
+echo "Testing TestCases/Alias/localarrayactual.B, TestResults/AliasIRInterface/localarrayactual.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayactual.B > t
+diff t TestResults/AliasIRInterface/localarrayactual.B.out
+
+echo "Testing TestCases/Alias/localscalaractual.B, TestResults/AliasIRInterface/localscalaractual.B.out "
+./FORTRANtoOA TestCases/Alias/localscalaractual.B > t
+diff t TestResults/AliasIRInterface/localscalaractual.B.out
+
+echo "Testing TestCases/Alias/formalarrayofarrayuse.B, TestResults/AliasIRInterface/formalarrayofarrayuse.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayofarrayuse.B > t
+diff t TestResults/AliasIRInterface/formalarrayofarrayuse.B.out
+
+echo "Testing TestCases/Alias/formalarrayofarrayusesubscript.B, TestResults/AliasIRInterface/formalarrayofarrayusesubscript.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayofarrayusesubscript.B > t
+diff t TestResults/AliasIRInterface/formalarrayofarrayusesubscript.B.out
+
+echo "Testing TestCases/Alias/formalarrayofarraydef.B, TestResults/AliasIRInterface/formalarrayofarraydef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayofarraydef.B > t
+diff t TestResults/AliasIRInterface/formalarrayofarraydef.B.out
+
+echo "Testing TestCases/Alias/localarrayofarrayuse.B, TestResults/AliasIRInterface/localarrayofarrayuse.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayofarrayuse.B > t
+diff t TestResults/AliasIRInterface/localarrayofarrayuse.B.out
+
+echo "Testing TestCases/Alias/localarrayofarrayusesubscript.B, TestResults/AliasIRInterface/localarrayofarrayusesubscript.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayofarrayusesubscript.B > t
+diff t TestResults/AliasIRInterface/localarrayofarrayusesubscript.B.out
+
+echo "Testing TestCases/Alias/localarrayofarraydef.B, TestResults/AliasIRInterface/localarrayofarraydef.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayofarraydef.B > t
+diff t TestResults/AliasIRInterface/localarrayofarraydef.B.out
+
+echo "Testing TestCases/Alias/modulearrayusewholearray.B, TestResults/AliasIRInterface/modulearrayusewholearray.B.out "
+./FORTRANtoOA TestCases/Alias/modulearrayusewholearray.B > t
+diff t TestResults/AliasIRInterface/modulearrayusewholearray.B.out
+
+echo "Testing TestCases/Alias/modulearrayuse.B, TestResults/AliasIRInterface/modulearrayuse.B.out "
+./FORTRANtoOA TestCases/Alias/modulearrayuse.B > t
+diff t TestResults/AliasIRInterface/modulearrayuse.B.out
+
+echo "Testing TestCases/Alias/modulearraysubscriptuse.B, TestResults/AliasIRInterface/modulearraysubscriptuse.B.out "
+./FORTRANtoOA TestCases/Alias/modulearraysubscriptuse.B > t
+diff t TestResults/AliasIRInterface/modulearraysubscriptuse.B.out
+
+echo "Testing TestCases/Alias/modulearraydefwholearray.B, TestResults/AliasIRInterface/modulearraydefwholearray.B.out "
+./FORTRANtoOA TestCases/Alias/modulearraydefwholearray.B > t
+diff t TestResults/AliasIRInterface/modulearraydefwholearray.B.out
+
+echo "Testing TestCases/Alias/modulearraydef.B, TestResults/AliasIRInterface/modulearraydef.B.out "
+./FORTRANtoOA TestCases/Alias/modulearraydef.B > t
+diff t TestResults/AliasIRInterface/modulearraydef.B.out
+
+echo "Testing TestCases/Alias/modulearraysubscriptdef.B, TestResults/AliasIRInterface/modulearraysubscriptdef.B.out "
+./FORTRANtoOA TestCases/Alias/modulearraysubscriptdef.B > t
+diff t TestResults/AliasIRInterface/modulearraysubscriptdef.B.out
+
+echo "Testing TestCases/Alias/modulearraysectiondef.B, TestResults/AliasIRInterface/modulearraysectiondef.B.out "
+./FORTRANtoOA TestCases/Alias/modulearraysectiondef.B > t
+diff t TestResults/AliasIRInterface/modulearraysectiondef.B.out
+
+echo "Testing TestCases/Alias/modulescalaruse.B, TestResults/AliasIRInterface/modulescalaruse.B.out "
+./FORTRANtoOA TestCases/Alias/modulescalaruse.B > t
+diff t TestResults/AliasIRInterface/modulescalaruse.B.out
+
+echo "Testing TestCases/Alias/modulescalardef.B, TestResults/AliasIRInterface/modulescalardef.B.out "
+./FORTRANtoOA TestCases/Alias/modulescalardef.B > t
+diff t TestResults/AliasIRInterface/modulescalardef.B.out
+
+echo "Testing TestCases/Alias/globalarrayusewholearray.B, TestResults/AliasIRInterface/globalarrayusewholearray.B.out "
+./FORTRANtoOA TestCases/Alias/globalarrayusewholearray.B > t
+diff t TestResults/AliasIRInterface/globalarrayusewholearray.B.out
+
+echo "Testing TestCases/Alias/globalarrayuse.B, TestResults/AliasIRInterface/globalarrayuse.B.out "
+./FORTRANtoOA TestCases/Alias/globalarrayuse.B > t
+diff t TestResults/AliasIRInterface/globalarrayuse.B.out
+
+echo "Testing TestCases/Alias/globalarrayusesubscript.B, TestResults/AliasIRInterface/globalarrayusesubscript.B.out "
+./FORTRANtoOA TestCases/Alias/globalarrayusesubscript.B > t
+diff t TestResults/AliasIRInterface/globalarrayusesubscript.B.out
+
+echo "Testing TestCases/Alias/globalarraydefwholearray.B, TestResults/AliasIRInterface/globalarraydefwholearray.B.out "
+./FORTRANtoOA TestCases/Alias/globalarraydefwholearray.B > t
+diff t TestResults/AliasIRInterface/globalarraydefwholearray.B.out
+
+echo "Testing TestCases/Alias/globalarraydef.B, TestResults/AliasIRInterface/globalarraydef.B.out "
+./FORTRANtoOA TestCases/Alias/globalarraydef.B > t
+diff t TestResults/AliasIRInterface/globalarraydef.B.out
+
+echo "Testing TestCases/Alias/globalarraydefsubscript.B, TestResults/AliasIRInterface/globalarraydefsubscript.B.out "
+./FORTRANtoOA TestCases/Alias/globalarraydefsubscript.B > t
+diff t TestResults/AliasIRInterface/globalarraydefsubscript.B.out
+
+echo "Testing TestCases/Alias/globalarraysectiondef.B, TestResults/AliasIRInterface/globalarraysectiondef.B.out "
+./FORTRANtoOA TestCases/Alias/globalarraysectiondef.B > t
+diff t TestResults/AliasIRInterface/globalarraysectiondef.B.out
+
+echo "Testing TestCases/Alias/globalscalaruse.B, TestResults/AliasIRInterface/globalscalaruse.B.out "
+./FORTRANtoOA TestCases/Alias/globalscalaruse.B > t
+diff t TestResults/AliasIRInterface/globalscalaruse.B.out
+
+echo "Testing TestCases/Alias/globalscalardef.B, TestResults/AliasIRInterface/globalscalardef.B.out "
+./FORTRANtoOA TestCases/Alias/globalscalardef.B > t
+diff t TestResults/AliasIRInterface/globalscalardef.B.out
+
+echo "Testing TestCases/Alias/formalarrayusewholearray.B, TestResults/AliasIRInterface/formalarrayusewholearray.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayusewholearray.B > t
+diff t TestResults/AliasIRInterface/formalarrayusewholearray.B.out
+
+echo "Testing TestCases/Alias/formalarrayuse.B, TestResults/AliasIRInterface/formalarrayuse.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayuse.B > t
+diff t TestResults/AliasIRInterface/formalarrayuse.B.out
+
+echo "Testing TestCases/Alias/formalarraysubscriptuse.B, TestResults/AliasIRInterface/formalarraysubscriptuse.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraysubscriptuse.B > t
+diff t TestResults/AliasIRInterface/formalarraysubscriptuse.B.out
+
+echo "Testing TestCases/Alias/formalarrayusein.B, TestResults/AliasIRInterface/formalarrayusein.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayusein.B > t
+diff t TestResults/AliasIRInterface/formalarrayusein.B.out
+
+echo "Testing TestCases/Alias/formalarrayuseout.B, TestResults/AliasIRInterface/formalarrayuseout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayuseout.B > t
+diff t TestResults/AliasIRInterface/formalarrayuseout.B.out
+
+echo "Testing TestCases/Alias/formalarrayuseinout.B, TestResults/AliasIRInterface/formalarrayuseinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayuseinout.B > t
+diff t TestResults/AliasIRInterface/formalarrayuseinout.B.out
+
+echo "Testing TestCases/Alias/formalarraydefwholearray.B, TestResults/AliasIRInterface/formalarraydefwholearray.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraydefwholearray.B > t
+diff t TestResults/AliasIRInterface/formalarraydefwholearray.B.out
+
+echo "Testing TestCases/Alias/formalarraydef.B, TestResults/AliasIRInterface/formalarraydef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraydef.B > t
+diff t TestResults/AliasIRInterface/formalarraydef.B.out
+
+echo "Testing TestCases/Alias/formalarraysubscriptdef.B, TestResults/AliasIRInterface/formalarraysubscriptdef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraysubscriptdef.B > t
+diff t TestResults/AliasIRInterface/formalarraysubscriptdef.B.out
+
+echo "Testing TestCases/Alias/formalarraysectiondef.B, TestResults/AliasIRInterface/formalarraysectiondef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraysectiondef.B > t
+diff t TestResults/AliasIRInterface/formalarraysectiondef.B.out
+
+echo "Testing TestCases/Alias/formalarraydefout.B, TestResults/AliasIRInterface/formalarraydefout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraydefout.B > t
+diff t TestResults/AliasIRInterface/formalarraydefout.B.out
+
+echo "Testing TestCases/Alias/formalarraydefinout.B, TestResults/AliasIRInterface/formalarraydefinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarraydefinout.B > t
+diff t TestResults/AliasIRInterface/formalarraydefinout.B.out
+
+echo "Testing TestCases/Alias/formalscalaruse.B, TestResults/AliasIRInterface/formalscalaruse.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaruse.B > t
+diff t TestResults/AliasIRInterface/formalscalaruse.B.out
+
+echo "Testing TestCases/Alias/formalscalarusein.B, TestResults/AliasIRInterface/formalscalarusein.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalarusein.B > t
+diff t TestResults/AliasIRInterface/formalscalarusein.B.out
+
+echo "Testing TestCases/Alias/formalscalaruseout.B, TestResults/AliasIRInterface/formalscalaruseout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaruseout.B > t
+diff t TestResults/AliasIRInterface/formalscalaruseout.B.out
+
+echo "Testing TestCases/Alias/formalscalaruseinout.B, TestResults/AliasIRInterface/formalscalaruseinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaruseinout.B > t
+diff t TestResults/AliasIRInterface/formalscalaruseinout.B.out
+
+echo "Testing TestCases/Alias/formalscalardef.B, TestResults/AliasIRInterface/formalscalardef.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalardef.B > t
+diff t TestResults/AliasIRInterface/formalscalardef.B.out
+
+echo "Testing TestCases/Alias/formalscalardefout.B, TestResults/AliasIRInterface/formalscalardefout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalardefout.B > t
+diff t TestResults/AliasIRInterface/formalscalardefout.B.out
+
+echo "Testing TestCases/Alias/formalscalardefinout.B, TestResults/AliasIRInterface/formalscalardefinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalardefinout.B > t
+diff t TestResults/AliasIRInterface/formalscalardefinout.B.out
+
+echo "Testing TestCases/Alias/localarrayuse.B, TestResults/AliasIRInterface/localarrayuse.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayuse.B > t
+diff t TestResults/AliasIRInterface/localarrayuse.B.out
+
+echo "Testing TestCases/Alias/localarraysubscriptuse.B, TestResults/AliasIRInterface/localarraysubscriptuse.B.out "
+./FORTRANtoOA TestCases/Alias/localarraysubscriptuse.B > t
+diff t TestResults/AliasIRInterface/localarraysubscriptuse.B.out
+
+echo "Testing TestCases/Alias/localarraydef.B, TestResults/AliasIRInterface/localarraydef.B.out "
+./FORTRANtoOA TestCases/Alias/localarraydef.B > t
+diff t TestResults/AliasIRInterface/localarraydef.B.out
+
+echo "Testing TestCases/Alias/localarraysubscriptdef.B, TestResults/AliasIRInterface/localarraysubscriptdef.B.out "
+./FORTRANtoOA TestCases/Alias/localarraysubscriptdef.B > t
+diff t TestResults/AliasIRInterface/localarraysubscriptdef.B.out
+
+echo "Testing TestCases/Alias/localscalaruse.B, TestResults/AliasIRInterface/localscalaruse.B.out "
+./FORTRANtoOA TestCases/Alias/localscalaruse.B > t
+diff t TestResults/AliasIRInterface/localscalaruse.B.out
+
+echo "Testing TestCases/Alias/localscalardef.B, TestResults/AliasIRInterface/localscalardef.B.out "
+./FORTRANtoOA TestCases/Alias/localscalardef.B > t
+diff t TestResults/AliasIRInterface/localscalardef.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleeusewholearray.B, TestResults/AliasIRInterface/formalarrayactualcalleeusewholearray.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeusewholearray.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleeusewholearray.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleeuse.B, TestResults/AliasIRInterface/formalarrayactualcalleeuse.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeuse.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleeuse.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleeusesubscript.B, TestResults/AliasIRInterface/formalarrayactualcalleeusesubscript.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeusesubscript.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleeusesubscript.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualsubscriptcalleeuse.B, TestResults/AliasIRInterface/formalarrayactualsubscriptcalleeuse.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptcalleeuse.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualsubscriptcalleeuse.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleeusein.B, TestResults/AliasIRInterface/formalarrayactualcalleeusein.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeusein.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleeusein.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleeuseout.B, TestResults/AliasIRInterface/formalarrayactualcalleeuseout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeuseout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleeuseout.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleeuseinout.B, TestResults/AliasIRInterface/formalarrayactualcalleeuseinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeuseinout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleeuseinout.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleedefwholearray.B, TestResults/AliasIRInterface/formalarrayactualcalleedefwholearray.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefwholearray.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleedefwholearray.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleedef.B, TestResults/AliasIRInterface/formalarrayactualcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedef.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleedef.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleedefsubscript.B, TestResults/AliasIRInterface/formalarrayactualcalleedefsubscript.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefsubscript.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleedefsubscript.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleesectiondef.B, TestResults/AliasIRInterface/formalarrayactualcalleesectiondef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleesectiondef.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleesectiondef.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualsubscriptcalleedef.B, TestResults/AliasIRInterface/formalarrayactualsubscriptcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptcalleedef.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualsubscriptcalleedef.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleedefout.B, TestResults/AliasIRInterface/formalarrayactualcalleedefout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleedefout.B.out
+
+echo "Testing TestCases/Alias/formalarrayactualcalleedefinout.B, TestResults/AliasIRInterface/formalarrayactualcalleedefinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefinout.B > t
+diff t TestResults/AliasIRInterface/formalarrayactualcalleedefinout.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleeuse.B, TestResults/AliasIRInterface/formalscalaractualcalleeuse.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeuse.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleeuse.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleeusein.B, TestResults/AliasIRInterface/formalscalaractualcalleeusein.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeusein.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleeusein.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleeuseout.B, TestResults/AliasIRInterface/formalscalaractualcalleeuseout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeuseout.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleeuseout.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleeuseinout.B, TestResults/AliasIRInterface/formalscalaractualcalleeuseinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeuseinout.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleeuseinout.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleedef.B, TestResults/AliasIRInterface/formalscalaractualcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleedef.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleedef.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleedefout.B, TestResults/AliasIRInterface/formalscalaractualcalleedefout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleedefout.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleedefout.B.out
+
+echo "Testing TestCases/Alias/formalscalaractualcalleedefinout.B, TestResults/AliasIRInterface/formalscalaractualcalleedefinout.B.out "
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleedefinout.B > t
+diff t TestResults/AliasIRInterface/formalscalaractualcalleedefinout.B.out
+
+echo "Testing TestCases/Alias/localarrayactualcalleeuse.B, TestResults/AliasIRInterface/localarrayactualcalleeuse.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayactualcalleeuse.B > t
+diff t TestResults/AliasIRInterface/localarrayactualcalleeuse.B.out
+
+echo "Testing TestCases/Alias/localarrayactualcalleedefwholearray.B, TestResults/AliasIRInterface/localarrayactualcalleedefwholearray.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayactualcalleedefwholearray.B > t
+diff t TestResults/AliasIRInterface/localarrayactualcalleedefwholearray.B.out
+
+echo "Testing TestCases/Alias/localarrayactualcalleedef.B, TestResults/AliasIRInterface/localarrayactualcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/localarrayactualcalleedef.B > t
+diff t TestResults/AliasIRInterface/localarrayactualcalleedef.B.out
+
+echo "Testing TestCases/Alias/localarraysubscriptactualcalleedef.B, TestResults/AliasIRInterface/localarraysubscriptactualcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/localarraysubscriptactualcalleedef.B > t
+diff t TestResults/AliasIRInterface/localarraysubscriptactualcalleedef.B.out
+
+echo "Testing TestCases/Alias/localarraysectionactualcalleedef.B, TestResults/AliasIRInterface/localarraysectionactualcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/localarraysectionactualcalleedef.B > t
+diff t TestResults/AliasIRInterface/localarraysectionactualcalleedef.B.out
+
+echo "Testing TestCases/Alias/localscalaractualcalleeuse.B, TestResults/AliasIRInterface/localscalaractualcalleeuse.B.out "
+./FORTRANtoOA TestCases/Alias/localscalaractualcalleeuse.B > t
+diff t TestResults/AliasIRInterface/localscalaractualcalleeuse.B.out
+
+echo "Testing TestCases/Alias/localscalaractualcalleedef.B, TestResults/AliasIRInterface/localscalaractualcalleedef.B.out "
+./FORTRANtoOA TestCases/Alias/localscalaractualcalleedef.B > t
+diff t TestResults/AliasIRInterface/localscalaractualcalleedef.B.out
+
+echo "Testing TestCases/Alias/formal_actual_expression.B, TestResults/AliasIRInterface/formal_actual_expression.B.out "
+./FORTRANtoOA TestCases/Alias/formal_actual_expression.B > t
+diff t TestResults/AliasIRInterface/formal_actual_expression.B.out
+
+echo "Testing TestCases/Alias/local_actual_expression.B, TestResults/AliasIRInterface/local_actual_expression.B.out "
+./FORTRANtoOA TestCases/Alias/local_actual_expression.B > t
+diff t TestResults/AliasIRInterface/local_actual_expression.B.out
+
+echo "Testing TestCases/Alias/formal_array_subscript_actual.B, TestResults/AliasIRInterface/formal_array_subscript_actual.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual.B > t
+diff t TestResults/AliasIRInterface/formal_array_subscript_actual.B.out
+
+echo "Testing TestCases/Alias/local_array_subscript_actual.B, TestResults/AliasIRInterface/local_array_subscript_actual.B.out "
+./FORTRANtoOA TestCases/Alias/local_array_subscript_actual.B > t
+diff t TestResults/AliasIRInterface/local_array_subscript_actual.B.out
+
+echo "Testing TestCases/Alias/formal_scalar_actual.B, TestResults/AliasIRInterface/formal_scalar_actual.B.out "
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual.B > t
+diff t TestResults/AliasIRInterface/formal_scalar_actual.B.out
+
+echo "Testing TestCases/Alias/local_scalar_actual.B, TestResults/AliasIRInterface/local_scalar_actual.B.out "
+./FORTRANtoOA TestCases/Alias/local_scalar_actual.B > t
+diff t TestResults/AliasIRInterface/local_scalar_actual.B.out
+
+echo "Testing TestCases/Alias/formal_array_actual.B, TestResults/AliasIRInterface/formal_array_actual.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_actual.B > t
+diff t TestResults/AliasIRInterface/formal_array_actual.B.out
+
+echo "Testing TestCases/Alias/local_array_actual.B, TestResults/AliasIRInterface/local_array_actual.B.out "
+./FORTRANtoOA TestCases/Alias/local_array_actual.B > t
+diff t TestResults/AliasIRInterface/local_array_actual.B.out
+
+echo "Testing TestCases/Alias/formal_array_subscript_actual_in.B, TestResults/AliasIRInterface/formal_array_subscript_actual_in.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual_in.B > t
+diff t TestResults/AliasIRInterface/formal_array_subscript_actual_in.B.out
+
+echo "Testing TestCases/Alias/formal_array_subscript_actual_out.B, TestResults/AliasIRInterface/formal_array_subscript_actual_out.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual_out.B > t
+diff t TestResults/AliasIRInterface/formal_array_subscript_actual_out.B.out
+
+echo "Testing TestCases/Alias/formal_array_subscript_actual_inout.B, TestResults/AliasIRInterface/formal_array_subscript_actual_inout.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual_inout.B > t
+diff t TestResults/AliasIRInterface/formal_array_subscript_actual_inout.B.out
+
+echo "Testing TestCases/Alias/formal_array_actual_in.B, TestResults/AliasIRInterface/formal_array_actual_in.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_actual_in.B > t
+diff t TestResults/AliasIRInterface/formal_array_actual_in.B.out
+
+echo "Testing TestCases/Alias/formal_array_actual_out.B, TestResults/AliasIRInterface/formal_array_actual_out.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_actual_out.B > t
+diff t TestResults/AliasIRInterface/formal_array_actual_out.B.out
+
+echo "Testing TestCases/Alias/formal_array_actual_inout.B, TestResults/AliasIRInterface/formal_array_actual_inout.B.out "
+./FORTRANtoOA TestCases/Alias/formal_array_actual_inout.B > t
+diff t TestResults/AliasIRInterface/formal_array_actual_inout.B.out
+
+echo "Testing TestCases/Alias/local_actual_expression_assignment.B, TestResults/AliasIRInterface/local_actual_expression_assignment.B.out "
+./FORTRANtoOA TestCases/Alias/local_actual_expression_assignment.B > t
+diff t TestResults/AliasIRInterface/local_actual_expression_assignment.B.out
+
+echo "Testing TestCases/Alias/formal_scalar_actual_in.B, TestResults/AliasIRInterface/formal_scalar_actual_in.B.out "
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual_in.B > t
+diff t TestResults/AliasIRInterface/formal_scalar_actual_in.B.out
+
+echo "Testing TestCases/Alias/formal_scalar_actual_out.B, TestResults/AliasIRInterface/formal_scalar_actual_out.B.out "
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual_out.B > t
+diff t TestResults/AliasIRInterface/formal_scalar_actual_out.B.out
+
+echo "Testing TestCases/Alias/formal_scalar_actual_inout.B, TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out "
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual_inout.B > t
+diff t TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out
+

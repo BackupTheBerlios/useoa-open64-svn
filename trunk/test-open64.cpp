@@ -1748,7 +1748,7 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
   rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
   rds->output(*irInterface);          
-    
+
   return 0;
 }
 

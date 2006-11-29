@@ -1,0 +1,81 @@
+
+PROCEDURE = { < ProcHandle("factorial_"), SymHandle("factorial_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("N") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/formal_actual_expression.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("if (N:0:.predef_I4==1)") =>
+        [
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( USE, NamedRef( USE, SymHandle("N"), F, full), 1, F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 1") =>
+        [
+            MemRefHandle("RES:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("RES"), F, full)
+        ] }
+    MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)") =>
+        [
+            MemRefHandle("RES:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("RES"), F, full)
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( USE, NamedRef( USE, SymHandle("N"), F, full), 1, F, full)
+            MemRefHandle("&N:0:.predef_I4+-1") => 
+                NamedRef( USE, SymHandle("N"), F, full)
+        ] }
+    CALLSITES = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)") =>
+        [
+            CallHandle("factorial_(&N:0:.predef_I4+-1)") => 
+                NamedRef( USE, SymHandle("factorial_"), F, full)
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("N"), F, full) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
+        [
+            MemRefHandle("RES:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("RES"), F, full)
+        ] }
+    LOCATION = { < SymHandle("factorial_"), not local > }
+    LOCATION = { < SymHandle("RES"), local > }
+    LOCATION = { < SymHandle("N"), local > }
+
+PROCEDURE = { < ProcHandle("recfunc_"), SymHandle("recfunc_") > }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))") =>
+        [
+            MemRefHandle("N:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("N"), F, full)
+            MemRefHandle("&N:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("N"), T, full)
+        ] }
+    CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))") =>
+        [
+            CallHandle("factorial_(&N:0:.predef_I4)") => 
+                NamedRef( USE, SymHandle("factorial_"), F, full)
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("N"), T, full) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("_END()") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("factorial_"), not local > }
+    LOCATION = { < SymHandle("recfunc_"), not local > }
+    LOCATION = { < SymHandle("N"), local > }

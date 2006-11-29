@@ -1,0 +1,25 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/globalarraysectiondef.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+X:0:anon_ptr.() = T2:0:.predef_F8
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(X)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(T2)
+)
+
+============================================
+OA::StmtHandle: return

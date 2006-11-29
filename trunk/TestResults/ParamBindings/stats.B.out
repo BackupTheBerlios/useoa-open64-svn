@@ -5,73 +5,81 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(X:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
-                            MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+                            MemRefHandle(&0:X:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(&10)	 => SymHandle(N)
+                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(MEAN)
+                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(STD_DEV)
 
 
             CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(Y:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
-                            MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+                            MemRefHandle(&0:Y:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(&10)	 => SymHandle(N)
+                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(MEAN)
+                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(STD_DEV)
 
 
             CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(Z:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
-                            MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+                            MemRefHandle(&0:Z:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(&10)	 => SymHandle(N)
+                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(MEAN)
+                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(STD_DEV)
 
 
             CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(stats_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(T:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(M:0:.predef_F4)	 => SymHandle(MEAN)
-                            MemRefHandle(SD:0:.predef_F4)	 => SymHandle(STD_DEV)
+                            MemRefHandle(&0:T:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(&10)	 => SymHandle(N)
+                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(MEAN)
+                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(STD_DEV)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(stats_(&0:X:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(X:0:anon_ptr.)
-                    SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
-                    SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+                    SymHandle(X)	 => MemRefHandle(&0:X:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(&10)
+                    SymHandle(MEAN)	 => MemRefHandle(&M:0:.predef_F4)
+                    SymHandle(STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
 
             CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(Y:0:anon_ptr.)
-                    SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
-                    SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+                    SymHandle(X)	 => MemRefHandle(&0:Y:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(&10)
+                    SymHandle(MEAN)	 => MemRefHandle(&M:0:.predef_F4)
+                    SymHandle(STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
 
             CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(Z:0:anon_ptr.)
-                    SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
-                    SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+                    SymHandle(X)	 => MemRefHandle(&0:Z:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(&10)
+                    SymHandle(MEAN)	 => MemRefHandle(&M:0:.predef_F4)
+                    SymHandle(STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
 
             CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(T:0:anon_ptr.)
-                    SymHandle(MEAN)	 => MemRefHandle(M:0:.predef_F4)
-                    SymHandle(STD_DEV)	 => MemRefHandle(SD:0:.predef_F4)
+                    SymHandle(X)	 => MemRefHandle(&0:T:0:anon_ptr.)
+                    SymHandle(N)	 => MemRefHandle(&10)
+                    SymHandle(MEAN)	 => MemRefHandle(&M:0:.predef_F4)
+                    SymHandle(STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(stats_)	 => [ SymHandle(X)    SymHandle(N)    SymHandle(MEAN)    SymHandle(STD_DEV) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(stats_(&0:X:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(X:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
-            CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(Y:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
-            CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(Z:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
-            CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(T:0:anon_ptr.)    MemRefHandle(M:0:.predef_F4)    MemRefHandle(SD:0:.predef_F4) ] 
+            CallHandle(stats_(&0:X:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(&0:X:0:anon_ptr.)    MemRefHandle(&10)    MemRefHandle(&M:0:.predef_F4)    MemRefHandle(&SD:0:.predef_F4) ] 
+            CallHandle(stats_(&0:Y:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(&0:Y:0:anon_ptr.)    MemRefHandle(&10)    MemRefHandle(&M:0:.predef_F4)    MemRefHandle(&SD:0:.predef_F4) ] 
+            CallHandle(stats_(&0:Z:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(&0:Z:0:anon_ptr.)    MemRefHandle(&10)    MemRefHandle(&M:0:.predef_F4)    MemRefHandle(&SD:0:.predef_F4) ] 
+            CallHandle(stats_(&0:T:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ MemRefHandle(&0:T:0:anon_ptr.)    MemRefHandle(&10)    MemRefHandle(&M:0:.predef_F4)    MemRefHandle(&SD:0:.predef_F4) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(stats_(&0:X:0:anon_ptr., &10, &M:0:.predef_F4, &SD:0:.predef_F4))	 => [ ExprHandle(&0:X:0:anon_ptr.)    ExprHandle(&10)    ExprHandle(&M:0:.predef_F4)    ExprHandle(&SD:0:.predef_F4) ] 
@@ -83,82 +91,82 @@ ParamBindings(
             ExprHandle(&0:X:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( X:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:X:0:anon_ptr. )
 
             ExprHandle(&10)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 10 )
+                Node 0: ET MemRefNode ( &10 )
 
             ExprHandle(&M:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( M:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &M:0:.predef_F4 )
 
             ExprHandle(&SD:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( SD:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &SD:0:.predef_F4 )
 
             ExprHandle(&0:Y:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( Y:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:Y:0:anon_ptr. )
 
             ExprHandle(&10)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 10 )
+                Node 0: ET MemRefNode ( &10 )
 
             ExprHandle(&M:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( M:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &M:0:.predef_F4 )
 
             ExprHandle(&SD:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( SD:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &SD:0:.predef_F4 )
 
             ExprHandle(&0:Z:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( Z:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:Z:0:anon_ptr. )
 
             ExprHandle(&10)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 10 )
+                Node 0: ET MemRefNode ( &10 )
 
             ExprHandle(&M:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( M:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &M:0:.predef_F4 )
 
             ExprHandle(&SD:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( SD:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &SD:0:.predef_F4 )
 
             ExprHandle(&0:T:0:anon_ptr.)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( T:0:anon_ptr. )
+                Node 0: ET MemRefNode ( &0:T:0:anon_ptr. )
 
             ExprHandle(&10)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET ConstValNode ( 10 )
+                Node 0: ET MemRefNode ( &10 )
 
             ExprHandle(&M:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( M:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &M:0:.predef_F4 )
 
             ExprHandle(&SD:0:.predef_F4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( SD:0:.predef_F4 )
+                Node 0: ET MemRefNode ( &SD:0:.predef_F4 )
 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap

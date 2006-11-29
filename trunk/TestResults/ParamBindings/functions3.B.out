@@ -5,21 +5,21 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(foo_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(N:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(N)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(foo_(&N:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(N:0:.predef_I4)
+                    SymHandle(N)	 => MemRefHandle(&N:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(foo_)	 => [ SymHandle(N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(foo_(&N:0:.predef_I4))	 => [ MemRefHandle(N:0:.predef_I4) ] 
+            CallHandle(foo_(&N:0:.predef_I4))	 => [ MemRefHandle(&N:0:.predef_I4) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(foo_(&N:0:.predef_I4))	 => [ ExprHandle(&N:0:.predef_I4) ] 
@@ -28,7 +28,7 @@ ParamBindings(
             ExprHandle(&N:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( N:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &N:0:.predef_I4 )
 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap

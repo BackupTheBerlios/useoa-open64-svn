@@ -5,29 +5,29 @@ ParamBindings(
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
                     ProcHandle(f_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(X:0:.predef_I4)	 => SymHandle(N)
-                            MemRefHandle(A:0:.predef_I4)	 => SymHandle(O)
-                            MemRefHandle(B:0:.predef_I4)	 => SymHandle(P)
-                            MemRefHandle(C:0:.predef_I4)	 => SymHandle(Q)
-                            MemRefHandle(D:0:.predef_I4)	 => SymHandle(R)
+                            MemRefHandle(&X:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(&A:0:.predef_I4)	 => SymHandle(O)
+                            MemRefHandle(&B:0:.predef_I4)	 => SymHandle(P)
+                            MemRefHandle(&C:0:.predef_I4)	 => SymHandle(Q)
+                            MemRefHandle(&D:0:.predef_I4)	 => SymHandle(R)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(X:0:.predef_I4)
-                    SymHandle(O)	 => MemRefHandle(A:0:.predef_I4)
-                    SymHandle(P)	 => MemRefHandle(B:0:.predef_I4)
-                    SymHandle(Q)	 => MemRefHandle(C:0:.predef_I4)
-                    SymHandle(R)	 => MemRefHandle(D:0:.predef_I4)
+                    SymHandle(N)	 => MemRefHandle(&X:0:.predef_I4)
+                    SymHandle(O)	 => MemRefHandle(&A:0:.predef_I4)
+                    SymHandle(P)	 => MemRefHandle(&B:0:.predef_I4)
+                    SymHandle(Q)	 => MemRefHandle(&C:0:.predef_I4)
+                    SymHandle(R)	 => MemRefHandle(&D:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
             ProcHandle(f_)	 => [ SymHandle(N)    SymHandle(O)    SymHandle(P)    SymHandle(Q)    SymHandle(R) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
-            CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => [ MemRefHandle(X:0:.predef_I4)    MemRefHandle(A:0:.predef_I4)    MemRefHandle(B:0:.predef_I4)    MemRefHandle(C:0:.predef_I4)    MemRefHandle(D:0:.predef_I4) ] 
+            CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => [ MemRefHandle(&X:0:.predef_I4)    MemRefHandle(&A:0:.predef_I4)    MemRefHandle(&B:0:.predef_I4)    MemRefHandle(&C:0:.predef_I4)    MemRefHandle(&D:0:.predef_I4) ] 
 
     mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
             CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => [ ExprHandle(&X:0:.predef_I4)    ExprHandle(&A:0:.predef_I4)    ExprHandle(&B:0:.predef_I4)    ExprHandle(&C:0:.predef_I4)    ExprHandle(&D:0:.predef_I4) ] 
@@ -36,27 +36,27 @@ ParamBindings(
             ExprHandle(&X:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( X:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &X:0:.predef_I4 )
 
             ExprHandle(&A:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( A:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &A:0:.predef_I4 )
 
             ExprHandle(&B:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( B:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &B:0:.predef_I4 )
 
             ExprHandle(&C:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( C:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &C:0:.predef_I4 )
 
             ExprHandle(&D:0:.predef_I4)	 => 
             graph EXPRESSION TREE:
 
-                Node 0: ET MemRefNode ( D:0:.predef_I4 )
+                Node 0: ET MemRefNode ( &D:0:.predef_I4 )
 
 
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap

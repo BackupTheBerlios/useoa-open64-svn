@@ -42,7 +42,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -57,7 +57,7 @@ Deref(
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(X)
     )
@@ -66,6 +66,21 @@ Deref(
 
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(Y)
+    )
+    mNumDeref: 1
+)
+
 	mre = 
 NamedRef(
     mAddressOf: 0
@@ -80,21 +95,6 @@ NamedRef(
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(APASSIVEGLOBAL)
-)
-
-	mre = 
-Deref(
-    mAddressOf: 0
-    mFullAccuracy: 0
-    mMemRefType: DEF
-    mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 0
-        mMemRefType: USE
-        mSymHandle: SymHandle(Y)
-    )
-    mNumDeref: 1
 )
 
 ============================================

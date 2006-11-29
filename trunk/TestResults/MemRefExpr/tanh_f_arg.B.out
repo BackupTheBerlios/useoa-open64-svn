@@ -17,28 +17,28 @@ OA::StmtHandle: Y:0:anon_ptr.(1) = TANH(&X:0:anon_ptr.(1))
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0
-    mMemRefType: USE
+    mMemRefType: DEF
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(Y)
     )
     mNumDeref: 1
 )
 
 	mre = 
 Deref(
-    mAddressOf: 0
+    mAddressOf: 1
     mFullAccuracy: 0
-    mMemRefType: DEF
+    mMemRefType: USE
     mMRE: 
     NamedRef(
         mAddressOf: 0
-        mFullAccuracy: 0
+        mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(X)
     )
     mNumDeref: 1
 )

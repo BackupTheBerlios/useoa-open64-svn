@@ -386,4 +386,21 @@
       generate any DEFS or USES but after the Intrinsic change
       ICFGDep reports correct DEFS and USES for intrinsic calls.
 
+11/28/06   UseOA-Open64 svn trunk r122 Priyadarshini Malusare
+    - We worked to get correct MemRefExprs. We tried several examples
+	  and analyzed different patterns from whirl intermediate 
+	  reprsenation for every sample case and developed logic
+	  to generate MemRefExpr at different whirl node.
+	  Detail information is available on wiki.
+	  Please refer. 
+	  http://www-unix.mcs.anl.gov/OpenAnalysisWiki/moin.cgi/Problem_20of_20Partial_20accuracy_20for_20namedRef_20arrays_20as_20reference_20parameter_2e
+	  
+	  Modify following functionalities in Open64IRInterface
+      1. findAllMemRefsAndMapToMemRefExprs
+      2. findTopMemRefHandle
+      3. createAndMapNamedRef
+      4. createAndMapDeRef
+      5. createExprTree
+    - added many TestsCases to AliasIRInterface and MemRefExpr tests.
 
+       

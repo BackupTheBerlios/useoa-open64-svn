@@ -111,14 +111,6 @@ NamedRef(
 )
 
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1)))
-)
-
-	mre = 
 NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1

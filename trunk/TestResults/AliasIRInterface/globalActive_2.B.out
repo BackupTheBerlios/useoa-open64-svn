@@ -38,19 +38,19 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
         [
             MemRefHandle("AGLOBAL:0:.predef_F8") => 
                 NamedRef( DEF, SymHandle("AGLOBAL"), F, full)
-            MemRefHandle("X:0:anon_ptr.(1)") => 
-                Deref( USE, NamedRef( USE, SymHandle("X"), F, part), 1, F, part)
-            MemRefHandle("X:0:anon_ptr.(2)") => 
-                Deref( USE, NamedRef( USE, SymHandle("X"), F, part), 1, F, part)
+            MemRefHandle("0:X:0:anon_ptr.(1)") => 
+                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
+            MemRefHandle("0:X:0:anon_ptr.(2)") => 
+                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
         ] }
     MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8") =>
         [
+            MemRefHandle("Y:0:anon_ptr.(1)") => 
+                Deref( DEF, NamedRef( USE, SymHandle("Y"), F, full), 1, F, part)
             MemRefHandle("AGLOBAL:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("AGLOBAL"), F, full)
             MemRefHandle("APASSIVEGLOBAL:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("APASSIVEGLOBAL"), F, full)
-            MemRefHandle("Y:0:anon_ptr.(1)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("Y"), F, part), 1, F, part)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

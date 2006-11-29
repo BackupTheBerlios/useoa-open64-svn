@@ -21,9 +21,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ] }
     MEMREFEXPRS = { StmtHandle("bar_(&T1:0:.predef_F8, &T1:0:.predef_F8)") =>
         [
-            MemRefHandle("T1:0:.predef_F8") => 
+            MemRefHandle("&T1:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("T1"), T, full)
-            MemRefHandle("T1:0:.predef_F8") => 
+            MemRefHandle("&T1:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("T1"), T, full)
         ] }
     CALLSITES = { StmtHandle("bar_(&T1:0:.predef_F8, &T1:0:.predef_F8)") =>
