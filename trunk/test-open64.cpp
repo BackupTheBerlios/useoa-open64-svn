@@ -1207,13 +1207,13 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
     // ----------------- testing separate pieces
 
-    /*
     //ICFGDep  (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
     icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
 
+    std::cout << "printing ICFGDep" << std::endl;
     icfgDep->output(*irInterface);
 
     // ICFGUseful   (for testing)
@@ -1222,6 +1222,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::InterUseful> icfgUseful;
     icfgUseful = usefulman->performAnalysis(icfg, parambind, interAlias, 
                                             interSE, icfgDep);
+    std::cout << "printing ICFGUseful" << std::endl;
     icfgUseful->output(*irInterface);
     
     //ICFGVaryActive    (for testing)
@@ -1230,8 +1231,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind,
                                         interAlias, icfgDep, icfgUseful);
+    std::cout << "Printing ICFGVaryActive" << std::endl;
     inActive->output(*irInterface);
-    */
 
     // ----------------- Activity does the testing pieces above
 
@@ -1242,6 +1243,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     active = activeman->performAnalysis(icfg, parambind,
                                         interAlias, interSE);
     
+    std::cout << "Printing ICFGActive" << std::endl;
     active->output(*irInterface);
     
     int numIterDep = 1;

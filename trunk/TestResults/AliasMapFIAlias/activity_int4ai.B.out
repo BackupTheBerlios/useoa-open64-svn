@@ -46,6 +46,7 @@ InterAliasMap(
 
         mIdToMemRefSetMap: int	 => MemRefSet
                 1	 => [ MemRefHandle(I:0:.predef_I4) ] 
+                2	 => [ MemRefHandle(&X:0:anon_ptr.(1))    MemRefHandle(&X:0:anon_ptr.(2)) ] 
                 3	 => [ MemRefHandle(Y:0:anon_ptr.(2))    MemRefHandle(Y:0:anon_ptr.(1))    MemRefHandle(Y:0:anon_ptr.(2))    MemRefHandle(0:Y:0:anon_ptr.(1))    MemRefHandle(0:Y:0:anon_ptr.(2)) ] 
 
         mIdToMRESetMap: int	 => MemRefExprSet

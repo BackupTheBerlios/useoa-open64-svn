@@ -1,5 +1,5 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/intrinsic/UseOA-Open64-IntrinsicHandling/TestCases/CallGraph/bat.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/TestCases/MemRefExpr/bat.f"
 PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
 
 ============================================
@@ -167,6 +167,14 @@ Deref(
     mNumDeref: 1
 )
 
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(T3)
+)
+
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(3) = SIN(&T3:0:.predef_F8)
 	mre = 
@@ -186,7 +194,7 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(T3)

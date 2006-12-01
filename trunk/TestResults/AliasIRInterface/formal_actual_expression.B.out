@@ -26,7 +26,11 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             MemRefHandle("N:0:.predef_I4") => 
                 Deref( USE, NamedRef( USE, SymHandle("N"), F, full), 1, F, full)
             MemRefHandle("&N:0:.predef_I4+-1") => 
-                NamedRef( USE, SymHandle("N"), F, full)
+                UnnamedRef( USE, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), T, full)
+            MemRefHandle("N:0:.predef_I4+-1") => 
+                UnnamedRef( USE, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), T, full)
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( USE, NamedRef( USE, SymHandle("N"), F, full), 1, F, full)
         ] }
     CALLSITES = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)") =>
         [
@@ -35,7 +39,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
         [
-            < 0, NamedRef( USE, SymHandle("N"), F, full) >
+            < 0, UnnamedRef( USE, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), T, full) >
         ] }
     MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
         [

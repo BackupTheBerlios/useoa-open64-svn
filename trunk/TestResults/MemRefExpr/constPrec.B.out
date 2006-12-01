@@ -29,9 +29,25 @@ Deref(
 )
 
 	mre = 
-Deref(
+UnnamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(Y:0:anon_ptr.(1) = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330))
+)
+
+	mre = 
+UnnamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(Y:0:anon_ptr.(1) = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330))
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(

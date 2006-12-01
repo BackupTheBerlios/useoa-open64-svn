@@ -30,6 +30,66 @@ Deref(
 
 ============================================
 OA::StmtHandle: if (TOL:0:.predef_F8<=    0.000000000000000||N:0:.predef_I4<=0||A:0:.predef_F8==B:0:.predef_F8)
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(TOL)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(N)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(A)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(B)
+    )
+    mNumDeref: 1
+)
+
 ============================================
 OA::StmtHandle: IFAIL:0:.predef_I4 = 1
 	mre = 
@@ -240,8 +300,24 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-NamedRef(
+UnnamedRef(
     mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H3)
@@ -343,8 +419,24 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-NamedRef(
+UnnamedRef(
     mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H3)
@@ -422,8 +514,24 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-NamedRef(
+UnnamedRef(
     mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H2)
@@ -502,8 +610,24 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-NamedRef(
+UnnamedRef(
     mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4))
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H)
@@ -620,13 +744,21 @@ NamedRef(
 ============================================
 OA::StmtHandle: I8SRCTRIPLET
 ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000)
-Operator93
 	mre = 
 NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(ERROR)
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(I8SRCTRIPLET
+ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000))
 )
 
 	mre = 
@@ -664,7 +796,7 @@ OA::StmtHandle: if (SMALLEST_STEP:0:.predef_F8>ABS(&H2:0:.predef_F8))
 OA::StmtHandle: ABS(&H2:0:.predef_F8)
 	mre = 
 NamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(H2)
@@ -950,11 +1082,34 @@ OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 ============================================
 OA::StmtHandle: STOP_F90(&"", 0)
 	mre = 
-NamedRef(
+Deref(
     mAddressOf: 0
-    mFullAccuracy: 0
+    mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(<no-symbol>)
+    mMRE: 
+    NamedRef(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(<no-symbol>)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(STOP_F90(&"", 0))
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(STOP_F90(&"", 0))
 )
 
 ============================================
@@ -1194,7 +1349,7 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 

@@ -63,7 +63,11 @@ PROCEDURE = { < ProcHandle("recfunc_"), SymHandle("recfunc_") > }
             MemRefHandle("N:0:.predef_I4") => 
                 NamedRef( DEF, SymHandle("N"), F, full)
             MemRefHandle("&N:0:.predef_I4+-1") => 
-                NamedRef( USE, SymHandle("N"), T, full)
+                UnnamedRef( USE, StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))"), T, full)
+            MemRefHandle("N:0:.predef_I4+-1") => 
+                UnnamedRef( USE, StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))"), T, full)
+            MemRefHandle("N:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("N"), F, full)
         ] }
     CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))") =>
         [
@@ -72,7 +76,7 @@ PROCEDURE = { < ProcHandle("recfunc_"), SymHandle("recfunc_") > }
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
         [
-            < 0, NamedRef( USE, SymHandle("N"), T, full) >
+            < 0, UnnamedRef( USE, StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))"), T, full) >
         ] }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [

@@ -29,6 +29,22 @@ Deref(
 )
 
 	mre = 
+UnnamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(Y:0:anon_ptr.(1) = OPC_F8F4CVT(FLOAT(&6))*0:X:0:anon_ptr.(1))
+)
+
+	mre = 
+UnnamedRef(
+    mAddressOf: 1
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mStmtHandle: StmtHandle(Y:0:anon_ptr.(1) = OPC_F8F4CVT(FLOAT(&6))*0:X:0:anon_ptr.(1))
+)
+
+	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0

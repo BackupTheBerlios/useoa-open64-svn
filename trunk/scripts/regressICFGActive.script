@@ -38,3 +38,231 @@ echo "Testing TestCases/Activity/activity_proc_call4.B, TestResults/ICFGActive/a
 ./test-open64 --oa-ICFGActivity TestCases/Activity/activity_proc_call4.B > t
 diff t TestResults/ICFGActive/activity_proc_call4.B.out
 
+echo "Testing TestCases/Activity/simple0.B, TestResults/ICFGActive/simple0.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple0.B > t
+diff t TestResults/ICFGActive/simple0.B.out
+
+echo "Testing TestCases/Activity/simple1.B, TestResults/ICFGActive/simple1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple1.B > t
+diff t TestResults/ICFGActive/simple1.B.out
+
+echo "Testing TestCases/Activity/simple2.B, TestResults/ICFGActive/simple2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple2.B > t
+diff t TestResults/ICFGActive/simple2.B.out
+
+echo "Testing TestCases/Activity/simple3.B, TestResults/ICFGActive/simple3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple3.B > t
+diff t TestResults/ICFGActive/simple3.B.out
+
+echo "Testing TestCases/Activity/argumentArrayIndex2.B, TestResults/ICFGActive/argumentArrayIndex2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentArrayIndex2.B > t
+diff t TestResults/ICFGActive/argumentArrayIndex2.B.out
+
+echo "Testing TestCases/Activity/argumentArrayIndex3.B, TestResults/ICFGActive/argumentArrayIndex3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentArrayIndex3.B > t
+diff t TestResults/ICFGActive/argumentArrayIndex3.B.out
+
+echo "Testing TestCases/Activity/argumentArrayIndex.B, TestResults/ICFGActive/argumentArrayIndex.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentArrayIndex.B > t
+diff t TestResults/ICFGActive/argumentArrayIndex.B.out
+
+echo "Testing TestCases/Activity/argumentConversion_2.B, TestResults/ICFGActive/argumentConversion_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentConversion_2.B > t
+diff t TestResults/ICFGActive/argumentConversion_2.B.out
+
+echo "Testing TestCases/Activity/argumentConversion_3.B, TestResults/ICFGActive/argumentConversion_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentConversion_3.B > t
+diff t TestResults/ICFGActive/argumentConversion_3.B.out
+
+echo "Testing TestCases/Activity/argumentConversion_4.B, TestResults/ICFGActive/argumentConversion_4.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentConversion_4.B > t
+diff t TestResults/ICFGActive/argumentConversion_4.B.out
+
+echo "Testing TestCases/Activity/bat.B, TestResults/ICFGActive/bat.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/bat.B > t
+diff t TestResults/ICFGActive/bat.B.out
+
+echo "Testing TestCases/Activity/cast1.B, TestResults/ICFGActive/cast1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/cast1.B > t
+diff t TestResults/ICFGActive/cast1.B.out
+
+echo "Testing TestCases/Activity/ConstFoldSimp0.B, TestResults/ICFGActive/ConstFoldSimp0.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/ConstFoldSimp0.B > t
+diff t TestResults/ICFGActive/ConstFoldSimp0.B.out
+
+echo "Testing TestCases/Activity/constPrec.B, TestResults/ICFGActive/constPrec.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/constPrec.B > t
+diff t TestResults/ICFGActive/constPrec.B.out
+
+echo "Testing TestCases/Activity/daerfj.B, TestResults/ICFGActive/daerfj.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/daerfj.B > t
+diff t TestResults/ICFGActive/daerfj.B.out
+
+echo "Testing TestCases/Activity/directDependency1.B, TestResults/ICFGActive/directDependency1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/directDependency1.B > t
+diff t TestResults/ICFGActive/directDependency1.B.out
+
+echo "Testing TestCases/Activity/directDependency2.B, TestResults/ICFGActive/directDependency2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/directDependency2.B > t
+diff t TestResults/ICFGActive/directDependency2.B.out
+
+echo "Testing TestCases/Activity/directDependency3.B, TestResults/ICFGActive/directDependency3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/directDependency3.B > t
+diff t TestResults/ICFGActive/directDependency3.B.out
+
+echo "Testing TestCases/Activity/float_intrinsic.B, TestResults/ICFGActive/float_intrinsic.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/float_intrinsic.B > t
+diff t TestResults/ICFGActive/float_intrinsic.B.out
+
+echo "Testing TestCases/Activity/globalActive_1.B, TestResults/ICFGActive/globalActive_1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/globalActive_1.B > t
+diff t TestResults/ICFGActive/globalActive_1.B.out
+
+echo "Testing TestCases/Activity/globalActive_2.B, TestResults/ICFGActive/globalActive_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/globalActive_2.B > t
+diff t TestResults/ICFGActive/globalActive_2.B.out
+
+echo "Testing TestCases/Activity/globalActive_3.B, TestResults/ICFGActive/globalActive_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/globalActive_3.B > t
+diff t TestResults/ICFGActive/globalActive_3.B.out
+
+echo "Testing TestCases/Activity/globalActive_7.B, TestResults/ICFGActive/globalActive_7.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/globalActive_7.B > t
+diff t TestResults/ICFGActive/globalActive_7.B.out
+
+echo "Testing TestCases/Activity/If_Loop1.B, TestResults/ICFGActive/If_Loop1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/If_Loop1.B > t
+diff t TestResults/ICFGActive/If_Loop1.B.out
+
+echo "Testing TestCases/Activity/If_Loop2.B, TestResults/ICFGActive/If_Loop2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/If_Loop2.B > t
+diff t TestResults/ICFGActive/If_Loop2.B.out
+
+echo "Testing TestCases/Activity/If_Loop3.B, TestResults/ICFGActive/If_Loop3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/If_Loop3.B > t
+diff t TestResults/ICFGActive/If_Loop3.B.out
+
+echo "Testing TestCases/Activity/If_Loop5.B, TestResults/ICFGActive/If_Loop5.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/If_Loop5.B > t
+diff t TestResults/ICFGActive/If_Loop5.B.out
+
+echo "Testing TestCases/Activity/IfStatement_1.B, TestResults/ICFGActive/IfStatement_1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/IfStatement_1.B > t
+diff t TestResults/ICFGActive/IfStatement_1.B.out
+
+echo "Testing TestCases/Activity/IfStatement_2.B, TestResults/ICFGActive/IfStatement_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/IfStatement_2.B > t
+diff t TestResults/ICFGActive/IfStatement_2.B.out
+
+echo "Testing TestCases/Activity/Loop_1.B, TestResults/ICFGActive/Loop_1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_1.B > t
+diff t TestResults/ICFGActive/Loop_1.B.out
+
+echo "Testing TestCases/Activity/Loop_2.B, TestResults/ICFGActive/Loop_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_2.B > t
+diff t TestResults/ICFGActive/Loop_2.B.out
+
+echo "Testing TestCases/Activity/Loop_3.B, TestResults/ICFGActive/Loop_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_3.B > t
+diff t TestResults/ICFGActive/Loop_3.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_1.B, TestResults/ICFGActive/Loop_simple_1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_1.B > t
+diff t TestResults/ICFGActive/Loop_simple_1.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_2a.B, TestResults/ICFGActive/Loop_simple_2a.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_2a.B > t
+diff t TestResults/ICFGActive/Loop_simple_2a.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_2.B, TestResults/ICFGActive/Loop_simple_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_2.B > t
+diff t TestResults/ICFGActive/Loop_simple_2.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_3.B, TestResults/ICFGActive/Loop_simple_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_3.B > t
+diff t TestResults/ICFGActive/Loop_simple_3.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_4.B, TestResults/ICFGActive/Loop_simple_4.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_4.B > t
+diff t TestResults/ICFGActive/Loop_simple_4.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_5.B, TestResults/ICFGActive/Loop_simple_5.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_5.B > t
+diff t TestResults/ICFGActive/Loop_simple_5.B.out
+
+echo "Testing TestCases/Activity/Loop_simple_6.B, TestResults/ICFGActive/Loop_simple_6.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_simple_6.B > t
+diff t TestResults/ICFGActive/Loop_simple_6.B.out
+
+echo "Testing TestCases/Activity/nested_calls_1.B, TestResults/ICFGActive/nested_calls_1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_1.B > t
+diff t TestResults/ICFGActive/nested_calls_1.B.out
+
+echo "Testing TestCases/Activity/nested_calls_2.B, TestResults/ICFGActive/nested_calls_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_2.B > t
+diff t TestResults/ICFGActive/nested_calls_2.B.out
+
+echo "Testing TestCases/Activity/nested_calls_3.B, TestResults/ICFGActive/nested_calls_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_3.B > t
+diff t TestResults/ICFGActive/nested_calls_3.B.out
+
+echo "Testing TestCases/Activity/nested_Calls_4.B, TestResults/ICFGActive/nested_Calls_4.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/nested_Calls_4.B > t
+diff t TestResults/ICFGActive/nested_Calls_4.B.out
+
+echo "Testing TestCases/Activity/Nested_If.B, TestResults/ICFGActive/Nested_If.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/Nested_If.B > t
+diff t TestResults/ICFGActive/Nested_If.B.out
+
+echo "Testing TestCases/Activity/NestedLoopIf.B, TestResults/ICFGActive/NestedLoopIf.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/NestedLoopIf.B > t
+diff t TestResults/ICFGActive/NestedLoopIf.B.out
+
+echo "Testing TestCases/Activity/NestedLoops.B, TestResults/ICFGActive/NestedLoops.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/NestedLoops.B > t
+diff t TestResults/ICFGActive/NestedLoops.B.out
+
+echo "Testing TestCases/Activity/passiveStatement.B, TestResults/ICFGActive/passiveStatement.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/passiveStatement.B > t
+diff t TestResults/ICFGActive/passiveStatement.B.out
+
+echo "Testing TestCases/Activity/passiveSubroutine.B, TestResults/ICFGActive/passiveSubroutine.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/passiveSubroutine.B > t
+diff t TestResults/ICFGActive/passiveSubroutine.B.out
+
+echo "Testing TestCases/Activity/readWrite1.B, TestResults/ICFGActive/readWrite1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/readWrite1.B > t
+diff t TestResults/ICFGActive/readWrite1.B.out
+
+echo "Testing TestCases/Activity/readWrite2.B, TestResults/ICFGActive/readWrite2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/readWrite2.B > t
+diff t TestResults/ICFGActive/readWrite2.B.out
+
+echo "Testing TestCases/Activity/SeqOfIfs.B, TestResults/ICFGActive/SeqOfIfs.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/SeqOfIfs.B > t
+diff t TestResults/ICFGActive/SeqOfIfs.B.out
+
+echo "Testing TestCases/Activity/SeqOfLoops.B, TestResults/ICFGActive/SeqOfLoops.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/SeqOfLoops.B > t
+diff t TestResults/ICFGActive/SeqOfLoops.B.out
+
+echo "Testing TestCases/Activity/sideEffect_1.B, TestResults/ICFGActive/sideEffect_1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_1.B > t
+diff t TestResults/ICFGActive/sideEffect_1.B.out
+
+echo "Testing TestCases/Activity/sideEffect_2.B, TestResults/ICFGActive/sideEffect_2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_2.B > t
+diff t TestResults/ICFGActive/sideEffect_2.B.out
+
+echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/ICFGActive/sideEffect_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_3.B > t
+diff t TestResults/ICFGActive/sideEffect_3.B.out
+
+echo "Testing TestCases/Activity/speelpenning.B, TestResults/ICFGActive/speelpenning.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/speelpenning.B > t
+diff t TestResults/ICFGActive/speelpenning.B.out
+
+echo "Testing TestCases/Activity/tanh_f_arg.B, TestResults/ICFGActive/tanh_f_arg.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/tanh_f_arg.B > t
+diff t TestResults/ICFGActive/tanh_f_arg.B.out
+

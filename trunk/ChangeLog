@@ -405,4 +405,15 @@
 
 11/28/06   UseOA-Open64 svn trunk r123 Priyadarshini Malusare
     - Added missing TestResults for AliasIRInterface
+
+11/29/06   UseOA-Open64 svn trunk r124 Priyadarshini Malusare
+    - fixed MemrefExpr for expressions passed as parameters to 
+      intrinsics and non-intrinsics functions.
+    - fixed addressOf=false for the MemRefExpr passed as 
+      parameters to Intrinsic functions.
+    -Regenerated some TestCases for MemRefExpr and AliasIRInterface.
+    -regressAll works with OpenAnalysis r255 on Okapi with gcc-3.2
+
+
+
   
