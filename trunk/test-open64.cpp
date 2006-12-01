@@ -1408,6 +1408,7 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
+    icfg->output(*irInterface);
 
     // Context-Sensitive and Flow-inSensitive Activity Analysis
    
