@@ -1827,6 +1827,16 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
      }
      break;
 
+     case OPR_PAREN:
+     {
+         for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
+         {
+
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+         }
+
+     }
+     break;
      
     case OPR_LDID:
     case OPR_LDBITS: 
