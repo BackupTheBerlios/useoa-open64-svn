@@ -414,6 +414,8 @@
     -Regenerated some TestCases for MemRefExpr and AliasIRInterface.
     -regressAll works with OpenAnalysis r255 on Okapi with gcc-3.2
 
-
+12/02/06   UseOA-Open64 svn trunk r127 Priyadarshini Malusare
+   - Modified Open64IRInterface::DumpWN() to print scope i.e. Procedure
+     name.
 
   

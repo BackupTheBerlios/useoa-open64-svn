@@ -1374,7 +1374,7 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
     interAlias = fialiasman->performAnalysis(procIter);
 
-    //interAlias->output(*irInterface);
+    interAlias->output(*irInterface);
 
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -1430,7 +1430,8 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::InterActive> duactive;
     duactive = duactiveman->performAnalysis(icfg, parambind, interAlias);
 
-    duactive->dump(cout, irInterface);
+    //duactive->dump(cout, irInterface);
+    duactive->output(*irInterface);
 
 }
 
