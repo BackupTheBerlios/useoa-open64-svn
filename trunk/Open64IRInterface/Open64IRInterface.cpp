@@ -2736,21 +2736,22 @@ Open64IRInterface::getIndepMemRefExprIter(OA::ProcHandle h)
         break;
       }
      
-      /*
+      // if the symbol is a reference parameter, then the MemRefExpr
+      // for an access to the symbol needs a deref
       if (isRefParam(sym)) {
-
-        if (isAddrOf==true) { // deref and addressOf cancel
-          isAddrOf = false;
-          mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
-        } else {
-          mre = new OA::NamedRef(isAddrOf,fullAccuracy,OA::MemRefExpr::USE,sym);
-          mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
-        }
+        mre = new OA::NamedRef(false,true,OA::MemRefExpr::USE,sym);
+        mre = new OA::Deref(false, fullAccuracy, OA::MemRefExpr::USE, mre, 1);
       } else {
+        // one case where we end up here is when passing an array as a parameter
+        // another is if we are just accessing a scalar that is not a 
+        // reference parameter
         mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
       }
-      */
 
+      /*
+Priya:  I went with the above code because your code below
+    1) is not formatted for 80 column
+    2) has weird indentation.
       if(isRefParam(sym))
       {
           
@@ -2766,6 +2767,7 @@ Open64IRInterface::getIndepMemRefExprIter(OA::ProcHandle h)
     } else {
         mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
     }
+  */
 
 
       indepList->push_back(mre);
