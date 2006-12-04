@@ -1416,16 +1416,12 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
 
     OA::OA_ptr<OA::DUG::ManagerDUGStandard> dugman;
     dugman = new OA::DUG::ManagerDUGStandard(irInterface, irInterface);
-    std::cout << "before ManagerDUGStandard performAnalysis" << std::endl;
     OA::OA_ptr<OA::DUG::DUGStandard> dug
         = dugman->performAnalysis(procIter, icfg, parambind, interAlias, cgraph);
-    std::cout << "after ManagerDUGStandard performAnalysis" << std::endl;
         
     dugman->transitiveClosureDepMatrix(cgraph);
     //dug->dumpdot(cout, irInterface);
-    std::cout << "Printing DUG" << std::endl;
-    dug->output(*irInterface);
-    std::cout << "Done Printing DUG" << std::endl;
+    // dug->output(*irInterface);
 
     // Def-Use Activity Analysis
     OA::OA_ptr<OA::Activity::ManagerDUActive> duactiveman;

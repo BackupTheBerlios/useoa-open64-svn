@@ -4126,13 +4126,14 @@ Open64IRInterface::DumpWN(WN* wn, ostream& os)
 
   // Printing scope of WN i.e. Name of the procedure 
   // it belongs to
+  /*
   PU_Info* origPU = Current_PU_Info;
   if(origPU != NULL) {
      ST_IDX idx = PU_Info_proc_sym(origPU);
      char* procname = ST_name(idx);
      std::cout << std::endl << "ProcName" << procname << std::endl;
   }
-
+  */
   
   OPERATOR opr = WN_operator(wn);
   string op;
