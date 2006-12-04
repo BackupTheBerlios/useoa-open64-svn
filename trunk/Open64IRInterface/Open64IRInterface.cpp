@@ -750,6 +750,15 @@ Open64IRInterface::toString(const OA::SymHandle h)
   if (st) {
     setCurrentProcToProcContext(h);
     symnm = createCharStarForST(st);
+    PU_Info* origPU = Current_PU_Info;
+    if(origPU != NULL) {
+     ST_IDX idx = PU_Info_proc_sym(origPU);
+     char* procname = ST_name(idx);
+     std::cout << std::endl <<
+               "SymHandle" << symnm << std::endl <<
+               "ProcName" << procname << std::endl;
+    }
+
   } else {
     symnm = "<no-symbol>";
   }
