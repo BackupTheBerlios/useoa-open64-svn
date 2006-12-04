@@ -753,10 +753,8 @@ Open64IRInterface::toString(const OA::SymHandle h)
     PU_Info* origPU = Current_PU_Info;
     if(origPU != NULL) {
      ST_IDX idx = PU_Info_proc_sym(origPU);
-     char* procname = ST_name(idx);
-     std::cout << std::endl <<
-               "SymHandle" << symnm << std::endl <<
-               "ProcName" << procname << std::endl;
+     std::string procname = ST_name(idx);
+     symnm = procname + "::" + symnm;
     }
 
   } else {
