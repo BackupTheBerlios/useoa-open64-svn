@@ -1,108 +1,950 @@
+
+InterAliasMap(
+    AliasMap(
+        mProcHandle: ProcHandle(globals_)
+        mNumSets: 1
+        mStartId: 0
+        mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
+                0	 => [ 
+                    UnknownLoc(
+                    ) ] 
+
+        mIdToSetStatusMap: int	 => AliasResultType
+                0	 => 1
+
+        mIdToMemRefSetMap: int	 => MemRefSet
+
+        mIdToMRESetMap: int	 => MemRefExprSet
+
+    )
+    AliasMap(
+        mProcHandle: ProcHandle(bar_)
+        mNumSets: 7
+        mStartId: 0
+        mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
+                0	 => [ 
+                    UnknownLoc(
+                    ) ] 
+                1	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(bar_)
+                        mLocal: 0
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                2	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(BARX)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                3	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(BARY)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                4	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(T)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                5	 => [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(BARX)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                6	 => [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(BARY)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+
+        mIdToSetStatusMap: int	 => AliasResultType
+                0	 => 1
+                1	 => 2
+                2	 => 2
+                3	 => 2
+                4	 => 2
+                5	 => 2
+                6	 => 2
+
+        mIdToMemRefSetMap: int	 => MemRefSet
+                4	 => [ MemRefHandle(T:0:.predef_F8)    MemRefHandle(
+ProcNamebar_
+T:0:.predef_F8) ] 
+                5	 => [ MemRefHandle(
+ProcNamebar_
+BARX:0:.predef_F8)    MemRefHandle(BARX:0:.predef_F8) ] 
+                6	 => [ MemRefHandle(
+ProcNamebar_
+BARY:0:.predef_F8)    MemRefHandle(BARY:0:.predef_F8) ] 
+
+        mIdToMRESetMap: int	 => MemRefExprSet
+                1	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_)
+                    ) ] 
+                2	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(BARX)
+                    ) ] 
+                3	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(BARY)
+                    ) ] 
+                4	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(T)
+                    ) ] 
+                5	 => [ 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(BARX)
+                        )
+                        mNumDeref: 1
+                    ) ] 
+                6	 => [ 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(BARY)
+                        )
+                        mNumDeref: 1
+                    ) ] 
+
+    )
+    AliasMap(
+        mProcHandle: ProcHandle(foo_)
+        mNumSets: 4
+        mStartId: 0
+        mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
+                0	 => [ 
+                    UnknownLoc(
+                    ) ] 
+                1	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(GX)
+                        mLocal: 0
+                        mFullOverlap: [ SymHandle(GX) ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                2	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(GY)
+                        mLocal: 0
+                        mFullOverlap: [ SymHandle(GY) ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                3	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(bar_)
+                        mLocal: 0
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+
+        mIdToSetStatusMap: int	 => AliasResultType
+                0	 => 1
+                1	 => 2
+                2	 => 2
+                3	 => 2
+
+        mIdToMemRefSetMap: int	 => MemRefSet
+
+        mIdToMRESetMap: int	 => MemRefExprSet
+                1	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(GX)
+                    ) ] 
+                2	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(GY)
+                    ) ] 
+                3	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_)
+                    ) ] 
+
+    )
+    AliasMap(
+        mProcHandle: ProcHandle(head_)
+        mNumSets: 7
+        mStartId: 0
+        mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
+                0	 => [ 
+                    UnknownLoc(
+                    ) ] 
+                1	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(GX)
+                        mLocal: 0
+                        mFullOverlap: [ SymHandle(GX) ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                2	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(GY)
+                        mLocal: 0
+                        mFullOverlap: [ SymHandle(GY) ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                3	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                4	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                5	 => [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(X)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                6	 => [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 0
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(Y)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+
+        mIdToSetStatusMap: int	 => AliasResultType
+                0	 => 1
+                1	 => 2
+                2	 => 2
+                3	 => 2
+                4	 => 2
+                5	 => 1
+                6	 => 1
+
+        mIdToMemRefSetMap: int	 => MemRefSet
+                1	 => [ MemRefHandle(GX:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+GX:0:.predef_F8) ] 
+                2	 => [ MemRefHandle(GY:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+GY:0:.predef_F8) ] 
+                5	 => [ MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+0:X:0:anon_ptr.(1)) ] 
+                6	 => [ MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+Y:0:anon_ptr.(1)) ] 
+
+        mIdToMRESetMap: int	 => MemRefExprSet
+                1	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(GX)
+                    ) ] 
+                2	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(GY)
+                    ) ] 
+                3	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(X)
+                    ) ] 
+                4	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(Y)
+                    ) ] 
+                5	 => [ 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 0
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(X)
+                        )
+                        mNumDeref: 1
+                    ) ] 
+                6	 => [ 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 0
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(Y)
+                        )
+                        mNumDeref: 1
+                    ) ] 
+
+    )
+)
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+
+graph ICFG:
+
+    subgraph globals__0:
+
+        Node 8: 
+            ==  ICFG ENTRY_NODE 8 == (entry)
+
+
+        Node 9: 
+            
+ProcNameglobals_
+ LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/argumentConversion_3.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 9 ==
+
+
+
+        Node 10: 
+            ==  ICFG EXIT_NODE 10 == (exit)
+
+
+        Edge: 8 => 9
+            
+
+        Edge: 9 => 10
+            
+
+
+    subgraph bar__1:
+
+        Node 14: 
+            ==  ICFG ENTRY_NODE 14 ==
+
+
+        Node 15: 
+            
+ProcNamebar_
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+ProcNamebar_
+
+ProcNamebar_
+
+ProcNamebar_
+
+ProcNamebar_
+
+ProcNamebar_
+
+ProcNamebar_
+
+ProcNamebar_
+==  ICFG CFLOW_NODE 15 ==
+
+T:0:.predef_F8 = BARX:0:.predef_F8
+BARX:0:.predef_F8 = BARY:0:.predef_F8
+BARY:0:.predef_F8 = T:0:.predef_F8
+return
+
+
+        Node 16: 
+            ==  ICFG EXIT_NODE 16 ==
+
+
+        Edge: 14 => 15
+            
+
+        Edge: 15 => 16
+            
+
+
+    subgraph foo__2:
+
+        Node 20: 
+            ==  ICFG ENTRY_NODE 20 == (entry)
+
+
+        Node 24: 
+            
+ProcNamefoo_
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+ProcNamefoo_
+USE <1,20,globals_>
+==  ICFG CFLOW_NODE 24 ==
+
+
+
+
+        Node 25: 
+            
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+==  ICFG CALL_NODE 25 ==
+bar_(&GX:0:.predef_F8, &GY:0:.predef_F8)
+
+
+        Node 27: 
+            ==  ICFG RETURN_NODE 27 ==
+
+
+        Node 28: 
+            
+ProcNamefoo_
+==  ICFG CFLOW_NODE 28 ==
+return
+
+
+        Node 29: 
+            ==  ICFG EXIT_NODE 29 == (exit)
+
+
+        Edge: 24 => 25
+            
+
+        Edge: 25 => 27
+            CALL_RETURN
+
+        Edge: 27 => 28
+            
+
+        Edge: 20 => 24
+            
+
+        Edge: 28 => 29
+            
+
+
+    subgraph head__3:
+
+        Node 33: 
+            ==  ICFG ENTRY_NODE 33 == (entry)
+
+
+        Node 34: 
+            
+ProcNamehead_
+PRAGMA 0 188 <1,26,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+ProcNamehead_
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+ProcNamehead_
+USE <1,20,globals_>
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+==  ICFG CFLOW_NODE 34 ==
+
+
+
+GX:0:.predef_F8 = 0:X:0:anon_ptr.(1)
+GY:0:.predef_F8 = GX:0:.predef_F8
+Y:0:anon_ptr.(1) = GY:0:.predef_F8
+return
+
+
+        Node 35: 
+            ==  ICFG EXIT_NODE 35 == (exit)
+
+
+        Edge: 33 => 34
+            
+
+        Edge: 34 => 35
+            
+
+
+    Edge: 25 => 14
+        
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+CALL_(bar_(&GX:0:.predef_F8, &GY:0:.predef_F8)),style=dashed,color=red
+
+    Edge: 16 => 27
+        
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+
+ProcNamefoo_
+RETURN_(bar_(&GX:0:.predef_F8, &GY:0:.predef_F8)),style=dashed,color=blue
+
+before ManagerDUGStandard performAnalysis
 Before DUGStandard performAnalysis
-before inserting into mProcsOfInterest ProcHandlehead_
-before inserting into mProcsOfInterest
-before IndepLocVisitor invisibleLoc inserting into mProcsOfInterest
-ProcHandle:::head_
-*****************
-after inserting into mProcsOfInterest
-ProcHandle:::head_
-Inside DepMemRefExprIter
-Dep Invisible Location
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamebar_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamebar_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamebar_
+The size of set 10
+The sixe of set 21
+after alias locations
+after alias locations
+after alias locations
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+
+InvisibleLoc(
+    mMRE: 
+    Deref(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mAddressOf: 0
+            mFullAccuracy: 1
+            mMemRefType: USE
+            mSymHandle: SymHandle(X)
+        )
+        mNumDeref: 1
+    )
+)
+after alias locations
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
 Inserting Dep Symbol
 Y
 ********************
-CollectDependentSyms mProcsOfInterest
-ProcHandle:::head_
-Before CallGraphIterator
-Inside CallGraphIterator
+After Location Iterator
 Before assignActiveStandard
 After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name ishead_
-after mProcsOfInterest.find
-The Procedure name ishead_
-before getStatement Iterator
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing Statement LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/argumentConversion_3.f"
-PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementPRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementPRAGMA 0 188 <1,26,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementPRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementUSE <1,20,globals_>
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementGX:0:.predef_F8 = 0:X:0:anon_ptr.(1)
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-RefOp use mre
-inserting use symbolX
-named def mre
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleX
-To SymHandleGX
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symX
-DUGStandard::getNode::loc
-NamedLoc(this=0x833f5f0, mSymHandle.hval()=137495584, mLocal=1):X
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:X
-DUGStandard::getNode::symGX
-DUGStandard::getNode::loc
-NamedLoc(this=0x833f640, mSymHandle.hval()=137415880, mLocal=0):GX
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:GX
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
 
@@ -115,45 +957,6 @@ graph DGraph:
     Edge: 36 => 37
         23
 
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementGY:0:.predef_F8 = GX:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-After getAllMemRefs
-named use mre
-use SymbolGX
-named def mre
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleGX
-To SymHandleGY
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symGX
-DUGStandard::getNode::loc
-NamedLoc(this=0x833f8d8, mSymHandle.hval()=137415880, mLocal=0):GX
-
-DUGStandard::getNode::prochead_
-DUGStandard::getNode::symGY
-DUGStandard::getNode::loc
-NamedLoc(this=0x833f900, mSymHandle.hval()=137415920, mLocal=0):GY
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:GY
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
 
@@ -172,46 +975,6 @@ graph DGraph:
     Edge: 37 => 38
         24
 
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY:0:anon_ptr.(1) = GY:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-named use mre
-use SymbolGY
-RefOp def mre
-Inserting Def SymbolY
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleGY
-To SymHandleY
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symGY
-DUGStandard::getNode::loc
-NamedLoc(this=0x833fa70, mSymHandle.hval()=137415920, mLocal=0):GY
-
-DUGStandard::getNode::prochead_
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x833fa48, mSymHandle.hval()=137495624, mLocal=1):Y
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:Y
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
 
@@ -236,31 +999,13 @@ graph DGraph:
     Edge: 38 => 39
         25
 
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing Statementreturn
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-After getStatement Iterator
-Inside CallGraphIterator
 Before assignActiveStandard
 After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name isfoo_
-Inside CallGraphIterator
 Before assignActiveStandard
 After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name isbar_
-Inside CallGraphIterator
 Before assignActiveStandard
 After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name isglobals_
-After DUGStandard PerformAnalysis
+after ManagerDUGStandard performAnalysis
 Printing DUG
 
 graph DGraph:
@@ -287,104 +1032,142 @@ graph DGraph:
         25
 
 Done Printing DUG
-DUGStandard::isNode has FullAccuracy
-DUGStandard::isNode
-NamedLoc(this=0x832c8e0, mSymHandle.hval()=137495584, mLocal=1):X
-*****************
-Not NULL retval
-DUGStandard::getNode::symX
-DUGStandard::getNode::loc
-NamedLoc(this=0x832c8e0, mSymHandle.hval()=137495584, mLocal=1):X
-
-DUGStandard::getNode::prochead_
+before ManagerDUActive markVaried
+before Indep Locations
+Inside Indep Locations
 ManagerDUActive::markVaried::nodeId36
-Printing Information about onPath
-36
-*************
--v->NamedLoc(this=0x833f5f0, mSymHandle.hval()=137495584, mLocal=1):X
+-v->NamedLoc(this=0x8365f70, mSymHandle.hval()=137655888, mLocal=1):X
 (36)
 Inside setVaried
-Successor SymHandleGX
-Successor Id37
-visited.find() false branch
-onPath.find() else branch
-Out of Continue Branch
-set to markVaried
-Printing Information about onPath
-36
-37
-*************
--v->NamedLoc(this=0x833f640, mSymHandle.hval()=137415880, mLocal=0):GX
+-v->NamedLoc(this=0x8366958, mSymHandle.hval()=137576184, mLocal=0):GX
 (37)
 Inside setVaried
-Successor SymHandleGY
-Successor Id38
-visited.find() false branch
-onPath.find() else branch
-Out of Continue Branch
-set to markVaried
-Printing Information about onPath
-36
-37
-38
-*************
--v->NamedLoc(this=0x833f900, mSymHandle.hval()=137415920, mLocal=0):GY
+-v->NamedLoc(this=0x8366c18, mSymHandle.hval()=137576224, mLocal=0):GY
 (38)
 Inside setVaried
-Successor SymHandleY
-Successor Id39
-visited.find() false branch
-onPath.find() else branch
-Out of Continue Branch
-set to markVaried
-Printing Information about onPath
-36
-37
-38
-39
-*************
--v->NamedLoc(this=0x833fa48, mSymHandle.hval()=137495624, mLocal=1):Y
+-v->NamedLoc(this=0x8366bf0, mSymHandle.hval()=137655928, mLocal=1):Y
 (39)
 Inside setVaried
+Outside Indep Locations
+after ManagerDUActive markVaried
 Inside ManagerDUActive markUseful
 before dep Iter
 Inside dep Iter
 before if
-DUGStandard::isNode has FullAccuracy
-DUGStandard::isNode
-NamedLoc(this=0x832c8e0, mSymHandle.hval()=137495624, mLocal=1):Y
-*****************
-Not NULL retval
 Inside if
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x832c8e0, mSymHandle.hval()=137495624, mLocal=1):Y
+^^^^^^^^^^inserting active locations^^^^^^^^^
 
-DUGStandard::getNode::prochead_
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-**** before setActive *****
-**** just before setActive ****
-Inside setActive
-setActive(mSym,mLoc)
-Inside setActive
+NamedLoc(
+    mSymHandle: SymHandle(X)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Danger Inside insertActiveSymSet
-*************
-^^^^^^^^^^^^^^^^^^^
-**** after setActive *****
-**** before setActive *****
-**** just before setActive ****
-Inside setActive
-setActive(mSym,mLoc)
-Inside setActive
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(GX)
+    mLocal: 0
+    mFullOverlap: [ SymHandle(GX) ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Danger Inside insertActiveSymSet
-Signal: Aborted
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(GY)
+    mLocal: 0
+    mFullOverlap: [ SymHandle(GY) ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(Y)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+after if
+Outside dep Iter
+before Danger duaa
+Inside Danger duaa
+Inside Danger duaa
+Inside Danger duaa
+Inside Danger duaa
+after danger duaa
+before activity results for each procedure into InterActive
+Inside activity results for each procedure into InterActive
+Inside activity results for each procedure into InterActive
+Inside activity results for each procedure into InterActive
+Inside activity results for each procedure into InterActive
+before printing active syms iterators retval
+
+InterActive(
+    Procedure( globals_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( bar_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( foo_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(GX)
+                mLocal: 0
+                mFullOverlap: [ SymHandle(GX) ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(GY)
+                mLocal: 0
+                mFullOverlap: [ SymHandle(GY) ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(X)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            ) ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(GX)
+            SymHandle(GY)
+            SymHandle(X)
+            SymHandle(Y) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

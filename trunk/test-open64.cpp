@@ -118,7 +118,7 @@ TestIR_OAEachActivity(std::ostream& os, PU_Info* pu_forest,
 
 
 static int
-TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
+TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
                     OA::OA_ptr<Open64IRInterface> irInterface);
 
 static int
@@ -235,9 +235,6 @@ main(int argc, char* argv[])
     case 18: // InterDep
       TestIR_OAInterDep(std::cout, pu_forest, irInterface);
       break;
-    case 19: // InterActivity
-      TestIR_OAInterActivity(std::cout, pu_forest, irInterface);
-      break;
     case 20: // ICFG
       {
         std::string dotFileNm = args.whirlFileNm;
@@ -267,6 +264,9 @@ main(int argc, char* argv[])
       break;
     case 31: // ICFGReachConsts
       TestIR_OAICFGReachConsts(std::cout, pu_forest, irInterface);
+      break;
+    case 32: // CSFIActivity
+      TestIR_OACSFIActivity(std::cout, pu_forest, irInterface);
       break;
     case 1: // CFG
     //case 3: // Alias
@@ -1353,7 +1353,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
 
 static int
-TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
+TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
 
@@ -1416,8 +1416,11 @@ TestIR_OAInterActivity(std::ostream& os, PU_Info* pu_forest,
 
     OA::OA_ptr<OA::DUG::ManagerDUGStandard> dugman;
     dugman = new OA::DUG::ManagerDUGStandard(irInterface, irInterface);
+    std::cout << "before ManagerDUGStandard performAnalysis" << std::endl;
     OA::OA_ptr<OA::DUG::DUGStandard> dug
         = dugman->performAnalysis(procIter, icfg, parambind, interAlias, cgraph);
+    std::cout << "after ManagerDUGStandard performAnalysis" << std::endl;
+        
     dugman->transitiveClosureDepMatrix(cgraph);
     //dug->dumpdot(cout, irInterface);
     std::cout << "Printing DUG" << std::endl;

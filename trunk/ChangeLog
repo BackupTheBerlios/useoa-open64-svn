@@ -418,4 +418,14 @@
    - Modified Open64IRInterface::DumpWN() to print scope i.e. Procedure
      name.
 
-  
+12/03/06   UseOA-Open64 svn trunk r128 Priyadarshini Malusare
+   - Added --oa-CSFIActivity option for Context-Sensitive and 
+     Flow-Insensitive Activity Analysis.  
+   - Modify isRefParam() in 
+     Open64IRInterface::getIndepMemRefExprIterator and
+     Open64IRInterface::getDepMemrefExprIterator wrt new 
+     changes for MemRefExpr in UseOA-Open64 revision 122.
+   - Regenerated TestCases for CSFIActivity.	 
+   - regressAll works with OpenAnalysis r258 on Okapi with gcc-3.2
+
+

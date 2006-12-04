@@ -1,106 +1,723 @@
+
+InterAliasMap(
+    AliasMap(
+        mProcHandle: ProcHandle(head_)
+        mNumSets: 11
+        mStartId: 0
+        mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
+                0	 => [ 
+                    UnknownLoc(
+                    ) ] 
+                1	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                2	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                3	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(T1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                4	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(T2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                5	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(Y1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                6	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(Y2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                7	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(Y3)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                8	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(Y4)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                9	 => [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(X)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                10	 => [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 0
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(Y)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+
+        mIdToSetStatusMap: int	 => AliasResultType
+                0	 => 1
+                1	 => 2
+                2	 => 2
+                3	 => 2
+                4	 => 2
+                5	 => 2
+                6	 => 2
+                7	 => 2
+                8	 => 2
+                9	 => 1
+                10	 => 1
+
+        mIdToMemRefSetMap: int	 => MemRefSet
+                3	 => [ MemRefHandle(T1:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+&T1:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+T1:0:.predef_F8) ] 
+                4	 => [ MemRefHandle(T2:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+&T2:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+T2:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+&T2:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+T2:0:.predef_F8) ] 
+                5	 => [ MemRefHandle(Y1:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+Y1:0:.predef_F8) ] 
+                6	 => [ MemRefHandle(Y2:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+Y2:0:.predef_F8) ] 
+                7	 => [ MemRefHandle(Y3:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+Y3:0:.predef_F8) ] 
+                8	 => [ MemRefHandle(Y4:0:.predef_F8)    MemRefHandle(
+ProcNamehead_
+Y4:0:.predef_F8) ] 
+                9	 => [ MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+0:X:0:anon_ptr.(1))    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+0:X:0:anon_ptr.(2)) ] 
+                10	 => [ MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+Y:0:anon_ptr.(1))    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+Y:0:anon_ptr.(2))    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+Y:0:anon_ptr.(3))    MemRefHandle(
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+Y:0:anon_ptr.(4)) ] 
+
+        mIdToMRESetMap: int	 => MemRefExprSet
+                1	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(X)
+                    ) ] 
+                2	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(Y)
+                    ) ] 
+                3	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(T1)
+                    ) ] 
+                4	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(T2)
+                    ) ] 
+                5	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(Y1)
+                    ) ] 
+                6	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(Y2)
+                    ) ] 
+                7	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(Y3)
+                    ) ] 
+                8	 => [ 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(Y4)
+                    ) ] 
+                9	 => [ 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 0
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(X)
+                        )
+                        mNumDeref: 1
+                    ) ] 
+                10	 => [ 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 0
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(Y)
+                        )
+                        mNumDeref: 1
+                    ) ] 
+
+    )
+)
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+graph ICFG:
+
+    subgraph head__0:
+
+        Node 5: 
+            ==  ICFG ENTRY_NODE 5 == (entry)
+
+
+        Node 6: 
+            
+ProcNamehead_
+ LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/lion.f"
+PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+ProcNamehead_
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+==  ICFG CFLOW_NODE 6 ==
+
+
+T1:0:.predef_F8 = 0:X:0:anon_ptr.(1)/0:X:0:anon_ptr.(2)
+T2:0:.predef_F8 = COS(&T1:0:.predef_F8)
+Y1:0:.predef_F8 = EXP(&T2:0:.predef_F8)
+Y2:0:.predef_F8 = T2:0:.predef_F8*    3.140000104904175
+Y3:0:.predef_F8 = SIN(&T2:0:.predef_F8)
+Y4:0:.predef_F8 = T1:0:.predef_F8*T2:0:.predef_F8
+Y:0:anon_ptr.(1) = Y1:0:.predef_F8
+Y:0:anon_ptr.(2) = Y2:0:.predef_F8
+Y:0:anon_ptr.(3) = Y3:0:.predef_F8
+Y:0:anon_ptr.(4) = Y4:0:.predef_F8
+return
+
+
+        Node 7: 
+            ==  ICFG EXIT_NODE 7 == (exit)
+
+
+        Edge: 5 => 6
+            
+
+        Edge: 6 => 7
+            
+
+
+before ManagerDUGStandard performAnalysis
 Before DUGStandard performAnalysis
-before inserting into mProcsOfInterest ProcHandlehead_
-before inserting into mProcsOfInterest
-before IndepLocVisitor invisibleLoc inserting into mProcsOfInterest
-ProcHandle:::head_
-*****************
-after inserting into mProcsOfInterest
-ProcHandle:::head_
-Inside DepMemRefExprIter
-Dep Invisible Location
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+
+ProcNamehead_
+The size of set 10
+The sixe of set 21
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
+
+InvisibleLoc(
+    mMRE: 
+    Deref(
+        mAddressOf: 0
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mAddressOf: 0
+            mFullAccuracy: 1
+            mMemRefType: USE
+            mSymHandle: SymHandle(X)
+        )
+        mNumDeref: 1
+    )
+)
+after alias locations
+before getMayLocs iterator
+Inside getMayLocs iterator
+The size of set 10
+The sixe of set 21
+outside getMayLocs Iterator
 Inserting Dep Symbol
 Y
 ********************
-CollectDependentSyms mProcsOfInterest
-ProcHandle:::head_
-Before CallGraphIterator
-Inside CallGraphIterator
+After Location Iterator
 Before assignActiveStandard
 After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name ishead_
-after mProcsOfInterest.find
-The Procedure name ishead_
-before getStatement Iterator
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing Statement LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/lion.f"
-PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementPRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementPRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementPRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementT1:0:.predef_F8 = 0:X:0:anon_ptr.(1)/0:X:0:anon_ptr.(2)
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-RefOp use mre
-inserting use symbolX
-RefOp use mre
-inserting use symbolX
-named def mre
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleX
-To SymHandleT1
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symX
-DUGStandard::getNode::loc
-NamedLoc(this=0x832d2c0, mSymHandle.hval()=137454008, mLocal=1):X
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:X
-DUGStandard::getNode::symT1
-DUGStandard::getNode::loc
-NamedLoc(this=0x832d868, mSymHandle.hval()=137454088, mLocal=1):T1
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:T1
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Edge: 8 => 9
+        5
+
+
+graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
+
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+
+graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
+
+    Node 11: 
+        11
+
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+
+graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
 
     Node 11: 
         11
@@ -108,76 +725,65 @@ graph DGraph:
     Node 12: 
         12
 
-    Edge: 11 => 12
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
         8
 
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementT2:0:.predef_F8 = COS(&T1:0:.predef_F8)
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-After getAllMemRefs
-named def mre
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY1:0:.predef_F8 = EXP(&T2:0:.predef_F8)
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-After getAllMemRefs
-named def mre
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY2:0:.predef_F8 = T2:0:.predef_F8*    3.140000104904175
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-After getAllMemRefs
-named use mre
-use SymbolT2
-named def mre
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleT2
-To SymHandleY2
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symT2
-DUGStandard::getNode::loc
-NamedLoc(this=0x832eb80, mSymHandle.hval()=137454128, mLocal=1):T2
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:T2
-DUGStandard::getNode::symY2
-DUGStandard::getNode::loc
-NamedLoc(this=0x832eba8, mSymHandle.hval()=137454208, mLocal=1):Y2
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:Y2
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
+
+    Node 11: 
+        11
+
+    Node 12: 
+        12
+
+    Node 13: 
+        13
+
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
+        8
+
+    Edge: 10 => 13
+        9
+
+
+graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
 
     Node 11: 
         11
@@ -191,69 +797,80 @@ graph DGraph:
     Node 14: 
         14
 
-    Edge: 11 => 12
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
         8
 
-    Edge: 13 => 14
+    Edge: 10 => 13
         9
 
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY3:0:.predef_F8 = SIN(&T2:0:.predef_F8)
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-After getAllMemRefs
-named def mre
-before insertEdge
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY4:0:.predef_F8 = T1:0:.predef_F8*T2:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-named 
-After getAllMemRefs
-named use mre
-use SymbolT1
-named use mre
-use SymbolT2
-named def mre
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleT1
-To SymHandleY4
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symT1
-DUGStandard::getNode::loc
-NamedLoc(this=0x832ee28, mSymHandle.hval()=137454088, mLocal=1):T1
+    Edge: 9 => 14
+        10
 
-DUGStandard::getNode::prochead_
-DUGStandard::getNode::symY4
-DUGStandard::getNode::loc
-NamedLoc(this=0x832ee50, mSymHandle.hval()=137454288, mLocal=1):Y4
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:Y4
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
+
+    Node 11: 
+        11
+
+    Node 12: 
+        12
+
+    Node 13: 
+        13
+
+    Node 14: 
+        14
+
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
+        8
+
+    Edge: 10 => 13
+        9
+
+    Edge: 9 => 14
+        10
+
+    Edge: 10 => 14
+        11
+
+
+graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
 
     Node 11: 
         11
@@ -270,40 +887,41 @@ graph DGraph:
     Node 15: 
         15
 
-    Edge: 11 => 12
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
         8
 
-    Edge: 13 => 14
+    Edge: 10 => 13
         9
 
-    Edge: 12 => 15
+    Edge: 9 => 14
         10
 
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleT2
-To SymHandleY4
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symT2
-DUGStandard::getNode::loc
-NamedLoc(this=0x832ee28, mSymHandle.hval()=137454128, mLocal=1):T2
+    Edge: 10 => 14
+        11
 
-DUGStandard::getNode::prochead_
-DUGStandard::getNode::symY4
-DUGStandard::getNode::loc
-NamedLoc(this=0x832f000, mSymHandle.hval()=137454288, mLocal=1):Y4
+    Edge: 11 => 15
+        12
 
-DUGStandard::getNode::prochead_
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
 
     Node 11: 
         11
@@ -320,62 +938,101 @@ graph DGraph:
     Node 15: 
         15
 
-    Edge: 11 => 12
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
         8
 
-    Edge: 13 => 14
+    Edge: 10 => 13
         9
 
-    Edge: 12 => 15
+    Edge: 9 => 14
         10
+
+    Edge: 10 => 14
+        11
+
+    Edge: 11 => 15
+        12
+
+    Edge: 12 => 15
+        13
+
+
+graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
+
+    Node 11: 
+        11
+
+    Node 12: 
+        12
+
+    Node 13: 
+        13
+
+    Node 14: 
+        14
+
+    Node 15: 
+        15
+
+    Edge: 8 => 9
+        5
+
+    Edge: 9 => 10
+        6
+
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
+        8
+
+    Edge: 10 => 13
+        9
+
+    Edge: 9 => 14
+        10
+
+    Edge: 10 => 14
+        11
+
+    Edge: 11 => 15
+        12
+
+    Edge: 12 => 15
+        13
 
     Edge: 13 => 15
-        11
+        14
 
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY:0:anon_ptr.(1) = Y1:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-named use mre
-use SymbolY1
-RefOp def mre
-Inserting Def SymbolY
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleY1
-To SymHandleY
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symY1
-DUGStandard::getNode::loc
-NamedLoc(this=0x832ee28, mSymHandle.hval()=137454168, mLocal=1):Y1
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:Y1
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x832f088, mSymHandle.hval()=137454048, mLocal=1):Y
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:Y
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
 
 graph DGraph:
+
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
 
     Node 11: 
         11
@@ -392,313 +1049,53 @@ graph DGraph:
     Node 15: 
         15
 
-    Node 16: 
-        16
+    Edge: 8 => 9
+        5
 
-    Node 17: 
-        17
+    Edge: 9 => 10
+        6
 
-    Edge: 11 => 12
+    Edge: 10 => 11
+        7
+
+    Edge: 10 => 12
         8
 
-    Edge: 13 => 14
+    Edge: 10 => 13
         9
 
-    Edge: 12 => 15
+    Edge: 9 => 14
         10
 
-    Edge: 13 => 15
+    Edge: 10 => 14
         11
 
-    Edge: 16 => 17
+    Edge: 11 => 15
         12
-
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY:0:anon_ptr.(2) = Y2:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-named use mre
-use SymbolY2
-RefOp def mre
-Inserting Def SymbolY
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleY2
-To SymHandleY
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symY2
-DUGStandard::getNode::loc
-NamedLoc(this=0x832f318, mSymHandle.hval()=137454208, mLocal=1):Y2
-
-DUGStandard::getNode::prochead_
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x832f340, mSymHandle.hval()=137454048, mLocal=1):Y
-
-DUGStandard::getNode::prochead_
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
-
-graph DGraph:
-
-    Node 11: 
-        11
-
-    Node 12: 
-        12
-
-    Node 13: 
-        13
-
-    Node 14: 
-        14
-
-    Node 15: 
-        15
-
-    Node 16: 
-        16
-
-    Node 17: 
-        17
-
-    Edge: 11 => 12
-        8
-
-    Edge: 13 => 14
-        9
 
     Edge: 12 => 15
-        10
+        13
 
     Edge: 13 => 15
-        11
-
-    Edge: 16 => 17
-        12
-
-    Edge: 14 => 17
-        13
-
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY:0:anon_ptr.(3) = Y3:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-named use mre
-use SymbolY3
-RefOp def mre
-Inserting Def SymbolY
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleY3
-To SymHandleY
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symY3
-DUGStandard::getNode::loc
-NamedLoc(this=0x832f328, mSymHandle.hval()=137454248, mLocal=1):Y3
-
-DUGStandard::getNode::prochead_
-The ProcHandle is :head_
-The Symandle is:Y3
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x83305a8, mSymHandle.hval()=137454048, mLocal=1):Y
-
-DUGStandard::getNode::prochead_
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
-
-graph DGraph:
-
-    Node 11: 
-        11
-
-    Node 12: 
-        12
-
-    Node 13: 
-        13
-
-    Node 14: 
         14
 
-    Node 15: 
+    Edge: 14 => 15
         15
 
-    Node 16: 
-        16
-
-    Node 17: 
-        17
-
-    Node 18: 
-        18
-
-    Edge: 11 => 12
-        8
-
-    Edge: 13 => 14
-        9
-
-    Edge: 12 => 15
-        10
-
-    Edge: 13 => 15
-        11
-
-    Edge: 16 => 17
-        12
-
-    Edge: 14 => 17
-        13
-
-    Edge: 18 => 17
-        14
-
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing StatementY:0:anon_ptr.(4) = Y4:0:.predef_F8
-before getAllMemRefs
-Inside getAllMemRefs
-named 
-Inside getAllMemRefs
-RefOp def mre
-After getAllMemRefs
-named use mre
-use SymbolY4
-RefOp def mre
-Inserting Def SymbolY
-before insertEdge
-Inside UseIter
-Inside DefIter
-Inside insertEdge
-Inside insertEdge
-From SymHandleY4
-To SymHandleY
-from != to
-Printing proc (toProc or fromProc)head_
-DUGStandard::getNode::symY4
-DUGStandard::getNode::loc
-NamedLoc(this=0x83305a8, mSymHandle.hval()=137454288, mLocal=1):Y4
-
-DUGStandard::getNode::prochead_
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x8330740, mSymHandle.hval()=137454048, mLocal=1):Y
-
-DUGStandard::getNode::prochead_
-fromNode
-NONEFORMAL_NODE
-toNode
-NONEFORMAL_NODE
-*****************
-
-graph DGraph:
-
-    Node 11: 
-        11
-
-    Node 12: 
-        12
-
-    Node 13: 
-        13
-
-    Node 14: 
-        14
-
-    Node 15: 
-        15
-
-    Node 16: 
-        16
-
-    Node 17: 
-        17
-
-    Node 18: 
-        18
-
-    Edge: 11 => 12
-        8
-
-    Edge: 13 => 14
-        9
-
-    Edge: 12 => 15
-        10
-
-    Edge: 13 => 15
-        11
-
-    Edge: 16 => 17
-        12
-
-    Edge: 14 => 17
-        13
-
-    Edge: 18 => 17
-        14
-
-    Edge: 15 => 17
-        15
-
-After insertEdge
-Inside getStatement Iterator
-Inside labelUseDefEdges
-Printing Statementreturn
-before getAllMemRefs
-After getAllMemRefs
-before insertEdge
-After insertEdge
-After getStatement Iterator
-Inside CallGraphIterator
-Before assignActiveStandard
-After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name isProcHandle(0)
-Inside CallGraphIterator
-Before assignActiveStandard
-After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name isProcHandle(0)
-Inside CallGraphIterator
-Before assignActiveStandard
-After assignActiveStandard
-before mProcsOfInterest.find
-The Procedure name isProcHandle(0)
-After DUGStandard PerformAnalysis
+after ManagerDUGStandard performAnalysis
 Printing DUG
 
 graph DGraph:
 
+    Node 8: 
+        8
+
+    Node 9: 
+        9
+
+    Node 10: 
+        10
+
     Node 11: 
         11
 
@@ -714,173 +1111,207 @@ graph DGraph:
     Node 15: 
         15
 
-    Node 16: 
-        16
+    Edge: 8 => 9
+        5
 
-    Node 17: 
-        17
+    Edge: 9 => 10
+        6
 
-    Node 18: 
-        18
+    Edge: 10 => 11
+        7
 
-    Edge: 11 => 12
+    Edge: 10 => 12
         8
 
-    Edge: 13 => 14
+    Edge: 10 => 13
         9
 
-    Edge: 12 => 15
+    Edge: 9 => 14
         10
 
-    Edge: 13 => 15
+    Edge: 10 => 14
         11
 
-    Edge: 16 => 17
+    Edge: 11 => 15
         12
 
-    Edge: 14 => 17
+    Edge: 12 => 15
         13
 
-    Edge: 18 => 17
+    Edge: 13 => 15
         14
 
-    Edge: 15 => 17
+    Edge: 14 => 15
         15
 
 Done Printing DUG
-DUGStandard::isNode has FullAccuracy
-DUGStandard::isNode
-NamedLoc(this=0x83305a8, mSymHandle.hval()=137454008, mLocal=1):X
-*****************
-Not NULL retval
-DUGStandard::getNode::symX
-DUGStandard::getNode::loc
-NamedLoc(this=0x83305a8, mSymHandle.hval()=137454008, mLocal=1):X
-
-DUGStandard::getNode::prochead_
-ManagerDUActive::markVaried::nodeId11
-Printing Information about onPath
-11
-*************
--v->NamedLoc(this=0x832d2c0, mSymHandle.hval()=137454008, mLocal=1):X
+before ManagerDUActive markVaried
+before Indep Locations
+Inside Indep Locations
+ManagerDUActive::markVaried::nodeId8
+-v->NamedLoc(this=0x8354118, mSymHandle.hval()=137614312, mLocal=1):X
+(8)
+Inside setVaried
+-v->NamedLoc(this=0x8354140, mSymHandle.hval()=137614392, mLocal=1):T1
+(9)
+Inside setVaried
+-v->NamedLoc(this=0x83543e0, mSymHandle.hval()=137614432, mLocal=1):T2
+(10)
+Inside setVaried
+-v->NamedLoc(this=0x8354590, mSymHandle.hval()=137614472, mLocal=1):Y1
 (11)
 Inside setVaried
-Successor SymHandleT1
-Successor Id12
-visited.find() false branch
-onPath.find() else branch
-Out of Continue Branch
-set to markVaried
-Printing Information about onPath
-11
-12
-*************
--v->NamedLoc(this=0x832d868, mSymHandle.hval()=137454088, mLocal=1):T1
-(12)
-Inside setVaried
-Successor SymHandleY4
-Successor Id15
-visited.find() false branch
-onPath.find() else branch
-Out of Continue Branch
-set to markVaried
-Printing Information about onPath
-11
-12
-15
-*************
--v->NamedLoc(this=0x832ee50, mSymHandle.hval()=137454288, mLocal=1):Y4
+-v->NamedLoc(this=0x8355cd0, mSymHandle.hval()=137614352, mLocal=1):Y
 (15)
 Inside setVaried
-Successor SymHandleY
-Successor Id17
-visited.find() false branch
-onPath.find() else branch
-Out of Continue Branch
-set to markVaried
-Printing Information about onPath
-11
-12
-15
-17
-*************
--v->NamedLoc(this=0x832f088, mSymHandle.hval()=137454048, mLocal=1):Y
-(17)
+-v->NamedLoc(this=0x83557f0, mSymHandle.hval()=137614512, mLocal=1):Y2
+(12)
 Inside setVaried
+-v->NamedLoc(this=0x8355cd0, mSymHandle.hval()=137614352, mLocal=1):Y
+(15)
+Inside setVaried
+-v->NamedLoc(this=0x8355990, mSymHandle.hval()=137614552, mLocal=1):Y3
+(13)
+Inside setVaried
+-v->NamedLoc(this=0x8355cd0, mSymHandle.hval()=137614352, mLocal=1):Y
+(15)
+Inside setVaried
+-v->NamedLoc(this=0x8355b30, mSymHandle.hval()=137614592, mLocal=1):Y4
+(14)
+Inside setVaried
+-v->NamedLoc(this=0x8355cd0, mSymHandle.hval()=137614352, mLocal=1):Y
+(15)
+Inside setVaried
+-v->NamedLoc(this=0x8355b30, mSymHandle.hval()=137614592, mLocal=1):Y4
+(14)
+Inside setVaried
+Outside Indep Locations
+after ManagerDUActive markVaried
 Inside ManagerDUActive markUseful
 before dep Iter
 Inside dep Iter
 before if
-DUGStandard::isNode has FullAccuracy
-DUGStandard::isNode
-NamedLoc(this=0x83305a8, mSymHandle.hval()=137454048, mLocal=1):Y
-*****************
-Not NULL retval
 Inside if
-DUGStandard::getNode::symY
-DUGStandard::getNode::loc
-NamedLoc(this=0x83305a8, mSymHandle.hval()=137454048, mLocal=1):Y
+^^^^^^^^^^inserting active locations^^^^^^^^^
 
-DUGStandard::getNode::prochead_
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-Not isVaried
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-Not isVaried
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-Not isVaried
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-before DUGIncomingEdgesIterator
-**** before setActive *****
-**** just before setActive ****
-Inside setActive
-setActive(mSym,mLoc)
-Inside setActive
+NamedLoc(
+    mSymHandle: SymHandle(X)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Danger Inside insertActiveSymSet
-*************
-^^^^^^^^^^^^^^^^^^^
-**** after setActive *****
-**** before setActive *****
-**** just before setActive ****
-Inside setActive
-setActive(mSym,mLoc)
-Inside setActive
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(T1)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Danger Inside insertActiveSymSet
-*************
-^^^^^^^^^^^^^^^^^^^
-**** after setActive *****
-Inside DUGIncomingEdgesIterator
-Inside DUGStandard markUseful
-Not isVaried
-**** before setActive *****
-**** just before setActive ****
-Inside setActive
-setActive(mSym,mLoc)
-Inside setActive
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(T2)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Danger Inside insertActiveSymSet
-*************
-^^^^^^^^^^^^^^^^^^^
-**** after setActive *****
-**** before setActive *****
-**** just before setActive ****
-Inside setActive
-setActive(mSym,mLoc)
-Inside setActive
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(Y1)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Danger Inside insertActiveSymSet
-*************
-^^^^^^^^^^^^^^^^^^^
-**** after setActive *****
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(T2)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(Y2)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(T2)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(Y3)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(T1)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(T2)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(Y4)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
+^^^^^^^^^^inserting active locations^^^^^^^^^
+
+NamedLoc(
+    mSymHandle: SymHandle(Y)
+    mLocal: 1
+    mFullOverlap: [  ] 
+    mPartOverlap: [  ] 
+)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Danger Inside insertActiveSymSet
 after if
 Outside dep Iter
 before Danger duaa
@@ -888,27 +1319,80 @@ Inside Danger duaa
 Inside Danger duaa
 Inside Danger duaa
 Inside Danger duaa
+Inside Danger duaa
+Inside Danger duaa
+Inside Danger duaa
+Inside Danger duaa
 after danger duaa
 before activity results for each procedure into InterActive
 Inside activity results for each procedure into InterActive
-Inside activity results for each procedure into InterActive
 before printing active syms iterators retval
-====================== InterActive
-Procedure( ProcHandle(0) )
-	ActiveLocSet = 
-	ActiveStmtList = 
 
-	ActiveMemRefList = 
-
-Procedure( head_ )
-	ActiveLocSet = 
-	ActiveStmtList = 
-
-	ActiveMemRefList = 
-
-	ActiveSymList
-		X hval = 137454008, active = 1
-		Y hval = 137454048, active = 1
-		T1 hval = 137454088, active = 1
-		Y4 hval = 137454288, active = 1
-	getActiveSizeInBytes() = 32
+InterActive(
+    Procedure( head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(X)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(T1)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(T2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y1)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y3)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(Y4)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            ) ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(X)
+            SymHandle(Y)
+            SymHandle(T1)
+            SymHandle(T2)
+            SymHandle(Y1)
+            SymHandle(Y2)
+            SymHandle(Y3)
+            SymHandle(Y4) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

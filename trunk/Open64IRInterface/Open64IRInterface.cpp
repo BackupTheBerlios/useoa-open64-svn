@@ -2727,7 +2727,8 @@ Open64IRInterface::getIndepMemRefExprIter(OA::ProcHandle h)
         fullAccuracy = false;
         break;
       }
-      
+     
+      /*
       if (isRefParam(sym)) {
 
         if (isAddrOf==true) { // deref and addressOf cancel
@@ -2740,6 +2741,24 @@ Open64IRInterface::getIndepMemRefExprIter(OA::ProcHandle h)
       } else {
         mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
       }
+      */
+
+      if(isRefParam(sym))
+      {
+          
+            bool accuracy = true;
+            mre = new OA::NamedRef(isAddrOf, accuracy, OA::MemRefExpr::USE, sym);
+            // will still get a NamedRef from this call if isAddrOf is true, which
+            // would be the case if we were passing a formal parameter as an actual
+            mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
+
+
+    // one case where we end up here is when passing an array as a parameter
+    // another is if we are just accessing a scalar that is not a reference parameter
+    } else {
+        mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
+    }
+
 
       indepList->push_back(mre);
     }
@@ -2840,6 +2859,7 @@ Open64IRInterface::getDepMemRefExprIter(OA::ProcHandle h)
         break;
       }
 
+      /*
       if (isRefParam(sym)) {
         
         if (isAddrOf==true) { // deref and addressOf cancel
@@ -2852,6 +2872,23 @@ Open64IRInterface::getDepMemRefExprIter(OA::ProcHandle h)
       } else {
         mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
       }
+      */
+
+       if(isRefParam(sym))
+      {
+            bool accuracy = true;
+            mre = new OA::NamedRef(isAddrOf, accuracy, OA::MemRefExpr::USE, sym);
+            // will still get a NamedRef from this call if isAddrOf is true, which
+            // would be the case if we were passing a formal parameter as an actual
+            mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
+
+
+    // one case where we end up here is when passing an array as a parameter
+    // another is if we are just accessing a scalar that is not a reference parameter
+    } else {
+        mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
+    }
+
 
       depList->push_back(mre);
     }
