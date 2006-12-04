@@ -2176,9 +2176,9 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
 
             if( m == OA::MemRefHandle(0) ) {
-                  bool addressTaken = true;
+                  bool addressTaken = false;
                   bool accuracy = true;
-                  OA::MemRefExpr::MemRefType mrType = OA::MemRefExpr::USE;
+                  OA::MemRefExpr::MemRefType mrType = OA::MemRefExpr::DEF;
                   OA::OA_ptr<OA::MemRefExpr> lhs_tmp_mre;
                   lhs_tmp_mre = new OA::UnnamedRef(addressTaken, accuracy, 
                           mrType, stmt);
@@ -2191,6 +2191,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                   tmp_mre = *(sMemref2mreSetMap[MemRefHandle((irhandle_t)WN_kid0(wn))].begin());
 
                   opr_param_mre = tmp_mre->clone()->setAddressTaken();
+                  opr_param_mre->setMemRefType(OA::MemRefExpr::USE);
                   sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(opr_param_mre);
                   sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
                   
