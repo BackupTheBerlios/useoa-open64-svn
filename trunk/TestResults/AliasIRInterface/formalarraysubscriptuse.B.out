@@ -1,8 +1,8 @@
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
     FORMALS = {
         [
-            < 0, SymHandle("X") >
+            < 0, SymHandle("head_::X") >
         ] }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarraysubscriptuse.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -12,21 +12,21 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("J"), F, full)
+                NamedRef( DEF, SymHandle("head_::J"), F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("T2:0:.predef_F8 = 0:X:0:anon_ptr.(J:0:.predef_I4)") =>
         [
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("T2"), F, full)
+                NamedRef( DEF, SymHandle("head_::T2"), F, full)
             MemRefHandle("0:X:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("head_::X"), F, full), 1, F, part)
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("J"), F, full)
+                NamedRef( USE, SymHandle("head_::J"), F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("X"), local > }
-    LOCATION = { < SymHandle("J"), local > }
-    LOCATION = { < SymHandle("T2"), local > }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
+    LOCATION = { < SymHandle("head_::J"), local > }
+    LOCATION = { < SymHandle("head_::T2"), local > }

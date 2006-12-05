@@ -1,9 +1,9 @@
 
-PROCEDURE = { < ProcHandle("foo_"), SymHandle("foo_") > }
+PROCEDURE = { < ProcHandle("foo_::foo_"), SymHandle("foo_::foo_") > }
     FORMALS = {
         [
-            < 0, SymHandle("X") >
-            < 1, SymHandle("Y") >
+            < 0, SymHandle("foo_::X") >
+            < 1, SymHandle("foo_::Y") >
         ] }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/formal_array_actual_inout.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -13,27 +13,27 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)*    2.000000000000000") =>
         [
             MemRefHandle("Y:0:anon_ptr.(I:0:.predef_I4)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("Y"), F, full), 1, F, part)
+                Deref( DEF, NamedRef( USE, SymHandle("foo_::Y"), F, full), 1, F, part)
             MemRefHandle("0:X:0:anon_ptr.(I:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("foo_::X"), F, full), 1, F, part)
             MemRefHandle("I:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("I"), F, full)
+                NamedRef( USE, SymHandle("foo_::I"), F, full)
             MemRefHandle("I:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("I"), F, full)
+                NamedRef( USE, SymHandle("foo_::I"), F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("foo_"), not local > }
-    LOCATION = { < SymHandle("X"), local > }
-    LOCATION = { < SymHandle("Y"), local > }
-    LOCATION = { < SymHandle("I"), local > }
+    LOCATION = { < SymHandle("foo_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::X"), local > }
+    LOCATION = { < SymHandle("foo_::Y"), local > }
+    LOCATION = { < SymHandle("foo_::I"), local > }
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("foo_::head_"), SymHandle("foo_::head_") > }
     FORMALS = {
         [
-            < 0, SymHandle("X") >
-            < 1, SymHandle("Y") >
+            < 0, SymHandle("head_::X") >
+            < 1, SymHandle("head_::Y") >
         ] }
     MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
@@ -42,24 +42,24 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
     MEMREFEXPRS = { StmtHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") =>
         [
             MemRefHandle("&0:X:0:anon_ptr.") => 
-                NamedRef( USE, SymHandle("X"), F, full)
+                NamedRef( USE, SymHandle("head_::X"), F, full)
             MemRefHandle("&0:Y:0:anon_ptr.") => 
-                NamedRef( USE, SymHandle("Y"), F, full)
+                NamedRef( USE, SymHandle("head_::Y"), F, full)
         ] }
     CALLSITES = { StmtHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") =>
         [
             CallHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") => 
-                NamedRef( USE, SymHandle("foo_"), F, full)
+                NamedRef( USE, SymHandle("foo_::foo_"), F, full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("foo_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)") =>
         [
-            < 0, NamedRef( USE, SymHandle("X"), F, full) >
-            < 1, NamedRef( USE, SymHandle("Y"), F, full) >
+            < 0, NamedRef( USE, SymHandle("head_::X"), F, full) >
+            < 1, NamedRef( USE, SymHandle("head_::Y"), F, full) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("foo_"), not local > }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("X"), local > }
-    LOCATION = { < SymHandle("Y"), local > }
+    LOCATION = { < SymHandle("foo_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
+    LOCATION = { < SymHandle("head_::Y"), local > }

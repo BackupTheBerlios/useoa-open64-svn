@@ -1,7 +1,7 @@
 
 graph ICFG:
 
-    subgraph head__0:
+    subgraph head_::head__0:
 
         Node 6: 
             ==  ICFG ENTRY_NODE 6 == (entry)
@@ -51,7 +51,7 @@ return
             
 
 
-    subgraph bar__1:
+    subgraph head_::bar__1:
 
         Node 18: 
             ==  ICFG ENTRY_NODE 18 ==
@@ -93,8 +93,8 @@ return
 
 digraph ICFG {
     node [shape=rectangle];
-    subgraph cluster_head__0 {
-        label="head__0"
+    subgraph cluster_head_::head__0 {
+        label="head_::head__0"
         6 [ label="==  ICFG ENTRY_NODE 6 == (entry)\n" ];
         10 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ==  ICFG CFLOW_NODE 10 ==\n\nT1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8\n" ];
@@ -108,8 +108,8 @@ digraph ICFG {
         6 -> 10 [ label="" ];
         20 -> 21 [ label="" ];
     }
-    subgraph cluster_bar__1 {
-        label="bar__1"
+    subgraph cluster_head_::bar__1 {
+        label="head_::bar__1"
         18 [ label="==  ICFG ENTRY_NODE 18 ==\n" ];
         19 [ label="==  ICFG EXIT_NODE 19 ==\n" ];
         22 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END

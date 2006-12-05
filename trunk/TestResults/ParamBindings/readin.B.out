@@ -3,28 +3,28 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(readin_)	 => 
+                    ProcHandle(ch2303_::readin_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&FILENAME:0:anon_ptr.(0))	 => SymHandle(NAME)
-                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(&0:B:0:anon_ptr.)	 => SymHandle(Y)
-                            MemRefHandle(&NOS:0:.predef_I4)	 => SymHandle(N)
-                            MemRefHandle(20)	 => SymHandle(.len)
+                            MemRefHandle(&FILENAME:0:anon_ptr.(0))	 => SymHandle(readin_::NAME)
+                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(readin_::X)
+                            MemRefHandle(&0:B:0:anon_ptr.)	 => SymHandle(readin_::Y)
+                            MemRefHandle(&NOS:0:.predef_I4)	 => SymHandle(readin_::N)
+                            MemRefHandle(20)	 => SymHandle(readin_::.len)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(NAME)	 => MemRefHandle(&FILENAME:0:anon_ptr.(0))
-                    SymHandle(.len)	 => MemRefHandle(20)
-                    SymHandle(X)	 => MemRefHandle(&0:A:0:anon_ptr.)
-                    SymHandle(Y)	 => MemRefHandle(&0:B:0:anon_ptr.)
-                    SymHandle(N)	 => MemRefHandle(&NOS:0:.predef_I4)
+                    SymHandle(readin_::NAME)	 => MemRefHandle(&FILENAME:0:anon_ptr.(0))
+                    SymHandle(readin_::.len)	 => MemRefHandle(20)
+                    SymHandle(readin_::X)	 => MemRefHandle(&0:A:0:anon_ptr.)
+                    SymHandle(readin_::Y)	 => MemRefHandle(&0:B:0:anon_ptr.)
+                    SymHandle(readin_::N)	 => MemRefHandle(&NOS:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(readin_)	 => [ SymHandle(N) ] 
+            ProcHandle(ch2303_::readin_)	 => [ SymHandle(readin_::N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(&FILENAME:0:anon_ptr.(0))    MemRefHandle(&0:A:0:anon_ptr.)    MemRefHandle(&0:B:0:anon_ptr.)    MemRefHandle(&NOS:0:.predef_I4)    MemRefHandle(20) ] 
@@ -62,11 +62,11 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(NAME)	 => ExprHandle(&FILENAME:0:anon_ptr.(0))
-                    SymHandle(.len)	 => ExprHandle(20)
-                    SymHandle(X)	 => ExprHandle(&0:A:0:anon_ptr.)
-                    SymHandle(Y)	 => ExprHandle(&0:B:0:anon_ptr.)
-                    SymHandle(N)	 => ExprHandle(&NOS:0:.predef_I4)
+                    SymHandle(readin_::NAME)	 => ExprHandle(&FILENAME:0:anon_ptr.(0))
+                    SymHandle(readin_::.len)	 => ExprHandle(20)
+                    SymHandle(readin_::X)	 => ExprHandle(&0:A:0:anon_ptr.)
+                    SymHandle(readin_::Y)	 => ExprHandle(&0:B:0:anon_ptr.)
+                    SymHandle(readin_::N)	 => ExprHandle(&NOS:0:.predef_I4)
 
 
 )

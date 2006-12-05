@@ -1,6 +1,6 @@
 
 mProcToReachConstsMap: ProcHandle	 => ReachConsts
-        ProcHandle(constprop_loop2_)	 => 
+        ProcHandle(constprop_loop2_::constprop_loop2_)	 => 
         ReachConstStandard: 
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
@@ -25,7 +25,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                             ConstDef(
                                 Location: 
                                 NamedLoc(
-                                    mSymHandle: SymHandle(Y)
+                                    mSymHandle: SymHandle(constprop_loop2_::Y)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
@@ -48,7 +48,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                             ConstDef(
                                 Location: 
                                 NamedLoc(
-                                    mSymHandle: SymHandle(X)
+                                    mSymHandle: SymHandle(constprop_loop2_::X)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
@@ -63,7 +63,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                             ConstDef(
                                 Location: 
                                 NamedLoc(
-                                    mSymHandle: SymHandle(X)
+                                    mSymHandle: SymHandle(constprop_loop2_::X)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
@@ -78,7 +78,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                             ConstDef(
                                 Location: 
                                 NamedLoc(
-                                    mSymHandle: SymHandle(X)
+                                    mSymHandle: SymHandle(constprop_loop2_::X)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
@@ -89,7 +89,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                             ConstDef(
                                 Location: 
                                 NamedLoc(
-                                    mSymHandle: SymHandle(Y)
+                                    mSymHandle: SymHandle(constprop_loop2_::Y)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
@@ -104,7 +104,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                             ConstDef(
                                 Location: 
                                 NamedLoc(
-                                    mSymHandle: SymHandle(X)
+                                    mSymHandle: SymHandle(constprop_loop2_::X)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 

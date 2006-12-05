@@ -1,8 +1,8 @@
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
     FORMALS = {
         [
-            < 0, SymHandle("X") >
+            < 0, SymHandle("head_::X") >
         ] }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarrayactualcalleeuseout.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -12,28 +12,28 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             MemRefHandle("&0:X:0:anon_ptr.") => 
-                NamedRef( USE, SymHandle("X"), F, full)
+                NamedRef( USE, SymHandle("head_::X"), F, full)
         ] }
     CALLSITES = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             CallHandle("bar_(&0:X:0:anon_ptr.)") => 
-                NamedRef( USE, SymHandle("bar_"), F, full)
+                NamedRef( USE, SymHandle("head_::bar_"), F, full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
-            < 0, NamedRef( USE, SymHandle("X"), F, full) >
+            < 0, NamedRef( USE, SymHandle("head_::X"), F, full) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("bar_"), not local > }
-    LOCATION = { < SymHandle("X"), local > }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::bar_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
 
-PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
+PROCEDURE = { < ProcHandle("head_::bar_"), SymHandle("head_::bar_") > }
     FORMALS = {
         [
-            < 0, SymHandle("A") >
+            < 0, SymHandle("bar_::A") >
         ] }
     MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
@@ -42,9 +42,9 @@ PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
     MEMREFEXPRS = { StmtHandle("B:0:.predef_F8 = 0:A:0:anon_ptr.(1)") =>
         [
             MemRefHandle("B:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("B"), F, full)
+                NamedRef( DEF, SymHandle("bar_::B"), F, full)
             MemRefHandle("0:A:0:anon_ptr.(1)") => 
-                Deref( USE, NamedRef( USE, SymHandle("A"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("bar_::A"), F, full), 1, F, part)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
@@ -52,6 +52,6 @@ PROCEDURE = { < ProcHandle("bar_"), SymHandle("bar_") > }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("bar_"), not local > }
-    LOCATION = { < SymHandle("A"), local > }
-    LOCATION = { < SymHandle("B"), local > }
+    LOCATION = { < SymHandle("head_::bar_"), not local > }
+    LOCATION = { < SymHandle("bar_::A"), local > }
+    LOCATION = { < SymHandle("bar_::B"), local > }

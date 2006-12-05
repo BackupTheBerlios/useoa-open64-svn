@@ -9,7 +9,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(J)
+    mSymHandle: SymHandle(head_::J)
 )
 
 ============================================
@@ -19,7 +19,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(head_::X)
 )
 
 	mre = 
@@ -27,7 +27,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(T2)
+    mSymHandle: SymHandle(head_::T2)
 )
 
 	mre = 
@@ -35,7 +35,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(J)
+    mSymHandle: SymHandle(head_::J)
 )
 
 ============================================

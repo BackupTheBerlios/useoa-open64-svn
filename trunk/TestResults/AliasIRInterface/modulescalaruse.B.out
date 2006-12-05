@@ -1,13 +1,13 @@
 
-PROCEDURE = { < ProcHandle("globals_"), SymHandle("globals_") > }
+PROCEDURE = { < ProcHandle("globals_::globals_"), SymHandle("globals_::globals_") > }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/modulescalaruse.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    LOCATION = { < SymHandle("globals_"), not local > }
+    LOCATION = { < SymHandle("globals_::globals_"), not local > }
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
     MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
@@ -19,14 +19,14 @@ PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
     MEMREFEXPRS = { StmtHandle("T2:0:.predef_F8 = X:0:.predef_F8") =>
         [
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("T2"), F, full)
+                NamedRef( DEF, SymHandle("head_::T2"), F, full)
             MemRefHandle("X:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("X"), F, full)
+                NamedRef( USE, SymHandle("globals_::X"), F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("globals_"), not local > }
-    LOCATION = { < SymHandle("X"), not local > }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("T2"), local > }
+    LOCATION = { < SymHandle("globals_::globals_"), not local > }
+    LOCATION = { < SymHandle("globals_::X"), not local > }
+    LOCATION = { < SymHandle("globals_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::T2"), local > }

@@ -2,13 +2,13 @@
 graph DGraph:
 
     Node 1: 
-        head_ [defined]
+        head_::head_ [defined]
 
     Node 2: 
-        foo_ [defined]
+        head_::foo_ [defined]
 
     Node 3: 
-        bar_ [defined]
+        head_::bar_ [defined]
 
     Edge: 1 => 2
         foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))
@@ -18,17 +18,17 @@ graph DGraph:
 
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
-        foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))	 => [ foo_ ] 
-        bar_(&B:0:.predef_F8)	 => [ bar_ ] 
+        foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))	 => [ head_::foo_ ] 
+        bar_(&B:0:.predef_F8)	 => [ head_::bar_ ] 
 
 digraph DGraph {
     node [shape=rectangle];
-    1 [ label="head_ [defined]" ];
-    2 [ label="foo_ [defined]" ];
-    3 [ label="bar_ [defined]" ];
+    1 [ label="head_::head_ [defined]" ];
+    2 [ label="head_::foo_ [defined]" ];
+    3 [ label="head_::bar_ [defined]" ];
     1 -> 2 [ label="foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))" ];
     2 -> 3 [ label="bar_(&B:0:.predef_F8)" ];}
 
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
-        foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))	 => [ foo_ ] 
-        bar_(&B:0:.predef_F8)	 => [ bar_ ] 
+        foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))	 => [ head_::foo_ ] 
+        bar_(&B:0:.predef_F8)	 => [ head_::bar_ ] 

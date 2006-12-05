@@ -1844,6 +1844,17 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
      }
      break;
+
+     case OPR_NEG:
+     {
+         for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
+         {
+
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+         }
+
+     }
+     break;
      
     case OPR_LDID:
     case OPR_LDBITS: 
@@ -2748,28 +2759,6 @@ Open64IRInterface::getIndepMemRefExprIter(OA::ProcHandle h)
         mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
       }
 
-      /*
-Priya:  I went with the above code because your code below
-    1) is not formatted for 80 column
-    2) has weird indentation.
-      if(isRefParam(sym))
-      {
-          
-            bool accuracy = true;
-            mre = new OA::NamedRef(isAddrOf, accuracy, OA::MemRefExpr::USE, sym);
-            // will still get a NamedRef from this call if isAddrOf is true, which
-            // would be the case if we were passing a formal parameter as an actual
-            mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
-
-
-    // one case where we end up here is when passing an array as a parameter
-    // another is if we are just accessing a scalar that is not a reference parameter
-    } else {
-        mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
-    }
-  */
-
-
       indepList->push_back(mre);
     }
   }
@@ -2869,36 +2858,18 @@ Open64IRInterface::getDepMemRefExprIter(OA::ProcHandle h)
         break;
       }
 
-      /*
+
+      // if the symbol is a reference parameter, then the MemRefExpr
+      // for an access to the symbol needs a deref
       if (isRefParam(sym)) {
-        
-        if (isAddrOf==true) { // deref and addressOf cancel
-          isAddrOf = false;
-          mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
-        } else { 
-          mre = new OA::NamedRef(isAddrOf,fullAccuracy,OA::MemRefExpr::USE,sym);
-          mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
-        }
+        mre = new OA::NamedRef(false,true,OA::MemRefExpr::USE,sym);
+        mre = new OA::Deref(false, fullAccuracy, OA::MemRefExpr::USE, mre, 1);
       } else {
+        // one case where we end up here is when passing an array as a parameter
+        // another is if we are just accessing a scalar that is not a
+        // reference parameter
         mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
       }
-      */
-
-       if(isRefParam(sym))
-      {
-            bool accuracy = true;
-            mre = new OA::NamedRef(isAddrOf, accuracy, OA::MemRefExpr::USE, sym);
-            // will still get a NamedRef from this call if isAddrOf is true, which
-            // would be the case if we were passing a formal parameter as an actual
-            mre = new OA::Deref(false, fullAccuracy, hty, mre, 1);
-
-
-    // one case where we end up here is when passing an array as a parameter
-    // another is if we are just accessing a scalar that is not a reference parameter
-    } else {
-        mre = new OA::NamedRef(isAddrOf, fullAccuracy, hty, sym);
-    }
-
 
       depList->push_back(mre);
     }

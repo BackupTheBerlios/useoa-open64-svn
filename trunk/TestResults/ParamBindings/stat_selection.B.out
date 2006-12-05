@@ -3,28 +3,28 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(stats_)	 => 
+                    ProcHandle(ch2307_::stats_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&0:X:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(N)
-                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(MEAN)
-                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(STD_DEV)
-                            MemRefHandle(&MEDIAN:0:.predef_F4)	 => SymHandle(MEDIAN)
+                            MemRefHandle(&0:X:0:anon_ptr.)	 => SymHandle(SELECTION::X)
+                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(SELECTION::N)
+                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(SELECTION::MEAN)
+                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(SELECTION::STD_DEV)
+                            MemRefHandle(&MEDIAN:0:.predef_F4)	 => SymHandle(SELECTION::MEDIAN)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(&N:0:.predef_I4)
-                    SymHandle(X)	 => MemRefHandle(&0:X:0:anon_ptr.)
-                    SymHandle(MEAN)	 => MemRefHandle(&M:0:.predef_F4)
-                    SymHandle(STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
-                    SymHandle(MEDIAN)	 => MemRefHandle(&MEDIAN:0:.predef_F4)
+                    SymHandle(SELECTION::N)	 => MemRefHandle(&N:0:.predef_I4)
+                    SymHandle(SELECTION::X)	 => MemRefHandle(&0:X:0:anon_ptr.)
+                    SymHandle(SELECTION::MEAN)	 => MemRefHandle(&M:0:.predef_F4)
+                    SymHandle(SELECTION::STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
+                    SymHandle(SELECTION::MEDIAN)	 => MemRefHandle(&MEDIAN:0:.predef_F4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(stats_)	 => [ SymHandle(N)    SymHandle(X)    SymHandle(MEAN)    SymHandle(STD_DEV)    SymHandle(MEDIAN) ] 
+            ProcHandle(ch2307_::stats_)	 => [ SymHandle(SELECTION::N)    SymHandle(SELECTION::X)    SymHandle(SELECTION::MEAN)    SymHandle(SELECTION::STD_DEV)    SymHandle(SELECTION::MEDIAN) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => [ MemRefHandle(&0:X:0:anon_ptr.)    MemRefHandle(&N:0:.predef_I4)    MemRefHandle(&M:0:.predef_F4)    MemRefHandle(&SD:0:.predef_F4)    MemRefHandle(&MEDIAN:0:.predef_F4) ] 
@@ -63,11 +63,11 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(N)	 => ExprHandle(&N:0:.predef_I4)
-                    SymHandle(X)	 => ExprHandle(&0:X:0:anon_ptr.)
-                    SymHandle(MEAN)	 => ExprHandle(&M:0:.predef_F4)
-                    SymHandle(STD_DEV)	 => ExprHandle(&SD:0:.predef_F4)
-                    SymHandle(MEDIAN)	 => ExprHandle(&MEDIAN:0:.predef_F4)
+                    SymHandle(SELECTION::N)	 => ExprHandle(&N:0:.predef_I4)
+                    SymHandle(SELECTION::X)	 => ExprHandle(&0:X:0:anon_ptr.)
+                    SymHandle(SELECTION::MEAN)	 => ExprHandle(&M:0:.predef_F4)
+                    SymHandle(SELECTION::STD_DEV)	 => ExprHandle(&SD:0:.predef_F4)
+                    SymHandle(SELECTION::MEDIAN)	 => ExprHandle(&MEDIAN:0:.predef_F4)
 
 
 )

@@ -14,7 +14,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -26,7 +26,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(RES)
+    mSymHandle: SymHandle(factorial_::RES)
 )
 
 ============================================
@@ -36,7 +36,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(RES)
+    mSymHandle: SymHandle(factorial_::RES)
 )
 
 	mre = 
@@ -49,7 +49,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -64,9 +64,9 @@ UnnamedRef(
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
-    mMemRefType: USE
+    mMemRefType: DEF
     mStmtHandle: StmtHandle(RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1))
 )
 
@@ -80,7 +80,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -92,7 +92,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(RES)
+    mSymHandle: SymHandle(factorial_::RES)
 )
 
 ============================================
@@ -105,7 +105,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(N)
+    mSymHandle: SymHandle(recfunc_::N)
 )
 
 	mre = 
@@ -113,7 +113,7 @@ NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(N)
+    mSymHandle: SymHandle(recfunc_::N)
 )
 
 ============================================

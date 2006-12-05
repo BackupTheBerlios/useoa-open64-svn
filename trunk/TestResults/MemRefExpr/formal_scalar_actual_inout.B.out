@@ -14,7 +14,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(foo_::Y)
     )
     mNumDeref: 1
 )
@@ -29,7 +29,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(foo_::X)
     )
     mNumDeref: 1
 )
@@ -46,7 +46,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(head_::X)
 )
 
 	mre = 
@@ -54,7 +54,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(Y)
+    mSymHandle: SymHandle(head_::Y)
 )
 
 ============================================

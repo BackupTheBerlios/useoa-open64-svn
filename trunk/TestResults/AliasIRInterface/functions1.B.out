@@ -1,8 +1,8 @@
 
-PROCEDURE = { < ProcHandle("foo_"), SymHandle("foo_") > }
+PROCEDURE = { < ProcHandle("foo_::foo_"), SymHandle("foo_::foo_") > }
     FORMALS = {
         [
-            < 0, SymHandle("N") >
+            < 0, SymHandle("foo_::N") >
         ] }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/Alias/functions1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -12,28 +12,28 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("if (N:0:.predef_I4==1)") =>
         [
             MemRefHandle("N:0:.predef_I4") => 
-                Deref( USE, NamedRef( USE, SymHandle("N"), F, full), 1, F, full)
+                Deref( USE, NamedRef( USE, SymHandle("foo_::N"), F, full), 1, F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 1") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("RES"), F, full)
+                NamedRef( DEF, SymHandle("foo_::RES"), F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 5") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("RES"), F, full)
+                NamedRef( DEF, SymHandle("foo_::RES"), F, full)
         ] }
     MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("RES"), F, full)
+                NamedRef( USE, SymHandle("foo_::RES"), F, full)
         ] }
-    LOCATION = { < SymHandle("foo_"), not local > }
-    LOCATION = { < SymHandle("RES"), local > }
-    LOCATION = { < SymHandle("N"), local > }
+    LOCATION = { < SymHandle("foo_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::RES"), local > }
+    LOCATION = { < SymHandle("foo_::N"), local > }
 
-PROCEDURE = { < ProcHandle("functiontest_"), SymHandle("functiontest_") > }
+PROCEDURE = { < ProcHandle("foo_::functiontest_"), SymHandle("foo_::functiontest_") > }
     MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
@@ -41,18 +41,18 @@ PROCEDURE = { < ProcHandle("functiontest_"), SymHandle("functiontest_") > }
     MEMREFEXPRS = { StmtHandle("N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))") =>
         [
             MemRefHandle("N:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("N"), F, full)
+                NamedRef( DEF, SymHandle("functiontest_::N"), F, full)
             MemRefHandle("&N:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("N"), T, full)
+                NamedRef( USE, SymHandle("functiontest_::N"), T, full)
         ] }
     CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))") =>
         [
             CallHandle("foo_(&N:0:.predef_I4)") => 
-                NamedRef( USE, SymHandle("foo_"), F, full)
+                NamedRef( USE, SymHandle("foo_::foo_"), F, full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("foo_(&N:0:.predef_I4)") =>
         [
-            < 0, NamedRef( USE, SymHandle("N"), T, full) >
+            < 0, NamedRef( USE, SymHandle("functiontest_::N"), T, full) >
         ] }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [
@@ -63,6 +63,6 @@ PROCEDURE = { < ProcHandle("functiontest_"), SymHandle("functiontest_") > }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("foo_"), not local > }
-    LOCATION = { < SymHandle("functiontest_"), not local > }
-    LOCATION = { < SymHandle("N"), local > }
+    LOCATION = { < SymHandle("foo_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::functiontest_"), not local > }
+    LOCATION = { < SymHandle("functiontest_::N"), local > }

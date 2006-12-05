@@ -1,7 +1,7 @@
 
 graph ICFG:
 
-    subgraph bar__0:
+    subgraph bar_::bar__0:
 
         Node 10: 
             ==  ICFG ENTRY_NODE 10 ==
@@ -53,7 +53,7 @@ return (RES:0:.predef_I4)
             
 
 
-    subgraph foo__1:
+    subgraph bar_::foo__1:
 
         Node 22: 
             ==  ICFG ENTRY_NODE 22 ==
@@ -111,7 +111,7 @@ return (RES:0:.predef_I4)
             
 
 
-    subgraph functiontest__2:
+    subgraph bar_::functiontest__2:
 
         Node 36: 
             ==  ICFG ENTRY_NODE 36 == (entry)
@@ -182,8 +182,8 @@ return
 
 digraph ICFG {
     node [shape=rectangle];
-    subgraph cluster_bar__0 {
-        label="bar__0"
+    subgraph cluster_bar_::bar__0 {
+        label="bar_::bar__0"
         10 [ label="==  ICFG ENTRY_NODE 10 ==\n" ];
         11 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ==  ICFG CFLOW_NODE 11 ==\n\nif (N:0:.predef_I4==1)\n" ];
@@ -198,8 +198,8 @@ digraph ICFG {
         13 -> 14 [ label="" ];
         14 -> 15 [ label="" ];
     }
-    subgraph cluster_foo__1 {
-        label="foo__1"
+    subgraph cluster_bar_::foo__1 {
+        label="bar_::foo__1"
         22 [ label="==  ICFG ENTRY_NODE 22 ==\n" ];
         23 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ==  ICFG CFLOW_NODE 23 ==\n\nif (N:0:.predef_I4==1)\n" ];
@@ -216,8 +216,8 @@ digraph ICFG {
         29 -> 30 [ label="" ];
         30 -> 31 [ label="" ];
     }
-    subgraph cluster_functiontest__2 {
-        label="functiontest__2"
+    subgraph cluster_bar_::functiontest__2 {
+        label="bar_::functiontest__2"
         36 [ label="==  ICFG ENTRY_NODE 36 == (entry)\n" ];
         40 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ==  ICFG CFLOW_NODE 40 ==\n\n" ];

@@ -3,22 +3,22 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(gcd_)	 => 
+                    ProcHandle(ch2608_::gcd_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&I:0:.predef_I4)	 => SymHandle(A)
-                            MemRefHandle(&J:0:.predef_I4)	 => SymHandle(B)
+                            MemRefHandle(&I:0:.predef_I4)	 => SymHandle(gcd_::A)
+                            MemRefHandle(&J:0:.predef_I4)	 => SymHandle(gcd_::B)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(A)	 => MemRefHandle(&I:0:.predef_I4)
-                    SymHandle(B)	 => MemRefHandle(&J:0:.predef_I4)
+                    SymHandle(gcd_::A)	 => MemRefHandle(&I:0:.predef_I4)
+                    SymHandle(gcd_::B)	 => MemRefHandle(&J:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(gcd_)	 => [ SymHandle(A)    SymHandle(B) ] 
+            ProcHandle(ch2608_::gcd_)	 => [ SymHandle(gcd_::A)    SymHandle(gcd_::B) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => [ MemRefHandle(&I:0:.predef_I4)    MemRefHandle(&J:0:.predef_I4) ] 
@@ -41,8 +41,8 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(gcd_(&I:0:.predef_I4, &J:0:.predef_I4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(A)	 => ExprHandle(&I:0:.predef_I4)
-                    SymHandle(B)	 => ExprHandle(&J:0:.predef_I4)
+                    SymHandle(gcd_::A)	 => ExprHandle(&I:0:.predef_I4)
+                    SymHandle(gcd_::B)	 => ExprHandle(&J:0:.predef_I4)
 
 
 )

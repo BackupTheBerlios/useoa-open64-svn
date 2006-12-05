@@ -3,24 +3,24 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(sub1_(&R:0:.predef_F8, &A:0:.predef_F8, &C:0:.predef_F8))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(sub1_)	 => 
+                    ProcHandle(precision_definition_::sub1_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&R:0:.predef_F8)	 => SymHandle(RADIUS)
-                            MemRefHandle(&A:0:.predef_F8)	 => SymHandle(AREA)
-                            MemRefHandle(&C:0:.predef_F8)	 => SymHandle(CIRCUM)
+                            MemRefHandle(&R:0:.predef_F8)	 => SymHandle(sub1_::RADIUS)
+                            MemRefHandle(&A:0:.predef_F8)	 => SymHandle(sub1_::AREA)
+                            MemRefHandle(&C:0:.predef_F8)	 => SymHandle(sub1_::CIRCUM)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(sub1_(&R:0:.predef_F8, &A:0:.predef_F8, &C:0:.predef_F8))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(RADIUS)	 => MemRefHandle(&R:0:.predef_F8)
-                    SymHandle(AREA)	 => MemRefHandle(&A:0:.predef_F8)
-                    SymHandle(CIRCUM)	 => MemRefHandle(&C:0:.predef_F8)
+                    SymHandle(sub1_::RADIUS)	 => MemRefHandle(&R:0:.predef_F8)
+                    SymHandle(sub1_::AREA)	 => MemRefHandle(&A:0:.predef_F8)
+                    SymHandle(sub1_::CIRCUM)	 => MemRefHandle(&C:0:.predef_F8)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(sub1_)	 => [ SymHandle(RADIUS)    SymHandle(AREA)    SymHandle(CIRCUM) ] 
+            ProcHandle(precision_definition_::sub1_)	 => [ SymHandle(sub1_::RADIUS)    SymHandle(sub1_::AREA)    SymHandle(sub1_::CIRCUM) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(sub1_(&R:0:.predef_F8, &A:0:.predef_F8, &C:0:.predef_F8))	 => [ MemRefHandle(&R:0:.predef_F8)    MemRefHandle(&A:0:.predef_F8)    MemRefHandle(&C:0:.predef_F8) ] 
@@ -48,9 +48,9 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(sub1_(&R:0:.predef_F8, &A:0:.predef_F8, &C:0:.predef_F8))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(RADIUS)	 => ExprHandle(&R:0:.predef_F8)
-                    SymHandle(AREA)	 => ExprHandle(&A:0:.predef_F8)
-                    SymHandle(CIRCUM)	 => ExprHandle(&C:0:.predef_F8)
+                    SymHandle(sub1_::RADIUS)	 => ExprHandle(&R:0:.predef_F8)
+                    SymHandle(sub1_::AREA)	 => ExprHandle(&A:0:.predef_F8)
+                    SymHandle(sub1_::CIRCUM)	 => ExprHandle(&C:0:.predef_F8)
 
 
 )

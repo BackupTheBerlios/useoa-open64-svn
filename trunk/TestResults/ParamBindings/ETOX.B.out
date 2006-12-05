@@ -3,30 +3,31 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(etox_(&X:0:.predef_F4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(etox_)	 => 
+                    ProcHandle(ch2609_::etox_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&X:0:.predef_F4)	 => SymHandle(X)
+                            MemRefHandle(&X:0:.predef_F4)	 => SymHandle(etox_::X)
 
 
             CallHandle(etox_(&0:Y:0:anon_ptr.))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(etox_)	 => 
+                    ProcHandle(ch2609_::etox_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&0:Y:0:anon_ptr.)	 => SymHandle(X)
+                            MemRefHandle(&0:Y:0:anon_ptr.)	 => SymHandle(etox_::X)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(etox_(&X:0:.predef_F4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(&X:0:.predef_F4)
+                    SymHandle(etox_::X)	 => MemRefHandle(&X:0:.predef_F4)
 
             CallHandle(etox_(&0:Y:0:anon_ptr.))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(&0:Y:0:anon_ptr.)
+                    SymHandle(etox_::X)	 => MemRefHandle(&0:Y:0:anon_ptr.)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(ch2609_::etox_)	 => [ SymHandle(etox_::X) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(etox_(&X:0:.predef_F4))	 => [ MemRefHandle(&X:0:.predef_F4) ] 
@@ -51,11 +52,11 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(etox_(&X:0:.predef_F4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(X)	 => ExprHandle(&X:0:.predef_F4)
+                    SymHandle(etox_::X)	 => ExprHandle(&X:0:.predef_F4)
 
             CallHandle(etox_(&0:Y:0:anon_ptr.))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(X)	 => ExprHandle(&0:Y:0:anon_ptr.)
+                    SymHandle(etox_::X)	 => ExprHandle(&0:Y:0:anon_ptr.)
 
 
 )

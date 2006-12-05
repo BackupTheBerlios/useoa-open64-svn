@@ -3,48 +3,48 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(interact_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &OK:0:.log.4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(interact_)	 => 
+                    ProcHandle(ch2203_::interact_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&P:0:.predef_F4)	 => SymHandle(A)
-                            MemRefHandle(&Q:0:.predef_F4)	 => SymHandle(B)
-                            MemRefHandle(&R:0:.predef_F4)	 => SymHandle(C)
-                            MemRefHandle(&OK:0:.log.4)	 => SymHandle(OK)
+                            MemRefHandle(&P:0:.predef_F4)	 => SymHandle(interact_::A)
+                            MemRefHandle(&Q:0:.predef_F4)	 => SymHandle(interact_::B)
+                            MemRefHandle(&R:0:.predef_F4)	 => SymHandle(interact_::C)
+                            MemRefHandle(&OK:0:.log.4)	 => SymHandle(interact_::OK)
 
 
             CallHandle(solve_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &ROOT1:0:.predef_F4, &ROOT2:0:.predef_F4, &IFAIL:0:.predef_I4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(solve_)	 => 
+                    ProcHandle(ch2203_::solve_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&P:0:.predef_F4)	 => SymHandle(E)
-                            MemRefHandle(&Q:0:.predef_F4)	 => SymHandle(F)
-                            MemRefHandle(&R:0:.predef_F4)	 => SymHandle(G)
-                            MemRefHandle(&ROOT1:0:.predef_F4)	 => SymHandle(ROOT1)
-                            MemRefHandle(&ROOT2:0:.predef_F4)	 => SymHandle(ROOT2)
-                            MemRefHandle(&IFAIL:0:.predef_I4)	 => SymHandle(IFAIL)
+                            MemRefHandle(&P:0:.predef_F4)	 => SymHandle(solve_::E)
+                            MemRefHandle(&Q:0:.predef_F4)	 => SymHandle(solve_::F)
+                            MemRefHandle(&R:0:.predef_F4)	 => SymHandle(solve_::G)
+                            MemRefHandle(&ROOT1:0:.predef_F4)	 => SymHandle(solve_::ROOT1)
+                            MemRefHandle(&ROOT2:0:.predef_F4)	 => SymHandle(solve_::ROOT2)
+                            MemRefHandle(&IFAIL:0:.predef_I4)	 => SymHandle(solve_::IFAIL)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(interact_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &OK:0:.log.4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(A)	 => MemRefHandle(&P:0:.predef_F4)
-                    SymHandle(B)	 => MemRefHandle(&Q:0:.predef_F4)
-                    SymHandle(C)	 => MemRefHandle(&R:0:.predef_F4)
-                    SymHandle(OK)	 => MemRefHandle(&OK:0:.log.4)
+                    SymHandle(interact_::A)	 => MemRefHandle(&P:0:.predef_F4)
+                    SymHandle(interact_::B)	 => MemRefHandle(&Q:0:.predef_F4)
+                    SymHandle(interact_::C)	 => MemRefHandle(&R:0:.predef_F4)
+                    SymHandle(interact_::OK)	 => MemRefHandle(&OK:0:.log.4)
 
             CallHandle(solve_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &ROOT1:0:.predef_F4, &ROOT2:0:.predef_F4, &IFAIL:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(E)	 => MemRefHandle(&P:0:.predef_F4)
-                    SymHandle(F)	 => MemRefHandle(&Q:0:.predef_F4)
-                    SymHandle(G)	 => MemRefHandle(&R:0:.predef_F4)
-                    SymHandle(ROOT1)	 => MemRefHandle(&ROOT1:0:.predef_F4)
-                    SymHandle(ROOT2)	 => MemRefHandle(&ROOT2:0:.predef_F4)
-                    SymHandle(IFAIL)	 => MemRefHandle(&IFAIL:0:.predef_I4)
+                    SymHandle(solve_::E)	 => MemRefHandle(&P:0:.predef_F4)
+                    SymHandle(solve_::F)	 => MemRefHandle(&Q:0:.predef_F4)
+                    SymHandle(solve_::G)	 => MemRefHandle(&R:0:.predef_F4)
+                    SymHandle(solve_::ROOT1)	 => MemRefHandle(&ROOT1:0:.predef_F4)
+                    SymHandle(solve_::ROOT2)	 => MemRefHandle(&ROOT2:0:.predef_F4)
+                    SymHandle(solve_::IFAIL)	 => MemRefHandle(&IFAIL:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(interact_)	 => [ SymHandle(OK) ] 
-            ProcHandle(solve_)	 => [ SymHandle(E)    SymHandle(F)    SymHandle(G)    SymHandle(ROOT1)    SymHandle(ROOT2)    SymHandle(IFAIL) ] 
+            ProcHandle(ch2203_::interact_)	 => [ SymHandle(interact_::OK) ] 
+            ProcHandle(ch2203_::solve_)	 => [ SymHandle(solve_::E)    SymHandle(solve_::F)    SymHandle(solve_::G)    SymHandle(solve_::ROOT1)    SymHandle(solve_::ROOT2)    SymHandle(solve_::IFAIL) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(interact_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &OK:0:.log.4))	 => [ MemRefHandle(&P:0:.predef_F4)    MemRefHandle(&Q:0:.predef_F4)    MemRefHandle(&R:0:.predef_F4)    MemRefHandle(&OK:0:.log.4) ] 
@@ -109,19 +109,19 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(interact_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &OK:0:.log.4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(A)	 => ExprHandle(&P:0:.predef_F4)
-                    SymHandle(B)	 => ExprHandle(&Q:0:.predef_F4)
-                    SymHandle(C)	 => ExprHandle(&R:0:.predef_F4)
-                    SymHandle(OK)	 => ExprHandle(&OK:0:.log.4)
+                    SymHandle(interact_::A)	 => ExprHandle(&P:0:.predef_F4)
+                    SymHandle(interact_::B)	 => ExprHandle(&Q:0:.predef_F4)
+                    SymHandle(interact_::C)	 => ExprHandle(&R:0:.predef_F4)
+                    SymHandle(interact_::OK)	 => ExprHandle(&OK:0:.log.4)
 
             CallHandle(solve_(&P:0:.predef_F4, &Q:0:.predef_F4, &R:0:.predef_F4, &ROOT1:0:.predef_F4, &ROOT2:0:.predef_F4, &IFAIL:0:.predef_I4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(E)	 => ExprHandle(&P:0:.predef_F4)
-                    SymHandle(F)	 => ExprHandle(&Q:0:.predef_F4)
-                    SymHandle(G)	 => ExprHandle(&R:0:.predef_F4)
-                    SymHandle(ROOT1)	 => ExprHandle(&ROOT1:0:.predef_F4)
-                    SymHandle(ROOT2)	 => ExprHandle(&ROOT2:0:.predef_F4)
-                    SymHandle(IFAIL)	 => ExprHandle(&IFAIL:0:.predef_I4)
+                    SymHandle(solve_::E)	 => ExprHandle(&P:0:.predef_F4)
+                    SymHandle(solve_::F)	 => ExprHandle(&Q:0:.predef_F4)
+                    SymHandle(solve_::G)	 => ExprHandle(&R:0:.predef_F4)
+                    SymHandle(solve_::ROOT1)	 => ExprHandle(&ROOT1:0:.predef_F4)
+                    SymHandle(solve_::ROOT2)	 => ExprHandle(&ROOT2:0:.predef_F4)
+                    SymHandle(solve_::IFAIL)	 => ExprHandle(&IFAIL:0:.predef_I4)
 
 
 )

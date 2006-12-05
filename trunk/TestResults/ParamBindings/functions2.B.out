@@ -3,31 +3,31 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(factorial_(&N:0:.predef_I4+-1))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(factorial_)	 => 
+                    ProcHandle(factorial_::factorial_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&N:0:.predef_I4+-1)	 => SymHandle(N)
+                            MemRefHandle(&N:0:.predef_I4+-1)	 => SymHandle(factorial_::N)
 
 
             CallHandle(factorial_(&N:0:.predef_I4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(factorial_)	 => 
+                    ProcHandle(factorial_::factorial_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(N)
+                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(factorial_::N)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(factorial_(&N:0:.predef_I4+-1))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(&N:0:.predef_I4+-1)
+                    SymHandle(factorial_::N)	 => MemRefHandle(&N:0:.predef_I4+-1)
 
             CallHandle(factorial_(&N:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(&N:0:.predef_I4)
+                    SymHandle(factorial_::N)	 => MemRefHandle(&N:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(factorial_)	 => [ SymHandle(N) ] 
+            ProcHandle(factorial_::factorial_)	 => [ SymHandle(factorial_::N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(factorial_(&N:0:.predef_I4+-1))	 => [ MemRefHandle(&N:0:.predef_I4+-1) ] 
@@ -52,11 +52,11 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(factorial_(&N:0:.predef_I4+-1))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(N)	 => ExprHandle(&N:0:.predef_I4+-1)
+                    SymHandle(factorial_::N)	 => ExprHandle(&N:0:.predef_I4+-1)
 
             CallHandle(factorial_(&N:0:.predef_I4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(N)	 => ExprHandle(&N:0:.predef_I4)
+                    SymHandle(factorial_::N)	 => ExprHandle(&N:0:.predef_I4)
 
 
 )

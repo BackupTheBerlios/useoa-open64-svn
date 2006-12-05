@@ -3,37 +3,37 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(foo_)	 => 
+                    ProcHandle(head_::foo_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&X:0:anon_ptr.(1))	 => SymHandle(A)
-                            MemRefHandle(&X:0:anon_ptr.(2))	 => SymHandle(B)
-                            MemRefHandle(&Y:0:anon_ptr.(1))	 => SymHandle(C)
+                            MemRefHandle(&X:0:anon_ptr.(1))	 => SymHandle(foo_::A)
+                            MemRefHandle(&X:0:anon_ptr.(2))	 => SymHandle(foo_::B)
+                            MemRefHandle(&Y:0:anon_ptr.(1))	 => SymHandle(foo_::C)
 
 
             CallHandle(bar_(&B:0:.predef_F8))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(bar_)	 => 
+                    ProcHandle(head_::bar_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&B:0:.predef_F8)	 => SymHandle(A)
+                            MemRefHandle(&B:0:.predef_F8)	 => SymHandle(bar_::A)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(A)	 => MemRefHandle(&X:0:anon_ptr.(1))
-                    SymHandle(B)	 => MemRefHandle(&X:0:anon_ptr.(2))
-                    SymHandle(C)	 => MemRefHandle(&Y:0:anon_ptr.(1))
+                    SymHandle(foo_::A)	 => MemRefHandle(&X:0:anon_ptr.(1))
+                    SymHandle(foo_::B)	 => MemRefHandle(&X:0:anon_ptr.(2))
+                    SymHandle(foo_::C)	 => MemRefHandle(&Y:0:anon_ptr.(1))
 
             CallHandle(bar_(&B:0:.predef_F8))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(A)	 => MemRefHandle(&B:0:.predef_F8)
+                    SymHandle(bar_::A)	 => MemRefHandle(&B:0:.predef_F8)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(head_)	 => [ SymHandle(X)    SymHandle(Y) ] 
-            ProcHandle(foo_)	 => [ SymHandle(A)    SymHandle(B)    SymHandle(C) ] 
-            ProcHandle(bar_)	 => [ SymHandle(A) ] 
+            ProcHandle(head_::head_)	 => [ SymHandle(head_::X)    SymHandle(head_::Y) ] 
+            ProcHandle(head_::foo_)	 => [ SymHandle(foo_::A)    SymHandle(foo_::B)    SymHandle(foo_::C) ] 
+            ProcHandle(head_::bar_)	 => [ SymHandle(bar_::A) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => [ MemRefHandle(&X:0:anon_ptr.(1))    MemRefHandle(&X:0:anon_ptr.(2))    MemRefHandle(&Y:0:anon_ptr.(1)) ] 
@@ -68,13 +68,13 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(A)	 => ExprHandle(&X:0:anon_ptr.(1))
-                    SymHandle(B)	 => ExprHandle(&X:0:anon_ptr.(2))
-                    SymHandle(C)	 => ExprHandle(&Y:0:anon_ptr.(1))
+                    SymHandle(foo_::A)	 => ExprHandle(&X:0:anon_ptr.(1))
+                    SymHandle(foo_::B)	 => ExprHandle(&X:0:anon_ptr.(2))
+                    SymHandle(foo_::C)	 => ExprHandle(&Y:0:anon_ptr.(1))
 
             CallHandle(bar_(&B:0:.predef_F8))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(A)	 => ExprHandle(&B:0:.predef_F8)
+                    SymHandle(bar_::A)	 => ExprHandle(&B:0:.predef_F8)
 
 
 )

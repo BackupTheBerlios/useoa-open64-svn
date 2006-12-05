@@ -9,7 +9,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(head_::X)
 )
 
 ============================================
@@ -26,7 +26,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(B)
+    mSymHandle: SymHandle(bar_::B)
 )
 
 	mre = 
@@ -39,7 +39,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(A)
+        mSymHandle: SymHandle(bar_::A)
     )
     mNumDeref: 1
 )

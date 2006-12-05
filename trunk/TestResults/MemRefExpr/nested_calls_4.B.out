@@ -18,7 +18,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(P)
+    mSymHandle: SymHandle(head_::P)
 )
 
 ============================================
@@ -33,7 +33,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(head_::X)
     )
     mNumDeref: 1
 )
@@ -48,7 +48,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(head_::X)
     )
     mNumDeref: 1
 )
@@ -58,7 +58,7 @@ NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(C)
+    mSymHandle: SymHandle(head_::C)
 )
 
 	mre = 
@@ -66,7 +66,7 @@ NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(D)
+    mSymHandle: SymHandle(head_::D)
 )
 
 ============================================
@@ -81,7 +81,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(head_::X)
     )
     mNumDeref: 1
 )
@@ -91,7 +91,7 @@ NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(P)
+    mSymHandle: SymHandle(head_::P)
 )
 
 	mre = 
@@ -99,7 +99,7 @@ NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(C)
+    mSymHandle: SymHandle(head_::C)
 )
 
 	mre = 
@@ -107,7 +107,7 @@ NamedRef(
     mAddressOf: 1
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(D)
+    mSymHandle: SymHandle(head_::D)
 )
 
 ============================================
@@ -122,7 +122,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(head_::Y)
     )
     mNumDeref: 1
 )
@@ -132,7 +132,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(C)
+    mSymHandle: SymHandle(head_::C)
 )
 
 	mre = 
@@ -140,7 +140,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(D)
+    mSymHandle: SymHandle(head_::D)
 )
 
 ============================================
@@ -155,7 +155,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(head_::Y)
     )
     mNumDeref: 1
 )
@@ -165,7 +165,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(C)
+    mSymHandle: SymHandle(head_::C)
 )
 
 	mre = 
@@ -173,7 +173,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(D)
+    mSymHandle: SymHandle(head_::D)
 )
 
 ============================================
@@ -196,7 +196,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(C)
+        mSymHandle: SymHandle(foo_::C)
     )
     mNumDeref: 1
 )
@@ -211,9 +211,9 @@ UnnamedRef(
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
-    mMemRefType: USE
+    mMemRefType: DEF
     mStmtHandle: StmtHandle(C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8))
 )
 
@@ -227,7 +227,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(A)
+        mSymHandle: SymHandle(foo_::A)
     )
     mNumDeref: 1
 )
@@ -242,7 +242,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(B)
+        mSymHandle: SymHandle(foo_::B)
     )
     mNumDeref: 1
 )
@@ -259,7 +259,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(D)
+        mSymHandle: SymHandle(foo_::D)
     )
     mNumDeref: 1
 )
@@ -274,9 +274,9 @@ UnnamedRef(
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
-    mMemRefType: USE
+    mMemRefType: DEF
     mStmtHandle: StmtHandle(D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8))
 )
 
@@ -290,7 +290,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(A)
+        mSymHandle: SymHandle(foo_::A)
     )
     mNumDeref: 1
 )
@@ -305,7 +305,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(B)
+        mSymHandle: SymHandle(foo_::B)
     )
     mNumDeref: 1
 )

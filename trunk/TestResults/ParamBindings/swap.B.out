@@ -3,22 +3,22 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(swap_)	 => 
+                    ProcHandle(ch2610_::swap_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(X)
-                            MemRefHandle(&0:B:0:anon_ptr.)	 => SymHandle(Y)
+                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(swap_::X)
+                            MemRefHandle(&0:B:0:anon_ptr.)	 => SymHandle(swap_::Y)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(X)	 => MemRefHandle(&0:A:0:anon_ptr.)
-                    SymHandle(Y)	 => MemRefHandle(&0:B:0:anon_ptr.)
+                    SymHandle(swap_::X)	 => MemRefHandle(&0:A:0:anon_ptr.)
+                    SymHandle(swap_::Y)	 => MemRefHandle(&0:B:0:anon_ptr.)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(swap_)	 => [ SymHandle(X)    SymHandle(Y) ] 
+            ProcHandle(ch2610_::swap_)	 => [ SymHandle(swap_::X)    SymHandle(swap_::Y) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => [ MemRefHandle(&0:A:0:anon_ptr.)    MemRefHandle(&0:B:0:anon_ptr.) ] 
@@ -41,8 +41,8 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(swap_(&0:A:0:anon_ptr., &0:B:0:anon_ptr.))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(X)	 => ExprHandle(&0:A:0:anon_ptr.)
-                    SymHandle(Y)	 => ExprHandle(&0:B:0:anon_ptr.)
+                    SymHandle(swap_::X)	 => ExprHandle(&0:A:0:anon_ptr.)
+                    SymHandle(swap_::Y)	 => ExprHandle(&0:B:0:anon_ptr.)
 
 
 )

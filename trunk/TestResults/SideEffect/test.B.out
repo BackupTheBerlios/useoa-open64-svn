@@ -3,28 +3,28 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(f_)	 => 
+                    ProcHandle(test_::f_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&X:0:.predef_I4)	 => SymHandle(N)
-                            MemRefHandle(&A:0:.predef_I4)	 => SymHandle(O)
-                            MemRefHandle(&B:0:.predef_I4)	 => SymHandle(P)
-                            MemRefHandle(&C:0:.predef_I4)	 => SymHandle(Q)
-                            MemRefHandle(&D:0:.predef_I4)	 => SymHandle(R)
+                            MemRefHandle(&X:0:.predef_I4)	 => SymHandle(f_::N)
+                            MemRefHandle(&A:0:.predef_I4)	 => SymHandle(f_::O)
+                            MemRefHandle(&B:0:.predef_I4)	 => SymHandle(f_::P)
+                            MemRefHandle(&C:0:.predef_I4)	 => SymHandle(f_::Q)
+                            MemRefHandle(&D:0:.predef_I4)	 => SymHandle(f_::R)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(N)	 => MemRefHandle(&X:0:.predef_I4)
-                    SymHandle(O)	 => MemRefHandle(&A:0:.predef_I4)
-                    SymHandle(P)	 => MemRefHandle(&B:0:.predef_I4)
-                    SymHandle(Q)	 => MemRefHandle(&C:0:.predef_I4)
-                    SymHandle(R)	 => MemRefHandle(&D:0:.predef_I4)
+                    SymHandle(f_::N)	 => MemRefHandle(&X:0:.predef_I4)
+                    SymHandle(f_::O)	 => MemRefHandle(&A:0:.predef_I4)
+                    SymHandle(f_::P)	 => MemRefHandle(&B:0:.predef_I4)
+                    SymHandle(f_::Q)	 => MemRefHandle(&C:0:.predef_I4)
+                    SymHandle(f_::R)	 => MemRefHandle(&D:0:.predef_I4)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(f_)	 => [ SymHandle(N)    SymHandle(O)    SymHandle(P)    SymHandle(Q)    SymHandle(R) ] 
+            ProcHandle(test_::f_)	 => [ SymHandle(f_::N)    SymHandle(f_::O)    SymHandle(f_::P)    SymHandle(f_::Q)    SymHandle(f_::R) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => [ MemRefHandle(&X:0:.predef_I4)    MemRefHandle(&A:0:.predef_I4)    MemRefHandle(&B:0:.predef_I4)    MemRefHandle(&C:0:.predef_I4)    MemRefHandle(&D:0:.predef_I4) ] 
@@ -62,67 +62,67 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(N)	 => ExprHandle(&X:0:.predef_I4)
-                    SymHandle(O)	 => ExprHandle(&A:0:.predef_I4)
-                    SymHandle(P)	 => ExprHandle(&B:0:.predef_I4)
-                    SymHandle(Q)	 => ExprHandle(&C:0:.predef_I4)
-                    SymHandle(R)	 => ExprHandle(&D:0:.predef_I4)
+                    SymHandle(f_::N)	 => ExprHandle(&X:0:.predef_I4)
+                    SymHandle(f_::O)	 => ExprHandle(&A:0:.predef_I4)
+                    SymHandle(f_::P)	 => ExprHandle(&B:0:.predef_I4)
+                    SymHandle(f_::Q)	 => ExprHandle(&C:0:.predef_I4)
+                    SymHandle(f_::R)	 => ExprHandle(&D:0:.predef_I4)
 
 
 )
 
 InterSideEffectStandard(
     ProcToSideEffectMap: ProcHandle	 => OA_ptr<OA::SideEffect::SideEffectStandard>
-            ProcHandle(test_)	 => 
+            ProcHandle(test_::test_)	 => 
             SideEffectStandard(
                 mLMODSet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
                 mMODSet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(A)
+                        mSymHandle: SymHandle(test_::A)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(C)
+                        mSymHandle: SymHandle(test_::C)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
                 mLDEFSet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
                 mDEFSet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(A)
+                        mSymHandle: SymHandle(test_::A)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(C)
+                        mSymHandle: SymHandle(test_::C)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -130,25 +130,25 @@ InterSideEffectStandard(
                 mLUSESet: [  ] 
                 mUSESet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(B)
+                        mSymHandle: SymHandle(test_::B)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(C)
+                        mSymHandle: SymHandle(test_::C)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(D)
+                        mSymHandle: SymHandle(test_::D)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -156,25 +156,25 @@ InterSideEffectStandard(
                 mLREFSet: [  ] 
                 mREFSet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(B)
+                        mSymHandle: SymHandle(test_::B)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(C)
+                        mSymHandle: SymHandle(test_::C)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(D)
+                        mSymHandle: SymHandle(test_::D)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -182,7 +182,7 @@ InterSideEffectStandard(
                 mUnknownLocSet: [ 
                     UnknownLoc(
                     ) ] 
-                ProcHandle(f_)	 => 
+                ProcHandle(test_::f_)	 => 
                 SideEffectStandard(
                     mLMODSet: [ 
                         InvisibleLoc(
@@ -196,7 +196,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -212,7 +212,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(O)
+                                    mSymHandle: SymHandle(f_::O)
                                 )
                                 mNumDeref: 1
                             )
@@ -228,7 +228,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -245,7 +245,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -261,7 +261,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(O)
+                                    mSymHandle: SymHandle(f_::O)
                                 )
                                 mNumDeref: 1
                             )
@@ -277,7 +277,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -294,7 +294,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -310,7 +310,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(O)
+                                    mSymHandle: SymHandle(f_::O)
                                 )
                                 mNumDeref: 1
                             )
@@ -326,7 +326,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -343,7 +343,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -359,7 +359,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(O)
+                                    mSymHandle: SymHandle(f_::O)
                                 )
                                 mNumDeref: 1
                             )
@@ -375,7 +375,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -392,7 +392,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -408,7 +408,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(P)
+                                    mSymHandle: SymHandle(f_::P)
                                 )
                                 mNumDeref: 1
                             )
@@ -424,7 +424,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -440,7 +440,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(R)
+                                    mSymHandle: SymHandle(f_::R)
                                 )
                                 mNumDeref: 1
                             )
@@ -457,7 +457,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -473,7 +473,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(P)
+                                    mSymHandle: SymHandle(f_::P)
                                 )
                                 mNumDeref: 1
                             )
@@ -489,7 +489,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -505,7 +505,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(R)
+                                    mSymHandle: SymHandle(f_::R)
                                 )
                                 mNumDeref: 1
                             )
@@ -522,7 +522,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -538,7 +538,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(P)
+                                    mSymHandle: SymHandle(f_::P)
                                 )
                                 mNumDeref: 1
                             )
@@ -554,7 +554,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -570,7 +570,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(R)
+                                    mSymHandle: SymHandle(f_::R)
                                 )
                                 mNumDeref: 1
                             )
@@ -587,7 +587,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(N)
+                                    mSymHandle: SymHandle(f_::N)
                                 )
                                 mNumDeref: 1
                             )
@@ -603,7 +603,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(P)
+                                    mSymHandle: SymHandle(f_::P)
                                 )
                                 mNumDeref: 1
                             )
@@ -619,7 +619,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(Q)
+                                    mSymHandle: SymHandle(f_::Q)
                                 )
                                 mNumDeref: 1
                             )
@@ -635,7 +635,7 @@ InterSideEffectStandard(
                                     mAddressOf: 0
                                     mFullAccuracy: 1
                                     mMemRefType: USE
-                                    mSymHandle: SymHandle(R)
+                                    mSymHandle: SymHandle(f_::R)
                                 )
                                 mNumDeref: 1
                             )
@@ -649,176 +649,176 @@ InterSideEffectStandard(
                     SideEffectStandard(
                         mLMODSet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(test_::A)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mMODSet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(test_::A)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mLDEFSet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(test_::A)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mDEFSet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(test_::A)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mLUSESet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(B)
+                                mSymHandle: SymHandle(test_::B)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(D)
+                                mSymHandle: SymHandle(test_::D)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mUSESet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(B)
+                                mSymHandle: SymHandle(test_::B)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(D)
+                                mSymHandle: SymHandle(test_::D)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mLREFSet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(B)
+                                mSymHandle: SymHandle(test_::B)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(D)
+                                mSymHandle: SymHandle(test_::D)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
                         mREFSet: [ 
                             NamedLoc(
-                                mSymHandle: SymHandle(B)
+                                mSymHandle: SymHandle(test_::B)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(C)
+                                mSymHandle: SymHandle(test_::C)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(D)
+                                mSymHandle: SymHandle(test_::D)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             )    
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(test_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 

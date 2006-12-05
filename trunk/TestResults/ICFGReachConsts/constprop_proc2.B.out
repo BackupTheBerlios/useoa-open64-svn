@@ -1,6 +1,6 @@
 
 mProcToReachConstsMap: ProcHandle	 => ReachConsts
-        ProcHandle(head_)	 => 
+        ProcHandle(head_::head_)	 => 
         ReachConstStandard: 
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
@@ -45,7 +45,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
         )
 
-        ProcHandle(bar_)	 => 
+        ProcHandle(head_::bar_)	 => 
         ReachConstStandard: 
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 

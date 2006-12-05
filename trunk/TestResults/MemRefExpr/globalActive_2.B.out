@@ -21,7 +21,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(APASSIVEGLOBAL)
+    mSymHandle: SymHandle(globals_::APASSIVEGLOBAL)
 )
 
 ============================================
@@ -31,7 +31,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(AGLOBAL)
+    mSymHandle: SymHandle(globals_::AGLOBAL)
 )
 
 	mre = 
@@ -44,7 +44,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(head_::X)
     )
     mNumDeref: 1
 )
@@ -59,7 +59,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(X)
+        mSymHandle: SymHandle(head_::X)
     )
     mNumDeref: 1
 )
@@ -76,7 +76,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(Y)
+        mSymHandle: SymHandle(head_::Y)
     )
     mNumDeref: 1
 )
@@ -86,7 +86,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(AGLOBAL)
+    mSymHandle: SymHandle(globals_::AGLOBAL)
 )
 
 	mre = 
@@ -94,7 +94,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(APASSIVEGLOBAL)
+    mSymHandle: SymHandle(globals_::APASSIVEGLOBAL)
 )
 
 ============================================

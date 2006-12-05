@@ -50,5 +50,3 @@ echo "Generating TestResults/CallGraph/readWrite1.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/readWrite1.B > TestResults/CallGraph/readWrite1.B.out
 echo "Generating TestResults/CallGraph/funcCallAsActual.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/funcCallAsActual.B > TestResults/CallGraph/funcCallAsActual.B.out
-echo "Generating TestResults/CallGraph/functions2_stub.B.out"
-./test-open64 --oa-CallGraph TestCases/CallGraph/functions2_stub.B > TestResults/CallGraph/functions2_stub.B.out

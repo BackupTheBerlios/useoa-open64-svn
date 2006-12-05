@@ -14,7 +14,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -26,7 +26,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(RES)
+    mSymHandle: SymHandle(factorial_::RES)
 )
 
 ============================================
@@ -41,7 +41,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -56,7 +56,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -68,7 +68,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(RES)
+    mSymHandle: SymHandle(factorial_::RES)
 )
 
 	mre = 
@@ -81,7 +81,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(N)
+        mSymHandle: SymHandle(factorial_::N)
     )
     mNumDeref: 1
 )
@@ -91,7 +91,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(N)
+    mSymHandle: SymHandle(factorial_::N)
 )
 
 ============================================
@@ -101,7 +101,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(RES)
+    mSymHandle: SymHandle(factorial_::RES)
 )
 
 ============================================
@@ -114,7 +114,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(N)
+    mSymHandle: SymHandle(recfunc_::N)
 )
 
 	mre = 
@@ -127,9 +127,9 @@ UnnamedRef(
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 1
+    mAddressOf: 0
     mFullAccuracy: 1
-    mMemRefType: USE
+    mMemRefType: DEF
     mStmtHandle: StmtHandle(N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1)))
 )
 
@@ -138,7 +138,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(N)
+    mSymHandle: SymHandle(recfunc_::N)
 )
 
 ============================================

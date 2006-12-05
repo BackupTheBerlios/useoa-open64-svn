@@ -11,7 +11,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(B)
+    mSymHandle: SymHandle(head_::B)
 )
 
 	mre = 
@@ -19,7 +19,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(A)
+    mSymHandle: SymHandle(head_::A)
 )
 
 	mre = 
@@ -27,7 +27,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(VECTOR)
+    mSymHandle: SymHandle(head_::VECTOR)
 )
 
 ============================================
@@ -39,7 +39,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(A)
+    mSymHandle: SymHandle(head_::A)
 )
 
 	mre = 
@@ -47,7 +47,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(B)
+    mSymHandle: SymHandle(head_::B)
 )
 
 	mre = 
@@ -55,7 +55,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(t__1)
+    mSymHandle: SymHandle(head_::t__1)
 )
 
 ============================================

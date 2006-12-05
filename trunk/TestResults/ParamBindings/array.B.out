@@ -3,22 +3,22 @@ ParamBindings(
     mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
             CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => 
             second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
-                    ProcHandle(sub01_)	 => 
+                    ProcHandle(ch2312_::sub01_)	 => 
                     second: MemRefHandle	 => SymHandle
-                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(A)
-                            MemRefHandle(&10)	 => SymHandle(ARRAY_SIZE)
+                            MemRefHandle(&0:A:0:anon_ptr.)	 => SymHandle(sub01_::A)
+                            MemRefHandle(&10)	 => SymHandle(sub01_::ARRAY_SIZE)
 
 
 
     mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
             CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => 
             second: SymHandle	 => MemRefHandle
-                    SymHandle(A)	 => MemRefHandle(&0:A:0:anon_ptr.)
-                    SymHandle(ARRAY_SIZE)	 => MemRefHandle(&10)
+                    SymHandle(sub01_::A)	 => MemRefHandle(&0:A:0:anon_ptr.)
+                    SymHandle(sub01_::ARRAY_SIZE)	 => MemRefHandle(&10)
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(sub01_)	 => [ SymHandle(A)    SymHandle(ARRAY_SIZE) ] 
+            ProcHandle(ch2312_::sub01_)	 => [ SymHandle(sub01_::A)    SymHandle(sub01_::ARRAY_SIZE) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => [ MemRefHandle(&0:A:0:anon_ptr.)    MemRefHandle(&10) ] 
@@ -41,8 +41,8 @@ ParamBindings(
     mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
             CallHandle(sub01_(&0:A:0:anon_ptr., &10))	 => 
             symToExprMap: SymHandle	 => ExprHandle
-                    SymHandle(A)	 => ExprHandle(&0:A:0:anon_ptr.)
-                    SymHandle(ARRAY_SIZE)	 => ExprHandle(&10)
+                    SymHandle(sub01_::A)	 => ExprHandle(&0:A:0:anon_ptr.)
+                    SymHandle(sub01_::ARRAY_SIZE)	 => ExprHandle(&10)
 
 
 )

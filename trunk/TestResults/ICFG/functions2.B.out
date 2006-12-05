@@ -1,7 +1,7 @@
 
 graph ICFG:
 
-    subgraph factorial__0:
+    subgraph factorial_::factorial__0:
 
         Node 9: 
             ==  ICFG ENTRY_NODE 9 ==
@@ -66,7 +66,7 @@ return (RES:0:.predef_I4)
             
 
 
-    subgraph recfunc__1:
+    subgraph factorial_::recfunc__1:
 
         Node 23: 
             ==  ICFG ENTRY_NODE 23 == (entry)
@@ -130,8 +130,8 @@ return
 
 digraph ICFG {
     node [shape=rectangle];
-    subgraph cluster_factorial__0 {
-        label="factorial__0"
+    subgraph cluster_factorial_::factorial__0 {
+        label="factorial_::factorial__0"
         9 [ label="==  ICFG ENTRY_NODE 9 ==\n" ];
         10 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ==  ICFG CFLOW_NODE 10 ==\n\nif (N:0:.predef_I4==1)\n" ];
@@ -150,8 +150,8 @@ digraph ICFG {
         11 -> 18 [ label="" ];
         16 -> 18 [ label="" ];
     }
-    subgraph cluster_recfunc__1 {
-        label="recfunc__1"
+    subgraph cluster_factorial_::recfunc__1 {
+        label="factorial_::recfunc__1"
         23 [ label="==  ICFG ENTRY_NODE 23 == (entry)\n" ];
         27 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ==  ICFG CFLOW_NODE 27 ==\n\n" ];

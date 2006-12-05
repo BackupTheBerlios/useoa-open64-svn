@@ -1,13 +1,13 @@
 
-PROCEDURE = { < ProcHandle("globals_"), SymHandle("globals_") > }
+PROCEDURE = { < ProcHandle("globals_::globals_"), SymHandle("globals_::globals_") > }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/modulearrayusewholearray.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    LOCATION = { < SymHandle("globals_"), not local > }
+    LOCATION = { < SymHandle("globals_::globals_"), not local > }
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
     MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
@@ -22,10 +22,10 @@ Y:0:anon_ptr.() = 0:X:0:anon_ptr.()") =>
         [
             MemRefHandle("I8SRCTRIPLET
 Y:0:anon_ptr.()") => 
-                NamedRef( DEF, SymHandle("Y"), F, part)
+                NamedRef( DEF, SymHandle("head_::Y"), F, part)
             MemRefHandle("I8SRCTRIPLET
 0:X:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("X"), F, part)
+                NamedRef( USE, SymHandle("globals_::X"), F, part)
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET
@@ -35,7 +35,7 @@ Y:0:anon_ptr.() = 0:X:0:anon_ptr.()") =>
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("globals_"), not local > }
-    LOCATION = { < SymHandle("X"), not local > }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("Y"), local > }
+    LOCATION = { < SymHandle("globals_::globals_"), not local > }
+    LOCATION = { < SymHandle("globals_::X"), not local > }
+    LOCATION = { < SymHandle("globals_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::Y"), local > }

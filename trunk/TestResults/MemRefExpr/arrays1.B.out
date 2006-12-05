@@ -10,7 +10,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(arrays_::X)
 )
 
 ============================================
@@ -20,7 +20,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(Y)
+    mSymHandle: SymHandle(arrays_::Y)
 )
 
 ============================================
@@ -31,7 +31,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(IX)
+    mSymHandle: SymHandle(arrays_::IX)
 )
 
 ============================================
@@ -41,7 +41,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
-    mSymHandle: SymHandle(I)
+    mSymHandle: SymHandle(arrays_::I)
 )
 
 ============================================
@@ -51,7 +51,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(arrays_::X)
 )
 
 	mre = 
@@ -59,7 +59,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(arrays_::X)
 )
 
 	mre = 
@@ -67,7 +67,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(arrays_::X)
 )
 
 	mre = 
@@ -75,7 +75,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(Y)
+    mSymHandle: SymHandle(arrays_::Y)
 )
 
 ============================================
@@ -85,7 +85,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(IX)
+    mSymHandle: SymHandle(arrays_::IX)
 )
 
 	mre = 
@@ -93,7 +93,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(II)
+    mSymHandle: SymHandle(arrays_::II)
 )
 
 	mre = 
@@ -101,7 +101,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(IX)
+    mSymHandle: SymHandle(arrays_::IX)
 )
 
 	mre = 
@@ -109,7 +109,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(IX)
+    mSymHandle: SymHandle(arrays_::IX)
 )
 
 ============================================

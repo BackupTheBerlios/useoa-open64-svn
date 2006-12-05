@@ -1,9 +1,9 @@
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
     FORMALS = {
         [
-            < 0, SymHandle("A") >
-            < 1, SymHandle("B") >
+            < 0, SymHandle("head_::A") >
+            < 1, SymHandle("head_::B") >
         ] }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarrayofarrayuse.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -16,13 +16,13 @@ B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())") =>
         [
             MemRefHandle("I8SRCTRIPLET
 B:0:anon_ptr.()") => 
-                Deref( DEF, NamedRef( USE, SymHandle("B"), F, full), 1, F, part)
+                Deref( DEF, NamedRef( USE, SymHandle("head_::B"), F, full), 1, F, part)
             MemRefHandle("I8SRCTRIPLET
 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())") => 
-                Deref( USE, NamedRef( USE, SymHandle("A"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("head_::A"), F, full), 1, F, part)
             MemRefHandle("I8SRCTRIPLET
 0:VECTOR:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("VECTOR"), F, part)
+                NamedRef( USE, SymHandle("head_::VECTOR"), F, part)
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET
@@ -35,13 +35,13 @@ A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") =>
         [
             MemRefHandle("I8SRCTRIPLET
 A:0:anon_ptr.()") => 
-                Deref( DEF, NamedRef( USE, SymHandle("A"), F, full), 1, F, part)
+                Deref( DEF, NamedRef( USE, SymHandle("head_::A"), F, full), 1, F, part)
             MemRefHandle("I8SRCTRIPLET
 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") => 
-                Deref( USE, NamedRef( USE, SymHandle("B"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("head_::B"), F, full), 1, F, part)
             MemRefHandle("I8SRCTRIPLET
 0:t__1:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("t__1"), F, part)
+                NamedRef( USE, SymHandle("head_::t__1"), F, part)
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET
@@ -51,8 +51,8 @@ A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") =>
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("A"), local > }
-    LOCATION = { < SymHandle("B"), local > }
-    LOCATION = { < SymHandle("VECTOR"), local > }
-    LOCATION = { < SymHandle("t__1"), local > }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::A"), local > }
+    LOCATION = { < SymHandle("head_::B"), local > }
+    LOCATION = { < SymHandle("head_::VECTOR"), local > }
+    LOCATION = { < SymHandle("head_::t__1"), local > }

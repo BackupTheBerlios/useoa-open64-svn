@@ -16,7 +16,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(A)
+        mSymHandle: SymHandle(head_::A)
     )
     mNumDeref: 1
 )
@@ -31,7 +31,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(B)
+        mSymHandle: SymHandle(head_::B)
     )
     mNumDeref: 1
 )
@@ -41,7 +41,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(VECTOR)
+    mSymHandle: SymHandle(head_::VECTOR)
 )
 
 ============================================
@@ -58,7 +58,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(A)
+        mSymHandle: SymHandle(head_::A)
     )
     mNumDeref: 1
 )
@@ -73,7 +73,7 @@ Deref(
         mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
-        mSymHandle: SymHandle(B)
+        mSymHandle: SymHandle(head_::B)
     )
     mNumDeref: 1
 )
@@ -83,7 +83,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(t__1)
+    mSymHandle: SymHandle(head_::t__1)
 )
 
 ============================================

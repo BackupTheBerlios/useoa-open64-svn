@@ -17,7 +17,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
-    mSymHandle: SymHandle(X)
+    mSymHandle: SymHandle(globals_::X)
 )
 
 	mre = 
@@ -25,7 +25,7 @@ NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(Y)
+    mSymHandle: SymHandle(head_::Y)
 )
 
 ============================================

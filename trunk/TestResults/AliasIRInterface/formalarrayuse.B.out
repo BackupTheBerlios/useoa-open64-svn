@@ -1,8 +1,8 @@
 
-PROCEDURE = { < ProcHandle("head_"), SymHandle("head_") > }
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
     FORMALS = {
         [
-            < 0, SymHandle("X") >
+            < 0, SymHandle("head_::X") >
         ] }
     MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarrayuse.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -12,13 +12,13 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("T2:0:.predef_F8 = 0:X:0:anon_ptr.(1)") =>
         [
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("T2"), F, full)
+                NamedRef( DEF, SymHandle("head_::T2"), F, full)
             MemRefHandle("0:X:0:anon_ptr.(1)") => 
-                Deref( USE, NamedRef( USE, SymHandle("X"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("head_::X"), F, full), 1, F, part)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
-    LOCATION = { < SymHandle("head_"), not local > }
-    LOCATION = { < SymHandle("X"), local > }
-    LOCATION = { < SymHandle("T2"), local > }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
+    LOCATION = { < SymHandle("head_::T2"), local > }

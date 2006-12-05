@@ -428,4 +428,10 @@
    - Regenerated TestCases for CSFIActivity.	 
    - regressAll works with OpenAnalysis r258 on Okapi with gcc-3.2
 
+12/05/06   UseOA-Open64 svn trunk r134 Priyadarshini Malusare
+   - regenerated following testcases to handle changes in the SymHandle
+     printing. New SymHandle print includes scope information
+     e.g. ProcHandle :: SymHandle. 
+   - Changes to getDepMemRefExpr::isRefParam to create proper MemRefExpr.
+   - Added Case statement for OPR_NEG in Open64IRInterface::findAllMemRefs..
 

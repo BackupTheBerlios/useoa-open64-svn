@@ -80,8 +80,8 @@
 
 
 /*! Header files for Context-Sensitive and Flow-inSensitive Activity Analysis */
-#include <OpenAnalysis/DUG/ManagerDUGStandard.hpp>
-#include <OpenAnalysis/duaa/ManagerDUActive.hpp>
+#include <OpenAnalysis/CSFIActivity/ManagerDUGStandard.hpp>
+#include <OpenAnalysis/CSFIActivity/ManagerDUActive.hpp>
 
 
 //#include <OpenAnalysis/Utils/SCC.hpp>
