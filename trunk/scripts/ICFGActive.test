@@ -9,80 +9,82 @@ driverexec::./test-open64 --oa-ICFGActivity
 # list of tests
 #       input file,                 status
 
-test::  simple1.B,                 Checked by BK 8/11/2006
-test::  simple2.B,                 Checked by BK 8/11/2006
-test::  simple3.B,                 Checked by BK 8/11/2006
-test::  simple3np.B,               Checked by BK 8/11/2006
-test::  simple_if1.B,              Checked by BK 8/11/2006
-test::  simple_if2.B,              Checked by BK 8/11/2006 (exhibits conservative active statement situation)
+test::  simple1.B,                  Checked by BK 8/11/2006
+test::  simple2.B,                  Checked by BK 8/11/2006
+test::  simple3.B,                  Checked by BK 8/11/2006
+test::  simple3np.B,                Checked by BK 8/11/2006
+test::  simple_if1.B,               Checked by BK 8/11/2006
+test::  simple_if2.B,               Checked by BK 8/11/2006 (exhibits conservative active statement situation)
 #test::  activity_int1.B,           Checked by ?? //2006 (intrinsics)
 #test::  activity_int2.B,           Checked by ?? //2006 (intrinsics)
 #test::  activity_int3.B,           Checked by ?? //2006
 #test::  activity_int4.B,           Checked by ?? //2006 (intrinsics)
 #test::  activity_int5.B,           Checked by ?? //2006
-test::  activity_int6.B,           Checked by BK 8/11/2006
+test::  activity_int6.B,            Checked by BK 8/11/2006
 #test::  activity_arrays1.B,        Checked by ?? //2006
 #test::  activity_global_common1.B, Checked by ?? //2006
-test::  activity_nested1.B,        Checked by BK 8/11/2006
-test::  activity_proc_call1.B,     Checked by BK 8/11/2006
+test::  activity_nested1.B,         Checked by BK 8/11/2006
+test::  activity_proc_call1.B,      Checked by BK 8/11/2006
 #test::  activity_proc_call2.B,     Checked by ?? //2006
 #test::  activity_proc_call3.B,     Checked by ?? //2006
-test::  activity_proc_call4.B,     Checked by BK 8/11/2006
-test::simple0.B,
-test::simple1.B,
-test::simple2.B,
-test::simple3.B,
-test::argumentArrayIndex2.B,
-test::argumentArrayIndex3.B,
-test::argumentArrayIndex.B,
-test::argumentConversion_2.B,
-test::argumentConversion_3.B,
-test::argumentConversion_4.B,
-test::bat.B,
-test::cast1.B,
-test::ConstFoldSimp0.B,
-test::constPrec.B,
-test::daerfj.B,
-test::directDependency1.B,
-test::directDependency2.B,
-test::directDependency3.B,
-test::float_intrinsic.B,
-test::globalActive_1.B,
-test::globalActive_2.B,
-test::globalActive_3.B,
-test::globalActive_7.B,
-test::If_Loop1.B,
-test::If_Loop2.B,
-test::If_Loop3.B,
-test::If_Loop5.B,
-test::IfStatement_1.B,
-test::IfStatement_2.B,
-test::Loop_1.B,
-test::Loop_2.B,
-test::Loop_3.B,
-test::Loop_simple_1.B,
-test::Loop_simple_2a.B,
-test::Loop_simple_2.B,
-test::Loop_simple_3.B,
-test::Loop_simple_4.B,
-test::Loop_simple_5.B,
-test::Loop_simple_6.B,
-test::nested_calls_1.B,
-test::nested_calls_2.B,
-test::nested_calls_3.B,
-test::nested_Calls_4.B,
-test::Nested_If.B,
-test::NestedLoopIf.B,
-test::NestedLoops.B,
-test::passiveStatement.B,
-test::passiveSubroutine.B,
-test::readWrite1.B,
-test::readWrite2.B,
-test::SeqOfIfs.B,
-test::SeqOfLoops.B,
-test::sideEffect_1.B,
-test::sideEffect_2.B,
-test::sideEffect_3.B,
-test::speelpenning.B,
-test::tanh_f_arg.B,
+test::  activity_proc_call4.B,      Checked by BK 8/11/2006
+test::simple0.B,                    Checked by PLM 12/06/06
+test::simple1.B,                    Checked by PLM 12/06/06 
+test::simple2.B,                    Checked by PLM 12/06/06
+test::simple3.B,                    Checked by PLM 12/06/06
+test::argumentArrayIndex2.B,        Checked by PLM 12/06/06 
+test::argumentArrayIndex3.B,        Checked by PLM 12/06/06
+test::argumentArrayIndex.B,         Checked by PLM 12/06/06
+test::argumentConversion_2.B,       Checked by PLM 12/06/06
+test::argumentConversion_3.B,       Checked by PLM 12/06/06 
+test::argumentConversion_4.B,       Checked by PLM 12/06/06
+test::bat.B,                        Checked by PLM 12/06/06
+test::cast1.B,                      Checked by PLM 12/06/06
+test::ConstFoldSimp0.B,             Checked by PLM 12/06/06
+test::constPrec.B,                  Checked by PLM 12/06/06
+test::daerfj.B,                     Checked by PLM 12/06/06
+test::directDependency1.B,          Checked by PLM 12/06/06
+test::directDependency2.B,          Checked by PLM 12/06/06
+test::directDependency3.B,          Checked by PLM 12/06/06
+test::float_intrinsic.B,            Checked by PLM 12/06/06 
+test::globalActive_1.B,             Checked by PLM 12/06/06
+test::globalActive_2.B,             Checked by PLM 12/06/06
+test::globalActive_3.B,             Checked by PLM 12/06/06
+test::globalActive_7.B,             Checked by PLM 12/06/06
+test::If_Loop1.B,                   Checked by PLM 12/06/06  
+test::If_Loop2.B,                   Checked by PLM 12/06/06
+test::If_Loop3.B,                   Checked by PLM 12/06/06
+test::If_Loop5.B,                   Checked by PLM 12/06/06
+test::IfStatement_1.B,              Checked by PLM 12/06/06
+test::IfStatement_2.B,              Checked by PLM 12/06/06 
+test::lion.B,                       Checked by PLM 12/06/06
+test::Loop_1.B,                     Checked by PLM 12/06/06 
+test::Loop_2.B,                     Checked by PLM 12/06/06 
+test::Loop_3.B,                     Checked by PLM 12/06/06
+test::Loop_simple_1.B,              Checked by PLM 12/06/06
+test::Loop_simple_2a.B,             Checked by PLM 12/06/06  
+test::Loop_simple_2.B,              Checked by PLM 12/06/06
+test::Loop_simple_3.B,              Checked by PLM 12/06/06
+test::Loop_simple_4.B,              Checked by PLM 12/06/06 
+test::Loop_simple_5.B,              Checked by PLM 12/06/06
+test::Loop_simple_6.B,              Checked by PLM 12/06/06 
+test::nested_calls_1.B,             Checked by PLM 12/06/06
+test::nested_calls_2.B,             Checked by PLM 12/06/06
+test::nested_calls_3.B,             Checked by PLM 12/06/06    
+test::nested_calls_4.B,             Checked by PLM 12/06/06
+test::NestedIf.B,                   Checked by PLM 12/06/06
+test::NestedLoopIf.B,               Checked by PLM 12/06/06
+test::NestedLoops.B,                Checked by PLM 12/06/06
+test::passiveStatement.B,           Checked by PLM 12/06/06
+test::passiveSubroutine.B,          Checked by PLM 12/06/06
+test::readWrite1.B,                 Checked by PLM 12/06/06 
+test::readWrite2.B,                 Checked by PLM 12/06/06
+test::SeqOfIfs.B,                   Checked by PLM 12/06/06
+test::SeqOfLoops.B,                 Checked by PLM 12/06/06 
+test::sideEffect_1.B,               Checked by PLM 12/06/06
+test::sideEffect_2.B,               Checked by PLM 12/06/06  
+test::sideEffect_3.B,               Checked by PLM 12/06/06 
+test::speelpenning.B,               Checked by PLM 12/06/06 
+test::tanh_f_arg.B,                 Checked by PLM 12/06/06
+
 

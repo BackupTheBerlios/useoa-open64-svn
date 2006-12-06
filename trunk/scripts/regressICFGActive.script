@@ -154,6 +154,10 @@ echo "Testing TestCases/Activity/IfStatement_2.B, TestResults/ICFGActive/IfState
 ./test-open64 --oa-ICFGActivity TestCases/Activity/IfStatement_2.B > t
 diff t TestResults/ICFGActive/IfStatement_2.B.out
 
+echo "Testing TestCases/Activity/lion.B, TestResults/ICFGActive/lion.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/lion.B > t
+diff t TestResults/ICFGActive/lion.B.out
+
 echo "Testing TestCases/Activity/Loop_1.B, TestResults/ICFGActive/Loop_1.B.out "
 ./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_1.B > t
 diff t TestResults/ICFGActive/Loop_1.B.out
@@ -206,13 +210,13 @@ echo "Testing TestCases/Activity/nested_calls_3.B, TestResults/ICFGActive/nested
 ./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_3.B > t
 diff t TestResults/ICFGActive/nested_calls_3.B.out
 
-echo "Testing TestCases/Activity/nested_Calls_4.B, TestResults/ICFGActive/nested_Calls_4.B.out "
-./test-open64 --oa-ICFGActivity TestCases/Activity/nested_Calls_4.B > t
-diff t TestResults/ICFGActive/nested_Calls_4.B.out
+echo "Testing TestCases/Activity/nested_calls_4.B, TestResults/ICFGActive/nested_calls_4.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_4.B > t
+diff t TestResults/ICFGActive/nested_calls_4.B.out
 
-echo "Testing TestCases/Activity/Nested_If.B, TestResults/ICFGActive/Nested_If.B.out "
-./test-open64 --oa-ICFGActivity TestCases/Activity/Nested_If.B > t
-diff t TestResults/ICFGActive/Nested_If.B.out
+echo "Testing TestCases/Activity/NestedIf.B, TestResults/ICFGActive/NestedIf.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/NestedIf.B > t
+diff t TestResults/ICFGActive/NestedIf.B.out
 
 echo "Testing TestCases/Activity/NestedLoopIf.B, TestResults/ICFGActive/NestedLoopIf.B.out "
 ./test-open64 --oa-ICFGActivity TestCases/Activity/NestedLoopIf.B > t

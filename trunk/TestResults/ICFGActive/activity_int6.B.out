@@ -1,15 +1,15 @@
 
 InterActive(
-    Procedure( head_ ): 
+    Procedure( head_::head_ ): 
     ActiveLocSet([ 
             NamedLoc(
-                mSymHandle: SymHandle(X)
+                mSymHandle: SymHandle(head_::X)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
             )    
             NamedLoc(
-                mSymHandle: SymHandle(Y)
+                mSymHandle: SymHandle(head_::Y)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -17,7 +17,7 @@ InterActive(
             LocSubSet(
                 mLoc: 
                 NamedLoc(
-                    mSymHandle: SymHandle(X)
+                    mSymHandle: SymHandle(head_::X)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -27,7 +27,7 @@ InterActive(
             LocSubSet(
                 mLoc: 
                 NamedLoc(
-                    mSymHandle: SymHandle(Y)
+                    mSymHandle: SymHandle(head_::Y)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -48,24 +48,24 @@ InterActive(
     ActiveMemRefSet([ 
             MemRefHandle(X:0:anon_ptr.(1))
                 MemRefHandle(X:0:anon_ptr.(1))
-                MemRefHandle(X:0:anon_ptr.(1))
-                MemRefHandle(X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1))
                 MemRefHandle(X:0:anon_ptr.(2))
-                MemRefHandle(X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1))
                 MemRefHandle(Y:0:anon_ptr.(1))
-                MemRefHandle(X:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(1))
                 MemRefHandle(Y:0:anon_ptr.(2))
-                MemRefHandle(X:0:anon_ptr.(2))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4))
                 MemRefHandle(Y:0:anon_ptr.(I:0:.predef_I4))
-                MemRefHandle(X:0:anon_ptr.(I:0:.predef_I4+1))
+                MemRefHandle(0:X:0:anon_ptr.(2))
                 MemRefHandle(Y:0:anon_ptr.(1))
-                MemRefHandle(X:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4+1))
                 MemRefHandle(Y:0:anon_ptr.(I:0:.predef_I4))
-                MemRefHandle(Y:0:anon_ptr.(I:0:.predef_I4)) ] 
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:Y:0:anon_ptr.(I:0:.predef_I4)) ] 
     )
     ActiveSymSet: [ 
-        SymHandle(X)
-            SymHandle(Y) ] 
+        SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
     mNumIterUseful: 2
     mNumIterVary: 2
 )

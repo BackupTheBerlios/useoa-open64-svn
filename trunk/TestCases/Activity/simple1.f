@@ -1,26 +1,11 @@
-       subroutine head(x,y)
-         double precision x
-         double precision y
-         double precision a
-c                                                [stmt:]  
-c                      [u: x] [v: x]     [iA: x]
-c         a = x                                    Act
-c                      [u: a] [v: x,a]   [iA: a]
-c         y = 3 * a                                Act
-c                      [u: y] [v: x,a,y] [iA: y]
-c
-c ActiveLocs: nL(A), iL(Y), iL(X)
-c
-c ActiveMemRefs: A, X, Y, A
-c
-c ActiveSym:     A (not X and Y because they are invLocs)
-
-
-
+c$openad XXX Template ad_template.f
+	subroutine head(x,y) 
+	  double precision, dimension(2), intent(inout) :: x
+	  double precision, dimension(2), intent(inout) :: y
+          double precision t
 c$openad INDEPENDENT(x)
-
-         a = x
-         y = 3 * a
-
+          t=x(1)*x(2)
+	  y(1)=sin(t)
+	  y(2)=cos(t)
 c$openad DEPENDENT(y)
-       end subroutine
+	end subroutine

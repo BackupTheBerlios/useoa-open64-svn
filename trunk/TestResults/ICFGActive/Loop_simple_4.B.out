@@ -1,0 +1,140 @@
+
+InterActive(
+    Procedure( foo_::foo_ ): 
+    ActiveLocSet([ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(foo_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(foo_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(J:0:.predef_I4) = 0:Y:0:anon_ptr.(J:0:.predef_I4)+0:X:0:anon_ptr.(I:0:.predef_I4)*0:X:0:anon_ptr.(I:0:.predef_I4)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(J:0:.predef_I4))
+                MemRefHandle(0:Y:0:anon_ptr.(J:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4)) ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveLocSet([ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [  ] 
+    mNumIterUseful: 4
+    mNumIterVary: 4
+)
+
+
+Total Iters: 10

@@ -1,0 +1,52 @@
+
+InterActive(
+    Procedure( head_::head_ ): 
+    ActiveLocSet([ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    2.000000000000000+0:X:0:anon_ptr.(2)*    3.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(2)) ] 
+    )
+    ActiveSymSet: [  ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)
+
+
+Total Iters: 6

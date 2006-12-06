@@ -435,3 +435,10 @@
    - Changes to getDepMemRefExpr::isRefParam to create proper MemRefExpr.
    - Added Case statement for OPR_NEG in Open64IRInterface::findAllMemRefs..
 
+12/06/06   UseOA-Open64 svn trunk r135 Priyadarshini Malusare
+   - Modified Open6IRInterface::findExprStmtPairs, with nospecial case
+     for array references.
+   - Regenerated TestCases for ICFGActive.
+
+
+

@@ -1,0 +1,125 @@
+
+InterActive(
+    Procedure( head_::head_ ): 
+    ActiveLocSet([ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)))
+                StmtHandle(Y:0:anon_ptr.(3) = SIN(&X:0:anon_ptr.(3)))
+                StmtHandle(Y:0:anon_ptr.(4) = COS(&X:0:anon_ptr.(4))) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(2))
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(2))
+                MemRefHandle(Y:0:anon_ptr.(3))
+                MemRefHandle(&X:0:anon_ptr.(3))
+                MemRefHandle(Y:0:anon_ptr.(4))
+                MemRefHandle(&X:0:anon_ptr.(4)) ] 
+    )
+    Procedure( head_::foo_ ): 
+    ActiveLocSet([ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::A)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::B)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::C)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(C:0:.predef_F8 = B:0:.predef_F8+A:0:.predef_F8*A:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8) ] 
+    )
+    Procedure( head_::bar_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [  ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)
+
+
+Total Iters: 6

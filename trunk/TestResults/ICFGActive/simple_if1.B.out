@@ -1,21 +1,21 @@
 
 InterActive(
-    Procedure( head_ ): 
+    Procedure( head_::head_ ): 
     ActiveLocSet([ 
             NamedLoc(
-                mSymHandle: SymHandle(A)
+                mSymHandle: SymHandle(head_::A)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
             )    
             NamedLoc(
-                mSymHandle: SymHandle(B)
+                mSymHandle: SymHandle(head_::B)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
             )    
             NamedLoc(
-                mSymHandle: SymHandle(C)
+                mSymHandle: SymHandle(head_::C)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -31,7 +31,7 @@ InterActive(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(head_::X)
                     )
                     mNumDeref: 1
                 )
@@ -47,7 +47,7 @@ InterActive(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
-                        mSymHandle: SymHandle(Y)
+                        mSymHandle: SymHandle(head_::Y)
                     )
                     mNumDeref: 1
                 )
@@ -74,9 +74,9 @@ InterActive(
                 MemRefHandle(B:0:.predef_F8) ] 
     )
     ActiveSymSet: [ 
-        SymHandle(A)
-            SymHandle(B)
-            SymHandle(C) ] 
+        SymHandle(head_::A)
+            SymHandle(head_::B)
+            SymHandle(head_::C) ] 
     mNumIterUseful: 2
     mNumIterVary: 2
 )

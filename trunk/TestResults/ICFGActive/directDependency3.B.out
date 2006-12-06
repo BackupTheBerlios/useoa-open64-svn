@@ -1,0 +1,68 @@
+
+InterActive(
+    Procedure( foo_::foo_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::T)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(T:0:.predef_F8 = 0:X:0:anon_ptr.(1))
+                StmtHandle(Y:0:.predef_F8 = T:0:.predef_F8*    2.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(T:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(T:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::T) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)
+
+
+Total Iters: 6

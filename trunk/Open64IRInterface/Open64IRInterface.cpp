@@ -3987,12 +3987,8 @@ Open64IRInterface::findExprStmtPairs(WN* wn)
  
     OA::MemRefHandle lhs;
 
-    // special case for array references
-    if (opr == OPR_ISTORE && WN_operator(WN_kid1(wn)) == OPR_ARRAY) {
-      lhs = (OA::irhandle_t)WN_kid1(wn);
-    } else {
-      lhs = (OA::irhandle_t)wn;
-    }
+    lhs = (OA::irhandle_t)wn;
+
     OA::ExprHandle rhs((OA::irhandle_t)WN_kid0(wn));
     lst->push_back(ExprStmtPair(lhs, rhs));
   }

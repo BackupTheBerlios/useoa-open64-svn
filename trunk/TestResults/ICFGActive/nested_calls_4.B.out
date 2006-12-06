@@ -1,0 +1,23 @@
+
+InterActive(
+    Procedure( head_::head_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( head_::foo_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [  ] 
+    mNumIterUseful: 3
+    mNumIterVary: 2
+)
+
+
+Total Iters: 7

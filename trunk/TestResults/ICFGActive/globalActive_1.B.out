@@ -1,0 +1,69 @@
+
+InterActive(
+    Procedure( globals_::globals_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( globals_::head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(globals_::AGLOBAL)
+                mLocal: 0
+                mFullOverlap: [ SymHandle(globals_::AGLOBAL) ] 
+                mPartOverlap: [  ] 
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 0
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(AGLOBAL:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))
+                StmtHandle(Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(AGLOBAL:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(2))
+                MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(AGLOBAL:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(globals_::AGLOBAL) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)
+
+
+Total Iters: 6

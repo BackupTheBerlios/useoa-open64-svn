@@ -76,6 +76,8 @@ echo "Generating TestResults/ICFGActive/IfStatement_1.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/IfStatement_1.B > TestResults/ICFGActive/IfStatement_1.B.out
 echo "Generating TestResults/ICFGActive/IfStatement_2.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/IfStatement_2.B > TestResults/ICFGActive/IfStatement_2.B.out
+echo "Generating TestResults/ICFGActive/lion.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/lion.B > TestResults/ICFGActive/lion.B.out
 echo "Generating TestResults/ICFGActive/Loop_1.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/Loop_1.B > TestResults/ICFGActive/Loop_1.B.out
 echo "Generating TestResults/ICFGActive/Loop_2.B.out"
@@ -102,10 +104,10 @@ echo "Generating TestResults/ICFGActive/nested_calls_2.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_2.B > TestResults/ICFGActive/nested_calls_2.B.out
 echo "Generating TestResults/ICFGActive/nested_calls_3.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_3.B > TestResults/ICFGActive/nested_calls_3.B.out
-echo "Generating TestResults/ICFGActive/nested_Calls_4.B.out"
-./test-open64 --oa-ICFGActivity TestCases/Activity/nested_Calls_4.B > TestResults/ICFGActive/nested_Calls_4.B.out
-echo "Generating TestResults/ICFGActive/Nested_If.B.out"
-./test-open64 --oa-ICFGActivity TestCases/Activity/Nested_If.B > TestResults/ICFGActive/Nested_If.B.out
+echo "Generating TestResults/ICFGActive/nested_calls_4.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/nested_calls_4.B > TestResults/ICFGActive/nested_calls_4.B.out
+echo "Generating TestResults/ICFGActive/NestedIf.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/NestedIf.B > TestResults/ICFGActive/NestedIf.B.out
 echo "Generating TestResults/ICFGActive/NestedLoopIf.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/NestedLoopIf.B > TestResults/ICFGActive/NestedLoopIf.B.out
 echo "Generating TestResults/ICFGActive/NestedLoops.B.out"

@@ -1207,6 +1207,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
     // ----------------- testing separate pieces
 
+    /*
     //ICFGDep  (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
@@ -1233,6 +1234,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                                         interAlias, icfgDep, icfgUseful);
     std::cout << "Printing ICFGVaryActive" << std::endl;
     inActive->output(*irInterface);
+    */
 
     // ----------------- Activity does the testing pieces above
 
@@ -1243,7 +1245,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     active = activeman->performAnalysis(icfg, parambind,
                                         interAlias, interSE);
     
-    std::cout << "Printing ICFGActive" << std::endl;
     active->output(*irInterface);
     
     int numIterDep = 1;
@@ -1374,7 +1375,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
     interAlias = fialiasman->performAnalysis(procIter);
 
-    interAlias->output(*irInterface);
+    //interAlias->output(*irInterface);
 
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -1408,7 +1409,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
-    icfg->output(*irInterface);
+    //icfg->output(*irInterface);
 
     // Context-Sensitive and Flow-inSensitive Activity Analysis
    
