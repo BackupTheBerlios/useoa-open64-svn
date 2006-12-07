@@ -1846,8 +1846,8 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     // if the statement has an expression tree then dump that as well
     OA::ReachConsts::IRStmtType sType = ir->getReachConstsStmtType(stmt);
     if (sType == OA::ReachConsts::EXPR_STMT) {
-      OA::OA_ptr<OA::ExprStmtPairIterator> espIterPtr 
-          = ir->getExprStmtPairIterator(stmt);
+      OA::OA_ptr<OA::AssignPairIterator> espIterPtr 
+          = ir->getAssignPairIterator(stmt);
       for ( ; espIterPtr->isValid(); (*espIterPtr)++) {
         // unbundle pair
         OA::MemRefHandle mref = espIterPtr->currentTarget();
