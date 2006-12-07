@@ -3111,19 +3111,19 @@ Open64IRInterface::getReachConstsStmtType(OA::StmtHandle h)
   if (!wn) { return OA::ReachConsts::NONE; }
   
   OPERATOR opr = WN_operator(wn);
-  if (OPERATOR_is_store(opr)) { // cf. findExprStmtPairs
+  if (OPERATOR_is_store(opr)) { // cf. findAssignPairs
     return OA::ReachConsts::EXPR_STMT;
   } else {
     return OA::ReachConsts::ANY_STMT;
   }
 }
 
-OA::OA_ptr<OA::ExprStmtPairIterator> 
-Open64IRInterface::getExprStmtPairIterator(OA::StmtHandle h)
+OA::OA_ptr<OA::AssignPairIterator> 
+Open64IRInterface::getAssignPairIterator(OA::StmtHandle h)
 { 
   setCurrentProcToProcContext(h);
   WN* wn = (WN*)h.hval();
-  return findExprStmtPairs(wn);
+  return findAssignPairs(wn);
 }
 
 OA::OA_ptr<OA::ConstValBasicInterface> 
@@ -3285,7 +3285,7 @@ Open64IRInterface::getLinearityStmtType(OA::StmtHandle h)
   if (!wn) { return OA::Linearity::NONE; }
   
   OPERATOR opr = WN_operator(wn);
-  if (OPERATOR_is_store(opr)) { // cf. findExprStmtPairs
+  if (OPERATOR_is_store(opr)) { // cf. findAssignPairs
     return OA::Linearity::EXPR_STMT;
   } else {
     return OA::Linearity::ANY_STMT;
@@ -3971,18 +3971,18 @@ Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree::ExprTree> tree, WN* w
 
 
 // Given an assignment statement --- an EXPR_STMT in the form <target
-// = expr> -- return an ExprStmtPairIterator.
-OA::OA_ptr<OA::ExprStmtPairIterator> 
-Open64IRInterface::findExprStmtPairs(WN* wn)
+// = expr> -- return an AssignPairIterator.
+OA::OA_ptr<OA::AssignPairIterator> 
+Open64IRInterface::findAssignPairs(WN* wn)
 {
   using namespace OA::ReachConsts;
   
-  OA::OA_ptr<ExprStmtPairList> lst; lst = new ExprStmtPairList;
-  OA::OA_ptr<OA::ExprStmtPairIterator> retval;
+  OA::OA_ptr<AssignPairList> lst; lst = new AssignPairList;
+  OA::OA_ptr<OA::AssignPairIterator> retval;
   
   OPERATOR opr = WN_operator(wn);
   if (OPERATOR_is_store(opr)) {
-    // Create the ExprStmtPair and add to the list (Note: STOREs
+    // Create the AssignPair and add to the list (Note: STOREs
     // represent lhs mem-refs)
  
     OA::MemRefHandle lhs;
@@ -3990,9 +3990,9 @@ Open64IRInterface::findExprStmtPairs(WN* wn)
     lhs = (OA::irhandle_t)wn;
 
     OA::ExprHandle rhs((OA::irhandle_t)WN_kid0(wn));
-    lst->push_back(ExprStmtPair(lhs, rhs));
+    lst->push_back(AssignPair(lhs, rhs));
   }
-  retval = new Open64ExprStmtPairIterator(lst);
+  retval = new Open64AssignPairIterator(lst);
   return retval;
 }
 
