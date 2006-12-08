@@ -3712,13 +3712,16 @@ Open64IRInterface::createExprTree(OA::OA_ptr<OA::ExprTree> tree, WN* wn)
     } 
     else {
       // dont want to recurse because we want only top MemRefHandle 
-      //return createExprTree(tree, WN_kid0(wn));
 
       OA::MemRefHandle h((OA::irhandle_t)wn);
-
-      root = new OA::ExprTree::MemRefNode(h);
-      tree->addNode(root);
-      return root;  
+      
+      if (sMemref2mreSetMap.find(h)!=sMemref2mreSetMap.end()) {
+        root = new OA::ExprTree::MemRefNode(h);
+        tree->addNode(root);
+        return root;  
+      }
+      else
+        return createExprTree(tree, WN_kid0(wn));
     }
   }
   

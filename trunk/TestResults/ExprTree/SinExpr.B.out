@@ -14,19 +14,19 @@ stmt = foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)
 	----------------------------------------------
 graph EXPRESSION TREE:
 
-    Node 0: ET MemRefNode ( A:0:.predef_F8 )
+    Node 0: ET MemRefNode ( &A:0:.predef_F8 )
 
 graph EXPRESSION TREE:
 
-    Node 0: ET MemRefNode ( F:0:.predef_F8 )
+    Node 0: ET MemRefNode ( &F:0:.predef_F8 )
 
 graph EXPRESSION TREE:
 
-    Node 0: ET MemRefNode ( X:0:.predef_F8 )
+    Node 0: ET MemRefNode ( &X:0:.predef_F8 )
 
 graph EXPRESSION TREE:
 
-    Node 0: ET MemRefNode ( T:0:.predef_F8 )
+    Node 0: ET MemRefNode ( &T:0:.predef_F8 )
 
 ========================stmt============================
 
@@ -57,16 +57,7 @@ graph EXPRESSION TREE:
     Node 0: ET OpNode ( SIN(&OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8) )
     Edge: 
         0 => 
-        Node 1: ET OpNode ( + )
-        Edge: 
-            1 => 
-            Node 2: ET OpNode ( OPC_F8F4CVT() )
-            Edge: 
-                2 => 
-                Node 3: ET MemRefNode ( B:0:.predef_F4 )
-        Edge: 
-            1 => 
-            Node 5: ET MemRefNode ( A:0:.predef_F8 )
+        Node 1: ET MemRefNode ( &OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8 )
 
 ========================stmt============================
 

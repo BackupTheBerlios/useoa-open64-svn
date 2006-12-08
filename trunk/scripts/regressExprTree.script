@@ -34,3 +34,7 @@ echo "Testing TestCases/ExprTree/SinFuncExpr.B, TestResults/ExprTree/SinFuncExpr
 ./test-open64 --oa-ExprTree TestCases/ExprTree/SinFuncExpr.B > t
 diff t TestResults/ExprTree/SinFuncExpr.B.out
 
+echo "Testing TestCases/ExprTree/CosDeg2Rad.B, TestResults/ExprTree/CosDeg2Rad.B.out Checked by LMR 12/07/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/CosDeg2Rad.B > t
+diff t TestResults/ExprTree/CosDeg2Rad.B.out
+

@@ -444,4 +444,8 @@
    - Changes in Open64IRInterface because ExprStmtPair is
      renamed as AssignPair.
 
+12/07/06   UseOA-Open64 svn trunk r137 Luis Ramos
+   - Changed createExprTree for OPR_PARM and others so that it checks
+     if the node is part of sMemref2mrefSet in order to stop recursion
+     on the ExprTree.
 

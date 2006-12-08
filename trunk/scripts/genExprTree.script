@@ -16,3 +16,5 @@ echo "Generating TestResults/ExprTree/SinExpr.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/SinExpr.B > TestResults/ExprTree/SinExpr.B.out
 echo "Generating TestResults/ExprTree/SinFuncExpr.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/SinFuncExpr.B > TestResults/ExprTree/SinFuncExpr.B.out
+echo "Generating TestResults/ExprTree/CosDeg2Rad.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/CosDeg2Rad.B > TestResults/ExprTree/CosDeg2Rad.B.out
