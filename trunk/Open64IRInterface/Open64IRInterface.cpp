@@ -1907,7 +1907,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
            OA_ptr<MemRefExpr> newmre;
            newmre = *(sMemref2mreSetMap[m].begin());
-           sMemref2mreSetMap[m].erase(newmre);
+           sMemref2mreSetMap.erase(m);
            sStmt2allMemRefsMap[stmt].erase(m);
            newmre->setAddressTaken(false);
            newmre->setAccuracy(false);
@@ -1917,7 +1917,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          } else if(WN_operator(subMemRefExpr) == OPR_LDID ) {
              OA_ptr<MemRefExpr> newmre;
              newmre = *(sMemref2mreSetMap[m].begin());
-             sMemref2mreSetMap[m].erase(newmre);
+             sMemref2mreSetMap.erase(m);
              sStmt2allMemRefsMap[stmt].erase(m);
              newmre->setAccuracy(false);
              sMemref2mreSetMap[m].insert(newmre);
@@ -2008,7 +2008,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                // LDID
                OA_ptr<MemRefExpr> newmre;
                newmre = *(sMemref2mreSetMap[m].begin());
-               sMemref2mreSetMap[m].erase(newmre);
+               sMemref2mreSetMap.erase(m);
                sStmt2allMemRefsMap[stmt].erase(m);
                newmre->setMemRefType(hty);
                sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);
@@ -2018,7 +2018,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                // LDA
                OA_ptr<MemRefExpr> newmre;
                newmre = *(sMemref2mreSetMap[m].begin());
-               sMemref2mreSetMap[m].erase(newmre);
+               sMemref2mreSetMap.erase(m);
                sStmt2allMemRefsMap[stmt].erase(m);
                newmre->setMemRefType(hty);
                newmre->setAddressTaken(false);
@@ -2081,7 +2081,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                // LDID
                OA_ptr<MemRefExpr> newmre;
                newmre = *(sMemref2mreSetMap[m].begin());
-               sMemref2mreSetMap[m].erase(newmre);
+               sMemref2mreSetMap.erase(m);
                sStmt2allMemRefsMap[stmt].erase(m);
                newmre->setMemRefType(hty);
                sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);
@@ -2091,7 +2091,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                // LDA
                OA_ptr<MemRefExpr> newmre;
                newmre = *(sMemref2mreSetMap[m].begin());
-               sMemref2mreSetMap[m].erase(newmre);
+               sMemref2mreSetMap.erase(m);
                sStmt2allMemRefsMap[stmt].erase(m);
                newmre->setAddressTaken(false);
                newmre->setMemRefType(hty);
@@ -2168,12 +2168,36 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                  OA::OA_ptr<OA::MemRefExpr> tmp_mre = mre->clone();
                  OA::OA_ptr<OA::MemRefExpr> composed_mre;
                  composed_mre = deref_mre->composeWith(tmp_mre);
-                 sMemref2mreSetMap[m].erase(mre);
-                 sStmt2allMemRefsMap[stmt].erase(m);
-                 sMemref2mreSetMap[m].insert(composed_mre);
-                 sStmt2allMemRefsMap[stmt].insert(m);
+
+                 if(mre->isaUnnamed()) {
+
+                    WN* paramnode = (WN *)m.hval();
+                    WN* paramkid =  WN_kid0(paramnode);
+    
+                    sMemref2mreSetMap.erase(m);
+                    sStmt2allMemRefsMap[stmt].erase(m);
+
+                    OA::MemRefHandle param_mh = findTopMemRefHandle(paramkid);
+                    OA_ptr<MemRefExpr> sub_mre;
+
+                    sub_mre = *(sMemref2mreSetMap[param_mh].begin());
+                    
+                    if(sub_mre->isaUnnamed()) {
+                       sMemref2mreSetMap.erase(param_mh);
+                       sStmt2allMemRefsMap[stmt].erase(param_mh);
+                    }
+
+                 } else {
+
+                   sMemref2mreSetMap[m].erase(mre);
+                   sStmt2allMemRefsMap[stmt].erase(m);
+                   sMemref2mreSetMap[m].insert(composed_mre);
+                   sStmt2allMemRefsMap[stmt].insert(m);
+
                  }
-              }
+                 
+               }
+             }
            }
 
         }
@@ -2229,14 +2253,14 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                       hty = OA::MemRefExpr::USE; 
                       newmre =  new NamedRef(isAddrOf, fullAccuracy, hty, 
                                 SymHandle((irhandle_t)WN_st((WN *)m.hval())) );
-                      sMemref2mreSetMap[m].erase(newmre);
+                      sMemref2mreSetMap.erase(m);
                       sStmt2allMemRefsMap[stmt].erase(m);
                       sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);
                       sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
                     } 
                     else {
                       newmre = *(sMemref2mreSetMap[m].begin());
-                      sMemref2mreSetMap[m].erase(newmre);
+                      sMemref2mreSetMap.erase(m);
                       sStmt2allMemRefsMap[stmt].erase(m);
                       newmre->setAddressTaken(true);
                       sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);
@@ -2259,14 +2283,14 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                          fullAccuracy = true; 
                          hty = OA::MemRefExpr::USE; 
                          newmre =  new NamedRef(isAddrOf, fullAccuracy, hty, SymHandle((irhandle_t)WN_st((WN *)m.hval())) ); 
-                         sMemref2mreSetMap[m].erase(newmre);        
+                         sMemref2mreSetMap.erase(m);        
                          sStmt2allMemRefsMap[stmt].erase(m);   
                          sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);         
                          sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));                            
                       } else if ( WN_operator(WN_kid0(wn)) == OPR_ARRAY ) {
                           
                          newmre = *(sMemref2mreSetMap[m].begin());  
-                         sMemref2mreSetMap[m].erase(newmre);   
+                         sMemref2mreSetMap.erase(m);   
                          sStmt2allMemRefsMap[stmt].erase(m); 
                          newmre->setAddressTaken(true);
                          sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre); 
@@ -2278,7 +2302,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                          hty = OA::MemRefExpr::USE;
                          newmre =  new NamedRef(isAddrOf, fullAccuracy, hty,
                                 SymHandle((irhandle_t)WN_st((WN *)m.hval())) );
-                         sMemref2mreSetMap[m].erase(newmre);
+                         sMemref2mreSetMap.erase(m);
                          sStmt2allMemRefsMap[stmt].erase(m);
                          sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);
                          sStmt2allMemRefsMap[stmt].insert(MemRefHandle((irhandle_t)wn));
@@ -2288,7 +2312,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                     } else {
                         
                       newmre = *(sMemref2mreSetMap[m].begin());
-                      sMemref2mreSetMap[m].erase(newmre);
+                      sMemref2mreSetMap.erase(m);
                       sStmt2allMemRefsMap[stmt].erase(m);
                       newmre->setAddressTaken(true);
                       sMemref2mreSetMap[MemRefHandle((irhandle_t)wn)].insert(newmre);
@@ -2297,7 +2321,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
                   
                  } else if( WN_operator( (WN *)m.hval() ) == OPR_ILOAD ) {
                       newmre = *(sMemref2mreSetMap[m].begin());
-                      sMemref2mreSetMap[m].erase(newmre);
+                      sMemref2mreSetMap.erase(m);
                       sStmt2allMemRefsMap[stmt].erase(m);
                       newmre->setAccuracy(true);
                       newmre->setAddressTaken(true);
@@ -3576,7 +3600,11 @@ OA::MemRefHandle Open64IRInterface::findTopMemRefHandle(WN *wn)
 
   h = (OA::irhandle_t)wn;
 
-  if(sMemref2mreSetMap[h].empty()) {
+  if(h == OA::MemRefHandle(0)) {
+     return OA::MemRefHandle(0);
+  }
+
+  if(sMemref2mreSetMap.find(h) == sMemref2mreSetMap.end()) {
 
       if(WN_operator(wn) == OPR_ISTORE)
       {

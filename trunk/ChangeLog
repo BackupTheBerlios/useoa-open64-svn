@@ -449,3 +449,14 @@
      if the node is part of sMemref2mrefSet in order to stop recursion
      on the ExprTree.
 
+12/09/06   UseOA-Open64 svn trunk r139 Priyadarshini Malusare
+   - Modified Open64IRInterface::findAllMemRefExprs::OPR_INTRINSIC_CALL
+     as follows:
+   - OPR_CALL
+        if an intrinsic call
+        remove the MemRefExpr associated with OPR_PARM kids
+        if topMemRefHandle for kids is UnnamedRef 
+        (after removing the &UnnamedRef from OPR_PARM)
+          remove UnnamedRef from kid of OPR_PARM
+
+ 

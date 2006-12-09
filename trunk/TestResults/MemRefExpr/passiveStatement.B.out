@@ -54,22 +54,6 @@ NamedRef(
 )
 
 	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(I:0:.predef_I4 = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, NULL)+1)
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: DEF
-    mStmtHandle: StmtHandle(I:0:.predef_I4 = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, NULL)+1)
-)
-
-	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 0

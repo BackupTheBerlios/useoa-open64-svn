@@ -18,7 +18,8 @@ bar_(&X:0:anon_ptr.())") =>
             CallHandle("I8SRCTRIPLET
 bar_(&X:0:anon_ptr.())") => 
                 NamedRef( USE, SymHandle("head_::bar_"), F, full)
-        ] }
+        ] }I8SRCTRIPLET
+
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

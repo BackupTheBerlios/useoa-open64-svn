@@ -202,22 +202,6 @@ Deref(
 )
 
 	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8))
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: DEF
-    mStmtHandle: StmtHandle(C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8))
-)
-
-	mre = 
 Deref(
     mAddressOf: 0
     mFullAccuracy: 1
@@ -262,22 +246,6 @@ Deref(
         mSymHandle: SymHandle(foo_::D)
     )
     mNumDeref: 1
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8))
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: DEF
-    mStmtHandle: StmtHandle(D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8))
 )
 
 	mre = 

@@ -1207,7 +1207,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
     // ----------------- testing separate pieces
 
-    /*
     //ICFGDep  (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
@@ -1217,6 +1216,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     std::cout << "printing ICFGDep" << std::endl;
     icfgDep->output(*irInterface);
 
+    /*
     // ICFGUseful   (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
     usefulman = new OA::Activity::ManagerICFGUseful(irInterface);

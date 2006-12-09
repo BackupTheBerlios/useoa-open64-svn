@@ -871,24 +871,6 @@ NamedRef(
 )
 
 	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(I8SRCTRIPLET
-ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000))
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: DEF
-    mStmtHandle: StmtHandle(I8SRCTRIPLET
-ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000))
-)
-
-	mre = 
 NamedRef(
     mAddressOf: 0
     mFullAccuracy: 0
@@ -1228,22 +1210,6 @@ Deref(
         mSymHandle: SymHandle(precisions_::<no-symbol>)
     )
     mNumDeref: 1
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mStmtHandle: StmtHandle(STOP_F90(&"", 0))
-)
-
-	mre = 
-UnnamedRef(
-    mAddressOf: 0
-    mFullAccuracy: 1
-    mMemRefType: DEF
-    mStmtHandle: StmtHandle(STOP_F90(&"", 0))
 )
 
 ============================================
