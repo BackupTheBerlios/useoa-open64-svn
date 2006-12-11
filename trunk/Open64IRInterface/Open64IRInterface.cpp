@@ -1597,7 +1597,7 @@ Open64IRInterface::getMemRefIterator(OA::StmtHandle h)
         }
     }
  
-    findAllMemRefsAndMapToMemRefExprs(h,(WN*)h.hval(),0,0);
+    findAllMemRefsAndMapToMemRefExprs(h,(WN*)h.hval(),0);
   }
 
   OA::OA_ptr<OA::MemRefHandleIterator> retval;
@@ -1617,7 +1617,7 @@ Open64IRInterface::getMemRefIterator(OA::StmtHandle h)
 // and map each stmt to all MemRefHandles for that statement 
 // in sStmt2allMemRefsMap.
 void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
-        WN* wn, unsigned lvl, unsigned flags)
+        WN* wn, unsigned lvl)
 {
    
   if (debug) {
@@ -1709,7 +1709,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1720,7 +1720,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1732,7 +1732,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1744,7 +1744,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1756,7 +1756,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1768,7 +1768,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1780,7 +1780,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1792,7 +1792,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1805,7 +1805,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1817,7 +1817,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1828,7 +1828,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1839,7 +1839,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1850,7 +1850,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
      }
@@ -1885,7 +1885,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          hty = MemRefExpr::DEF;
          fullAccuracy = true;
          createAndMapNamedRef(stmt, wn, WN_st(wn), isAddrOf, fullAccuracy, hty );
-         findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn),lvl,0); 
+         findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn),lvl); 
       }
       break;
 
@@ -1899,7 +1899,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
          // 2. else
          //     - changes MemRefExpr for topMemRefHandle to partial accuracy
        
-         findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn),lvl,flags);
+         findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn),lvl);
 
          OA::MemRefHandle m = findTopMemRefHandle(wn);
          WN* subMemRefExpr = WN_kid0(wn);
@@ -1927,13 +1927,14 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
          // reset flags and lvl for index expressions because they 
          // are separate
-         flags = 0; lvl = 0;
+         //flags = 0; 
+         lvl = 0;
          // index expr are dim+1 ... 2*dim, dim = WN_kid_count(wn)-1 / 2
          for (INT kidno=(WN_kid_count(wn)-1)/2 +1;
              kidno<=WN_kid_count(wn)-1; kidno++)
          {
 
-           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl,flags);
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
          }
 
       }
@@ -1943,7 +1944,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
       {
         // 1. just recurse on kid0
         // *. don't actually create an MRE for this wn
-        findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl, flags);
+        findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl);
       }
       break;
 
@@ -1982,7 +1983,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
           // recurse on LHS
           WN *subMemRef = WN_kid0(wn);
-          findAllMemRefsAndMapToMemRefExprs(stmt,subMemRef, lvl+1, flags);
+          findAllMemRefsAndMapToMemRefExprs(stmt,subMemRef, lvl+1);
 
           // get top MemRefHandle
           OA::MemRefHandle m = findTopMemRefHandle(wn);
@@ -2054,7 +2055,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
           // recurse on LHS
           WN *subMemRef = WN_kid1(wn);
-          findAllMemRefsAndMapToMemRefExprs(stmt,subMemRef, lvl+1, flags);
+          findAllMemRefsAndMapToMemRefExprs(stmt,subMemRef, lvl+1);
 
           // get top MemRefHandle 
           OA::MemRefHandle m = findTopMemRefHandle(wn);
@@ -2103,7 +2104,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
           } 
 
           // Recurse on RHS
-          findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid0(wn),lvl+1,flags);
+          findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid0(wn),lvl+1);
 
         }
         break;
@@ -2137,7 +2138,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
           for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++) {
 
             WN* subMemRef = WN_kid(wn,kidno);
-            findAllMemRefsAndMapToMemRefExprs(stmt, subMemRef, lvl+1, flags);
+            findAllMemRefsAndMapToMemRefExprs(stmt, subMemRef, lvl+1);
                 
              if (IntrinsicInfo::isIntrinsic(wn))  {
                  // We are modeling intrinsic calls as pass by value.
@@ -2210,7 +2211,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
             //    and do the UnnamedRef thing which is now in the default case
             // 2. else takes the MemRefExpr away from the topMemRefHandle and 
             //    sets the addressTaken
-            findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl+1, flags);
+            findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid0(wn), lvl+1);
             
 
             OA::MemRefHandle m = findTopMemRefHandle(wn);
@@ -2372,7 +2373,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
     case OPR_DO_LOOP:
       {
          // loop test expression          
-         findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,2),lvl,0);
+         findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,2),lvl);
       }
       break;
 
@@ -2382,7 +2383,7 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
       // Special case: examine only condition of control flow statements
       if (OPERATOR_is_scf(opr) || OPERATOR_is_non_scf(opr)) {
-          findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,0),lvl,0);
+          findAllMemRefsAndMapToMemRefExprs(stmt,WN_kid(wn,0),lvl);
 
       // General case: recur on parameters (kids 0 ... n-1) 
       } else {

@@ -871,7 +871,7 @@ private:
 
   // helper functions for getMemRefIterator
   void findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
-    WN* wn, unsigned lvl, unsigned flags);
+    WN* wn, unsigned lvl);
 
   void createAndMapDerefs(OA::StmtHandle stmt, WN* wn, WN* subMemRef, 
                           bool isAddrOf, bool fullAccuracy, 
