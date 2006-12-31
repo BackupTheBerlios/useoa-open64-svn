@@ -459,4 +459,9 @@
         (after removing the &UnnamedRef from OPR_PARM)
           remove UnnamedRef from kid of OPR_PARM
 
+12/31/09   UseOA-Open64 svn trunk r141 Priyadarshini Malusare 
+   - Regenerated TestResults for AliasMapFIAlias because following fix 
+     OpenAnalysis revision 275.
+     "Fixed the problem where empty sets were showing up for MREs with
+	  addressOf and then there was an off by one error in the mappings"
  

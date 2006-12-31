@@ -2,56 +2,55 @@
 InterAliasMap(
     AliasMap(
         mProcHandle: ProcHandle(head_::head_)
-        mNumSets: 10
+        mNumSets: 9
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
                     UnknownLoc(
                     ) ] 
-                1	 => [  ] 
-                2	 => [ 
+                1	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(head_::bar_)
                         mLocal: 0
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                3	 => [ 
+                2	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(head_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                4	 => [ 
+                3	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(head_::F)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                5	 => [ 
+                4	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(head_::T1)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                6	 => [ 
+                5	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(head_::T2)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                7	 => [ 
+                6	 => [ 
                     NamedLoc(
                         mSymHandle: SymHandle(head_::T3)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                8	 => [ 
+                7	 => [ 
                     InvisibleLoc(
                         mMRE: 
                         Deref(
@@ -68,7 +67,7 @@ InterAliasMap(
                             mNumDeref: 1
                         )
                     ) ] 
-                9	 => [ 
+                8	 => [ 
                     InvisibleLoc(
                         mMRE: 
                         Deref(
@@ -96,66 +95,58 @@ InterAliasMap(
                 6	 => 2
                 7	 => 2
                 8	 => 2
-                9	 => 2
 
         mIdToMemRefSetMap: int	 => MemRefSet
-                5	 => [ MemRefHandle(T1:0:.predef_F8)    MemRefHandle(T1:0:.predef_F8) ] 
-                6	 => [ MemRefHandle(T2:0:.predef_F8) ] 
-                7	 => [ MemRefHandle(T3:0:.predef_F8) ] 
-                8	 => [ MemRefHandle(X:0:.predef_F8) ] 
-                9	 => [ MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8) ] 
+                4	 => [ MemRefHandle(T1:0:.predef_F8)    MemRefHandle(T1:0:.predef_F8) ] 
+                5	 => [ MemRefHandle(T2:0:.predef_F8) ] 
+                6	 => [ MemRefHandle(T3:0:.predef_F8) ] 
+                7	 => [ MemRefHandle(X:0:.predef_F8) ] 
+                8	 => [ MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8)    MemRefHandle(F:0:.predef_F8) ] 
 
         mIdToMRESetMap: int	 => MemRefExprSet
                 1	 => [ 
-                    NamedRef(
-                        mAddressOf: 1
-                        mFullAccuracy: 1
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::T1)
-                    ) ] 
-                2	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::bar_)
                     ) ] 
-                3	 => [ 
+                2	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::X)
                     ) ] 
-                4	 => [ 
+                3	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::F)
                     ) ] 
-                5	 => [ 
+                4	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: DEF
                         mSymHandle: SymHandle(head_::T1)
                     ) ] 
-                6	 => [ 
+                5	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::T2)
                     ) ] 
-                7	 => [ 
+                6	 => [ 
                     NamedRef(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: DEF
                         mSymHandle: SymHandle(head_::T3)
                     ) ] 
-                8	 => [ 
+                7	 => [ 
                     Deref(
                         mAddressOf: 0
                         mFullAccuracy: 1
@@ -169,7 +160,7 @@ InterAliasMap(
                         )
                         mNumDeref: 1
                     ) ] 
-                9	 => [ 
+                8	 => [ 
                     Deref(
                         mAddressOf: 0
                         mFullAccuracy: 1
