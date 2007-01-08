@@ -31,6 +31,14 @@ NamedRef(
     mSymHandle: SymHandle(head_::t__1)
 )
 
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::I)
+)
+
 ============================================
 OA::StmtHandle: while_do (t__1:0:.log.4)
 	mre = 
@@ -43,6 +51,14 @@ NamedRef(
 
 ============================================
 OA::StmtHandle: if (I:0:.predef_I4<2)
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::I)
+)
+
 ============================================
 OA::StmtHandle: Y:0:anon_ptr.(2) = SIN(&X:0:anon_ptr.(1))
 	mre = 
@@ -133,6 +149,14 @@ NamedRef(
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::t__1)
+)
+
+	mre = 
+NamedRef(
+    mAddressOf: 0
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::I)
 )
 
 ============================================

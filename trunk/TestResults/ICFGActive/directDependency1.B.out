@@ -1,3 +1,389 @@
+printing ICFGDep
+
+MustDefMap: StmtHandle	 => LocSet
+        T:0:.predef_F8 = 0:X:0:anon_ptr.(1)	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::T)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        T2:0:.predef_F4 = OPC_F4F8CVT(T:0:.predef_F8*    2.000000000000000)	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::T2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y:0:.predef_F8 = OPC_F8F4CVT(T2:0:.predef_F4*    3.000000)+T:0:.predef_F8*    2.000000000000000	 => [ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )
+ ] 
+
+mDepDFSet: StmtHandle	 => DepDFSet
+         LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/directDependency1.f"
+PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: return	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: T:0:.predef_F8 = 0:X:0:anon_ptr.(1)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::T)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::T)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 0
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                )
+                                mNumDeref: 1
+                            )
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[ 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 0
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::X)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: T2:0:.predef_F4 = OPC_F4F8CVT(T:0:.predef_F8*    2.000000000000000)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::T)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::T2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::T2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::T)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: foo_()	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: Y:0:.predef_F8 = OPC_F8F4CVT(T2:0:.predef_F4*    3.000000)+T:0:.predef_F8*    2.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::T)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                )
+                                mNumDeref: 1
+                            )
+                        )
+ ] 
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::T2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                )
+                                mNumDeref: 1
+                            )
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::Y)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::T)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::T2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::Y)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+ ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+    
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::T2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::Y)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+ ] 
+        stmt: return	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
 
 InterActive(
     Procedure( foo_::foo_ ): 
@@ -68,9 +454,7 @@ InterActive(
                 MemRefHandle(T2:0:.predef_F4)
                 MemRefHandle(T:0:.predef_F8) ] 
     )
-    ActiveSymSet: [ 
-        SymHandle(head_::T)
-            SymHandle(head_::T2) ] 
+    ActiveSymSet: [  ] 
     mNumIterUseful: 2
     mNumIterVary: 2
 )

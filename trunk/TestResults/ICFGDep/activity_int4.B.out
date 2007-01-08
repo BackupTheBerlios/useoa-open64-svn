@@ -2,7 +2,7 @@
 MustDefMap: StmtHandle	 => LocSet
         I:0:.predef_I4 = 1	 => [ 
             NamedLoc(
-                mSymHandle: SymHandle(I)
+                mSymHandle: SymHandle(head_::I)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -10,7 +10,7 @@ MustDefMap: StmtHandle	 => LocSet
  ] 
         t__1:0:.log.4 = I:0:.predef_I4<3	 => [ 
             NamedLoc(
-                mSymHandle: SymHandle(t__1)
+                mSymHandle: SymHandle(head_::t__1)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -18,7 +18,7 @@ MustDefMap: StmtHandle	 => LocSet
  ] 
         I:0:.predef_I4 = I:0:.predef_I4+1	 => [ 
             NamedLoc(
-                mSymHandle: SymHandle(I)
+                mSymHandle: SymHandle(head_::I)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -26,7 +26,7 @@ MustDefMap: StmtHandle	 => LocSet
  ] 
         t__1:0:.log.4 = I:0:.predef_I4<3	 => [ 
             NamedLoc(
-                mSymHandle: SymHandle(t__1)
+                mSymHandle: SymHandle(head_::t__1)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -67,7 +67,7 @@ stmt: 	 =>
 
             ImplicitRemoves:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(I)
+                    mSymHandle: SymHandle(head_::I)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -79,14 +79,14 @@ stmt: 	 =>
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     NamedLoc(
-                        mSymHandle: SymHandle(I)
+                        mSymHandle: SymHandle(head_::I)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
 	 => [ 
                         NamedLoc(
-                            mSymHandle: SymHandle(t__1)
+                            mSymHandle: SymHandle(head_::t__1)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -96,14 +96,14 @@ stmt: 	 =>
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     NamedLoc(
-                        mSymHandle: SymHandle(t__1)
+                        mSymHandle: SymHandle(head_::t__1)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
 	 => [ 
                         NamedLoc(
-                            mSymHandle: SymHandle(I)
+                            mSymHandle: SymHandle(head_::I)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -112,7 +112,7 @@ stmt: 	 =>
 
             ImplicitRemoves:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(t__1)
+                    mSymHandle: SymHandle(head_::t__1)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -120,7 +120,7 @@ stmt: 	 =>
  ] 
             Uses:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(I)
+                    mSymHandle: SymHandle(head_::I)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -128,7 +128,7 @@ stmt: 	 =>
  ] 
             Defs:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(t__1)
+                    mSymHandle: SymHandle(head_::t__1)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -156,7 +156,7 @@ stmt: 	 =>
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
-                            mSymHandle: SymHandle(X)
+                            mSymHandle: SymHandle(head_::X)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -167,7 +167,7 @@ stmt: 	 =>
                         LocSubSet(
                             mLoc: 
                             NamedLoc(
-                                mSymHandle: SymHandle(Y)
+                                mSymHandle: SymHandle(head_::Y)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
@@ -181,7 +181,7 @@ stmt: 	 =>
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
-                            mSymHandle: SymHandle(Y)
+                            mSymHandle: SymHandle(head_::Y)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -192,7 +192,7 @@ stmt: 	 =>
                         LocSubSet(
                             mLoc: 
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(head_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
@@ -206,7 +206,7 @@ stmt: 	 =>
                 LocSubSet(
                     mLoc: 
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(head_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -218,7 +218,7 @@ stmt: 	 =>
                 LocSubSet(
                     mLoc: 
                     NamedLoc(
-                        mSymHandle: SymHandle(Y)
+                        mSymHandle: SymHandle(head_::Y)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -232,7 +232,7 @@ stmt: 	 =>
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
-                            mSymHandle: SymHandle(X)
+                            mSymHandle: SymHandle(head_::X)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -243,7 +243,7 @@ stmt: 	 =>
                         LocSubSet(
                             mLoc: 
                             NamedLoc(
-                                mSymHandle: SymHandle(Y)
+                                mSymHandle: SymHandle(head_::Y)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
@@ -257,7 +257,7 @@ stmt: 	 =>
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
-                            mSymHandle: SymHandle(Y)
+                            mSymHandle: SymHandle(head_::Y)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -268,7 +268,7 @@ stmt: 	 =>
                         LocSubSet(
                             mLoc: 
                             NamedLoc(
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(head_::X)
                                 mLocal: 1
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
@@ -282,7 +282,7 @@ stmt: 	 =>
                 LocSubSet(
                     mLoc: 
                     NamedLoc(
-                        mSymHandle: SymHandle(X)
+                        mSymHandle: SymHandle(head_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -294,7 +294,7 @@ stmt: 	 =>
                 LocSubSet(
                     mLoc: 
                     NamedLoc(
-                        mSymHandle: SymHandle(Y)
+                        mSymHandle: SymHandle(head_::Y)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -314,14 +314,14 @@ stmt: 	 =>
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     NamedLoc(
-                        mSymHandle: SymHandle(I)
+                        mSymHandle: SymHandle(head_::I)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
 	 => [ 
                         NamedLoc(
-                            mSymHandle: SymHandle(t__1)
+                            mSymHandle: SymHandle(head_::t__1)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -331,14 +331,14 @@ stmt: 	 =>
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     NamedLoc(
-                        mSymHandle: SymHandle(t__1)
+                        mSymHandle: SymHandle(head_::t__1)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
 	 => [ 
                         NamedLoc(
-                            mSymHandle: SymHandle(I)
+                            mSymHandle: SymHandle(head_::I)
                             mLocal: 1
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
@@ -347,7 +347,7 @@ stmt: 	 =>
 
             ImplicitRemoves:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(t__1)
+                    mSymHandle: SymHandle(head_::t__1)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -355,7 +355,7 @@ stmt: 	 =>
  ] 
             Uses:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(I)
+                    mSymHandle: SymHandle(head_::I)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 
@@ -363,7 +363,7 @@ stmt: 	 =>
  ] 
             Defs:[ 
                 NamedLoc(
-                    mSymHandle: SymHandle(t__1)
+                    mSymHandle: SymHandle(head_::t__1)
                     mLocal: 1
                     mFullOverlap: [  ] 
                     mPartOverlap: [  ] 

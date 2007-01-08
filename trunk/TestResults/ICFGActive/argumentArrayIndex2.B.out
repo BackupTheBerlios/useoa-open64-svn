@@ -1,3 +1,278 @@
+printing ICFGDep
+
+MustDefMap: StmtHandle	 => LocSet
+        Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000	 => [ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )
+ ] 
+        K:0:.predef_I4 = 1	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::K)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        L:0:.predef_I4 = 1	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::L)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+
+mDepDFSet: StmtHandle	 => DepDFSet
+         LOC 0 0 source files:	1	"/home/malusare/ContextSensitiveActivity/UseOA-Open64/TestCases/CSFIActivity/argumentArrayIndex2.f"
+PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::Y)
+                                )
+                                mNumDeref: 1
+                            )
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::Y)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::X)
+                                )
+                                mNumDeref: 1
+                            )
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(foo_::Y)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+ ] 
+            Uses:[ 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(foo_::X)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+ ] 
+            Defs:[ 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(foo_::Y)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+ ] 
+        stmt: return	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: K:0:.predef_I4 = 1	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::K)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: P:0:anon_ptr.(1) =     1.000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: L:0:.predef_I4 = 1	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::L)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4))	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: return	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
 
 InterActive(
     Procedure( foo_::foo_ ): 
@@ -115,9 +390,7 @@ InterActive(
     ActiveMemRefSet([ 
             MemRefHandle(P:0:anon_ptr.(1)) ] 
     )
-    ActiveSymSet: [ 
-        SymHandle(head_::P)
-            SymHandle(head_::Q) ] 
+    ActiveSymSet: [  ] 
     mNumIterUseful: 3
     mNumIterVary: 3
 )

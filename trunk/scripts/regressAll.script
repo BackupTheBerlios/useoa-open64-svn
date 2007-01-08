@@ -3,8 +3,8 @@ source scripts/regressAliasIRInterface.script
 source scripts/regressAliasMapFIAlias.script
 source scripts/regressCallGraph.script
 source scripts/regressICFG.script
-#source scripts/regressICFGDep.script
-#source scripts/regressICFGActive.script
+source scripts/regressICFGDep.script
+source scripts/regressICFGActive.script
 source scripts/regressParamBindings.script
 source scripts/regressSideEffect.script
 source scripts/regressReachDefs.script

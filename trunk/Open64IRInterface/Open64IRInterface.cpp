@@ -1773,6 +1773,18 @@ void Open64IRInterface::findAllMemRefsAndMapToMemRefExprs(OA::StmtHandle stmt,
 
      }
      break;
+ 
+     case OPR_LT:
+     {
+         // arrays5
+         for (INT kidno=0; kidno<=WN_kid_count(wn)-1; kidno++)
+         {
+
+           findAllMemRefsAndMapToMemRefExprs(stmt, WN_kid(wn,kidno),lvl);
+         }
+
+     }
+     break;
 
     case OPR_GE:
      {
