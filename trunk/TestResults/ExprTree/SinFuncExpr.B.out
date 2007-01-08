@@ -1,9 +1,9 @@
 
 ========================stmt============================
- LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/SinFuncExpr.f"
+
+stmt =  LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/SinFuncExpr.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = 
 
 ========================stmt============================
 
@@ -41,9 +41,9 @@ stmt = return
 stmt = return
 
 ========================stmt============================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = 
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 
 ========================stmt============================
 
@@ -60,13 +60,22 @@ graph EXPRESSION TREE:
         Node 1: ET OpNode ( SIN(&OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8) )
         Edge: 
             1 => 
-            Node 2: ET MemRefNode ( &OPC_F8F4CVT(B:0:.predef_F4)+A:0:.predef_F8 )
+            Node 2: ET OpNode ( + )
+            Edge: 
+                2 => 
+                Node 3: ET OpNode ( OPC_F8F4CVT() )
+                Edge: 
+                    3 => 
+                    Node 4: ET MemRefNode ( B:0:.predef_F4 )
+            Edge: 
+                2 => 
+                Node 6: ET MemRefNode ( A:0:.predef_F8 )
     Edge: 
         0 => 
-        Node 4: ET OpNode ( OPC_F8F4CVT() )
+        Node 8: ET OpNode ( OPC_F8F4CVT() )
         Edge: 
-            4 => 
-            Node 5: ET CallNode ( func_(&F:0:.predef_F8) )
+            8 => 
+            Node 9: ET CallNode ( func_(&F:0:.predef_F8) )
 
 	--Call-----------------------------------------
 	  Call: [func_(&F:0:.predef_F8)]
@@ -80,9 +89,9 @@ graph EXPRESSION TREE:
 stmt = return
 
 ========================stmt============================
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-stmt = 
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
 
 ========================stmt============================
 
