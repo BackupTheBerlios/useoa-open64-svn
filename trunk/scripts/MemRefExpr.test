@@ -7,14 +7,14 @@ driverexec::./test-open64 --oa-MemRefExpr
 
 # list of tests
 #       input file,                           status
-test::arrays1.B,                              conservatively correct MMS 7/5/06
-test::arrays5.B,                              checked by MMS 7/5/06
-test::functions1.B,                           checked by MMS 7/5/06
-test::globalActive_2.B,                       checked by MMS 7/5/06
+test::arrays1.B,                              conservatively correct MMS 7/5/06, PLM 12/16/06
+test::arrays5.B,                              checked by MMS 7/5/06, PLM 12/16/06
+test::functions1.B,                           checked by MMS 7/5/06, PLM 12/16/06
+test::globalActive_2.B,                       checked by MMS 7/5/06, PLM 12/16/06
 #test::head_tlm_driver_g.pre.B,                not correct on defs to fields MMS 7/5/06 , needs to be fixed for "MLOAD" PLM 11/29/06
-test::interalias_proc_call1.B,                checked by MMS 7/5/06
-test::interalias_proc_call2.B,                checked by MMS 7/5/06
-test::interalias_proc_call3.B,                checked by MMS 7/5/06
+test::interalias_proc_call1.B,                checked by MMS 7/5/06, PLM 12/16/06
+test::interalias_proc_call2.B,                checked by MMS 7/5/06, PLM 12/16/06
+test::interalias_proc_call3.B,                checked by MMS 7/5/06, PLM 12/16/06
 test::formal_actual_expression.B,             checked by PLM 10/16/06
 test::local_actual_expression.B,              checked by PLM 10/16/06
 test::formal_array_subscript_actual.B,        checked by PLM 10/16/06
@@ -57,111 +57,112 @@ test::scalar_local.B,                         checked by PLM 10/19/06
 # test::struct_pointer.B,                       causes core dump PLM 10/19/06, check wiki for error details.
 test::struct_simple.B,                        checked by PLM 10/19/06
 test::struct_simple_local.B,                  checked by PLM 10/19/06
-test::formalarrayactual.B, 
-test::formalarrayactualin.B,
-test::formalarrayactualout.B,
-test::formalarrayactualinout.B,
-test::formalarrayactualsubscript.B,
-test::formalarrayactualsubscriptin.B,
-test::formalarrayactualsubscriptout.B,
-test::formalarrayactualsubscriptinout.B,
-test::localarrayactual.B,
-test::localscalaractual.B,
-test::formalarrayofarrayuse.B,
-test::formalarrayofarrayusesubscript.B,
-test::formalarrayofarraydef.B,
-test::localarrayofarrayuse.B,
-test::localarrayofarrayusesubscript.B,
-test::localarrayofarraydef.B,
-test::modulearrayusewholearray.B,
-test::modulearrayuse.B,
-test::modulearraysubscriptuse.B,
-test::modulearraydefwholearray.B,
-test::modulearraydef.B,
-test::modulearraysubscriptdef.B,
-test::modulearraysectiondef.B,
-test::modulescalaruse.B,
-test::modulescalardef.B,
-test::globalarrayusewholearray.B,
-test::globalarrayuse.B,
-test::globalarrayusesubscript.B,
-test::globalarraydefwholearray.B,
-test::globalarraydef.B,
-test::globalarraydefsubscript.B,
-test::globalarraysectiondef.B,
-test::globalscalaruse.B,
-test::globalscalardef.B,
-test::formalarrayusewholearray.B,
-test::formalarrayuse.B,
-test::formalarraysubscriptuse.B,
-test::formalarrayusein.B,
-test::formalarrayuseout.B,
-test::formalarrayuseinout.B,
-test::formalarraydefwholearray.B,
-test::formalarraydef.B,
-test::formalarraysubscriptdef.B,
-test::formalarraysectiondef.B,
-test::formalarraydefout.B,
-test::formalarraydefinout.B,
-test::formalscalaruse.B,
-test::formalscalarusein.B,
-test::formalscalaruseout.B,
-test::formalscalaruseinout.B,
-test::formalscalardef.B,
-test::formalscalardefout.B,
-test::formalscalardefinout.B,
-test::localarrayuse.B,
-test::localarraysubscriptuse.B,
-test::localarraydef.B,
-test::localarraysubscriptdef.B,
-test::localscalaruse.B,
-test::localscalardef.B,
-test::formalarrayactualcalleeusewholearray.B,
-test::formalarrayactualcalleeuse.B,
-test::formalarrayactualcalleeusesubscript.B,
-test::formalarrayactualsubscriptcalleeuse.B,
-test::formalarrayactualcalleeusein.B,
-test::formalarrayactualcalleeuseout.B,
-test::formalarrayactualcalleeuseinout.B,
-test::formalarrayactualcalleedefwholearray.B,
-test::formalarrayactualcalleedef.B,
-test::formalarrayactualcalleedefsubscript.B,
-test::formalarrayactualcalleesectiondef.B,
-test::formalarrayactualsubscriptcalleedef.B,
-test::formalarrayactualcalleedefout.B,
-test::formalarrayactualcalleedefinout.B,
-test::formalscalaractualcalleeuse.B,
-test::formalscalaractualcalleeusein.B,
-test::formalscalaractualcalleeuseout.B,
-test::formalscalaractualcalleeuseinout.B,
-test::formalscalaractualcalleedef.B,
-test::formalscalaractualcalleedefout.B,
-test::formalscalaractualcalleedefinout.B,
-test::localarrayactualcalleeuse.B,
-test::localarrayactualcalleedefwholearray.B,
-test::localarrayactualcalleedef.B,
-test::localarraysubscriptactualcalleedef.B,
-test::localarraysectionactualcalleedef.B,
-test::localscalaractualcalleeuse.B,
-test::localscalaractualcalleedef.B,
-test::formal_actual_expression.B,
-test::local_actual_expression.B,
-test::formal_array_subscript_actual.B,
-test::local_array_subscript_actual.B,
-test::formal_scalar_actual.B,
-test::local_scalar_actual.B,
-test::formal_array_actual.B,
-test::local_array_actual.B,
-test::formal_array_subscript_actual_in.B,
-test::formal_array_subscript_actual_out.B,
-test::formal_array_subscript_actual_inout.B,
-test::formal_array_actual_in.B,
-test::formal_array_actual_out.B,
-test::formal_array_actual_inout.B,
-test::local_actual_expression_assignment.B,
-test::formal_scalar_actual_in.B,
-test::formal_scalar_actual_out.B,
-test::formal_scalar_actual_inout.B,
+test::formalarrayactual.B,                    checked by PLM 12/16/06
+test::formalarrayactualin.B,                  checked by PLM 12/16/06
+test::formalarrayactualout.B,                 checked by PLM 12/16/06
+test::formalarrayactualinout.B,               checked by PLM 12/16/06
+test::formalarrayactualsubscript.B,           checked by PLM 12/16/06 
+test::formalarrayactualsubscriptin.B,         checked by PLM 12/16/06
+test::formalarrayactualsubscriptout.B,        checked by PLM 12/16/06
+test::formalarrayactualsubscriptinout.B,      checked by PLM 12/16/06 
+test::localarrayactual.B,                     checked by PLM 12/16/06
+test::localscalaractual.B,                    checked by PLM 12/16/06
+test::formalarrayofarrayuse.B,                checked by PLM 12/16/06
+test::formalarrayofarrayusesubscript.B,       checked by PLM 12/16/06
+test::formalarrayofarraydef.B,                checked by PLM 12/16/06
+test::localarrayofarrayuse.B,                 checked by PLM 12/16/06
+test::localarrayofarrayusesubscript.B,        checked by PLM 12/16/06
+test::localarrayofarraydef.B,                 checked by PLM 12/16/06
+test::modulearrayusewholearray.B,             checked by PLM 12/16/06
+test::modulearrayuse.B,                       checked by PLM 12/16/06 
+test::modulearraysubscriptuse.B,              checked by PLM 12/16/06
+test::modulearraydefwholearray.B,             checked by PLM 12/16/06
+test::modulearraydef.B,                       checked by PLM 12/16/06
+test::modulearraysubscriptdef.B,              checked by PLM 12/16/06
+test::modulearraysectiondef.B,                checked by PLM 12/16/06
+test::modulescalaruse.B,                      checked by PLM 12/16/06 
+test::modulescalardef.B,                      checked by PLM 12/16/06
+test::globalarrayusewholearray.B,             checked by PLM 12/16/06
+test::globalarrayuse.B,                       checked by PLM 12/16/06
+test::globalarrayusesubscript.B,              checked by PLM 12/16/06
+test::globalarraydefwholearray.B,             checked by PLM 12/16/06
+test::globalarraydef.B,                       checked by PLM 12/16/06
+test::globalarraydefsubscript.B,              checked by PLM 12/16/06
+test::globalarraysectiondef.B,                checked by PLM 12/16/06
+test::globalscalaruse.B,                      checked by PLM 12/16/06
+test::globalscalardef.B,                      checked by PLM 12/16/06
+test::formalarrayusewholearray.B,             checked by PLM 12/16/06
+test::formalarrayuse.B,                       checked by PLM 12/16/06
+test::formalarraysubscriptuse.B,              checked by PLM 12/16/06 
+test::formalarrayusein.B,                     checked by PLM 12/16/06         
+test::formalarrayuseout.B,                    checked by PLM 12/16/06 
+test::formalarrayuseinout.B,                  checked by PLM 12/16/06
+test::formalarraydefwholearray.B,             checked by PLM 12/16/06
+test::formalarraydef.B,                       checked by PLM 12/16/06
+test::formalarraysubscriptdef.B,              checked by PLM 12/16/06
+test::formalarraysectiondef.B,                checked by PLM 12/16/06 
+test::formalarraydefout.B,                    checked by PLM 12/16/06
+test::formalarraydefinout.B,                  checked by PLM 12/16/06
+test::formalscalaruse.B,                      checked by PLM 12/16/06
+test::formalscalarusein.B,                    checked by PLM 12/16/06
+test::formalscalaruseout.B,                   checked by PLM 12/16/06
+test::formalscalaruseinout.B,                 checked by PLM 12/16/06
+test::formalscalardef.B,                      checked by PLM 12/16/06
+test::formalscalardefout.B,                   checked by PLM 12/16/06
+test::formalscalardefinout.B,                 checked by PLM 12/16/06
+test::localarrayuse.B,                        checked by PLM 12/16/06
+test::localarraysubscriptuse.B,               checked by PLM 12/16/06 
+test::localarraydef.B,                        checked by PLM 12/16/06
+test::localarraysubscriptdef.B,               checked by PLM 12/16/06
+test::localscalaruse.B,                       checked by PLM 12/16/06
+test::localscalardef.B,                       checked by PLM 12/16/06   
+test::formalarrayactualcalleeusewholearray.B, checked by PLM 12/16/06
+test::formalarrayactualcalleeuse.B,           checked by PLM 12/16/06
+test::formalarrayactualcalleeusesubscript.B,  checked by PLM 12/16/06
+test::formalarrayactualsubscriptcalleeuse.B,  checked by PLM 12/16/06
+test::formalarrayactualcalleeusein.B,         checked by PLM 12/16/06
+test::formalarrayactualcalleeuseout.B,        checked by PLM 12/16/06
+test::formalarrayactualcalleeuseinout.B,      checked by PLM 12/16/06
+test::formalarrayactualcalleedefwholearray.B, checked by PLM 12/16/06
+test::formalarrayactualcalleedef.B,           checked by PLM 12/16/06
+test::formalarrayactualcalleedefsubscript.B,  checked by PLM 12/16/06
+test::formalarrayactualcalleesectiondef.B,    checked by PLM 12/16/06
+test::formalarrayactualsubscriptcalleedef.B,  checked by PLM 12/16/06
+test::formalarrayactualcalleedefout.B,        checked by PLM 12/16/06
+test::formalarrayactualcalleedefinout.B,      checked by PLM 12/16/06
+test::formalscalaractualcalleeuse.B,          checked by PLM 12/16/06
+test::formalscalaractualcalleeusein.B,        checked by PLM 12/16/06 
+test::formalscalaractualcalleeuseout.B,       checked by PLM 12/16/06
+test::formalscalaractualcalleeuseinout.B,     checked by PLM 12/16/06
+test::formalscalaractualcalleedef.B,          checked by PLM 12/16/06
+test::formalscalaractualcalleedefout.B,       checked by PLM 12/16/06
+test::formalscalaractualcalleedefinout.B,     checked by PLM 12/16/06
+test::localarrayactualcalleeuse.B,            checked by PLM 12/16/06
+test::localarrayactualcalleedefwholearray.B,  checked by PLM 12/16/06
+test::localarrayactualcalleedef.B,            checked by PLM 12/16/06
+test::localarraysubscriptactualcalleedef.B,   checked by PLM 12/16/06
+test::localarraysectionactualcalleedef.B,     checked by PLM 12/16/06
+test::localscalaractualcalleeuse.B,           checked by PLM 12/16/06 
+test::localscalaractualcalleedef.B,           checked by PLM 12/16/06
+test::formal_actual_expression.B,             checked by PLM 12/16/06
+test::local_actual_expression.B,              checked by PLM 12/16/06
+test::formal_array_subscript_actual.B,        checked by PLM 12/16/06
+test::local_array_subscript_actual.B,         checked by PLM 12/16/06
+test::formal_scalar_actual.B,                 checked by PLM 12/16/06
+test::local_scalar_actual.B,                  checked by PLM 12/16/06
+test::formal_array_actual.B,                  checked by PLM 12/16/06
+test::local_array_actual.B,                   checked by PLM 12/16/06
+test::formal_array_subscript_actual_in.B,     checked by PLM 12/16/06
+test::formal_array_subscript_actual_out.B,    checked by PLM 12/16/06
+test::formal_array_subscript_actual_inout.B,  checked by PLM 12/16/06
+test::formal_array_actual_in.B,               checked by PLM 12/16/06 
+test::formal_array_actual_out.B,              checked by PLM 12/16/06
+test::formal_array_actual_inout.B,            checked by PLM 12/16/06
+test::local_actual_expression_assignment.B,   checked by PLM 12/16/06
+test::formal_scalar_actual_in.B,              checked by PLM 12/16/06 
+test::formal_scalar_actual_out.B,             checked by PLM 12/16/06
+test::formal_scalar_actual_inout.B,           checked by PLM 12/16/06
+
 
 
 
