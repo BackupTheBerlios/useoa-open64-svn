@@ -1213,8 +1213,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
     icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
 
-    std::cout << "printing ICFGDep" << std::endl;
-    icfgDep->output(*irInterface);
+    //icfgDep->output(*irInterface);
 
     /*
     // ICFGUseful   (for testing)
@@ -1254,101 +1253,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     std::cout << "\n\nTotal Iters: " << numTotal << std::endl;
 
 
- /* 
-  // call graph
-  OA::OA_ptr<OA::CallGraph::ManagerStandard> cgraphman;
-  cgraphman = new OA::CallGraph::ManagerStandard(irInterface);
-  OA::OA_ptr<Open64IRProcIterator> procIter;
-  procIter = new Open64IRProcIterator(pu_forest);
-  OA::OA_ptr<OA::CallGraph::CallGraphStandard> cgraph = 
-      cgraphman->performAnalysis(procIter);
-
-  cgraph->dump(std::cout, irInterface);
-
-  // ParamBindings
-  OA::OA_ptr<OA::DataFlow::ManagerParamBindings> parambindman;
-  parambindman = new OA::DataFlow::ManagerParamBindings(irInterface);
-  OA::OA_ptr<OA::DataFlow::ParamBindings> parambind 
-      = parambindman->performAnalysis(cgraph);
-
-  parambind->dump(std::cout,irInterface);
-
-  // Alias 
-  OA::OA_ptr<OA::Alias::ManagerInsNoPtrInterAliasMap> interaliasmapman;
-  interaliasmapman = new OA::Alias::ManagerInsNoPtrInterAliasMap(irInterface);
-  OA::OA_ptr<OA::Alias::InterAliasMap> interAlias;
-  interAlias = interaliasmapman->performAnalysis(cgraph,parambind);
-
-  interAlias->dump(std::cout,irInterface);
-  
-  // CFG 
-  OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
-  OA::OA_ptr<OA::CFG::ManagerStandard> cfgman;
-  cfgman = new OA::CFG::ManagerStandard(irInterface);
-  eachCFG = new OA::CFG::EachCFGStandard(cfgman);
-
-  // Intra Side-Effect
-  OA::OA_ptr<OA::SideEffect::ManagerStandard> sideeffectman;
-  sideeffectman = new OA::SideEffect::ManagerStandard(irInterface);
-  // InterSideEffect
-  OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
-  interSEman = new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
-  OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
-  interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
-
-  //interSE->dump(std::cout,irInterface);
-  
-  // ICFG
-  OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
-  icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
-  OA::OA_ptr<OA::ICFG::ICFGStandard> icfg 
-      = icfgman->performAnalysis(procIter, eachCFG);
-
-  std::cout << "%%%%%%%%%%% ICFG constructed from input program" << std::endl;
-  icfg->dump(std::cout, irInterface);
-  icfg->dumpdot(std::cout, irInterface);
-*/ 
-  //--------------------- separate pieces
- /* 
-  // create a Manager that generates interprocedure dep information
-  OA::OA_ptr<OA::Activity::ManagerInterDep> depman;
-  depman = new OA::Activity::ManagerInterDep(irInterface);
-  OA::OA_ptr<OA::Activity::InterDep> interDep 
-      = depman->performAnalysis(cgraph, parambind, interAlias, interSE, 
-                                eachCFG);
-
-  interDep->dump(std::cout, irInterface);
-
-  // InterVary results
-  OA::OA_ptr<OA::Activity::ManagerICFGVary> varyman;
-  varyman = new OA::Activity::ManagerICFGVary(irInterface);
-  OA::OA_ptr<OA::Activity::InterVary> 
-      interVary = varyman->performAnalysis(icfg, parambind, interAlias, 
-                                           interDep);
-  
-  interVary->dump(std::cout, irInterface); 
-  
-  // InterUseful results
-  OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
-  usefulman = new OA::Activity::ManagerICFGUseful(irInterface);
-  OA::OA_ptr<OA::Activity::InterUseful> 
-      interUseful = usefulman->performAnalysis(icfg, parambind, interAlias, 
-                                           interDep);
-  
-  interUseful->dump(std::cout, irInterface); 
-*/ 
-
-  //--------------------- ICFGActivity analysis
-/*
-  OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
-  activeman = new OA::Activity::ManagerICFGActive(irInterface);
-  OA::OA_ptr<OA::Activity::InterActive> active;
-  active = activeman->performAnalysis(cgraph, icfg, parambind,
-                interAlias, interSE, eachCFG);
-
-  active->dump(std::cout, irInterface);
-*/
   return 0;
 }
 

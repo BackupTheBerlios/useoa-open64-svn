@@ -464,4 +464,9 @@
      OpenAnalysis revision 275.
      "Fixed the problem where empty sets were showing up for MREs with
 	  addressOf and then there was an off by one error in the mappings"
- 
+
+01/11/09   UseOA-Open64 svn trunk r145 Priyadarshini Malusare
+   - Regenerated TestCases for ICFGActive after fixing problem
+     of multiple location for MemRefExpr with Partial and Full 
+	 Accuracy in the same AliasSet.
+
