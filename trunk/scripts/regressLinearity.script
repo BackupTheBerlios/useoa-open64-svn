@@ -1,16 +1,36 @@
-echo "Testing TestCases/Linearity/TC1.B, TestResults/Linearity/TC1.B.out Not Working by LMR 08/22/06"
+echo "Testing TestCases/Linearity/TC1.B, TestResults/Linearity/TC1.B.out Checked by LMR 01/19/07"
 ./test-open64 --oa-Linearity TestCases/Linearity/TC1.B > t
 diff t TestResults/Linearity/TC1.B.out
 
-echo "Testing TestCases/Linearity/TC1f.B, TestResults/Linearity/TC1f.B.out Checked by LMR 08/22/06"
+echo "Testing TestCases/Linearity/TC1f.B, TestResults/Linearity/TC1f.B.out Checked by LMR 01/19/07"
 ./test-open64 --oa-Linearity TestCases/Linearity/TC1f.B > t
 diff t TestResults/Linearity/TC1f.B.out
 
-echo "Testing TestCases/Linearity/Simple.B, TestResults/Linearity/Simple.B.out Checked by LMR 08/22/06"
+echo "Testing TestCases/Linearity/Simple.B, TestResults/Linearity/Simple.B.out Checked by LMR 01/19/07"
 ./test-open64 --oa-Linearity TestCases/Linearity/Simple.B > t
 diff t TestResults/Linearity/Simple.B.out
 
-echo "Testing TestCases/Linearity/Simple2.B, TestResults/Linearity/Simple2.B.out Checked by LMR 08/22/06"
+echo "Testing TestCases/Linearity/Simple2.B, TestResults/Linearity/Simple2.B.out Checked by LMR 01/19/07"
 ./test-open64 --oa-Linearity TestCases/Linearity/Simple2.B > t
 diff t TestResults/Linearity/Simple2.B.out
+
+echo "Testing TestCases/Linearity/Transitive1.B, TestResults/Linearity/Transitive1.B.out Checked by LMR 01/19/07"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive1.B > t
+diff t TestResults/Linearity/Transitive1.B.out
+
+echo "Testing TestCases/Linearity/Transitive2.B, TestResults/Linearity/Transitive2.B.out Checked by LMR 01/19/07"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive2.B > t
+diff t TestResults/Linearity/Transitive2.B.out
+
+echo "Testing TestCases/Linearity/Transitive3.B, TestResults/Linearity/Transitive3.B.out Checked by LMR 01/19/07"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive3.B > t
+diff t TestResults/Linearity/Transitive3.B.out
+
+echo "Testing TestCases/Linearity/Transitive4.B, TestResults/Linearity/Transitive4.B.out Checked by LMR 01/19/07"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive4.B > t
+diff t TestResults/Linearity/Transitive4.B.out
+
+echo "Testing TestCases/Linearity/Transitive5.B, TestResults/Linearity/Transitive5.B.out Checked by LMR 01/19/07"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive5.B > t
+diff t TestResults/Linearity/Transitive5.B.out
 

@@ -2040,7 +2040,6 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
 */
     OA::OA_ptr<OA::Linearity::LinearityMatrix> LM3
        = linmanstd->performAnalysis((OA::irhandle_t)pu,cfg,alias,parambind);
-    std::cout << "\n\nDoes it get this far??\n\n";
 
     LM3->output(*irInterface);
 

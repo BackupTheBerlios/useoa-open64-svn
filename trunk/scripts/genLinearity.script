@@ -6,3 +6,13 @@ echo "Generating TestResults/Linearity/Simple.B.out"
 ./test-open64 --oa-Linearity TestCases/Linearity/Simple.B > TestResults/Linearity/Simple.B.out
 echo "Generating TestResults/Linearity/Simple2.B.out"
 ./test-open64 --oa-Linearity TestCases/Linearity/Simple2.B > TestResults/Linearity/Simple2.B.out
+echo "Generating TestResults/Linearity/Transitive1.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive1.B > TestResults/Linearity/Transitive1.B.out
+echo "Generating TestResults/Linearity/Transitive2.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive2.B > TestResults/Linearity/Transitive2.B.out
+echo "Generating TestResults/Linearity/Transitive3.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive3.B > TestResults/Linearity/Transitive3.B.out
+echo "Generating TestResults/Linearity/Transitive4.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive4.B > TestResults/Linearity/Transitive4.B.out
+echo "Generating TestResults/Linearity/Transitive5.B.out"
+./test-open64 --oa-Linearity TestCases/Linearity/Transitive5.B > TestResults/Linearity/Transitive5.B.out

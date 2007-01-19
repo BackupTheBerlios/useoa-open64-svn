@@ -1,8 +1,6 @@
 ! LinearityAnalysis for Automatic Differentiation
 !
 !Result Should be:
-!<<a,a>,linear>, <<a,y>,nonlinear>, <<a,x>,nonlinear>
-!<<y,y>,nonlinear>, <<y,x>,nonlinear>
 !      
         program main
           double precision :: a, b, c, x, y, z
@@ -13,11 +11,9 @@
           y = 0.0
           z = 0.0
 
-          a = 0
           y = x
-          do i=1,3
-            a = a + y
-            y = y * x
-          enddo
+          a = a + y
+          y = y * x
+          b = a
         end program main
         

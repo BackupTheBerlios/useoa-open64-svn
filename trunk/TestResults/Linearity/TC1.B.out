@@ -1,41 +1,5 @@
 Linearity Analysis Start:
 
-
-----------Beginning of PerformAnalysis??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-Does it get this far??
-
-
 LinearityStandard(
     mLMmap: OA_ptr<Location>	 => ,OA_ptr<std::set<OA_ptr<LinearityPair> > >
 
@@ -43,423 +7,12 @@ LinearityStandard(
 )
 Linearity Analysis Start:
 
-
-----------Beginning of PerformAnalysis??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
---||||||EXPR_STMT||||||--
-Statement:
-A:0:.predef_F8 =     0.000000000000000Expression Tree:
-[ 
-    ET ConstValNode (     0.000000000000000 ) ] 
---visitConstValNode
-
-===============================================
-===============================================
-
---||||||EXPR_STMT||||||--
-Statement:
-F:0:.predef_F8 =     0.000000000000000Expression Tree:
-[ 
-    ET ConstValNode (     0.000000000000000 ) ] 
---visitConstValNode
-
-===============================================
-===============================================
-
---||||||EXPR_STMT||||||--
-Statement:
-I:0:.predef_I4 = 0Expression Tree:
-[ 
-    ET ConstValNode ( 0 ) ] 
---visitConstValNode
-
-===============================================
-===============================================
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
---||||||EXPR_STMT||||||--
-Statement:
-A:0:.predef_F8 = A:0:.predef_F8+X:0:.predef_F8*X:0:.predef_F8Expression Tree:
-[ 
-    ET OpNode ( + )
-    ET MemRefNode ( A:0:.predef_F8 )
-    ET OpNode ( * )
-    ET MemRefNode ( X:0:.predef_F8 )
-    ET MemRefNode ( X:0:.predef_F8 ) ] 
---visitOpNode
-
-Operator OPR is:
-+
---visitMemRefNode
-MemRef::Loc: 
-InvisibleLoc(
-    mMRE: 
-    Deref(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: DEF
-        mMRE: 
-        NamedRef(
-            mAddressOf: 0
-            mFullAccuracy: 1
-            mMemRefType: USE
-            mSymHandle: SymHandle(A)
-        )
-        mNumDeref: 1
-    )
-)
-
---visitOpNode
-
-Operator OPR is:
-*
---visitMemRefNode
-MemRef::Loc: 
-InvisibleLoc(
-    mMRE: 
-    Deref(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mMRE: 
-        NamedRef(
-            mAddressOf: 0
-            mFullAccuracy: 1
-            mMemRefType: USE
-            mSymHandle: SymHandle(X)
-        )
-        mNumDeref: 1
-    )
-)
-
---visitMemRefNode
-MemRef::Loc: 
-InvisibleLoc(
-    mMRE: 
-    Deref(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: USE
-        mMRE: 
-        NamedRef(
-            mAddressOf: 0
-            mFullAccuracy: 1
-            mMemRefType: USE
-            mSymHandle: SymHandle(X)
-        )
-        mNumDeref: 1
-    )
-)
-
-|--OPR_MPYDIV--|
-
-|--OPR_ADDSUB--|
-
-===============================================
-===============================================
-
---||||||EXPR_STMT||||||--
-Statement:
-T:0:.predef_F8 = SIN(&A:0:.predef_F8)Expression Tree:
-[ 
-    ET CallNode ( SIN(&A:0:.predef_F8) )
-    ET MemRefNode ( A:0:.predef_F8 ) ] 
---visitCallNode
-Call Handle String:
-SIN(&A:0:.predef_F8)Got Here!
-
-===============================================
-===============================================
-
---||||||EXPR_STMT||||||--
-Statement:
-F:0:.predef_F8 = F:0:.predef_F8+T:0:.predef_F8Expression Tree:
-[ 
-    ET OpNode ( + )
-    ET MemRefNode ( F:0:.predef_F8 )
-    ET MemRefNode ( T:0:.predef_F8 ) ] 
---visitOpNode
-
-Operator OPR is:
-+
---visitMemRefNode
-MemRef::Loc: 
-InvisibleLoc(
-    mMRE: 
-    Deref(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: DEF
-        mMRE: 
-        NamedRef(
-            mAddressOf: 0
-            mFullAccuracy: 1
-            mMemRefType: USE
-            mSymHandle: SymHandle(F)
-        )
-        mNumDeref: 1
-    )
-)
-
---visitMemRefNode
-MemRef::Loc: 
-InvisibleLoc(
-    mMRE: 
-    Deref(
-        mAddressOf: 0
-        mFullAccuracy: 1
-        mMemRefType: DEF
-        mMRE: 
-        NamedRef(
-            mAddressOf: 0
-            mFullAccuracy: 1
-            mMemRefType: USE
-            mSymHandle: SymHandle(T)
-        )
-        mNumDeref: 1
-    )
-)
-
-|--OPR_ADDSUB--|
-
-===============================================
-===============================================
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
---||||||EXPR_STMT||||||--
-Statement:
-I:0:.predef_I4 = I:0:.predef_I4+1Expression Tree:
-[ 
-    ET OpNode ( + )
-    ET MemRefNode ( I:0:.predef_I4 )
-    ET ConstValNode ( 1 ) ] 
---visitOpNode
-
-Operator OPR is:
-+
---visitMemRefNode
-MemRef::Loc: 
-NamedLoc(
-    mSymHandle: SymHandle(I)
-    mLocal: 1
-    mFullOverlap: [  ] 
-    mPartOverlap: [  ] 
-)
-
---visitConstValNode
-
-|--OPR_ADDSUB--|
-
-===============================================
-===============================================
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
---||||||EXPR_STMT||||||--
-Statement:
-A:0:.predef_F8 =     0.000000000000000Expression Tree:
-[ 
-    ET ConstValNode (     0.000000000000000 ) ] 
---visitConstValNode
-
-===============================================
-===============================================
-
---||||||EXPR_STMT||||||--
-Statement:
-F:0:.predef_F8 =     0.000000000000000Expression Tree:
-[ 
-    ET ConstValNode (     0.000000000000000 ) ] 
---visitConstValNode
-
-===============================================
-===============================================
-
---||||||EXPR_STMT||||||--
-Statement:
-I:0:.predef_I4 = 0Expression Tree:
-[ 
-    ET ConstValNode ( 0 ) ] 
---visitConstValNode
-
-===============================================
-===============================================
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-----------Beginning of Meet??
-
-
-
-Does it get this far??
-
-
 LinearityStandard(
     mLMmap: OA_ptr<Location>	 => ,OA_ptr<std::set<OA_ptr<LinearityPair> > >
 
             
             NamedLoc(
-                mSymHandle: SymHandle(I)
+                mSymHandle: SymHandle(foo_::I)
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
@@ -467,14 +20,14 @@ LinearityStandard(
                 LinearityPair(
                     Location->V: 
                     NamedLoc(
-                        mSymHandle: SymHandle(I)
+                        mSymHandle: SymHandle(foo_::I)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
                     Location->W: 
                     NamedLoc(
-                        mSymHandle: SymHandle(I)
+                        mSymHandle: SymHandle(foo_::I)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
@@ -493,7 +46,7 @@ LinearityStandard(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
-                        mSymHandle: SymHandle(A)
+                        mSymHandle: SymHandle(foo_::A)
                     )
                     mNumDeref: 1
                 )
@@ -511,7 +64,7 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(foo_::A)
                             )
                             mNumDeref: 1
                         )
@@ -528,7 +81,7 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(foo_::A)
                             )
                             mNumDeref: 1
                         )
@@ -548,7 +101,7 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(A)
+                                mSymHandle: SymHandle(foo_::A)
                             )
                             mNumDeref: 1
                         )
@@ -565,7 +118,7 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(X)
+                                mSymHandle: SymHandle(foo_::X)
                             )
                             mNumDeref: 1
                         )
@@ -584,7 +137,7 @@ LinearityStandard(
                         mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
-                        mSymHandle: SymHandle(F)
+                        mSymHandle: SymHandle(foo_::F)
                     )
                     mNumDeref: 1
                 )
@@ -602,7 +155,7 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(F)
+                                mSymHandle: SymHandle(foo_::F)
                             )
                             mNumDeref: 1
                         )
@@ -619,7 +172,44 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(F)
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
                             )
                             mNumDeref: 1
                         )
@@ -639,7 +229,44 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(F)
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
                             )
                             mNumDeref: 1
                         )
@@ -656,12 +283,103 @@ LinearityStandard(
                                 mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
-                                mSymHandle: SymHandle(T)
+                                mSymHandle: SymHandle(foo_::T)
                             )
                             mNumDeref: 1
                         )
                     )
                     LClass: Linear
+                ) ] 
+            
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mAddressOf: 0
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mAddressOf: 0
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::T)
+                    )
+                    mNumDeref: 1
+                )
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
                 ) ] 
 
 )

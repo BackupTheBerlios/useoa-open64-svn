@@ -20,30 +20,6 @@ LinearityStandard(
                     )
                     Location->W: 
                     NamedLoc(
-                        mSymHandle: SymHandle(main_::B)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )
-                    LClass: Linear
-                ) ] 
-            
-            NamedLoc(
-                mSymHandle: SymHandle(main_::C)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            )	 => [ 
-                LinearityPair(
-                    Location->V: 
-                    NamedLoc(
-                        mSymHandle: SymHandle(main_::C)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )
-                    Location->W: 
-                    NamedLoc(
                         mSymHandle: SymHandle(main_::A)
                         mLocal: 1
                         mFullOverlap: [  ] 
@@ -54,19 +30,77 @@ LinearityStandard(
                 LinearityPair(
                     Location->V: 
                     NamedLoc(
-                        mSymHandle: SymHandle(main_::C)
+                        mSymHandle: SymHandle(main_::A)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
                     Location->W: 
                     NamedLoc(
-                        mSymHandle: SymHandle(main_::B)
+                        mSymHandle: SymHandle(main_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )
-                    LClass: Linear
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(main_::A)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(main_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Nonlinear
+                ) ] 
+            
+            NamedLoc(
+                mSymHandle: SymHandle(main_::Y)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(main_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(main_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(main_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(main_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Nonlinear
                 ) ] 
 
 )

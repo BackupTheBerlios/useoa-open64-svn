@@ -1,7 +1,7 @@
 ! LinearityAnalysis for Automatic Differentiation
 !
 !Result Should be:
-!<<a,a>,linear>, <<a,y>,nonlinear>, <<a,x>,nonlinear>
+!<<a,a>,linear>, <<a,y>,linear>, <<a,x>,nonlinear>
 !<<y,y>,nonlinear>, <<y,x>,nonlinear>
 !      
         program main
@@ -15,9 +15,7 @@
 
           a = 0
           y = x
-          do i=1,3
-            a = a + y
-            y = y * x
-          enddo
+          y = y * x
+          a = a + y
         end program main
         
