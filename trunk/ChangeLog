@@ -488,4 +488,10 @@
      http://www-unix.mcs.anl.gov/OpenAnalysisWiki/moin.cgi/AddressOf_20class 
    - regressAll works with OpenAnalysis r285 on Okapi with gcc-3.2
 
-  
+01/23/07   UseOA-Open64 svn trunk r151 Luis Ramos
+   - Corrected a Typo in scripts/regressAll.script.
+   - Rechecked and Regenerated LinearityAnalysis TestCases due to AddressOf 
+     Change, the output is still correct.
+   - Added and Regenerated ExprTree/CosDeg2Rad.B.out, it was MIA. Now 
+     regressAll won't give a diff: No such file or Directory error.
+

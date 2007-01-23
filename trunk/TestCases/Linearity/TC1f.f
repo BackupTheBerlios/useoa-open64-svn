@@ -1,4 +1,9 @@
 ! LinearityAnalysis for Automatic Differentiation Example
+! Should be:
+! <<a,a>,linear>, <<a,x>,nonlinear>
+! <<t,a>,nonlinear>, <<t,x>,nonlinear>
+! <<f,f>,linear>, <<f,t>,linear>, <<f,a>,nonlinear>, <<f,x>,nonlinear>
+! <<i,i>,linear> 
         program main
           double precision :: a, f, t;
           double precision :: x;

@@ -40,12 +40,10 @@ LinearityStandard(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 1
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::A)
@@ -58,12 +56,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::A)
@@ -75,12 +71,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::A)
@@ -95,12 +89,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::A)
@@ -112,12 +104,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: USE
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::X)
@@ -131,12 +121,10 @@ LinearityStandard(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 1
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::F)
@@ -149,12 +137,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::F)
@@ -176,12 +162,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::F)
@@ -193,12 +177,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::F)
@@ -213,12 +195,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::F)
@@ -230,12 +210,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::T)
@@ -249,12 +227,10 @@ LinearityStandard(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 1
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::T)
@@ -267,12 +243,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::T)
@@ -315,12 +289,10 @@ LinearityStandard(
                     InvisibleLoc(
                         mMRE: 
                         Deref(
-                            mAddressOf: 0
                             mFullAccuracy: 1
                             mMemRefType: USE
                             mMRE: 
                             NamedRef(
-                                mAddressOf: 0
                                 mFullAccuracy: 1
                                 mMemRefType: USE
                                 mSymHandle: SymHandle(func_::N)

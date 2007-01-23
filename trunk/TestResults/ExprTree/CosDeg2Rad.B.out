@@ -1,0 +1,77 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/ramos/ANL/UseOA-Open64/TestCases/ExprTree/CosDeg2Rad.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = head_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)
+
+	--Call-----------------------------------------
+	  Call: [head_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr.)]
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &0:X:0:anon_ptr. )
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &0:Y:0:anon_ptr. )
+
+========================stmt============================
+
+stmt = _END()
+
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+
+stmt = PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
+
+========================stmt============================
+
+stmt = PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+
+
+========================stmt============================
+
+stmt = PRAGMA 0 188 <1,25,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+
+========================stmt============================
+
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = Y:0:anon_ptr.(1) = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330)
+
+	--expr----------------------------------------
+	  expr = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330)
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330) )
+    Edge: 
+        0 => 
+        Node 1: ET OpNode ( * )
+        Edge: 
+            1 => 
+            Node 2: ET MemRefNode ( 0:X:0:anon_ptr.(1) )
+        Edge: 
+            1 => 
+            Node 3: ET ConstValNode (   0.01745329251994330 )
+
+========================stmt============================
+
+stmt = return
