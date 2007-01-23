@@ -5,12 +5,10 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 0
                     mMemRefType: USE
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::X)
@@ -21,12 +19,10 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 0
                     mMemRefType: USE
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::Y)
@@ -44,12 +40,10 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 1
                     mMemRefType: USE
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::A)
@@ -60,12 +54,10 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mAddressOf: 0
                     mFullAccuracy: 1
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mAddressOf: 0
                         mFullAccuracy: 1
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::B)

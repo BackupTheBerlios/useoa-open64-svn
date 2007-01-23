@@ -8,9 +8,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("X:0:.predef_F8 = T2:0:.predef_F8") =>
         [
             MemRefHandle("X:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("head_::X"), F, full)
+                NamedRef( DEF, SymHandle("head_::X"), full)
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("head_::T2"), F, full)
+                NamedRef( USE, SymHandle("head_::T2"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

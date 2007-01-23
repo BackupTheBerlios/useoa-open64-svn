@@ -11,10 +11,10 @@ X:0:anon_ptr.() = 0:Y:0:anon_ptr.()") =>
         [
             MemRefHandle("I8SRCTRIPLET
 X:0:anon_ptr.()") => 
-                NamedRef( DEF, SymHandle("head_::X"), F, part)
+                NamedRef( DEF, SymHandle("head_::X"), part)
             MemRefHandle("I8SRCTRIPLET
 0:Y:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("head_::Y"), F, part)
+                NamedRef( USE, SymHandle("head_::Y"), part)
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET

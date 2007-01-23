@@ -6,7 +6,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: do_loop (J:0:.predef_I4<=10)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(conj_grad_::J)
@@ -16,7 +15,6 @@ NamedRef(
 OA::StmtHandle: J:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(conj_grad_::J)
@@ -26,7 +24,6 @@ NamedRef(
 OA::StmtHandle: J:0:.predef_I4 = J:0:.predef_I4+1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(conj_grad_::J)
@@ -34,7 +31,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(conj_grad_::J)
@@ -44,12 +40,10 @@ NamedRef(
 OA::StmtHandle: R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(conj_grad_::R)
@@ -59,12 +53,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(conj_grad_::X)
@@ -74,7 +66,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(conj_grad_::J)
@@ -82,7 +73,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(conj_grad_::J)

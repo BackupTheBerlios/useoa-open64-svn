@@ -12,16 +12,16 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             MemRefHandle("&0:X:0:anon_ptr.") => 
-                NamedRef( USE, SymHandle("head_::X"), F, full)
+                NamedRef( USE, SymHandle("head_::X"), full)
         ] }
     CALLSITES = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             CallHandle("bar_(&0:X:0:anon_ptr.)") => 
-                NamedRef( USE, SymHandle("head_::bar_"), F, full)
+                NamedRef( USE, SymHandle("head_::bar_"), full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
-            < 0, NamedRef( USE, SymHandle("head_::X"), F, full) >
+            < 0, NamedRef( USE, SymHandle("head_::X"), full) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
@@ -42,16 +42,16 @@ PROCEDURE = { < ProcHandle("head_::bar_"), SymHandle("head_::bar_") > }
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("bar_::J"), F, full)
+                NamedRef( DEF, SymHandle("bar_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("B:0:.predef_F8 = 0:A:0:anon_ptr.(J:0:.predef_I4)") =>
         [
             MemRefHandle("B:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("bar_::B"), F, full)
+                NamedRef( DEF, SymHandle("bar_::B"), full)
             MemRefHandle("0:A:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("bar_::A"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("bar_::A"), full), 1, part)
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("bar_::J"), F, full)
+                NamedRef( USE, SymHandle("bar_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

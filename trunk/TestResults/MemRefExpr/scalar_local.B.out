@@ -6,7 +6,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: Y:0:.predef_F8 = X:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::Y)
@@ -14,7 +13,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::X)

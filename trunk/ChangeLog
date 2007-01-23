@@ -480,3 +480,12 @@
 01/19/07   UseOA-Open64 svn trunk r148 Luis Ramos
    - Added Linearity and ExprTree to the regressAll script in Okapi.
    - Regenerated Linearity for Okapi
+
+01/23/07   UseOA-Open64 svn trunk r148 Priyadarshini Malusare
+   - Regenerated TestResults for AddressOf Class.
+   - Modifications in Open64IRInterface for AddressOf class.
+   - Please refer following link for further reference.
+     http://www-unix.mcs.anl.gov/OpenAnalysisWiki/moin.cgi/AddressOf_20class 
+   - regressAll works with OpenAnalysis r285 on Okapi with gcc-3.2
+
+  

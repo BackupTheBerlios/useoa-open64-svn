@@ -6,12 +6,10 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)*    2.000000000000000
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(foo_::Y)
@@ -21,12 +19,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(foo_::X)
@@ -36,7 +32,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(foo_::I)
@@ -44,7 +39,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(foo_::I)
@@ -58,19 +52,27 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ============================================
 OA::StmtHandle: foo_(&0:P:0:anon_ptr., &0:Q:0:anon_ptr.)
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(head_::P)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::P)
+    )
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(head_::Q)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::Q)
+    )
 )
 
 ============================================

@@ -15,7 +15,6 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: T:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::T)
@@ -23,12 +22,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)
@@ -38,12 +35,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)
@@ -55,12 +50,10 @@ Deref(
 OA::StmtHandle: Y:0:anon_ptr.(1) = SIN(&T:0:.predef_F8)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -70,7 +63,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::T)
@@ -80,12 +72,10 @@ NamedRef(
 OA::StmtHandle: Y:0:anon_ptr.(2) = COS(&T:0:.predef_F8)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -95,7 +85,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::T)

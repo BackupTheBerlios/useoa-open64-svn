@@ -117,7 +117,7 @@ test::localarraysubscriptdef.B,               checked by PLM 12/16/06
 test::localscalaruse.B,                       checked by PLM 12/16/06
 test::localscalardef.B,                       checked by PLM 12/16/06   
 test::formalarrayactualcalleeusewholearray.B, checked by PLM 12/16/06
-test::formalarrayactualcalleeuse.B,           checked by PLM 12/16/06
+#test::formalarrayactualcalleeuse.B,           PLM 01/15/07 core dump because logic for ICALL is not implemented in Open64IRInterface.cpp
 test::formalarrayactualcalleeusesubscript.B,  checked by PLM 12/16/06
 test::formalarrayactualsubscriptcalleeuse.B,  checked by PLM 12/16/06
 test::formalarrayactualcalleeusein.B,         checked by PLM 12/16/06

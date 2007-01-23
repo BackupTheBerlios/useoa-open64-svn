@@ -1,12 +1,11 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalscalaruseout.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/formalscalaruseout.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
 OA::StmtHandle: T2:0:.predef_F8 = X:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::T2)
@@ -14,12 +13,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)

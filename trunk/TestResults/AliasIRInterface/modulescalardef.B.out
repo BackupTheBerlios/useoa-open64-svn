@@ -19,9 +19,9 @@ PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
     MEMREFEXPRS = { StmtHandle("X:0:.predef_F8 = T2:0:.predef_F8") =>
         [
             MemRefHandle("X:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("globals_::X"), F, full)
+                NamedRef( DEF, SymHandle("globals_::X"), full)
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("head_::T2"), F, full)
+                NamedRef( USE, SymHandle("head_::T2"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

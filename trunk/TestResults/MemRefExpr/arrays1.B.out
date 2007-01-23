@@ -7,7 +7,6 @@ OA::StmtHandle: I8SRCTRIPLET
 X:0:anon_ptr.() =     2.500000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(arrays_::X)
@@ -17,7 +16,6 @@ NamedRef(
 OA::StmtHandle: Y:0:.predef_F8 =     3.500000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(arrays_::Y)
@@ -28,7 +26,6 @@ OA::StmtHandle: I8SRCTRIPLET
 IX:0:anon_ptr.() = 5
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(arrays_::IX)
@@ -38,7 +35,6 @@ NamedRef(
 OA::StmtHandle: I:0:.predef_I4 = 10
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(arrays_::I)
@@ -48,7 +44,6 @@ NamedRef(
 OA::StmtHandle: X:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(4)+    3.141499996185303-Y:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(arrays_::X)
@@ -56,7 +51,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(arrays_::X)
@@ -64,7 +58,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(arrays_::X)
@@ -72,7 +65,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(arrays_::Y)
@@ -82,7 +74,6 @@ NamedRef(
 OA::StmtHandle: IX:0:anon_ptr.(4) = II:0:.predef_I4+0:IX:0:anon_ptr.(1)/0:IX:0:anon_ptr.(2)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(arrays_::IX)
@@ -90,7 +81,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(arrays_::II)
@@ -98,7 +88,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(arrays_::IX)
@@ -106,7 +95,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(arrays_::IX)

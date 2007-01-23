@@ -15,7 +15,6 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: PI:0:.predef_F8 =     3.141499996185303
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::PI)
@@ -25,7 +24,6 @@ NamedRef(
 OA::StmtHandle: do_loop (I:0:.predef_I4<=9)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -35,7 +33,6 @@ NamedRef(
 OA::StmtHandle: I:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::I)
@@ -45,7 +42,6 @@ NamedRef(
 OA::StmtHandle: I:0:.predef_I4 = I:0:.predef_I4+1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::I)
@@ -53,7 +49,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -65,12 +60,10 @@ OA::StmtHandle: if (I:0:.predef_I4>5)
 OA::StmtHandle: Y:0:anon_ptr.(I:0:.predef_I4) = PI:0:.predef_F8*SIN(&X:0:anon_ptr.(I:0:.predef_I4))
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -80,7 +73,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::PI)
@@ -88,12 +80,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)
@@ -103,7 +93,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -111,7 +100,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -121,12 +109,10 @@ NamedRef(
 OA::StmtHandle: Y:0:anon_ptr.(I:0:.predef_I4) = PI:0:.predef_F8+COS(&X:0:anon_ptr.(I:0:.predef_I4))
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -136,7 +122,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::PI)
@@ -144,12 +129,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)
@@ -159,7 +142,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -167,7 +149,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -177,12 +158,10 @@ NamedRef(
 OA::StmtHandle: Y:0:anon_ptr.(10) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(9)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -192,12 +171,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -207,12 +184,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)

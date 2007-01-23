@@ -11,13 +11,13 @@ A:0:anon_ptr.(0:VECTOR:0:anon_ptr.()) = 0:B:0:anon_ptr.()") =>
         [
             MemRefHandle("I8SRCTRIPLET
 A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())") => 
-                NamedRef( DEF, SymHandle("head_::A"), F, part)
+                NamedRef( DEF, SymHandle("head_::A"), part)
             MemRefHandle("I8SRCTRIPLET
 0:B:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("head_::B"), F, part)
+                NamedRef( USE, SymHandle("head_::B"), part)
             MemRefHandle("I8SRCTRIPLET
 0:VECTOR:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("head_::VECTOR"), F, part)
+                NamedRef( USE, SymHandle("head_::VECTOR"), part)
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET
@@ -30,13 +30,13 @@ A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") =>
         [
             MemRefHandle("I8SRCTRIPLET
 A:0:anon_ptr.()") => 
-                NamedRef( DEF, SymHandle("head_::A"), F, part)
+                NamedRef( DEF, SymHandle("head_::A"), part)
             MemRefHandle("I8SRCTRIPLET
 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") => 
-                NamedRef( USE, SymHandle("head_::B"), F, part)
+                NamedRef( USE, SymHandle("head_::B"), part)
             MemRefHandle("I8SRCTRIPLET
 0:t__1:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("head_::t__1"), F, part)
+                NamedRef( USE, SymHandle("head_::t__1"), part)
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET

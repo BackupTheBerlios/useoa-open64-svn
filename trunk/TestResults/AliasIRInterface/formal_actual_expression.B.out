@@ -12,39 +12,39 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("if (N:0:.predef_I4==1)") =>
         [
             MemRefHandle("N:0:.predef_I4") => 
-                Deref( USE, NamedRef( USE, SymHandle("factorial_::N"), F, full), 1, F, full)
+                Deref( USE, NamedRef( USE, SymHandle("factorial_::N"), full), 1, full)
         ] }
     MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 1") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("factorial_::RES"), F, full)
+                NamedRef( DEF, SymHandle("factorial_::RES"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("factorial_::RES"), F, full)
+                NamedRef( DEF, SymHandle("factorial_::RES"), full)
             MemRefHandle("N:0:.predef_I4") => 
-                Deref( USE, NamedRef( USE, SymHandle("factorial_::N"), F, full), 1, F, full)
+                Deref( USE, NamedRef( USE, SymHandle("factorial_::N"), full), 1, full)
             MemRefHandle("&N:0:.predef_I4+-1") => 
-                UnnamedRef( USE, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), T, full)
+                AddressOf( USE, UnnamedRef( DEF, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), full), full)
             MemRefHandle("N:0:.predef_I4+-1") => 
-                UnnamedRef( DEF, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), F, full)
+                UnnamedRef( DEF, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), full)
             MemRefHandle("N:0:.predef_I4") => 
-                Deref( USE, NamedRef( USE, SymHandle("factorial_::N"), F, full), 1, F, full)
+                Deref( USE, NamedRef( USE, SymHandle("factorial_::N"), full), 1, full)
         ] }
     CALLSITES = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)") =>
         [
             CallHandle("factorial_(&N:0:.predef_I4+-1)") => 
-                NamedRef( USE, SymHandle("factorial_::factorial_"), F, full)
+                NamedRef( USE, SymHandle("factorial_::factorial_"), full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
         [
-            < 0, UnnamedRef( USE, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), T, full) >
+            < 0, AddressOf( USE, UnnamedRef( DEF, StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4+-1)"), full), full) >
         ] }
     MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("factorial_::RES"), F, full)
+                NamedRef( USE, SymHandle("factorial_::RES"), full)
         ] }
     LOCATION = { < SymHandle("factorial_::factorial_"), not local > }
     LOCATION = { < SymHandle("factorial_::RES"), local > }
@@ -58,18 +58,18 @@ PROCEDURE = { < ProcHandle("factorial_::recfunc_"), SymHandle("factorial_::recfu
     MEMREFEXPRS = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))") =>
         [
             MemRefHandle("N:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("recfunc_::N"), F, full)
+                NamedRef( DEF, SymHandle("recfunc_::N"), full)
             MemRefHandle("&N:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("recfunc_::N"), T, full)
+                AddressOf( USE, NamedRef( USE, SymHandle("recfunc_::N"), full), full)
         ] }
     CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4))") =>
         [
             CallHandle("factorial_(&N:0:.predef_I4)") => 
-                NamedRef( USE, SymHandle("factorial_::factorial_"), F, full)
+                NamedRef( USE, SymHandle("factorial_::factorial_"), full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4)") =>
         [
-            < 0, NamedRef( USE, SymHandle("recfunc_::N"), T, full) >
+            < 0, AddressOf( USE, NamedRef( USE, SymHandle("recfunc_::N"), full), full) >
         ] }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [

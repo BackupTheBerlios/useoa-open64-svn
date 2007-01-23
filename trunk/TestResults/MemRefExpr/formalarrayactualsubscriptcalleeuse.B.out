@@ -1,27 +1,29 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarrayactualsubscriptcalleeuse.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/formalarrayactualsubscriptcalleeuse.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
 OA::StmtHandle: bar_(&X:0:anon_ptr.(I:0:.predef_I4))
 	mre = 
-Deref(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
-    NamedRef(
-        mAddressOf: 0
-        mFullAccuracy: 1
+    Deref(
+        mFullAccuracy: 0
         mMemRefType: USE
-        mSymHandle: SymHandle(head_::X)
+        mMRE: 
+        NamedRef(
+            mFullAccuracy: 1
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::X)
+        )
+        mNumDeref: 1
     )
-    mNumDeref: 1
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -36,7 +38,6 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: B:0:.predef_F8 = A:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(bar_::B)
@@ -44,12 +45,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(bar_::A)

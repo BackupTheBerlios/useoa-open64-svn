@@ -1004,7 +1004,7 @@ TestIR_OAAliasMapFIAlias(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::Alias::InterAliasMap> interAlias
       = fialiasman->performAnalysis(procIter);
   interAlias->output(*irInterface);
- 
+  
   return 0;
 }
 

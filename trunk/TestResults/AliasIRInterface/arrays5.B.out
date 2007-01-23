@@ -13,30 +13,30 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("do_loop (J:0:.predef_I4<=10)") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), F, full)
+                NamedRef( USE, SymHandle("conj_grad_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("conj_grad_::J"), F, full)
+                NamedRef( DEF, SymHandle("conj_grad_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = J:0:.predef_I4+1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("conj_grad_::J"), F, full)
+                NamedRef( DEF, SymHandle("conj_grad_::J"), full)
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), F, full)
+                NamedRef( USE, SymHandle("conj_grad_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4)") =>
         [
             MemRefHandle("R:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("conj_grad_::R"), F, full), 1, F, part)
+                Deref( DEF, NamedRef( USE, SymHandle("conj_grad_::R"), full), 1, part)
             MemRefHandle("0:X:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("conj_grad_::X"), F, full), 1, F, part)
+                Deref( USE, NamedRef( USE, SymHandle("conj_grad_::X"), full), 1, part)
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), F, full)
+                NamedRef( USE, SymHandle("conj_grad_::J"), full)
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), F, full)
+                NamedRef( USE, SymHandle("conj_grad_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

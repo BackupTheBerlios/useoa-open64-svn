@@ -1,5 +1,5 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/localarrayofarrayusesubscript.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/localarrayofarrayusesubscript.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
@@ -7,7 +7,6 @@ OA::StmtHandle: I8SRCTRIPLET
 B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(I:0:.predef_I4))
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::B)
@@ -15,7 +14,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(head_::A)
@@ -23,7 +21,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(head_::VECTOR)
@@ -31,7 +28,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::I)
@@ -43,7 +39,6 @@ I8SRCTRIPLET
 A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::A)
@@ -51,7 +46,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(head_::B)
@@ -59,7 +53,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(head_::t__1)

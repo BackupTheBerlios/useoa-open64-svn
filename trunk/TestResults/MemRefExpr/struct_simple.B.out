@@ -13,12 +13,10 @@ OA::StmtHandle: U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
  = X:0:.predef_F8
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)
@@ -28,12 +26,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 0
         mMemRefType: USE
         mSymHandle: SymHandle(head_::TYPED_Y)

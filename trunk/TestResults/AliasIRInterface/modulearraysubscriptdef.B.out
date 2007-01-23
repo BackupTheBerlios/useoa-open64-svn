@@ -19,16 +19,16 @@ PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("head_::J"), F, full)
+                NamedRef( DEF, SymHandle("head_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("X:0:anon_ptr.(J:0:.predef_I4) = T2:0:.predef_F8") =>
         [
             MemRefHandle("X:0:anon_ptr.(J:0:.predef_I4)") => 
-                NamedRef( DEF, SymHandle("globals_::X"), F, part)
+                NamedRef( DEF, SymHandle("globals_::X"), part)
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("head_::T2"), F, full)
+                NamedRef( USE, SymHandle("head_::T2"), full)
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("head_::J"), F, full)
+                NamedRef( USE, SymHandle("head_::J"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

@@ -13,9 +13,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000") =>
         [
             MemRefHandle("Y:0:.predef_F8") => 
-                Deref( DEF, NamedRef( USE, SymHandle("foo_::Y"), F, full), 1, F, full)
+                Deref( DEF, NamedRef( USE, SymHandle("foo_::Y"), full), 1, full)
             MemRefHandle("X:0:.predef_F8") => 
-                Deref( USE, NamedRef( USE, SymHandle("foo_::X"), F, full), 1, F, full)
+                Deref( USE, NamedRef( USE, SymHandle("foo_::X"), full), 1, full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
@@ -32,38 +32,38 @@ PROCEDURE = { < ProcHandle("foo_::head_"), SymHandle("foo_::head_") > }
     MEMREFEXPRS = { StmtHandle("K:0:.predef_I4 = 1") =>
         [
             MemRefHandle("K:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("head_::K"), F, full)
+                NamedRef( DEF, SymHandle("head_::K"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("P:0:anon_ptr.(1) =     1.000000") =>
         [
             MemRefHandle("P:0:anon_ptr.(1)") => 
-                NamedRef( DEF, SymHandle("head_::P"), F, part)
+                NamedRef( DEF, SymHandle("head_::P"), part)
         ] }
     MEMREFEXPRS = { StmtHandle("Q:0:anon_ptr.(1) =     2.000000") =>
         [
             MemRefHandle("Q:0:anon_ptr.(1)") => 
-                NamedRef( DEF, SymHandle("head_::Q"), F, part)
+                NamedRef( DEF, SymHandle("head_::Q"), part)
         ] }
     MEMREFEXPRS = { StmtHandle("foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(K:0:.predef_I4))") =>
         [
             MemRefHandle("&P:0:anon_ptr.(K:0:.predef_I4)") => 
-                NamedRef( USE, SymHandle("head_::P"), T, part)
+                AddressOf( USE, NamedRef( USE, SymHandle("head_::P"), part), part)
             MemRefHandle("K:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("head_::K"), F, full)
+                NamedRef( USE, SymHandle("head_::K"), full)
             MemRefHandle("&Q:0:anon_ptr.(K:0:.predef_I4)") => 
-                NamedRef( USE, SymHandle("head_::Q"), T, part)
+                AddressOf( USE, NamedRef( USE, SymHandle("head_::Q"), part), part)
             MemRefHandle("K:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("head_::K"), F, full)
+                NamedRef( USE, SymHandle("head_::K"), full)
         ] }
     CALLSITES = { StmtHandle("foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(K:0:.predef_I4))") =>
         [
             CallHandle("foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(K:0:.predef_I4))") => 
-                NamedRef( USE, SymHandle("foo_::foo_"), F, full)
+                NamedRef( USE, SymHandle("foo_::foo_"), full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(K:0:.predef_I4))") =>
         [
-            < 0, NamedRef( USE, SymHandle("head_::P"), T, part) >
-            < 1, NamedRef( USE, SymHandle("head_::Q"), T, part) >
+            < 0, AddressOf( USE, NamedRef( USE, SymHandle("head_::P"), part), part) >
+            < 1, AddressOf( USE, NamedRef( USE, SymHandle("head_::Q"), part), part) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

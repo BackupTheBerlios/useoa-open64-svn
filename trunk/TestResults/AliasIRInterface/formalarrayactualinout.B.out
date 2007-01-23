@@ -12,16 +12,16 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             MemRefHandle("&0:X:0:anon_ptr.") => 
-                NamedRef( USE, SymHandle("head_::X"), F, full)
+                NamedRef( USE, SymHandle("head_::X"), full)
         ] }
     CALLSITES = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             CallHandle("bar_(&0:X:0:anon_ptr.)") => 
-                NamedRef( USE, SymHandle("head_::bar_"), F, full)
+                NamedRef( USE, SymHandle("head_::bar_"), full)
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
-            < 0, NamedRef( USE, SymHandle("head_::X"), F, full) >
+            < 0, NamedRef( USE, SymHandle("head_::X"), full) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

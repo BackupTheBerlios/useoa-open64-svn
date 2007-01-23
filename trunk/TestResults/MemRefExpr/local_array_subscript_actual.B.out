@@ -6,12 +6,10 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(foo_::Y)
@@ -21,12 +19,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(foo_::X)
@@ -43,7 +39,6 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: K:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::K)
@@ -53,7 +48,6 @@ NamedRef(
 OA::StmtHandle: P:0:anon_ptr.(1) =     1.000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::P)
@@ -63,7 +57,6 @@ NamedRef(
 OA::StmtHandle: Q:0:anon_ptr.(1) =     2.000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::Q)
@@ -72,32 +65,38 @@ NamedRef(
 ============================================
 OA::StmtHandle: foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(K:0:.predef_I4))
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(head_::P)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::P)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::K)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 0
     mMemRefType: USE
-    mSymHandle: SymHandle(head_::Q)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::Q)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::K)

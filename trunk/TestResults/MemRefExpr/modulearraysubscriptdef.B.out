@@ -1,5 +1,5 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/modulearraysubscriptdef.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/modulearraysubscriptdef.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
@@ -12,7 +12,6 @@ OA::StmtHandle: USE <1,20,globals_>
 OA::StmtHandle: J:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::J)
@@ -22,7 +21,6 @@ NamedRef(
 OA::StmtHandle: X:0:anon_ptr.(J:0:.predef_I4) = T2:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(globals_::X)
@@ -30,7 +28,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::T2)
@@ -38,7 +35,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::J)

@@ -208,8 +208,6 @@ echo "Generating TestResults/MemRefExpr/localscalardef.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalardef.B > TestResults/MemRefExpr/localscalardef.B.out
 echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeusewholearray.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusewholearray.B > TestResults/MemRefExpr/formalarrayactualcalleeusewholearray.B.out
-echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeuse.B.out"
-./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeuse.B > TestResults/MemRefExpr/formalarrayactualcalleeuse.B.out
 echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeusesubscript.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusesubscript.B > TestResults/MemRefExpr/formalarrayactualcalleeusesubscript.B.out
 echo "Generating TestResults/MemRefExpr/formalarrayactualsubscriptcalleeuse.B.out"

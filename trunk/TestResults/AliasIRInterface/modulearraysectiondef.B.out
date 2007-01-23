@@ -21,9 +21,9 @@ X:0:anon_ptr.() = T2:0:.predef_F8") =>
         [
             MemRefHandle("I8SRCTRIPLET
 X:0:anon_ptr.()") => 
-                NamedRef( DEF, SymHandle("globals_::X"), F, part)
+                NamedRef( DEF, SymHandle("globals_::X"), part)
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("head_::T2"), F, full)
+                NamedRef( USE, SymHandle("head_::T2"), full)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

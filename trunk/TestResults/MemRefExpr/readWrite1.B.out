@@ -87,12 +87,10 @@ OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 OA::StmtHandle: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::Y)
@@ -102,12 +100,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)

@@ -15,12 +15,10 @@ OA::StmtHandle: USE <1,20,precisions_>
 OA::StmtHandle: IFAIL:0:.predef_I4 = 0
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::IFAIL)
@@ -32,12 +30,10 @@ Deref(
 OA::StmtHandle: if (TOL:0:.predef_F8<=    0.000000000000000||N:0:.predef_I4<=0||A:0:.predef_F8==B:0:.predef_F8)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::TOL)
@@ -47,12 +43,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::N)
@@ -62,12 +56,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::A)
@@ -77,12 +69,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::B)
@@ -94,12 +84,10 @@ Deref(
 OA::StmtHandle: IFAIL:0:.predef_I4 = 1
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::IFAIL)
@@ -113,7 +101,6 @@ OA::StmtHandle: return
 OA::StmtHandle: T:0:.predef_F8 = A:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::T)
@@ -121,12 +108,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::A)
@@ -138,7 +123,6 @@ Deref(
 OA::StmtHandle: H:0:.predef_F8 = (B:0:.predef_F8-A:0:.predef_F8)/    100.0000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -146,12 +130,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::B)
@@ -161,12 +143,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::A)
@@ -181,7 +161,6 @@ OA::StmtHandle: LABEL L2 0
 OA::StmtHandle: H2:0:.predef_F8 = H:0:.predef_F8*   0.5000000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H2)
@@ -189,7 +168,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -199,7 +177,6 @@ NamedRef(
 OA::StmtHandle: H3:0:.predef_F8 = H:0:.predef_F8/    3.000000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H3)
@@ -207,7 +184,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -217,7 +193,6 @@ NamedRef(
 OA::StmtHandle: H6:0:.predef_F8 = H:0:.predef_F8/    6.000000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H6)
@@ -225,7 +200,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -235,7 +209,6 @@ NamedRef(
 OA::StmtHandle: H8:0:.predef_F8 = H:0:.predef_F8*   0.1250000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H8)
@@ -243,7 +216,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -252,32 +224,38 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&T:0:.predef_F8, &0:Y:0:anon_ptr., &0:S1:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::T)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::T)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::Y)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::S1)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::S1)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::N)
@@ -290,7 +268,6 @@ I8SRCTRIPLET
 NEW_Y_1:0:anon_ptr.() = 0:Y:0:anon_ptr.()+0:S1:0:anon_ptr.()*H3:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -298,12 +275,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -313,7 +288,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S1)
@@ -321,7 +295,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H3)
@@ -330,16 +303,19 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4))
+    mMRE: 
+    UnnamedRef(
+        mFullAccuracy: 1
+        mMemRefType: DEF
+        mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4))
+    )
 )
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S2:0:anon_ptr., &N:0:.predef_I4))
@@ -347,7 +323,6 @@ UnnamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H3)
@@ -355,31 +330,37 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    )
+)
+
+	mre = 
+AddressOf(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::S2)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::S2)
-)
-
-	mre = 
-NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::N)
@@ -393,7 +374,6 @@ I8SRCTRIPLET
 NEW_Y_1:0:anon_ptr.() = 0:Y:0:anon_ptr.()+0:S1:0:anon_ptr.()*H6:0:.predef_F8+0:S2:0:anon_ptr.()*H6:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -401,12 +381,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -416,7 +394,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S1)
@@ -424,7 +401,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H6)
@@ -432,7 +408,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S2)
@@ -440,7 +415,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H6)
@@ -449,16 +423,19 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4))
+    mMRE: 
+    UnnamedRef(
+        mFullAccuracy: 1
+        mMemRefType: DEF
+        mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4))
+    )
 )
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mStmtHandle: StmtHandle(fun_(&H3:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S3:0:anon_ptr., &N:0:.predef_I4))
@@ -466,7 +443,6 @@ UnnamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H3)
@@ -474,31 +450,37 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    )
+)
+
+	mre = 
+AddressOf(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::S3)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::S3)
-)
-
-	mre = 
-NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::N)
@@ -512,7 +494,6 @@ I8SRCTRIPLET
 NEW_Y_1:0:anon_ptr.() = 0:Y:0:anon_ptr.()+H8:0:.predef_F8*(0:S2:0:anon_ptr.()+0:S3:0:anon_ptr.()*    3.000000000000000)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -520,12 +501,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -535,7 +514,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H8)
@@ -543,7 +521,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S2)
@@ -551,7 +528,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S3)
@@ -560,16 +536,19 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mStmtHandle: StmtHandle(fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4))
+    mMRE: 
+    UnnamedRef(
+        mFullAccuracy: 1
+        mMemRefType: DEF
+        mStmtHandle: StmtHandle(fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4))
+    )
 )
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mStmtHandle: StmtHandle(fun_(&H2:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S4:0:anon_ptr., &N:0:.predef_I4))
@@ -577,7 +556,6 @@ UnnamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H2)
@@ -585,31 +563,37 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    )
+)
+
+	mre = 
+AddressOf(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::S4)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::S4)
-)
-
-	mre = 
-NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::N)
@@ -624,7 +608,6 @@ I8SRCTRIPLET
 NEW_Y_1:0:anon_ptr.() = 0:Y:0:anon_ptr.()+H2:0:.predef_F8*(0:S4:0:anon_ptr.()*    4.000000000000000+0:S1:0:anon_ptr.()-0:S3:0:anon_ptr.()*    3.000000000000000)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -632,12 +615,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -647,7 +628,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H2)
@@ -655,7 +635,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S4)
@@ -663,7 +642,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S1)
@@ -671,7 +649,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S3)
@@ -680,16 +657,19 @@ NamedRef(
 ============================================
 OA::StmtHandle: fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4)
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mStmtHandle: StmtHandle(fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4))
+    mMRE: 
+    UnnamedRef(
+        mFullAccuracy: 1
+        mMemRefType: DEF
+        mStmtHandle: StmtHandle(fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4))
+    )
 )
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mStmtHandle: StmtHandle(fun_(&H:0:.predef_F8+T:0:.predef_F8, &0:NEW_Y_1:0:anon_ptr., &0:S5:0:anon_ptr., &N:0:.predef_I4))
@@ -697,7 +677,6 @@ UnnamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -705,31 +684,37 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
+    )
+)
+
+	mre = 
+AddressOf(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(runge_kutta_merson_::S5)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 1
-    mFullAccuracy: 1
-    mMemRefType: USE
-    mSymHandle: SymHandle(runge_kutta_merson_::S5)
-)
-
-	mre = 
-NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::N)
@@ -744,7 +729,6 @@ I8SRCTRIPLET
 NEW_Y_1:0:anon_ptr.() = 0:Y:0:anon_ptr.()+H6:0:.predef_F8*(0:S5:0:anon_ptr.()+0:S1:0:anon_ptr.()+0:S4:0:anon_ptr.()*    4.000000000000000)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -752,12 +736,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -767,7 +749,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H6)
@@ -775,7 +756,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S5)
@@ -783,7 +763,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S1)
@@ -791,7 +770,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S4)
@@ -806,7 +784,6 @@ I8SRCTRIPLET
 NEW_Y_2:0:anon_ptr.() = 0:Y:0:anon_ptr.()+H2:0:.predef_F8*(0:S4:0:anon_ptr.()*    4.000000000000000+0:S1:0:anon_ptr.()-0:S3:0:anon_ptr.()*    3.000000000000000)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_2)
@@ -814,12 +791,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -829,7 +804,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H2)
@@ -837,7 +811,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S4)
@@ -845,7 +818,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S1)
@@ -853,7 +825,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::S3)
@@ -864,7 +835,6 @@ OA::StmtHandle: I8SRCTRIPLET
 ERROR:0:anon_ptr.() = ABS(&(0:NEW_Y_1:0:anon_ptr.-0:NEW_Y_2:0:anon_ptr.)*   0.2000000000000000)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::ERROR)
@@ -872,7 +842,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -880,7 +849,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_2)
@@ -890,7 +858,6 @@ NamedRef(
 OA::StmtHandle: MAX_ERROR:0:.predef_F8 = MAXVAL(&0:ERROR:0:anon_ptr.)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::MAX_ERROR)
@@ -898,7 +865,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::ERROR)
@@ -908,12 +874,10 @@ NamedRef(
 OA::StmtHandle: if (TOL:0:.predef_F8<MAX_ERROR:0:.predef_F8)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::TOL)
@@ -923,7 +887,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::MAX_ERROR)
@@ -935,7 +898,6 @@ OA::StmtHandle: if (SMALLEST_STEP:0:.predef_F8>ABS(&H2:0:.predef_F8))
 OA::StmtHandle: ABS(&H2:0:.predef_F8)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H2)
@@ -945,12 +907,10 @@ NamedRef(
 OA::StmtHandle: IFAIL:0:.predef_I4 = 2
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::IFAIL)
@@ -964,7 +924,6 @@ OA::StmtHandle: return
 OA::StmtHandle: H:0:.predef_F8 = H2:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -972,7 +931,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H2)
@@ -984,12 +942,10 @@ I8SRCTRIPLET
 Y:0:anon_ptr.() = 0:NEW_Y_1:0:anon_ptr.()
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::Y)
@@ -999,7 +955,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::NEW_Y_1)
@@ -1009,7 +964,6 @@ NamedRef(
 OA::StmtHandle: T:0:.predef_F8 = H:0:.predef_F8+T:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::T)
@@ -1017,7 +971,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -1025,7 +978,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
@@ -1037,7 +989,6 @@ OA::StmtHandle: if (TOL:0:.predef_F8>FACTOR:0:.predef_F8*MAX_ERROR:0:.predef_F8)
 OA::StmtHandle: H:0:.predef_F8 = H:0:.predef_F8*    2.000000000000000
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -1045,7 +996,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -1055,12 +1005,10 @@ NamedRef(
 OA::StmtHandle: if (B:0:.predef_F8<H:0:.predef_F8+T:0:.predef_F8)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::B)
@@ -1070,7 +1018,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -1078,7 +1025,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
@@ -1088,7 +1034,6 @@ NamedRef(
 OA::StmtHandle: H:0:.predef_F8 = B:0:.predef_F8-T:0:.predef_F8
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::H)
@@ -1096,12 +1041,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::B)
@@ -1111,7 +1054,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
@@ -1121,7 +1063,6 @@ NamedRef(
 OA::StmtHandle: NO_OF_STEPS:0:.predef_I4 = NO_OF_STEPS:0:.predef_I4+1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(runge_kutta_merson_::NO_OF_STEPS)
@@ -1129,7 +1070,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::NO_OF_STEPS)
@@ -1139,12 +1079,10 @@ NamedRef(
 OA::StmtHandle: truebr (B:0:.predef_F8<=T:0:.predef_F8), L1
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(runge_kutta_merson_::B)
@@ -1154,7 +1092,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(runge_kutta_merson_::T)
@@ -1209,7 +1146,6 @@ OA::StmtHandle: I8SRCTRIPLET
 _ALLOCATE(&Y:0:anon_ptr.(), &ALL_STAT:0:anon_ptr.)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(ch2602_::Y)
@@ -1217,7 +1153,6 @@ NamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(ch2602_::ALL_STAT)
@@ -1253,12 +1188,10 @@ OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 OA::StmtHandle: STOP_F90(&"", 0)
 	mre = 
 Deref(
-    mAddressOf: 0
-    mFullAccuracy: 1
+    mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 0
         mMemRefType: USE
         mSymHandle: SymHandle(precisions_::<no-symbol>)
@@ -1379,59 +1312,82 @@ OA::StmtHandle: PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
 ============================================
 OA::StmtHandle: runge_kutta_merson_(&0:Y:0:anon_ptr., &fun1_:0:anon_ptr., &IFAIL:0:.predef_I4, &N:0:.predef_I4, &A:0:.predef_F8, &B:0:.predef_F8, &TOL:0:.predef_F8)
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(ch2602_::Y)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2602_::Y)
+    )
 )
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mSymHandle: SymHandle(precisions_::fun1_)
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(ch2602_::IFAIL)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2602_::IFAIL)
+    )
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(ch2602_::N)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2602_::N)
+    )
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(ch2602_::A)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2602_::A)
+    )
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(ch2602_::B)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2602_::B)
+    )
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(ch2602_::TOL)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2602_::TOL)
+    )
 )
 
 ============================================
@@ -1488,12 +1444,10 @@ OA::StmtHandle: USE <1,20,precisions_>
 OA::StmtHandle: F:0:anon_ptr.(1) = TAN(&Y:0:anon_ptr.(3))
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::F)
@@ -1503,12 +1457,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::Y)
@@ -1520,12 +1472,10 @@ Deref(
 OA::StmtHandle: F:0:anon_ptr.(2) = -0:Y:0:anon_ptr.(2)*  0.02000000000000000/COS(&Y:0:anon_ptr.(3))+0:F:0:anon_ptr.(1)*  0.03200000000000000/0:Y:0:anon_ptr.(2)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::F)
@@ -1535,12 +1485,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::Y)
@@ -1550,12 +1498,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::Y)
@@ -1565,12 +1511,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::F)
@@ -1580,12 +1524,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::Y)
@@ -1597,12 +1539,10 @@ Deref(
 OA::StmtHandle: F:0:anon_ptr.(3) =  -0.03200000000000000/(0:Y:0:anon_ptr.(2)*0:Y:0:anon_ptr.(2))
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: DEF
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::F)
@@ -1612,12 +1552,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::Y)
@@ -1627,12 +1565,10 @@ Deref(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(fun1_::Y)

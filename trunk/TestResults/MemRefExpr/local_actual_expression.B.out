@@ -6,12 +6,10 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: if (N:0:.predef_I4==1)
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(factorial_::N)
@@ -23,7 +21,6 @@ Deref(
 OA::StmtHandle: RES:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(factorial_::RES)
@@ -33,7 +30,6 @@ NamedRef(
 OA::StmtHandle: TEMP:0:.predef_I4 = N:0:.predef_I4+-1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(factorial_::TEMP)
@@ -41,12 +37,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(factorial_::N)
@@ -58,7 +52,6 @@ Deref(
 OA::StmtHandle: RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&TEMP:0:.predef_I4)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(factorial_::RES)
@@ -66,12 +59,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(factorial_::N)
@@ -80,18 +71,21 @@ Deref(
 )
 
 	mre = 
-NamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mSymHandle: SymHandle(factorial_::TEMP)
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(factorial_::TEMP)
+    )
 )
 
 ============================================
 OA::StmtHandle: return (RES:0:.predef_I4)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(factorial_::RES)
@@ -104,23 +98,25 @@ OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 OA::StmtHandle: N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(recfunc_::N)
 )
 
 	mre = 
-UnnamedRef(
-    mAddressOf: 1
+AddressOf(
     mFullAccuracy: 1
     mMemRefType: USE
-    mStmtHandle: StmtHandle(N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1)))
+    mMRE: 
+    UnnamedRef(
+        mFullAccuracy: 1
+        mMemRefType: DEF
+        mStmtHandle: StmtHandle(N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1)))
+    )
 )
 
 	mre = 
 UnnamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mStmtHandle: StmtHandle(N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1)))
@@ -128,7 +124,6 @@ UnnamedRef(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(recfunc_::N)

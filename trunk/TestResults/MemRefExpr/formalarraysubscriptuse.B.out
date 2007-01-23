@@ -1,12 +1,11 @@
 ============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/110506/UseOA-Open64/examples/formalarraysubscriptuse.f"
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/formalarraysubscriptuse.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 ============================================
 OA::StmtHandle: J:0:.predef_I4 = 1
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::J)
@@ -16,7 +15,6 @@ NamedRef(
 OA::StmtHandle: T2:0:.predef_F8 = 0:X:0:anon_ptr.(J:0:.predef_I4)
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: DEF
     mSymHandle: SymHandle(head_::T2)
@@ -24,12 +22,10 @@ NamedRef(
 
 	mre = 
 Deref(
-    mAddressOf: 0
     mFullAccuracy: 0
     mMemRefType: USE
     mMRE: 
     NamedRef(
-        mAddressOf: 0
         mFullAccuracy: 1
         mMemRefType: USE
         mSymHandle: SymHandle(head_::X)
@@ -39,7 +35,6 @@ Deref(
 
 	mre = 
 NamedRef(
-    mAddressOf: 0
     mFullAccuracy: 1
     mMemRefType: USE
     mSymHandle: SymHandle(head_::J)
