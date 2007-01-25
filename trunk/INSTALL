@@ -1,3 +1,61 @@
+================================================================================
+UseOA-Open64 INSTALL
+================================================================================
+UseOA-Open64 depends on the Open64 compiler infrastructure and
+the OpenAnalysis library.
+
+Installing Open64
+-----------------
+1) get Anonymous Access
+   http://www.hipersoft.rice.edu/cvs/index.html
+   put hipersoft-anonssh in ~/bin and make it executable
+
+2) Checkout Open64
+   % setenv CVS_RSH ~/bin/hipersoft-anonssh
+   % setenv CVSROOT :ext:anoncvs@128.42.2.152:/Volumes/cvsrep/developer
+   % cvs co Open64
+
+3) Set the OPEN64TARG environment variable to the full path for
+   Open64/osprey1.0/targ_ia32_ia64_linux/.
+   For example,
+    % setenv OPEN64TARG /home/mstrout/oadev/open64/Open64/osprey1.0/targ_ia32_ia64_linux
+
+4) Set the OPEN64BASE environment variable to the full path for
+   Open64/osprey1.0/.
+   For example,
+    % setenv OPEN64BASE /home/mstrout/oadev/open64/Open64/osprey1.0/
+
+5) Build Open64
+   % cd $OPEN64TARG/crayf90/sgi; make
+   % cd $OPEN64TARG/whirl2f; make 
+   % cd $OPEN64TARG/ir_tools; make 
+
+Installing OpenAnalysis
+-----------------------
+See the INSTALL file in OpenAnalysis for directions.
+   
+Installing UseOA-Open64
+----------------------------
+   
+1) Set the following environment variables appropriate to your environment. 
+    OPEN64TARG - same as is specified above for installing Open64
+    OPEN64 - full path for OPEN64TARG's parent directory
+    OADIR - full path to the OpenAnalysis directory
+
+2) Build the executables test-open64 and Fortran2OA.
+    % make
+
+From Repository
+---------------
+If you are a developer that checks out UseOA-Open64 from the
+subversion repository then do the following:
+
+1) Grab Whirl2OA from the repository and make it a subdirectory of UseOA-Open64.
+
+2) Follow the above instructions.
+
+
+
 To compile test-open64, which tests many of the OpenAnalysis analysis algorithms.
 
 1) set the following environment variables appropriate to your environment

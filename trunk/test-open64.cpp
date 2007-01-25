@@ -27,23 +27,23 @@
 
 //************************** Open64 Include Files ***************************
 
-#include <Open64IRInterface/Open64BasicTypes.h>
+#include <Open64BasicTypes.h>
 
 #include "cmplrs/rcodes.h"  // return codes
 #include "tracing.h"        // trace routines
 #include "ir_reader.h"      // fdump_tree
 
 // finding out about common blocks
-#include "Open64IRInterface/stab_attr.h"
+#include "stab_attr.h"
 
 //*************************** User Include Files ****************************
 
 #include "Args.hpp"
 //#include "StrToHandle.hpp"
 
-#include <Open64IRInterface/Open64IRInterface.hpp>
-#include <Open64IRInterface/WhirlIO.h>
-#include <Open64IRInterface/diagnostics.h>
+#include <Open64IRInterface.hpp>
+#include <WhirlIO.h>
+#include <diagnostics.h>
 
 #include <OpenAnalysis/CallGraph/ManagerCallGraph.hpp>
 #include <OpenAnalysis/CFG/ManagerCFG.hpp>

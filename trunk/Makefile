@@ -1,4 +1,4 @@
-
+# Makefile
 #############################################################################
 
 # Configure compiler and compilation flags for platform
@@ -6,37 +6,27 @@ include Makeinclude.config
 
 #############################################################################
 
-SHELL = /bin/sh
 WD := $(shell pwd)
 
-#$(shell cd $(WD)/config/; ./hpcplatform)
-OpenAnalysis = $(OPENANALYSISBASE)/$(PLATFORM)
 
 #CXXFLAGS += -g -O0 -DOA_IRHANDLETYPE_UL \
 
 CXXFLAGS += -pg -O0 -DOA_IRHANDLETYPE_UL \
-            -I. -I$(OpenAnalysis)/include $(USER_CXXFLAGS) $(OPEN64_IFLAGS)
-#LDFLAGS  += -g -I$(OpenAnalysis)/include -DOA_IRHANDLETYPE_UL -I$(OMEGALIBDIR)/include -I$(OMEGADIR)/basic/include
+            -I. -I$(WHIRL2OA) $(OA_INC) \
+			$(USER_CXXFLAGS) $(OPEN64_IFLAGS)
 
 LDFLAGS  += $(CXXFLAGS)
 
-#VPATH = Open64IRInterface
-
-EXES = $(EXE1) $(EXE2) #$(EXE1a) $(EXE2a)
+EXES = $(EXE1) $(EXE2) 
 
 # The Open64 test drivers
 EXE1 = test-open64
 EXE2 = FORTRANtoOA
 
-# The original mem-ref and alias test driver
-EXE2a = testMemRefExpr-bogus
-EXE2b = testAlias-bogus
+LIBS1 = $(OPEN64TARG)/be/be.so $(WHIRL2OA)/lib/Whirl2OA.a $(OA_LIB)
 
-LIBS1 = $(OPEN64TARG)/be/be.so $(WHIRL2OA)/lib/Whirl2OA.a -lOAul
-LIBS2a = -lOAul #-laliasstart
-LIBS2b = -lOAul #-laliasstart
+dep = $(WHIRL2OA)/lib/Whirl2OA.a
 
-VPATH += $(OpenAnalysis)/lib
 
 EXE1_OBJS = \
 	test-open64.o \
@@ -48,39 +38,10 @@ EXE2_OBJS = \
 	CmdLineParser.o \
 	Args.o
 
-#EXE1_OBJS = \
-#	test-open64.o \
-#	Open64IRInterface.o \
-#	WhirlGlobalStateUtils.o \
-#	WhirlIO.o \
-#	wn_attr.o \
-#	stab_attr.o \
-#	SymTab.o \
-#	diagnostics.o \
-#	CmdLineParser.o \
-#	Args.o
-#
-#EXE2_OBJS = \
-#	FORTRANtoOA.o \
-#	Open64IRInterface.o \
-#	WhirlGlobalStateUtils.o \
-#	WhirlIO.o \
-#	wn_attr.o \
-#	stab_attr.o \
-#	SymTab.o \
-#	diagnostics.o \
-#	CmdLineParser.o \
-#	Args.o
-
-
-EXE2a_OBJS = testMemRefExpr.o #bogus2OA.o
-EXE2b_OBJS = testAlias.o      #bogus2OA.o
-
-
 #############################################################################
 
-all: $(EXES)
-	@echo "NewOA Path is $<"
+all: build_log $(EXES) mark_compile_successful
+	@echo "OpenAnalysis Path is $<"
 	@echo "$(OpenAnalysis) "
 
 $(EXE1): $(EXE1_OBJS) $(LIBS1) 
@@ -89,15 +50,34 @@ $(EXE1): $(EXE1_OBJS) $(LIBS1)
 $(EXE2): $(EXE2_OBJS) $(LIBS1) 
 	$(CXX) -o $@ $(LDFLAGS) $^
 
-$(EXE2a): $(EXE2a_OBJS) $(LIBS2a)
-	$(CXX) -o $@ $(LDFLAGS) $^
-
-$(EXE2b): $(EXE2b_OBJS) $(LIBS2b)
-	$(CXX) -o $@ $(LDFLAGS) $^
-
 %.o : %.cpp
 	$(CXX) -c -o $@ $(CXXFLAGS) $<
 
+$(dep):
+	make -C $(WHIRL2OA)
+
 clean:
 	@rm -f *.o $(EXES) 
+	make clean -C $(WHIRL2OA)
+
+build_log:
+	@echo -e "\033[32mOutputing flags to build.log\033[0m"
+	@date +"Compiling OAOpen64 on %D at %r %Z" > build.log
+	@echo "Compile started by" `whoami` >> build.log
+	@echo "OADIR:='$(OADIR)'"  >> build.log
+	@echo "OPEN64TARG:='$(OPEN64TARG)'"  >> build.log
+	@echo "CXXFLAGS:='$(CXXFLAGS)'"  >> build.log
+	@echo "CCFLAGS:='$(CCFLAGS)'"  >> build.log
+	@echo "PLATFORM:='$(PLATFORM)'"  >> build.log
+	@echo "CXX:='$(CXX)'"  >> build.log 
+	@echo "CC:='$(CC)'"  >> build.log 
+	@echo "CXXLD:='$(CXXLD)'"  >> build.log 
+	@echo "CCLD:='$(CCLD)'"  >> build.log
+
+mark_compile_successful: 
+	@echo "COMPILE_SUCCESFUL='yes'" >> build.log 
+	@date +"Compilation finished on %D at %r %Z" >> build.log
+
+clean_log: 
+	@echo "Project cleaned" > build.log 
 
