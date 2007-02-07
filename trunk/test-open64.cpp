@@ -1733,7 +1733,8 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     OA::StmtHandle stmt = sIt->current();
         
     std::cout << "\n========================stmt============================\n";
-    std::cout << "\nstmt = " << ir->toString(stmt) << std::endl;
+    std::cout << "\nstmt = ";
+    std::cout << ir->toString(stmt) << std::endl;
     //ir->dump(stmt,std::cout);
 
     /*
