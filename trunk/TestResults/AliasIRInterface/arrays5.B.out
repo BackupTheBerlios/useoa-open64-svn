@@ -13,30 +13,30 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("do_loop (J:0:.predef_I4<=10)") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), full)
+                NamedRef( USE, SymHandle("conj_grad_::J"))
         ] }
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("conj_grad_::J"), full)
+                NamedRef( DEF, SymHandle("conj_grad_::J"))
         ] }
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = J:0:.predef_I4+1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("conj_grad_::J"), full)
+                NamedRef( DEF, SymHandle("conj_grad_::J"))
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), full)
+                NamedRef( USE, SymHandle("conj_grad_::J"))
         ] }
     MEMREFEXPRS = { StmtHandle("R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4)") =>
         [
             MemRefHandle("R:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("conj_grad_::R"), full), 1, part)
+                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("conj_grad_::R")), 1))
             MemRefHandle("0:X:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("conj_grad_::X"), full), 1, part)
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("conj_grad_::X")), 1))
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), full)
+                NamedRef( USE, SymHandle("conj_grad_::J"))
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("conj_grad_::J"), full)
+                NamedRef( USE, SymHandle("conj_grad_::J"))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

@@ -12,16 +12,16 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
         [
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("head_::J"), full)
+                NamedRef( DEF, SymHandle("head_::J"))
         ] }
     MEMREFEXPRS = { StmtHandle("T2:0:.predef_F8 = 0:X:0:anon_ptr.(J:0:.predef_I4)") =>
         [
             MemRefHandle("T2:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("head_::T2"), full)
+                NamedRef( DEF, SymHandle("head_::T2"))
             MemRefHandle("0:X:0:anon_ptr.(J:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("head_::X"), full), 1, part)
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
             MemRefHandle("J:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("head_::J"), full)
+                NamedRef( USE, SymHandle("head_::J"))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

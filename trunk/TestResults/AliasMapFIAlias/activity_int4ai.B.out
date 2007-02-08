@@ -52,21 +52,34 @@ InterAliasMap(
         mIdToMRESetMap: int	 => MemRefExprSet
                 1	 => [ 
                     NamedRef(
-                        mFullAccuracy: 1
                         mMemRefType: DEF
                         mSymHandle: SymHandle(head_::I)
                     ) ] 
                 2	 => [ 
                     NamedRef(
-                        mFullAccuracy: 0
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::X)
+                    )    
+                    SubSetRef(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::X)
+                        )
                     ) ] 
                 3	 => [ 
                     NamedRef(
-                        mFullAccuracy: 0
                         mMemRefType: DEF
                         mSymHandle: SymHandle(head_::Y)
+                    )    
+                    SubSetRef(
+                        mMemRefType: DEF
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: DEF
+                            mSymHandle: SymHandle(head_::Y)
+                        )
                     ) ] 
 
     )

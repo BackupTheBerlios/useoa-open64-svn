@@ -12,16 +12,16 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             MemRefHandle("&0:X:0:anon_ptr.") => 
-                NamedRef( USE, SymHandle("head_::X"), full)
+                NamedRef( USE, SymHandle("head_::X"))
         ] }
     CALLSITES = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
             CallHandle("bar_(&0:X:0:anon_ptr.)") => 
-                NamedRef( USE, SymHandle("head_::bar_"), full)
+                NamedRef( USE, SymHandle("head_::bar_"))
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&0:X:0:anon_ptr.)") =>
         [
-            < 0, NamedRef( USE, SymHandle("head_::X"), full) >
+            < 0, NamedRef( USE, SymHandle("head_::X")) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
@@ -45,10 +45,10 @@ B:0:anon_ptr.() = 0:A:0:anon_ptr.()") =>
         [
             MemRefHandle("I8SRCTRIPLET
 B:0:anon_ptr.()") => 
-                NamedRef( DEF, SymHandle("bar_::B"), part)
+                SubSetRef( DEF, NamedRef( DEF, SymHandle("bar_::B")))
             MemRefHandle("I8SRCTRIPLET
 0:A:0:anon_ptr.()") => 
-                Deref( USE, NamedRef( USE, SymHandle("bar_::A"), full), 1, part)
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("bar_::A")), 1))
         ] }
     PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
 I8SRCTRIPLET

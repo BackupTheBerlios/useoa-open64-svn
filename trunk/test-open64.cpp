@@ -1232,18 +1232,17 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     inActive = varyman->performAnalysis(icfg, parambind,
                                         interAlias, icfgDep, icfgUseful);
     std::cout << "Printing ICFGVaryActive" << std::endl;
-    inActive->output(*irInterface);
-    */
+    //inActive->output(*irInterface);
 
     // ----------------- Activity does the testing pieces above
-
+    */
     // ICFGActive
     OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
     activeman = new OA::Activity::ManagerICFGActive(irInterface);
     OA::OA_ptr<OA::Activity::InterActive> active;
     active = activeman->performAnalysis(icfg, parambind,
                                         interAlias, interSE);
-    
+   
     active->output(*irInterface);
     
     int numIterDep = 1;

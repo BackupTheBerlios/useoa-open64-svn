@@ -1,4 +1,4 @@
-source scripts/regressMemRefExpr.script
+#source scripts/regressMemRefExpr.script
 source scripts/regressAliasIRInterface.script
 source scripts/regressAliasMapFIAlias.script
 source scripts/regressCallGraph.script
@@ -13,5 +13,5 @@ source scripts/regressUDDUChains.script
 source scripts/regressICFGReachConsts.script
 source scripts/regressExprTree.script
 source scripts/regressCSFIActivity.script
-source scripts/regressLinearity.script
+#source scripts/regressLinearity.script
 

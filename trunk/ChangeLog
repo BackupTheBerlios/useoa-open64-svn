@@ -495,3 +495,14 @@
    - Added and Regenerated ExprTree/CosDeg2Rad.B.out, it was MIA. Now 
      regressAll won't give a diff: No such file or Directory error.
 
+2/07/07    UseOA-Open64 svn trunk r155 Priyadarshini Malusare
+  - Regenerated TestResults for following changes in OpenAnalysis.
+  - Modifications in Open64IRInterface for following changes.
+    - deprecated Accuracy field of MemRefExpr.
+    - Partial Accuracy is represented by instance of SubSetRef class.
+    - Full Accuracy is represented by corresponding MemRefExpr.
+    - Please refer following link on the wiki.
+      http://www-unix.mcs.anl.gov/OpenAnalysisWiki/moin.cgi/Location_20class
+    - regressAll works with OpenAnalysis r298 on Okapi with gcc-3.2
+
+

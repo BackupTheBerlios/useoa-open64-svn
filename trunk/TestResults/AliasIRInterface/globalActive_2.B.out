@@ -32,25 +32,25 @@ PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
     MEMREFEXPRS = { StmtHandle("APASSIVEGLOBAL:0:.predef_F8 =     2.000000000000000") =>
         [
             MemRefHandle("APASSIVEGLOBAL:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("globals_::APASSIVEGLOBAL"), full)
+                NamedRef( DEF, SymHandle("globals_::APASSIVEGLOBAL"))
         ] }
     MEMREFEXPRS = { StmtHandle("AGLOBAL:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)") =>
         [
             MemRefHandle("AGLOBAL:0:.predef_F8") => 
-                NamedRef( DEF, SymHandle("globals_::AGLOBAL"), full)
+                NamedRef( DEF, SymHandle("globals_::AGLOBAL"))
             MemRefHandle("0:X:0:anon_ptr.(1)") => 
-                Deref( USE, NamedRef( USE, SymHandle("head_::X"), full), 1, part)
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
             MemRefHandle("0:X:0:anon_ptr.(2)") => 
-                Deref( USE, NamedRef( USE, SymHandle("head_::X"), full), 1, part)
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
         ] }
     MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8") =>
         [
             MemRefHandle("Y:0:anon_ptr.(1)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("head_::Y"), full), 1, part)
+                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("head_::Y")), 1))
             MemRefHandle("AGLOBAL:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("globals_::AGLOBAL"), full)
+                NamedRef( USE, SymHandle("globals_::AGLOBAL"))
             MemRefHandle("APASSIVEGLOBAL:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("globals_::APASSIVEGLOBAL"), full)
+                NamedRef( USE, SymHandle("globals_::APASSIVEGLOBAL"))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

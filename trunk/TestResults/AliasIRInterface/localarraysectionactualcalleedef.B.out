@@ -10,14 +10,14 @@ bar_(&X:0:anon_ptr.())") =>
         [
             MemRefHandle("I8SRCTRIPLET
 X:0:anon_ptr.()") => 
-                NamedRef( USE, SymHandle("head_::X"), part)
+                SubSetRef( USE, NamedRef( USE, SymHandle("head_::X")))
         ] }
     CALLSITES = { StmtHandle("I8SRCTRIPLET
 bar_(&X:0:anon_ptr.())") =>
         [
             CallHandle("I8SRCTRIPLET
 bar_(&X:0:anon_ptr.())") => 
-                NamedRef( USE, SymHandle("head_::bar_"), full)
+                NamedRef( USE, SymHandle("head_::bar_"))
         ] }I8SRCTRIPLET
 
     MEMREFEXPRS = { StmtHandle("return") =>
@@ -39,9 +39,9 @@ PROCEDURE = { < ProcHandle("head_::bar_"), SymHandle("head_::bar_") > }
     MEMREFEXPRS = { StmtHandle("A:0:anon_ptr.(1) = B:0:.predef_F8") =>
         [
             MemRefHandle("A:0:anon_ptr.(1)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("bar_::A"), full), 1, part)
+                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("bar_::A")), 1))
             MemRefHandle("B:0:.predef_F8") => 
-                NamedRef( USE, SymHandle("bar_::B"), full)
+                NamedRef( USE, SymHandle("bar_::B"))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

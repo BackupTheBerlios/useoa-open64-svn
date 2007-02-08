@@ -12,22 +12,22 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("if (N:0:.predef_I4==1)") =>
         [
             MemRefHandle("N:0:.predef_I4") => 
-                Deref( USE, NamedRef( USE, SymHandle("foo_::N"), full), 1, full)
+                Deref( USE, NamedRef( USE, SymHandle("foo_::N")), 1)
         ] }
     MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 1") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("foo_::RES"), full)
+                NamedRef( DEF, SymHandle("foo_::RES"))
         ] }
     MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 5") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("foo_::RES"), full)
+                NamedRef( DEF, SymHandle("foo_::RES"))
         ] }
     MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
         [
             MemRefHandle("RES:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("foo_::RES"), full)
+                NamedRef( USE, SymHandle("foo_::RES"))
         ] }
     LOCATION = { < SymHandle("foo_::foo_"), not local > }
     LOCATION = { < SymHandle("foo_::RES"), local > }
@@ -41,18 +41,18 @@ PROCEDURE = { < ProcHandle("foo_::functiontest_"), SymHandle("foo_::functiontest
     MEMREFEXPRS = { StmtHandle("N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))") =>
         [
             MemRefHandle("N:0:.predef_I4") => 
-                NamedRef( DEF, SymHandle("functiontest_::N"), full)
+                NamedRef( DEF, SymHandle("functiontest_::N"))
             MemRefHandle("&N:0:.predef_I4") => 
-                AddressOf( USE, NamedRef( USE, SymHandle("functiontest_::N"), full), full)
+                AddressOf( USE, NamedRef( USE, SymHandle("functiontest_::N")))
         ] }
     CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(foo_(&N:0:.predef_I4))") =>
         [
             CallHandle("foo_(&N:0:.predef_I4)") => 
-                NamedRef( USE, SymHandle("foo_::foo_"), full)
+                NamedRef( USE, SymHandle("foo_::foo_"))
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("foo_(&N:0:.predef_I4)") =>
         [
-            < 0, AddressOf( USE, NamedRef( USE, SymHandle("functiontest_::N"), full), full) >
+            < 0, AddressOf( USE, NamedRef( USE, SymHandle("functiontest_::N"))) >
         ] }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [

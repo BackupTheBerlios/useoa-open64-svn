@@ -102,11 +102,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::A)
                                         )
@@ -121,11 +119,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::B)
                                         )
@@ -144,11 +140,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::A)
                                         )
@@ -163,11 +157,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::B)
                                         )
@@ -186,11 +178,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::A)
                                         )
@@ -205,11 +195,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::B)
                                         )
@@ -224,12 +212,10 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: DEF
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
-                                            mMemRefType: USE
+                                            mMemRefType: DEF
                                             mSymHandle: SymHandle(bar_::C)
                                         )
                                         mNumDeref: 1
@@ -247,11 +233,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: USE
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
                                             mMemRefType: USE
                                             mSymHandle: SymHandle(bar_::A)
                                         )
@@ -266,12 +250,10 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 InvisibleLoc(
                                     mMRE: 
                                     Deref(
-                                        mFullAccuracy: 1
                                         mMemRefType: DEF
                                         mMRE: 
                                         NamedRef(
-                                            mFullAccuracy: 1
-                                            mMemRefType: USE
+                                            mMemRefType: DEF
                                             mSymHandle: SymHandle(bar_::C)
                                         )
                                         mNumDeref: 1

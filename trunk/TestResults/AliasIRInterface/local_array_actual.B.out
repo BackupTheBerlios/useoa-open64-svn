@@ -13,13 +13,13 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)*    2.000000000000000") =>
         [
             MemRefHandle("Y:0:anon_ptr.(I:0:.predef_I4)") => 
-                Deref( DEF, NamedRef( USE, SymHandle("foo_::Y"), full), 1, part)
+                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("foo_::Y")), 1))
             MemRefHandle("0:X:0:anon_ptr.(I:0:.predef_I4)") => 
-                Deref( USE, NamedRef( USE, SymHandle("foo_::X"), full), 1, part)
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("foo_::X")), 1))
             MemRefHandle("I:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("foo_::I"), full)
+                NamedRef( USE, SymHandle("foo_::I"))
             MemRefHandle("I:0:.predef_I4") => 
-                NamedRef( USE, SymHandle("foo_::I"), full)
+                NamedRef( USE, SymHandle("foo_::I"))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
@@ -37,19 +37,19 @@ PROCEDURE = { < ProcHandle("foo_::head_"), SymHandle("foo_::head_") > }
     MEMREFEXPRS = { StmtHandle("foo_(&0:P:0:anon_ptr., &0:Q:0:anon_ptr.)") =>
         [
             MemRefHandle("&0:P:0:anon_ptr.") => 
-                AddressOf( USE, NamedRef( USE, SymHandle("head_::P"), full), full)
+                AddressOf( USE, NamedRef( USE, SymHandle("head_::P")))
             MemRefHandle("&0:Q:0:anon_ptr.") => 
-                AddressOf( USE, NamedRef( USE, SymHandle("head_::Q"), full), full)
+                AddressOf( USE, NamedRef( USE, SymHandle("head_::Q")))
         ] }
     CALLSITES = { StmtHandle("foo_(&0:P:0:anon_ptr., &0:Q:0:anon_ptr.)") =>
         [
             CallHandle("foo_(&0:P:0:anon_ptr., &0:Q:0:anon_ptr.)") => 
-                NamedRef( USE, SymHandle("foo_::foo_"), full)
+                NamedRef( USE, SymHandle("foo_::foo_"))
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("foo_(&0:P:0:anon_ptr., &0:Q:0:anon_ptr.)") =>
         [
-            < 0, AddressOf( USE, NamedRef( USE, SymHandle("head_::P"), full), full) >
-            < 1, AddressOf( USE, NamedRef( USE, SymHandle("head_::Q"), full), full) >
+            < 0, AddressOf( USE, NamedRef( USE, SymHandle("head_::P"))) >
+            < 1, AddressOf( USE, NamedRef( USE, SymHandle("head_::Q"))) >
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
