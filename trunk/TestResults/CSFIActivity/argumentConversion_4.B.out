@@ -32,18 +32,6 @@ InterActive(
                 mLocal: 1
                 mFullOverlap: [  ] 
                 mPartOverlap: [  ] 
-            )    
-            NamedLoc(
-                mSymHandle: SymHandle(head_::PX)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            )    
-            NamedLoc(
-                mSymHandle: SymHandle(head_::PY)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
             ) ] 
     )
     ActiveStmtSet([  ] 
@@ -54,9 +42,7 @@ InterActive(
         SymHandle(foo_::X)
             SymHandle(foo_::Y)
             SymHandle(head_::X)
-            SymHandle(head_::Y)
-            SymHandle(head_::PX)
-            SymHandle(head_::PY) ] 
+            SymHandle(head_::Y) ] 
     mNumIterUseful: 0
     mNumIterVary: 0
 )
