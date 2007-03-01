@@ -1,49 +1,5 @@
 
-InterActive(
-    Procedure( foo_::foo_ ): 
-    ActiveLocSet([ 
-            NamedLoc(
-                mSymHandle: SymHandle(foo_::X)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            )    
-            NamedLoc(
-                mSymHandle: SymHandle(foo_::Y)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            ) ] 
-    )
-    ActiveStmtSet([  ] 
-    )
-    ActiveMemRefSet([  ] 
-    )
-    Procedure( foo_::head_ ): 
-    ActiveLocSet([ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::X)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            )    
-            NamedLoc(
-                mSymHandle: SymHandle(head_::Y)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            )    
-            NamedLoc(
-                mSymHandle: SymHandle(head_::Q)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            ) ] 
-    )
-    ActiveStmtSet([  ] 
-    )
-    ActiveMemRefSet([  ] 
-    )
+InterActiveFortran(
     ActiveSymSet: [ 
         SymHandle(foo_::X)
             SymHandle(foo_::Y)

@@ -84,6 +84,9 @@
 #include <OpenAnalysis/CSFIActivity/ManagerDUActive.hpp>
 
 
+
+#include <OpenAnalysis/Activity/InterActiveFortran.hpp>
+
 //#include <OpenAnalysis/Utils/SCC.hpp>
 
 //************************** Forward Declarations ***************************
@@ -1330,7 +1333,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
     // Def-Use Activity Analysis
     OA::OA_ptr<OA::Activity::ManagerDUActive> duactiveman;
     duactiveman = new OA::Activity::ManagerDUActive(irInterface, dug);
-    OA::OA_ptr<OA::Activity::InterActive> duactive;
+    OA::OA_ptr<OA::Activity::InterActiveFortran> duactive;
     duactive = duactiveman->performAnalysis(icfg, parambind, interAlias);
 
     //duactive->dump(cout, irInterface);
