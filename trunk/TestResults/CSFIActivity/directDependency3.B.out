@@ -1,5 +1,21 @@
 
 InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(T:0:.predef_F8 = 0:X:0:anon_ptr.(1))
+                StmtHandle(Y:0:.predef_F8 = T:0:.predef_F8*    2.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(T:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(T:0:.predef_F8) ] 
+    )
     ActiveSymSet: [ 
         SymHandle(head_::X)
             SymHandle(head_::Y)

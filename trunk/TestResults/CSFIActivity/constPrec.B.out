@@ -1,5 +1,13 @@
 
 InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(1) = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1)) ] 
+    )
     ActiveSymSet: [ 
         SymHandle(head_::X)
             SymHandle(head_::Y) ] 

@@ -1,5 +1,34 @@
 
 InterActiveFortran(
+    Procedure( globals_::globals_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( globals_::bar_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( globals_::foo_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( globals_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1))
+                StmtHandle(GY:0:.predef_F8 = GX:0:.predef_F8)
+                StmtHandle(Y:0:anon_ptr.(1) = GY:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(GX:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(GY:0:.predef_F8)
+                MemRefHandle(GX:0:.predef_F8)
+                MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(GY:0:.predef_F8) ] 
+    )
     ActiveSymSet: [ 
         SymHandle(globals_::GX)
             SymHandle(globals_::GY)

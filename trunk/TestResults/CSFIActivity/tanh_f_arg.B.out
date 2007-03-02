@@ -1,5 +1,13 @@
 
 InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(1) = TANH(&X:0:anon_ptr.(1))) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(&X:0:anon_ptr.(1)) ] 
+    )
     ActiveSymSet: [ 
         SymHandle(head_::X)
             SymHandle(head_::Y) ] 

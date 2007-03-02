@@ -1,5 +1,22 @@
 
 InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(TEMP1:0:.predef_F8 = 0:V:0:anon_ptr.(I:0:.predef_I4)*(0:X:0:anon_ptr.(2)+0:V:0:anon_ptr.(I:0:.predef_I4)))
+                StmtHandle(TEMP2:0:.predef_F8 = 0:X:0:anon_ptr.(4)+0:V:0:anon_ptr.(I:0:.predef_I4)*(0:X:0:anon_ptr.(3)+0:V:0:anon_ptr.(I:0:.predef_I4)))
+                StmtHandle(FVEC:0:anon_ptr.(I:0:.predef_I4) = 0:Y:0:anon_ptr.(I:0:.predef_I4)-0:X:0:anon_ptr.(1)*TEMP1:0:.predef_F8/TEMP2:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(TEMP1:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(2))
+                MemRefHandle(TEMP2:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(4))
+                MemRefHandle(0:X:0:anon_ptr.(3))
+                MemRefHandle(FVEC:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(TEMP1:0:.predef_F8)
+                MemRefHandle(TEMP2:0:.predef_F8) ] 
+    )
     ActiveSymSet: [ 
         SymHandle(head_::X)
             SymHandle(head_::FVEC)
