@@ -1310,21 +1310,12 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
     interSE = interSEman->performAnalysis(cgraph, parambind,
                                         interAlias, sideeffectman);
 
-    // ICFG
-    OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
-    icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
-    OA::OA_ptr<OA::ICFG::ICFG> icfg;
-    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
-    //icfg->output(*irInterface);
-
     // Context-Sensitive and Flow-inSensitive Activity Analysis
-   
     // Def-Use Graph
-
     OA::OA_ptr<OA::DUG::ManagerDUGStandard> dugman;
     dugman = new OA::DUG::ManagerDUGStandard(irInterface, irInterface);
     OA::OA_ptr<OA::DUG::DUGStandard> dug
-        = dugman->performAnalysis(procIter, icfg, parambind, interAlias, cgraph);
+        = dugman->performAnalysis(procIter, parambind, interAlias, cgraph);
         
     dugman->transitiveClosureDepMatrix(cgraph);
     //dug->dumpdot(cout, irInterface);
@@ -1334,7 +1325,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ManagerDUActive> duactiveman;
     duactiveman = new OA::Activity::ManagerDUActive(irInterface, dug);
     OA::OA_ptr<OA::Activity::InterActiveFortran> duactive;
-    duactive = duactiveman->performAnalysis(icfg, parambind, interAlias);
+    duactive = duactiveman->performAnalysis( parambind, interAlias);
 
     //duactive->dump(cout, irInterface);
     duactive->output(*irInterface);
