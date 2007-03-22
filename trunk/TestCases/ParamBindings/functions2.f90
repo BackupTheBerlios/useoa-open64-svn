@@ -15,9 +15,13 @@ end function factorial
 
 
 program recfunc
-
-  integer :: n = 7
+interface 
+recursive function factorial(n) result(res)
+  integer res, n
+end function
+end interface
+  integer :: n = 4
 
   n = factorial(n)
-  
+
 end program recfunc
