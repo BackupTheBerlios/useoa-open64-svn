@@ -24,7 +24,7 @@ ParamBindings(
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(ch2303_::readin_)	 => [ SymHandle(readin_::N) ] 
+            ProcHandle(ch2303_::readin_)	 => [ SymHandle(readin_::NAME)    SymHandle(readin_::N) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
             CallHandle(readin_(&FILENAME:0:anon_ptr.(0), &0:A:0:anon_ptr., &0:B:0:anon_ptr., &NOS:0:.predef_I4, 20))	 => [ MemRefHandle(&FILENAME:0:anon_ptr.(0))    MemRefHandle(&0:A:0:anon_ptr.)    MemRefHandle(&0:B:0:anon_ptr.)    MemRefHandle(&NOS:0:.predef_I4)    MemRefHandle(20) ] 
