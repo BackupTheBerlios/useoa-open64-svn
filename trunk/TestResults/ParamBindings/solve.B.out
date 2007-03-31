@@ -43,7 +43,7 @@ ParamBindings(
 
 
     mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
-            ProcHandle(ch2203_::interact_)	 => [ SymHandle(interact_::OK) ] 
+            ProcHandle(ch2203_::interact_)	 => [ SymHandle(interact_::A)    SymHandle(interact_::B)    SymHandle(interact_::C)    SymHandle(interact_::OK) ] 
             ProcHandle(ch2203_::solve_)	 => [ SymHandle(solve_::E)    SymHandle(solve_::F)    SymHandle(solve_::G)    SymHandle(solve_::ROOT1)    SymHandle(solve_::ROOT2)    SymHandle(solve_::IFAIL) ] 
 
     mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
