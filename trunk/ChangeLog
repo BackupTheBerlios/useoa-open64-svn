@@ -517,3 +517,17 @@
 	   1. Optional Parameters.
 	   2. Return elements in the Parameter List (for some types of functions).
 
+4/11/07    UseOA-Open64 svn trunk r166 Priyadarshini Malusare
+     - In the new revision of Open64, Module Variables accessed 
+       in different
+       procedures show same SymHandles, therefore they do not need 
+       special Treatment.
+     - In the new revision of Open64, GlobalVariables accessed in
+       different procedures show different SymHandles and
+       therefore, they need special treatment.
+     - Open64IRInterface is modified to include logic corrsponding
+       to the changes in Open64.
+
+
+
+

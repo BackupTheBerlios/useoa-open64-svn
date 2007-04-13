@@ -10,3 +10,5 @@ echo "Generating TestResults/AliasMapFIAlias/interalias_proc_call5.B.out"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call5.B > TestResults/AliasMapFIAlias/interalias_proc_call5.B.out
 echo "Generating TestResults/AliasMapFIAlias/interalias_proc_call4.B.out"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call4.B > TestResults/AliasMapFIAlias/interalias_proc_call4.B.out
+echo "Generating TestResults/AliasMapFIAlias/module.B.out"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/module.B > TestResults/AliasMapFIAlias/module.B.out
