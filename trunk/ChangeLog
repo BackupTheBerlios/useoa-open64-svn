@@ -528,6 +528,9 @@
      - Open64IRInterface is modified to include logic corrsponding
        to the changes in Open64.
 
-
-
+4/15/07    UseOA-Open64 svn trunk r167 Priyadarshini Malusare
+    - Regenerated TestCases for AliasMapXAIF after Modification 
+      in AliasMapXAIF so that it will generate multiple
+      virtual locations for InvisibleLoc::SubSetRef and single 
+      Virtual Location for InvisibleLoc::Deref.
 
