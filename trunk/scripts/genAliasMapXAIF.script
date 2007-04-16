@@ -10,3 +10,7 @@ echo "Generating TestResults/AliasMapXAIF/arrays5.B.out"
 ./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/arrays5.B > TestResults/AliasMapXAIF/arrays5.B.out
 echo "Generating TestResults/AliasMapXAIF/globalActive_2.B.out"
 ./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/globalActive_2.B > TestResults/AliasMapXAIF/globalActive_2.B.out
+echo "Generating TestResults/AliasMapXAIF/Unnamed_alias.B.out"
+./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/Unnamed_alias.B > TestResults/AliasMapXAIF/Unnamed_alias.B.out
+echo "Generating TestResults/AliasMapXAIF/Unnamed_alias_callsite.B.out"
+./test-open64 --oa-AliasMapXAIFFIAlias TestCases/Alias/Unnamed_alias_callsite.B > TestResults/AliasMapXAIF/Unnamed_alias_callsite.B.out

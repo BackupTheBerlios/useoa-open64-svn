@@ -8,10 +8,15 @@ driverexec::./test-open64 --oa-AliasMapXAIFFIAlias
 
 # list of tests
 #       input file,                 status
-test::  interalias_proc_call1.B,    
-test::  interalias_proc_call2.B,    
-test::  interalias_proc_call3.B,    
-test::  interalias_proc_call5.B,
-test::  arrays5.B,    
-test::  globalActive_2.B,
+test::  interalias_proc_call1.B,    checked by PLM 04/15/07
+test::  interalias_proc_call2.B,    checked by PLM 04/15/07
+test::  interalias_proc_call3.B,    checked by PLM 04/15/07
+test::  interalias_proc_call5.B,    checked by PLM 04/15/07
+test::  arrays5.B,                  checked by PLM 04/15/07
+test::  globalActive_2.B,           checked by PLm 04/15/07
+test::  Unnamed_alias.B,            checked by PLM 04/15/07
+test::  Unnamed_alias_callsite.B,   checked by PLM 04/15/07
+
+
+
 

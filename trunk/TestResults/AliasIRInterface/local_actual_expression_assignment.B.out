@@ -63,9 +63,9 @@ PROCEDURE = { < ProcHandle("factorial_::recfunc_"), SymHandle("factorial_::recfu
             MemRefHandle("N:0:.predef_I4") => 
                 NamedRef( DEF, SymHandle("recfunc_::N"))
             MemRefHandle("&N:0:.predef_I4+-1") => 
-                AddressOf( USE, UnnamedRef( DEF, StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))")))
+                AddressOf( USE, UnnamedRef( DEF, ExprHandle("&N:0:.predef_I4+-1")))
             MemRefHandle("N:0:.predef_I4+-1") => 
-                UnnamedRef( DEF, StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))"))
+                UnnamedRef( DEF, ExprHandle("&N:0:.predef_I4+-1"))
             MemRefHandle("N:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("recfunc_::N"))
         ] }
@@ -76,7 +76,7 @@ PROCEDURE = { < ProcHandle("factorial_::recfunc_"), SymHandle("factorial_::recfu
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
         [
-            < 0, AddressOf( USE, UnnamedRef( DEF, StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))"))) >
+            < 0, AddressOf( USE, UnnamedRef( DEF, ExprHandle("&N:0:.predef_I4+-1"))) >
         ] }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [

@@ -534,3 +534,12 @@
       virtual locations for InvisibleLoc::SubSetRef and single 
       Virtual Location for InvisibleLoc::Deref.
 
+4/15/07    UseOA-Open64 svn trunk r168 Priyadarshini Malusare
+    - Modify Open64IRInterface because:
+    - Changed UnnamedRef(memRefType, StmtHandle) to 
+      UnnamedRef(memRefType, StmtHandle).
+    - Changed UnnamedLoc(StmtHandle , ....) to 
+      UnnamedLoc(ExprHandle , ....)
+    - Compiles with OpenAnalysis revision 351.
+
+
