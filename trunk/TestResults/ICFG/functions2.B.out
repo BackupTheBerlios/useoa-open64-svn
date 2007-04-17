@@ -130,7 +130,7 @@ return
 
 digraph ICFG {
     node [shape=rectangle];
-    subgraph cluster_factorial_::factorial__0 {
+    subgraph cluster_factorial__0 {
         label="factorial_::factorial__0"
         9 [ label="==  ICFG ENTRY_NODE 9 ==\n" ];
         10 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -150,7 +150,7 @@ digraph ICFG {
         11 -> 18 [ label="" ];
         16 -> 18 [ label="" ];
     }
-    subgraph cluster_factorial_::recfunc__1 {
+    subgraph cluster_recfunc__1 {
         label="factorial_::recfunc__1"
         23 [ label="==  ICFG ENTRY_NODE 23 == (entry)\n" ];
         27 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END

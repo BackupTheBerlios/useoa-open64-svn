@@ -543,3 +543,17 @@
     - Compiles with OpenAnalysis revision 351.
 
 
+4/17/07    UseOA-Open64 svn trunk r169 Barbara Kreaseck
+    - re-gen'd the genICFG.script to provide better
+      Dot Output as now provided by OpenAnalysis.
+    - re-gen'd the following regression tests to remove the
+      discrepency in StmtHandle output from awhile ago:
+        genReachConsts.script
+	genICFGReachConsts.script
+    - added the stand-alone extractDOT.cpp application to extract
+      the Dot Output lines from the *.out files while removing the
+      PRAGMA insertions from Open64 that interfere with GraphViz and
+      dot.
+    - passes regressAll with OpenAnalysis r356 on Okapi with gcc 3.3.4
+
+

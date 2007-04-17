@@ -118,7 +118,7 @@ return
 
 digraph ICFG {
     node [shape=rectangle];
-    subgraph cluster_foo_::foo__0 {
+    subgraph cluster_foo__0 {
         label="foo_::foo__0"
         9 [ label="==  ICFG ENTRY_NODE 9 ==\n" ];
         10 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -134,7 +134,7 @@ digraph ICFG {
         12 -> 13 [ label="" ];
         13 -> 14 [ label="" ];
     }
-    subgraph cluster_foo_::functiontest__1 {
+    subgraph cluster_functiontest__1 {
         label="foo_::functiontest__1"
         19 [ label="==  ICFG ENTRY_NODE 19 == (entry)\n" ];
         23 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END

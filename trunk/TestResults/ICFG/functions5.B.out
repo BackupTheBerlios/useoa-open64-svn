@@ -182,7 +182,7 @@ return
 
 digraph ICFG {
     node [shape=rectangle];
-    subgraph cluster_bar_::bar__0 {
+    subgraph cluster_bar__0 {
         label="bar_::bar__0"
         10 [ label="==  ICFG ENTRY_NODE 10 ==\n" ];
         11 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -198,7 +198,7 @@ digraph ICFG {
         13 -> 14 [ label="" ];
         14 -> 15 [ label="" ];
     }
-    subgraph cluster_bar_::foo__1 {
+    subgraph cluster_foo__1 {
         label="bar_::foo__1"
         22 [ label="==  ICFG ENTRY_NODE 22 ==\n" ];
         23 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -216,7 +216,7 @@ digraph ICFG {
         29 -> 30 [ label="" ];
         30 -> 31 [ label="" ];
     }
-    subgraph cluster_bar_::functiontest__2 {
+    subgraph cluster_functiontest__2 {
         label="bar_::functiontest__2"
         36 [ label="==  ICFG ENTRY_NODE 36 == (entry)\n" ];
         40 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
