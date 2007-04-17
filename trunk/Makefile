@@ -17,11 +17,13 @@ CXXFLAGS += -pg -O0 -DOA_IRHANDLETYPE_UL \
 
 LDFLAGS  += $(CXXFLAGS)
 
-EXES = $(EXE1) $(EXE2) 
+
+EXES = $(EXE1) $(EXE2) extractDOT
 
 # The Open64 test drivers
 EXE1 = test-open64
 EXE2 = FORTRANtoOA
+
 
 LIBS1 = $(OPEN64TARG)/be/be.so $(WHIRL2OA)/lib/Whirl2OA.a $(OA_LIB)
 
@@ -40,7 +42,7 @@ EXE2_OBJS = \
 
 #############################################################################
 
-all: build_log $(EXES) mark_compile_successful
+all: build_log $(EXES) mark_compile_successful extractDOT
 	@echo "OpenAnalysis Path is $<"
 	@echo "$(OpenAnalysis) "
 
@@ -49,6 +51,9 @@ $(EXE1): $(EXE1_OBJS) $(LIBS1)
 
 $(EXE2): $(EXE2_OBJS) $(LIBS1) 
 	$(CXX) -o $@ $(LDFLAGS) $^
+
+extractDOT: extractDOT.cpp
+	$(CXX) -o extractDOT extractDOT.cpp
 
 %.o : %.cpp
 	$(CXX) -c -o $@ $(CXXFLAGS) $<
