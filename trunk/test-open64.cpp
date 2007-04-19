@@ -742,8 +742,6 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
   pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
   OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
   parambind = pbman->performAnalysis(cgraph);
-  parambind->output(*irInterface);
-
 
   // Intra Side-Effect
   OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;

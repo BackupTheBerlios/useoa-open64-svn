@@ -2,3 +2,7 @@ echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out Che
 ./test-open64 --oa-InterSideEffect TestCases/SideEffect/test.B > t
 diff t TestResults/SideEffect/test.B.out
 
+echo "Testing TestCases/SideEffect/Loop_simple_3.B, TestResults/SideEffect/Loop_simple_3.B.out Checked by PLM 4/18/07"
+./test-open64 --oa-InterSideEffect TestCases/SideEffect/Loop_simple_3.B > t
+diff t TestResults/SideEffect/Loop_simple_3.B.out
+
