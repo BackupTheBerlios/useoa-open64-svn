@@ -10,3 +10,7 @@ echo "Testing TestCases/UDDUChainsTests/reachdef_loopif1.B, TestResults/UDDUChai
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_loopif1.B > t
 diff t TestResults/UDDUChainsTests/reachdef_loopif1.B.out
 
+echo "Testing TestCases/UDDUChainsTests/Loop_simple_10.B, TestResults/UDDUChainsTests/Loop_simple_10.B.out Checked by PLM 04/18/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Loop_simple_10.B > t
+diff t TestResults/UDDUChainsTests/Loop_simple_10.B.out
+

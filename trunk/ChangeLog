@@ -571,3 +571,10 @@
     - Added new TestCase for the SideEffect.
     - Please refer "http://www-unix.mcs.anl.gov/OpenAnalysisWiki/moin.cgi/INTRINSIC_5fCALL_20String_20Assignments_20treated_20as_20simple_20Assignment_20Statements_20on_20FORTRAN_20side#preview"
 
+
+4/19/07    UseOA-Open64 svn trunk r172 Priyadarshini Malusare
+    - Added missing Opecode OPR_NE for the findAllMemRefExprs...
+    - Added new TestCase and TestResults for the UDDUChains.
+
+
+
