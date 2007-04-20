@@ -1553,7 +1553,7 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::XAIF::ManagerStandard> udmanXAIF;
   udmanXAIF = new OA::XAIF::ManagerStandard(irInterface);
   OA::OA_ptr<OA::XAIF::UDDUChainsXAIF> udduchainsXAIF= 
-      udmanXAIF->performAnalysis((OA::irhandle_t)pu,cfg,udduchains);
+      udmanXAIF->performAnalysis((OA::irhandle_t)pu,cfg,udduchains, true);
   udduchainsXAIF->dump(std::cout, irInterface);
 
   return 0;
@@ -1614,7 +1614,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains= 
       udman->performAnalysis((OA::irhandle_t)pu,alias,rds,interSideEffect);
 
-//  udduchains->dump(std::cout, irInterface);
+  //  udduchains->dump(std::cout, irInterface);
   udduchains->output(*irInterface);
 
   return 0;
