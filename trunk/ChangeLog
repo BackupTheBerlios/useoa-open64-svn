@@ -576,12 +576,16 @@
     - Added missing Opecode OPR_NE for the findAllMemRefExprs...
     - Added new TestCase and TestResults for the UDDUChains.
 
-4/19/07    UseOA-Open64 svn trunk r172 Priyadarshini Malusare
+4/25/07    UseOA-Open64 svn trunk r174 Priyadarshini Malusare
     - Michelle modified the FIAlias algorithm in OA so that it
       does not merge subsetrefs or field refs with their enclosed refs
       to make alias analysis more precise when there are structures
       with pointer fields and when we model virtual method calls.
     - Regenerated TestResults for AliasIRInterface and ICFGActivity.
     - passes regressAll with OpenAnalysis r366 on Okapi with gcc 3.3.4
+
+4/25/07    UseOA-Open64 svn trunk r175 Priyadarshini Malusare
+    - Fixed UnnamedRef::expr so that it should not contain addressOf.
+
 
 

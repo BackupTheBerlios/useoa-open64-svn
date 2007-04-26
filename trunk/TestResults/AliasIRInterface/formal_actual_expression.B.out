@@ -26,9 +26,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             MemRefHandle("N:0:.predef_I4") => 
                 Deref( USE, NamedRef( USE, SymHandle("factorial_::N")), 1)
             MemRefHandle("&N:0:.predef_I4+-1") => 
-                AddressOf( USE, UnnamedRef( DEF, ExprHandle("&N:0:.predef_I4+-1")))
+                AddressOf( USE, UnnamedRef( DEF, ExprHandle("N:0:.predef_I4+-1")))
             MemRefHandle("N:0:.predef_I4+-1") => 
-                UnnamedRef( DEF, ExprHandle("&N:0:.predef_I4+-1"))
+                UnnamedRef( DEF, ExprHandle("N:0:.predef_I4+-1"))
             MemRefHandle("N:0:.predef_I4") => 
                 Deref( USE, NamedRef( USE, SymHandle("factorial_::N")), 1)
         ] }
@@ -39,7 +39,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ] }
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
         [
-            < 0, AddressOf( USE, UnnamedRef( DEF, ExprHandle("&N:0:.predef_I4+-1"))) >
+            < 0, AddressOf( USE, UnnamedRef( DEF, ExprHandle("N:0:.predef_I4+-1"))) >
         ] }
     MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
         [

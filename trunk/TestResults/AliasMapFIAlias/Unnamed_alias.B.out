@@ -24,7 +24,7 @@ InterAliasMap(
                     ) ] 
                 3	 => [ 
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                         mLocal: 0
                     )    
                     InvisibleLoc(
@@ -41,7 +41,7 @@ InterAliasMap(
                     ) ] 
                 4	 => [ 
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                         mLocal: 0
                     ) ] 
 
@@ -68,7 +68,7 @@ InterAliasMap(
                 3	 => [ 
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                     )    
                     Deref(
                         mMemRefType: USE
@@ -82,7 +82,7 @@ InterAliasMap(
                 4	 => [ 
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                     ) ] 
 
     )
@@ -110,12 +110,12 @@ InterAliasMap(
                     ) ] 
                 3	 => [ 
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                         mLocal: 0
                     ) ] 
                 4	 => [ 
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                         mLocal: 0
                     )    
                     InvisibleLoc(
@@ -154,12 +154,12 @@ InterAliasMap(
                 3	 => [ 
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                     ) ] 
                 4	 => [ 
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                     )    
                     Deref(
                         mMemRefType: USE
@@ -196,12 +196,12 @@ InterAliasMap(
                     ) ] 
                 3	 => [ 
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                         mLocal: 0
                     ) ] 
                 4	 => [ 
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                         mLocal: 0
                     ) ] 
 
@@ -228,12 +228,12 @@ InterAliasMap(
                 3	 => [ 
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                     ) ] 
                 4	 => [ 
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                     ) ] 
 
     )
@@ -267,7 +267,7 @@ InterAliasMap(
                         mPartOverlap: [  ] 
                     )    
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                         mLocal: 0
                     ) ] 
                 4	 => [ 
@@ -278,7 +278,7 @@ InterAliasMap(
                         mPartOverlap: [  ] 
                     )    
                     UnnamedLoc(
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                         mLocal: 0
                     ) ] 
 
@@ -311,7 +311,7 @@ InterAliasMap(
                     )    
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&2)
+                        mExprHandle: ExprHandle(2)
                     ) ] 
                 4	 => [ 
                     NamedRef(
@@ -320,7 +320,7 @@ InterAliasMap(
                     )    
                     UnnamedRef(
                         mMemRefType: DEF
-                        mExprHandle: ExprHandle(&3)
+                        mExprHandle: ExprHandle(3)
                     ) ] 
 
     )
