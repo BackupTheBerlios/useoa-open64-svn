@@ -43,6 +43,18 @@ InterActive(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
                         mSymHandle: SymHandle(head_::Y)
                     )
                     mNumDeref: 1
@@ -69,9 +81,9 @@ InterActive(
     )
     ActiveMemRefSet([  ] 
     )
-    mNumIterUseful: 2
-    mNumIterVary: 2
+    mNumIterUseful: 3
+    mNumIterVary: 3
 )
 
 
-Total Iters: 6
+Total Iters: 8

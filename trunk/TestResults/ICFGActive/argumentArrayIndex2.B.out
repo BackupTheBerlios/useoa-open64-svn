@@ -55,6 +55,18 @@ InterActive(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
                         mSymHandle: SymHandle(head_::Y)
                     )
                     mNumDeref: 1

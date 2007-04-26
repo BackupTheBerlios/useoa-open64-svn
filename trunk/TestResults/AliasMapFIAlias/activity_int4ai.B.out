@@ -2,7 +2,7 @@
 InterAliasMap(
     AliasMap(
         mProcHandle: ProcHandle(head_::head_)
-        mNumSets: 4
+        mNumSets: 6
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
@@ -16,6 +16,20 @@ InterAliasMap(
                         mPartOverlap: [  ] 
                     ) ] 
                 2	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                3	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                4	 => [ 
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
@@ -26,7 +40,7 @@ InterAliasMap(
                         )
                         mFull: 0
                     ) ] 
-                3	 => [ 
+                5	 => [ 
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
@@ -41,13 +55,15 @@ InterAliasMap(
         mIdToSetStatusMap: int	 => AliasResultType
                 0	 => 1
                 1	 => 2
-                2	 => 1
-                3	 => 1
+                2	 => 2
+                3	 => 2
+                4	 => 1
+                5	 => 1
 
         mIdToMemRefSetMap: int	 => MemRefSet
                 1	 => [ MemRefHandle(I:0:.predef_I4)    MemRefHandle(I:0:.predef_I4) ] 
-                2	 => [ MemRefHandle(&X:0:anon_ptr.(1))    MemRefHandle(&X:0:anon_ptr.(2)) ] 
-                3	 => [ MemRefHandle(Y:0:anon_ptr.(2))    MemRefHandle(Y:0:anon_ptr.(1))    MemRefHandle(Y:0:anon_ptr.(2))    MemRefHandle(0:Y:0:anon_ptr.(1))    MemRefHandle(0:Y:0:anon_ptr.(2)) ] 
+                4	 => [ MemRefHandle(&X:0:anon_ptr.(1))    MemRefHandle(&X:0:anon_ptr.(2)) ] 
+                5	 => [ MemRefHandle(Y:0:anon_ptr.(2))    MemRefHandle(Y:0:anon_ptr.(1))    MemRefHandle(Y:0:anon_ptr.(2))    MemRefHandle(0:Y:0:anon_ptr.(1))    MemRefHandle(0:Y:0:anon_ptr.(2)) ] 
 
         mIdToMRESetMap: int	 => MemRefExprSet
                 1	 => [ 
@@ -59,7 +75,13 @@ InterAliasMap(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::X)
-                    )    
+                    ) ] 
+                3	 => [ 
+                    NamedRef(
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(head_::Y)
+                    ) ] 
+                4	 => [ 
                     SubSetRef(
                         mMemRefType: USE
                         mMRE: 
@@ -68,11 +90,7 @@ InterAliasMap(
                             mSymHandle: SymHandle(head_::X)
                         )
                     ) ] 
-                3	 => [ 
-                    NamedRef(
-                        mMemRefType: DEF
-                        mSymHandle: SymHandle(head_::Y)
-                    )    
+                5	 => [ 
                     SubSetRef(
                         mMemRefType: DEF
                         mMRE: 
