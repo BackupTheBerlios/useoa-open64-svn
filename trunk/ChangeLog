@@ -591,5 +591,11 @@
     - Regenerated TestCases for ReachConsts and ICFGReachConsts to fix
       the Output Statement Sequence Mismatch.
 
+05/30/07    UseOA-Open64 svn trunk r177 Barbara Kreaseck
+    - Regenerated ICFGActive test results to accommodate change in output
+      from InterActive OpenAnalysis class.
+    - passes regressAll with OpenAnalysis r410 on Okapi with gcc 3.3.4
+
+
 
 
