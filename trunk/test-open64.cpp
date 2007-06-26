@@ -491,7 +491,8 @@ TestIR_OA(std::ostream& os, PU_Info* pu_forest, int runMode )
 
   OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
   interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
+                                        interAlias, sideeffectman,
+                                        OA::DataFlow::ITERATIVE);
 
   //======================================== loop over procedures
   Open64IRProcIterator procIt(pu_forest);
@@ -753,7 +754,8 @@ TestIR_OAInterSideEffect(std::ostream& os, PU_Info* pu_forest,
 
   OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
   interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
+                                        interAlias, sideeffectman,
+                                        OA::DataFlow::ITERATIVE);
 
   //interSE->dump(std::cout, irInterface);
   interSE->output(*irInterface);
@@ -892,7 +894,8 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
-    icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
+    icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias,
+                                          OA::DataFlow::ITERATIVE);
 
     // text output
     OA::OA_ptr<OA::OutputBuilder> outBuild;
@@ -973,13 +976,15 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     
     OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
     interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
+                                        interAlias, sideeffectman,
+                                        OA::DataFlow::ITERATIVE);
     
     // ICFGReachConsts
     OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
     ircsman = new OA::ReachConsts::ManagerICFGReachConsts(irInterface);
     OA::OA_ptr<OA::ReachConsts::InterReachConsts> ircs
-      = ircsman->performAnalysis(icfg,parambind,interAlias,interSE);
+      = ircsman->performAnalysis(icfg,parambind,interAlias,interSE,
+                                 OA::DataFlow::ITERATIVE);
 
     ircs->output(*irInterface);
 
@@ -1198,7 +1203,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     
     OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
     interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
+                                        interAlias, sideeffectman,
+                                        OA::DataFlow::ITERATIVE);
     
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
@@ -1212,7 +1218,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
-    icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias);
+    icfgDep = icfgdepman->performAnalysis(icfg, parambind, interAlias,
+                                          OA::DataFlow::ITERATIVE);
 
     //icfgDep->output(*irInterface);
 
@@ -1242,7 +1249,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     activeman = new OA::Activity::ManagerICFGActive(irInterface);
     OA::OA_ptr<OA::Activity::InterActive> active;
     active = activeman->performAnalysis(icfg, parambind,
-                                        interAlias, interSE);
+                                        interAlias, interSE,
+                                        OA::DataFlow::ITERATIVE);
    
     active->output(*irInterface);
     
@@ -1306,7 +1314,8 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
 
     OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
     interSE = interSEman->performAnalysis(cgraph, parambind,
-                                        interAlias, sideeffectman);
+                                        interAlias, sideeffectman,
+                                        OA::DataFlow::ITERATIVE);
 
     // Context-Sensitive and Flow-inSensitive Activity Analysis
     // Def-Use Graph
@@ -1537,7 +1546,8 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
   rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
-  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect,
+                               OA::DataFlow::ITERATIVE);
 
 
 
@@ -1603,7 +1613,10 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
   rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
-  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+
+  
+  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect,
+                               OA::DataFlow::ITERATIVE);
 
 
 
@@ -1645,7 +1658,8 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
   rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
   OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds;
-  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+  rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect,
+                               OA::DataFlow::ITERATIVE);
   rds->output(*irInterface);          
 
   return 0;
@@ -1810,7 +1824,8 @@ TestIR_OAReachConsts(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<OA::ReachConsts::ManagerReachConstsStandard> rcman;
   rcman = new OA::ReachConsts::ManagerReachConstsStandard(irInterface);
   OA::OA_ptr<OA::ReachConsts::ReachConstsStandard> reachConsts= 
-    rcman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
+    rcman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect,
+                           OA::DataFlow::ITERATIVE);
 
   //reachConsts->dump(std::cout, irInterface);
   reachConsts->output(*irInterface);
@@ -2031,7 +2046,8 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
   LM2->output(*irInterface);
 */
     OA::OA_ptr<OA::Linearity::LinearityMatrix> LM3
-       = linmanstd->performAnalysis((OA::irhandle_t)pu,cfg,alias,parambind);
+       = linmanstd->performAnalysis((OA::irhandle_t)pu,cfg,alias,parambind,
+                                    OA::DataFlow::ITERATIVE);
 
     LM3->output(*irInterface);
 

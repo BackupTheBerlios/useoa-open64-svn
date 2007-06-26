@@ -596,6 +596,9 @@
       from InterActive OpenAnalysis class.
     - passes regressAll with OpenAnalysis r410 on Okapi with gcc 3.3.4
 
-
+06/26/07    UseOA-Open64 svn trunk r178 Priyadarshini Malusare.
+    - Added extra option to *Manager->performAnalysis to specifiy
+      DataFlow Analysis Algorithm (Iterative/WorkList(Queue/PQueue)).
+    - Compiled with OpenAnalysis revision 427, and Passes all regressAll.
 
 
