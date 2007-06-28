@@ -601,4 +601,9 @@
       DataFlow Analysis Algorithm (Iterative/WorkList(Queue/PQueue)).
     - Compiled with OpenAnalysis revision 427, and Passes all regressAll.
 
+06/26/07    UseOA-Open64 svn trunk r179 Priyadarshini Malusare.
+    - Clean-up CSFIActivity::performAnalysis to remove InterAlias 
+      in the parameter list of performAnalysis.
+    - Compiled with the OpenAnalysis revision 433. Passes regressAll.
+
 
