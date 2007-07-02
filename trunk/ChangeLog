@@ -606,4 +606,8 @@
       in the parameter list of performAnalysis.
     - Compiled with the OpenAnalysis revision 433. Passes regressAll.
 
+07/01/07    UseOA-Open64 svn trunk r180 Priyadarshini Malusare.
+    - regenerated TestCases (FIAliasAliasMap/AliasIRInterface) 
+      after adding (local/nonlocal) scope for UnnamedRef.
+
 

@@ -2,7 +2,7 @@
 InterAliasMap(
     AliasMap(
         mProcHandle: ProcHandle(foo_::foo_)
-        mNumSets: 5
+        mNumSets: 4
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
@@ -23,10 +23,6 @@ InterAliasMap(
                         mPartOverlap: [  ] 
                     ) ] 
                 3	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(2)
-                        mLocal: 0
-                    )    
                     InvisibleLoc(
                         mMRE: 
                         Deref(
@@ -39,18 +35,12 @@ InterAliasMap(
                             mNumDeref: 1
                         )
                     ) ] 
-                4	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(3)
-                        mLocal: 0
-                    ) ] 
 
         mIdToSetStatusMap: int	 => AliasResultType
                 0	 => 1
                 1	 => 2
                 2	 => 2
-                3	 => 1
-                4	 => 2
+                3	 => 2
 
         mIdToMemRefSetMap: int	 => MemRefSet
 
@@ -66,10 +56,6 @@ InterAliasMap(
                         mSymHandle: SymHandle(foo_::A1)
                     ) ] 
                 3	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(2)
-                    )    
                     Deref(
                         mMemRefType: USE
                         mMRE: 
@@ -79,16 +65,11 @@ InterAliasMap(
                         )
                         mNumDeref: 1
                     ) ] 
-                4	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(3)
-                    ) ] 
 
     )
     AliasMap(
         mProcHandle: ProcHandle(foo_::bar_)
-        mNumSets: 5
+        mNumSets: 4
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
@@ -109,15 +90,6 @@ InterAliasMap(
                         mPartOverlap: [  ] 
                     ) ] 
                 3	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(2)
-                        mLocal: 0
-                    ) ] 
-                4	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(3)
-                        mLocal: 0
-                    )    
                     InvisibleLoc(
                         mMRE: 
                         Deref(
@@ -136,7 +108,6 @@ InterAliasMap(
                 1	 => 2
                 2	 => 2
                 3	 => 2
-                4	 => 1
 
         mIdToMemRefSetMap: int	 => MemRefSet
 
@@ -152,15 +123,6 @@ InterAliasMap(
                         mSymHandle: SymHandle(bar_::A2)
                     ) ] 
                 3	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(2)
-                    ) ] 
-                4	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(3)
-                    )    
                     Deref(
                         mMemRefType: USE
                         mMRE: 
@@ -174,7 +136,7 @@ InterAliasMap(
     )
     AliasMap(
         mProcHandle: ProcHandle(foo_::myproc_)
-        mNumSets: 5
+        mNumSets: 3
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
@@ -194,23 +156,11 @@ InterAliasMap(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     ) ] 
-                3	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(2)
-                        mLocal: 0
-                    ) ] 
-                4	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(3)
-                        mLocal: 0
-                    ) ] 
 
         mIdToSetStatusMap: int	 => AliasResultType
                 0	 => 1
                 1	 => 2
                 2	 => 2
-                3	 => 2
-                4	 => 2
 
         mIdToMemRefSetMap: int	 => MemRefSet
 
@@ -224,16 +174,6 @@ InterAliasMap(
                     NamedRef(
                         mMemRefType: DEF
                         mSymHandle: SymHandle(myproc_::A2)
-                    ) ] 
-                3	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(2)
-                    ) ] 
-                4	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(3)
                     ) ] 
 
     )
@@ -312,6 +252,8 @@ InterAliasMap(
                     UnnamedRef(
                         mMemRefType: DEF
                         mExprHandle: ExprHandle(2)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(foo_::head_)
                     ) ] 
                 4	 => [ 
                     NamedRef(
@@ -321,6 +263,8 @@ InterAliasMap(
                     UnnamedRef(
                         mMemRefType: DEF
                         mExprHandle: ExprHandle(3)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(foo_::head_)
                     ) ] 
 
     )

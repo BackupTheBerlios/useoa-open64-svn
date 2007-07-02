@@ -30,10 +30,6 @@ InterAliasMap(
                         mPartOverlap: [  ] 
                     ) ] 
                 4	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                        mLocal: 0
-                    )    
                     InvisibleLoc(
                         mMRE: 
                         Deref(
@@ -47,10 +43,6 @@ InterAliasMap(
                         )
                     ) ] 
                 5	 => [ 
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(2)
-                        mLocal: 0
-                    )    
                     InvisibleLoc(
                         mMRE: 
                         Deref(
@@ -69,8 +61,8 @@ InterAliasMap(
                 1	 => 2
                 2	 => 2
                 3	 => 2
-                4	 => 1
-                5	 => 1
+                4	 => 2
+                5	 => 2
 
         mIdToMemRefSetMap: int	 => MemRefSet
 
@@ -91,10 +83,6 @@ InterAliasMap(
                         mSymHandle: SymHandle(myproc_::A2)
                     ) ] 
                 4	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                    )    
                     Deref(
                         mMemRefType: USE
                         mMRE: 
@@ -105,10 +93,6 @@ InterAliasMap(
                         mNumDeref: 1
                     ) ] 
                 5	 => [ 
-                    UnnamedRef(
-                        mMemRefType: DEF
-                        mExprHandle: ExprHandle(2)
-                    )    
                     Deref(
                         mMemRefType: USE
                         mMRE: 
@@ -182,6 +166,8 @@ InterAliasMap(
                     UnnamedRef(
                         mMemRefType: DEF
                         mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(myproc_::head_)
                     ) ] 
                 3	 => [ 
                     NamedRef(
@@ -191,6 +177,8 @@ InterAliasMap(
                     UnnamedRef(
                         mMemRefType: DEF
                         mExprHandle: ExprHandle(2)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(myproc_::head_)
                     ) ] 
 
     )
