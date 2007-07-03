@@ -10,10 +10,19 @@ InterSideEffectStandard(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: DEF
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::ASTRING)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )    
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: DEF
@@ -24,15 +33,6 @@ InterSideEffectStandard(
                                 )
                                 mNumDeref: 1
                             )
-                        )
-                    )    
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::ASTRING)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
                         )
                         mFull: 0
                     ) ] 
@@ -43,10 +43,19 @@ InterSideEffectStandard(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: DEF
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::ASTRING)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )    
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: DEF
@@ -57,15 +66,6 @@ InterSideEffectStandard(
                                 )
                                 mNumDeref: 1
                             )
-                        )
-                    )    
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::ASTRING)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
                         )
                         mFull: 0
                     ) ] 
@@ -91,6 +91,10 @@ InterSideEffectStandard(
                         mPartOverlap: [  ] 
                     )    
                     UnnamedLoc(
+                        mExprHandle: ExprHandle("blah")
+                        mLocal: 0
+                    )    
+                    UnnamedLoc(
                         mExprHandle: ExprHandle(10)
                         mLocal: 0
                     )    
@@ -98,10 +102,19 @@ InterSideEffectStandard(
                         mExprHandle: ExprHandle(4)
                         mLocal: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: USE
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::ASTRING)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )    
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: USE
@@ -113,11 +126,11 @@ InterSideEffectStandard(
                                 mNumDeref: 1
                             )
                         )
+                        mFull: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: DEF
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: DEF
@@ -128,15 +141,6 @@ InterSideEffectStandard(
                                 )
                                 mNumDeref: 1
                             )
-                        )
-                    )    
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::ASTRING)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
                         )
                         mFull: 0
                     ) ] 
@@ -148,6 +152,10 @@ InterSideEffectStandard(
                         mPartOverlap: [  ] 
                     )    
                     UnnamedLoc(
+                        mExprHandle: ExprHandle("blah")
+                        mLocal: 0
+                    )    
+                    UnnamedLoc(
                         mExprHandle: ExprHandle(10)
                         mLocal: 0
                     )    
@@ -155,10 +163,19 @@ InterSideEffectStandard(
                         mExprHandle: ExprHandle(4)
                         mLocal: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: USE
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::ASTRING)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )    
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: USE
@@ -170,11 +187,11 @@ InterSideEffectStandard(
                                 mNumDeref: 1
                             )
                         )
+                        mFull: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: DEF
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: DEF
@@ -185,15 +202,6 @@ InterSideEffectStandard(
                                 )
                                 mNumDeref: 1
                             )
-                        )
-                    )    
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::ASTRING)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
                         )
                         mFull: 0
                     ) ] 
@@ -205,6 +213,10 @@ InterSideEffectStandard(
                         mPartOverlap: [  ] 
                     )    
                     UnnamedLoc(
+                        mExprHandle: ExprHandle("blah")
+                        mLocal: 0
+                    )    
+                    UnnamedLoc(
                         mExprHandle: ExprHandle(10)
                         mLocal: 0
                     )    
@@ -212,10 +224,19 @@ InterSideEffectStandard(
                         mExprHandle: ExprHandle(4)
                         mLocal: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: USE
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::ASTRING)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )    
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: USE
@@ -227,11 +248,11 @@ InterSideEffectStandard(
                                 mNumDeref: 1
                             )
                         )
+                        mFull: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: DEF
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: DEF
@@ -242,15 +263,6 @@ InterSideEffectStandard(
                                 )
                                 mNumDeref: 1
                             )
-                        )
-                    )    
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::ASTRING)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
                         )
                         mFull: 0
                     ) ] 
@@ -262,6 +274,10 @@ InterSideEffectStandard(
                         mPartOverlap: [  ] 
                     )    
                     UnnamedLoc(
+                        mExprHandle: ExprHandle("blah")
+                        mLocal: 0
+                    )    
+                    UnnamedLoc(
                         mExprHandle: ExprHandle(10)
                         mLocal: 0
                     )    
@@ -269,10 +285,19 @@ InterSideEffectStandard(
                         mExprHandle: ExprHandle(4)
                         mLocal: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: USE
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::ASTRING)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )    
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: USE
@@ -284,11 +309,11 @@ InterSideEffectStandard(
                                 mNumDeref: 1
                             )
                         )
+                        mFull: 0
                     )    
-                    InvisibleLoc(
-                        mMRE: 
-                        SubSetRef(
-                            mMemRefType: DEF
+                    LocSubSet(
+                        mLoc: 
+                        InvisibleLoc(
                             mMRE: 
                             Deref(
                                 mMemRefType: DEF
@@ -299,15 +324,6 @@ InterSideEffectStandard(
                                 )
                                 mNumDeref: 1
                             )
-                        )
-                    )    
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::ASTRING)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
                         )
                         mFull: 0
                     ) ] 

@@ -18,6 +18,18 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
@@ -27,10 +39,9 @@ InterActive(
                     mNumDeref: 1
                 )
             )    
-            InvisibleLoc(
-                mMRE: 
-                SubSetRef(
-                    mMemRefType: USE
+            LocSubSet(
+                mLoc: 
+                InvisibleLoc(
                     mMRE: 
                     Deref(
                         mMemRefType: USE
@@ -42,6 +53,7 @@ InterActive(
                         mNumDeref: 1
                     )
                 )
+                mFull: 0
             ) ] 
     )
     ActiveStmtSet([ 

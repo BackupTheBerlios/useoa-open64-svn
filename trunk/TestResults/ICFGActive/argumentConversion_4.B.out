@@ -73,10 +73,19 @@ InterActive(
                     mNumDeref: 1
                 )
             )    
-            InvisibleLoc(
-                mMRE: 
-                SubSetRef(
-                    mMemRefType: USE
+            LocSubSet(
+                mLoc: 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::PX)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+                mFull: 0
+            )    
+            LocSubSet(
+                mLoc: 
+                InvisibleLoc(
                     mMRE: 
                     Deref(
                         mMemRefType: USE
@@ -87,15 +96,6 @@ InterActive(
                         )
                         mNumDeref: 1
                     )
-                )
-            )    
-            LocSubSet(
-                mLoc: 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::PX)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
                 )
                 mFull: 0
             ) ] 

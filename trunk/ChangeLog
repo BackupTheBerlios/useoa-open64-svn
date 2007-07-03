@@ -610,4 +610,11 @@
     - regenerated TestCases (FIAliasAliasMap/AliasIRInterface) 
       after adding (local/nonlocal) scope for UnnamedRef.
 
+07/03/07    UseOA-Open64 svn trunk r181 Priyadarshini Malusare.
+   - Two InvisibleLocations mayOverlap if:
+     a. Number of Derefs are same.
+     b. Same SymHandle for innermost MRE.
+   - Regenerated testcases for ICFGActivity and sideEffect analysis.
+   - Compiled with OpenAnalysis revision 435. Passes All RegressAll.
+
 

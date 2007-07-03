@@ -1229,7 +1229,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     usefulman = new OA::Activity::ManagerICFGUseful(irInterface);
     OA::OA_ptr<OA::Activity::InterUseful> icfgUseful;
     icfgUseful = usefulman->performAnalysis(icfg, parambind, interAlias, 
-                                            interSE, icfgDep);
+                                            interSE, icfgDep, OA::DataFlow::ITERATIVE);
     std::cout << "printing ICFGUseful" << std::endl;
     icfgUseful->output(*irInterface);
     
@@ -1238,12 +1238,13 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     varyman = new OA::Activity::ManagerICFGVaryActive(irInterface);
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind,
-                                        interAlias, icfgDep, icfgUseful);
+                                        interAlias, icfgDep, icfgUseful,
+                                        OA::DataFlow::ITERATIVE);
     std::cout << "Printing ICFGVaryActive" << std::endl;
-    //inActive->output(*irInterface);
+    inActive->output(*irInterface);
+    */
 
     // ----------------- Activity does the testing pieces above
-    */
     // ICFGActive
     OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
     activeman = new OA::Activity::ManagerICFGActive(irInterface);
