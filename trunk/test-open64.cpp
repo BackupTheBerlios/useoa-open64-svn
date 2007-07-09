@@ -1509,29 +1509,6 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAUDDUChainsXAIF");
-/*
-  // CFG
-  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
-  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
-
-  // Alias analysis
-  OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
-  aliasmapman = new OA::Alias::ManagerAliasMapBasic(irInterface);
-  OA::OA_ptr<OA::Alias::Interface> alias = 
-      aliasmapman->performAnalysis((OA::irhandle_t)pu);
-
-  // then can do ReachDefs
-  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
-  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
-  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
-      rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
-//  rds->dump(std::cout, irInterface);
-
-*/
-
-  OA::OA_ptr<Open64IRProcIterator> procIter;
-  procIter = new Open64IRProcIterator(pu);
 
 //    FIAlias
   OA::OA_ptr<OA::Alias::Interface> alias;
@@ -1578,28 +1555,6 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAUDDUChains");
 
-/*  // CFG
-  OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgmanstd;
-  cfgmanstd = new OA::CFG::ManagerCFGStandard(irInterface);
-  OA::OA_ptr<OA::CFG::CFGInterface> cfg= cfgmanstd->performAnalysis((OA::irhandle_t)pu);
-
-  // Alias analysis
-  OA::OA_ptr<OA::Alias::ManagerAliasMapBasic> aliasmapman;
-  aliasmapman = new OA::Alias::ManagerAliasMapBasic(irInterface);
-  OA::OA_ptr<OA::Alias::Interface> alias = 
-      aliasmapman->performAnalysis((OA::irhandle_t)pu);
-
-  // then can do ReachDefs
-  OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> rdman;
-  rdman = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
-  OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> rds= 
-      rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect);
-      */
-
-
-  OA::OA_ptr<Open64IRProcIterator> procIter;
-  procIter = new Open64IRProcIterator(pu);
-
 //    FIAlias
   OA::OA_ptr<OA::Alias::Interface> alias;
   alias  = interAlias->getAliasResults((OA::irhandle_t)pu);
@@ -1618,9 +1573,6 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu,
   
   rds = rdman->performAnalysis((OA::irhandle_t)pu,cfg,alias,interSideEffect,
                                OA::DataFlow::ITERATIVE);
-
-
-
 
   // then UDDUChains
   OA::OA_ptr<OA::UDDUChains::ManagerUDDUChainsStandard> udman;
@@ -1641,9 +1593,6 @@ TestIR_OAReachDefs(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffect)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OAReachDefs");
-
-  OA::OA_ptr<Open64IRProcIterator> procIter;
-  procIter = new Open64IRProcIterator(pu);
 
 //    FIAlias
   OA::OA_ptr<OA::Alias::Interface> alias;
