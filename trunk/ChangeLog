@@ -617,4 +617,13 @@
    - Regenerated testcases for ICFGActivity and sideEffect analysis.
    - Compiled with OpenAnalysis revision 435. Passes All RegressAll.
 
+07/18/07    UseOA-Open64 svn trunk r183 Barbara Kreaseck
+   - updated extractDOT.cpp to handle LOC and LABEL and I8SRCTRIPLET
+   - added reduceDOT.csh that trims out the type info on variables, etc
+     to make the DOT graph more tractable.
+   - Usage:
+       $extractDOT benchmark.B.out > benchmark.dot
+       $source reduceDOT.csh benchmark.dot
+   - these changes have no impact on OpenAnalysis
+
 
