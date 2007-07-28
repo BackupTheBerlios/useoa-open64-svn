@@ -165,8 +165,8 @@ InterAliasMap(
                 7	 => 2
                 8	 => 2
                 9	 => 2
-                10	 => 2
-                11	 => 2
+                10	 => 1
+                11	 => 1
 
         mIdToMemRefSetMap: int	 => MemRefSet
                 1	 => [ MemRefHandle(G:0:.predef_F4)    MemRefHandle(G:0:.predef_F4) ] 
@@ -317,7 +317,7 @@ InterAliasMap(
                 4	 => 2
                 5	 => 2
                 6	 => 2
-                7	 => 2
+                7	 => 1
 
         mIdToMemRefSetMap: int	 => MemRefSet
                 1	 => [ MemRefHandle(C:0:.predef_F8)    MemRefHandle(G:0:.predef_F4) ] 

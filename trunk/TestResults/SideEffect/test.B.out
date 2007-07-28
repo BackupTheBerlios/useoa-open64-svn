@@ -38,18 +38,6 @@ InterSideEffectStandard(
                     ) ] 
                 mDEFSet: [ 
                     NamedLoc(
-                        mSymHandle: SymHandle(test_::A)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )    
-                    NamedLoc(
-                        mSymHandle: SymHandle(test_::C)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )    
-                    NamedLoc(
                         mSymHandle: SymHandle(test_::X)
                         mLocal: 1
                         mFullOverlap: [  ] 
@@ -186,80 +174,8 @@ InterSideEffectStandard(
                                 mNumDeref: 1
                             )
                         ) ] 
-                    mLDEFSet: [ 
-                        InvisibleLoc(
-                            mMRE: 
-                            Deref(
-                                mMemRefType: DEF
-                                mMRE: 
-                                NamedRef(
-                                    mMemRefType: DEF
-                                    mSymHandle: SymHandle(f_::N)
-                                )
-                                mNumDeref: 1
-                            )
-                        )    
-                        InvisibleLoc(
-                            mMRE: 
-                            Deref(
-                                mMemRefType: DEF
-                                mMRE: 
-                                NamedRef(
-                                    mMemRefType: DEF
-                                    mSymHandle: SymHandle(f_::O)
-                                )
-                                mNumDeref: 1
-                            )
-                        )    
-                        InvisibleLoc(
-                            mMRE: 
-                            Deref(
-                                mMemRefType: USE
-                                mMRE: 
-                                NamedRef(
-                                    mMemRefType: USE
-                                    mSymHandle: SymHandle(f_::Q)
-                                )
-                                mNumDeref: 1
-                            )
-                        ) ] 
-                    mDEFSet: [ 
-                        InvisibleLoc(
-                            mMRE: 
-                            Deref(
-                                mMemRefType: DEF
-                                mMRE: 
-                                NamedRef(
-                                    mMemRefType: DEF
-                                    mSymHandle: SymHandle(f_::N)
-                                )
-                                mNumDeref: 1
-                            )
-                        )    
-                        InvisibleLoc(
-                            mMRE: 
-                            Deref(
-                                mMemRefType: DEF
-                                mMRE: 
-                                NamedRef(
-                                    mMemRefType: DEF
-                                    mSymHandle: SymHandle(f_::O)
-                                )
-                                mNumDeref: 1
-                            )
-                        )    
-                        InvisibleLoc(
-                            mMRE: 
-                            Deref(
-                                mMemRefType: USE
-                                mMRE: 
-                                NamedRef(
-                                    mMemRefType: USE
-                                    mSymHandle: SymHandle(f_::Q)
-                                )
-                                mNumDeref: 1
-                            )
-                        ) ] 
+                    mLDEFSet: [  ] 
+                    mDEFSet: [  ] 
                     mLUSESet: [ 
                         InvisibleLoc(
                             mMRE: 
@@ -501,44 +417,8 @@ InterSideEffectStandard(
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
-                        mLDEFSet: [ 
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::A)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::C)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            ) ] 
-                        mDEFSet: [ 
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::A)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::C)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            ) ] 
+                        mLDEFSet: [  ] 
+                        mDEFSet: [  ] 
                         mLUSESet: [ 
                             NamedLoc(
                                 mSymHandle: SymHandle(test_::B)

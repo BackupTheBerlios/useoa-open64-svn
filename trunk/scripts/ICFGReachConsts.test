@@ -17,11 +17,11 @@ test::  constprop_loop1.B,      Checked by BK 08/29/06
 test::  constprop_loop2.B,      Checked by BK 08/29/06
 
 # less precise, call-return interference
-test::  constprop_proc1.B,      Checked by BK 08/29/06
+test::  constprop_proc1.B,      Checked by BK 07/27/07
 
 # way less precise due to context insensitive alias analysis
-test::  constprop_proc2.B,      Checked by BK 08/29/06
-
+test::  constprop_proc2.B,      Checked by BK 07/27/07
+test::  constprop_proc3.B,      Checked by BK 07/27/07
 
 
 

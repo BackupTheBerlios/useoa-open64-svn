@@ -5,9 +5,9 @@ mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
                     
-                    Statement: StmtHandle( LOC 0 0 source files:	1	"/home/kreaseck/OPEN64/UseOA-Open64/TestCases/ReachConsts/constprop_proc1.f90"
+                    Statement:  LOC 0 0 source files:	1	"/home/kreaseck/OPEN64/UseOA-Open64/TestCases/ReachConsts/constprop_proc1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-)	 => 
+StmtHandle()	 => 
                     ConstDefSet([  ] 
                     )
                     
@@ -17,7 +17,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 5)	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 NamedLoc(
@@ -32,7 +32,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                     
                     Statement: StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 NamedLoc(
@@ -43,7 +43,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 )
                                 mCDType: ,VALUE=2>
                             )    
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 NamedLoc(
@@ -58,7 +58,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                     
                     Statement: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 NamedLoc(
@@ -73,7 +73,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                     
                     Statement: StmtHandle(return)	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 NamedLoc(
@@ -93,10 +93,10 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
                     
-                    Statement: StmtHandle(PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-)	 => 
+                    Statement: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -113,7 +113,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 )
                                 mCDType: ,VALUE=2>
                             )    
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -134,7 +134,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                     
                     Statement: StmtHandle(C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4)	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -151,7 +151,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 )
                                 mCDType: ,VALUE=2>
                             )    
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -172,7 +172,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                     
                     Statement: StmtHandle(B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4)	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -189,7 +189,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                 )
                                 mCDType: ,VALUE=2>
                             )    
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -205,29 +205,12 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                     )
                                 )
                                 mCDType: ,VALUE=5>
-                            )    
-                            ConstDefSet: 
-                            ConstDef(
-                                Location: 
-                                InvisibleLoc(
-                                    mMRE: 
-                                    Deref(
-                                        mMemRefType: DEF
-                                        mMRE: 
-                                        NamedRef(
-                                            mMemRefType: DEF
-                                            mSymHandle: SymHandle(bar_::C)
-                                        )
-                                        mNumDeref: 1
-                                    )
-                                )
-                                mCDType: ,VALUE=10>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(return)	 => 
                     ConstDefSet([ 
-                            ConstDefSet: 
+                            ConstDef: 
                             ConstDef(
                                 Location: 
                                 InvisibleLoc(
@@ -243,23 +226,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                                     )
                                 )
                                 mCDType: ,VALUE=2>
-                            )    
-                            ConstDefSet: 
-                            ConstDef(
-                                Location: 
-                                InvisibleLoc(
-                                    mMRE: 
-                                    Deref(
-                                        mMemRefType: DEF
-                                        mMRE: 
-                                        NamedRef(
-                                            mMemRefType: DEF
-                                            mSymHandle: SymHandle(bar_::C)
-                                        )
-                                        mNumDeref: 1
-                                    )
-                                )
-                                mCDType: ,VALUE=10>
                             ) ] 
                     )
                     

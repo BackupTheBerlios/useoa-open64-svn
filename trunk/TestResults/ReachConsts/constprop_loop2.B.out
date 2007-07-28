@@ -2,11 +2,11 @@
 ReachConstsStandard(
     mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
             
-            Statement: StmtHandle( LOC 0 0 source files:	1	"/home/mstrout/open64/UseNewOA-Open64/TestProgs/constprop_loop2.f90"
+            Statement:  LOC 0 0 source files:	1	"/home/mstrout/open64/UseNewOA-Open64/TestProgs/constprop_loop2.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-)	 => 
+StmtHandle()	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -17,7 +17,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -28,7 +28,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -39,7 +39,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -54,7 +54,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(Y:0:.predef_I4 = 5)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -65,7 +65,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -76,7 +76,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -87,7 +87,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -102,7 +102,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(do_loop (I:0:.predef_I4<=10))	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -113,7 +113,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -124,7 +124,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -135,7 +135,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -150,7 +150,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(I:0:.predef_I4 = 1)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -161,7 +161,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -172,7 +172,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -183,7 +183,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,VALUE=5>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -198,7 +198,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -209,7 +209,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -220,7 +220,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -231,7 +231,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -246,7 +246,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(X:0:.predef_I4 = 2)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -257,7 +257,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -268,7 +268,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -279,7 +279,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -294,7 +294,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(if (OPC_F4I4CVT(X:0:.predef_I4)>=    0.000000))	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -305,7 +305,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -316,7 +316,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,VALUE=2>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -327,7 +327,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -342,7 +342,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(Y:0:.predef_I4 = 5)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -353,7 +353,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -364,7 +364,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,VALUE=2>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -375,7 +375,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -390,7 +390,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -401,7 +401,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -412,7 +412,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,VALUE=2>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -423,7 +423,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,VALUE=5>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -438,7 +438,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(Y:0:.predef_I4 = 3)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -449,7 +449,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -460,7 +460,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,VALUE=2>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -471,7 +471,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -486,7 +486,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(Z:0:.predef_I4 = Y:0:.predef_I4)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -497,7 +497,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -508,7 +508,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -519,7 +519,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -534,7 +534,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(_END())	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -545,7 +545,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -556,7 +556,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -567,7 +567,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -582,7 +582,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(return)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -593,7 +593,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -604,7 +604,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -615,7 +615,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,BOTTOM>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -630,7 +630,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             
             Statement: StmtHandle(return)	 => 
             ConstDefSet([ 
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -641,7 +641,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,TOP>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -652,7 +652,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,TOP>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(
@@ -663,7 +663,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
                         )
                         mCDType: ,TOP>
                     )    
-                    ConstDefSet: 
+                    ConstDef: 
                     ConstDef(
                         Location: 
                         NamedLoc(

@@ -94,14 +94,29 @@ InterActive(
                     )
                     mNumDeref: 1
                 )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(bar_::D)
+                    )
+                    mNumDeref: 1
+                )
             ) ] 
     )
     ActiveStmtSet([ 
-            StmtHandle(B:0:.predef_F8 = A:0:.predef_F8+C:0:.predef_F8) ] 
+            StmtHandle(B:0:.predef_F8 = A:0:.predef_F8+C:0:.predef_F8)
+                StmtHandle(D:0:.predef_F8 = C:0:.predef_F8) ] 
     )
     ActiveMemRefSet([ 
             MemRefHandle(B:0:.predef_F8)
                 MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(D:0:.predef_F8)
                 MemRefHandle(C:0:.predef_F8) ] 
     )
     mNumIterUseful: 2

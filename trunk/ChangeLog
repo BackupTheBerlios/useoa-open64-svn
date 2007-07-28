@@ -626,4 +626,8 @@
        $source reduceDOT.csh benchmark.dot
    - these changes have no impact on OpenAnalysis
 
+07/27/07   UseOA-Open64 svn trunk r184 Barbara Kreaseck
+   - re-gen'd AliasMapFIAlias, ICFGActive, SideEffect, ICFGReachConsts
+     for new output from OpenAnalysis r448
+   - added minimal regression testcases.
 

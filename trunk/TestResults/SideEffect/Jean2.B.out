@@ -1,0 +1,303 @@
+
+InterSideEffectStandard(
+    ProcToSideEffectMap: ProcHandle	 => OA_ptr<OA::SideEffect::SideEffectStandard>
+            ProcHandle(foo_::foo_)	 => 
+            SideEffectStandard(
+                mLMODSet: [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mMemRefType: DEF
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                mMODSet: [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mMemRefType: DEF
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                mLDEFSet: [  ] 
+                mDEFSet: [  ] 
+                mLUSESet: [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::M)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                mUSESet: [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::M)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                mLREFSet: [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::M)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                mREFSet: [ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::M)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+                mUnknownLocSet: [ 
+                    UnknownLoc(
+                    ) ] 
+                ProcHandle(foo_::head_)	 => 
+                SideEffectStandard(
+                    mLMODSet: [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::P)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    mMODSet: [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::P)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Q)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    mLDEFSet: [  ] 
+                    mDEFSet: [  ] 
+                    mLUSESet: [  ] 
+                    mUSESet: [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::P)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    mLREFSet: [  ] 
+                    mREFSet: [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::P)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    mUnknownLocSet: [ 
+                        UnknownLoc(
+                        ) ] 
+
+            CallToSideEffectMap: CallHandle	 => OA_ptr<OA::SideEffect::SideEffectStandard>
+                    CallHandle(foo_(&X:0:.predef_I4, &Q:0:.predef_I4))	 => 
+                    SideEffectStandard(
+                        mLMODSet: [ 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Q)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            ) ] 
+                        mMODSet: [ 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Q)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            ) ] 
+                        mLDEFSet: [  ] 
+                        mDEFSet: [  ] 
+                        mLUSESet: [ 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::P)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )    
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            ) ] 
+                        mUSESet: [ 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::P)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )    
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            ) ] 
+                        mLREFSet: [ 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::P)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )    
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            ) ] 
+                        mREFSet: [ 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::P)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )    
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            ) ] 
+                        mUnknownLocSet: [ 
+                            UnknownLoc(
+                            ) ] 
+                        CallHandle(foo_(&P:0:.predef_I4, &Q:0:.predef_I4))	 => 
+                        SideEffectStandard(
+                            mLMODSet: [ 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::Q)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                ) ] 
+                            mMODSet: [ 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::Q)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                ) ] 
+                            mLDEFSet: [  ] 
+                            mDEFSet: [  ] 
+                            mLUSESet: [ 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )    
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::X)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                ) ] 
+                            mUSESet: [ 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )    
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::X)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                ) ] 
+                            mLREFSet: [ 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )    
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::X)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                ) ] 
+                            mREFSet: [ 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )    
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::X)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                ) ] 
+                            mUnknownLocSet: [ 
+                                UnknownLoc(
+                                ) ] 

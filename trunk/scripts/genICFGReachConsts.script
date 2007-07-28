@@ -14,3 +14,5 @@ echo "Generating TestResults/ICFGReachConsts/constprop_proc1.B.out"
 ./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc1.B > TestResults/ICFGReachConsts/constprop_proc1.B.out
 echo "Generating TestResults/ICFGReachConsts/constprop_proc2.B.out"
 ./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc2.B > TestResults/ICFGReachConsts/constprop_proc2.B.out
+echo "Generating TestResults/ICFGReachConsts/constprop_proc3.B.out"
+./test-open64 --oa-ICFGReachConsts TestCases/ReachConsts/constprop_proc3.B > TestResults/ICFGReachConsts/constprop_proc3.B.out

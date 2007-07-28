@@ -34,3 +34,7 @@ echo "Testing TestCases/Alias/Unnamed_alias_callsite.B, TestResults/AliasMapFIAl
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/Unnamed_alias_callsite.B > t
 diff t TestResults/AliasMapFIAlias/Unnamed_alias_callsite.B.out
 
+echo "Testing TestCases/Alias/interalias_proc_call6.B, TestResults/AliasMapFIAlias/interalias_proc_call6.B.out checked by BK 07/26/07"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call6.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call6.B.out
+
