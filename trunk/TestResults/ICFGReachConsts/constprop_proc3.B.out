@@ -16,11 +16,33 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 5)	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::M)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &4))	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 2)	 => 
@@ -28,11 +50,33 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(M:0:.predef_I4 = 5)	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &4))	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::M)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
@@ -52,15 +96,117 @@ StmtHandle()	 =>
                     
                     Statement: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                InvisibleLoc(
+                                    mMRE: 
+                                    Deref(
+                                        mMemRefType: USE
+                                        mMRE: 
+                                        NamedRef(
+                                            mMemRefType: USE
+                                            mSymHandle: SymHandle(bar_::A)
+                                        )
+                                        mNumDeref: 1
+                                    )
+                                )
+                                mCDType: ,VALUE=5>
+                            )    
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                InvisibleLoc(
+                                    mMRE: 
+                                    Deref(
+                                        mMemRefType: USE
+                                        mMRE: 
+                                        NamedRef(
+                                            mMemRefType: USE
+                                            mSymHandle: SymHandle(bar_::B)
+                                        )
+                                        mNumDeref: 1
+                                    )
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4)	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                InvisibleLoc(
+                                    mMRE: 
+                                    Deref(
+                                        mMemRefType: USE
+                                        mMRE: 
+                                        NamedRef(
+                                            mMemRefType: USE
+                                            mSymHandle: SymHandle(bar_::A)
+                                        )
+                                        mNumDeref: 1
+                                    )
+                                )
+                                mCDType: ,VALUE=5>
+                            )    
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                InvisibleLoc(
+                                    mMRE: 
+                                    Deref(
+                                        mMemRefType: USE
+                                        mMRE: 
+                                        NamedRef(
+                                            mMemRefType: USE
+                                            mSymHandle: SymHandle(bar_::B)
+                                        )
+                                        mNumDeref: 1
+                                    )
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4)	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                InvisibleLoc(
+                                    mMRE: 
+                                    Deref(
+                                        mMemRefType: USE
+                                        mMRE: 
+                                        NamedRef(
+                                            mMemRefType: USE
+                                            mSymHandle: SymHandle(bar_::A)
+                                        )
+                                        mNumDeref: 1
+                                    )
+                                )
+                                mCDType: ,VALUE=5>
+                            )    
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                InvisibleLoc(
+                                    mMRE: 
+                                    Deref(
+                                        mMemRefType: USE
+                                        mMRE: 
+                                        NamedRef(
+                                            mMemRefType: USE
+                                            mSymHandle: SymHandle(bar_::B)
+                                        )
+                                        mNumDeref: 1
+                                    )
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(return)	 => 

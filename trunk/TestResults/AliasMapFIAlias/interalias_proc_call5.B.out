@@ -247,7 +247,7 @@ InterAliasMap(
     )
     AliasMap(
         mProcHandle: ProcHandle(testing_::bar_)
-        mNumSets: 8
+        mNumSets: 10
         mStartId: 0
         mIdToLocSetMap: int	 => OA::OA_ptr<LocSet> 
                 0	 => [ 
@@ -308,6 +308,20 @@ InterAliasMap(
                             mNumDeref: 1
                         )
                     ) ] 
+                8	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(testing_::G1)
+                        mLocal: 0
+                        mFullOverlap: [ SymHandle(testing_::G1)    SymHandle(testing_::G1)    SymHandle(testing_::G1) ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
+                9	 => [ 
+                    NamedLoc(
+                        mSymHandle: SymHandle(testing_::G)
+                        mLocal: 0
+                        mFullOverlap: [ SymHandle(testing_::G)    SymHandle(testing_::G)    SymHandle(testing_::G) ] 
+                        mPartOverlap: [  ] 
+                    ) ] 
 
         mIdToSetStatusMap: int	 => AliasResultType
                 0	 => 1
@@ -318,11 +332,15 @@ InterAliasMap(
                 5	 => 2
                 6	 => 2
                 7	 => 1
+                8	 => 2
+                9	 => 2
 
         mIdToMemRefSetMap: int	 => MemRefSet
                 1	 => [ MemRefHandle(C:0:.predef_F8)    MemRefHandle(G:0:.predef_F4) ] 
                 2	 => [ MemRefHandle(B:0:.predef_F8)    MemRefHandle(G1:0:.predef_F4) ] 
                 7	 => [ MemRefHandle(A:0:.predef_F8) ] 
+                8	 => [ MemRefHandle(G1:0:.predef_F4) ] 
+                9	 => [ MemRefHandle(G:0:.predef_F4) ] 
 
         mIdToMRESetMap: int	 => MemRefExprSet
                 1	 => [ 
@@ -382,6 +400,16 @@ InterAliasMap(
                             mSymHandle: SymHandle(bar_::A)
                         )
                         mNumDeref: 1
+                    ) ] 
+                8	 => [ 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(testing_::G1)
+                    ) ] 
+                9	 => [ 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(testing_::G)
                     ) ] 
 
     )

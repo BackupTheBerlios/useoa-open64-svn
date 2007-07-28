@@ -120,8 +120,20 @@ InterSideEffectStandard(
                             mFullOverlap: [  ] 
                             mPartOverlap: [  ] 
                         ) ] 
-                    mLDEFSet: [  ] 
-                    mDEFSet: [  ] 
+                    mLDEFSet: [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::P)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    mDEFSet: [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::P)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
                     mLUSESet: [  ] 
                     mUSESet: [ 
                         NamedLoc(
@@ -252,22 +264,10 @@ InterSideEffectStandard(
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
-                                )    
-                                NamedLoc(
-                                    mSymHandle: SymHandle(head_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
                                 ) ] 
                             mUSESet: [ 
                                 NamedLoc(
                                     mSymHandle: SymHandle(head_::P)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
-                                )    
-                                NamedLoc(
-                                    mSymHandle: SymHandle(head_::X)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
@@ -278,22 +278,10 @@ InterSideEffectStandard(
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 
-                                )    
-                                NamedLoc(
-                                    mSymHandle: SymHandle(head_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
                                 ) ] 
                             mREFSet: [ 
                                 NamedLoc(
                                     mSymHandle: SymHandle(head_::P)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
-                                )    
-                                NamedLoc(
-                                    mSymHandle: SymHandle(head_::X)
                                     mLocal: 1
                                     mFullOverlap: [  ] 
                                     mPartOverlap: [  ] 

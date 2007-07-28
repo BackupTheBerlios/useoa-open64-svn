@@ -16,11 +16,33 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 5)	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::M)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(M:0:.predef_I4 = 5)	 => 
@@ -28,11 +50,33 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 2)	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::M)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))	 => 
-                    ConstDefSet([  ] 
+                    ConstDefSet([ 
+                            ConstDef: 
+                            ConstDef(
+                                Location: 
+                                NamedLoc(
+                                    mSymHandle: SymHandle(head_::P)
+                                    mLocal: 1
+                                    mFullOverlap: [  ] 
+                                    mPartOverlap: [  ] 
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
                     )
                     
                     Statement: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
