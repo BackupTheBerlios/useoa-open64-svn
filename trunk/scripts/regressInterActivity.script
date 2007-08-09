@@ -94,10 +94,6 @@ echo "Testing TestCases/CSFIActivity/globalActive_3.B, TestResults/CSFIActivity/
 ./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_3.B > t
 diff t TestResults/CSFIActivity/globalActive_3.B.out
 
-echo "Testing TestCases/CSFIActivity/globalActive_4.B, TestResults/CSFIActivity/globalActive_4.B.out "
-./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_4.B > t
-diff t TestResults/CSFIActivity/globalActive_4.B.out
-
 echo "Testing TestCases/CSFIActivity/globalActive_7.B, TestResults/CSFIActivity/globalActive_7.B.out "
 ./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_7.B > t
 diff t TestResults/CSFIActivity/globalActive_7.B.out

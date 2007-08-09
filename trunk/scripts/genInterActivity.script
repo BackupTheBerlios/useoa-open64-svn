@@ -46,8 +46,6 @@ echo "Generating TestResults/CSFIActivity/globalActive_2.B.out"
 ./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_2.B > TestResults/CSFIActivity/globalActive_2.B.out
 echo "Generating TestResults/CSFIActivity/globalActive_3.B.out"
 ./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_3.B > TestResults/CSFIActivity/globalActive_3.B.out
-echo "Generating TestResults/CSFIActivity/globalActive_4.B.out"
-./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_4.B > TestResults/CSFIActivity/globalActive_4.B.out
 echo "Generating TestResults/CSFIActivity/globalActive_7.B.out"
 ./test-open64 --oa-InterActivity TestCases/CSFIActivity/globalActive_7.B > TestResults/CSFIActivity/globalActive_7.B.out
 echo "Generating TestResults/CSFIActivity/If_Loop1.B.out"
