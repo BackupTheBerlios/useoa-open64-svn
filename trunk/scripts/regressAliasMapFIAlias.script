@@ -22,10 +22,6 @@ echo "Testing TestCases/Alias/interalias_proc_call4.B, TestResults/AliasMapFIAli
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call4.B > t
 diff t TestResults/AliasMapFIAlias/interalias_proc_call4.B.out
 
-echo "Testing TestCases/Alias/module.B, TestResults/AliasMapFIAlias/module.B.out checked by PLM 04/11/07"
-./test-open64 --oa-AliasMapFIAlias TestCases/Alias/module.B > t
-diff t TestResults/AliasMapFIAlias/module.B.out
-
 echo "Testing TestCases/Alias/Unnamed_alias.B, TestResults/AliasMapFIAlias/Unnamed_alias.B.out checked by PLM 04/15/07"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/Unnamed_alias.B > t
 diff t TestResults/AliasMapFIAlias/Unnamed_alias.B.out
