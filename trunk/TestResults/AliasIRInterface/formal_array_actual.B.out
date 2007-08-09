@@ -5,7 +5,7 @@ PROCEDURE = { < ProcHandle("foo_::foo_"), SymHandle("foo_::foo_") > }
             < 0, SymHandle("foo_::X") >
             < 1, SymHandle("foo_::Y") >
         ] }
-    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/formal_array_actual.f90"
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/formal_array_actual.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [

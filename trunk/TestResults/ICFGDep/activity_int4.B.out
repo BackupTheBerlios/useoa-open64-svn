@@ -34,7 +34,7 @@ MustDefMap: StmtHandle	 => LocSet
  ] 
 
 mDepDFSet: StmtHandle	 => DepDFSet
-         LOC 0 0 source files:	1	"/home/kreaseck/OPEN64/UseOA-Open64/TestProgs/activity_int4.f"
+         LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ICFGDep/activity_int4.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 stmt: 	 => 
             mUseToDefsMap: UseLoc	 => DefLocSet
@@ -134,7 +134,7 @@ stmt: 	 =>
                     mPartOverlap: [  ] 
                 )
  ] 
-        stmt: while_do (t__1:0:.log.4)	 => 
+        stmt: while_do (I:0:.predef_I4<3)	 => 
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet

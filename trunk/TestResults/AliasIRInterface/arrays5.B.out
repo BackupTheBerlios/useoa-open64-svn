@@ -5,7 +5,7 @@ PROCEDURE = { < ProcHandle("conj_grad_::conj_grad_"), SymHandle("conj_grad_::con
             < 0, SymHandle("conj_grad_::X") >
             < 1, SymHandle("conj_grad_::R") >
         ] }
-    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/Alias/arrays5.f"
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/arrays5.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [

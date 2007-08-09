@@ -4,7 +4,7 @@ PROCEDURE = { < ProcHandle("factorial_::factorial_"), SymHandle("factorial_::fac
         [
             < 0, SymHandle("factorial_::N") >
         ] }
-    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/100506/UseOA-Open64/TestCases/MemRefExpr/local_actual_expression_assignment.f90"
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/local_actual_expression_assignment.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
