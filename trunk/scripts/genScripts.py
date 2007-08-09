@@ -46,6 +46,7 @@
 #################################################################
 import sys
 import string
+import glob
 
 ############# just read in all lines, these files aren't that big
 
@@ -103,7 +104,22 @@ for line in filelines:
 
         genfile.write("echo \"Generating %s/%s\"\n" \
             % (outputdir,inputfile+".out"))
-        genfile.write("%s %s/%s > %s/%s\n" \
+        ### uncomment this to regenerate B files ################
+	#inputName=inputfile[:-1]
+	#fFiles=glob.glob("../"+inputdir+"/"+inputName+"f")
+	#fFiles=fFiles+glob.glob("../"+inputdir+"/"+inputName+"f90")
+        #if (len(fFiles) > 1): 
+	#  print "ambiguous match for "+inputdir+"/"+inputName+"*"
+        #  print fFiles
+        #  sys.exit(-1)
+        #if (len(fFiles) < 1): 
+	#  print "no match for "+inputdir+"/"+inputName+"*"
+        #  print fFiles
+        #  sys.exit(-1)
+	#genfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
+	#genfile.write("mv %s %s/%s\n" % (inputfile, inputdir,inputfile))
+        ### until here ##########################################
+        genfile.write("%s %s/%s > %s/%s\n"  \
             % (driverexec,inputdir,inputfile,outputdir,inputfile+".out"))
         regfile.write("echo \"Testing %s/%s, %s/%s %s\"\n" \
             % (inputdir,inputfile,outputdir,inputfile+".out", status))
