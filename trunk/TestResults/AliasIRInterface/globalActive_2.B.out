@@ -25,7 +25,7 @@ PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("USE <1,20,globals_>
+    MEMREFEXPRS = { StmtHandle("VUSE <1,20,globals_>
 ") =>
         [
         ] }
