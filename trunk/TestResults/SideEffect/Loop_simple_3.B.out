@@ -90,18 +90,6 @@ InterSideEffectStandard(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle("blah")
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(10)
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(4)
-                        mLocal: 0
-                    )    
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
@@ -150,18 +138,6 @@ InterSideEffectStandard(
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle("blah")
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(10)
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(4)
-                        mLocal: 0
                     )    
                     LocSubSet(
                         mLoc: 
@@ -212,18 +188,6 @@ InterSideEffectStandard(
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
                     )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle("blah")
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(10)
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(4)
-                        mLocal: 0
-                    )    
                     LocSubSet(
                         mLoc: 
                         NamedLoc(
@@ -272,18 +236,6 @@ InterSideEffectStandard(
                         mLocal: 1
                         mFullOverlap: [  ] 
                         mPartOverlap: [  ] 
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle("blah")
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(10)
-                        mLocal: 0
-                    )    
-                    UnnamedLoc(
-                        mExprHandle: ExprHandle(4)
-                        mLocal: 0
                     )    
                     LocSubSet(
                         mLoc: 
