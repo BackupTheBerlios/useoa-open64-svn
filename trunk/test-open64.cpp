@@ -161,6 +161,10 @@ static int
 TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
 
+static int
+TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface);
+
 //***************************************************************************
 
 int
@@ -288,6 +292,9 @@ main(int argc, char* argv[])
     case 25: // AliasMapXAIFBasic
     case 30: // Linearity
       TestIR_OA(std::cout, pu_forest, args.runMode );
+      break;
+    case 33: // AssignPair
+      TestIR_OAAssignPair(std::cout, pu_forest, irInterface);
       break;
   }
   
@@ -1060,6 +1067,36 @@ TestIR_OAAliasMapXAIFFIAlias(std::ostream& os, PU_Info* pu_forest,
   return 0;
 }
 
+static int
+TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+  Diag_Set_Phase("WHIRL tester: TestIR_OAAssignPair");
+
+  // need a procedure iterator
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu_forest);
+  for(procIter->reset(); procIter->isValid(); ++(*procIter)) {
+    OA::ProcHandle proc = procIter->current();
+    OA::OA_ptr<OA::IRStmtIterator> sIt 
+        = irInterface->getStmtIterator(proc);
+    for ( ; sIt->isValid(); (*sIt)++) {
+        OA::StmtHandle stmt = sIt->current();
+        OA::OA_ptr<OA::AssignPairIterator> espIterPtr
+            = irInterface->getAssignPairIterator(stmt);
+        for ( ; espIterPtr->isValid(); ++(*espIterPtr)) {
+            // unbundle pair
+            OA::MemRefHandle mref = espIterPtr->currentTarget();
+            OA::ExprHandle expr = espIterPtr->currentSource();
+            std::cout << "\tmref = " 
+                      << irInterface->toString(mref) << ", ";
+            std::cout << "expr = " 
+                      << irInterface->toString(expr) << std::endl;
+        }
+    }
+  }
+  return 0;
+}
 
 static int
 TestIR_OAAliasMapInter(std::ostream& os, PU_Info* pu_forest,
@@ -1695,6 +1732,7 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     // if the statement has an expression tree then dump that as well
     OA::OA_ptr<OA::AssignPairIterator> espIterPtr 
         = ir->getAssignPairIterator(stmt);
+    
     for ( ; espIterPtr->isValid(); (*espIterPtr)++) {
         // unbundle pair
         OA::MemRefHandle mref = espIterPtr->currentTarget();
@@ -1705,7 +1743,7 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
         OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
         eTreePtr->output(*ir);
     }
-
+    
     // print out all of the ExprTrees for the parameters
     // Iterate over procedure calls of a statement
     OA::OA_ptr<OA::IRCallsiteIterator> callsiteItPtr = ir->getCallsites(stmt);

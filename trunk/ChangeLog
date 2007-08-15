@@ -645,3 +645,10 @@
      test-open64.cpp
    - RegressAll works with OpenAnalysis revision463.
 
+08/10/07   UseOA-Open64 svn trunk 198 Priyadarshini Malusare
+   - create --oa-PtrAssign flag in test-open64 to test assignment pairs
+   - Added TestCases and TestResults /AssignPairs/integer_assignment.*
+   - Forgot to regnerate TestCases after adding OPR_GT in
+     Open64IRInterface::findAllMemRefExpr...
+
+
