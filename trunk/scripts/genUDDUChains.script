@@ -6,5 +6,9 @@ echo "Generating TestResults/UDDUChainsTests/reachdef_loopif1.B.out"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_loopif1.B > TestResults/UDDUChainsTests/reachdef_loopif1.B.out
 echo "Generating TestResults/UDDUChainsTests/Loop_simple_10.B.out"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Loop_simple_10.B > TestResults/UDDUChainsTests/Loop_simple_10.B.out
-echo "Generating TestResults/UDDUChainsTests/duudChains.B.out"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/duudChains.B > TestResults/UDDUChainsTests/duudChains.B.out
+echo "Generating TestResults/UDDUChainsTests/logicalAND.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalAND.B > TestResults/UDDUChainsTests/logicalAND.B.out
+echo "Generating TestResults/UDDUChainsTests/logicalOR.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalOR.B > TestResults/UDDUChainsTests/logicalOR.B.out
+echo "Generating TestResults/UDDUChainsTests/logicalNOT.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalNOT.B > TestResults/UDDUChainsTests/logicalNOT.B.out

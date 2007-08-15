@@ -14,7 +14,15 @@ echo "Testing TestCases/UDDUChainsTests/Loop_simple_10.B, TestResults/UDDUChains
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Loop_simple_10.B > t
 diff t TestResults/UDDUChainsTests/Loop_simple_10.B.out
 
-echo "Testing TestCases/UDDUChainsTests/duudChains.B, TestResults/UDDUChainsTests/duudChains.B.out Checked by PLM 08/14/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/duudChains.B > t
-diff t TestResults/UDDUChainsTests/duudChains.B.out
+echo "Testing TestCases/UDDUChainsTests/logicalAND.B, TestResults/UDDUChainsTests/logicalAND.B.out Checked by PLM 08/14/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalAND.B > t
+diff t TestResults/UDDUChainsTests/logicalAND.B.out
+
+echo "Testing TestCases/UDDUChainsTests/logicalOR.B, TestResults/UDDUChainsTests/logicalOR.B.out Checked by PLM 08/14/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalOR.B > t
+diff t TestResults/UDDUChainsTests/logicalOR.B.out
+
+echo "Testing TestCases/UDDUChainsTests/logicalNOT.B, TestResults/UDDUChainsTests/logicalNOT.B.out Checked by PLM 08/14/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalNOT.B > t
+diff t TestResults/UDDUChainsTests/logicalNOT.B.out
 
