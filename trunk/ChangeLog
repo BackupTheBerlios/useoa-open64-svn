@@ -639,4 +639,9 @@
    - Added OPR_IF and OPR_LAND case for findAllMemRefExprs...
    - Added New TestCase for boolean UD-DUChain.
    - RegressAll works for OpenAnalysis revision 461.
-   
+  
+08/10/07   UseOA-Open64 svn trunk 194 Priyadarshini Malusare
+   - Deprecated ActivityStmtType and ReachConstsStmtType from
+     test-open64.cpp
+   - RegressAll works with OpenAnalysis revision463.
+

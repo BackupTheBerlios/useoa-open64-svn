@@ -1692,34 +1692,18 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     std::cout << ir->toString(stmt) << std::endl;
     //ir->dump(stmt,std::cout);
 
-    /*
-    // iterate over all memory reference handles within the statement
-    OA::OA_ptr<OA::MemRefHandleIterator> mrIterPtr = ir->getAllMemRefs(stmt);
-    for (; mrIterPtr->isValid(); (*mrIterPtr)++ )
-    {
-      OA::MemRefHandle memref = mrIterPtr->current();
-      std::cout << "\tmemref = " << ir->toString(memref) << std::endl;
-      //ir->dump(memref,std::cout);
-    }
-    */
-
     // if the statement has an expression tree then dump that as well
-    OA::ReachConsts::IRStmtType sType = ir->getReachConstsStmtType(stmt);
-    if (sType == OA::ReachConsts::EXPR_STMT) {
-      OA::OA_ptr<OA::AssignPairIterator> espIterPtr 
-          = ir->getAssignPairIterator(stmt);
-      for ( ; espIterPtr->isValid(); (*espIterPtr)++) {
+    OA::OA_ptr<OA::AssignPairIterator> espIterPtr 
+        = ir->getAssignPairIterator(stmt);
+    for ( ; espIterPtr->isValid(); (*espIterPtr)++) {
         // unbundle pair
         OA::MemRefHandle mref = espIterPtr->currentTarget();
         OA::ExprHandle expr = espIterPtr->currentSource();
         std::cout << "\n\t--expr----------------------------------------\n";
         std::cout << "\t  expr = " << ir->toString(expr) << std::endl;
-	std::cout << "\t----------------------------------------------";
+    	std::cout << "\t----------------------------------------------";
         OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
-	//std::cout << "ETREE DUMP: ";
-        //eTreePtr->dump(std::cout,ir);
         eTreePtr->output(*ir);
-      }
     }
 
     // print out all of the ExprTrees for the parameters
@@ -1727,21 +1711,13 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
     OA::OA_ptr<OA::IRCallsiteIterator> callsiteItPtr = ir->getCallsites(stmt);
     for ( ; callsiteItPtr->isValid(); ++(*callsiteItPtr)) {
         OA::CallHandle call = callsiteItPtr->current();
-        //if (debug) {
         std::cout << "\n\t--Call-----------------------------------------\n";
         std::cout << "\t  Call: [" << ir->toString(call) << "]\n";
-	std::cout << "\t----------------------------------------------";
-        //} 
-
+	    std::cout << "\t----------------------------------------------";
         OA::OA_ptr<OA::IRCallsiteParamIterator> paramIterPtr 
             = ir->getCallsiteParams(call);
         for ( ; paramIterPtr->isValid(); (*paramIterPtr)++ ) {
             OA::ExprHandle param = paramIterPtr->current();
-
-            //if (debug) {
-             // std::cout << "==== param = " << ir->toString(param) << std::endl;
-            //}
-
             // get the expression tree for the parameter
             OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(param);
             eTreePtr->output(*ir);
