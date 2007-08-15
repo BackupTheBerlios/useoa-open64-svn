@@ -14,3 +14,7 @@ echo "Testing TestCases/UDDUChainsTests/Loop_simple_10.B, TestResults/UDDUChains
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Loop_simple_10.B > t
 diff t TestResults/UDDUChainsTests/Loop_simple_10.B.out
 
+echo "Testing TestCases/UDDUChainsTests/duudChains.B, TestResults/UDDUChainsTests/duudChains.B.out Checked by PLM 08/14/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/duudChains.B > t
+diff t TestResults/UDDUChainsTests/duudChains.B.out
+
