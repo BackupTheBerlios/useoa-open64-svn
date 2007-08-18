@@ -651,4 +651,9 @@
    - Forgot to regnerate TestCases after adding OPR_GT in
      Open64IRInterface::findAllMemRefExpr...
 
+08/10/07   UseOA-Open64 svn trunk 199 Priyadarshini Malusare
+  - Regerated TestResults for SideEffect Analysis after modifying
+    mCallToSideEffectMap.
+  - passes regressAll with OpenAnalysis r468 on Okapi with gcc 3.3.4
+
 

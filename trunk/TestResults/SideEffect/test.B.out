@@ -379,25 +379,7 @@ InterSideEffectStandard(
             CallToSideEffectMap: CallHandle	 => OA_ptr<OA::SideEffect::SideEffectStandard>
                     CallHandle(f_(&X:0:.predef_I4, &A:0:.predef_I4, &B:0:.predef_I4, &C:0:.predef_I4, &D:0:.predef_I4))	 => 
                     SideEffectStandard(
-                        mLMODSet: [ 
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::A)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::C)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            ) ] 
+                        mLMODSet: [  ] 
                         mMODSet: [ 
                             NamedLoc(
                                 mSymHandle: SymHandle(test_::A)
@@ -419,31 +401,7 @@ InterSideEffectStandard(
                             ) ] 
                         mLDEFSet: [  ] 
                         mDEFSet: [  ] 
-                        mLUSESet: [ 
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::B)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::C)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::D)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            ) ] 
+                        mLUSESet: [  ] 
                         mUSESet: [ 
                             NamedLoc(
                                 mSymHandle: SymHandle(test_::B)
@@ -469,31 +427,7 @@ InterSideEffectStandard(
                                 mFullOverlap: [  ] 
                                 mPartOverlap: [  ] 
                             ) ] 
-                        mLREFSet: [ 
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::B)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::C)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::D)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )    
-                            NamedLoc(
-                                mSymHandle: SymHandle(test_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            ) ] 
+                        mLREFSet: [  ] 
                         mREFSet: [ 
                             NamedLoc(
                                 mSymHandle: SymHandle(test_::B)
