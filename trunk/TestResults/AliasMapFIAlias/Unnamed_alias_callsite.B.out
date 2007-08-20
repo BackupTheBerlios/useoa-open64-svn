@@ -128,7 +128,7 @@ InterAliasMap(
                     )    
                     UnnamedLoc(
                         mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                        mLocal: 0
+                        mLocal: 1
                     ) ] 
                 3	 => [ 
                     NamedLoc(
@@ -139,12 +139,12 @@ InterAliasMap(
                     )    
                     UnnamedLoc(
                         mExprHandle: ExprHandle(2)
-                        mLocal: 0
+                        mLocal: 1
                     ) ] 
                 4	 => [ 
                     UnnamedLoc(
                         mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                        mLocal: 0
+                        mLocal: 1
                     ) ] 
                 5	 => [ 
                     NamedLoc(
@@ -163,7 +163,7 @@ InterAliasMap(
                 7	 => [ 
                     UnnamedLoc(
                         mExprHandle: ExprHandle(2)
-                        mLocal: 0
+                        mLocal: 1
                     ) ] 
 
         mIdToSetStatusMap: int	 => AliasResultType
