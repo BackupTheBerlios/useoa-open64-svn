@@ -656,4 +656,9 @@
     mCallToSideEffectMap.
   - passes regressAll with OpenAnalysis r468 on Okapi with gcc 3.3.4
 
+08/10/07   UseOA-Open64 svn trunk 201 Priyadarshini Malusare
+  - Added missing OPR_MIN and OPR_MAX in findAllMemRefExprs...
+  - Regenerated TestCases and TestResults for AliasIRInterface,
+    MemRefExprs and UDDUChains.
+ 
 

@@ -296,3 +296,7 @@ echo "Generating TestResults/MemRefExpr/formal_scalar_actual_out.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_out.B > TestResults/MemRefExpr/formal_scalar_actual_out.B.out
 echo "Generating TestResults/MemRefExpr/formal_scalar_actual_inout.B.out"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/Intrinsic_min.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_min.B > TestResults/MemRefExpr/Intrinsic_min.B.out
+echo "Generating TestResults/MemRefExpr/Intrinsic_max.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_max.B > TestResults/MemRefExpr/Intrinsic_max.B.out

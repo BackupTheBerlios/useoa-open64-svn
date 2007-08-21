@@ -594,3 +594,11 @@ echo "Testing TestCases/MemRefExpr/formal_scalar_actual_inout.B, TestResults/Mem
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > t
 diff t TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
 
+echo "Testing TestCases/MemRefExpr/Intrinsic_min.B, TestResults/MemRefExpr/Intrinsic_min.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_min.B > t
+diff t TestResults/MemRefExpr/Intrinsic_min.B.out
+
+echo "Testing TestCases/MemRefExpr/Intrinsic_max.B, TestResults/MemRefExpr/Intrinsic_max.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_max.B > t
+diff t TestResults/MemRefExpr/Intrinsic_max.B.out
+

@@ -26,3 +26,11 @@ echo "Testing TestCases/UDDUChainsTests/logicalNOT.B, TestResults/UDDUChainsTest
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalNOT.B > t
 diff t TestResults/UDDUChainsTests/logicalNOT.B.out
 
+echo "Testing TestCases/UDDUChainsTests/Intrinsic_min.B, TestResults/UDDUChainsTests/Intrinsic_min.B.out Cheked by PLM 08/21/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_min.B > t
+diff t TestResults/UDDUChainsTests/Intrinsic_min.B.out
+
+echo "Testing TestCases/UDDUChainsTests/Intrinsic_max.B, TestResults/UDDUChainsTests/Intrinsic_max.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_max.B > t
+diff t TestResults/UDDUChainsTests/Intrinsic_max.B.out
+

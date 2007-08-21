@@ -446,3 +446,11 @@ echo "Testing TestCases/Alias/formal_scalar_actual_inout.B, TestResults/AliasIRI
 ./FORTRANtoOA TestCases/Alias/formal_scalar_actual_inout.B > t
 diff t TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out
 
+echo "Testing TestCases/Alias/Intrinsic_min.B, TestResults/AliasIRInterface/Intrinsic_min.B.out checked by PLM 08/21/07"
+./FORTRANtoOA TestCases/Alias/Intrinsic_min.B > t
+diff t TestResults/AliasIRInterface/Intrinsic_min.B.out
+
+echo "Testing TestCases/Alias/Intrinsic_max.B, TestResults/AliasIRInterface/Intrinsic_max.B.out checked by PLM 08/21/07"
+./FORTRANtoOA TestCases/Alias/Intrinsic_max.B > t
+diff t TestResults/AliasIRInterface/Intrinsic_max.B.out
+

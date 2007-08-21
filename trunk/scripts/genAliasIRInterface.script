@@ -222,3 +222,7 @@ echo "Generating TestResults/AliasIRInterface/formal_scalar_actual_out.B.out"
 ./FORTRANtoOA TestCases/Alias/formal_scalar_actual_out.B > TestResults/AliasIRInterface/formal_scalar_actual_out.B.out
 echo "Generating TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out"
 ./FORTRANtoOA TestCases/Alias/formal_scalar_actual_inout.B > TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out
+echo "Generating TestResults/AliasIRInterface/Intrinsic_min.B.out"
+./FORTRANtoOA TestCases/Alias/Intrinsic_min.B > TestResults/AliasIRInterface/Intrinsic_min.B.out
+echo "Generating TestResults/AliasIRInterface/Intrinsic_max.B.out"
+./FORTRANtoOA TestCases/Alias/Intrinsic_max.B > TestResults/AliasIRInterface/Intrinsic_max.B.out

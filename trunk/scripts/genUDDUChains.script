@@ -12,3 +12,7 @@ echo "Generating TestResults/UDDUChainsTests/logicalOR.B.out"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalOR.B > TestResults/UDDUChainsTests/logicalOR.B.out
 echo "Generating TestResults/UDDUChainsTests/logicalNOT.B.out"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalNOT.B > TestResults/UDDUChainsTests/logicalNOT.B.out
+echo "Generating TestResults/UDDUChainsTests/Intrinsic_min.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_min.B > TestResults/UDDUChainsTests/Intrinsic_min.B.out
+echo "Generating TestResults/UDDUChainsTests/Intrinsic_max.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_max.B > TestResults/UDDUChainsTests/Intrinsic_max.B.out
