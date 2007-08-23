@@ -34,3 +34,7 @@ echo "Testing TestCases/UDDUChainsTests/Intrinsic_max.B, TestResults/UDDUChainsT
 ./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_max.B > t
 diff t TestResults/UDDUChainsTests/Intrinsic_max.B.out
 
+echo "Testing TestCases/UDDUChainsTests/StringEQ.B, TestResults/UDDUChainsTests/StringEQ.B.out Checked by PLM 08/22/07"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/StringEQ.B > t
+diff t TestResults/UDDUChainsTests/StringEQ.B.out
+

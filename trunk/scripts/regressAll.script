@@ -7,6 +7,9 @@ source scripts/regressAliasIRInterface.script
 echo "########################### running regressAliasMapFIAlias.script"
 source scripts/regressAliasMapFIAlias.script
 
+echo "########################### running regressCFG.script"
+source scripts/regressCFG.script
+
 echo "########################### running regressCallGraph.script"
 source scripts/regressCallGraph.script
 
