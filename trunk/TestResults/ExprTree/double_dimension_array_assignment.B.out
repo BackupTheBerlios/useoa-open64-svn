@@ -1,0 +1,21 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/double_dimension_array_assignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = A:0:anon_ptr.(1,1) = 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
+
+	--expr----------------------------------------
+	  expr = 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4) )
+
+========================stmt============================
+
+stmt = return

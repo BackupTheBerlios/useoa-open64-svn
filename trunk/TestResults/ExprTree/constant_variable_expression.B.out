@@ -1,0 +1,27 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/constant_variable_expression.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = A:0:.predef_F8 = B:0:.predef_F8+    3.140000104904175
+
+	--expr----------------------------------------
+	  expr = B:0:.predef_F8+    3.140000104904175
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( B:0:.predef_F8 )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode (     3.140000104904175 )
+
+========================stmt============================
+
+stmt = return

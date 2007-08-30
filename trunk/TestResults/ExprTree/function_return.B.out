@@ -1,0 +1,69 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/function_return.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = RESULT:0:.predef_I4 = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
+
+	--expr----------------------------------------
+	  expr = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET CallNode ( gcd_(&I:0:.predef_I4, &J:0:.predef_I4) )
+
+	--expr----------------------------------------
+	  expr = &I:0:.predef_I4
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &I:0:.predef_I4 )
+
+	--expr----------------------------------------
+	  expr = &J:0:.predef_I4
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &J:0:.predef_I4 )
+
+========================stmt============================
+
+stmt = _END()
+
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = GCD:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4
+
+	--expr----------------------------------------
+	  expr = A:0:.predef_I4+B:0:.predef_I4
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( A:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( B:0:.predef_I4 )
+
+========================stmt============================
+
+stmt = return (GCD:0:.predef_I4)

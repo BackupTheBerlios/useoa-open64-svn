@@ -1,0 +1,83 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/do_loop.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = t__1:0:.predef_I4 = N:0:.predef_I4
+
+	--expr----------------------------------------
+	  expr = N:0:.predef_I4
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( N:0:.predef_I4 )
+
+========================stmt============================
+
+stmt = do_loop (I:0:.predef_I4<=t__1:0:.predef_I4)
+
+	--expr----------------------------------------
+	  expr = I:0:.predef_I4<=t__1:0:.predef_I4
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( <= )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( I:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( t__1:0:.predef_I4 )
+
+========================stmt============================
+
+stmt = I:0:.predef_I4 = 1
+
+	--expr----------------------------------------
+	  expr = 1
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+========================stmt============================
+
+stmt = I:0:.predef_I4 = I:0:.predef_I4+1
+
+	--expr----------------------------------------
+	  expr = I:0:.predef_I4+1
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( I:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode ( 1 )
+
+========================stmt============================
+
+stmt = J:0:.predef_I4 = J:0:.predef_I4+1
+
+	--expr----------------------------------------
+	  expr = J:0:.predef_I4+1
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( J:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode ( 1 )
+
+========================stmt============================
+
+stmt = return

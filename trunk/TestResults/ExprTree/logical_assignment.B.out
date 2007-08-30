@@ -1,0 +1,21 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/logical_assignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = B:0:.log.4 = 1
+
+	--expr----------------------------------------
+	  expr = 1
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+========================stmt============================
+
+stmt = return

@@ -1,0 +1,41 @@
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/function_call.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = bar_(&A:0:.predef_I4+B:0:.predef_I4)
+
+	--expr----------------------------------------
+	  expr = &A:0:.predef_I4+B:0:.predef_I4
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &A:0:.predef_I4+B:0:.predef_I4 )
+
+========================stmt============================
+
+stmt = return
+
+========================stmt============================
+
+stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+========================stmt============================
+
+stmt = C:0:.predef_I4 = 10
+
+	--expr----------------------------------------
+	  expr = 10
+	----------------------------------------------
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 10 )
+
+========================stmt============================
+
+stmt = return
