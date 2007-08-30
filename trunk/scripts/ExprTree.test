@@ -7,14 +7,40 @@ driverexec::./test-open64 --oa-ExprTree
 
 # list of tests
 #       input file,                 status
-test::  SimpleBalanced.B,           Checked by LMR 10/24/06
-test::  SimpleUnbalanced.B,         Checked by LMR 10/24/06   
-test::  SimpleCall.B,               Checked by LMR 10/24/06
-test::  SimpleSin.B,                Checked by LMR 10/24/06
-test::  ExprCall.B,		            Checked by LMR 10/24/06
-test::  ExprCallf.B,		        Checked by LMR 10/24/06
-test::  ExprCallIntent.B,	        Checked by LMR 10/24/06
-test::  SinExpr.B,		            Checked by LMR 11/09/06
-test::  SinFuncExpr.B,		        Checked by LMR 11/09/06
-test::  CosDeg2Rad.B,               Checked by LMR 12/07/06
+test::  SimpleBalanced.B,           Checked by LMR 10/24/06, PLM 10/27/07
+test::  SimpleUnbalanced.B,         Checked by LMR 10/24/06, PLM 10/27/07
+test::  SimpleCall.B,               Checked by LMR 10/24/06, PLM 10/27/07
+test::  SimpleSin.B,                Checked by LMR 10/24/06, PLM 10/27/07
+test::  ExprCall.B,		            Checked by LMR 10/24/06, PLM 10/27/07 
+test::  ExprCallf.B,		        Checked by LMR 10/24/06, PLM 10/27/07
+test::  ExprCallIntent.B,	        Checked by LMR 10/24/06, PLM 10/27/07
+test::  SinExpr.B,		            Checked by LMR 11/09/06, PLM 10/27/07
+test::  SinFuncExpr.B,		        Checked by LMR 11/09/06, PLM 10/27/07
+test::  CosDeg2Rad.B,               Checked by LMR 12/07/06, PLM 10/27/07
+test:: integer_assignment.B,        Checked by PLM 08/15/07, 
+test:: array_assignment.B,          Checked by PLM 08/30/07 
+test:: arraysection_assignment.B,   Checked by PLM 08/30/07
+test:: complex_statement.B,         Checked by PLM 08/30/07
+test:: constant_variable_expression.B, Checked by PLM 08/30/07
+#test:: declaration.B,              missing StmtHandle
+test:: do_loop.B,                   Checked by PLM 08/30/07
+test:: double_dimension_array_assignment.B,    Checked by PLM 08/30/07
+test:: formalscalardef.B,           Checked by PLM 08/30/07
+test:: formalscalaruse.B,           Checked by PLM 08/30/07
+test:: function_call.B,             Checked by PLM 08/30/07
+test:: function_return.B,           Checked by PLM 08/30/07
+test:: integer_assignment.B,        Checked by PLM 08/30/07
+test:: integer_expression.B,        Checked by PLM 08/30/07  
+test:: intrinsic.B,                 Checked by PLM 08/30/07
+test:: intrinsic_complex.B,         Checked by PLM 08/30/07
+test:: intrinsic_expression.B,      Checked by PLM 08/30/07
+test:: logical_assignment.B,        Checked by PLM 08/30/07 
+test:: real_assignment.B,           Checked by PLM 08/30/07
+#test:: scalar_pointer.B,           
+#test:: stringConstant_assignment.B, Checked by PLM 08/30/07
+#test:: stringTostring_assignment.B, Checked by PLM 08/30/07 
+#test:: struct_pointer.B,           
+#test:: struct_simple.B,             
+#test:: struct_simple_use.B,
+#test:: keyword_arguments.B,
 

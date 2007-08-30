@@ -18,3 +18,39 @@ echo "Generating TestResults/ExprTree/SinFuncExpr.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/SinFuncExpr.B > TestResults/ExprTree/SinFuncExpr.B.out
 echo "Generating TestResults/ExprTree/CosDeg2Rad.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/CosDeg2Rad.B > TestResults/ExprTree/CosDeg2Rad.B.out
+echo "Generating TestResults/ExprTree/integer_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/integer_assignment.B > TestResults/ExprTree/integer_assignment.B.out
+echo "Generating TestResults/ExprTree/array_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/array_assignment.B > TestResults/ExprTree/array_assignment.B.out
+echo "Generating TestResults/ExprTree/arraysection_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/arraysection_assignment.B > TestResults/ExprTree/arraysection_assignment.B.out
+echo "Generating TestResults/ExprTree/complex_statement.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/complex_statement.B > TestResults/ExprTree/complex_statement.B.out
+echo "Generating TestResults/ExprTree/constant_variable_expression.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/constant_variable_expression.B > TestResults/ExprTree/constant_variable_expression.B.out
+echo "Generating TestResults/ExprTree/do_loop.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/do_loop.B > TestResults/ExprTree/do_loop.B.out
+echo "Generating TestResults/ExprTree/double_dimension_array_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/double_dimension_array_assignment.B > TestResults/ExprTree/double_dimension_array_assignment.B.out
+echo "Generating TestResults/ExprTree/formalscalardef.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/formalscalardef.B > TestResults/ExprTree/formalscalardef.B.out
+echo "Generating TestResults/ExprTree/formalscalaruse.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/formalscalaruse.B > TestResults/ExprTree/formalscalaruse.B.out
+echo "Generating TestResults/ExprTree/function_call.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/function_call.B > TestResults/ExprTree/function_call.B.out
+echo "Generating TestResults/ExprTree/function_return.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/function_return.B > TestResults/ExprTree/function_return.B.out
+echo "Generating TestResults/ExprTree/integer_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/integer_assignment.B > TestResults/ExprTree/integer_assignment.B.out
+echo "Generating TestResults/ExprTree/integer_expression.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/integer_expression.B > TestResults/ExprTree/integer_expression.B.out
+echo "Generating TestResults/ExprTree/intrinsic.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic.B > TestResults/ExprTree/intrinsic.B.out
+echo "Generating TestResults/ExprTree/intrinsic_complex.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic_complex.B > TestResults/ExprTree/intrinsic_complex.B.out
+echo "Generating TestResults/ExprTree/intrinsic_expression.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic_expression.B > TestResults/ExprTree/intrinsic_expression.B.out
+echo "Generating TestResults/ExprTree/logical_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/logical_assignment.B > TestResults/ExprTree/logical_assignment.B.out
+echo "Generating TestResults/ExprTree/real_assignment.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/real_assignment.B > TestResults/ExprTree/real_assignment.B.out

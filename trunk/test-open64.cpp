@@ -1720,48 +1720,29 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
   Diag_Set_Phase("WHIRL tester: TestIR_OAExprTree");
 
   // iterate over all statements
+  //   iterate over ExprHandles for the statement
+  //     create ExprTree(expr)
+ 
   OA::OA_ptr<OA::IRStmtIterator> sIt = ir->getStmtIterator((OA::irhandle_t)pu);
   for ( ; sIt->isValid(); (*sIt)++) {
     OA::StmtHandle stmt = sIt->current();
-        
+    OA::OA_ptr<OA::ExprHandleIterator> exprIter;
+    exprIter = ir->getExprHandleIterator(stmt);
     std::cout << "\n========================stmt============================\n";
     std::cout << "\nstmt = ";
     std::cout << ir->toString(stmt) << std::endl;
-    //ir->dump(stmt,std::cout);
 
-    // if the statement has an expression tree then dump that as well
-    OA::OA_ptr<OA::AssignPairIterator> espIterPtr 
-        = ir->getAssignPairIterator(stmt);
-    
-    for ( ; espIterPtr->isValid(); (*espIterPtr)++) {
-        // unbundle pair
-        OA::MemRefHandle mref = espIterPtr->currentTarget();
-        OA::ExprHandle expr = espIterPtr->currentSource();
-        std::cout << "\n\t--expr----------------------------------------\n";
-        std::cout << "\t  expr = " << ir->toString(expr) << std::endl;
-    	std::cout << "\t----------------------------------------------";
-        OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
-        eTreePtr->output(*ir);
+    for ( ; exprIter->isValid(); (*exprIter)++) { 
+         OA::ExprHandle expr = exprIter->current();
+         std::cout << "\n\t--expr----------------------------------------\n";
+         std::cout << "\t  expr = " << ir->toString(expr) << std::endl;
+         std::cout << "\t----------------------------------------------";
+         OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
+         eTreePtr->output(*ir);
     }
-    
-    // print out all of the ExprTrees for the parameters
-    // Iterate over procedure calls of a statement
-    OA::OA_ptr<OA::IRCallsiteIterator> callsiteItPtr = ir->getCallsites(stmt);
-    for ( ; callsiteItPtr->isValid(); ++(*callsiteItPtr)) {
-        OA::CallHandle call = callsiteItPtr->current();
-        std::cout << "\n\t--Call-----------------------------------------\n";
-        std::cout << "\t  Call: [" << ir->toString(call) << "]\n";
-	    std::cout << "\t----------------------------------------------";
-        OA::OA_ptr<OA::IRCallsiteParamIterator> paramIterPtr 
-            = ir->getCallsiteParams(call);
-        for ( ; paramIterPtr->isValid(); (*paramIterPtr)++ ) {
-            OA::ExprHandle param = paramIterPtr->current();
-            // get the expression tree for the parameter
-            OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(param);
-            eTreePtr->output(*ir);
-        }
-    }
+
   }
+  return 0;
 }
 
 
