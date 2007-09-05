@@ -665,3 +665,11 @@
   - Regenerated output of ExprTree after adding ExprHandle 
     iterator in Open64IRInterface.
 
+09/5/07   UseOA-Open64 svn trunk 205 Priyadarshini Malusare
+  - Fixed the test-open64.cpp
+     -XAIF::ManagerStandard is replaced by XAIF::ManagerUDDUChainsXAIF.
+     -Removed Unnecessary Parameter proc from
+      ManagerUDDUChainsXAIF::performAnalysis.
+
+ 
+
