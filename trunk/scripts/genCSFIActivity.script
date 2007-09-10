@@ -116,3 +116,87 @@ echo "Generating TestResults/CSFIActivity/speelpenning.B.out"
 ./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/speelpenning.B > TestResults/CSFIActivity/speelpenning.B.out
 echo "Generating TestResults/CSFIActivity/tanh_f_arg.B.out"
 ./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/tanh_f_arg.B > TestResults/CSFIActivity/tanh_f_arg.B.out
+echo "Generating TestResults/CSFIActivity/argumentConversion_1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/argumentConversion_1.B > TestResults/CSFIActivity/argumentConversion_1.B.out
+echo "Generating TestResults/CSFIActivity/argumentConversion_4a.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/argumentConversion_4a.B > TestResults/CSFIActivity/argumentConversion_4a.B.out
+echo "Generating TestResults/CSFIActivity/argumentConversion_5.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/argumentConversion_5.B > TestResults/CSFIActivity/argumentConversion_5.B.out
+echo "Generating TestResults/CSFIActivity/box_timestep.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/box_timestep.B > TestResults/CSFIActivity/box_timestep.B.out
+echo "Generating TestResults/CSFIActivity/bratu.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/bratu.B > TestResults/CSFIActivity/bratu.B.out
+echo "Generating TestResults/CSFIActivity/dfdcfj.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/dfdcfj.B > TestResults/CSFIActivity/dfdcfj.B.out
+echo "Generating TestResults/CSFIActivity/dfdcfj_MemOps.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/dfdcfj_MemOps.B > TestResults/CSFIActivity/dfdcfj_MemOps.B.out
+echo "Generating TestResults/CSFIActivity/duudChains1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/duudChains1.B > TestResults/CSFIActivity/duudChains1.B.out
+echo "Generating TestResults/CSFIActivity/externalCalls1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/externalCalls1.B > TestResults/CSFIActivity/externalCalls1.B.out
+echo "Generating TestResults/CSFIActivity/externalCalls2.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/externalCalls2.B > TestResults/CSFIActivity/externalCalls2.B.out
+echo "Generating TestResults/CSFIActivity/float_intrinsic.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/float_intrinsic.B > TestResults/CSFIActivity/float_intrinsic.B.out
+echo "Generating TestResults/CSFIActivity/gcmBit1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/gcmBit1.B > TestResults/CSFIActivity/gcmBit1.B.out
+echo "Generating TestResults/CSFIActivity/globalActive_4.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/globalActive_4.B > TestResults/CSFIActivity/globalActive_4.B.out
+echo "Generating TestResults/CSFIActivity/globalActive_5.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/globalActive_5.B > TestResults/CSFIActivity/globalActive_5.B.out
+echo "Generating TestResults/CSFIActivity/globalActive_6.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/globalActive_6.B > TestResults/CSFIActivity/globalActive_6.B.out
+echo "Generating TestResults/CSFIActivity/globalActive_8.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/globalActive_8.B > TestResults/CSFIActivity/globalActive_8.B.out
+echo "Generating TestResults/CSFIActivity/If_Loop_4.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/If_Loop_4.B > TestResults/CSFIActivity/If_Loop_4.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_10.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_10.B > TestResults/CSFIActivity/Loop_simple_10.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_11.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_11.B > TestResults/CSFIActivity/Loop_simple_11.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_1a.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_1a.B > TestResults/CSFIActivity/Loop_simple_1a.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_1b.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_1b.B > TestResults/CSFIActivity/Loop_simple_1b.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_1c.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_1c.B > TestResults/CSFIActivity/Loop_simple_1c.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_1d.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_1d.B > TestResults/CSFIActivity/Loop_simple_1d.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_1e.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_1e.B > TestResults/CSFIActivity/Loop_simple_1e.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_1f.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_1f.B > TestResults/CSFIActivity/Loop_simple_1f.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_4a.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_4a.B > TestResults/CSFIActivity/Loop_simple_4a.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_4b.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_4b.B > TestResults/CSFIActivity/Loop_simple_4b.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_4c.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_4c.B > TestResults/CSFIActivity/Loop_simple_4c.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_7.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_7.B > TestResults/CSFIActivity/Loop_simple_7.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_8.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_8.B > TestResults/CSFIActivity/Loop_simple_8.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_9.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_9.B > TestResults/CSFIActivity/Loop_simple_9.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_9a.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_9a.B > TestResults/CSFIActivity/Loop_simple_9a.B.out
+echo "Generating TestResults/CSFIActivity/Loop_simple_9b.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/Loop_simple_9b.B > TestResults/CSFIActivity/Loop_simple_9b.B.out
+echo "Generating TestResults/CSFIActivity/mini1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/mini1.B > TestResults/CSFIActivity/mini1.B.out
+echo "Generating TestResults/CSFIActivity/nested_dfdcfj.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/nested_dfdcfj.B > TestResults/CSFIActivity/nested_dfdcfj.B.out
+echo "Generating TestResults/CSFIActivity/NestedIfLoop.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/NestedIfLoop.B > TestResults/CSFIActivity/NestedIfLoop.B.out
+echo "Generating TestResults/CSFIActivity/RoehFlux.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/RoehFlux.B > TestResults/CSFIActivity/RoehFlux.B.out
+echo "Generating TestResults/CSFIActivity/RoehFlux_MemOps.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/RoehFlux_MemOps.B > TestResults/CSFIActivity/RoehFlux_MemOps.B.out
+echo "Generating TestResults/CSFIActivity/todd.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/todd.B > TestResults/CSFIActivity/todd.B.out
+echo "Generating TestResults/CSFIActivity/todd1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/todd1.B > TestResults/CSFIActivity/todd1.B.out
+echo "Generating TestResults/CSFIActivity/u_def_struct_1.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/u_def_struct_1.B > TestResults/CSFIActivity/u_def_struct_1.B.out
+echo "Generating TestResults/CSFIActivity/u_def_struct_2.B.out"
+./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/u_def_struct_2.B > TestResults/CSFIActivity/u_def_struct_2.B.out

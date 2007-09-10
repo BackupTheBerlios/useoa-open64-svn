@@ -1,0 +1,17 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:.predef_F8 = SIN(&X:0:.predef_F8*X:0:.predef_F8)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

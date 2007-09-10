@@ -66,6 +66,50 @@ test::sideEffect_2.B,               Checked by PLM 12/16/06
 test::sideEffect_3.B,               Checked by PLM 12/16/06
 test::speelpenning.B,               Checked by PLM 12/16/06
 test::tanh_f_arg.B,                 Checked by PLM 12/16/06
+test::argumentConversion_1.B,       Checked by PLM 09/07/07
+test::argumentConversion_4a.B,      Checked by PLM 09/07/07
+test::argumentConversion_5.B,       Checked by PLM 09/07/07
+#test::boxmodel.B,                  Was not able to get it compiled
+test::box_timestep.B,               Checked by PLM 09/07/07
+test::bratu.B,                      Checked by PLM 09/07/07
+test::dfdcfj.B,                     Checked by PLM 09/07/07
+test::dfdcfj_MemOps.B,              Checked by PLM 09/07/07
+test::duudChains1.B,                Checked by PLM 09/07/07 
+test::externalCalls1.B,             Checked by PLM 09/07/07
+test::externalCalls2.B,             Checked by PLM 09/07/07
+test::float_intrinsic.B,            Checked by PLM 09/07/07
+test::gcmBit1.B,                    Checked by PLM 09/07/07
+test::globalActive_4.B,             Checked by PLM 09/07/07
+test::globalActive_5.B,             Checked by PLM 09/07/07  
+test::globalActive_6.B,             Checked by PLM 09/07/07
+test::globalActive_8.B,             Checked by PLM 09/07/07
+test::If_Loop_4.B,                  Checked by PLM 09/07/07
+test::Loop_simple_10.B,             Checked by PLM 09/07/07
+test::Loop_simple_11.B,             Checked by PLM 09/07/07
+test::Loop_simple_1a.B,             Checked by PLM 09/07/07
+test::Loop_simple_1b.B,             Checked by PLM 09/07/07
+test::Loop_simple_1c.B,             Checked by PLM 09/07/07
+test::Loop_simple_1d.B,             Checked by PLM 09/07/07
+test::Loop_simple_1e.B,             Checked by PLM 09/07/07
+test::Loop_simple_1f.B,             Checked by PLM 09/07/07
+test::Loop_simple_4a.B,             Checked by PLM 09/07/07 
+test::Loop_simple_4b.B,             Checked by PLM 09/07/07
+test::Loop_simple_4c.B,             Checked by PLM 09/07/07
+test::Loop_simple_7.B,              Checked by PLM 09/07/07
+test::Loop_simple_8.B,              Checked by PLM 09/07/07 
+test::Loop_simple_9.B,              Checked by PLM 09/07/07
+test::Loop_simple_9a.B,             Checked by PLM 09/07/07 
+test::Loop_simple_9b.B,             Checked by PLM 09/07/07
+test::mini1.B,                      Checked by PLM 09/07/07
+test::nested_dfdcfj.B,              Checked by PLM 09/07/07
+test::NestedIfLoop.B,               Checked by PLM 09/07/07
+test::RoehFlux.B,                   Checked by PLM 09/07/07
+test::RoehFlux_MemOps.B,            Checked by PLM 09/07/07
+test::todd.B,                       Checked by PLM 09/07/07
+test::todd1.B,                      Checked by PLM 09/07/07
+test::u_def_struct_1.B,             Checked by PLM 09/07/07
+test::u_def_struct_2.B,             Checked by PLM 09/07/07
+
 
 
 
