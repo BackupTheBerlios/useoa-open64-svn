@@ -1,0 +1,4 @@
+echo "Testing TestCases/AssignPairs/integer_assignment.B, TestResults/AssignPairs/integer_assignment.B.out Checked by PLM 08/15/07"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/integer_assignment.B > t
+diff t TestResults/AssignPairs/integer_assignment.B.out
+

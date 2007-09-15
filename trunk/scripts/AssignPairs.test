@@ -1,13 +1,14 @@
 # comment in file.test
 # Regression tests for CallGraph generation
-testname::PtrAssign
-inputdir::TestCases/AssignPair
-outputdir::TestResults/AssignPair
-driverexec::./test-open64 --oa-PtrAssign
+testname::AssignPairs
+inputdir::TestCases/AssignPairs
+outputdir::TestResults/AssignPairs
+driverexec::./test-open64 --oa-AssignPairs
 
 # list of tests
 #       input file,                 status
 test::  integer_assignment.B,       Checked by PLM 08/15/07
+
 
 
 

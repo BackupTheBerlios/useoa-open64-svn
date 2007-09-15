@@ -1,0 +1,27 @@
+
+ AssignPairs :
+
+
+ ExprPairs :
+
+
+========================stmt============================
+
+stmt =  LOC 0 0 source files:	1	"/home/malusare/bool/UseOA-Open64/TestCases/AssignPair/integer_assignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+	mref = A:0:.predef_I4, expr = B:0:.predef_I4
+
+ ExprPairs :
+
+
+========================stmt============================
+
+stmt = A:0:.predef_I4 = B:0:.predef_I4
+
+ ExprPairs :
+
+
+========================stmt============================
+
+stmt = return

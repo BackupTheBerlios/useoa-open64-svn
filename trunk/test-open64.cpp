@@ -1082,6 +1082,11 @@ TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
         = irInterface->getStmtIterator(proc);
     for ( ; sIt->isValid(); (*sIt)++) {
         OA::StmtHandle stmt = sIt->current();
+        std::cout << "========================================================" << std::endl;
+        std::cout << "\nstmt : ";
+        std::cout << irInterface->toString(stmt) << std::endl;
+
+        std::cout << "\nAssignPairs : " << std::endl << std::endl;
         OA::OA_ptr<OA::AssignPairIterator> espIterPtr
             = irInterface->getAssignPairIterator(stmt);
         for ( ; espIterPtr->isValid(); ++(*espIterPtr)) {
@@ -1090,8 +1095,21 @@ TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
             OA::ExprHandle expr = espIterPtr->currentSource();
             std::cout << "\tmref = " 
                       << irInterface->toString(mref) << ", ";
-            std::cout << "expr = " 
+            std::cout << "\texpr = " 
                       << irInterface->toString(expr) << std::endl;
+        }
+
+        OA::OA_ptr<OA::ExprHandleIterator> exprIter;
+        exprIter = irInterface->getExprHandleIterator(stmt);
+
+        std::cout << "\nExprTree : " << std::endl;
+        for ( ; exprIter->isValid(); (*exprIter)++) {
+            OA::ExprHandle expr = exprIter->current();
+            std::cout << "\t--expr----------------------------------------\n";
+            std::cout << "\texpr = " << irInterface->toString(expr) << std::endl;
+            std::cout << "\t----------------------------------------------";
+            OA::OA_ptr<OA::ExprTree> eTreePtr = irInterface->getExprTree(expr);
+            eTreePtr->output(*irInterface);
         }
     }
   }

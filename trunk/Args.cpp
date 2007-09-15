@@ -70,7 +70,7 @@ static const char* usage_details =
 "      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-AliasMapXAIFFIAlias test OA AliasMapXAIF from FIAlias analysis\n"
 "      --oa-Linearity           test Linearity Analysis\n"
-"      --oa-PtrAssign           test AssignPair Analysis\n"
+"      --oa-AssignPairs         test AssignPair Analysis\n"
 "      --oa-CSFIActivity        test Context-Sensitive Flow-Insensitive Activity Analysis\n"
 "\n"
 "Options:\n"
@@ -118,7 +118,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFFIAlias",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-Linearity",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-PtrAssign",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AssignPairs",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CSFIActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -257,7 +257,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-Linearity")) { runMode = 30; }
     if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 31; }
     if (parser.IsOpt("oa-CSFIActivity")) { runMode = 32; }
-    if (parser.IsOpt("oa-PtrAssign"))    { runMode = 33; }
+    if (parser.IsOpt("oa-AssignPairs"))    { runMode = 33; }
  
     // Check for other options
     if (parser.IsOpt("dump")) { dumpIR = true; }

@@ -670,9 +670,12 @@
      -XAIF::ManagerStandard is replaced by XAIF::ManagerUDDUChainsXAIF.
      -Removed Unnecessary Parameter proc from
       ManagerUDDUChainsXAIF::performAnalysis.
+
 09/11/07  UseOA-Open64 svn trunk 205 Priyadarshini Malusare
   - Added new TestCases and TestResults for CSFIActivity.
 
-  
+09/11/07  UseOA-Open64 svn trunk 207 Priyadarshini Malusare  
+  - Shows ExprTree in the output of AssignPairs
+
  
 
