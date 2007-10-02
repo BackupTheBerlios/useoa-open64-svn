@@ -1,0 +1,25 @@
+
+PROCEDURE = { < ProcHandle("foo_::foo_"), SymHandle("foo_::foo_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/MemRefExpr/allocate_localarraysubscriptAsactual.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)") =>
+        [
+            MemRefHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)") => 
+                AddressOf( USE, UnnamedRef( USE, ExprHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)"), 1, ProcHandle("foo_::foo_")))
+            MemRefHandle("&A:0:anon_ptr.(1)") => 
+                NamedRef( DEF, SymHandle("foo_::A"))
+        ] }
+    CALLSITES = { StmtHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)") =>
+        [
+            CallHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)") => 
+                NamedRef( USE, SymHandle("foo_::_ALLOCATE"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("foo_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::_ALLOCATE"), not local > }
+    LOCATION = { < SymHandle("foo_::A"), local > }

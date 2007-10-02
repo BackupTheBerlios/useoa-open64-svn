@@ -44,7 +44,7 @@ InterActive(
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mSymHandle: SymHandle(head_::Y1)
                     )
                     mNumDeref: 1
@@ -56,7 +56,7 @@ InterActive(
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mSymHandle: SymHandle(head_::Y2)
                     )
                     mNumDeref: 1

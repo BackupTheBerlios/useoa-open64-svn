@@ -46,7 +46,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8") =>
         [
             MemRefHandle("F:0:.predef_F8") => 
-                Deref( DEF, NamedRef( DEF, SymHandle("head_::F")), 1)
+                Deref( DEF, NamedRef( USE, SymHandle("head_::F")), 1)
             MemRefHandle("T1:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("head_::T1"))
             MemRefHandle("T2:0:.predef_F8") => 
@@ -76,7 +76,7 @@ PROCEDURE = { < ProcHandle("head_::bar_"), SymHandle("head_::bar_") > }
     MEMREFEXPRS = { StmtHandle("B:0:.predef_F8 = A:0:.predef_F8") =>
         [
             MemRefHandle("B:0:.predef_F8") => 
-                Deref( DEF, NamedRef( DEF, SymHandle("bar_::B")), 1)
+                Deref( DEF, NamedRef( USE, SymHandle("bar_::B")), 1)
             MemRefHandle("A:0:.predef_F8") => 
                 Deref( USE, NamedRef( USE, SymHandle("bar_::A")), 1)
         ] }

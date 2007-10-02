@@ -28,8 +28,6 @@ echo "Generating TestResults/CallGraph/simple2.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/simple2.B > TestResults/CallGraph/simple2.B.out
 echo "Generating TestResults/CallGraph/simple3.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/simple3.B > TestResults/CallGraph/simple3.B.out
-echo "Generating TestResults/CallGraph/float_intrinsic.B.out"
-./test-open64 --oa-CallGraph TestCases/CallGraph/float_intrinsic.B > TestResults/CallGraph/float_intrinsic.B.out
 echo "Generating TestResults/CallGraph/lion.B.out"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/lion.B > TestResults/CallGraph/lion.B.out
 echo "Generating TestResults/CallGraph/tanh_f_arg.B.out"

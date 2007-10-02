@@ -1,7 +1,7 @@
 
-graph ICFG:
+Graph ICFG:
 
-    subgraph head_::head__0:
+    Subgraph head_::head__0:
 
         Node 7: 
             ==  ICFG ENTRY_NODE 7 == (entry)
@@ -51,7 +51,7 @@ return
             
 
 
-    subgraph head_::foo__1:
+    Subgraph head_::foo__1:
 
         Node 18: 
             ==  ICFG ENTRY_NODE 18 ==
@@ -98,7 +98,7 @@ return
             
 
 
-    subgraph head_::bar__2:
+    Subgraph head_::bar__2:
 
         Node 32: 
             ==  ICFG ENTRY_NODE 32 ==

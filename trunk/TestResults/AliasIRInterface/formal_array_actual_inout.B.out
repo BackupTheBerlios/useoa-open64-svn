@@ -13,7 +13,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)*    2.000000000000000") =>
         [
             MemRefHandle("Y:0:anon_ptr.(I:0:.predef_I4)") => 
-                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("foo_::Y")), 1))
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("foo_::Y")), 1))
             MemRefHandle("0:X:0:anon_ptr.(I:0:.predef_I4)") => 
                 SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("foo_::X")), 1))
             MemRefHandle("I:0:.predef_I4") => 

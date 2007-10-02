@@ -37,27 +37,27 @@ ParamBindings(
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
             ExprHandle(&0:X:0:anon_ptr.)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &0:X:0:anon_ptr. )
 
             ExprHandle(&N:0:.predef_I4)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &N:0:.predef_I4 )
 
             ExprHandle(&M:0:.predef_F4)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &M:0:.predef_F4 )
 
             ExprHandle(&SD:0:.predef_F4)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &SD:0:.predef_F4 )
 
             ExprHandle(&MEDIAN:0:.predef_F4)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &MEDIAN:0:.predef_F4 )
 

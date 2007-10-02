@@ -1071,6 +1071,7 @@ static int
 TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
+
   Diag_Set_Phase("WHIRL tester: TestIR_OAAssignPair");
 
   // need a procedure iterator
@@ -1078,39 +1079,57 @@ TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
   procIter = new Open64IRProcIterator(pu_forest);
   for(procIter->reset(); procIter->isValid(); ++(*procIter)) {
     OA::ProcHandle proc = procIter->current();
-    OA::OA_ptr<OA::IRStmtIterator> sIt 
+    OA::OA_ptr<OA::IRStmtIterator> sIt
         = irInterface->getStmtIterator(proc);
     for ( ; sIt->isValid(); (*sIt)++) {
         OA::StmtHandle stmt = sIt->current();
+
         std::cout << "========================================================" << std::endl;
         std::cout << "\nstmt : ";
-        std::cout << irInterface->toString(stmt) << std::endl;
+        std::cout << irInterface->toString(stmt) << std::endl << std::endl;
 
-        std::cout << "\nAssignPairs : " << std::endl << std::endl;
+        std::cout << "==> AssignPairs : " << std::endl << std::endl;
         OA::OA_ptr<OA::AssignPairIterator> espIterPtr
             = irInterface->getAssignPairIterator(stmt);
+
+        int i=1;
         for ( ; espIterPtr->isValid(); ++(*espIterPtr)) {
             // unbundle pair
             OA::MemRefHandle mref = espIterPtr->currentTarget();
             OA::ExprHandle expr = espIterPtr->currentSource();
-            std::cout << "\tmref = " 
+            std::cout << i++ << "." << " mref = "
                       << irInterface->toString(mref) << ", ";
-            std::cout << "\texpr = " 
+            std::cout << "\texpr = "
                       << irInterface->toString(expr) << std::endl;
+
+            /*
+            OA::OA_ptr<OA::MemRefExprIterator> mreIter;
+            mreIter = irInterface->getUseMREs(OA::MemRefHandle((OA::irhandle_t)expr));
+            for (; mreIter->isValid(); (*mreIter)++) {
+                   OA::OA_ptr<OA::MemRefExpr> mre = mreIter->current();
+                   std::cout << "mre: " << std::endl;
+                   mre->output(*irInterface);
+                   std::cout << std::endl;
+             }
+             */
         }
 
+        
+        std::cout << std::endl << std::endl << std::endl;
+
+        i=1;
+        std::cout << "==> Expression Tree(s) : " << std::endl << std::endl;
         OA::OA_ptr<OA::ExprHandleIterator> exprIter;
         exprIter = irInterface->getExprHandleIterator(stmt);
-
-        std::cout << "\nExprTree : " << std::endl;
         for ( ; exprIter->isValid(); (*exprIter)++) {
-            OA::ExprHandle expr = exprIter->current();
-            std::cout << "\t--expr----------------------------------------\n";
-            std::cout << "\texpr = " << irInterface->toString(expr) << std::endl;
-            std::cout << "\t----------------------------------------------";
-            OA::OA_ptr<OA::ExprTree> eTreePtr = irInterface->getExprTree(expr);
-            eTreePtr->output(*irInterface);
+             OA::ExprHandle expr = exprIter->current();
+             std::cout << i++ << "." << " ExprHandle: ";
+             std::cout << irInterface->toString(expr) << std::endl;
+             OA::OA_ptr<OA::ExprTree> eTreePtr = irInterface->getExprTree(expr);
+             eTreePtr->output(*irInterface);
+             std::cout << std::endl << std::endl;
         }
+       
     }
   }
   return 0;
@@ -1267,6 +1286,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
+    /*
     // ----------------- testing separate pieces
 
     //ICFGDep  (for testing)
@@ -1278,7 +1298,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
     //icfgDep->output(*irInterface);
 
-    /*
     // ICFGUseful   (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
     usefulman = new OA::Activity::ManagerICFGUseful(irInterface);
@@ -1298,7 +1317,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     std::cout << "Printing ICFGVaryActive" << std::endl;
     inActive->output(*irInterface);
     */
-
+    
     // ----------------- Activity does the testing pieces above
     // ICFGActive
     OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
@@ -1382,7 +1401,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
         
     dugman->transitiveClosureDepMatrix(cgraph);
     //dug->dumpdot(cout, irInterface);
-    // dug->output(*irInterface);
+    //dug->output(*irInterface);
 
     // Def-Use Activity Analysis
     OA::OA_ptr<OA::Activity::ManagerDUActive> duactiveman;
@@ -1735,32 +1754,38 @@ static int
 TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
             OA::OA_ptr<Open64IRInterface> ir)
 {
+
   Diag_Set_Phase("WHIRL tester: TestIR_OAExprTree");
 
   // iterate over all statements
   //   iterate over ExprHandles for the statement
   //     create ExprTree(expr)
- 
+
+
   OA::OA_ptr<OA::IRStmtIterator> sIt = ir->getStmtIterator((OA::irhandle_t)pu);
   for ( ; sIt->isValid(); (*sIt)++) {
     OA::StmtHandle stmt = sIt->current();
+
+    std::cout << "============================================" << std::endl;
+    std::cout << "StmtHandle: ";
+    // do not combine the line before and after this comment, with
+    // some g++ compilers that can result in certain statements being
+    // printed out before the OA::StmtHandle label, who knows MMS
+    std::cout << ir->toString(stmt) << std::endl << std::endl;
+
     OA::OA_ptr<OA::ExprHandleIterator> exprIter;
     exprIter = ir->getExprHandleIterator(stmt);
-    std::cout << "\n========================stmt============================\n";
-    std::cout << "\nstmt = ";
-    std::cout << ir->toString(stmt) << std::endl;
-
-    for ( ; exprIter->isValid(); (*exprIter)++) { 
+    for ( ; exprIter->isValid(); (*exprIter)++) {
          OA::ExprHandle expr = exprIter->current();
-         std::cout << "\n\t--expr----------------------------------------\n";
-         std::cout << "\t  expr = " << ir->toString(expr) << std::endl;
-         std::cout << "\t----------------------------------------------";
+         std::cout << "==> ExprHandle: ";
+         std::cout << ir->toString(expr) << std::endl;
          OA::OA_ptr<OA::ExprTree> eTreePtr = ir->getExprTree(expr);
          eTreePtr->output(*ir);
+         std::cout << std::endl << std::endl;
     }
-
   }
   return 0;
+
 }
 
 

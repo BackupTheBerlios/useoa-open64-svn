@@ -10,7 +10,7 @@ InterSideEffectStandard(
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::T)
                             )
                             mNumDeref: 1
@@ -23,7 +23,7 @@ InterSideEffectStandard(
                             mMemRefType: DEF
                             mMRE: 
                             NamedRef(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mSymHandle: SymHandle(foo_::T)
                             )
                             mNumDeref: 1

@@ -1,21 +1,18 @@
-
-========================stmt============================
-
-stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/real_assignment.f"
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/real_assignment.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: TOL:0:.predef_F4 = 1.000000d-06
 
-stmt = TOL:0:.predef_F4 = 1.000000d-06
+==> ExprHandle: 1.000000d-06
 
-	--expr----------------------------------------
-	  expr = 1.000000d-06
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET ConstValNode ( 1.000000d-06 )
 
-========================stmt============================
 
-stmt = return
+============================================
+StmtHandle: return
+

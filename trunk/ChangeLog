@@ -677,5 +677,19 @@
 09/11/07  UseOA-Open64 svn trunk 207 Priyadarshini Malusare  
   - Shows ExprTree in the output of AssignPairs
 
+10/02/07  UseOA-Open64 svn trunk 208 Priyadarshini Malusare
+  - Logic for Mapping MemRefExpr patterns to Whirl node is modified.
+  - MemRefExprs for Pointers and structures and allocate are added.
+  - Please visit wiki page for detail references:
+    - http://www-unix.mcs.anl.gov/OpenAnalysisWiki/moin.cgi/Patterns 
+  - Added new TestCases and TestResults for AliasIRInterface
+  - New MemRefExpr aslo affected AliasMapFIAlias and Activity analysis
+    such that only outermost MemRefExpr can be DEF, none of the innermost
+    nested MemRefExpr can be DEF.
+  - Trivial modification in the ouptutbuilder::graph to outputBuilder::Graph.
+    regenerated CallGraph, ICFG, CFG TestCases, not affected original output.
+  - Refactored the ExprTree logic of Open64IRInterface
+  - Added ExprTree in the Output of AssignPairs.
+  - Regerated TestCases for AssignPairs.
  
 

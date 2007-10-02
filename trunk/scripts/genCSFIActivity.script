@@ -190,8 +190,6 @@ echo "Generating TestResults/CSFIActivity/NestedIfLoop.B.out"
 ./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/NestedIfLoop.B > TestResults/CSFIActivity/NestedIfLoop.B.out
 echo "Generating TestResults/CSFIActivity/RoehFlux.B.out"
 ./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/RoehFlux.B > TestResults/CSFIActivity/RoehFlux.B.out
-echo "Generating TestResults/CSFIActivity/RoehFlux_MemOps.B.out"
-./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/RoehFlux_MemOps.B > TestResults/CSFIActivity/RoehFlux_MemOps.B.out
 echo "Generating TestResults/CSFIActivity/todd.B.out"
 ./test-open64 --oa-CSFIActivity TestCases/CSFIActivity/todd.B > TestResults/CSFIActivity/todd.B.out
 echo "Generating TestResults/CSFIActivity/todd1.B.out"

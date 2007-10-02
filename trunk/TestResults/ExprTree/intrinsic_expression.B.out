@@ -1,49 +1,41 @@
-
-========================stmt============================
-
-stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/intrinsic_expression.f"
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/ExprTree/intrinsic_expression.f"
 PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
 
 
-========================stmt============================
-
-stmt = PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
-
-
-========================stmt============================
-
-stmt = PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+============================================
+StmtHandle: PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
 
 
-========================stmt============================
+============================================
+StmtHandle: PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
 
-stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
 
-stmt = Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
+==> ExprHandle: 0:X:0:anon_ptr.(1)
 
-	--expr----------------------------------------
-	  expr = 0:X:0:anon_ptr.(1)
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( 0:X:0:anon_ptr.(1) )
 
-========================stmt============================
 
-stmt = I:0:.predef_I4 = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, NULL)+1
+============================================
+StmtHandle: I:0:.predef_I4 = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, &1)+1
 
-	--expr----------------------------------------
-	  expr = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, NULL)+1
-	----------------------------------------------
-graph EXPRESSION TREE:
+==> ExprHandle: INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, &1)+1
+
+Graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
         0 => 
-        Node 1: ET OpNode ( INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, NULL) )
+        Node 1: ET OpNode ( INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, &1) )
         Edge: 
             1 => 
             Node 2: ET OpNode ( + )
@@ -53,10 +45,14 @@ graph EXPRESSION TREE:
             Edge: 
                 2 => 
                 Node 4: ET ConstValNode (    -1.000000000000000 )
+        Edge: 
+            1 => 
+            Node 5: ET ConstValNode ( 1 )
     Edge: 
         0 => 
         Node 6: ET ConstValNode ( 1 )
 
-========================stmt============================
 
-stmt = return
+============================================
+StmtHandle: return
+

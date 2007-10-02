@@ -78,7 +78,7 @@ InterAliasMap(
                     ) ] 
                 3	 => [ 
                     NamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mSymHandle: SymHandle(head_::Y)
                     ) ] 
                 4	 => [ 
@@ -95,7 +95,7 @@ InterAliasMap(
                         mMemRefType: DEF
                         mMRE: 
                         NamedRef(
-                            mMemRefType: DEF
+                            mMemRefType: USE
                             mSymHandle: SymHandle(head_::Y)
                         )
                     ) ] 

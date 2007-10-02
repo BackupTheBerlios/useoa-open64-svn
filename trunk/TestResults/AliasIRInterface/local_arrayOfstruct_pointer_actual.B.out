@@ -1,0 +1,69 @@
+
+PROCEDURE = { < ProcHandle("mymodule_::mymodule_"), SymHandle("mymodule_::mymodule_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/Alias/local_arrayOfstruct_pointer_actual.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("mymodule_::mymodule_"), not local > }
+
+PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("VUSE <1,20,mymodule_>
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("U8PSTID 0 <2,3,FIRSTPTR> T<31,anon_ptr.,8>
+") =>
+        [
+            MemRefHandle("FIRSTPTR:0:anon_ptr.") => 
+                NamedRef( DEF, SymHandle("foo_::FIRSTPTR"))
+            MemRefHandle("MLOAD 0 T<33,anon_ptr.,8>
+") => 
+                AddressOf( USE, NamedRef( USE, SymHandle("foo_::FIRST")))
+        ] }
+    MEMREFEXPRS = { StmtHandle("bar_(&FIRSTPTR:0:anon_ptr.)") =>
+        [
+            MemRefHandle("&FIRSTPTR:0:anon_ptr.") => 
+                AddressOf( USE, NamedRef( USE, SymHandle("foo_::FIRSTPTR")))
+        ] }
+    CALLSITES = { StmtHandle("bar_(&FIRSTPTR:0:anon_ptr.)") =>
+        [
+            CallHandle("bar_(&FIRSTPTR:0:anon_ptr.)") => 
+                NamedRef( USE, SymHandle("mymodule_::bar_"))
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&FIRSTPTR:0:anon_ptr.)") =>
+        [
+            < 0, AddressOf( USE, NamedRef( USE, SymHandle("foo_::FIRSTPTR"))) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("mymodule_::mymodule_"), not local > }
+    LOCATION = { < SymHandle("mymodule_::foo_"), not local > }
+    LOCATION = { < SymHandle("mymodule_::bar_"), not local > }
+    LOCATION = { < SymHandle("foo_::FIRST"), local > }
+    LOCATION = { < SymHandle("foo_::FIRSTPTR"), local > }
+
+PROCEDURE = { < ProcHandle("mymodule_::bar_"), SymHandle("mymodule_::bar_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("bar_::X") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("VUSE <1,20,mymodule_>
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("mymodule_::mymodule_"), not local > }
+    LOCATION = { < SymHandle("mymodule_::bar_"), not local > }
+    LOCATION = { < SymHandle("bar_::X"), local > }

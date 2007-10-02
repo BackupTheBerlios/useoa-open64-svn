@@ -1,33 +1,26 @@
-
-========================stmt============================
-
-stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/intrinsic.f"
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/intrinsic.f"
 PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
 
 
-========================stmt============================
-
-stmt = PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
-
-
-========================stmt============================
-
-stmt = PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+============================================
+StmtHandle: PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
 
 
-========================stmt============================
+============================================
+StmtHandle: PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
 
-stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: T:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
 
-stmt = T:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
+==> ExprHandle: 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
 
-	--expr----------------------------------------
-	  expr = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( * )
     Edge: 
@@ -37,34 +30,33 @@ graph EXPRESSION TREE:
         0 => 
         Node 2: ET MemRefNode ( 0:X:0:anon_ptr.(2) )
 
-========================stmt============================
 
-stmt = Y:0:anon_ptr.(1) = SIN(&T:0:.predef_F8)
+============================================
+StmtHandle: Y:0:anon_ptr.(1) = SIN(&T:0:.predef_F8)
 
-	--expr----------------------------------------
-	  expr = SIN(&T:0:.predef_F8)
-	----------------------------------------------
-graph EXPRESSION TREE:
+==> ExprHandle: SIN(&T:0:.predef_F8)
+
+Graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( SIN(&T:0:.predef_F8) )
     Edge: 
         0 => 
         Node 1: ET MemRefNode ( &T:0:.predef_F8 )
 
-========================stmt============================
 
-stmt = Y:0:anon_ptr.(2) = COS(&T:0:.predef_F8)
+============================================
+StmtHandle: Y:0:anon_ptr.(2) = COS(&T:0:.predef_F8)
 
-	--expr----------------------------------------
-	  expr = COS(&T:0:.predef_F8)
-	----------------------------------------------
-graph EXPRESSION TREE:
+==> ExprHandle: COS(&T:0:.predef_F8)
+
+Graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( COS(&T:0:.predef_F8) )
     Edge: 
         0 => 
         Node 1: ET MemRefNode ( &T:0:.predef_F8 )
 
-========================stmt============================
 
-stmt = return
+============================================
+StmtHandle: return
+

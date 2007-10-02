@@ -164,6 +164,14 @@ test::formal_scalar_actual_out.B,             checked by PLM 12/16/06
 test::formal_scalar_actual_inout.B,           checked by PLM 12/16/06
 test::Intrinsic_min.B,                        Checked by PLM 08/21/07
 test::Intrinsic_max.B,                        Checked by PLM 08/21/07
+test::allocate_localpointertoarrayAsactualsubscript.B
+test::allocate_formalpointertoarrayAsactualsubscript.B
+test::allocate_localpointertoarrayAsactualsection.B
+test::allocate_formalpointertoarrayAsactualsection.B
+test::allocate_localarraysubscriptAsactual.B
+test::allocate_localarraysectionAsactual.B
+test::allocate_localpointertoscalarAsactual.B
+test::allocate_formalpointertoarrayAsactuals.B
 
 
 

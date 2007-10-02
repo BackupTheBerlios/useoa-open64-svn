@@ -1,0 +1,38 @@
+
+PROCEDURE = { < ProcHandle("arraypointer_::arraypointer_"), SymHandle("arraypointer_::arraypointer_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/MemRefExpr/allocate_localpointertoarrayAsactualsection.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
+_ALLOCATE(&P:0:anon_ptr.(), &0)") =>
+        [
+            MemRefHandle("I8SRCTRIPLET
+_ALLOCATE(&P:0:anon_ptr.(), &0)") => 
+                AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
+_ALLOCATE(&P:0:anon_ptr.(), &0)"), 1, ProcHandle("arraypointer_::arraypointer_")))
+            MemRefHandle("I8SRCTRIPLET
+&P:0:anon_ptr.()") => 
+                NamedRef( DEF, SymHandle("arraypointer_::P"))
+        ] }
+    CALLSITES = { StmtHandle("I8SRCTRIPLET
+_ALLOCATE(&P:0:anon_ptr.(), &0)") =>
+        [
+            CallHandle("I8SRCTRIPLET
+_ALLOCATE(&P:0:anon_ptr.(), &0)") => 
+                NamedRef( USE, SymHandle("arraypointer_::_ALLOCATE"))
+        ] }I8SRCTRIPLET
+
+    MEMREFEXPRS = { StmtHandle("_END()") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("arraypointer_::arraypointer_"), not local > }
+    LOCATION = { < SymHandle("arraypointer_::_ALLOCATE"), not local > }
+    LOCATION = { < SymHandle("arraypointer_::P"), local > }

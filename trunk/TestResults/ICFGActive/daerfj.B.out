@@ -29,7 +29,7 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mMemRefType: DEF
+                    mMemRefType: USE
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
@@ -59,7 +59,7 @@ InterActive(
                 InvisibleLoc(
                     mMRE: 
                     Deref(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mMRE: 
                         NamedRef(
                             mMemRefType: USE

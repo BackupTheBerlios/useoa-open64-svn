@@ -2,7 +2,7 @@
 InterActiveFortran(
     Procedure( head_::head_ ): 
     ActiveStmtSet([ 
-            StmtHandle(Y:0:anon_ptr.(1) = OPC_F4I4CVT(INT(&X:0:anon_ptr.(1), NULL))*    2.500000) ] 
+            StmtHandle(Y:0:anon_ptr.(1) = OPC_F4I4CVT(INT(&X:0:anon_ptr.(1), &1))*    2.500000) ] 
     )
     ActiveMemRefSet([ 
             MemRefHandle(Y:0:anon_ptr.(1))

@@ -11,7 +11,7 @@ X:0:anon_ptr.() = 0:Y:0:anon_ptr.()") =>
         [
             MemRefHandle("I8SRCTRIPLET
 X:0:anon_ptr.()") => 
-                SubSetRef( DEF, NamedRef( DEF, SymHandle("head_::X")))
+                SubSetRef( DEF, NamedRef( USE, SymHandle("head_::X")))
             MemRefHandle("I8SRCTRIPLET
 0:Y:0:anon_ptr.()") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::Y")))

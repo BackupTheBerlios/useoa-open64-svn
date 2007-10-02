@@ -10,7 +10,7 @@ B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(I:0:.predef_I4))") =>
         [
             MemRefHandle("I8SRCTRIPLET
 B:0:anon_ptr.()") => 
-                SubSetRef( DEF, NamedRef( DEF, SymHandle("head_::B")))
+                SubSetRef( DEF, NamedRef( USE, SymHandle("head_::B")))
             MemRefHandle("0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(I:0:.predef_I4))") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::A")))
             MemRefHandle("0:VECTOR:0:anon_ptr.(I:0:.predef_I4)") => 
@@ -24,7 +24,7 @@ A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") =>
         [
             MemRefHandle("I8SRCTRIPLET
 A:0:anon_ptr.()") => 
-                SubSetRef( DEF, NamedRef( DEF, SymHandle("head_::A")))
+                SubSetRef( DEF, NamedRef( USE, SymHandle("head_::A")))
             MemRefHandle("I8SRCTRIPLET
 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::B")))

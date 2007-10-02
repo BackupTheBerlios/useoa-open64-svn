@@ -18,10 +18,10 @@ test::nested_calls_1.B,           Checked by BK 07/27/2006
 #
 test::divide.B,                   Checked by BK 07/27/2006 
 test::solve.B,                    Checked by BK 07/27/2006
-test::stats.B,                    Checked by BK 07/27/2006
+#test::stats.B,                    Checked by BK 07/27/2006  need to Fix Optional Parameters First
 test::Matrix_bits.B,              Checked by BK 07/27/2006
 test::stat_selection.B,           Checked by BK 07/27/2006
-test::gussian_elimination.B,      Checked by BK 07/27/2006 
+#test::gussian_elimination.B,      Checked by BK 07/27/2006  ALLOCATE with multiple parameters are not handled.
 #test::  rung_kutta.B,               Checked by BK //2006 ERROR?? found func ptr not handled correctly (appears Alias and then CallGraph not correctly formed)
 test::GCD.B,                      Checked by BK 07/27/2006
 test::ETOX.B,                     Checked by BK 07/27/2006

@@ -25,7 +25,7 @@ InterSideEffectStandard(
                         InvisibleLoc(
                             mMRE: 
                             Deref(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mMRE: 
                                 NamedRef(
                                     mMemRefType: USE
@@ -58,7 +58,7 @@ InterSideEffectStandard(
                         InvisibleLoc(
                             mMRE: 
                             Deref(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mMRE: 
                                 NamedRef(
                                     mMemRefType: USE
@@ -121,7 +121,7 @@ InterSideEffectStandard(
                         InvisibleLoc(
                             mMRE: 
                             Deref(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mMRE: 
                                 NamedRef(
                                     mMemRefType: USE
@@ -170,7 +170,7 @@ InterSideEffectStandard(
                         InvisibleLoc(
                             mMRE: 
                             Deref(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mMRE: 
                                 NamedRef(
                                     mMemRefType: USE
@@ -219,7 +219,7 @@ InterSideEffectStandard(
                         InvisibleLoc(
                             mMRE: 
                             Deref(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mMRE: 
                                 NamedRef(
                                     mMemRefType: USE
@@ -268,7 +268,7 @@ InterSideEffectStandard(
                         InvisibleLoc(
                             mMRE: 
                             Deref(
-                                mMemRefType: DEF
+                                mMemRefType: USE
                                 mMRE: 
                                 NamedRef(
                                     mMemRefType: USE

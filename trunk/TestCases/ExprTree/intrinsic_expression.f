@@ -5,7 +5,7 @@ c$openad XXX Template ad_template.f
          integer i
 c$openad INDEPENDENT(x)
            y(1)=x(1)
-           i=1+INT(x(1)-1)
+           i=1+INT(x(1)-1,1)
 c$openad DEPENDENT(y)
        end subroutine head
 

@@ -17,7 +17,7 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mMemRefType: DEF
+                    mMemRefType: USE
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
@@ -47,7 +47,7 @@ InterActive(
                 InvisibleLoc(
                     mMRE: 
                     Deref(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mMRE: 
                         NamedRef(
                             mMemRefType: USE
@@ -60,7 +60,7 @@ InterActive(
             ) ] 
     )
     ActiveStmtSet([ 
-            StmtHandle(Y:0:anon_ptr.(1) = OPC_F4I4CVT(INT(&X:0:anon_ptr.(1), NULL))*    2.500000) ] 
+            StmtHandle(Y:0:anon_ptr.(1) = OPC_F4I4CVT(INT(&X:0:anon_ptr.(1), &1))*    2.500000) ] 
     )
     ActiveMemRefSet([ 
             MemRefHandle(Y:0:anon_ptr.(1))

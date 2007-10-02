@@ -39,12 +39,12 @@ ParamBindings(
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
             ExprHandle(&N:0:.predef_I4+-1)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &N:0:.predef_I4+-1 )
 
             ExprHandle(&N:0:.predef_I4)	 => 
-            graph EXPRESSION TREE:
+            Graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &N:0:.predef_I4 )
 

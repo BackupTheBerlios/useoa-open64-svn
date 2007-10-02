@@ -1,67 +1,58 @@
-
-========================stmt============================
-
-stmt =  LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ExprTree/SimpleBalanced.f"
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ExprTree/SimpleBalanced.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)
 
-stmt = foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)
+==> ExprHandle: &A:0:.predef_F8
 
-	--expr----------------------------------------
-	  expr = &A:0:.predef_F8
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &A:0:.predef_F8 )
 
-	--expr----------------------------------------
-	  expr = &F:0:.predef_F8
-	----------------------------------------------
-graph EXPRESSION TREE:
+
+==> ExprHandle: &F:0:.predef_F8
+
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &F:0:.predef_F8 )
 
-	--expr----------------------------------------
-	  expr = &X:0:.predef_F8
-	----------------------------------------------
-graph EXPRESSION TREE:
+
+==> ExprHandle: &X:0:.predef_F8
+
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &X:0:.predef_F8 )
 
-	--expr----------------------------------------
-	  expr = &T:0:.predef_F8
-	----------------------------------------------
-graph EXPRESSION TREE:
+
+==> ExprHandle: &T:0:.predef_F8
+
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &T:0:.predef_F8 )
 
-========================stmt============================
 
-stmt = _END()
+============================================
+StmtHandle: _END()
 
-========================stmt============================
+============================================
+StmtHandle: return
 
-stmt = return
+============================================
+StmtHandle: return
 
-========================stmt============================
-
-stmt = return
-
-========================stmt============================
-
-stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+============================================
+StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: A:0:.predef_F8 = A:0:.predef_F8+X:0:.predef_F8
 
-stmt = A:0:.predef_F8 = A:0:.predef_F8+X:0:.predef_F8
+==> ExprHandle: A:0:.predef_F8+X:0:.predef_F8
 
-	--expr----------------------------------------
-	  expr = A:0:.predef_F8+X:0:.predef_F8
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
@@ -71,6 +62,7 @@ graph EXPRESSION TREE:
         0 => 
         Node 2: ET MemRefNode ( X:0:.predef_F8 )
 
-========================stmt============================
 
-stmt = return
+============================================
+StmtHandle: return
+

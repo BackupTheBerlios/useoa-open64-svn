@@ -72,6 +72,7 @@ static const char* usage_details =
 "      --oa-Linearity           test Linearity Analysis\n"
 "      --oa-AssignPairs         test AssignPair Analysis\n"
 "      --oa-CSFIActivity        test Context-Sensitive Flow-Insensitive Activity Analysis\n"
+"      --oa-UseMREs              test useMREs for the given MemRefHandle\n"
 "\n"
 "Options:\n"
 "  -d, --dump          dump the WHIRL IR\n"
@@ -120,6 +121,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-Linearity",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AssignPairs",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CSFIActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-UseMREs",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "oa-ujnum",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -258,6 +260,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 31; }
     if (parser.IsOpt("oa-CSFIActivity")) { runMode = 32; }
     if (parser.IsOpt("oa-AssignPairs"))    { runMode = 33; }
+    if (parser.IsOpt("oa--UseMREs"))     { runMode = 34; }
  
     // Check for other options
     if (parser.IsOpt("dump")) { dumpIR = true; }

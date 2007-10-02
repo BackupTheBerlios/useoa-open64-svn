@@ -26,10 +26,6 @@ echo "Testing TestCases/ParamBindings/solve.B, TestResults/ParamBindings/solve.B
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/solve.B > t
 diff t TestResults/ParamBindings/solve.B.out
 
-echo "Testing TestCases/ParamBindings/stats.B, TestResults/ParamBindings/stats.B.out Checked by BK 07/27/2006"
-./test-open64 --oa-ParamBindings TestCases/ParamBindings/stats.B > t
-diff t TestResults/ParamBindings/stats.B.out
-
 echo "Testing TestCases/ParamBindings/Matrix_bits.B, TestResults/ParamBindings/Matrix_bits.B.out Checked by BK 07/27/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/Matrix_bits.B > t
 diff t TestResults/ParamBindings/Matrix_bits.B.out
@@ -37,10 +33,6 @@ diff t TestResults/ParamBindings/Matrix_bits.B.out
 echo "Testing TestCases/ParamBindings/stat_selection.B, TestResults/ParamBindings/stat_selection.B.out Checked by BK 07/27/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/stat_selection.B > t
 diff t TestResults/ParamBindings/stat_selection.B.out
-
-echo "Testing TestCases/ParamBindings/gussian_elimination.B, TestResults/ParamBindings/gussian_elimination.B.out Checked by BK 07/27/2006"
-./test-open64 --oa-ParamBindings TestCases/ParamBindings/gussian_elimination.B > t
-diff t TestResults/ParamBindings/gussian_elimination.B.out
 
 echo "Testing TestCases/ParamBindings/GCD.B, TestResults/ParamBindings/GCD.B.out Checked by BK 07/27/2006"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/GCD.B > t

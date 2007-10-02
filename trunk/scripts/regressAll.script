@@ -47,7 +47,7 @@ echo "########################### running regressCSFIActivity.script"
 source scripts/regressCSFIActivity.script
 
 echo "########################### running regressPtrAssign.script"
-source scripts/regressPtrAssign.script
+source scripts/regressAssignPairs.script
 
 #echo "########################### running regressLinearity.script"
 #source scripts/regressLinearity.script

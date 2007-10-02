@@ -29,7 +29,7 @@ InterActive(
             InvisibleLoc(
                 mMRE: 
                 Deref(
-                    mMemRefType: DEF
+                    mMemRefType: USE
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
@@ -59,7 +59,7 @@ InterActive(
                 InvisibleLoc(
                     mMRE: 
                     Deref(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mMRE: 
                         NamedRef(
                             mMemRefType: USE
@@ -115,7 +115,7 @@ InterActive(
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mSymHandle: SymHandle(foo_::C)
                     )
                     mNumDeref: 1
@@ -127,7 +127,7 @@ InterActive(
                     mMemRefType: DEF
                     mMRE: 
                     NamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mSymHandle: SymHandle(foo_::D)
                     )
                     mNumDeref: 1

@@ -14,7 +14,7 @@ X:0:anon_ptr.() = T2:0:.predef_F8") =>
         [
             MemRefHandle("I8SRCTRIPLET
 X:0:anon_ptr.()") => 
-                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("head_::X")), 1))
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
             MemRefHandle("T2:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("head_::T2"))
         ] }

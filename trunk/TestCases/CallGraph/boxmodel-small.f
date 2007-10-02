@@ -405,7 +405,7 @@ cph      integration_time=5000.D0*year
 cph time for the optimization
       integration_time=50.D0*year
 c-- number of time steps:
-      n_max = INT((integration_time/delta_t))
+      n_max = INT((integration_time/delta_t),1)
 
       fdeps = 1.D-6
 

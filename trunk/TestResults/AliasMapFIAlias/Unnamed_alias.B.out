@@ -282,7 +282,7 @@ InterAliasMap(
                         mSymHandle: SymHandle(head_::I)
                     )    
                     UnnamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mExprHandle: ExprHandle(2)
                         mLocal: 1
                         mProcHandle: ProcHandle(foo_::head_)
@@ -293,7 +293,7 @@ InterAliasMap(
                         mSymHandle: SymHandle(head_::J)
                     )    
                     UnnamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mExprHandle: ExprHandle(3)
                         mLocal: 1
                         mProcHandle: ProcHandle(foo_::head_)

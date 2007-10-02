@@ -82,7 +82,7 @@ PROCEDURE = { < ProcHandle("testing_::head_"), SymHandle("testing_::head_") > }
     MEMREFEXPRS = { StmtHandle("F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8") =>
         [
             MemRefHandle("F:0:.predef_F8") => 
-                Deref( DEF, NamedRef( DEF, SymHandle("head_::F")), 1)
+                Deref( DEF, NamedRef( USE, SymHandle("head_::F")), 1)
             MemRefHandle("T1:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("head_::T1"))
             MemRefHandle("T2:0:.predef_F8") => 
@@ -113,7 +113,7 @@ PROCEDURE = { < ProcHandle("testing_::bar_"), SymHandle("testing_::bar_") > }
     MEMREFEXPRS = { StmtHandle("B:0:.predef_F8 = OPC_F8F4CVT(G:0:.predef_F4)+A:0:.predef_F8") =>
         [
             MemRefHandle("B:0:.predef_F8") => 
-                Deref( DEF, NamedRef( DEF, SymHandle("bar_::B")), 1)
+                Deref( DEF, NamedRef( USE, SymHandle("bar_::B")), 1)
             MemRefHandle("G:0:.predef_F4") => 
                 NamedRef( USE, SymHandle("testing_::G"))
             MemRefHandle("A:0:.predef_F8") => 
@@ -122,7 +122,7 @@ PROCEDURE = { < ProcHandle("testing_::bar_"), SymHandle("testing_::bar_") > }
     MEMREFEXPRS = { StmtHandle("A:0:.predef_F8 =     3.000000000000000") =>
         [
             MemRefHandle("A:0:.predef_F8") => 
-                Deref( DEF, NamedRef( DEF, SymHandle("bar_::A")), 1)
+                Deref( DEF, NamedRef( USE, SymHandle("bar_::A")), 1)
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

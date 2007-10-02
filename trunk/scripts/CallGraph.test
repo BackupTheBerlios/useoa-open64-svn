@@ -22,7 +22,7 @@ test::  simple1.B,                  checked by PLM 10/17/06 Intrinsic sin and co
 test::  If_Loop5.B,                 checked by PLM 10/17/06 Intrinsic sin and cos 
 test::  simple2.B,                  checked by PLM 10/17/06 Intrinsic sin and cos
 test::  simple3.B,                  checked by PLM 10/17/06 Intrinsic sin
-test::  float_intrinsic.B,           checked by PLM 10/17/06 Intrinsic float
+#test::  float_intrinsic.B,           checked by PLM 10/17/06 Intrinsic float, need to discuss with Michelle the logic of CVT node
 test::  lion.B,                     checked by PLM 10/17/06 Intrinsic exp
 test::  tanh_f_arg.B,               checked by PLM 10/17/06 Intrinsic tanh
 test::  nested_calls_1.B,           checked by PLM 10/17/06 Intrinsic sin and cos

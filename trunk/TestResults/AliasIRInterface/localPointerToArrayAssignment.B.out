@@ -1,0 +1,27 @@
+
+PROCEDURE = { < ProcHandle("arraypointer_::arraypointer_"), SymHandle("arraypointer_::arraypointer_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/Alias/localPointerToArrayAssignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("U8PSTORE 0 T<33,anon_ptr.,8>
+") =>
+        [
+            MemRefHandle("I8SRCTRIPLET
+P:0:anon_ptr.()") => 
+                NamedRef( DEF, SymHandle("arraypointer_::P"))
+            MemRefHandle("I8SRCTRIPLET
+0:X:0:anon_ptr.()") => 
+                AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X"))))
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("U8PSTORE 0 T<33,anon_ptr.,8>
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("arraypointer_::arraypointer_"), not local > }
+    LOCATION = { < SymHandle("arraypointer_::P"), local > }
+    LOCATION = { < SymHandle("arraypointer_::X"), local > }

@@ -46,7 +46,7 @@ PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
     MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8") =>
         [
             MemRefHandle("Y:0:anon_ptr.(1)") => 
-                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("head_::Y")), 1))
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("head_::Y")), 1))
             MemRefHandle("AGLOBAL:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("globals_::AGLOBAL"))
             MemRefHandle("APASSIVEGLOBAL:0:.predef_F8") => 

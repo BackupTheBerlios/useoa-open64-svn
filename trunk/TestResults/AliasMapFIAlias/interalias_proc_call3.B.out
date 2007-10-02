@@ -311,7 +311,7 @@ InterAliasMap(
                         mMemRefType: DEF
                         mMRE: 
                         NamedRef(
-                            mMemRefType: DEF
+                            mMemRefType: USE
                             mSymHandle: SymHandle(bar_::B)
                         )
                         mNumDeref: 1
@@ -328,7 +328,7 @@ InterAliasMap(
                     ) ] 
                 4	 => [ 
                     NamedRef(
-                        mMemRefType: DEF
+                        mMemRefType: USE
                         mSymHandle: SymHandle(bar_::B)
                     ) ] 
                 5	 => [ 

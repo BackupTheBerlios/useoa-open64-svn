@@ -17,7 +17,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("X:0:anon_ptr.(J:0:.predef_I4) = T2:0:.predef_F8") =>
         [
             MemRefHandle("X:0:anon_ptr.(J:0:.predef_I4)") => 
-                SubSetRef( DEF, Deref( DEF, NamedRef( USE, SymHandle("head_::X")), 1))
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
             MemRefHandle("T2:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("head_::T2"))
             MemRefHandle("J:0:.predef_I4") => 

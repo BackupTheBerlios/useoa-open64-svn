@@ -8,7 +8,7 @@
 
         subroutine foo(a,f,x,t)
           double precision :: a, f, t
-          double precision :: x
+          double precision :: x, b
           integer :: i
           a = sin(a+b)
         end subroutine foo

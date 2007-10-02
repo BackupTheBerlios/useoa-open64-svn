@@ -13,7 +13,7 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
     MEMREFEXPRS = { StmtHandle("Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000") =>
         [
             MemRefHandle("Y:0:.predef_F8") => 
-                Deref( DEF, NamedRef( DEF, SymHandle("foo_::Y")), 1)
+                Deref( DEF, NamedRef( USE, SymHandle("foo_::Y")), 1)
             MemRefHandle("X:0:.predef_F8") => 
                 Deref( USE, NamedRef( USE, SymHandle("foo_::X")), 1)
         ] }

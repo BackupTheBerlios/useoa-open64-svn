@@ -58,10 +58,6 @@ echo "Testing TestCases/CallGraph/simple3.B, TestResults/CallGraph/simple3.B.out
 ./test-open64 --oa-CallGraph TestCases/CallGraph/simple3.B > t
 diff t TestResults/CallGraph/simple3.B.out
 
-echo "Testing TestCases/CallGraph/float_intrinsic.B, TestResults/CallGraph/float_intrinsic.B.out checked by PLM 10/17/06 Intrinsic float"
-./test-open64 --oa-CallGraph TestCases/CallGraph/float_intrinsic.B > t
-diff t TestResults/CallGraph/float_intrinsic.B.out
-
 echo "Testing TestCases/CallGraph/lion.B, TestResults/CallGraph/lion.B.out checked by PLM 10/17/06 Intrinsic exp"
 ./test-open64 --oa-CallGraph TestCases/CallGraph/lion.B > t
 diff t TestResults/CallGraph/lion.B.out

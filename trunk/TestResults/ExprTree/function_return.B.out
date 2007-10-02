@@ -1,60 +1,51 @@
-
-========================stmt============================
-
-stmt =  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/function_return.f"
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/function_return.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: RESULT:0:.predef_I4 = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
 
-stmt = RESULT:0:.predef_I4 = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
+==> ExprHandle: gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
 
-	--expr----------------------------------------
-	  expr = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET CallNode ( gcd_(&I:0:.predef_I4, &J:0:.predef_I4) )
 
-	--expr----------------------------------------
-	  expr = &I:0:.predef_I4
-	----------------------------------------------
-graph EXPRESSION TREE:
+
+==> ExprHandle: &I:0:.predef_I4
+
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &I:0:.predef_I4 )
 
-	--expr----------------------------------------
-	  expr = &J:0:.predef_I4
-	----------------------------------------------
-graph EXPRESSION TREE:
+
+==> ExprHandle: &J:0:.predef_I4
+
+Graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &J:0:.predef_I4 )
 
-========================stmt============================
 
-stmt = _END()
+============================================
+StmtHandle: _END()
 
-========================stmt============================
+============================================
+StmtHandle: return
 
-stmt = return
+============================================
+StmtHandle: return
 
-========================stmt============================
-
-stmt = return
-
-========================stmt============================
-
-stmt = PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+============================================
+StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
-========================stmt============================
+============================================
+StmtHandle: GCD:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4
 
-stmt = GCD:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4
+==> ExprHandle: A:0:.predef_I4+B:0:.predef_I4
 
-	--expr----------------------------------------
-	  expr = A:0:.predef_I4+B:0:.predef_I4
-	----------------------------------------------
-graph EXPRESSION TREE:
+Graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
@@ -64,6 +55,7 @@ graph EXPRESSION TREE:
         0 => 
         Node 2: ET MemRefNode ( B:0:.predef_I4 )
 
-========================stmt============================
 
-stmt = return (GCD:0:.predef_I4)
+============================================
+StmtHandle: return (GCD:0:.predef_I4)
+
