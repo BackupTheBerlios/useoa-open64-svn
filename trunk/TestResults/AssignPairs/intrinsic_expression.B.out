@@ -61,7 +61,7 @@ stmt : Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
 
 1. ExprHandle: 0:X:0:anon_ptr.(1)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( 0:X:0:anon_ptr.(1) )
 
@@ -114,7 +114,7 @@ stmt : I:0:.predef_I4 = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, &1)+1
 
 1. ExprHandle: INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, &1)+1
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 

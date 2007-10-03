@@ -20,7 +20,7 @@ StmtHandle: T:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
 
 ==> ExprHandle: 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( * )
     Edge: 
@@ -36,7 +36,7 @@ StmtHandle: Y:0:anon_ptr.(1) = SIN(&T:0:.predef_F8)
 
 ==> ExprHandle: SIN(&T:0:.predef_F8)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( SIN(&T:0:.predef_F8) )
     Edge: 
@@ -49,7 +49,7 @@ StmtHandle: Y:0:anon_ptr.(2) = COS(&T:0:.predef_F8)
 
 ==> ExprHandle: COS(&T:0:.predef_F8)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( COS(&T:0:.predef_F8) )
     Edge: 

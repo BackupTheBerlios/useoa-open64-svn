@@ -61,7 +61,7 @@ stmt : Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
 
 1. ExprHandle: 0:X:0:anon_ptr.(1)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( 0:X:0:anon_ptr.(1) )
 

@@ -8,7 +8,7 @@ StmtHandle: t__1:0:.predef_I4 = N:0:.predef_I4
 
 ==> ExprHandle: N:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( N:0:.predef_I4 )
 
@@ -18,7 +18,7 @@ StmtHandle: do_loop (I:0:.predef_I4<=t__1:0:.predef_I4)
 
 ==> ExprHandle: I:0:.predef_I4<=t__1:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( <= )
     Edge: 
@@ -34,7 +34,7 @@ StmtHandle: I:0:.predef_I4 = 1
 
 ==> ExprHandle: 1
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET ConstValNode ( 1 )
 
@@ -44,7 +44,7 @@ StmtHandle: I:0:.predef_I4 = I:0:.predef_I4+1
 
 ==> ExprHandle: I:0:.predef_I4+1
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
@@ -60,7 +60,7 @@ StmtHandle: J:0:.predef_I4 = J:0:.predef_I4+1
 
 ==> ExprHandle: J:0:.predef_I4+1
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 

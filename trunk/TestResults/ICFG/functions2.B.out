@@ -1,7 +1,7 @@
 
-Graph ICFG:
+graph ICFG:
 
-    Subgraph factorial_::factorial__0:
+    subgraph factorial_::factorial__0:
 
         Node 9: 
             ==  ICFG ENTRY_NODE 9 ==
@@ -66,7 +66,7 @@ return (RES:0:.predef_I4)
             
 
 
-    Subgraph factorial_::recfunc__1:
+    subgraph factorial_::recfunc__1:
 
         Node 23: 
             ==  ICFG ENTRY_NODE 23 == (entry)

@@ -9,10 +9,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 _ALLOCATE(&A:0:anon_ptr.(), &0)") =>
         [
             MemRefHandle("I8SRCTRIPLET
-_ALLOCATE(&A:0:anon_ptr.(), &0)") => 
-                AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
-_ALLOCATE(&A:0:anon_ptr.(), &0)"), 1, ProcHandle("foo_::foo_")))
-            MemRefHandle("I8SRCTRIPLET
 &A:0:anon_ptr.()") => 
                 NamedRef( DEF, SymHandle("foo_::A"))
         ] }

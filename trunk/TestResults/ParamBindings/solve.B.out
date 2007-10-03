@@ -56,52 +56,52 @@ ParamBindings(
 
     mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
             ExprHandle(&P:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &P:0:.predef_F4 )
 
             ExprHandle(&Q:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &Q:0:.predef_F4 )
 
             ExprHandle(&R:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &R:0:.predef_F4 )
 
             ExprHandle(&OK:0:.log.4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &OK:0:.log.4 )
 
             ExprHandle(&P:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &P:0:.predef_F4 )
 
             ExprHandle(&Q:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &Q:0:.predef_F4 )
 
             ExprHandle(&R:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &R:0:.predef_F4 )
 
             ExprHandle(&ROOT1:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &ROOT1:0:.predef_F4 )
 
             ExprHandle(&ROOT2:0:.predef_F4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &ROOT2:0:.predef_F4 )
 
             ExprHandle(&IFAIL:0:.predef_I4)	 => 
-            Graph EXPRESSION TREE:
+            graph EXPRESSION TREE:
 
                 Node 0: ET MemRefNode ( &IFAIL:0:.predef_I4 )
 

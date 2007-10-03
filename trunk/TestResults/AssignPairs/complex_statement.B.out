@@ -25,7 +25,7 @@ stmt : X:0:.predef_I4 = TRUNC(OPC_F4I4CVT(Y:0:.predef_I4)+Z:0:.predef_F4)
 
 1. ExprHandle: TRUNC(OPC_F4I4CVT(Y:0:.predef_I4)+Z:0:.predef_F4)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( TRUNC() )
     Edge: 
@@ -115,21 +115,21 @@ stmt : bar_(&C:0:.predef_I4, &A:0:.predef_I4+B:0:.predef_I4, &D:0:.predef_I4)
 
 1. ExprHandle: &C:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &C:0:.predef_I4 )
 
 
 2. ExprHandle: &A:0:.predef_I4+B:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &A:0:.predef_I4+B:0:.predef_I4 )
 
 
 3. ExprHandle: A:0:.predef_I4+B:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
@@ -142,7 +142,7 @@ Graph EXPRESSION TREE:
 
 4. ExprHandle: &D:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &D:0:.predef_I4 )
 

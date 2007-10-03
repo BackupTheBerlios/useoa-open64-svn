@@ -8,14 +8,14 @@ StmtHandle: bar_(&A:0:.predef_I4+B:0:.predef_I4)
 
 ==> ExprHandle: &A:0:.predef_I4+B:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &A:0:.predef_I4+B:0:.predef_I4 )
 
 
 ==> ExprHandle: A:0:.predef_I4+B:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
@@ -38,7 +38,7 @@ StmtHandle: C:0:.predef_I4 = 10
 
 ==> ExprHandle: 10
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET ConstValNode ( 10 )
 

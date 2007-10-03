@@ -24,28 +24,28 @@ stmt : foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)
 
 1. ExprHandle: &A:0:.predef_F8
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &A:0:.predef_F8 )
 
 
 2. ExprHandle: &F:0:.predef_F8
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &F:0:.predef_F8 )
 
 
 3. ExprHandle: &X:0:.predef_F8
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &X:0:.predef_F8 )
 
 
 4. ExprHandle: &T:0:.predef_F8
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &T:0:.predef_F8 )
 
@@ -157,7 +157,7 @@ stmt : A:0:.predef_F8 = X:0:.predef_F8*(T:0:.predef_F8+(A:0:.predef_F8-F:0:.pred
 
 1. ExprHandle: X:0:.predef_F8*(T:0:.predef_F8+(A:0:.predef_F8-F:0:.predef_F8))
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( * )
     Edge: 

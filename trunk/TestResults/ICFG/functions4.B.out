@@ -1,7 +1,7 @@
 
-Graph ICFG:
+graph ICFG:
 
-    Subgraph foo_::foo__0:
+    subgraph foo_::foo__0:
 
         Node 10: 
             ==  ICFG ENTRY_NODE 10 ==
@@ -53,7 +53,7 @@ return (RES:0:.predef_I4)
             
 
 
-    Subgraph foo_::functiontest__1:
+    subgraph foo_::functiontest__1:
 
         Node 20: 
             ==  ICFG ENTRY_NODE 20 == (entry)
@@ -109,7 +109,7 @@ return
             
 
 
-    Subgraph foo_::bar__2:
+    subgraph foo_::bar__2:
 
         Node 37: 
             ==  ICFG ENTRY_NODE 37 == (entry)

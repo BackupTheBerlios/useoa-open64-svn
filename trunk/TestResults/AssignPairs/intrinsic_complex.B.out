@@ -61,7 +61,7 @@ stmt : Y:0:anon_ptr.(1) = COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330)
 
 1. ExprHandle: COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( COS(&0:X:0:anon_ptr.(1)*  0.01745329251994330) )
     Edge: 

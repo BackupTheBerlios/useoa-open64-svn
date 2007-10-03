@@ -25,7 +25,7 @@ stmt : A:0:.predef_I4 = B:0:.predef_I4+C:0:.predef_I4
 
 1. ExprHandle: B:0:.predef_I4+C:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 

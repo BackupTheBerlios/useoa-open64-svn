@@ -24,7 +24,7 @@ stmt : if (A:0:.predef_I4<5)
 
 1. ExprHandle: A:0:.predef_I4<5
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( < )
     Edge: 
@@ -57,7 +57,7 @@ stmt : A:0:.predef_I4 = A:0:.predef_I4+1
 
 1. ExprHandle: A:0:.predef_I4+1
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 

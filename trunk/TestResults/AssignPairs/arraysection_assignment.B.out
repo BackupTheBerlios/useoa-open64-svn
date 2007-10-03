@@ -31,7 +31,7 @@ B:0:anon_ptr.(), 	expr = I8SRCTRIPLET
 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
 I8SRCTRIPLET
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 I8SRCTRIPLET
 
     Node 0: ET MemRefNode ( 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.()) )
@@ -106,7 +106,7 @@ A:0:anon_ptr.(), 	expr = I8SRCTRIPLET
 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
 I8SRCTRIPLET
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 I8SRCTRIPLET
 
     Node 0: ET MemRefNode ( 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.()) )

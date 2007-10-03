@@ -8,7 +8,7 @@ StmtHandle: A:0:anon_ptr.(1,1) = 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
 
 ==> ExprHandle: 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4) )
 

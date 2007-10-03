@@ -25,21 +25,21 @@ stmt : RESULT:0:.predef_I4 = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
 
 1. ExprHandle: gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET CallNode ( gcd_(&I:0:.predef_I4, &J:0:.predef_I4) )
 
 
 2. ExprHandle: &I:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &I:0:.predef_I4 )
 
 
 3. ExprHandle: &J:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET MemRefNode ( &J:0:.predef_I4 )
 
@@ -135,7 +135,7 @@ stmt : GCD:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4
 
 1. ExprHandle: A:0:.predef_I4+B:0:.predef_I4
 
-Graph EXPRESSION TREE:
+graph EXPRESSION TREE:
 
     Node 0: ET OpNode ( + )
     Edge: 
