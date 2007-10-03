@@ -50,7 +50,13 @@ Graph EXPRESSION TREE:
 
 Graph EXPRESSION TREE:
 
-    Node 0: ET MemRefNode ( A:0:.predef_I4+B:0:.predef_I4 )
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( A:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( B:0:.predef_I4 )
 
 
 ==> ExprHandle: &D:0:.predef_I4

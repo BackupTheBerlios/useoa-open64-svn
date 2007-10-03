@@ -30,6 +30,22 @@ Graph EXPRESSION TREE:
     Node 0: ET MemRefNode ( B:0:.predef_I4 )
 
 
+==> MemRefHandle:A:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::A)
+)
+
+==> MemRefHandle:B:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::B)
+)
+
 ========================================================
 
 stmt : return

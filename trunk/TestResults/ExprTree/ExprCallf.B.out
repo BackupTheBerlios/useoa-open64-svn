@@ -74,7 +74,13 @@ Graph EXPRESSION TREE:
 
 Graph EXPRESSION TREE:
 
-    Node 0: ET MemRefNode ( F:0:.predef_F8*X:0:.predef_F8 )
+    Node 0: ET OpNode ( * )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( F:0:.predef_F8 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( X:0:.predef_F8 )
 
 
 ==> ExprHandle: &T:0:.predef_F8

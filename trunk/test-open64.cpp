@@ -1104,7 +1104,7 @@ TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
 
             /*
             OA::OA_ptr<OA::MemRefExprIterator> mreIter;
-            mreIter = irInterface->getUseMREs(OA::MemRefHandle((OA::irhandle_t)expr));
+            mreIter = irInterface->getMemRefExprIterator(OA::MemRefHandle((OA::irhandle_t)expr));
             for (; mreIter->isValid(); (*mreIter)++) {
                    OA::OA_ptr<OA::MemRefExpr> mre = mreIter->current();
                    std::cout << "mre: " << std::endl;
@@ -1129,7 +1129,23 @@ TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
              eTreePtr->output(*irInterface);
              std::cout << std::endl << std::endl;
         }
-       
+
+        OA::OA_ptr<OA::MemRefHandleIterator> mIter;
+        mIter = irInterface->getAllMemRefs(stmt);
+        for(; mIter->isValid(); ++(*mIter) ) {
+            OA::MemRefHandle mhandle = mIter->current(); 
+            OA::OA_ptr<OA::MemRefExprIterator> mreIter;
+            mreIter = irInterface->getMemRefExprIterator(mhandle);
+            std::cout << "==> MemRefHandle:"
+                      << irInterface->toString(mhandle)
+                      << std::endl;
+            for (; mreIter->isValid(); (*mreIter)++) {
+                   OA::OA_ptr<OA::MemRefExpr> mre = mreIter->current();
+                   std::cout << "\tmre: " << std::endl;
+                   mre->output(*irInterface);
+                   std::cout << std::endl;
+             }
+        }  
     }
   }
   return 0;
