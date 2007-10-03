@@ -1,0 +1,113 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/array_assignment.f"
+PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)
+
+==> AssignPairs : 
+
+1. mref = Y:0:anon_ptr.(1), 	expr = 0:X:0:anon_ptr.(1)
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: 0:X:0:anon_ptr.(1)
+
+Graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( 0:X:0:anon_ptr.(1) )
+
+
+==> MemRefHandle:Y:0:anon_ptr.(1)
+	mre: 
+
+SubSetRef(
+    mMemRefType: DEF
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::Y)
+        )
+        mNumDeref: 1
+    )
+)
+
+==> MemRefHandle:0:X:0:anon_ptr.(1)
+	mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::X)
+        )
+        mNumDeref: 1
+    )
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+

@@ -1,0 +1,201 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/function_return.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : RESULT:0:.predef_I4 = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
+
+==> AssignPairs : 
+
+1. mref = RESULT:0:.predef_I4, 	expr = gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: gcd_(&I:0:.predef_I4, &J:0:.predef_I4)
+
+Graph EXPRESSION TREE:
+
+    Node 0: ET CallNode ( gcd_(&I:0:.predef_I4, &J:0:.predef_I4) )
+
+
+2. ExprHandle: &I:0:.predef_I4
+
+Graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &I:0:.predef_I4 )
+
+
+3. ExprHandle: &J:0:.predef_I4
+
+Graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &J:0:.predef_I4 )
+
+
+==> MemRefHandle:RESULT:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(ch2608_::RESULT)
+)
+
+==> MemRefHandle:&I:0:.predef_I4
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2608_::I)
+    )
+)
+
+==> MemRefHandle:&J:0:.predef_I4
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(ch2608_::J)
+    )
+)
+
+========================================================
+
+stmt : _END()
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : GCD:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4
+
+==> AssignPairs : 
+
+1. mref = GCD:0:.predef_I4, 	expr = A:0:.predef_I4+B:0:.predef_I4
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: A:0:.predef_I4+B:0:.predef_I4
+
+Graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( A:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( B:0:.predef_I4 )
+
+
+==> MemRefHandle:GCD:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(gcd_::GCD)
+)
+
+==> MemRefHandle:A:0:.predef_I4
+	mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(gcd_::A)
+    )
+    mNumDeref: 1
+)
+
+==> MemRefHandle:B:0:.predef_I4
+	mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(gcd_::B)
+    )
+    mNumDeref: 1
+)
+
+========================================================
+
+stmt : return (GCD:0:.predef_I4)
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+==> MemRefHandle:GCD:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(gcd_::GCD)
+)
+

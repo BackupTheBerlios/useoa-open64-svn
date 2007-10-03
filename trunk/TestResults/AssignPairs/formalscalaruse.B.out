@@ -1,0 +1,64 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/formalscalaruse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : T2:0:.predef_F8 = X:0:.predef_F8
+
+==> AssignPairs : 
+
+1. mref = T2:0:.predef_F8, 	expr = X:0:.predef_F8
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: X:0:.predef_F8
+
+Graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( X:0:.predef_F8 )
+
+
+==> MemRefHandle:T2:0:.predef_F8
+	mre: 
+
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(head_::T2)
+)
+
+==> MemRefHandle:X:0:.predef_F8
+	mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::X)
+    )
+    mNumDeref: 1
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
