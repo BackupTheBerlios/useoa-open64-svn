@@ -69,7 +69,7 @@ graph EXPRESSION TREE:
                 Node 4: ET MemRefNode ( A:0:.predef_F8 )
     Edge: 
         0 => 
-        Node 6: ET CallNode ( func_(&F:0:.predef_F8) )
+        Node 5: ET CallNode ( func_(&F:0:.predef_F8) )
 
 
 ==> ExprHandle: &F:0:.predef_F8

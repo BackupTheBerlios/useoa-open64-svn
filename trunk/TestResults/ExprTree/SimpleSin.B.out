@@ -63,13 +63,13 @@ graph EXPRESSION TREE:
             Node 2: ET MemRefNode ( &T:0:.predef_F8 )
     Edge: 
         0 => 
-        Node 4: ET OpNode ( * )
+        Node 3: ET OpNode ( * )
         Edge: 
-            4 => 
-            Node 5: ET MemRefNode ( A:0:.predef_F8 )
+            3 => 
+            Node 4: ET MemRefNode ( A:0:.predef_F8 )
         Edge: 
-            4 => 
-            Node 6: ET MemRefNode ( X:0:.predef_F8 )
+            3 => 
+            Node 5: ET MemRefNode ( X:0:.predef_F8 )
 
 
 ============================================
