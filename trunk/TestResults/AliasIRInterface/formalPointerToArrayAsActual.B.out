@@ -22,6 +22,8 @@ P:0:anon_ptr.()") =>
     PTRASSIGNPAIRS = { StmtHandle("F8PSTORE 0 T<36,.anon_f90pointer.1,8>
 ") =>
         [
+            < Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
+            , AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X")))) >
         ] }
     MEMREFEXPRS = { StmtHandle("bar_(&0:P:0:anon_ptr.)") =>
         [

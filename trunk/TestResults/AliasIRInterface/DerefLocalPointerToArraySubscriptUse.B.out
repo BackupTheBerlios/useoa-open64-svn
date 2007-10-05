@@ -18,6 +18,8 @@ P:0:anon_ptr.()") =>
     PTRASSIGNPAIRS = { StmtHandle("U8PSTORE 0 T<33,anon_ptr.,8>
 ") =>
         [
+            < NamedRef( DEF, SymHandle("arraypointer_::P"))
+            , AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X")))) >
         ] }
     MEMREFEXPRS = { StmtHandle("T:0:.predef_F8 = OPC_F8U8CVT(0:P:0:anon_ptr.(1))") =>
         [
