@@ -30,9 +30,6 @@ P:0:anon_ptr.()") =>
             MemRefHandle("P:0:anon_ptr.(1)") => 
                 SubSetRef( DEF, Deref( USE, Deref( USE, NamedRef( USE, SymHandle("arraypointer_::P")), 1), 1))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("P:0:anon_ptr.(1) = 3") =>
-        [
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

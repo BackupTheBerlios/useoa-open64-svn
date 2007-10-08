@@ -26,9 +26,6 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             MemRefHandle("T:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("arraypointer_::T"))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("P:0:anon_ptr. = T:0:.predef_F8") =>
-        [
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
