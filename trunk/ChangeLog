@@ -702,4 +702,9 @@
 10/05/07  UseOA-Open64 svn trunk 213 Priyadarshini Malusare
  - Regenerated AliasIRInterface output after adding PointerAssign Pairs.
 
+10/08/07  UseOA-Open64 svn trunk 216 Priyadarshini Malusare
+ - Added MemRefExpr for the multiple arrays or pointers allocation.
+ - Added Pointer AssignPairs for allocate statements. 
+ - Regenerated AliasIRInterface outputs for allocate statements.
+
 

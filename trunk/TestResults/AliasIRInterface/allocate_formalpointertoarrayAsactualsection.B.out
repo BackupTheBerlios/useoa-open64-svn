@@ -13,12 +13,19 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 _ALLOCATE(&P:0:anon_ptr.(), &0)") =>
         [
             MemRefHandle("I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)") => 
-                AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)"), 1, ProcHandle("arraypointer_::arraypointer_")))
-            MemRefHandle("I8SRCTRIPLET
 &P:0:anon_ptr.()") => 
                 Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
+            MemRefHandle("I8SRCTRIPLET
+P:0:anon_ptr.()") => 
+                AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
+&P:0:anon_ptr.()"), 1, ProcHandle("arraypointer_::arraypointer_")))
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
+_ALLOCATE(&P:0:anon_ptr.(), &0)") =>
+        [
+            < Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
+            , AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
+&P:0:anon_ptr.()"), 1, ProcHandle("arraypointer_::arraypointer_"))) >
         ] }
     CALLSITES = { StmtHandle("I8SRCTRIPLET
 _ALLOCATE(&P:0:anon_ptr.(), &0)") =>

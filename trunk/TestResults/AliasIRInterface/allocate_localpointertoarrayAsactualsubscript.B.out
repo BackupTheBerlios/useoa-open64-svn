@@ -7,10 +7,15 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
         ] }
     MEMREFEXPRS = { StmtHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)") =>
         [
-            MemRefHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)") => 
-                AddressOf( USE, UnnamedRef( USE, ExprHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)"), 1, ProcHandle("arraypointer_::arraypointer_")))
             MemRefHandle("&P:0:anon_ptr.(3)") => 
                 NamedRef( DEF, SymHandle("arraypointer_::P"))
+            MemRefHandle("P:0:anon_ptr.(3)") => 
+                AddressOf( USE, UnnamedRef( USE, ExprHandle("&P:0:anon_ptr.(3)"), 1, ProcHandle("arraypointer_::arraypointer_")))
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)") =>
+        [
+            < NamedRef( DEF, SymHandle("arraypointer_::P"))
+            , AddressOf( USE, UnnamedRef( USE, ExprHandle("&P:0:anon_ptr.(3)"), 1, ProcHandle("arraypointer_::arraypointer_"))) >
         ] }
     CALLSITES = { StmtHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)") =>
         [
