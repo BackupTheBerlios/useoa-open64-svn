@@ -25,6 +25,12 @@ PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
 ") => 
                 AddressOf( USE, NamedRef( USE, SymHandle("foo_::FIRST")))
         ] }
+    PTRASSIGNPAIRS = { StmtHandle("U8PSTID 0 <2,2,FIRSTPTR> T<31,anon_ptr.,8>
+") =>
+        [
+            < NamedRef( DEF, SymHandle("foo_::FIRSTPTR"))
+            , AddressOf( USE, NamedRef( USE, SymHandle("foo_::FIRST"))) >
+        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

@@ -23,6 +23,9 @@ PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
             MemRefHandle("SECONDPTR:0:anon_ptr.") => 
                 Deref( USE, NamedRef( USE, SymHandle("foo_::SECONDPTR")), 1)
         ] }
+    PTRASSIGNPAIRS = { StmtHandle("FIRSTPTR:0:anon_ptr. = SECONDPTR:0:anon_ptr.") =>
+        [
+        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

@@ -13,12 +13,21 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             MemRefHandle("X:0:.predef_F8") => 
                 AddressOf( USE, NamedRef( USE, SymHandle("arraypointer_::X")))
         ] }
+    PTRASSIGNPAIRS = { StmtHandle("U8PSTID 0 <2,1,P> T<29,anon_ptr.,8>
+") =>
+        [
+            < NamedRef( DEF, SymHandle("arraypointer_::P"))
+            , AddressOf( USE, NamedRef( USE, SymHandle("arraypointer_::X"))) >
+        ] }
     MEMREFEXPRS = { StmtHandle("P:0:anon_ptr. = T:0:.predef_F8") =>
         [
             MemRefHandle("P:0:anon_ptr.") => 
                 Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
             MemRefHandle("T:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("arraypointer_::T"))
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("P:0:anon_ptr. = T:0:.predef_F8") =>
+        [
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [

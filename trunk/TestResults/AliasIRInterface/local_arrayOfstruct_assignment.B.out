@@ -26,10 +26,6 @@ THIRD:0:anon_ptr.()") =>
 ") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("foo_::FOUR")))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("MSTORE 0 T<34,anon_ptr.,8>
-") =>
-        [
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

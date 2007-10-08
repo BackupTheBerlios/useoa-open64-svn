@@ -50,11 +50,6 @@ B:0:anon_ptr.()") =>
 0:A:0:anon_ptr.()") => 
                 SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("bar_::A")), 1))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
-I8SRCTRIPLET
-B:0:anon_ptr.() = 0:A:0:anon_ptr.()") =>
-        [
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

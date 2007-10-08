@@ -29,12 +29,6 @@ I8SRCTRIPLET
 0:()") => 
                 SubSetRef( USE, FieldAccess( USE, NamedRef( USE, SymHandle("foo_::FIRST")), PARTS))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
-U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-X:0:anon_ptr.() = 0:()") =>
-        [
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

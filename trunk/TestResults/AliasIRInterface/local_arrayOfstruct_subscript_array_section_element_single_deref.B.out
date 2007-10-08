@@ -35,12 +35,6 @@ I8SRCTRIPLET
             MemRefHandle("J:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("foo_::J"))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
-U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-X:0:anon_ptr.() = 0:()") =>
-        [
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }

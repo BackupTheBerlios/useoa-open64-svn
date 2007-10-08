@@ -18,6 +18,12 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             MemRefHandle("X:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("foo_::X"))
         ] }
+    PTRASSIGNPAIRS = { StmtHandle("U8PSTID 0 <2,1,P> T<30,anon_ptr.,8>
+") =>
+        [
+            < Deref( DEF, NamedRef( USE, SymHandle("foo_::P")), 1)
+            , NamedRef( USE, SymHandle("foo_::X")) >
+        ] }
     MEMREFEXPRS = { StmtHandle("bar_(&P:0:anon_ptr.)") =>
         [
             MemRefHandle("&P:0:anon_ptr.") => 
