@@ -12,17 +12,8 @@ _ALLOCATE(&A:0:anon_ptr.(), &0)") =>
 &A:0:anon_ptr.()") => 
                 NamedRef( DEF, SymHandle("foo_::A"))
         ] }
-    CALLSITES = { StmtHandle("I8SRCTRIPLET
-_ALLOCATE(&A:0:anon_ptr.(), &0)") =>
-        [
-            CallHandle("I8SRCTRIPLET
-_ALLOCATE(&A:0:anon_ptr.(), &0)") => 
-                NamedRef( USE, SymHandle("foo_::_ALLOCATE"))
-        ] }I8SRCTRIPLET
-
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
     LOCATION = { < SymHandle("foo_::foo_"), not local > }
-    LOCATION = { < SymHandle("foo_::_ALLOCATE"), not local > }
     LOCATION = { < SymHandle("foo_::A"), local > }

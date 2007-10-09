@@ -707,4 +707,8 @@
  - Added Pointer AssignPairs for allocate statements. 
  - Regenerated AliasIRInterface outputs for allocate statements.
 
+10/08/07  UseOA-Open64 svn trunk 217 Priyadarshini Malusare
+ - Removed CALLSITEs for ALLOCATE statement.
+ - Regenerated TestCases for AliasIRInterface.
+
 

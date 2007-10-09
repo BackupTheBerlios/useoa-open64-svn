@@ -21,14 +21,8 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             < Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
             , AddressOf( USE, UnnamedRef( USE, ExprHandle("&P:0:anon_ptr.(3)"), 1, ProcHandle("arraypointer_::arraypointer_"))) >
         ] }
-    CALLSITES = { StmtHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)") =>
-        [
-            CallHandle("_ALLOCATE(&P:0:anon_ptr.(3), &0)") => 
-                NamedRef( USE, SymHandle("arraypointer_::_ALLOCATE"))
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
     LOCATION = { < SymHandle("arraypointer_::arraypointer_"), not local > }
-    LOCATION = { < SymHandle("arraypointer_::_ALLOCATE"), not local > }
     LOCATION = { < SymHandle("arraypointer_::P"), local > }

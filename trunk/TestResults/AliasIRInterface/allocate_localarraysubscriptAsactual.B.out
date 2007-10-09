@@ -10,14 +10,8 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
             MemRefHandle("&A:0:anon_ptr.(1)") => 
                 NamedRef( DEF, SymHandle("foo_::A"))
         ] }
-    CALLSITES = { StmtHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)") =>
-        [
-            CallHandle("_ALLOCATE(&A:0:anon_ptr.(1), &0)") => 
-                NamedRef( USE, SymHandle("foo_::_ALLOCATE"))
-        ] }
     MEMREFEXPRS = { StmtHandle("return") =>
         [
         ] }
     LOCATION = { < SymHandle("foo_::foo_"), not local > }
-    LOCATION = { < SymHandle("foo_::_ALLOCATE"), not local > }
     LOCATION = { < SymHandle("foo_::A"), local > }

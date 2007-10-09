@@ -23,14 +23,6 @@ _ALLOCATE(&P:0:anon_ptr.(), &0)") =>
             , AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
 &P:0:anon_ptr.()"), 1, ProcHandle("arraypointer_::arraypointer_"))) >
         ] }
-    CALLSITES = { StmtHandle("I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)") =>
-        [
-            CallHandle("I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)") => 
-                NamedRef( USE, SymHandle("arraypointer_::_ALLOCATE"))
-        ] }I8SRCTRIPLET
-
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [
         ] }
@@ -41,5 +33,4 @@ _ALLOCATE(&P:0:anon_ptr.(), &0)") =>
         [
         ] }
     LOCATION = { < SymHandle("arraypointer_::arraypointer_"), not local > }
-    LOCATION = { < SymHandle("arraypointer_::_ALLOCATE"), not local > }
     LOCATION = { < SymHandle("arraypointer_::P"), local > }
