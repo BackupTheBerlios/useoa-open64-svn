@@ -1,0 +1,12 @@
+getDefMREs:
+mre: 
+
+SubSetRef(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::P)
+    )
+)
+

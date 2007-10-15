@@ -165,6 +165,15 @@ static int
 TestIR_OAAssignPair(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
 
+static int
+getUseMREs(std::ostream& os, PU_Info* pu_forest);
+
+static int
+getDefMREs(std::ostream& os, PU_Info* pu_forest);
+
+static int
+getDiffUseMREs(std::ostream& os, PU_Info* pu_forest);
+
 //***************************************************************************
 
 int
@@ -220,9 +229,21 @@ main(int argc, char* argv[])
   OA::OA_ptr<Open64IRInterface> irInterface; 
   irInterface = new Open64IRInterface();
   Open64IRInterface::initContextState(pu_forest);
-  
+ 
   switch (args.runMode)
   {
+    case 34:
+      // Use MemRefExprs
+      getUseMREs(std::cout, pu_forest);
+      break;
+    case 35:
+      // Def MemRefExprs
+      getDefMREs(std::cout, pu_forest);
+      break;
+    case 36:
+      // Def MemRefExprs
+      getDiffUseMREs(std::cout, pu_forest);
+      break;
     case 2:
       // MemRefExpr
       FindMemRefExprInEachPU(std::cout, pu_forest);
@@ -246,8 +267,8 @@ main(int argc, char* argv[])
       {
         std::string dotFileNm = args.whirlFileNm;
         TestIR_OAICFG(std::cout, pu_forest, irInterface,dotFileNm);
+        break;
       }
-      break;
     case 21: // ICFGActivity
       TestIR_OAICFGActivity(std::cout, pu_forest, irInterface);
       break;
@@ -2060,6 +2081,110 @@ TestIR_OALinearity(std::ostream& os, PU_Info* pu,
 }
 
 
+
+static int
+getUseMREs(std::ostream& os, PU_Info* pu_forest)
+{
+
+  std::cout << "getUseMREs:\n";
+  OA::OA_ptr<Open64IRInterface> ir; ir = new Open64IRInterface();
+
+  Open64IRProcIterator procIt(pu_forest);
+  for ( ; procIt.isValid(); ++procIt) {
+
+    // The PU_Info* for this PU
+    PU_Info* pu = (PU_Info*)procIt.current().hval();
+    OA::ProcHandle proc((OA::irhandle_t)pu);
+
+    // for each statement stmt
+    //   for each memory reference in stmt
+    //     for each mem-ref-expr for the memory reference
+    //        output information about the memory reference expressions
+    OA::OA_ptr<OA::IRStmtIterator> sIt = ir->getStmtIterator(proc);
+    for ( ; sIt->isValid(); (*sIt)++) {
+      OA::StmtHandle stmt = sIt->current();
+      OA::OA_ptr<OA::MemRefExprIterator> mreIterPtr;
+      mreIterPtr = ir->getUseMREs(stmt);
+      for( ; mreIterPtr->isValid(); ++(*mreIterPtr)) {
+          OA::OA_ptr<OA::MemRefExpr> mre = mreIterPtr->current();
+          std::cout << "mre: " << std::endl;  
+          mre->output(*ir);
+          std::cout << std::endl;
+      }
+    }
+  }
+  return 0;
+}
+
+
+static int
+getDefMREs(std::ostream& os, PU_Info* pu_forest)
+{
+
+  std::cout << "getDefMREs:\n";
+  OA::OA_ptr<Open64IRInterface> ir; ir = new Open64IRInterface();
+
+  Open64IRProcIterator procIt(pu_forest);
+  for ( ; procIt.isValid(); ++procIt) {
+
+    // The PU_Info* for this PU
+    PU_Info* pu = (PU_Info*)procIt.current().hval();
+    OA::ProcHandle proc((OA::irhandle_t)pu);
+
+    // for each statement stmt
+    //   for each memory reference in stmt
+    //     for each mem-ref-expr for the memory reference
+    //        output information about the memory reference expressions
+    OA::OA_ptr<OA::IRStmtIterator> sIt = ir->getStmtIterator(proc);
+    for ( ; sIt->isValid(); (*sIt)++) {
+      OA::StmtHandle stmt = sIt->current();
+      OA::OA_ptr<OA::MemRefExprIterator> mreIterPtr;
+      mreIterPtr = ir->getDefMREs(stmt);
+      for( ; mreIterPtr->isValid(); ++(*mreIterPtr)) {
+          OA::OA_ptr<OA::MemRefExpr> mre = mreIterPtr->current();
+          std::cout << "mre: " << std::endl;
+          mre->output(*ir);
+          std::cout << std::endl;
+      }
+    }
+  }
+  return 0;
+}
+
+
+static int
+getDiffUseMREs(std::ostream& os, PU_Info* pu_forest)
+{
+
+  std::cout << "getDiffUseMREs:\n";
+  OA::OA_ptr<Open64IRInterface> ir; ir = new Open64IRInterface();
+
+  Open64IRProcIterator procIt(pu_forest);
+  for ( ; procIt.isValid(); ++procIt) {
+
+    // The PU_Info* for this PU
+    PU_Info* pu = (PU_Info*)procIt.current().hval();
+    OA::ProcHandle proc((OA::irhandle_t)pu);
+
+    // for each statement stmt
+    //   for each memory reference in stmt
+    //     for each mem-ref-expr for the memory reference
+    //        output information about the memory reference expressions
+    OA::OA_ptr<OA::IRStmtIterator> sIt = ir->getStmtIterator(proc);
+    for ( ; sIt->isValid(); (*sIt)++) {
+       OA::StmtHandle stmt = sIt->current();
+       OA::OA_ptr<OA::MemRefExprIterator> mreIterPtr;
+       mreIterPtr = ir->getDiffUseMREs(stmt);
+       for( ; mreIterPtr->isValid(); ++(*mreIterPtr)) {
+          OA::OA_ptr<OA::MemRefExpr> mre = mreIterPtr->current();
+          std::cout << "mre: " << std::endl;
+          mre->output(*ir);
+          std::cout << std::endl;
+       }
+    }
+  }
+  return 0;
+}
 
 //***************************************************************************
 // just seeing if various calls to graph methods compile, tricky because

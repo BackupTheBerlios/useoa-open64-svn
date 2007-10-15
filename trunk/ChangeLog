@@ -716,4 +716,10 @@
   - Added TestCase Select_1 (contains switch) into AliasIRInterface.
   - Added ExprHandle for Index Expressions of OPR_ARRAY node
   - regenerated ExprTree and AssignPair output for the Index Expressions.
-  
+ 
+10/15/07  UseOA-Open64 svn trunk 220 Priyadarshini Malusare
+  - Added Driver, TestCases, TestResults and testscripts for 
+    getUseMREs, getDefMREs and getDiffUseMREs.
+
+
+
