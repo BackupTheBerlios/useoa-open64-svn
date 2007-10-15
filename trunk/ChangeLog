@@ -711,4 +711,9 @@
  - Removed CALLSITEs for ALLOCATE statement.
  - Regenerated TestCases for AliasIRInterface.
 
-
+10/14/07  UseOA-Open64 svn trunk 219 Priyadarshini Malusare
+  - Added MemRefExprfor OPR SWITCH, OPR_CASEGOTO, OPR_GOTO, OPR_LABEL
+  - Added TestCase Select_1 (contains switch) into AliasIRInterface.
+  - Added ExprHandle for Index Expressions of OPR_ARRAY node
+  - regenerated ExprTree and AssignPair output for the Index Expressions.
+  

@@ -72,6 +72,20 @@ graph EXPRESSION TREE:
         Node 2: ET MemRefNode ( 0:X:0:anon_ptr.(2) )
 
 
+2. ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+3. ExprHandle: 2
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 2 )
+
+
 ==> MemRefHandle:T:0:.predef_F8
 	mre: 
 
@@ -136,6 +150,13 @@ graph EXPRESSION TREE:
         Node 1: ET MemRefNode ( &T:0:.predef_F8 )
 
 
+2. ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
 ==> MemRefHandle:Y:0:anon_ptr.(1)
 	mre: 
 
@@ -181,6 +202,13 @@ graph EXPRESSION TREE:
     Edge: 
         0 => 
         Node 1: ET MemRefNode ( &T:0:.predef_F8 )
+
+
+2. ExprHandle: 2
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 2 )
 
 
 ==> MemRefHandle:Y:0:anon_ptr.(2)

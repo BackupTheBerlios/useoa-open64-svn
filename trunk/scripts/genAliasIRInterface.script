@@ -404,3 +404,5 @@ echo "Generating TestResults/AliasIRInterface/local_structPointer_scalar_element
 ./FORTRANtoOA TestCases/Alias/local_structPointer_scalar_element_double_deref.B > TestResults/AliasIRInterface/local_structPointer_scalar_element_double_deref.B.out
 echo "Generating TestResults/AliasIRInterface/local_structPointer_array_subscript_element_double_deref.B.out"
 ./FORTRANtoOA TestCases/Alias/local_structPointer_array_subscript_element_double_deref.B > TestResults/AliasIRInterface/local_structPointer_array_subscript_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/Select_1.B.out"
+./FORTRANtoOA TestCases/Alias/Select_1.B > TestResults/AliasIRInterface/Select_1.B.out

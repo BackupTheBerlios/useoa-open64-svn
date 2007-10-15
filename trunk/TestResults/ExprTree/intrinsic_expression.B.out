@@ -25,6 +25,20 @@ graph EXPRESSION TREE:
     Node 0: ET MemRefNode ( 0:X:0:anon_ptr.(1) )
 
 
+==> ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+==> ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
 ============================================
 StmtHandle: I:0:.predef_I4 = INT(&0:X:0:anon_ptr.(1)+   -1.000000000000000, &1)+1
 
@@ -51,6 +65,13 @@ graph EXPRESSION TREE:
     Edge: 
         0 => 
         Node 6: ET ConstValNode ( 1 )
+
+
+==> ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
 
 
 ============================================

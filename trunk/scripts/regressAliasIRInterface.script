@@ -810,3 +810,7 @@ echo "Testing TestCases/Alias/local_structPointer_array_subscript_element_double
 ./FORTRANtoOA TestCases/Alias/local_structPointer_array_subscript_element_double_deref.B > t
 diff t TestResults/AliasIRInterface/local_structPointer_array_subscript_element_double_deref.B.out
 
+echo "Testing TestCases/Alias/Select_1.B, TestResults/AliasIRInterface/Select_1.B.out checked by PLM 10/14/07"
+./FORTRANtoOA TestCases/Alias/Select_1.B > t
+diff t TestResults/AliasIRInterface/Select_1.B.out
+
