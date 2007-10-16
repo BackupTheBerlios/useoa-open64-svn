@@ -1,0 +1,193 @@
+ $in  alpha=    1.0000000000000, itmax=  10, sstol=    1.0000000000000D-07
+ , nprint=  10, delta=    1.0000000000000D-05, kprint=  0, icont=  0, xend=  0.
+ , xincr=  0.
+ $end
+ $outv  xmach=    5.0170000000000, theta1=    1.0210176408291, gamma=
+     1.4000000000000, mc=  10, nc=  6, qinc=    5.9361944543622, dinc=
+     1.0000000000000, pinc=    1.0000000000000, einc=    2.5000000000000, htot=
+     21.119202300000, swall=    1.1193305981385, dstag=    5.4478596349818, dx=
+    0.20000000298023, dy=   0.11111111193895
+ $end
+
+ formeq time in seconds=    2.0700
+
+ icband time in seconds=    1.5700
+
+
+
+
+
+
+
+
+
+
+ iteration number=    1          with alpha=    1.0000
+
+
+
+ maximum iteration error =    4.607952E-01          max equation value=   3.609736E+02
+
+ formeq time in seconds=    1.7700
+
+ icband time in seconds=    1.4700
+
+
+
+
+
+
+
+
+
+
+ iteration number=    2          with alpha=    1.0000
+
+
+
+ maximum iteration error =    9.315317E-01          max equation value=   1.111052E+02
+
+ formeq time in seconds=    1.6900
+
+ icband time in seconds=    1.4600
+
+
+
+
+
+
+
+
+
+
+ iteration number=    3          with alpha=    1.0000
+
+
+
+ maximum iteration error =    3.698589E-01          max equation value=   8.107120E+01
+
+ formeq time in seconds=    1.7600
+
+ icband time in seconds=    1.5300
+
+
+
+
+
+
+
+
+
+
+ iteration number=    4          with alpha=    1.0000
+
+
+
+ maximum iteration error =    1.565073E-01          max equation value=   1.188527E+01
+
+ formeq time in seconds=    1.8100
+
+ icband time in seconds=    1.5300
+
+
+
+
+
+
+
+
+
+
+ iteration number=    5          with alpha=    1.0000
+
+
+
+ maximum iteration error =    1.913260E-02          max equation value=   1.676756E+00
+
+ formeq time in seconds=    1.7900
+
+ icband time in seconds=    1.5500
+
+
+
+
+
+
+
+
+
+
+ iteration number=    6          with alpha=    1.0000
+
+
+
+ maximum iteration error =    5.400082E-04          max equation value=   3.441440E-02
+
+ formeq time in seconds=    1.7300
+
+ icband time in seconds=    1.4700
+
+
+
+
+
+
+
+
+
+
+ iteration number=    7          with alpha=    1.0000
+
+
+
+ maximum iteration error =    2.977171E-07          max equation value=   2.176054E-05
+
+ formeq time in seconds=    1.7400
+
+ icband time in seconds=    1.4800
+
+
+
+
+
+
+
+
+
+
+ iteration number=    8          with alpha=    1.0000
+
+
+
+ maximum iteration error =    1.232671E-13          max equation value=   6.480150E-12
+
+
+
+
+
+ steady state reached
+1 iteration history
+
+
+
+
+
+ it      error max      eqn error      erconv ratio
+
+
+    1     4.6080E-01     3.6097E+02     0.0000E+00
+
+    2     9.3153E-01     1.1111E+02     4.3871E+00
+
+    3     3.6986E-01     8.1071E+01     4.2623E-01
+
+    4     1.5651E-01     1.1885E+01     1.1441E+00
+
+    5     1.9133E-02     1.6768E+00     7.8110E-01
+
+    6     5.4001E-04     3.4414E-02     1.4752E+00
+
+    7     2.9772E-07     2.1761E-05     1.0209E+00
+
+    8     1.2327E-13     6.4801E-12     1.3907E+00
+

@@ -1,0 +1,33 @@
+Chris:
+
+Here is a package of stuff that constitutes a two dimensional
+CFD solver utlizing Newton's method with a finite difference Jacobian and direct
+(banded) linear algebra.  The package includes:
+
+1. The fortran code.  It should compile correctly under f77 on a Sun
+Sparcstation, giving only some warnings about performance degradation due to
+alignment.  Note:  this code is not for public distribution.
+Also note that this code is 10+ years old, and passes virtually everything
+through common (a not "uncommon" procedure, even today, in the CFD world).
+It is not a Boeing application code, but should be reasonably representative
+of a Newton-based flow solver.
+
+2. An input file that is read in as unit 5 (standard input).
+
+3.  Another input file (a bunch of initialization data) that is read in as
+unit 11 (fort.11).
+
+4.  An output file that shows what a correct execution with the given input
+produces.  Execution takes about 1 minute with a sparc-1 cpu.
+
+As you will see, the jacobian computation is done by NUMJAC, and the "function
+evaluator" is FORMEQ.  The dependent variables are EQ, and the independent
+variables are U.  The jacobian is stored in a banded format that is explained in
+the header of NUMJAC.
+
+I will be out of town Oct 22-25, back at work Oct 28.
+
+Thanks...Greg Shubin
+
+
+fortran code follows:
