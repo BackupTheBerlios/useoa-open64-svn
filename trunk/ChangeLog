@@ -721,5 +721,13 @@
   - Added Driver, TestCases, TestResults and testscripts for 
     getUseMREs, getDefMREs and getDiffUseMREs.
 
+10/16/07  UseOA-Open64 svn trunk 222 Priyadarshini Malusare
+  - Created branch for ICFGActivity profile information.
+  - Modified Makefile
+  - Added MITgcm benchmark for ICFGActivity,
+    i.e. ad_input_code_sf.w2f.canon_Jean
+  - created new directory profile that can store profile output
+    of various benchmark for ICFGActivity analysis
+
 
 
