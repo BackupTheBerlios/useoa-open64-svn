@@ -1,0 +1,71 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/complex_statement.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: X:0:.predef_I4 = TRUNC(OPC_F4I4CVT(Y:0:.predef_I4)+Z:0:.predef_F4)
+
+==> ExprHandle: TRUNC(OPC_F4I4CVT(Y:0:.predef_I4)+Z:0:.predef_F4)
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( TRUNC() )
+    Edge: 
+        0 => 
+        Node 1: ET OpNode ( + )
+        Edge: 
+            1 => 
+            Node 2: ET MemRefNode ( Y:0:.predef_I4 )
+        Edge: 
+            1 => 
+            Node 3: ET MemRefNode ( Z:0:.predef_F4 )
+
+
+============================================
+StmtHandle: return
+
+============================================
+StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: bar_(&C:0:.predef_I4, &A:0:.predef_I4+B:0:.predef_I4, &D:0:.predef_I4)
+
+==> ExprHandle: &C:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &C:0:.predef_I4 )
+
+
+==> ExprHandle: &A:0:.predef_I4+B:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &A:0:.predef_I4+B:0:.predef_I4 )
+
+
+==> ExprHandle: A:0:.predef_I4+B:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( A:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( B:0:.predef_I4 )
+
+
+==> ExprHandle: &D:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &D:0:.predef_I4 )
+
+
+============================================
+StmtHandle: return
+

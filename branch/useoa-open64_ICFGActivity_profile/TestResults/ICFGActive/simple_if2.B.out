@@ -1,0 +1,71 @@
+
+InterActive(
+    Procedure( head_::head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::A)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(head_::B)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(head_::C)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(A:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000)
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(C:0:.predef_F8 = -A:0:.predef_F8)
+                StmtHandle(Y:0:.predef_F8 = C:0:.predef_F8+B:0:.predef_F8*    3.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8) ] 
+    )
+    mNumIterUseful: 2
+    mNumIterVary: 2
+    mNumIterActive: 1
+)
+
+
+Total Iters: 6

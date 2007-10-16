@@ -1,0 +1,32 @@
+getDiffUseMREs:
+mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    SubSetRef(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::T)
+        )
+    )
+)
+
+mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::P)
+        )
+        mNumDeref: 1
+    )
+)
+

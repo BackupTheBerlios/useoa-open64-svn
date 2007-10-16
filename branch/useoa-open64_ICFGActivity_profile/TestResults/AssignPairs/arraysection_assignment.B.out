@@ -1,0 +1,174 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/arraysection_assignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : I8SRCTRIPLET
+I8SRCTRIPLET
+B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+
+==> AssignPairs : 
+
+1. mref = I8SRCTRIPLET
+B:0:anon_ptr.(), 	expr = I8SRCTRIPLET
+0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: I8SRCTRIPLET
+0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+I8SRCTRIPLET
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET MemRefNode ( 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.()) )
+
+
+==> MemRefHandle:I8SRCTRIPLET
+B:0:anon_ptr.()
+	mre: 
+
+SubSetRef(
+    mMemRefType: DEF
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::B)
+        )
+        mNumDeref: 1
+    )
+)
+
+==> MemRefHandle:I8SRCTRIPLET
+0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+	mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::A)
+        )
+        mNumDeref: 1
+    )
+)
+
+==> MemRefHandle:I8SRCTRIPLET
+0:VECTOR:0:anon_ptr.()
+	mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::VECTOR)
+    )
+)
+
+========================================================
+
+stmt : I8SRCTRIPLET
+I8SRCTRIPLET
+A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+
+==> AssignPairs : 
+
+1. mref = I8SRCTRIPLET
+A:0:anon_ptr.(), 	expr = I8SRCTRIPLET
+0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: I8SRCTRIPLET
+0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+I8SRCTRIPLET
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET MemRefNode ( 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.()) )
+
+
+==> MemRefHandle:I8SRCTRIPLET
+A:0:anon_ptr.()
+	mre: 
+
+SubSetRef(
+    mMemRefType: DEF
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::A)
+        )
+        mNumDeref: 1
+    )
+)
+
+==> MemRefHandle:I8SRCTRIPLET
+0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+	mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::B)
+        )
+        mNumDeref: 1
+    )
+)
+
+==> MemRefHandle:I8SRCTRIPLET
+0:t__1:0:anon_ptr.()
+	mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::t__1)
+    )
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+

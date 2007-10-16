@@ -1,0 +1,10 @@
+you can get OpenAnalysis debugging by setting the OA_DEBUG
+environment variable:
+
+setenv OA_DEBUG "DEBUG_ManagerSideEffectStandard:DEBUG_CalleeToCallerVisitor"
+
+turns on debugging in the SideEffectManager and the CalleeToCallerVisitor.
+
+You can find these DEBUG_* defines in the constructors of OpenAnalysis
+classes.
+

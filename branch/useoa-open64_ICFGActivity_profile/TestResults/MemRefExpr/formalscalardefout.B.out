@@ -1,0 +1,34 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/formalscalardefout.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: X:0:.predef_F8 = T2:0:.predef_F8
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::X)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::T2)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return

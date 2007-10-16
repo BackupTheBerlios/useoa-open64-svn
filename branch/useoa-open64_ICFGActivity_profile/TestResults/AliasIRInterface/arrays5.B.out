@@ -1,0 +1,50 @@
+
+PROCEDURE = { < ProcHandle("conj_grad_::conj_grad_"), SymHandle("conj_grad_::conj_grad_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("conj_grad_::X") >
+            < 1, SymHandle("conj_grad_::R") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/arrays5.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("do_loop (J:0:.predef_I4<=10)") =>
+        [
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("conj_grad_::J"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = 1") =>
+        [
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("conj_grad_::J"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("J:0:.predef_I4 = J:0:.predef_I4+1") =>
+        [
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("conj_grad_::J"))
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("conj_grad_::J"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4)") =>
+        [
+            MemRefHandle("R:0:anon_ptr.(J:0:.predef_I4)") => 
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("conj_grad_::R")), 1))
+            MemRefHandle("0:X:0:anon_ptr.(J:0:.predef_I4)") => 
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("conj_grad_::X")), 1))
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("conj_grad_::J"))
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("conj_grad_::J"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("conj_grad_::conj_grad_"), not local > }
+    LOCATION = { < SymHandle("conj_grad_::X"), local > }
+    LOCATION = { < SymHandle("conj_grad_::R"), local > }
+    LOCATION = { < SymHandle("conj_grad_::J"), local > }

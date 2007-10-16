@@ -1,0 +1,56 @@
+getUseMREs:
+mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::FIRSTPTR)
+)
+
+mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::FIRST)
+)
+
+mre: 
+
+FieldAccess(
+    mMemRefType: USE
+    mMRE: 
+    Deref(
+        mMemRefType: USE
+        mMRE: 
+        Deref(
+            mMemRefType: USE
+            mMRE: 
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::FIRSTPTR)
+            )
+            mNumDeref: 1
+        )
+        mNumDeref: 1
+    )
+    mFieldName: LABOR
+)
+
+mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::FIRSTPTR)
+    )
+    mNumDeref: 1
+)
+
+mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::FIRSTPTR)
+)
+
