@@ -1,8 +1,0 @@
-AD_PROG  = aifl.cmp
-AD_TOP   = aifl
-AD_IVARS = pipe, pressure
-AD_OVARS = liquid
-AD_PMAX  = 11
-AD_OUTPUT_DIR = 2in1out
-AD_FLAVOR = dense
-AD_EXCEPTION_FLAVOR = reportonce

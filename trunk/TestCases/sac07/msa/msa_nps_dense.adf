@@ -1,7 +1,0 @@
-AD_PROG       = msa_nps.cmp
-AD_TOP        = dmsamain
-AD_IVARS      = x
-AD_OVARS      = f
-AD_OUTPUT_DIR = nps_dense
-AD_PMAX       = 16
-AD_EXCEPTION_FLAVOR = performance

@@ -1,9 +1,0 @@
-boeing1 : nnn.o contin.o inside.o numjac.o shock.o tran.o endit.o jacob.o out.o single.o update.o machcon.o plotit.o eval.o printa.o mmm.o subs.o var.o formeq.o mshk.o history.o rth.o substh.o wall.o icband.o mwall.o s.o init.o nnn.0.o saveit.o driver1.o
-	f77 $(FFLAGS) -o boeing1 nnn.o contin.o inside.o numjac.o shock.o tran.o endit.o jacob.o out.o single.o update.o machcon.o plotit.o eval.o printa.o mmm.o subs.o var.o formeq.o mshk.o history.o rth.o substh.o wall.o icband.o mwall.o s.o init.o nnn.0.o saveit.o driver1.o
-
-boeing2 : coloring.o inside.1.o nnn.o shock.5.o tran.204.o contin.o out.o update.o eval.240.o plotit.o subs.4.o var.144.o mmm.8.o printa.o subs.6.o var.252.o formeq.2.o rth.16.o rth.20.o substh.6.o wall.5.o mwall.8.o icband.o init.o nnn.0.o tran.140.o driver2.o endit.o rth.o var.o s.o machcon.o history.o subs.o saveit.o
-	f77 $(FFLAGS) -o boeing2 coloring.o inside.1.o nnn.o shock.5.o tran.204.o contin.o out.o update.o eval.240.o plotit.o subs.4.o var.144.o mmm.8.o printa.o subs.6.o var.252.o formeq.2.o rth.16.o rth.20.o substh.6.o wall.5.o mwall.8.o icband.o init.o nnn.0.o tran.140.o driver2.o endit.o rth.o var.o s.o machcon.o saveit.o subs.o history.o
-
-boeing3 : coloring.o inside.1.o nnn.o shock.5.o tran.204.o contin.o out.o update.o eval.240.o plotit.o subs.4.o var.144.o mmm.8.o printa.o subs.6.o var.252.o formeq.2.o rth.16.o rth.20.o substh.6.o wall.5.o mwall.8.o icband.o init.o nnn.0.o tran.140.o driver3.o endit.o rth.o var.o s.o machcon.o subs.o saveit.o history.o
-	f77 $(FFLAGS) -o boeing3 coloring.o inside.1.o nnn.o shock.5.o tran.204.o contin.o out.o update.o eval.240.o plotit.o subs.4.o var.144.o mmm.8.o printa.o subs.6.o var.252.o formeq.2.o rth.16.o rth.20.o substh.6.o wall.5.o mwall.8.o icband.o init.o nnn.0.o tran.140.o driver3.o endit.o rth.o var.o s.o machcon.o subs.o saveit.o history.o
-

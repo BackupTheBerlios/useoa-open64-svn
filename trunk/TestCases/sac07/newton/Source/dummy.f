@@ -1,4 +1,0 @@
-      PROGRAM MAIN
-      DOUBLE PRECISION X(2),Y(2)
-      CALL FUNC(X,Y)
-      END
