@@ -1,0 +1,166 @@
+C                           DISCLAIMER
+C
+C   This file was generated on 11/12/98 by the version of
+C   ADIFOR compiled on June, 1998.
+C
+C   ADIFOR was prepared as an account of work sponsored by an
+C   agency of the United States Government, Rice University, and
+C   the University of Chicago.  NEITHER THE AUTHOR(S), THE UNITED
+C   STATES GOVERNMENT NOR ANY AGENCY THEREOF, NOR RICE UNIVERSITY,
+C   NOR THE UNIVERSITY OF CHICAGO, INCLUDING ANY OF THEIR EMPLOYEES
+C   OR OFFICERS, MAKES ANY WARRANTY, EXPRESS OR IMPLIED, OR ASSUMES
+C   ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE ACCURACY, COMPLETE-
+C   NESS, OR USEFULNESS OF ANY INFORMATION OR PROCESS DISCLOSED, OR
+C   REPRESENTS THAT ITS USE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS.
+C
+C
+      subroutine g_dnsty(g_p_, jw, flag)
+C     *************************
+C
+C         SETS PTPEN(JW,5) = STREAM DENSITY (LB/CU FT) FOR PROCESS
+C         POINT JW (IN UNIT LIST). ASSUMES TEMP IN PTPEN(JW,2), FLOWS
+C         IN WEN(JW,I) AND --
+C           IF FLAG = -1.0 - VAPOR-LIQUID MIX AT PRESSURE IN PTPEN(JW,1)
+C              FLAG =  0.0 - SATURATED LIQUID
+C              FLAG =  1.0 - VAPOR, AT PRESSURE IN PTPEN(JW,1)
+C
+C         WRITTEN BY R.R. HUGHES             EES IDENT  SP/DNS
+C              LAST REVISION APRIL 26, 1974
+C
+        common /unpt/ jout, kntrl, kflag, ncps, nptp, ncst, nrec, nen, w
+     *ten(5), wen(5, 12), ptpen(5, 6), cost(5), en(100), ktln(15)
+C     COMMON /ACT/ WTEN(5),WEN(5,12),PTPEN(5,6),COST(5),EN(100)
+C     COMMON /UNACT/ JOUT,KNTRL,KFLAG,NPTP,NCST,NREC,NEN,NCPS,KTLN(15)
+        common /flos/ fv(12), fl(12), fw(12)
+        common /qp/ csxx(12, 28), anamc(12, 6)
+        integer g_pmax_
+        parameter (g_pmax_ = 11)
+        integer g_i_, g_p_, g_jout(g_pmax_), g_kntrl(g_pmax_), g_kflag(g
+     *_pmax_), g_ncps(g_pmax_), g_nptp(g_pmax_), g_ncst(g_pmax_), g_nrec
+     *(g_pmax_), g_nen(g_pmax_)
+        integer g_ktln(g_pmax_, 15)
+        real r5_v, r6_b, r3_b, r3_v, r2_b, g_ptpen(g_pmax_, 5, 6), g_vm(
+     *g_pmax_), g_gasres(g_pmax_), g_liqres(g_pmax_), g_fl(g_pmax_, 12)
+        real g_wen(g_pmax_, 5, 12), g_fv(g_pmax_, 12), g_wten(g_pmax_, 5
+     *), g_cost(g_pmax_, 5), g_en(g_pmax_, 100), g_fw(g_pmax_, 12)
+        common /g_unpt/ g_jout, g_kntrl, g_kflag, g_ncps, g_nptp, g_ncst
+     *, g_nrec, g_nen, g_wten, g_wen, g_ptpen, g_cost, g_en, g_ktln
+        common /g_flos/ g_fv, g_fl, g_fw
+        integer g_ehfid
+        save g_vm, g_gasres, g_liqres, /g_unpt/, /g_flos/
+        external g_vmliq
+        external g_vmgas
+        external g_iflash
+        external g_wtmol
+        data wtol /1.e-10/, vtol /1.e-6/
+C+@+@+@+@@@@@@@+@+@+@+@+@@+@+@@+@@@@@@@@@@@@@@@@@@@@@@@@
+        real gasres, liqres
+C
+C         CHECK FLOWS,- IF ALL ARE ZERO, SET DENSITY AT ZERO AND RETURN
+        data g_ehfid /0/
+C
+        call ehsfid(g_ehfid, 'dnsty','g_dnsty.f')
+C
+        if (g_p_ .gt. g_pmax_) then
+          print *, 'Parameter g_p_ is greater than g_pmax_'
+          stop
+        endif
+        if (wten(jw) .gt. wtol .and. ptpen(jw, 6) .gt. wtol) then
+          goto 10
+        endif
+        call g_wtmol(g_p_, jw)
+        if (wten(jw) .gt. wtol) then
+          goto 10
+        endif
+        do g_i_ = 1, g_p_
+          g_ptpen(g_i_, jw, 5) = 0.0
+        enddo
+        ptpen(jw, 5) = 0.
+C--------
+        goto 900
+C
+C         SET UP PHASE CONTROL
+10      klag = ifix(flag + 2.1)
+        klag = min0(3, max0(1, klag))
+C              DETERMINE THE STATE OF THE STREAM
+20      goto (100, 200, 300), klag
+C
+C         GENERAL CASE:  VAPOR + LIQUID
+100     call g_iflash(g_p_, jw)
+        if (ptpen(jw, 4) .lt. vtol) then
+          goto 200
+        endif
+        if (ptpen(jw, 4) .gt. (1. - vtol)) then
+          goto 300
+        endif
+C+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@
+        call g_vmgas(g_p_, fv, g_fv, g_pmax_, ptpen(jw, 2), g_ptpen(1, j
+     *w, 2), g_pmax_, ptpen(jw, 1), g_ptpen(1, jw, 1), g_pmax_, gasres, 
+     *g_gasres, g_pmax_)
+        call g_vmliq(g_p_, fl, g_fl, g_pmax_, ptpen(jw, 2), g_ptpen(1, j
+     *w, 2), g_pmax_, liqres, g_liqres, g_pmax_)
+        r5_v = 1. - ptpen(jw, 4)
+        r6_b = -liqres + gasres
+        do g_i_ = 1, g_p_
+          g_vm(g_i_) = ptpen(jw, 4) * g_gasres(g_i_) + r6_b * g_ptpen(g_
+     *i_, jw, 4) + r5_v * g_liqres(g_i_)
+        enddo
+        vm = gasres * ptpen(jw, 4) + liqres * r5_v
+C--------
+        r3_v = ptpen(jw, 6) / vm
+        r2_b = 1.0 / vm
+        r3_b = (-r3_v) / vm
+        do g_i_ = 1, g_p_
+          g_ptpen(g_i_, jw, 5) = r2_b * g_ptpen(g_i_, jw, 6) + r3_b * g_
+     *vm(g_i_)
+        enddo
+        ptpen(jw, 5) = r3_v
+C--------
+        goto 900
+C
+C         ALL LIQUID
+200     do 99999 i = 1, ncps
+260       do g_i_ = 1, g_p_
+            g_fl(g_i_, i) = g_wen(g_i_, jw, i)
+          enddo
+          fl(i) = wen(jw, i)
+C--------
+99999   continue
+C+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@@+@@+@+@+@
+        call g_vmliq(g_p_, fl, g_fl, g_pmax_, ptpen(jw, 2), g_ptpen(1, j
+     *w, 2), g_pmax_, liqres, g_liqres, g_pmax_)
+        r3_v = ptpen(jw, 6) / liqres
+        r2_b = 1.0 / liqres
+        r3_b = (-r3_v) / liqres
+        do g_i_ = 1, g_p_
+          g_ptpen(g_i_, jw, 5) = r2_b * g_ptpen(g_i_, jw, 6) + r3_b * g_
+     *liqres(g_i_)
+        enddo
+        ptpen(jw, 5) = r3_v
+C--------
+        goto 900
+C
+C         ALL VAPOR
+300     do 99998 i = 1, ncps
+360       do g_i_ = 1, g_p_
+            g_fv(g_i_, i) = g_wen(g_i_, jw, i)
+          enddo
+          fv(i) = wen(jw, i)
+C--------
+99998   continue
+C+@+@+@+@+@+@++@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@
+        call g_vmgas(g_p_, fv, g_fv, g_pmax_, ptpen(jw, 2), g_ptpen(1, j
+     *w, 2), g_pmax_, ptpen(jw, 1), g_ptpen(1, jw, 1), g_pmax_, gasres, 
+     *g_gasres, g_pmax_)
+        r3_v = ptpen(jw, 6) / gasres
+        r2_b = 1.0 / gasres
+        r3_b = (-r3_v) / gasres
+        do g_i_ = 1, g_p_
+          g_ptpen(g_i_, jw, 5) = r2_b * g_ptpen(g_i_, jw, 6) + r3_b * g_
+     *gasres(g_i_)
+        enddo
+        ptpen(jw, 5) = r3_v
+C--------
+C
+900     return
+      end

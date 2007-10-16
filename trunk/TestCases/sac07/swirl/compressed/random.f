@@ -1,0 +1,37 @@
+      FUNCTION RAN(ISEED)
+      INTEGER IA,IC,IM,ISEED
+      REAL RAN
+      PARAMETER(IA=7141,IC=54773,IM=259200)
+      ISEED=MOD(ISEED*IA+IC,IM)
+      RAN=FLOAT(ISEED)/FLOAT(IM)
+      RETURN
+      END
+ 
+
+
+
+      FUNCTION RAN0(IDUM)
+      INTEGER IDUM,IFF,J,ISEED
+      REAL RAN0,RAN,V,Y,DUM
+      DIMENSION V(97)
+      DATA IFF /0/
+      IF(IDUM.LT.0.OR.IFF.EQ.0)THEN
+        IFF=1
+        ISEED=ABS(IDUM)
+        IDUM=1
+        DO 11 J=1,97
+          DUM=RAN(ISEED)
+11      CONTINUE
+        DO 12 J=1,97
+          V(J)=RAN(ISEED)
+12      CONTINUE
+        Y=RAN(ISEED)
+      ENDIF
+      J=1+INT(97.*Y)
+      IF(J.GT.97.OR.J.LT.1)PAUSE
+      Y=V(J)
+      RAN0=Y
+      V(J)=RAN(ISEED)
+      RETURN
+      END
+
