@@ -1,0 +1,282 @@
+
+InterActive(
+    Procedure( g$rbes$22_::g$rbes$22_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::AJ)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::AY)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::BJ)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::BY)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::C)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::CZ)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::DELF)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::FACTOR)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::R$0)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::R$1)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::SZ)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::TERM)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::U)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::ZINV)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(g$rbes$22_::ZSQ)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(g$rbes$22_::Z)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(g$rbes$22_::ZJN)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(g$rbes$22_::ZYN)
+                    )
+                    mNumDeref: 1
+                )
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(G$SZ:0:anon_ptr.(G$I$:0:.predef_I4) = 0:G$Z:0:anon_ptr.(G$I$:0:.predef_I4)*COS(&Z:0:.predef_F4))
+                StmtHandle(SZ:0:.predef_F4 = SIN(&Z:0:.predef_F4))
+                StmtHandle(G$CZ:0:anon_ptr.(G$I$:0:.predef_I4) = -0:G$Z:0:anon_ptr.(G$I$:0:.predef_I4)*SIN(&Z:0:.predef_F4))
+                StmtHandle(CZ:0:.predef_F4 = COS(&Z:0:.predef_F4))
+                StmtHandle(R$0:0:.predef_F4 = ONE:0:.predef_F4/Z:0:.predef_F4)
+                StmtHandle(ZINV:0:.predef_F4 = R$0:0:.predef_F4)
+                StmtHandle(AJ:0:.predef_F4 = SZ:0:.predef_F4)
+                StmtHandle(BJ:0:.predef_F4 = SZ:0:.predef_F4*ZINV:0:.predef_F4-CZ:0:.predef_F4)
+                StmtHandle(AY:0:.predef_F4 = -CZ:0:.predef_F4)
+                StmtHandle(BY:0:.predef_F4 = -SZ:0:.predef_F4+(CZ:0:.predef_F4*(ZINV:0:.predef_F4)))
+                StmtHandle(ZJN:0:.predef_F4 = AJ:0:.predef_F4)
+                StmtHandle(ZYN:0:.predef_F4 = AY:0:.predef_F4)
+                StmtHandle(ZJN:0:.predef_F4 = BJ:0:.predef_F4)
+                StmtHandle(ZYN:0:.predef_F4 = BY:0:.predef_F4)
+                StmtHandle(DELF:0:.predef_F4 = ZINV:0:.predef_F4+ZINV:0:.predef_F4)
+                StmtHandle(FACTOR:0:.predef_F4 = DELF:0:.predef_F4+ZINV:0:.predef_F4)
+                StmtHandle(ZSQ:0:.predef_F4 = Z:0:.predef_F4*Z:0:.predef_F4)
+                StmtHandle(C:0:.predef_F4 = ZSQ:0:.predef_F4/THREE:0:.predef_F4)
+                StmtHandle(ZYN:0:.predef_F4 = BY:0:.predef_F4*FACTOR:0:.predef_F4-AY:0:.predef_F4)
+                StmtHandle(AY:0:.predef_F4 = BY:0:.predef_F4)
+                StmtHandle(BY:0:.predef_F4 = ZYN:0:.predef_F4)
+                StmtHandle(FACTOR:0:.predef_F4 = DELF:0:.predef_F4+FACTOR:0:.predef_F4)
+                StmtHandle(R$0:0:.predef_F4 = Z:0:.predef_F4/XJ:0:.predef_F4)
+                StmtHandle(C:0:.predef_F4 = C:0:.predef_F4*R$0:0:.predef_F4)
+                StmtHandle(FACTOR:0:.predef_F4 = -HALF:0:.predef_F4*(ZSQ:0:.predef_F4))
+                StmtHandle(R$1:0:.predef_F4 = FACTOR:0:.predef_F4/R$0:0:.predef_F4)
+                StmtHandle(TERM:0:.predef_F4 = R$1:0:.predef_F4*TERM:0:.predef_F4)
+                StmtHandle(U:0:.predef_F4 = TERM:0:.predef_F4+U:0:.predef_F4)
+                StmtHandle(ZJN:0:.predef_F4 = C:0:.predef_F4*U:0:.predef_F4)
+                StmtHandle(AJ:0:.predef_F4 = BJ:0:.predef_F4*FACTOR:0:.predef_F4-AJ:0:.predef_F4)
+                StmtHandle(AY:0:.predef_F4 = BY:0:.predef_F4*FACTOR:0:.predef_F4-AY:0:.predef_F4)
+                StmtHandle(FACTOR:0:.predef_F4 = DELF:0:.predef_F4+FACTOR:0:.predef_F4)
+                StmtHandle(BJ:0:.predef_F4 = AJ:0:.predef_F4*FACTOR:0:.predef_F4-BJ:0:.predef_F4)
+                StmtHandle(BY:0:.predef_F4 = AY:0:.predef_F4*FACTOR:0:.predef_F4-BY:0:.predef_F4)
+                StmtHandle(FACTOR:0:.predef_F4 = DELF:0:.predef_F4+FACTOR:0:.predef_F4)
+                StmtHandle(ZJN:0:.predef_F4 = BJ:0:.predef_F4)
+                StmtHandle(ZYN:0:.predef_F4 = BY:0:.predef_F4)
+                StmtHandle(ZJN:0:.predef_F4 = AJ:0:.predef_F4)
+                StmtHandle(ZYN:0:.predef_F4 = AY:0:.predef_F4) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(&Z:0:.predef_F4)
+                MemRefHandle(SZ:0:.predef_F4)
+                MemRefHandle(&Z:0:.predef_F4)
+                MemRefHandle(&Z:0:.predef_F4)
+                MemRefHandle(CZ:0:.predef_F4)
+                MemRefHandle(&Z:0:.predef_F4)
+                MemRefHandle(R$0:0:.predef_F4)
+                MemRefHandle(Z:0:.predef_F4)
+                MemRefHandle(ZINV:0:.predef_F4)
+                MemRefHandle(R$0:0:.predef_F4)
+                MemRefHandle(AJ:0:.predef_F4)
+                MemRefHandle(SZ:0:.predef_F4)
+                MemRefHandle(BJ:0:.predef_F4)
+                MemRefHandle(SZ:0:.predef_F4)
+                MemRefHandle(ZINV:0:.predef_F4)
+                MemRefHandle(CZ:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(CZ:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(SZ:0:.predef_F4)
+                MemRefHandle(CZ:0:.predef_F4)
+                MemRefHandle(ZINV:0:.predef_F4)
+                MemRefHandle(ZJN:0:.predef_F4)
+                MemRefHandle(AJ:0:.predef_F4)
+                MemRefHandle(ZYN:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(ZJN:0:.predef_F4)
+                MemRefHandle(BJ:0:.predef_F4)
+                MemRefHandle(ZYN:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(DELF:0:.predef_F4)
+                MemRefHandle(ZINV:0:.predef_F4)
+                MemRefHandle(ZINV:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(DELF:0:.predef_F4)
+                MemRefHandle(ZINV:0:.predef_F4)
+                MemRefHandle(ZSQ:0:.predef_F4)
+                MemRefHandle(Z:0:.predef_F4)
+                MemRefHandle(Z:0:.predef_F4)
+                MemRefHandle(C:0:.predef_F4)
+                MemRefHandle(ZSQ:0:.predef_F4)
+                MemRefHandle(ZYN:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(ZYN:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(DELF:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(R$0:0:.predef_F4)
+                MemRefHandle(Z:0:.predef_F4)
+                MemRefHandle(C:0:.predef_F4)
+                MemRefHandle(C:0:.predef_F4)
+                MemRefHandle(R$0:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(ZSQ:0:.predef_F4)
+                MemRefHandle(R$1:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(R$0:0:.predef_F4)
+                MemRefHandle(TERM:0:.predef_F4)
+                MemRefHandle(R$1:0:.predef_F4)
+                MemRefHandle(TERM:0:.predef_F4)
+                MemRefHandle(U:0:.predef_F4)
+                MemRefHandle(TERM:0:.predef_F4)
+                MemRefHandle(U:0:.predef_F4)
+                MemRefHandle(ZJN:0:.predef_F4)
+                MemRefHandle(C:0:.predef_F4)
+                MemRefHandle(U:0:.predef_F4)
+                MemRefHandle(AJ:0:.predef_F4)
+                MemRefHandle(BJ:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(AJ:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(DELF:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(BJ:0:.predef_F4)
+                MemRefHandle(AJ:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(BJ:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(DELF:0:.predef_F4)
+                MemRefHandle(FACTOR:0:.predef_F4)
+                MemRefHandle(ZJN:0:.predef_F4)
+                MemRefHandle(BJ:0:.predef_F4)
+                MemRefHandle(ZYN:0:.predef_F4)
+                MemRefHandle(BY:0:.predef_F4)
+                MemRefHandle(ZJN:0:.predef_F4)
+                MemRefHandle(AJ:0:.predef_F4)
+                MemRefHandle(ZYN:0:.predef_F4)
+                MemRefHandle(AY:0:.predef_F4) ] 
+    )
+    mNumIterUseful: 4
+    mNumIterVary: 5
+    mNumIterActive: 1
+)
+
+
+Total Iters: 11
