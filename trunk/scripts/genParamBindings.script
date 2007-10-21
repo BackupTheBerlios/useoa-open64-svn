@@ -30,3 +30,7 @@ echo "Generating TestResults/ParamBindings/area_circle.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/area_circle.B > TestResults/ParamBindings/area_circle.B.out
 echo "Generating TestResults/ParamBindings/subroutine.B.out"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/subroutine.B > TestResults/ParamBindings/subroutine.B.out
+echo "Generating TestResults/ParamBindings/intrinsic_expression.B.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/intrinsic_expression.B > TestResults/ParamBindings/intrinsic_expression.B.out
+echo "Generating TestResults/ParamBindings/keyword_arguments.B.out"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/keyword_arguments.B > TestResults/ParamBindings/keyword_arguments.B.out

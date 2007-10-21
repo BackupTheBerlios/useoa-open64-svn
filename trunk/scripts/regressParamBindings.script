@@ -62,3 +62,11 @@ echo "Testing TestCases/ParamBindings/subroutine.B, TestResults/ParamBindings/su
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/subroutine.B > t
 diff t TestResults/ParamBindings/subroutine.B.out
 
+echo "Testing TestCases/ParamBindings/intrinsic_expression.B, TestResults/ParamBindings/intrinsic_expression.B.out Checked by PLM 10/21/07"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/intrinsic_expression.B > t
+diff t TestResults/ParamBindings/intrinsic_expression.B.out
+
+echo "Testing TestCases/ParamBindings/keyword_arguments.B, TestResults/ParamBindings/keyword_arguments.B.out Checked by PLM 10/21/07"
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/keyword_arguments.B > t
+diff t TestResults/ParamBindings/keyword_arguments.B.out
+
