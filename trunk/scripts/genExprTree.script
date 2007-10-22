@@ -54,3 +54,5 @@ echo "Generating TestResults/ExprTree/logical_assignment.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/logical_assignment.B > TestResults/ExprTree/logical_assignment.B.out
 echo "Generating TestResults/ExprTree/real_assignment.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/real_assignment.B > TestResults/ExprTree/real_assignment.B.out
+echo "Generating TestResults/ExprTree/index_expression.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/index_expression.B > TestResults/ExprTree/index_expression.B.out

@@ -110,3 +110,7 @@ echo "Testing TestCases/ExprTree/real_assignment.B, TestResults/ExprTree/real_as
 ./test-open64 --oa-ExprTree TestCases/ExprTree/real_assignment.B > t
 diff t TestResults/ExprTree/real_assignment.B.out
 
+echo "Testing TestCases/ExprTree/index_expression.B, TestResults/ExprTree/index_expression.B.out Checked by PLM 10/23/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/index_expression.B > t
+diff t TestResults/ExprTree/index_expression.B.out
+
