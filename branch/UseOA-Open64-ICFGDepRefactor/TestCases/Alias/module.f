@@ -1,0 +1,394 @@
+
+
+
+      MODULE cost_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) CMEANTHETA(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) CMEANUVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) CMEANVVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) FC
+      INTEGER(w2f__i4) ILOCOUT
+      INTEGER(w2f__i4) JLOCOUT
+      INTEGER(w2f__i4) KLOCOUT
+      REAL(w2f__8) LASTINTERVAL
+      REAL(w2f__8) MULTETAN
+      REAL(w2f__8) MULTSALT
+      REAL(w2f__8) MULTTHETA
+      REAL(w2f__8) MULTUVEL
+      REAL(w2f__8) MULTVVEL
+      REAL(w2f__8) MULT_ATL
+      REAL(w2f__8) MULT_EFLUX
+      REAL(w2f__8) MULT_ENTROPY
+      REAL(w2f__8) MULT_TEST
+      REAL(w2f__8) MULT_TRACER
+      REAL(w2f__8) MULT_T_MISFIT
+      REAL(w2f__8) OBJF_ATL(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_EFLUX(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_ENTROPY(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_TEST(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_TRACER(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_T_MISFIT(1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+
+      MODULE ctrl_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      CHARACTER(9) COSTNAME
+      CHARACTER(9) CTRLNAME
+      REAL(w2f__8) DELZEXP
+      LOGICAL(w2f__i4) DOADMTLM
+      LOGICAL(w2f__i4) DOADMTLMBYPASSAD
+      LOGICAL(w2f__i4) DOINITXX
+      LOGICAL(w2f__i4) DOMAINPACK
+      LOGICAL(w2f__i4) DOMAINUNPACK
+      LOGICAL(w2f__i4) DOPACKDIAG
+      LOGICAL(w2f__i4) DOZSCALEPACK
+      LOGICAL(w2f__i4) DOZSCALEUNPACK
+      REAL(w2f__8) FILEFC
+      INTEGER(w2f__i4) FILEI
+      INTEGER(w2f__i4) FILEIG
+      INTEGER(w2f__i4) FILEJ
+      INTEGER(w2f__i4) FILEJG
+      INTEGER(w2f__i4) FILEK
+      INTEGER(w2f__i4) FILENCBUFFINDEX
+      CHARACTER(1) FILENCVARGRD(1 : 40)
+      INTEGER(w2f__i4) FILENCVARINDEX(1 : 40)
+      INTEGER(w2f__i4) FILENCVARNRMAX(1 : 40)
+      INTEGER(w2f__i4) FILENCVARRECS(1 : 40)
+      INTEGER(w2f__i4) FILENCVARXMAX(1 : 40)
+      INTEGER(w2f__i4) FILENCVARYMAX(1 : 40)
+      INTEGER(w2f__i4) FILENSX
+      INTEGER(w2f__i4) FILENSY
+      INTEGER(w2f__i4) FILENVARLENGTH
+      INTEGER(w2f__i4) FILENVARTYPE
+      INTEGER(w2f__i4) FILENWETCGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILENWETSGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILENWETVGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILENWETWGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILEOPTIMCYCLE
+      CHARACTER(10) FILEYCTRLID
+      CHARACTER(80) FNAME_AQH(1 : 2)
+      CHARACTER(80) FNAME_ATEMP(1 : 2)
+      CHARACTER(80) FNAME_BOTTOMDRAG(1 : 2)
+      CHARACTER(80) FNAME_DEPTH(1 : 2)
+      CHARACTER(80) FNAME_DIFFKR(1 : 2)
+      CHARACTER(80) FNAME_EDTAUX(1 : 2)
+      CHARACTER(80) FNAME_EDTAUY(1 : 2)
+      CHARACTER(80) FNAME_EFLUXP(1 : 2)
+      CHARACTER(80) FNAME_EFLUXY(1 : 2)
+      CHARACTER(80) FNAME_ETAN(1 : 2)
+      CHARACTER(80) FNAME_HFACC(1 : 2)
+      CHARACTER(80) FNAME_HFLUX(1 : 2)
+      CHARACTER(80) FNAME_KAPGM(1 : 2)
+      CHARACTER(80) FNAME_OBCSE(1 : 2)
+      CHARACTER(80) FNAME_OBCSN(1 : 2)
+      CHARACTER(80) FNAME_OBCSS(1 : 2)
+      CHARACTER(80) FNAME_OBCSW(1 : 2)
+      CHARACTER(80) FNAME_PRECIP(1 : 2)
+      CHARACTER(80) FNAME_RELAXSSS(1 : 2)
+      CHARACTER(80) FNAME_RELAXSST(1 : 2)
+      CHARACTER(80) FNAME_SALT(1 : 2)
+      CHARACTER(80) FNAME_SFLUX(1 : 2)
+      CHARACTER(80) FNAME_SSS(1 : 2)
+      CHARACTER(80) FNAME_SST(1 : 2)
+      CHARACTER(80) FNAME_SWDOWN(1 : 2)
+      CHARACTER(80) FNAME_SWFLUX(1 : 2)
+      CHARACTER(80) FNAME_TAUU(1 : 2)
+      CHARACTER(80) FNAME_TAUV(1 : 2)
+      CHARACTER(80) FNAME_THETA(1 : 2)
+      CHARACTER(80) FNAME_TR1(1 : 2)
+      CHARACTER(80) FNAME_UVEL(1 : 2)
+      CHARACTER(80) FNAME_UWIND(1 : 2)
+      CHARACTER(80) FNAME_VVEL(1 : 2)
+      CHARACTER(80) FNAME_VWIND(1 : 2)
+      CHARACTER(9) MASKNAME
+      CHARACTER(9) METANAME
+      INTEGER(w2f__i4) NBUFFGLOBAL
+      CHARACTER(1) NCVARGRD(1 : 40)
+      INTEGER(w2f__i4) NCVARINDEX(1 : 40)
+      INTEGER(w2f__i4) NCVARNRMAX(1 : 40)
+      INTEGER(w2f__i4) NCVARRECS(1 : 40)
+      INTEGER(w2f__i4) NCVARRECSEND(1 : 40)
+      INTEGER(w2f__i4) NCVARRECSTART(1 : 40)
+      INTEGER(w2f__i4) NCVARXMAX(1 : 40)
+      INTEGER(w2f__i4) NCVARYMAX(1 : 40)
+      INTEGER(w2f__i4) NVARLENGTH
+      INTEGER(w2f__i4) NVARTYPE
+      INTEGER(w2f__i4) NWETCGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETCTILE(1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NWETSGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETSTILE(1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NWETVGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETVTILE(1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NWETWGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETWTILE(1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(9) SCALNAME
+      REAL(w2f__8) TMPFLD2D(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TMPFLD3D(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WAQH(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WAREAUNIT(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WATEMP(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WHFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WPRECIP(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSSS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSST(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSWDOWN(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSWFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WTAUU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WTAUV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WUNIT(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WUWIND(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WVWIND(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XX_AQHPERIOD
+      INTEGER(w2f__i4) XX_AQHSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_AQHSTARTDATE1
+      INTEGER(w2f__i4) XX_AQHSTARTDATE2
+      CHARACTER(512) XX_AQH_FILE
+      REAL(w2f__8) XX_AQH_REMO_INTERCEPT
+      REAL(w2f__8) XX_AQH_REMO_SLOPE
+      REAL(w2f__8) XX_ATEMPPERIOD
+      INTEGER(w2f__i4) XX_ATEMPSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_ATEMPSTARTDATE1
+      INTEGER(w2f__i4) XX_ATEMPSTARTDATE2
+      CHARACTER(512) XX_ATEMP_FILE
+      REAL(w2f__8) XX_ATEMP_REMO_INTERCEPT
+      REAL(w2f__8) XX_ATEMP_REMO_SLOPE
+      CHARACTER(512) XX_BOTTOMDRAG_FILE
+      CHARACTER(512) XX_DEPTH_FILE
+      CHARACTER(512) XX_DIFFKR_FILE
+      CHARACTER(512) XX_EDTAUX_FILE
+      CHARACTER(512) XX_EDTAUY_FILE
+      CHARACTER(512) XX_EFLUXP_FILE
+      CHARACTER(512) XX_EFLUXY_FILE
+      REAL(w2f__8) XX_ETAN(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_ETAN_FILE
+      REAL(w2f__8) XX_HFLUXPERIOD
+      INTEGER(w2f__i4) XX_HFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_HFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_HFLUXSTARTDATE2
+      CHARACTER(512) XX_HFLUX_FILE
+      REAL(w2f__8) XX_HFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_HFLUX_REMO_SLOPE
+      CHARACTER(512) XX_KAPGM_FILE
+      REAL(w2f__8) XX_OBCSEPERIOD
+      INTEGER(w2f__i4) XX_OBCSESTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSESTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSESTARTDATE2
+      CHARACTER(512) XX_OBCSE_FILE
+      REAL(w2f__8) XX_OBCSNPERIOD
+      INTEGER(w2f__i4) XX_OBCSNSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSNSTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSNSTARTDATE2
+      CHARACTER(512) XX_OBCSN_FILE
+      REAL(w2f__8) XX_OBCSSPERIOD
+      INTEGER(w2f__i4) XX_OBCSWSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSWSTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSWSTARTDATE2
+      CHARACTER(512) XX_OBCSW_FILE
+      REAL(w2f__8) XX_PRECIPPERIOD
+      INTEGER(w2f__i4) XX_PRECIPSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_PRECIPSTARTDATE1
+      INTEGER(w2f__i4) XX_PRECIPSTARTDATE2
+      CHARACTER(512) XX_PRECIP_FILE
+      REAL(w2f__8) XX_PRECIP_REMO_INTERCEPT
+      REAL(w2f__8) XX_PRECIP_REMO_SLOPE
+      CHARACTER(512) XX_RELAXSSS_FILE
+      CHARACTER(512) XX_RELAXSST_FILE
+      REAL(w2f__8) XX_SALT(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_SALT_FILE
+      CHARACTER(512) XX_SALT_INI_FIN_FILE
+      REAL(w2f__8) XX_SFLUXPERIOD
+      INTEGER(w2f__i4) XX_SFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_SFLUXSTARTDATE2
+      CHARACTER(512) XX_SFLUX_FILE
+      REAL(w2f__8) XX_SFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_SFLUX_REMO_SLOPE
+      REAL(w2f__8) XX_SSSPERIOD
+      INTEGER(w2f__i4) XX_SSSSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SSSSTARTDATE1
+      INTEGER(w2f__i4) XX_SSSSTARTDATE2
+      CHARACTER(512) XX_SSS_FILE
+      REAL(w2f__8) XX_SSTPERIOD
+      INTEGER(w2f__i4) XX_SSTSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SSTSTARTDATE1
+      INTEGER(w2f__i4) XX_SSTSTARTDATE2
+      CHARACTER(512) XX_SST_FILE
+      REAL(w2f__8) XX_SWDOWNPERIOD
+      INTEGER(w2f__i4) XX_SWDOWNSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SWDOWNSTARTDATE1
+      INTEGER(w2f__i4) XX_SWDOWNSTARTDATE2
+      CHARACTER(512) XX_SWDOWN_FILE
+      REAL(w2f__8) XX_SWDOWN_REMO_INTERCEPT
+      REAL(w2f__8) XX_SWDOWN_REMO_SLOPE
+      REAL(w2f__8) XX_SWFLUXPERIOD
+      INTEGER(w2f__i4) XX_SWFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SWFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_SWFLUXSTARTDATE2
+      CHARACTER(512) XX_SWFLUX_FILE
+      REAL(w2f__8) XX_SWFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_SWFLUX_REMO_SLOPE
+      REAL(w2f__8) XX_TAUUPERIOD
+      INTEGER(w2f__i4) XX_TAUUSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_TAUUSTARTDATE1
+      INTEGER(w2f__i4) XX_TAUUSTARTDATE2
+      CHARACTER(512) XX_TAUU_FILE
+      REAL(w2f__8) XX_TAUU_REMO_INTERCEPT
+      REAL(w2f__8) XX_TAUU_REMO_SLOPE
+      REAL(w2f__8) XX_TAUVPERIOD
+      INTEGER(w2f__i4) XX_TAUVSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_TAUVSTARTDATE1
+      INTEGER(w2f__i4) XX_TAUVSTARTDATE2
+      CHARACTER(512) XX_TAUV_FILE
+      REAL(w2f__8) XX_TAUV_REMO_INTERCEPT
+      REAL(w2f__8) XX_TAUV_REMO_SLOPE
+      REAL(w2f__8) XX_THETA(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_THETA_FILE
+      CHARACTER(512) XX_THETA_INI_FIN_FILE
+      CHARACTER(512) XX_TR1_FILE
+      REAL(w2f__8) XX_UVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_UVEL_FILE
+      REAL(w2f__8) XX_UWINDPERIOD
+      INTEGER(w2f__i4) XX_UWINDSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_UWINDSTARTDATE1
+      INTEGER(w2f__i4) XX_UWINDSTARTDATE2
+      CHARACTER(512) XX_UWIND_FILE
+      REAL(w2f__8) XX_UWIND_REMO_INTERCEPT
+      REAL(w2f__8) XX_UWIND_REMO_SLOPE
+      REAL(w2f__8) XX_VVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_VVEL_FILE
+      REAL(w2f__8) XX_VWINDPERIOD
+      INTEGER(w2f__i4) XX_VWINDSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_VWINDSTARTDATE1
+      INTEGER(w2f__i4) XX_VWINDSTARTDATE2
+      CHARACTER(512) XX_VWIND_FILE
+      REAL(w2f__8) XX_VWIND_REMO_INTERCEPT
+      REAL(w2f__8) XX_VWIND_REMO_SLOPE
+      CHARACTER(2) YADMARK
+      CHARACTER(2) YADPREFIX
+      CHARACTER(10) YCTRLID
+      CHARACTER(4) YCTRLPOSPACK
+      CHARACTER(4) YCTRLPOSUNPACK
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) CTRLPREC
+      PARAMETER ( CTRLPREC = 64)
+      INTEGER(w2f__i4) MAXCVARS
+      PARAMETER ( MAXCVARS = 40)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+
+
+      SUBROUTINE the_main_loop()
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      LOGICAL(w2f__i4) ALLSTEPSCOVERED
+      EXTERNAL barrier
+      EXTERNAL cost_final
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL do_the_model_io
+      INTEGER(w2f__i4) ILEV_4
+      EXTERNAL initialise_varia
+      INTEGER(w2f__i4) THECURRENTSTEP
+      EXTERNAL the_fourth_level_loop
+      EXTERNAL the_fourth_level_plain
+      EXTERNAL timer_start
+      EXTERNAL timer_stop
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) t__1543
+      integer(w2f__i4) oad_ctmp0
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(XX_THETA)
+C$OPENAD DEPENDENT(FC)
+C
+C     **** Statements ****
+C
+
+      call initialise_varia()
+      call initialise_const()
+      RETURN
+      END SUBROUTINE
+
+
+      SUBROUTINE initialise_varia()
+
+      use ctrl_mod
+      use cost_mod
+
+      IMPLICIT NONE
+
+      OBJF_TEST(1,2) = XX_THETA(1,2,3,4,5)
+
+      RETURN
+      END SUBROUTINE
+
+
+      SUBROUTINE initialise_const()
+
+      use ctrl_mod
+      use cost_mod
+
+      IMPLICIT NONE
+
+
+
+      FC = OBJF_TEST(1,2)
+
+      RETURN
+      END SUBROUTINE
+
+
+

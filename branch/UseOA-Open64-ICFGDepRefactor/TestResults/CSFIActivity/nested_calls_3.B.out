@@ -1,0 +1,45 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &C:0:.predef_F8, &D:0:.predef_F8))
+                StmtHandle(Y:0:anon_ptr.(3) = C:0:.predef_F8*D:0:.predef_F8)
+                StmtHandle(Y:0:anon_ptr.(4) = C:0:.predef_F8+D:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(&X:0:anon_ptr.(1))
+                MemRefHandle(&X:0:anon_ptr.(2))
+                MemRefHandle(&C:0:.predef_F8)
+                MemRefHandle(&D:0:.predef_F8)
+                MemRefHandle(Y:0:anon_ptr.(3))
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(D:0:.predef_F8)
+                MemRefHandle(Y:0:anon_ptr.(4))
+                MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(D:0:.predef_F8) ] 
+    )
+    Procedure( head_::foo_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8))
+                StmtHandle(D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(C:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8)
+                MemRefHandle(D:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(B:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::C)
+            SymHandle(head_::D)
+            SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(foo_::C)
+            SymHandle(foo_::D) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

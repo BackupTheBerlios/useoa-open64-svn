@@ -1,0 +1,51 @@
+
+InterActiveFortran(
+    Procedure( globals_::globals_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( globals_::foo_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(1)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1)) ] 
+    )
+    Procedure( globals_::bar_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(X:0:.predef_F8 = X:0:.predef_F8*AGLOBAL:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(X:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8) ] 
+    )
+    Procedure( globals_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(X:0:.predef_F8 = X:0:.predef_F8*AGLOBAL:0:.predef_F8)
+                StmtHandle(AGLOBAL:0:.predef_F8 =     2.000000000000000)
+                StmtHandle(bar_(&X:0:anon_ptr.(1)))
+                StmtHandle(foo_(&0:X:0:anon_ptr., &AGLOBAL:0:.predef_F8))
+                StmtHandle(Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(AGLOBAL:0:.predef_F8)
+                MemRefHandle(AGLOBAL:0:.predef_F8)
+                MemRefHandle(&X:0:anon_ptr.(1))
+                MemRefHandle(&0:X:0:anon_ptr.)
+                MemRefHandle(&AGLOBAL:0:.predef_F8)
+                MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(AGLOBAL:0:.predef_F8) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(globals_::AGLOBAL)
+            SymHandle(foo_::X)
+            SymHandle(foo_::Y)
+            SymHandle(bar_::X)
+            SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

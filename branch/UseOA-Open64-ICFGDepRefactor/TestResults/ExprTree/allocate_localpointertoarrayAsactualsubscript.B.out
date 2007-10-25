@@ -1,0 +1,31 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/MemRefExpr/allocate_localpointertoarrayAsactualsubscript.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: _ALLOCATE(&P:0:anon_ptr.(3), &0)
+
+==> ExprHandle: P:0:anon_ptr.(3)
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( P:0:anon_ptr.(3) )
+
+
+==> ExprHandle: 3
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 3 )
+
+
+============================================
+StmtHandle: _END()
+
+============================================
+StmtHandle: return
+
+============================================
+StmtHandle: return
+

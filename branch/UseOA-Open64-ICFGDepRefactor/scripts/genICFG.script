@@ -1,0 +1,14 @@
+echo "Generating TestResults/ICFG/activity_proc_call1.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/activity_proc_call1.B > TestResults/ICFG/activity_proc_call1.B.out
+echo "Generating TestResults/ICFG/functions2.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/functions2.B > TestResults/ICFG/functions2.B.out
+echo "Generating TestResults/ICFG/functions3.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/functions3.B > TestResults/ICFG/functions3.B.out
+echo "Generating TestResults/ICFG/functions4.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/functions4.B > TestResults/ICFG/functions4.B.out
+echo "Generating TestResults/ICFG/functions5.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/functions5.B > TestResults/ICFG/functions5.B.out
+echo "Generating TestResults/ICFG/functions6.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/functions6.B > TestResults/ICFG/functions6.B.out
+echo "Generating TestResults/ICFG/nested_calls_1.B.out"
+./test-open64 --oa-ICFG TestCases/ICFG/nested_calls_1.B > TestResults/ICFG/nested_calls_1.B.out

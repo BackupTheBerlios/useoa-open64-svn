@@ -1,0 +1,19 @@
+
+PROCEDURE = { < ProcHandle("foo_::foo_"), SymHandle("foo_::foo_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/MemRefExpr/allocate_localarraysectionAsactual.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
+_ALLOCATE(&A:0:anon_ptr.(), &0)") =>
+        [
+            MemRefHandle("I8SRCTRIPLET
+&A:0:anon_ptr.()") => 
+                NamedRef( DEF, SymHandle("foo_::A"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("foo_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::A"), local > }
