@@ -1,0 +1,28 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/modulearraydef.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: USE <1,20,globals_>
+
+============================================
+OA::StmtHandle: X:0:anon_ptr.(1) = T2:0:.predef_F8
+	mre = 
+NamedRef(
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mSymHandle: SymHandle(globals_::X)
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::T2)
+)
+
+============================================
+OA::StmtHandle: return

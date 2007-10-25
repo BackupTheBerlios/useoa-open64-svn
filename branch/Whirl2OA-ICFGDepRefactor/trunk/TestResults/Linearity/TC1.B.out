@@ -1,0 +1,347 @@
+Linearity Analysis Start:
+
+LinearityStandard(
+    mLMmap: OA_ptr<Location>	 => ,OA_ptr<std::set<OA_ptr<LinearityPair> > >
+
+
+)
+Linearity Analysis Start:
+
+LinearityStandard(
+    mLMmap: OA_ptr<Location>	 => ,OA_ptr<std::set<OA_ptr<LinearityPair> > >
+
+            
+            NamedLoc(
+                mSymHandle: SymHandle(foo_::I)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(foo_::I)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    Location->W: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(foo_::I)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    LClass: Linear
+                ) ] 
+            
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::F)
+                    )
+                    mNumDeref: 1
+                )
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Linear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Linear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::F)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                ) ] 
+            
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mFullAccuracy: 1
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::T)
+                    )
+                    mNumDeref: 1
+                )
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::T)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                ) ] 
+            
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mFullAccuracy: 0
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mFullAccuracy: 1
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::A)
+                    )
+                    mNumDeref: 1
+                )
+            )	 => [ 
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 1
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Nonlinear
+                )    
+                LinearityPair(
+                    Location->V: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    Location->W: 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mFullAccuracy: 0
+                            mMemRefType: USE
+                            mMRE: 
+                            NamedRef(
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                            )
+                            mNumDeref: 1
+                        )
+                    )
+                    LClass: Linear
+                ) ] 
+
+)

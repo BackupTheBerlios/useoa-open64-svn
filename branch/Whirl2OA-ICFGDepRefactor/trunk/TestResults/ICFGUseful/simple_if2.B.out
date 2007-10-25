@@ -1,0 +1,134 @@
+
+InterUseful(
+    mProcToUsefulMap: ProcHandle	 => UsefulStandard
+            ProcHandle(head_)	 => 
+            mNumIter(0
+            )
+            mDepLocSet([ 
+                    InvisibleLoc(
+                        mMRE: 
+                        Deref(
+                            mAddressOf: 0
+                            mFullAccuracy: 1
+                            mMemRefType: DEF
+                            mMRE: 
+                            NamedRef(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(Y)
+                            )
+                            mNumDeref: 1
+                        )
+                    ) ] 
+            )
+            mStmtToInUsefulSetMap: StmtHandle	 => InUsefulSet
+                    StmtHandle( LOC 0 0 source files:	1	"/home/kreaseck/OPEN64/UseOA-Open64/TestCases/Activity/simple_if2.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+)	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(X)
+                                )
+                                mNumDeref: 1
+                            )
+                        ) ] 
+                    StmtHandle(A:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000)	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(X)
+                                )
+                                mNumDeref: 1
+                            )
+                        ) ] 
+                    StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(A)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    StmtHandle(if (A:0:.predef_F8>    10.00000000000000))	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(A)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(B)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    StmtHandle(C:0:.predef_F8 =     3.000000000000000)	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(B)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    StmtHandle(C:0:.predef_F8 = -A:0:.predef_F8)	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(A)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(B)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    StmtHandle(Y:0:.predef_F8 = C:0:.predef_F8+B:0:.predef_F8*    3.000000000000000)	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(B)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )    
+                        NamedLoc(
+                            mSymHandle: SymHandle(C)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        ) ] 
+                    StmtHandle(return)	 => [ 
+                        InvisibleLoc(
+                            mMRE: 
+                            Deref(
+                                mAddressOf: 0
+                                mFullAccuracy: 1
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mAddressOf: 0
+                                    mFullAccuracy: 1
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(Y)
+                                )
+                                mNumDeref: 1
+                            )
+                        ) ] 
+
+
+)

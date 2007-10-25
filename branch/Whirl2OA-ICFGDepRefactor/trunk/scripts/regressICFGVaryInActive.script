@@ -1,0 +1,40 @@
+echo "Testing TestCases/Activity/simple1.B, TestResults/ICFGVaryInActive/simple1.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple1.B > t
+diff t TestResults/ICFGVaryInActive/simple1.B.out
+
+echo "Testing TestCases/Activity/simple2.B, TestResults/ICFGVaryInActive/simple2.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple2.B > t
+diff t TestResults/ICFGVaryInActive/simple2.B.out
+
+echo "Testing TestCases/Activity/simple3.B, TestResults/ICFGVaryInActive/simple3.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple3.B > t
+diff t TestResults/ICFGVaryInActive/simple3.B.out
+
+echo "Testing TestCases/Activity/simple3np.B, TestResults/ICFGVaryInActive/simple3np.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple3np.B > t
+diff t TestResults/ICFGVaryInActive/simple3np.B.out
+
+echo "Testing TestCases/Activity/simple_if1.B, TestResults/ICFGVaryInActive/simple_if1.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple_if1.B > t
+diff t TestResults/ICFGVaryInActive/simple_if1.B.out
+
+echo "Testing TestCases/Activity/simple_if2.B, TestResults/ICFGVaryInActive/simple_if2.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple_if2.B > t
+diff t TestResults/ICFGVaryInActive/simple_if2.B.out
+
+echo "Testing TestCases/Activity/activity_int6.B, TestResults/ICFGVaryInActive/activity_int6.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_int6.B > t
+diff t TestResults/ICFGVaryInActive/activity_int6.B.out
+
+echo "Testing TestCases/Activity/activity_nested1.B, TestResults/ICFGVaryInActive/activity_nested1.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_nested1.B > t
+diff t TestResults/ICFGVaryInActive/activity_nested1.B.out
+
+echo "Testing TestCases/Activity/activity_proc_call1.B, TestResults/ICFGVaryInActive/activity_proc_call1.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_proc_call1.B > t
+diff t TestResults/ICFGVaryInActive/activity_proc_call1.B.out
+
+echo "Testing TestCases/Activity/activity_proc_call4.B, TestResults/ICFGVaryInActive/activity_proc_call4.B.out Checked by BK 8/10/2006"
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_proc_call4.B > t
+diff t TestResults/ICFGVaryInActive/activity_proc_call4.B.out
+

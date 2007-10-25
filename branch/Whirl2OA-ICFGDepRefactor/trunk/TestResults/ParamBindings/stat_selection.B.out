@@ -1,0 +1,75 @@
+ LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ParamBindings/stat_selection.f90"
+I8SRCTRIPLET
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(ch2307_::stats_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&0:X:0:anon_ptr.)	 => SymHandle(SELECTION::X)
+                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(SELECTION::N)
+                            MemRefHandle(&M:0:.predef_F4)	 => SymHandle(SELECTION::MEAN)
+                            MemRefHandle(&SD:0:.predef_F4)	 => SymHandle(SELECTION::STD_DEV)
+                            MemRefHandle(&MEDIAN:0:.predef_F4)	 => SymHandle(SELECTION::MEDIAN)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(SELECTION::N)	 => MemRefHandle(&N:0:.predef_I4)
+                    SymHandle(SELECTION::X)	 => MemRefHandle(&0:X:0:anon_ptr.)
+                    SymHandle(SELECTION::MEAN)	 => MemRefHandle(&M:0:.predef_F4)
+                    SymHandle(SELECTION::STD_DEV)	 => MemRefHandle(&SD:0:.predef_F4)
+                    SymHandle(SELECTION::MEDIAN)	 => MemRefHandle(&MEDIAN:0:.predef_F4)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(ch2307_::stats_)	 => [ SymHandle(SELECTION::N)    SymHandle(SELECTION::X)    SymHandle(SELECTION::MEAN)    SymHandle(SELECTION::STD_DEV)    SymHandle(SELECTION::MEDIAN) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => [ MemRefHandle(&0:X:0:anon_ptr.)    MemRefHandle(&N:0:.predef_I4)    MemRefHandle(&M:0:.predef_F4)    MemRefHandle(&SD:0:.predef_F4)    MemRefHandle(&MEDIAN:0:.predef_F4) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => [ ExprHandle(&0:X:0:anon_ptr.)    ExprHandle(&N:0:.predef_I4)    ExprHandle(&M:0:.predef_F4)    ExprHandle(&SD:0:.predef_F4)    ExprHandle(&MEDIAN:0:.predef_F4) ] 
+            CallHandle(SELECTION())	 => [  expr List is Empty  ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&0:X:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &0:X:0:anon_ptr. )
+
+            ExprHandle(&N:0:.predef_I4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &N:0:.predef_I4 )
+
+            ExprHandle(&M:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &M:0:.predef_F4 )
+
+            ExprHandle(&SD:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &SD:0:.predef_F4 )
+
+            ExprHandle(&MEDIAN:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &MEDIAN:0:.predef_F4 )
+
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(stats_(&0:X:0:anon_ptr., &N:0:.predef_I4, &M:0:.predef_F4, &SD:0:.predef_F4, &MEDIAN:0:.predef_F4))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(SELECTION::N)	 => ExprHandle(&N:0:.predef_I4)
+                    SymHandle(SELECTION::X)	 => ExprHandle(&0:X:0:anon_ptr.)
+                    SymHandle(SELECTION::MEAN)	 => ExprHandle(&M:0:.predef_F4)
+                    SymHandle(SELECTION::STD_DEV)	 => ExprHandle(&SD:0:.predef_F4)
+                    SymHandle(SELECTION::MEDIAN)	 => ExprHandle(&MEDIAN:0:.predef_F4)
+
+
+)

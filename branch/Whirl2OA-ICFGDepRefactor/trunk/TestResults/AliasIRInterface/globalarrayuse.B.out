@@ -1,0 +1,20 @@
+
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/globalarrayuse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("T2:0:.predef_F8 = 0:X:0:anon_ptr.(1)") =>
+        [
+            MemRefHandle("T2:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("head_::T2"))
+            MemRefHandle("0:X:0:anon_ptr.(1)") => 
+                SubSetRef( USE, NamedRef( USE, SymHandle("head_::X")))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), not local > }
+    LOCATION = { < SymHandle("head_::T2"), local > }

@@ -1,0 +1,20 @@
+getUseMREs:
+mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::P)
+    )
+    mNumDeref: 1
+)
+
+mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::P)
+)
+

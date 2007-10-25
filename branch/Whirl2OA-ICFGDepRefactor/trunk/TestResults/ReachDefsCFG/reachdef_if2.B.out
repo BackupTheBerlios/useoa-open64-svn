@@ -1,0 +1,84 @@
+
+graph DGraph:
+
+    Node 1: 
+        ====== CFG node 1 ======
+
+
+    Node 2: 
+         LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/ReachDefs/reachdef_if2.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 2 ======
+
+X:0:.predef_F8 =     2.000000000000000
+if (X:0:.predef_F8>=    0.000000000000000)
+
+
+    Node 3: 
+        ====== CFG node 3 ======
+Y:0:.predef_F8 =     5.000000000000000
+X:0:.predef_F8 = Y:0:.predef_F8+Y:0:.predef_F8
+Y:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000
+
+
+    Node 4: 
+        ====== CFG node 4 ======
+Y:0:.predef_F8 =     3.000000000000000
+
+
+    Node 5: 
+        ====== CFG node 5 ======
+Z:0:.predef_F8 = Y:0:.predef_F8
+_END()
+return
+
+
+    Node 6: 
+        ====== CFG node 6 ======
+return
+
+
+    Node 7: 
+        ====== CFG node 7 ======
+
+
+    Edge: 1 => 2
+        { 1 FALLTHROUGH_EDGE 0 }
+
+    Edge: 2 => 3
+        { 2 TRUE_EDGE 0 }
+
+    Edge: 2 => 4
+        { 3 FALSE_EDGE 0 }
+
+    Edge: 3 => 5
+        { 4 FALLTHROUGH_EDGE 0 }
+
+    Edge: 4 => 5
+        { 5 FALLTHROUGH_EDGE 0 }
+
+    Edge: 5 => 7
+        { 6 RETURN_EDGE 0 }
+
+    Edge: 6 => 7
+        { 7 RETURN_EDGE 0 }
+
+--------Dot Graph Output--------
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="====== CFG node 1 ======\n" ];
+    2 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 2 ======\n\nX:0:.predef_F8 =     2.000000000000000\nif (X:0:.predef_F8>=    0.000000000000000)\n" ];
+    3 [ label="====== CFG node 3 ======\nY:0:.predef_F8 =     5.000000000000000\nX:0:.predef_F8 = Y:0:.predef_F8+Y:0:.predef_F8\nY:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000\n" ];
+    4 [ label="====== CFG node 4 ======\nY:0:.predef_F8 =     3.000000000000000\n" ];
+    5 [ label="====== CFG node 5 ======\nZ:0:.predef_F8 = Y:0:.predef_F8\n_END()\nreturn\n" ];
+    6 [ label="====== CFG node 6 ======\nreturn\n" ];
+    7 [ label="====== CFG node 7 ======\n" ];
+    1 -> 2 [ label="{ 1 FALLTHROUGH_EDGE 0 }" ];
+    2 -> 3 [ label="{ 2 TRUE_EDGE 0 }" ];
+    2 -> 4 [ label="{ 3 FALSE_EDGE 0 }" ];
+    3 -> 5 [ label="{ 4 FALLTHROUGH_EDGE 0 }" ];
+    4 -> 5 [ label="{ 5 FALLTHROUGH_EDGE 0 }" ];
+    5 -> 7 [ label="{ 6 RETURN_EDGE 0 }" ];
+    6 -> 7 [ label="{ 7 RETURN_EDGE 0 }" ];}

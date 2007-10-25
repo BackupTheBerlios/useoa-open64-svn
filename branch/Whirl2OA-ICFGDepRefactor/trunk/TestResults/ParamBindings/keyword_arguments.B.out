@@ -1,0 +1,48 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(main___::solve_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&X:0:.predef_F4)	 => SymHandle(solve_::A)
+                            MemRefHandle(&100)	 => SymHandle(solve_::N)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(solve_::A)	 => MemRefHandle(&X:0:.predef_F4)
+                    SymHandle(solve_::N)	 => MemRefHandle(&100)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(main___::solve_)	 => [ SymHandle(solve_::A)    SymHandle(solve_::B)    SymHandle(solve_::N) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => [ MemRefHandle(&X:0:.predef_F4)    MemRefHandle(&100) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => [ ExprHandle(&X:0:.predef_F4)    ExprHandle(&100) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&X:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &X:0:.predef_F4 )
+
+            ExprHandle(&100)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &100 )
+
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(solve_::A)	 => ExprHandle(&X:0:.predef_F4)
+                    SymHandle(solve_::N)	 => ExprHandle(&100)
+
+
+)
