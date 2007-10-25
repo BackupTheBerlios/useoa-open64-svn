@@ -1,0 +1,22 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/scalar_local.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: Y:0:.predef_F8 = X:0:.predef_F8
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(head_::Y)
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::X)
+)
+
+============================================
+OA::StmtHandle: return

@@ -1,0 +1,37 @@
+
+InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(X:0:.predef_F8) ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8))
+                StmtHandle(Q:0:anon_ptr.(1) = Y:0:.predef_F8)
+                StmtHandle(Y:0:.predef_F8 = 0:Q:0:anon_ptr.(1))
+                StmtHandle(foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)))
+                StmtHandle(foo_(&R:0:.predef_F8, &Q:0:anon_ptr.(L:0:.predef_I4))) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(&X:0:anon_ptr.(K:0:.predef_I4))
+                MemRefHandle(&Y:0:.predef_F8)
+                MemRefHandle(Q:0:anon_ptr.(1))
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(0:Q:0:anon_ptr.(1))
+                MemRefHandle(&Q:0:anon_ptr.(L:0:.predef_I4))
+                MemRefHandle(&Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::X)
+            SymHandle(foo_::Y)
+            SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::Q) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

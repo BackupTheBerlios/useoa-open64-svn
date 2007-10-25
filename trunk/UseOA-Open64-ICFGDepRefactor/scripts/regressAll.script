@@ -1,0 +1,54 @@
+#echo "########################### running regressMemRefExpr.script"
+#source scripts/regressMemRefExpr.script
+
+echo "########################### running regressAliasIRInterface.script"
+source scripts/regressAliasIRInterface.script
+
+echo "########################### running regressAliasMapFIAlias.script"
+source scripts/regressAliasMapFIAlias.script
+
+echo "########################### running regressCFG.script"
+source scripts/regressCFG.script
+
+echo "########################### running regressCallGraph.script"
+source scripts/regressCallGraph.script
+
+echo "########################### running regressICFG.script"
+source scripts/regressICFG.script
+
+echo "########################### running regressICFGDep.script"
+source scripts/regressICFGDep.script
+
+echo "########################### running regressICFGActive.script"
+source scripts/regressICFGActive.script
+
+echo "########################### running regressParamBindings.script"
+source scripts/regressParamBindings.script
+
+echo "########################### running regressSideEffect.script"
+source scripts/regressSideEffect.script
+
+echo "########################### running regressReachDefs.script"
+source scripts/regressReachDefs.script
+
+echo "########################### running regressReachConsts.script"
+source scripts/regressReachConsts.script
+
+echo "########################### running regressUDDUChains.script"
+source scripts/regressUDDUChains.script
+
+echo "########################### running regressICFGReachConsts.script"
+source scripts/regressICFGReachConsts.script
+
+echo "########################### running regressExprTree.script"
+source scripts/regressExprTree.script
+
+echo "########################### running regressCSFIActivity.script"
+source scripts/regressCSFIActivity.script
+
+echo "########################### running regressPtrAssign.script"
+source scripts/regressAssignPairs.script
+
+#echo "########################### running regressLinearity.script"
+#source scripts/regressLinearity.script
+

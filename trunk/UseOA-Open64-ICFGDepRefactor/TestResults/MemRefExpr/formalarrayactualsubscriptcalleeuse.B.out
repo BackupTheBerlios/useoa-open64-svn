@@ -1,0 +1,62 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/formalarrayactualsubscriptcalleeuse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: bar_(&X:0:anon_ptr.(I:0:.predef_I4))
+	mre = 
+AddressOf(
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    Deref(
+        mFullAccuracy: 0
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mFullAccuracy: 1
+            mMemRefType: USE
+            mSymHandle: SymHandle(head_::X)
+        )
+        mNumDeref: 1
+    )
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::I)
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: B:0:.predef_F8 = A:0:.predef_F8
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(bar_::B)
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(bar_::A)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: return

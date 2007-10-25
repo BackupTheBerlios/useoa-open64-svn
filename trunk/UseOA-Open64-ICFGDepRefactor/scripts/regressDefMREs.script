@@ -1,0 +1,48 @@
+echo "Testing TestCases/DefMREs/formalarray.B, TestResults/DefMREs/formalarray.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalarray.B > t
+diff t TestResults/DefMREs/formalarray.B.out
+
+echo "Testing TestCases/DefMREs/formalstructpointer.B, TestResults/DefMREs/formalstructpointer.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalstructpointer.B > t
+diff t TestResults/DefMREs/formalstructpointer.B.out
+
+echo "Testing TestCases/DefMREs/localpointerToscalar.B, TestResults/DefMREs/localpointerToscalar.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localpointerToscalar.B > t
+diff t TestResults/DefMREs/localpointerToscalar.B.out
+
+echo "Testing TestCases/DefMREs/formalpointerToArray.B, TestResults/DefMREs/formalpointerToArray.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalpointerToArray.B > t
+diff t TestResults/DefMREs/formalpointerToArray.B.out
+
+echo "Testing TestCases/DefMREs/formalstructvar.B, TestResults/DefMREs/formalstructvar.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalstructvar.B > t
+diff t TestResults/DefMREs/formalstructvar.B.out
+
+echo "Testing TestCases/DefMREs/localscalar.B, TestResults/DefMREs/localscalar.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localscalar.B > t
+diff t TestResults/DefMREs/localscalar.B.out
+
+echo "Testing TestCases/DefMREs/formalpointerToscalar.B, TestResults/DefMREs/formalpointerToscalar.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalpointerToscalar.B > t
+diff t TestResults/DefMREs/formalpointerToscalar.B.out
+
+echo "Testing TestCases/DefMREs/localarray.B, TestResults/DefMREs/localarray.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localarray.B > t
+diff t TestResults/DefMREs/localarray.B.out
+
+echo "Testing TestCases/DefMREs/localstructpointer.B, TestResults/DefMREs/localstructpointer.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localstructpointer.B > t
+diff t TestResults/DefMREs/localstructpointer.B.out
+
+echo "Testing TestCases/DefMREs/formalscalar.B, TestResults/DefMREs/formalscalar.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalscalar.B > t
+diff t TestResults/DefMREs/formalscalar.B.out
+
+echo "Testing TestCases/DefMREs/localpointerToArray.B, TestResults/DefMREs/localpointerToArray.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localpointerToArray.B > t
+diff t TestResults/DefMREs/localpointerToArray.B.out
+
+echo "Testing TestCases/DefMREs/localstructvar.B, TestResults/DefMREs/localstructvar.B.out Checked by PLM 10/15/07"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localstructvar.B > t
+diff t TestResults/DefMREs/localstructvar.B.out
+

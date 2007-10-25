@@ -1,0 +1,31 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/ParamBind/UseOA-Open64/TestCases/ExprTree/index_expression.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: P:0:.predef_F8 = 0:A:0:anon_ptr.(K:0:.predef_I4+5)
+
+==> ExprHandle: 0:A:0:anon_ptr.(K:0:.predef_I4+5)
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( 0:A:0:anon_ptr.(K:0:.predef_I4+5) )
+
+
+==> ExprHandle: K:0:.predef_I4+5
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( K:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode ( 5 )
+
+
+============================================
+StmtHandle: return
+

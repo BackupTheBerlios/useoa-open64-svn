@@ -1,0 +1,58 @@
+echo "Generating TestResults/AssignPairs/SimpleBalanced.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/SimpleBalanced.B > TestResults/AssignPairs/SimpleBalanced.B.out
+echo "Generating TestResults/AssignPairs/SimpleUnbalanced.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/SimpleUnbalanced.B > TestResults/AssignPairs/SimpleUnbalanced.B.out
+echo "Generating TestResults/AssignPairs/SimpleCall.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/SimpleCall.B > TestResults/AssignPairs/SimpleCall.B.out
+echo "Generating TestResults/AssignPairs/SimpleSin.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/SimpleSin.B > TestResults/AssignPairs/SimpleSin.B.out
+echo "Generating TestResults/AssignPairs/ExprCall.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/ExprCall.B > TestResults/AssignPairs/ExprCall.B.out
+echo "Generating TestResults/AssignPairs/ExprCallf.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/ExprCallf.B > TestResults/AssignPairs/ExprCallf.B.out
+echo "Generating TestResults/AssignPairs/ExprCallIntent.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/ExprCallIntent.B > TestResults/AssignPairs/ExprCallIntent.B.out
+echo "Generating TestResults/AssignPairs/SinExpr.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/SinExpr.B > TestResults/AssignPairs/SinExpr.B.out
+echo "Generating TestResults/AssignPairs/SinFuncExpr.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/SinFuncExpr.B > TestResults/AssignPairs/SinFuncExpr.B.out
+echo "Generating TestResults/AssignPairs/CosDeg2Rad.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/CosDeg2Rad.B > TestResults/AssignPairs/CosDeg2Rad.B.out
+echo "Generating TestResults/AssignPairs/integer_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/integer_assignment.B > TestResults/AssignPairs/integer_assignment.B.out
+echo "Generating TestResults/AssignPairs/array_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/array_assignment.B > TestResults/AssignPairs/array_assignment.B.out
+echo "Generating TestResults/AssignPairs/arraysection_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/arraysection_assignment.B > TestResults/AssignPairs/arraysection_assignment.B.out
+echo "Generating TestResults/AssignPairs/complex_statement.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/complex_statement.B > TestResults/AssignPairs/complex_statement.B.out
+echo "Generating TestResults/AssignPairs/constant_variable_expression.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/constant_variable_expression.B > TestResults/AssignPairs/constant_variable_expression.B.out
+echo "Generating TestResults/AssignPairs/do_loop.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/do_loop.B > TestResults/AssignPairs/do_loop.B.out
+echo "Generating TestResults/AssignPairs/double_dimension_array_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/double_dimension_array_assignment.B > TestResults/AssignPairs/double_dimension_array_assignment.B.out
+echo "Generating TestResults/AssignPairs/formalscalardef.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/formalscalardef.B > TestResults/AssignPairs/formalscalardef.B.out
+echo "Generating TestResults/AssignPairs/formalscalaruse.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/formalscalaruse.B > TestResults/AssignPairs/formalscalaruse.B.out
+echo "Generating TestResults/AssignPairs/function_call.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/function_call.B > TestResults/AssignPairs/function_call.B.out
+echo "Generating TestResults/AssignPairs/function_return.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/function_return.B > TestResults/AssignPairs/function_return.B.out
+echo "Generating TestResults/AssignPairs/integer_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/integer_assignment.B > TestResults/AssignPairs/integer_assignment.B.out
+echo "Generating TestResults/AssignPairs/integer_expression.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/integer_expression.B > TestResults/AssignPairs/integer_expression.B.out
+echo "Generating TestResults/AssignPairs/intrinsic.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/intrinsic.B > TestResults/AssignPairs/intrinsic.B.out
+echo "Generating TestResults/AssignPairs/intrinsic_complex.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/intrinsic_complex.B > TestResults/AssignPairs/intrinsic_complex.B.out
+echo "Generating TestResults/AssignPairs/intrinsic_expression.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/intrinsic_expression.B > TestResults/AssignPairs/intrinsic_expression.B.out
+echo "Generating TestResults/AssignPairs/logical_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/logical_assignment.B > TestResults/AssignPairs/logical_assignment.B.out
+echo "Generating TestResults/AssignPairs/real_assignment.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/real_assignment.B > TestResults/AssignPairs/real_assignment.B.out
+echo "Generating TestResults/AssignPairs/if.B.out"
+./test-open64 --oa-AssignPairs TestCases/AssignPairs/if.B > TestResults/AssignPairs/if.B.out

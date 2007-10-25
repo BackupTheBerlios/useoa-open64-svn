@@ -1,0 +1,942 @@
+
+MustDefMap: StmtHandle	 => LocSet
+        I:0:.predef_I4 = 1	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::I)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        X1:0:.predef_F8 =     3.000000000000000	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::X1)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        X1:0:.predef_F8 = X1:0:.predef_F8+    4.000000000000000	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::X1)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y2:0:.predef_F8 = X1:0:.predef_F8	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y2:0:.predef_F8 = X1:0:.predef_F8+Y2:0:.predef_F8	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y2:0:.predef_F8 = X1:0:.predef_F8	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y1:0:.predef_F8 = X2:0:.predef_F8	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y1)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y2:0:.predef_F8 = X1:0:.predef_F8*Y1:0:.predef_F8+    3.000000000000000	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+        Y2:0:.predef_F8 = Y2:0:.predef_F8+X1:0:.predef_F8*Y1:0:.predef_F8+    3.000000000000000	 => [ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )
+ ] 
+
+mDepDFSet: StmtHandle	 => DepDFSet
+         LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ICFGDep/activity_int6.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: I:0:.predef_I4 = 1	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::I)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: X1:0:.predef_F8 =     3.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: X1:0:.predef_F8 = X1:0:.predef_F8+    4.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: Y2:0:.predef_F8 = X1:0:.predef_F8	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: Y2:0:.predef_F8 = X1:0:.predef_F8+Y2:0:.predef_F8	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: X:0:anon_ptr.(1) = 5	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: X:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)+    6.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: X:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1)+    7.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Y)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+            Defs:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+        stmt: Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(I:0:.predef_I4)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Y)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+            Defs:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+        stmt: Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(2)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Y)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+            Defs:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+        stmt: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(I:0:.predef_I4+1)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Y)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+            Defs:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+        stmt: Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)+0:Y:0:anon_ptr.(I:0:.predef_I4)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::Y)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    LocSubSet(
+                        mLoc: 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+                        mFull: 0
+                    )
+	 => [ 
+                        LocSubSet(
+                            mLoc: 
+                            NamedLoc(
+                                mSymHandle: SymHandle(head_::X)
+                                mLocal: 1
+                                mFullOverlap: [  ] 
+                                mPartOverlap: [  ] 
+                            )
+                            mFull: 0
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+            Defs:[ 
+                LocSubSet(
+                    mLoc: 
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+                    mFull: 0
+                )
+ ] 
+        stmt: if (I:0:.predef_I4<2)	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 
+        stmt: Y2:0:.predef_F8 = X1:0:.predef_F8	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: Y1:0:.predef_F8 = X2:0:.predef_F8	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: Y2:0:.predef_F8 = X1:0:.predef_F8*Y1:0:.predef_F8+    3.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+    
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: Y2:0:.predef_F8 = Y2:0:.predef_F8+X1:0:.predef_F8*Y1:0:.predef_F8+    3.000000000000000	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::X1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y1)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y2)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    NamedLoc(
+                        mSymHandle: SymHandle(head_::Y2)
+                        mLocal: 1
+                        mFullOverlap: [  ] 
+                        mPartOverlap: [  ] 
+                    )
+	 => [ 
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::X1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+    
+                        NamedLoc(
+                            mSymHandle: SymHandle(head_::Y1)
+                            mLocal: 1
+                            mFullOverlap: [  ] 
+                            mPartOverlap: [  ] 
+                        )
+ ] 
+
+            ImplicitRemoves:[  ] 
+            Uses:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+    
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y1)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+            Defs:[ 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y2)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+ ] 
+        stmt: return	 => 
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:[  ] 
+            Uses:[  ] 
+            Defs:[  ] 

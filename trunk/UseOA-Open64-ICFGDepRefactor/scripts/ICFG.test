@@ -1,0 +1,19 @@
+# comment in file.test
+# Regression tests for ICFG generation
+# Regenreated after GraphRefactor for new Node Numbers PLM 08/24/06
+testname::ICFG
+inputdir::TestCases/ICFG
+outputdir::TestResults/ICFG
+driverexec::./test-open64 --oa-ICFG
+
+# list of tests
+#       input file,                 status
+test::  activity_proc_call1.B,    checked by BK  7/24/06
+#test::  boxmodel-small.B,         superficially checked by BK  7/13/06
+test::  functions2.B,             checked by BK  7/24/06
+test::  functions3.B,             checked by BK  7/24/06 (intrinsics)
+test::  functions4.B,             checked by BK  7/24/06 (intrinsics)
+test::  functions5.B,             checked by BK  7/24/06 (intrinsics)
+test::  functions6.B,             checked by BK  7/24/06 (intrinsics)
+#test::  interalias_proc_call1.B,  checked by BK 7/13/06
+test::  nested_calls_1.B,         checked by BK  7/24/06 (intrinsics)

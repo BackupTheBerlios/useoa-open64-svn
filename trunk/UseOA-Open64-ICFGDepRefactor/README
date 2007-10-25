@@ -1,0 +1,16 @@
+Using UseOA-Open64
+------------------
+
+  alias mfef90 ${OPEN64BASE}/targ_ia32_ia64_linux/crayf90/sgi/mfef90
+  mfef90 file.f90  --> file.B
+
+  To see an ASCII dump of the WHIRL file
+    ir_b2a -pre file.B
+
+  To run various NewOA tests
+    ./test-open64 --oa-CFG file.B
+    ./test-open64 --oa-MemRefExpr file.B
+
+Running Regression Tests
+------------------------
+source scripts/regressAll.script

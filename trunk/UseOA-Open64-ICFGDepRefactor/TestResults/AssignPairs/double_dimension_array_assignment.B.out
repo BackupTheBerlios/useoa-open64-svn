@@ -1,0 +1,111 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/double_dimension_array_assignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : A:0:anon_ptr.(1,1) = 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
+
+==> AssignPairs : 
+
+1. mref = A:0:anon_ptr.(1,1), 	expr = 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( 0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4) )
+
+
+2. ExprHandle: K:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( K:0:.predef_I4 )
+
+
+3. ExprHandle: K:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( K:0:.predef_I4 )
+
+
+4. ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+5. ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+==> MemRefHandle:A:0:anon_ptr.(1,1)
+	mre: 
+
+SubSetRef(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::A)
+    )
+)
+
+==> MemRefHandle:0:B:0:anon_ptr.(K:0:.predef_I4,K:0:.predef_I4)
+	mre: 
+
+SubSetRef(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::B)
+    )
+)
+
+==> MemRefHandle:K:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::K)
+)
+
+==> MemRefHandle:K:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::K)
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
