@@ -1,8 +1,0 @@
-echo "Generating TestResults/UDDUChainsTestsXAIF/reachdef_if1.B.out"
-./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsTestsXAIF/reachdef_if1.B > TestResults/UDDUChainsTestsXAIF/reachdef_if1.B.out
-echo "Generating TestResults/UDDUChainsTestsXAIF/reachdef_if2.B.out"
-./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsTestsXAIF/reachdef_if2.B > TestResults/UDDUChainsTestsXAIF/reachdef_if2.B.out
-echo "Generating TestResults/UDDUChainsTestsXAIF/reachdef_loopif1.B.out"
-./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsTestsXAIF/reachdef_loopif1.B > TestResults/UDDUChainsTestsXAIF/reachdef_loopif1.B.out
-echo "Generating TestResults/UDDUChainsTestsXAIF/interalias_proc_call1.B.out"
-./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsTestsXAIF/interalias_proc_call1.B > TestResults/UDDUChainsTestsXAIF/interalias_proc_call1.B.out
