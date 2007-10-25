@@ -114,3 +114,27 @@ echo "Testing TestCases/ExprTree/index_expression.B, TestResults/ExprTree/index_
 ./test-open64 --oa-ExprTree TestCases/ExprTree/index_expression.B > t
 diff t TestResults/ExprTree/index_expression.B.out
 
+echo "Testing TestCases/ExprTree/allocate_localarraysectionAsactual.B, TestResults/ExprTree/allocate_localarraysectionAsactual.B.out Checked by PLM 10/23/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > t
+diff t TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
+
+echo "Testing TestCases/ExprTree/allocate_formalpointertoarrayAsactualsection.B, TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsection.B > t
+diff t TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out
+
+echo "Testing TestCases/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B, TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B > t
+diff t TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localarraysectionAsactual.B, TestResults/ExprTree/allocate_localarraysectionAsactual.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > t
+diff t TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localpointertoarrayAsactualsection.B, TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsection.B > t
+diff t TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localpointertoarrayAsactualsubscript.B, TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsubscript.B > t
+diff t TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out
+

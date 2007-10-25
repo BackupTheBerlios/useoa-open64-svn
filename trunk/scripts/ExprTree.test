@@ -37,6 +37,12 @@ test:: intrinsic_expression.B,      Checked by PLM 08/30/07
 test:: logical_assignment.B,        Checked by PLM 08/30/07 
 test:: real_assignment.B,           Checked by PLM 08/30/07
 test:: index_expression.B,          Checked by PLM 10/23/07
+test::allocate_localarraysectionAsactual.B, Checked by PLM 10/23/07
+test::allocate_formalpointertoarrayAsactualsection.B, Checked by PLM 10/24/07
+test::allocate_formalpointertoarrayAsactualsubscript.B, Checked by PLM 10/24/07
+test::allocate_localarraysectionAsactual.B, Checked by PLM 10/24/07
+test::allocate_localpointertoarrayAsactualsection.B, Checked by PLM 10/24/07
+test::allocate_localpointertoarrayAsactualsubscript.B, Checked by PLM 10/24/07
 #test:: scalar_pointer.B,           
 #test:: stringConstant_assignment.B, Checked by PLM 08/30/07
 #test:: stringTostring_assignment.B, Checked by PLM 08/30/07 

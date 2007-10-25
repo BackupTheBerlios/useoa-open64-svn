@@ -56,3 +56,15 @@ echo "Generating TestResults/ExprTree/real_assignment.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/real_assignment.B > TestResults/ExprTree/real_assignment.B.out
 echo "Generating TestResults/ExprTree/index_expression.B.out"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/index_expression.B > TestResults/ExprTree/index_expression.B.out
+echo "Generating TestResults/ExprTree/allocate_localarraysectionAsactual.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
+echo "Generating TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsection.B > TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out
+echo "Generating TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B > TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out
+echo "Generating TestResults/ExprTree/allocate_localarraysectionAsactual.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
+echo "Generating TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsection.B > TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out
+echo "Generating TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsubscript.B > TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out

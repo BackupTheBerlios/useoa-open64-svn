@@ -37,6 +37,34 @@ I8SRCTRIPLET
     Node 0: ET MemRefNode ( 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.()) )
 
 
+2. ExprHandle: I8SRCTRIPLET
+0:VECTOR:0:anon_ptr.()
+I8SRCTRIPLET
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET MemRefNode ( 0:VECTOR:0:anon_ptr.() )
+
+
+3. ExprHandle: I8SRCTRIPLET
+
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET ConstValNode (  )
+
+
+4. ExprHandle: I8SRCTRIPLET
+
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET ConstValNode (  )
+
+
 ==> MemRefHandle:I8SRCTRIPLET
 B:0:anon_ptr.()
 	mre: 
@@ -110,6 +138,34 @@ graph EXPRESSION TREE:
 I8SRCTRIPLET
 
     Node 0: ET MemRefNode ( 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.()) )
+
+
+2. ExprHandle: I8SRCTRIPLET
+0:t__1:0:anon_ptr.()
+I8SRCTRIPLET
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET MemRefNode ( 0:t__1:0:anon_ptr.() )
+
+
+3. ExprHandle: I8SRCTRIPLET
+
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET ConstValNode (  )
+
+
+4. ExprHandle: I8SRCTRIPLET
+
+
+graph EXPRESSION TREE:
+I8SRCTRIPLET
+
+    Node 0: ET ConstValNode (  )
 
 
 ==> MemRefHandle:I8SRCTRIPLET
