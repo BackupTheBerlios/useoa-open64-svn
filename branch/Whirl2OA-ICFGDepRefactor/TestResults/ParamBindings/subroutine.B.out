@@ -1,0 +1,65 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(sub1_::sum_sq_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&A:0:.predef_F4)	 => SymHandle(sum_sq_::AA)
+                            MemRefHandle(&B:0:.predef_F4)	 => SymHandle(sum_sq_::BB)
+                            MemRefHandle(&C:0:.predef_F4)	 => SymHandle(sum_sq_::CC)
+                            MemRefHandle(&S:0:.predef_F4)	 => SymHandle(sum_sq_::SS)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(sum_sq_::AA)	 => MemRefHandle(&A:0:.predef_F4)
+                    SymHandle(sum_sq_::BB)	 => MemRefHandle(&B:0:.predef_F4)
+                    SymHandle(sum_sq_::CC)	 => MemRefHandle(&C:0:.predef_F4)
+                    SymHandle(sum_sq_::SS)	 => MemRefHandle(&S:0:.predef_F4)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(sub1_::sub1_)	 => [ SymHandle(sub1_::A)    SymHandle(sub1_::B)    SymHandle(sub1_::C) ] 
+            ProcHandle(sub1_::sum_sq_)	 => [ SymHandle(sum_sq_::AA)    SymHandle(sum_sq_::BB)    SymHandle(sum_sq_::CC)    SymHandle(sum_sq_::SS) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => [ MemRefHandle(&A:0:.predef_F4)    MemRefHandle(&B:0:.predef_F4)    MemRefHandle(&C:0:.predef_F4)    MemRefHandle(&S:0:.predef_F4) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => [ ExprHandle(&A:0:.predef_F4)    ExprHandle(&B:0:.predef_F4)    ExprHandle(&C:0:.predef_F4)    ExprHandle(&S:0:.predef_F4) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&A:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &A:0:.predef_F4 )
+
+            ExprHandle(&B:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &B:0:.predef_F4 )
+
+            ExprHandle(&C:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &C:0:.predef_F4 )
+
+            ExprHandle(&S:0:.predef_F4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &S:0:.predef_F4 )
+
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(sum_sq_(&A:0:.predef_F4, &B:0:.predef_F4, &C:0:.predef_F4, &S:0:.predef_F4))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(sum_sq_::AA)	 => ExprHandle(&A:0:.predef_F4)
+                    SymHandle(sum_sq_::BB)	 => ExprHandle(&B:0:.predef_F4)
+                    SymHandle(sum_sq_::CC)	 => ExprHandle(&C:0:.predef_F4)
+                    SymHandle(sum_sq_::SS)	 => ExprHandle(&S:0:.predef_F4)
+
+
+)

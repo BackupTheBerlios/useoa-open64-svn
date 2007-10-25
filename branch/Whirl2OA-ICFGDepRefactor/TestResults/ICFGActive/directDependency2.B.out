@@ -1,0 +1,86 @@
+
+InterActive(
+    Procedure( foo_::foo_ ): 
+    ActiveLocSet([  ] 
+    )
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::T)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(head_::T2)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            LocSubSet(
+                mLoc: 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::X)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+                mFull: 0
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(T:0:.predef_F8 = 0:X:0:anon_ptr.(1)+0:X:0:anon_ptr.(2))
+                StmtHandle(T2:0:.predef_F4 = OPC_F4F8CVT(T:0:.predef_F8*    2.000000000000000))
+                StmtHandle(Y:0:.predef_F8 = OPC_F8F4CVT(T2:0:.predef_F4*    3.000000)+T:0:.predef_F8*    2.000000000000000) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(T:0:.predef_F8)
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(2))
+                MemRefHandle(T2:0:.predef_F4)
+                MemRefHandle(T:0:.predef_F8)
+                MemRefHandle(Y:0:.predef_F8)
+                MemRefHandle(T2:0:.predef_F4)
+                MemRefHandle(T:0:.predef_F8) ] 
+    )
+    mNumIterUseful: 2
+    mNumIterVary: 2
+    mNumIterActive: 1
+)
+
+
+Total Iters: 6

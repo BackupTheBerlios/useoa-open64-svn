@@ -1,0 +1,51 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/logical_assignment.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : B:0:.log.4 = 1
+
+==> AssignPairs : 
+
+1. mref = B:0:.log.4, 	expr = 1
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+==> MemRefHandle:B:0:.log.4
+	mre: 
+
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::B)
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+

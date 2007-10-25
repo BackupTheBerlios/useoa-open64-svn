@@ -1,0 +1,80 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/addressOf/UseOA-Open64/TestCases/MemRefExpr/formalarrayofarrayuse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+I8SRCTRIPLET
+B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+	mre = 
+Deref(
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::B)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::A)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::VECTOR)
+)
+
+============================================
+OA::StmtHandle: I8SRCTRIPLET
+I8SRCTRIPLET
+A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+	mre = 
+Deref(
+    mFullAccuracy: 0
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::A)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::B)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 0
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::t__1)
+)
+
+============================================
+OA::StmtHandle: return

@@ -1,0 +1,36 @@
+echo "Testing TestCases/Alias/interalias_proc_call1.B, TestResults/AliasMapFIAlias/interalias_proc_call1.B.out rechecked by MMS 8/1/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call1.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call1.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call2.B, TestResults/AliasMapFIAlias/interalias_proc_call2.B.out rechecked by MMS 8/1/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call2.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call2.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call3.B, TestResults/AliasMapFIAlias/interalias_proc_call3.B.out rechecked by MMS 8/1/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call3.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call3.B.out
+
+echo "Testing TestCases/Alias/activity_int4ai.B, TestResults/AliasMapFIAlias/activity_int4ai.B.out checked by MMS 8/9/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/activity_int4ai.B > t
+diff t TestResults/AliasMapFIAlias/activity_int4ai.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call5.B, TestResults/AliasMapFIAlias/interalias_proc_call5.B.out checked by PLM PLM 12/16/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call5.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call5.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call4.B, TestResults/AliasMapFIAlias/interalias_proc_call4.B.out checked by PLM 12/20/06"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call4.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call4.B.out
+
+echo "Testing TestCases/Alias/Unnamed_alias.B, TestResults/AliasMapFIAlias/Unnamed_alias.B.out checked by PLM 04/15/07"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/Unnamed_alias.B > t
+diff t TestResults/AliasMapFIAlias/Unnamed_alias.B.out
+
+echo "Testing TestCases/Alias/Unnamed_alias_callsite.B, TestResults/AliasMapFIAlias/Unnamed_alias_callsite.B.out checked by PLM 04/15/07"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/Unnamed_alias_callsite.B > t
+diff t TestResults/AliasMapFIAlias/Unnamed_alias_callsite.B.out
+
+echo "Testing TestCases/Alias/interalias_proc_call6.B, TestResults/AliasMapFIAlias/interalias_proc_call6.B.out checked by BK 07/26/07"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call6.B > t
+diff t TestResults/AliasMapFIAlias/interalias_proc_call6.B.out
+

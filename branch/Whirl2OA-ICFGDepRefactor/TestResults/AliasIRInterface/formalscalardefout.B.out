@@ -1,0 +1,25 @@
+
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("head_::X") >
+            < 1, SymHandle("head_::T2") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/formalscalardefout.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("X:0:.predef_F8 = T2:0:.predef_F8") =>
+        [
+            MemRefHandle("X:0:.predef_F8") => 
+                Deref( DEF, NamedRef( USE, SymHandle("head_::X")), 1)
+            MemRefHandle("T2:0:.predef_F8") => 
+                Deref( USE, NamedRef( USE, SymHandle("head_::T2")), 1)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
+    LOCATION = { < SymHandle("head_::T2"), local > }

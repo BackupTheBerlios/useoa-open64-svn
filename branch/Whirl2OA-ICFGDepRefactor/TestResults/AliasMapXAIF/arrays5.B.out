@@ -1,0 +1,42 @@
+
+AliasMapXAIF(ProcHandle(conj_grad_::conj_grad_)
+    mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
+            1	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 5
+                        mEnd: 5
+                    )
+                    mFullOverlap: 1
+                ) ] 
+            2	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 3
+                        mEnd: 4
+                    )
+                    mFullOverlap: 1
+                ) ] 
+            3	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 1
+                        mEnd: 2
+                    )
+                    mFullOverlap: 1
+                ) ] 
+
+    mMemRefToIdMap: MemRefHandle	 => int
+            MemRefHandle(J:0:.predef_I4)	 => 1
+            MemRefHandle(J:0:.predef_I4)	 => 1
+            MemRefHandle(J:0:.predef_I4)	 => 1
+            MemRefHandle(J:0:.predef_I4)	 => 1
+            MemRefHandle(R:0:anon_ptr.(J:0:.predef_I4))	 => 2
+            MemRefHandle(0:X:0:anon_ptr.(J:0:.predef_I4))	 => 3
+            MemRefHandle(J:0:.predef_I4)	 => 1
+            MemRefHandle(J:0:.predef_I4)	 => 1
+
+)

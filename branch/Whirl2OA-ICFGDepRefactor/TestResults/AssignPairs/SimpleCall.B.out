@@ -1,0 +1,312 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ExprTree/SimpleCall.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : foo_(&A:0:.predef_F8, &F:0:.predef_F8, &X:0:.predef_F8, &T:0:.predef_F8)
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: &A:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &A:0:.predef_F8 )
+
+
+2. ExprHandle: &F:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &F:0:.predef_F8 )
+
+
+3. ExprHandle: &X:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &X:0:.predef_F8 )
+
+
+4. ExprHandle: &T:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &T:0:.predef_F8 )
+
+
+==> MemRefHandle:&A:0:.predef_F8
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(main_::A)
+    )
+)
+
+==> MemRefHandle:&F:0:.predef_F8
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(main_::F)
+    )
+)
+
+==> MemRefHandle:&X:0:.predef_F8
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(main_::X)
+    )
+)
+
+==> MemRefHandle:&T:0:.predef_F8
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(main_::T)
+    )
+)
+
+========================================================
+
+stmt : _END()
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : A:0:.predef_F8 = (OPC_F8F4CVT(func_(&T:0:.predef_F8))+(A:0:.predef_F8*X:0:.predef_F8))
+
+==> AssignPairs : 
+
+1. mref = A:0:.predef_F8, 	expr = (OPC_F8F4CVT(func_(&T:0:.predef_F8))+(A:0:.predef_F8*X:0:.predef_F8))
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: (OPC_F8F4CVT(func_(&T:0:.predef_F8))+(A:0:.predef_F8*X:0:.predef_F8))
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET CallNode ( func_(&T:0:.predef_F8) )
+    Edge: 
+        0 => 
+        Node 2: ET OpNode ( * )
+        Edge: 
+            2 => 
+            Node 3: ET MemRefNode ( A:0:.predef_F8 )
+        Edge: 
+            2 => 
+            Node 4: ET MemRefNode ( X:0:.predef_F8 )
+
+
+2. ExprHandle: &T:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &T:0:.predef_F8 )
+
+
+==> MemRefHandle:A:0:.predef_F8
+	mre: 
+
+Deref(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::A)
+    )
+    mNumDeref: 1
+)
+
+==> MemRefHandle:&T:0:.predef_F8
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::T)
+)
+
+==> MemRefHandle:A:0:.predef_F8
+	mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::A)
+    )
+    mNumDeref: 1
+)
+
+==> MemRefHandle:X:0:.predef_F8
+	mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::X)
+    )
+    mNumDeref: 1
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : RES:0:.predef_F8 = N:0:.predef_F8
+
+==> AssignPairs : 
+
+1. mref = RES:0:.predef_F8, 	expr = N:0:.predef_F8
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: N:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( N:0:.predef_F8 )
+
+
+==> MemRefHandle:RES:0:.predef_F8
+	mre: 
+
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(func_::RES)
+)
+
+==> MemRefHandle:N:0:.predef_F8
+	mre: 
+
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(func_::N)
+    )
+    mNumDeref: 1
+)
+
+========================================================
+
+stmt : return (RES:0:.predef_F8)
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+==> MemRefHandle:RES:0:.predef_F8
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(func_::RES)
+)
+
