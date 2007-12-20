@@ -12,14 +12,6 @@ echo "Generating TestResults/AliasIRInterface/functions1.B.out"
 ./FORTRANtoOA TestCases/Alias/functions1.B > TestResults/AliasIRInterface/functions1.B.out
 echo "Generating TestResults/AliasIRInterface/globalActive_2.B.out"
 ./FORTRANtoOA TestCases/Alias/globalActive_2.B > TestResults/AliasIRInterface/globalActive_2.B.out
-echo "Generating TestResults/AliasIRInterface/formalarrayactual.B.out"
-./FORTRANtoOA TestCases/Alias/formalarrayactual.B > TestResults/AliasIRInterface/formalarrayactual.B.out
-echo "Generating TestResults/AliasIRInterface/formalarrayactualin.B.out"
-./FORTRANtoOA TestCases/Alias/formalarrayactualin.B > TestResults/AliasIRInterface/formalarrayactualin.B.out
-echo "Generating TestResults/AliasIRInterface/formalarrayactualout.B.out"
-./FORTRANtoOA TestCases/Alias/formalarrayactualout.B > TestResults/AliasIRInterface/formalarrayactualout.B.out
-echo "Generating TestResults/AliasIRInterface/formalarrayactualinout.B.out"
-./FORTRANtoOA TestCases/Alias/formalarrayactualinout.B > TestResults/AliasIRInterface/formalarrayactualinout.B.out
 echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscript.B.out"
 ./FORTRANtoOA TestCases/Alias/formalarrayactualsubscript.B > TestResults/AliasIRInterface/formalarrayactualsubscript.B.out
 echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptin.B.out"
@@ -28,10 +20,6 @@ echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.ou
 ./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptout.B > TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.out
 echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out"
 ./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptinout.B > TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out
-echo "Generating TestResults/AliasIRInterface/localarrayactual.B.out"
-./FORTRANtoOA TestCases/Alias/localarrayactual.B > TestResults/AliasIRInterface/localarrayactual.B.out
-echo "Generating TestResults/AliasIRInterface/localscalaractual.B.out"
-./FORTRANtoOA TestCases/Alias/localscalaractual.B > TestResults/AliasIRInterface/localscalaractual.B.out
 echo "Generating TestResults/AliasIRInterface/formalarrayofarrayuse.B.out"
 ./FORTRANtoOA TestCases/Alias/formalarrayofarrayuse.B > TestResults/AliasIRInterface/formalarrayofarrayuse.B.out
 echo "Generating TestResults/AliasIRInterface/formalarrayofarrayusesubscript.B.out"

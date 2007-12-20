@@ -26,22 +26,6 @@ echo "Testing TestCases/Alias/globalActive_2.B, TestResults/AliasIRInterface/glo
 ./FORTRANtoOA TestCases/Alias/globalActive_2.B > t
 diff t TestResults/AliasIRInterface/globalActive_2.B.out
 
-echo "Testing TestCases/Alias/formalarrayactual.B, TestResults/AliasIRInterface/formalarrayactual.B.out checked by PLM 09/28/07"
-./FORTRANtoOA TestCases/Alias/formalarrayactual.B > t
-diff t TestResults/AliasIRInterface/formalarrayactual.B.out
-
-echo "Testing TestCases/Alias/formalarrayactualin.B, TestResults/AliasIRInterface/formalarrayactualin.B.out checked by PLM 09/28/07"
-./FORTRANtoOA TestCases/Alias/formalarrayactualin.B > t
-diff t TestResults/AliasIRInterface/formalarrayactualin.B.out
-
-echo "Testing TestCases/Alias/formalarrayactualout.B, TestResults/AliasIRInterface/formalarrayactualout.B.out checked by PLM 09/28/07"
-./FORTRANtoOA TestCases/Alias/formalarrayactualout.B > t
-diff t TestResults/AliasIRInterface/formalarrayactualout.B.out
-
-echo "Testing TestCases/Alias/formalarrayactualinout.B, TestResults/AliasIRInterface/formalarrayactualinout.B.out checked by PLM 09/28/07"
-./FORTRANtoOA TestCases/Alias/formalarrayactualinout.B > t
-diff t TestResults/AliasIRInterface/formalarrayactualinout.B.out
-
 echo "Testing TestCases/Alias/formalarrayactualsubscript.B, TestResults/AliasIRInterface/formalarrayactualsubscript.B.out checked by PLM 09/28/07"
 ./FORTRANtoOA TestCases/Alias/formalarrayactualsubscript.B > t
 diff t TestResults/AliasIRInterface/formalarrayactualsubscript.B.out
@@ -57,14 +41,6 @@ diff t TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.out
 echo "Testing TestCases/Alias/formalarrayactualsubscriptinout.B, TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out checked by PLM 09/28/07"
 ./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptinout.B > t
 diff t TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out
-
-echo "Testing TestCases/Alias/localarrayactual.B, TestResults/AliasIRInterface/localarrayactual.B.out checked by PLM 09/28/07"
-./FORTRANtoOA TestCases/Alias/localarrayactual.B > t
-diff t TestResults/AliasIRInterface/localarrayactual.B.out
-
-echo "Testing TestCases/Alias/localscalaractual.B, TestResults/AliasIRInterface/localscalaractual.B.out checked by PLM 09/28/07"
-./FORTRANtoOA TestCases/Alias/localscalaractual.B > t
-diff t TestResults/AliasIRInterface/localscalaractual.B.out
 
 echo "Testing TestCases/Alias/formalarrayofarrayuse.B, TestResults/AliasIRInterface/formalarrayofarrayuse.B.out checked by PLM 09/28/07"
 ./FORTRANtoOA TestCases/Alias/formalarrayofarrayuse.B > t
