@@ -1323,7 +1323,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
-    /*
     // ----------------- testing separate pieces
 
     //ICFGDep  (for testing)
@@ -1353,7 +1352,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                                         OA::DataFlow::ITERATIVE);
     std::cout << "Printing ICFGVaryActive" << std::endl;
     inActive->output(*irInterface);
-    */
     
     // ----------------- Activity does the testing pieces above
     // ICFGActive
