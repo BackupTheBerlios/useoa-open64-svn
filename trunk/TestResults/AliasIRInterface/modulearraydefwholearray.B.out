@@ -16,15 +16,11 @@ PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-I8SRCTRIPLET
-X:0:anon_ptr.() = 0:Y:0:anon_ptr.()") =>
+    MEMREFEXPRS = { StmtHandle("X:0:anon_ptr.(1:1:2) = 0:Y:0:anon_ptr.(1:1:2)") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-X:0:anon_ptr.()") => 
+            MemRefHandle("X:0:anon_ptr.(1:1:2)") => 
                 SubSetRef( DEF, NamedRef( USE, SymHandle("globals_::X")))
-            MemRefHandle("I8SRCTRIPLET
-0:Y:0:anon_ptr.()") => 
+            MemRefHandle("0:Y:0:anon_ptr.(1:1:2)") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::Y")))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>

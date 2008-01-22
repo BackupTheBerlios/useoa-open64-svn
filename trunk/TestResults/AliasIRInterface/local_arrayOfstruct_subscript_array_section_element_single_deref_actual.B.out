@@ -17,12 +17,10 @@ PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
         [
         ] }
     MEMREFEXPRS = { StmtHandle("U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-bar_(&())") =>
+bar_(&(I:0:.predef_I4:1:J:0:.predef_I4))") =>
         [
             MemRefHandle("U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-&()") => 
+&(I:0:.predef_I4:1:J:0:.predef_I4)") => 
                 AddressOf( USE, SubSetRef( USE, FieldAccess( USE, SubSetRef( USE, NamedRef( USE, SymHandle("foo_::BLACK_FORD"))), PARTS)))
             MemRefHandle("I:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("foo_::I"))
@@ -32,19 +30,15 @@ I8SRCTRIPLET
                 NamedRef( USE, SymHandle("foo_::J"))
         ] }
     CALLSITES = { StmtHandle("U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-bar_(&())") =>
+bar_(&(I:0:.predef_I4:1:J:0:.predef_I4))") =>
         [
             CallHandle("U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-bar_(&())") => 
+bar_(&(I:0:.predef_I4:1:J:0:.predef_I4))") => 
                 NamedRef( USE, SymHandle("mymodule_::bar_"))
         ] }U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
 
     PARAMBINDPTRASSIGNPAIRS = { CallHandle("U8U8STRCTFLD T<30,.array.,4> T<29,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-bar_(&())") =>
+bar_(&(I:0:.predef_I4:1:J:0:.predef_I4))") =>
         [
             < 0, AddressOf( USE, SubSetRef( USE, FieldAccess( USE, SubSetRef( USE, NamedRef( USE, SymHandle("foo_::BLACK_FORD"))), PARTS))) >
         ] }

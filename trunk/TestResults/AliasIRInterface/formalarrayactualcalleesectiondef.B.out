@@ -39,11 +39,9 @@ PROCEDURE = { < ProcHandle("head_::bar_"), SymHandle("head_::bar_") > }
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-A:0:anon_ptr.() = B:0:.predef_F8") =>
+    MEMREFEXPRS = { StmtHandle("A:0:anon_ptr.(2:1:4) = B:0:.predef_F8") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-A:0:anon_ptr.()") => 
+            MemRefHandle("A:0:anon_ptr.(2:1:4)") => 
                 SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("bar_::A")), 1))
             MemRefHandle("B:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("bar_::B"))

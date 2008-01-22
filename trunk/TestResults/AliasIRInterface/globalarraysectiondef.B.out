@@ -5,11 +5,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-X:0:anon_ptr.() = T2:0:.predef_F8") =>
+    MEMREFEXPRS = { StmtHandle("X:0:anon_ptr.(2:1:4) = T2:0:.predef_F8") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-X:0:anon_ptr.()") => 
+            MemRefHandle("X:0:anon_ptr.(2:1:4)") => 
                 SubSetRef( DEF, NamedRef( USE, SymHandle("head_::X")))
             MemRefHandle("T2:0:.predef_F8") => 
                 NamedRef( USE, SymHandle("head_::T2"))

@@ -16,27 +16,21 @@ PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-bar_(&THIRD:0:anon_ptr.())") =>
+    MEMREFEXPRS = { StmtHandle("bar_(&THIRD:0:anon_ptr.(I:0:.predef_I4:1:J:0:.predef_I4))") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-&THIRD:0:anon_ptr.()") => 
+            MemRefHandle("&THIRD:0:anon_ptr.(I:0:.predef_I4:1:J:0:.predef_I4)") => 
                 AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("foo_::THIRD"))))
             MemRefHandle("I:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("foo_::I"))
             MemRefHandle("J:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("foo_::J"))
         ] }
-    CALLSITES = { StmtHandle("I8SRCTRIPLET
-bar_(&THIRD:0:anon_ptr.())") =>
+    CALLSITES = { StmtHandle("bar_(&THIRD:0:anon_ptr.(I:0:.predef_I4:1:J:0:.predef_I4))") =>
         [
-            CallHandle("I8SRCTRIPLET
-bar_(&THIRD:0:anon_ptr.())") => 
+            CallHandle("bar_(&THIRD:0:anon_ptr.(I:0:.predef_I4:1:J:0:.predef_I4))") => 
                 NamedRef( USE, SymHandle("mymodule_::bar_"))
-        ] }I8SRCTRIPLET
-
-    PARAMBINDPTRASSIGNPAIRS = { CallHandle("I8SRCTRIPLET
-bar_(&THIRD:0:anon_ptr.())") =>
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&THIRD:0:anon_ptr.(I:0:.predef_I4:1:J:0:.predef_I4))") =>
         [
             < 0, AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("foo_::THIRD")))) >
         ] }

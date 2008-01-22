@@ -16,17 +16,13 @@ PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-U8U8STRCTFLD T<31,.array.,4> T<30,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-X:0:anon_ptr.() = 0:()") =>
+    MEMREFEXPRS = { StmtHandle("U8U8STRCTFLD T<31,.array.,4> T<30,REPAIR_BILL,8> <field_id:1>
+X:0:anon_ptr.(1:1:20) = 0:(I:0:.predef_I4:1:J:0:.predef_I4)") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-X:0:anon_ptr.()") => 
+            MemRefHandle("X:0:anon_ptr.(1:1:20)") => 
                 SubSetRef( DEF, NamedRef( USE, SymHandle("foo_::X")))
             MemRefHandle("U8U8STRCTFLD T<31,.array.,4> T<30,REPAIR_BILL,8> <field_id:1>
-I8SRCTRIPLET
-0:()") => 
+0:(I:0:.predef_I4:1:J:0:.predef_I4)") => 
                 SubSetRef( USE, FieldAccess( USE, FieldAccess( USE, SubSetRef( USE, NamedRef( USE, SymHandle("foo_::BLACK_FORD"))), COST), PARTS))
             MemRefHandle("I:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("foo_::I"))

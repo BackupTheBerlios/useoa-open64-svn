@@ -19,8 +19,7 @@ PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
     MEMREFEXPRS = { StmtHandle("MSTORE 0 T<34,anon_ptr.,8>
 ") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-THIRD:0:anon_ptr.()") => 
+            MemRefHandle("THIRD:0:anon_ptr.(1:1:4)") => 
                 SubSetRef( DEF, NamedRef( USE, SymHandle("foo_::THIRD")))
             MemRefHandle("MLOAD 0 T<34,anon_ptr.,8>
 ") => 

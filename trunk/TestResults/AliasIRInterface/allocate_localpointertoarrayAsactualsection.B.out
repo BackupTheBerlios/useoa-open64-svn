@@ -5,23 +5,17 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)") =>
+    MEMREFEXPRS = { StmtHandle("_ALLOCATE(&P:0:anon_ptr.(1:1:3), &0)") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-&P:0:anon_ptr.()") => 
+            MemRefHandle("&P:0:anon_ptr.(1:1:3)") => 
                 NamedRef( DEF, SymHandle("arraypointer_::P"))
-            MemRefHandle("I8SRCTRIPLET
-P:0:anon_ptr.()") => 
-                AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
-&P:0:anon_ptr.()"), 1, ProcHandle("arraypointer_::arraypointer_")))
+            MemRefHandle("P:0:anon_ptr.(1:1:3)") => 
+                AddressOf( USE, UnnamedRef( USE, ExprHandle("&P:0:anon_ptr.(1:1:3)"), 1, ProcHandle("arraypointer_::arraypointer_")))
         ] }
-    PTRASSIGNPAIRS = { StmtHandle("I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)") =>
+    PTRASSIGNPAIRS = { StmtHandle("_ALLOCATE(&P:0:anon_ptr.(1:1:3), &0)") =>
         [
             < NamedRef( DEF, SymHandle("arraypointer_::P"))
-            , AddressOf( USE, UnnamedRef( USE, ExprHandle("I8SRCTRIPLET
-&P:0:anon_ptr.()"), 1, ProcHandle("arraypointer_::arraypointer_"))) >
+            , AddressOf( USE, UnnamedRef( USE, ExprHandle("&P:0:anon_ptr.(1:1:3)"), 1, ProcHandle("arraypointer_::arraypointer_"))) >
         ] }
     MEMREFEXPRS = { StmtHandle("_END()") =>
         [

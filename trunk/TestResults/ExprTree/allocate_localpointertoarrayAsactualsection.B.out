@@ -4,26 +4,20 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
 ============================================
-StmtHandle: I8SRCTRIPLET
-_ALLOCATE(&P:0:anon_ptr.(), &0)
+StmtHandle: _ALLOCATE(&P:0:anon_ptr.(1:1:3), &0)
 
-==> ExprHandle: I8SRCTRIPLET
-P:0:anon_ptr.()
-I8SRCTRIPLET
+==> ExprHandle: P:0:anon_ptr.(1:1:3)
 
 graph EXPRESSION TREE:
-I8SRCTRIPLET
 
-    Node 0: ET MemRefNode ( P:0:anon_ptr.() )
+    Node 0: ET MemRefNode ( P:0:anon_ptr.(1:1:3) )
 
 
-==> ExprHandle: I8SRCTRIPLET
-
+==> ExprHandle: 1:1:3
 
 graph EXPRESSION TREE:
-I8SRCTRIPLET
 
-    Node 0: ET ConstValNode (  )
+    Node 0: ET ConstValNode ( 1:1:3 )
 
 
 ============================================

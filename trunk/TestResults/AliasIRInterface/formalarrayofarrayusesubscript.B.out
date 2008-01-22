@@ -5,11 +5,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(I:0:.predef_I4))") =>
+    MEMREFEXPRS = { StmtHandle("B:0:anon_ptr.(1:1:3) = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(I:0:.predef_I4))") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-B:0:anon_ptr.()") => 
+            MemRefHandle("B:0:anon_ptr.(1:1:3)") => 
                 SubSetRef( DEF, NamedRef( USE, SymHandle("head_::B")))
             MemRefHandle("0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(I:0:.predef_I4))") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::A")))
@@ -18,18 +16,13 @@ B:0:anon_ptr.()") =>
             MemRefHandle("I:0:.predef_I4") => 
                 NamedRef( USE, SymHandle("head_::I"))
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-I8SRCTRIPLET
-B:0:anon_ptr.(0:t__1:0:anon_ptr.()) = 0:A:0:anon_ptr.()") =>
+    MEMREFEXPRS = { StmtHandle("B:0:anon_ptr.(0:t__1:0:anon_ptr.(1:1:3)) = 0:A:0:anon_ptr.(1:1:3)") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-B:0:anon_ptr.(0:t__1:0:anon_ptr.())") => 
+            MemRefHandle("B:0:anon_ptr.(0:t__1:0:anon_ptr.(1:1:3))") => 
                 SubSetRef( DEF, NamedRef( USE, SymHandle("head_::B")))
-            MemRefHandle("I8SRCTRIPLET
-0:A:0:anon_ptr.()") => 
+            MemRefHandle("0:A:0:anon_ptr.(1:1:3)") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::A")))
-            MemRefHandle("I8SRCTRIPLET
-0:t__1:0:anon_ptr.()") => 
+            MemRefHandle("0:t__1:0:anon_ptr.(1:1:3)") => 
                 SubSetRef( USE, NamedRef( USE, SymHandle("head_::t__1")))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>

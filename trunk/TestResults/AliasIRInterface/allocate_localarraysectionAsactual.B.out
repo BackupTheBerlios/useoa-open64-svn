@@ -5,11 +5,9 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-_ALLOCATE(&A:0:anon_ptr.(), &0)") =>
+    MEMREFEXPRS = { StmtHandle("_ALLOCATE(&A:0:anon_ptr.(1:1:3), &0)") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-&A:0:anon_ptr.()") => 
+            MemRefHandle("&A:0:anon_ptr.(1:1:3)") => 
                 NamedRef( DEF, SymHandle("foo_::A"))
         ] }
     MEMREFEXPRS = { StmtHandle("return") =>

@@ -5,23 +5,17 @@ PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 ") =>
         [
         ] }
-    MEMREFEXPRS = { StmtHandle("I8SRCTRIPLET
-bar_(&X:0:anon_ptr.())") =>
+    MEMREFEXPRS = { StmtHandle("bar_(&X:0:anon_ptr.(2:1:4))") =>
         [
-            MemRefHandle("I8SRCTRIPLET
-&X:0:anon_ptr.()") => 
+            MemRefHandle("&X:0:anon_ptr.(2:1:4)") => 
                 AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("head_::X"))))
         ] }
-    CALLSITES = { StmtHandle("I8SRCTRIPLET
-bar_(&X:0:anon_ptr.())") =>
+    CALLSITES = { StmtHandle("bar_(&X:0:anon_ptr.(2:1:4))") =>
         [
-            CallHandle("I8SRCTRIPLET
-bar_(&X:0:anon_ptr.())") => 
+            CallHandle("bar_(&X:0:anon_ptr.(2:1:4))") => 
                 NamedRef( USE, SymHandle("head_::bar_"))
-        ] }I8SRCTRIPLET
-
-    PARAMBINDPTRASSIGNPAIRS = { CallHandle("I8SRCTRIPLET
-bar_(&X:0:anon_ptr.())") =>
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&X:0:anon_ptr.(2:1:4))") =>
         [
             < 0, AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("head_::X")))) >
         ] }
