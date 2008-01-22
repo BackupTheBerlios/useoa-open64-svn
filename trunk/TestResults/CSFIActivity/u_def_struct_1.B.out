@@ -7,27 +7,27 @@ InterActiveFortran(
     )
     Procedure( mytypemodule_::head_ ): 
     ActiveStmtSet([ 
-            StmtHandle( LOC 0 0 source files:	1	"/home/malusare/ExprTree/UseOA-Open64/TestCases/CSFIActivity/u_def_struct_1.f"
+             LOC 0 0 source files:	1	"/home/malusare/ExprTree/UseOA-Open64/TestCases/CSFIActivity/u_def_struct_1.f"
 U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
- = 0:X:0:anon_ptr.(1))
-                StmtHandle(U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
- = 0:X:0:anon_ptr.(2))
-                StmtHandle(U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+StmtHandle( = 0:X:0:anon_ptr.(1))
+                U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
+StmtHandle( = 0:X:0:anon_ptr.(2))
+                U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
 U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
-Y:0:anon_ptr.(1) = 0:*0:) ] 
+StmtHandle(Y:0:anon_ptr.(1) = 0:*0:) ] 
     )
     ActiveMemRefSet([ 
-            MemRefHandle(U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
-)
+            U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+MemRefHandle()
                 MemRefHandle(0:X:0:anon_ptr.(1))
-                MemRefHandle(U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
-)
+                U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
+MemRefHandle()
                 MemRefHandle(0:X:0:anon_ptr.(2))
                 MemRefHandle(Y:0:anon_ptr.(1))
-                MemRefHandle(U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
-0:)
-                MemRefHandle(U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
-0:) ] 
+                U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+MemRefHandle(0:)
+                U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:2>
+MemRefHandle(0:) ] 
     )
     ActiveSymSet: [ 
         SymHandle(head_::X)

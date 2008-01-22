@@ -19,9 +19,9 @@ B:0:anon_ptr.() = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
 
 ==> AssignPairs : 
 
-1. mref = I8SRCTRIPLET
-B:0:anon_ptr.(), 	expr = I8SRCTRIPLET
-0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+I8SRCTRIPLET
+1. mref = B:0:anon_ptr.(), I8SRCTRIPLET
+	expr = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
 
 
 
@@ -65,8 +65,8 @@ I8SRCTRIPLET
     Node 0: ET ConstValNode (  )
 
 
-==> MemRefHandle:I8SRCTRIPLET
-B:0:anon_ptr.()
+I8SRCTRIPLET
+==> MemRefHandle:B:0:anon_ptr.()
 	mre: 
 
 SubSetRef(
@@ -83,8 +83,8 @@ SubSetRef(
     )
 )
 
-==> MemRefHandle:I8SRCTRIPLET
-0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
+I8SRCTRIPLET
+==> MemRefHandle:0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.())
 	mre: 
 
 SubSetRef(
@@ -101,8 +101,8 @@ SubSetRef(
     )
 )
 
-==> MemRefHandle:I8SRCTRIPLET
-0:VECTOR:0:anon_ptr.()
+I8SRCTRIPLET
+==> MemRefHandle:0:VECTOR:0:anon_ptr.()
 	mre: 
 
 SubSetRef(
@@ -122,9 +122,9 @@ A:0:anon_ptr.() = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
 
 ==> AssignPairs : 
 
-1. mref = I8SRCTRIPLET
-A:0:anon_ptr.(), 	expr = I8SRCTRIPLET
-0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+I8SRCTRIPLET
+1. mref = A:0:anon_ptr.(), I8SRCTRIPLET
+	expr = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
 
 
 
@@ -168,8 +168,8 @@ I8SRCTRIPLET
     Node 0: ET ConstValNode (  )
 
 
-==> MemRefHandle:I8SRCTRIPLET
-A:0:anon_ptr.()
+I8SRCTRIPLET
+==> MemRefHandle:A:0:anon_ptr.()
 	mre: 
 
 SubSetRef(
@@ -186,8 +186,8 @@ SubSetRef(
     )
 )
 
-==> MemRefHandle:I8SRCTRIPLET
-0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
+I8SRCTRIPLET
+==> MemRefHandle:0:B:0:anon_ptr.(0:t__1:0:anon_ptr.())
 	mre: 
 
 SubSetRef(
@@ -204,8 +204,8 @@ SubSetRef(
     )
 )
 
-==> MemRefHandle:I8SRCTRIPLET
-0:t__1:0:anon_ptr.()
+I8SRCTRIPLET
+==> MemRefHandle:0:t__1:0:anon_ptr.()
 	mre: 
 
 SubSetRef(
