@@ -16,3 +16,7 @@ echo "Generating TestResults/AliasMapFIAlias/Unnamed_alias_callsite.B.out"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/Unnamed_alias_callsite.B > TestResults/AliasMapFIAlias/Unnamed_alias_callsite.B.out
 echo "Generating TestResults/AliasMapFIAlias/interalias_proc_call6.B.out"
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call6.B > TestResults/AliasMapFIAlias/interalias_proc_call6.B.out
+echo "Generating TestResults/AliasMapFIAlias/localPointerToScalarAssignment.B.out"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/localPointerToScalarAssignment.B > TestResults/AliasMapFIAlias/localPointerToScalarAssignment.B.out
+echo "Generating TestResults/AliasMapFIAlias/localPointerToArrayAssignment.B.out"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/localPointerToArrayAssignment.B > TestResults/AliasMapFIAlias/localPointerToArrayAssignment.B.out

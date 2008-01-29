@@ -34,3 +34,11 @@ echo "Testing TestCases/Alias/interalias_proc_call6.B, TestResults/AliasMapFIAli
 ./test-open64 --oa-AliasMapFIAlias TestCases/Alias/interalias_proc_call6.B > t
 diff t TestResults/AliasMapFIAlias/interalias_proc_call6.B.out
 
+echo "Testing TestCases/Alias/localPointerToScalarAssignment.B, TestResults/AliasMapFIAlias/localPointerToScalarAssignment.B.out checked by PLM 01/28/08"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/localPointerToScalarAssignment.B > t
+diff t TestResults/AliasMapFIAlias/localPointerToScalarAssignment.B.out
+
+echo "Testing TestCases/Alias/localPointerToArrayAssignment.B, TestResults/AliasMapFIAlias/localPointerToArrayAssignment.B.out checked by PLM 01/28/08"
+./test-open64 --oa-AliasMapFIAlias TestCases/Alias/localPointerToArrayAssignment.B > t
+diff t TestResults/AliasMapFIAlias/localPointerToArrayAssignment.B.out
+
