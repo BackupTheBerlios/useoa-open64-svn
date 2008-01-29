@@ -1,0 +1,57 @@
+
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("head_::X") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/formalarrayactualcalleesectiondef.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
+        [
+            MemRefHandle("&0:X:0:anon_ptr.") => 
+                NamedRef( USE, SymHandle("head_::X"))
+        ] }
+    CALLSITES = { StmtHandle("bar_(&0:X:0:anon_ptr.)") =>
+        [
+            CallHandle("bar_(&0:X:0:anon_ptr.)") => 
+                NamedRef( USE, SymHandle("head_::bar_"))
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&0:X:0:anon_ptr.)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("head_::X")) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::bar_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
+
+PROCEDURE = { < ProcHandle("head_::bar_"), SymHandle("head_::bar_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("bar_::A") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("A:0:anon_ptr.(2:1:4) = B:0:.predef_F8") =>
+        [
+            MemRefHandle("A:0:anon_ptr.(2:1:4)") => 
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("bar_::A")), 1))
+            MemRefHandle("B:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("bar_::B"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_::bar_"), not local > }
+    LOCATION = { < SymHandle("bar_::A"), local > }
+    LOCATION = { < SymHandle("bar_::B"), local > }

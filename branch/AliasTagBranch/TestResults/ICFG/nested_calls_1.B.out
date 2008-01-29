@@ -1,0 +1,183 @@
+
+graph ICFG:
+
+    subgraph head_::head__0:
+
+        Node 7: 
+            ==  ICFG ENTRY_NODE 7 == (entry)
+
+
+        Node 11: 
+             LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ICFG/nested_calls_1.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 11 ==
+
+
+
+        Node 12: 
+            ==  ICFG CALL_NODE 12 ==
+foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))
+
+
+        Node 14: 
+            ==  ICFG RETURN_NODE 14 ==
+
+
+        Node 20: 
+            ==  ICFG CFLOW_NODE 20 ==
+Y:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))
+Y:0:anon_ptr.(3) = SIN(&X:0:anon_ptr.(3))
+Y:0:anon_ptr.(4) = COS(&X:0:anon_ptr.(4))
+return
+
+
+        Node 21: 
+            ==  ICFG EXIT_NODE 21 == (exit)
+
+
+        Edge: 11 => 12
+            
+
+        Edge: 12 => 14
+            CALL_RETURN
+
+        Edge: 14 => 20
+            
+
+        Edge: 7 => 11
+            
+
+        Edge: 20 => 21
+            
+
+
+    subgraph head_::foo__1:
+
+        Node 18: 
+            ==  ICFG ENTRY_NODE 18 ==
+
+
+        Node 19: 
+            ==  ICFG EXIT_NODE 19 ==
+
+
+        Node 25: 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 25 ==
+
+
+
+        Node 26: 
+            ==  ICFG CALL_NODE 26 ==
+bar_(&B:0:.predef_F8)
+
+
+        Node 28: 
+            ==  ICFG RETURN_NODE 28 ==
+
+
+        Node 34: 
+            ==  ICFG CFLOW_NODE 34 ==
+C:0:.predef_F8 = B:0:.predef_F8+A:0:.predef_F8*A:0:.predef_F8
+return
+
+
+        Edge: 25 => 26
+            
+
+        Edge: 26 => 28
+            CALL_RETURN
+
+        Edge: 28 => 34
+            
+
+        Edge: 34 => 19
+            
+
+        Edge: 18 => 25
+            
+
+
+    subgraph head_::bar__2:
+
+        Node 32: 
+            ==  ICFG ENTRY_NODE 32 ==
+
+
+        Node 33: 
+            ==  ICFG EXIT_NODE 33 ==
+
+
+        Node 35: 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 35 ==
+
+A:0:.predef_F8 = COS(&A:0:.predef_F8*A:0:.predef_F8)
+return
+
+
+        Edge: 35 => 33
+            
+
+        Edge: 32 => 35
+            
+
+
+    Edge: 12 => 18
+        CALL_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))),style=dashed,color=red
+
+    Edge: 19 => 14
+        RETURN_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))),style=dashed,color=blue
+
+    Edge: 26 => 32
+        CALL_(bar_(&B:0:.predef_F8)),style=dashed,color=red
+
+    Edge: 33 => 28
+        RETURN_(bar_(&B:0:.predef_F8)),style=dashed,color=blue
+
+
+digraph ICFG {
+    node [shape=rectangle];
+    subgraph cluster_head__0 {
+        label="head_::head__0"
+        7 [ label="==  ICFG ENTRY_NODE 7 == (entry)\n" ];
+        11 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 11 ==\n\n" ];
+        12 [ label="==  ICFG CALL_NODE 12 ==\nfoo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1))\n" ];
+        14 [ label="==  ICFG RETURN_NODE 14 ==\n" ];
+        20 [ label="==  ICFG CFLOW_NODE 20 ==\nY:0:anon_ptr.(2) = SIN(&0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2))\nY:0:anon_ptr.(3) = SIN(&X:0:anon_ptr.(3))\nY:0:anon_ptr.(4) = COS(&X:0:anon_ptr.(4))\nreturn\n" ];
+        21 [ label="==  ICFG EXIT_NODE 21 == (exit)\n" ];
+        11 -> 12 [ label="" ];
+        12 -> 14 [ label="CALL_RETURN" ];
+        14 -> 20 [ label="" ];
+        7 -> 11 [ label="" ];
+        20 -> 21 [ label="" ];
+    }
+    subgraph cluster_foo__1 {
+        label="head_::foo__1"
+        18 [ label="==  ICFG ENTRY_NODE 18 ==\n" ];
+        19 [ label="==  ICFG EXIT_NODE 19 ==\n" ];
+        25 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 25 ==\n\n" ];
+        26 [ label="==  ICFG CALL_NODE 26 ==\nbar_(&B:0:.predef_F8)\n" ];
+        28 [ label="==  ICFG RETURN_NODE 28 ==\n" ];
+        34 [ label="==  ICFG CFLOW_NODE 34 ==\nC:0:.predef_F8 = B:0:.predef_F8+A:0:.predef_F8*A:0:.predef_F8\nreturn\n" ];
+        25 -> 26 [ label="" ];
+        26 -> 28 [ label="CALL_RETURN" ];
+        28 -> 34 [ label="" ];
+        34 -> 19 [ label="" ];
+        18 -> 25 [ label="" ];
+    }
+    subgraph cluster_bar__2 {
+        label="head_::bar__2"
+        32 [ label="==  ICFG ENTRY_NODE 32 ==\n" ];
+        33 [ label="==  ICFG EXIT_NODE 33 ==\n" ];
+        35 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+==  ICFG CFLOW_NODE 35 ==\n\nA:0:.predef_F8 = COS(&A:0:.predef_F8*A:0:.predef_F8)\nreturn\n" ];
+        35 -> 33 [ label="" ];
+        32 -> 35 [ label="" ];
+    }
+    12 -> 18 [ label="CALL_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))",style=dashed,color=red ];
+    19 -> 14 [ label="RETURN_(foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &Y:0:anon_ptr.(1)))",style=dashed,color=blue ];
+    26 -> 32 [ label="CALL_(bar_(&B:0:.predef_F8))",style=dashed,color=red ];
+    33 -> 28 [ label="RETURN_(bar_(&B:0:.predef_F8))",style=dashed,color=blue ];}

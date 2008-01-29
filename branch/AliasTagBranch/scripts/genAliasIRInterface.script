@@ -1,0 +1,396 @@
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call1.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call1.B > TestResults/AliasIRInterface/interalias_proc_call1.B.out
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call2.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call2.B > TestResults/AliasIRInterface/interalias_proc_call2.B.out
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call3.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call3.B > TestResults/AliasIRInterface/interalias_proc_call3.B.out
+echo "Generating TestResults/AliasIRInterface/interalias_proc_call4.B.out"
+./FORTRANtoOA TestCases/Alias/interalias_proc_call4.B > TestResults/AliasIRInterface/interalias_proc_call4.B.out
+echo "Generating TestResults/AliasIRInterface/arrays5.B.out"
+./FORTRANtoOA TestCases/Alias/arrays5.B > TestResults/AliasIRInterface/arrays5.B.out
+echo "Generating TestResults/AliasIRInterface/functions1.B.out"
+./FORTRANtoOA TestCases/Alias/functions1.B > TestResults/AliasIRInterface/functions1.B.out
+echo "Generating TestResults/AliasIRInterface/globalActive_2.B.out"
+./FORTRANtoOA TestCases/Alias/globalActive_2.B > TestResults/AliasIRInterface/globalActive_2.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscript.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscript.B > TestResults/AliasIRInterface/formalarrayactualsubscript.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptin.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptin.B > TestResults/AliasIRInterface/formalarrayactualsubscriptin.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptout.B > TestResults/AliasIRInterface/formalarrayactualsubscriptout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptinout.B > TestResults/AliasIRInterface/formalarrayactualsubscriptinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayofarrayuse.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayofarrayuse.B > TestResults/AliasIRInterface/formalarrayofarrayuse.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayofarrayusesubscript.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayofarrayusesubscript.B > TestResults/AliasIRInterface/formalarrayofarrayusesubscript.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayofarraydef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayofarraydef.B > TestResults/AliasIRInterface/formalarrayofarraydef.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayofarrayuse.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayofarrayuse.B > TestResults/AliasIRInterface/localarrayofarrayuse.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayofarrayusesubscript.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayofarrayusesubscript.B > TestResults/AliasIRInterface/localarrayofarrayusesubscript.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayofarraydef.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayofarraydef.B > TestResults/AliasIRInterface/localarrayofarraydef.B.out
+echo "Generating TestResults/AliasIRInterface/modulearrayusewholearray.B.out"
+./FORTRANtoOA TestCases/Alias/modulearrayusewholearray.B > TestResults/AliasIRInterface/modulearrayusewholearray.B.out
+echo "Generating TestResults/AliasIRInterface/modulearrayuse.B.out"
+./FORTRANtoOA TestCases/Alias/modulearrayuse.B > TestResults/AliasIRInterface/modulearrayuse.B.out
+echo "Generating TestResults/AliasIRInterface/modulearraysubscriptuse.B.out"
+./FORTRANtoOA TestCases/Alias/modulearraysubscriptuse.B > TestResults/AliasIRInterface/modulearraysubscriptuse.B.out
+echo "Generating TestResults/AliasIRInterface/modulearraydefwholearray.B.out"
+./FORTRANtoOA TestCases/Alias/modulearraydefwholearray.B > TestResults/AliasIRInterface/modulearraydefwholearray.B.out
+echo "Generating TestResults/AliasIRInterface/modulearraydef.B.out"
+./FORTRANtoOA TestCases/Alias/modulearraydef.B > TestResults/AliasIRInterface/modulearraydef.B.out
+echo "Generating TestResults/AliasIRInterface/modulearraysubscriptdef.B.out"
+./FORTRANtoOA TestCases/Alias/modulearraysubscriptdef.B > TestResults/AliasIRInterface/modulearraysubscriptdef.B.out
+echo "Generating TestResults/AliasIRInterface/modulearraysectiondef.B.out"
+./FORTRANtoOA TestCases/Alias/modulearraysectiondef.B > TestResults/AliasIRInterface/modulearraysectiondef.B.out
+echo "Generating TestResults/AliasIRInterface/modulescalaruse.B.out"
+./FORTRANtoOA TestCases/Alias/modulescalaruse.B > TestResults/AliasIRInterface/modulescalaruse.B.out
+echo "Generating TestResults/AliasIRInterface/modulescalardef.B.out"
+./FORTRANtoOA TestCases/Alias/modulescalardef.B > TestResults/AliasIRInterface/modulescalardef.B.out
+echo "Generating TestResults/AliasIRInterface/globalarrayusewholearray.B.out"
+./FORTRANtoOA TestCases/Alias/globalarrayusewholearray.B > TestResults/AliasIRInterface/globalarrayusewholearray.B.out
+echo "Generating TestResults/AliasIRInterface/globalarrayuse.B.out"
+./FORTRANtoOA TestCases/Alias/globalarrayuse.B > TestResults/AliasIRInterface/globalarrayuse.B.out
+echo "Generating TestResults/AliasIRInterface/globalarrayusesubscript.B.out"
+./FORTRANtoOA TestCases/Alias/globalarrayusesubscript.B > TestResults/AliasIRInterface/globalarrayusesubscript.B.out
+echo "Generating TestResults/AliasIRInterface/globalarraydefwholearray.B.out"
+./FORTRANtoOA TestCases/Alias/globalarraydefwholearray.B > TestResults/AliasIRInterface/globalarraydefwholearray.B.out
+echo "Generating TestResults/AliasIRInterface/globalarraydef.B.out"
+./FORTRANtoOA TestCases/Alias/globalarraydef.B > TestResults/AliasIRInterface/globalarraydef.B.out
+echo "Generating TestResults/AliasIRInterface/globalarraydefsubscript.B.out"
+./FORTRANtoOA TestCases/Alias/globalarraydefsubscript.B > TestResults/AliasIRInterface/globalarraydefsubscript.B.out
+echo "Generating TestResults/AliasIRInterface/globalarraysectiondef.B.out"
+./FORTRANtoOA TestCases/Alias/globalarraysectiondef.B > TestResults/AliasIRInterface/globalarraysectiondef.B.out
+echo "Generating TestResults/AliasIRInterface/globalscalaruse.B.out"
+./FORTRANtoOA TestCases/Alias/globalscalaruse.B > TestResults/AliasIRInterface/globalscalaruse.B.out
+echo "Generating TestResults/AliasIRInterface/globalscalardef.B.out"
+./FORTRANtoOA TestCases/Alias/globalscalardef.B > TestResults/AliasIRInterface/globalscalardef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayusewholearray.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayusewholearray.B > TestResults/AliasIRInterface/formalarrayusewholearray.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayuse.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayuse.B > TestResults/AliasIRInterface/formalarrayuse.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraysubscriptuse.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraysubscriptuse.B > TestResults/AliasIRInterface/formalarraysubscriptuse.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayusein.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayusein.B > TestResults/AliasIRInterface/formalarrayusein.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayuseout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayuseout.B > TestResults/AliasIRInterface/formalarrayuseout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayuseinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayuseinout.B > TestResults/AliasIRInterface/formalarrayuseinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraydefwholearray.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraydefwholearray.B > TestResults/AliasIRInterface/formalarraydefwholearray.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraydef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraydef.B > TestResults/AliasIRInterface/formalarraydef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraysubscriptdef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraysubscriptdef.B > TestResults/AliasIRInterface/formalarraysubscriptdef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraysectiondef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraysectiondef.B > TestResults/AliasIRInterface/formalarraysectiondef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraydefout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraydefout.B > TestResults/AliasIRInterface/formalarraydefout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarraydefinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarraydefinout.B > TestResults/AliasIRInterface/formalarraydefinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaruse.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaruse.B > TestResults/AliasIRInterface/formalscalaruse.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalarusein.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalarusein.B > TestResults/AliasIRInterface/formalscalarusein.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaruseout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaruseout.B > TestResults/AliasIRInterface/formalscalaruseout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaruseinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaruseinout.B > TestResults/AliasIRInterface/formalscalaruseinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalardef.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalardef.B > TestResults/AliasIRInterface/formalscalardef.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalardefout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalardefout.B > TestResults/AliasIRInterface/formalscalardefout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalardefinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalardefinout.B > TestResults/AliasIRInterface/formalscalardefinout.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayuse.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayuse.B > TestResults/AliasIRInterface/localarrayuse.B.out
+echo "Generating TestResults/AliasIRInterface/localarraysubscriptuse.B.out"
+./FORTRANtoOA TestCases/Alias/localarraysubscriptuse.B > TestResults/AliasIRInterface/localarraysubscriptuse.B.out
+echo "Generating TestResults/AliasIRInterface/localarraydef.B.out"
+./FORTRANtoOA TestCases/Alias/localarraydef.B > TestResults/AliasIRInterface/localarraydef.B.out
+echo "Generating TestResults/AliasIRInterface/localarraysubscriptdef.B.out"
+./FORTRANtoOA TestCases/Alias/localarraysubscriptdef.B > TestResults/AliasIRInterface/localarraysubscriptdef.B.out
+echo "Generating TestResults/AliasIRInterface/localscalaruse.B.out"
+./FORTRANtoOA TestCases/Alias/localscalaruse.B > TestResults/AliasIRInterface/localscalaruse.B.out
+echo "Generating TestResults/AliasIRInterface/localscalardef.B.out"
+./FORTRANtoOA TestCases/Alias/localscalardef.B > TestResults/AliasIRInterface/localscalardef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleeusewholearray.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeusewholearray.B > TestResults/AliasIRInterface/formalarrayactualcalleeusewholearray.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleeuse.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeuse.B > TestResults/AliasIRInterface/formalarrayactualcalleeuse.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleeusesubscript.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeusesubscript.B > TestResults/AliasIRInterface/formalarrayactualcalleeusesubscript.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptcalleeuse.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptcalleeuse.B > TestResults/AliasIRInterface/formalarrayactualsubscriptcalleeuse.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleeusein.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeusein.B > TestResults/AliasIRInterface/formalarrayactualcalleeusein.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleeuseout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeuseout.B > TestResults/AliasIRInterface/formalarrayactualcalleeuseout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleeuseinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleeuseinout.B > TestResults/AliasIRInterface/formalarrayactualcalleeuseinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleedefwholearray.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefwholearray.B > TestResults/AliasIRInterface/formalarrayactualcalleedefwholearray.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedef.B > TestResults/AliasIRInterface/formalarrayactualcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleedefsubscript.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefsubscript.B > TestResults/AliasIRInterface/formalarrayactualcalleedefsubscript.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleesectiondef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleesectiondef.B > TestResults/AliasIRInterface/formalarrayactualcalleesectiondef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualsubscriptcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualsubscriptcalleedef.B > TestResults/AliasIRInterface/formalarrayactualsubscriptcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleedefout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefout.B > TestResults/AliasIRInterface/formalarrayactualcalleedefout.B.out
+echo "Generating TestResults/AliasIRInterface/formalarrayactualcalleedefinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalarrayactualcalleedefinout.B > TestResults/AliasIRInterface/formalarrayactualcalleedefinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleeuse.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeuse.B > TestResults/AliasIRInterface/formalscalaractualcalleeuse.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleeusein.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeusein.B > TestResults/AliasIRInterface/formalscalaractualcalleeusein.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleeuseout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeuseout.B > TestResults/AliasIRInterface/formalscalaractualcalleeuseout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleeuseinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleeuseinout.B > TestResults/AliasIRInterface/formalscalaractualcalleeuseinout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleedef.B > TestResults/AliasIRInterface/formalscalaractualcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleedefout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleedefout.B > TestResults/AliasIRInterface/formalscalaractualcalleedefout.B.out
+echo "Generating TestResults/AliasIRInterface/formalscalaractualcalleedefinout.B.out"
+./FORTRANtoOA TestCases/Alias/formalscalaractualcalleedefinout.B > TestResults/AliasIRInterface/formalscalaractualcalleedefinout.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayactualcalleeuse.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayactualcalleeuse.B > TestResults/AliasIRInterface/localarrayactualcalleeuse.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayactualcalleedefwholearray.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayactualcalleedefwholearray.B > TestResults/AliasIRInterface/localarrayactualcalleedefwholearray.B.out
+echo "Generating TestResults/AliasIRInterface/localarrayactualcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/localarrayactualcalleedef.B > TestResults/AliasIRInterface/localarrayactualcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/localarraysubscriptactualcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/localarraysubscriptactualcalleedef.B > TestResults/AliasIRInterface/localarraysubscriptactualcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/localarraysectionactualcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/localarraysectionactualcalleedef.B > TestResults/AliasIRInterface/localarraysectionactualcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/localscalaractualcalleeuse.B.out"
+./FORTRANtoOA TestCases/Alias/localscalaractualcalleeuse.B > TestResults/AliasIRInterface/localscalaractualcalleeuse.B.out
+echo "Generating TestResults/AliasIRInterface/localscalaractualcalleedef.B.out"
+./FORTRANtoOA TestCases/Alias/localscalaractualcalleedef.B > TestResults/AliasIRInterface/localscalaractualcalleedef.B.out
+echo "Generating TestResults/AliasIRInterface/formal_actual_expression.B.out"
+./FORTRANtoOA TestCases/Alias/formal_actual_expression.B > TestResults/AliasIRInterface/formal_actual_expression.B.out
+echo "Generating TestResults/AliasIRInterface/local_actual_expression.B.out"
+./FORTRANtoOA TestCases/Alias/local_actual_expression.B > TestResults/AliasIRInterface/local_actual_expression.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_subscript_actual.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual.B > TestResults/AliasIRInterface/formal_array_subscript_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_array_subscript_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_array_subscript_actual.B > TestResults/AliasIRInterface/local_array_subscript_actual.B.out
+echo "Generating TestResults/AliasIRInterface/formal_scalar_actual.B.out"
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual.B > TestResults/AliasIRInterface/formal_scalar_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_scalar_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_scalar_actual.B > TestResults/AliasIRInterface/local_scalar_actual.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_actual.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_actual.B > TestResults/AliasIRInterface/formal_array_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_array_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_array_actual.B > TestResults/AliasIRInterface/local_array_actual.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_subscript_actual_in.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual_in.B > TestResults/AliasIRInterface/formal_array_subscript_actual_in.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_subscript_actual_out.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual_out.B > TestResults/AliasIRInterface/formal_array_subscript_actual_out.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_subscript_actual_inout.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_subscript_actual_inout.B > TestResults/AliasIRInterface/formal_array_subscript_actual_inout.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_actual_in.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_actual_in.B > TestResults/AliasIRInterface/formal_array_actual_in.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_actual_out.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_actual_out.B > TestResults/AliasIRInterface/formal_array_actual_out.B.out
+echo "Generating TestResults/AliasIRInterface/formal_array_actual_inout.B.out"
+./FORTRANtoOA TestCases/Alias/formal_array_actual_inout.B > TestResults/AliasIRInterface/formal_array_actual_inout.B.out
+echo "Generating TestResults/AliasIRInterface/local_actual_expression_assignment.B.out"
+./FORTRANtoOA TestCases/Alias/local_actual_expression_assignment.B > TestResults/AliasIRInterface/local_actual_expression_assignment.B.out
+echo "Generating TestResults/AliasIRInterface/formal_scalar_actual_in.B.out"
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual_in.B > TestResults/AliasIRInterface/formal_scalar_actual_in.B.out
+echo "Generating TestResults/AliasIRInterface/formal_scalar_actual_out.B.out"
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual_out.B > TestResults/AliasIRInterface/formal_scalar_actual_out.B.out
+echo "Generating TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out"
+./FORTRANtoOA TestCases/Alias/formal_scalar_actual_inout.B > TestResults/AliasIRInterface/formal_scalar_actual_inout.B.out
+echo "Generating TestResults/AliasIRInterface/Intrinsic_min.B.out"
+./FORTRANtoOA TestCases/Alias/Intrinsic_min.B > TestResults/AliasIRInterface/Intrinsic_min.B.out
+echo "Generating TestResults/AliasIRInterface/Intrinsic_max.B.out"
+./FORTRANtoOA TestCases/Alias/Intrinsic_max.B > TestResults/AliasIRInterface/Intrinsic_max.B.out
+echo "Generating TestResults/AliasIRInterface/localPointerToScalarAssignment.B.out"
+./FORTRANtoOA TestCases/Alias/localPointerToScalarAssignment.B > TestResults/AliasIRInterface/localPointerToScalarAssignment.B.out
+echo "Generating TestResults/AliasIRInterface/formalPointerToScalarAssignment.B.out"
+./FORTRANtoOA TestCases/Alias/formalPointerToScalarAssignment.B > TestResults/AliasIRInterface/formalPointerToScalarAssignment.B.out
+echo "Generating TestResults/AliasIRInterface/localPointerToArrayAssignment.B.out"
+./FORTRANtoOA TestCases/Alias/localPointerToArrayAssignment.B > TestResults/AliasIRInterface/localPointerToArrayAssignment.B.out
+echo "Generating TestResults/AliasIRInterface/formalPointerToArrayAssignment.B.out"
+./FORTRANtoOA TestCases/Alias/formalPointerToArrayAssignment.B > TestResults/AliasIRInterface/formalPointerToArrayAssignment.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToScalarUse.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToScalarUse.B > TestResults/AliasIRInterface/DerefLocalPointerToScalarUse.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToScalarDef.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToScalarDef.B > TestResults/AliasIRInterface/DerefLocalPointerToScalarDef.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToScalarUse.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToScalarUse.B > TestResults/AliasIRInterface/DerefFormalPointerToScalarUse.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToScalarDef.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToScalarDef.B > TestResults/AliasIRInterface/DerefFormalPointerToScalarDef.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToArraySubscriptUse.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToArraySubscriptUse.B > TestResults/AliasIRInterface/DerefLocalPointerToArraySubscriptUse.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToArraySubscriptDef.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToArraySubscriptDef.B > TestResults/AliasIRInterface/DerefLocalPointerToArraySubscriptDef.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToArraySectionUse.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToArraySectionUse.B > TestResults/AliasIRInterface/DerefLocalPointerToArraySectionUse.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToArraySectionDef.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToArraySectionDef.B > TestResults/AliasIRInterface/DerefLocalPointerToArraySectionDef.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToArraySubscriptUse.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToArraySubscriptUse.B > TestResults/AliasIRInterface/DerefFormalPointerToArraySubscriptUse.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToArraySubscriptDef.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToArraySubscriptDef.B > TestResults/AliasIRInterface/DerefFormalPointerToArraySubscriptDef.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToArraySectionUse.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToArraySectionUse.B > TestResults/AliasIRInterface/DerefFormalPointerToArraySectionUse.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToArraySectionDef.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToArraySectionDef.B > TestResults/AliasIRInterface/DerefFormalPointerToArraySectionDef.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToScalarAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToScalarAsActual.B > TestResults/AliasIRInterface/DerefLocalPointerToScalarAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToScalarAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToScalarAsActual.B > TestResults/AliasIRInterface/DerefFormalPointerToScalarAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToArraySubscriptAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToArraySubscriptAsActual.B > TestResults/AliasIRInterface/DerefLocalPointerToArraySubscriptAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/DerefLocalPointerToArraySectionAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/DerefLocalPointerToArraySectionAsActual.B > TestResults/AliasIRInterface/DerefLocalPointerToArraySectionAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToArraySubscriptAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToArraySubscriptAsActual.B > TestResults/AliasIRInterface/DerefFormalPointerToArraySubscriptAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/DerefFormalPointerToArraySectionAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/DerefFormalPointerToArraySectionAsActual.B > TestResults/AliasIRInterface/DerefFormalPointerToArraySectionAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/LocalPointerToScalarAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/LocalPointerToScalarAsActual.B > TestResults/AliasIRInterface/LocalPointerToScalarAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/FormalPointerToScalarAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/FormalPointerToScalarAsActual.B > TestResults/AliasIRInterface/FormalPointerToScalarAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/localPointerToArrayAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/localPointerToArrayAsActual.B > TestResults/AliasIRInterface/localPointerToArrayAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/formalPointerToArrayAsActual.B.out"
+./FORTRANtoOA TestCases/Alias/formalPointerToArrayAsActual.B > TestResults/AliasIRInterface/formalPointerToArrayAsActual.B.out
+echo "Generating TestResults/AliasIRInterface/allocate_localpointertoarrayAsactualsubscript.B.out"
+./FORTRANtoOA TestCases/Alias/allocate_localpointertoarrayAsactualsubscript.B > TestResults/AliasIRInterface/allocate_localpointertoarrayAsactualsubscript.B.out
+echo "Generating TestResults/AliasIRInterface/allocate_formalpointertoarrayAsactualsubscript.B.out"
+./FORTRANtoOA TestCases/Alias/allocate_formalpointertoarrayAsactualsubscript.B > TestResults/AliasIRInterface/allocate_formalpointertoarrayAsactualsubscript.B.out
+echo "Generating TestResults/AliasIRInterface/allocate_localpointertoarrayAsactualsection.B.out"
+./FORTRANtoOA TestCases/Alias/allocate_localpointertoarrayAsactualsection.B > TestResults/AliasIRInterface/allocate_localpointertoarrayAsactualsection.B.out
+echo "Generating TestResults/AliasIRInterface/allocate_formalpointertoarrayAsactualsection.B.out"
+./FORTRANtoOA TestCases/Alias/allocate_formalpointertoarrayAsactualsection.B > TestResults/AliasIRInterface/allocate_formalpointertoarrayAsactualsection.B.out
+echo "Generating TestResults/AliasIRInterface/allocate_localarraysubscriptAsactual.B.out"
+./FORTRANtoOA TestCases/Alias/allocate_localarraysubscriptAsactual.B > TestResults/AliasIRInterface/allocate_localarraysubscriptAsactual.B.out
+echo "Generating TestResults/AliasIRInterface/allocate_localarraysectionAsactual.B.out"
+./FORTRANtoOA TestCases/Alias/allocate_localarraysectionAsactual.B > TestResults/AliasIRInterface/allocate_localarraysectionAsactual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_scalar_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_scalar_element_single_deref.B > TestResults/AliasIRInterface/local_structvar_scalar_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_pointer_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_pointer_element_single_deref.B > TestResults/AliasIRInterface/local_structvar_pointer_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_subscript_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_subscript_element_single_deref.B > TestResults/AliasIRInterface/local_structvar_array_subscript_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_element_single_deref.B > TestResults/AliasIRInterface/local_structvar_array_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_setion_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_setion_element_single_deref.B > TestResults/AliasIRInterface/local_structvar_array_setion_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_scalar_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_scalar_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_scalar_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_pointer_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_pointer_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_pointer_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_subscript_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_subscript_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_subscript_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_section_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_section_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_section_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_scalar_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_scalar_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_scalar_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_array_subscript_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_array_subscript_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_array_subscript_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_scalar_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_scalar_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_scalar_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_array_subscript_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_array_subscript_element_single_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_array_subscript_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_scalar_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_scalar_element_single_deref.B > TestResults/AliasIRInterface/local_structPointer_scalar_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_array_subscript_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_array_subscript_element_single_deref.B > TestResults/AliasIRInterface/local_structPointer_array_subscript_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_pointer_element_single_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_pointer_element_single_deref.B > TestResults/AliasIRInterface/local_structPointer_pointer_element_single_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_scalar_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_scalar_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structvar_scalar_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_scalar_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_scalar_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structvar_scalar_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_subscript_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_subscript_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structvar_array_subscript_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structvar_array_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_section_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_section_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structvar_array_section_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_scalar_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_scalar_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_scalar_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_subscript_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_subscript_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_subscript_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_section_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_section_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_section_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_scalar_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_scalar_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_scalar_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_array_subscript_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_array_subscript_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_array_subscript_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_scalar_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_scalar_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_scalar_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_array_subscript_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_array_subscript_element_single_deref_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_array_subscript_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_scalar_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_scalar_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structPointer_scalar_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_array_subscript_element_single_deref_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_array_subscript_element_single_deref_actual.B > TestResults/AliasIRInterface/local_structPointer_array_subscript_element_single_deref_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_assignment.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_assignment.B > TestResults/AliasIRInterface/local_structvar_assignment.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_assignment.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_assignment.B > TestResults/AliasIRInterface/local_arrayOfstruct_assignment.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_assignment.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_assignment.B > TestResults/AliasIRInterface/local_structPointer_assignment.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_to_structvar_assignment.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_to_structvar_assignment.B > TestResults/AliasIRInterface/local_structPointer_to_structvar_assignment.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_actual.B > TestResults/AliasIRInterface/local_structvar_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_pointer_actual.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_pointer_actual.B > TestResults/AliasIRInterface/local_arrayOfstruct_pointer_actual.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_scalar_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_scalar_element_double_deref.B > TestResults/AliasIRInterface/local_structvar_scalar_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_pointer_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_pointer_element_double_deref.B > TestResults/AliasIRInterface/local_structvar_pointer_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_subscript_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_subscript_element_double_deref.B > TestResults/AliasIRInterface/local_structvar_array_subscript_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_element_double_deref.B > TestResults/AliasIRInterface/local_structvar_array_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structvar_array_section_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structvar_array_section_element_double_deref.B > TestResults/AliasIRInterface/local_structvar_array_section_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_scalar_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_scalar_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_scalar_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_pointer_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_pointer_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_pointer_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_subscript_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_subscript_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_subscript_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_scalar_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_scalar_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_scalar_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_section_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_subscript_array_section_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_subscript_array_section_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_scalar_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_scalar_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_scalar_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_array_subscript_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_array_subscript_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_array_subscript_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_arrayOfstruct_section_array_subscript_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_arrayOfstruct_section_array_subscript_element_double_deref.B > TestResults/AliasIRInterface/local_arrayOfstruct_section_array_subscript_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_scalar_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_scalar_element_double_deref.B > TestResults/AliasIRInterface/local_structPointer_scalar_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/local_structPointer_array_subscript_element_double_deref.B.out"
+./FORTRANtoOA TestCases/Alias/local_structPointer_array_subscript_element_double_deref.B > TestResults/AliasIRInterface/local_structPointer_array_subscript_element_double_deref.B.out
+echo "Generating TestResults/AliasIRInterface/Select_1.B.out"
+./FORTRANtoOA TestCases/Alias/Select_1.B > TestResults/AliasIRInterface/Select_1.B.out

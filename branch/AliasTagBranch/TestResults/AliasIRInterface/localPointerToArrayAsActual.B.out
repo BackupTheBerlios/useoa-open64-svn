@@ -1,0 +1,42 @@
+
+PROCEDURE = { < ProcHandle("arraypointer_::arraypointer_"), SymHandle("arraypointer_::arraypointer_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/Alias/localPointerToArrayAsActual.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("U8PSTORE 0 T<32,anon_ptr.,8>
+") =>
+        [
+            MemRefHandle("P:0:anon_ptr.(:1:)") => 
+                NamedRef( DEF, SymHandle("arraypointer_::P"))
+            MemRefHandle("0:X:0:anon_ptr.(1:1:5)") => 
+                AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X"))))
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("U8PSTORE 0 T<32,anon_ptr.,8>
+") =>
+        [
+            < NamedRef( DEF, SymHandle("arraypointer_::P"))
+            , AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X")))) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("bar_(&P:0:anon_ptr.)") =>
+        [
+            MemRefHandle("&P:0:anon_ptr.") => 
+                AddressOf( USE, NamedRef( USE, SymHandle("arraypointer_::P")))
+        ] }
+    CALLSITES = { StmtHandle("bar_(&P:0:anon_ptr.)") =>
+        [
+            CallHandle("bar_(&P:0:anon_ptr.)") => 
+                NamedRef( USE, SymHandle("arraypointer_::bar_"))
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("bar_(&P:0:anon_ptr.)") =>
+        [
+            < 0, AddressOf( USE, NamedRef( USE, SymHandle("arraypointer_::P"))) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("arraypointer_::arraypointer_"), not local > }
+    LOCATION = { < SymHandle("arraypointer_::bar_"), not local > }
+    LOCATION = { < SymHandle("arraypointer_::P"), local > }
+    LOCATION = { < SymHandle("arraypointer_::X"), local > }

@@ -1,0 +1,20 @@
+echo "Generating TestResults/UDDUChainsTests/reachdef_if1.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_if1.B > TestResults/UDDUChainsTests/reachdef_if1.B.out
+echo "Generating TestResults/UDDUChainsTests/reachdef_if2.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_if2.B > TestResults/UDDUChainsTests/reachdef_if2.B.out
+echo "Generating TestResults/UDDUChainsTests/reachdef_loopif1.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_loopif1.B > TestResults/UDDUChainsTests/reachdef_loopif1.B.out
+echo "Generating TestResults/UDDUChainsTests/Loop_simple_10.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Loop_simple_10.B > TestResults/UDDUChainsTests/Loop_simple_10.B.out
+echo "Generating TestResults/UDDUChainsTests/logicalAND.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalAND.B > TestResults/UDDUChainsTests/logicalAND.B.out
+echo "Generating TestResults/UDDUChainsTests/logicalOR.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalOR.B > TestResults/UDDUChainsTests/logicalOR.B.out
+echo "Generating TestResults/UDDUChainsTests/logicalNOT.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalNOT.B > TestResults/UDDUChainsTests/logicalNOT.B.out
+echo "Generating TestResults/UDDUChainsTests/Intrinsic_min.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_min.B > TestResults/UDDUChainsTests/Intrinsic_min.B.out
+echo "Generating TestResults/UDDUChainsTests/Intrinsic_max.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_max.B > TestResults/UDDUChainsTests/Intrinsic_max.B.out
+echo "Generating TestResults/UDDUChainsTests/StringEQ.B.out"
+./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/StringEQ.B > TestResults/UDDUChainsTests/StringEQ.B.out

@@ -1,0 +1,25 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/ParamBind/UseOA-Open64/TestCases/ExprTree/allocate_localarraysectionAsactual.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: _ALLOCATE(&A:0:anon_ptr.(1:1:3), &0)
+
+==> ExprHandle: &A:0:anon_ptr.(1:1:3)
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &A:0:anon_ptr.(1:1:3) )
+
+
+==> ExprHandle: 1:1:3
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1:1:3 )
+
+
+============================================
+StmtHandle: return
+

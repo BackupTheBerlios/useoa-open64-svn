@@ -1,0 +1,13 @@
+getDefMREs:
+mre: 
+
+FieldAccess(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::FIRST)
+    )
+    mFieldName: LABOR
+)
+

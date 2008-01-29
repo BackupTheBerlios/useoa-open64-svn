@@ -1,0 +1,80 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(ch2304_::matrix_bits_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&0:ONE:0:anon_ptr.)	 => SymHandle(matrix_bits_::A)
+                            MemRefHandle(&0:TWO:0:anon_ptr.)	 => SymHandle(matrix_bits_::B)
+                            MemRefHandle(&0:THREE:0:anon_ptr.)	 => SymHandle(matrix_bits_::C)
+                            MemRefHandle(&0:ONE_T:0:anon_ptr.)	 => SymHandle(matrix_bits_::A_T)
+                            MemRefHandle(&N:0:.predef_I4)	 => SymHandle(matrix_bits_::N)
+                            MemRefHandle(&10)	 => SymHandle(matrix_bits_::MAX)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(matrix_bits_::A)	 => MemRefHandle(&0:ONE:0:anon_ptr.)
+                    SymHandle(matrix_bits_::B)	 => MemRefHandle(&0:TWO:0:anon_ptr.)
+                    SymHandle(matrix_bits_::C)	 => MemRefHandle(&0:THREE:0:anon_ptr.)
+                    SymHandle(matrix_bits_::A_T)	 => MemRefHandle(&0:ONE_T:0:anon_ptr.)
+                    SymHandle(matrix_bits_::N)	 => MemRefHandle(&N:0:.predef_I4)
+                    SymHandle(matrix_bits_::MAX)	 => MemRefHandle(&10)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(ch2304_::matrix_bits_)	 => [ SymHandle(matrix_bits_::A)    SymHandle(matrix_bits_::B)    SymHandle(matrix_bits_::C)    SymHandle(matrix_bits_::A_T)    SymHandle(matrix_bits_::N)    SymHandle(matrix_bits_::MAX) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => [ MemRefHandle(&0:ONE:0:anon_ptr.)    MemRefHandle(&0:TWO:0:anon_ptr.)    MemRefHandle(&0:THREE:0:anon_ptr.)    MemRefHandle(&0:ONE_T:0:anon_ptr.)    MemRefHandle(&N:0:.predef_I4)    MemRefHandle(&10) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => [ ExprHandle(&0:ONE:0:anon_ptr.)    ExprHandle(&0:TWO:0:anon_ptr.)    ExprHandle(&0:THREE:0:anon_ptr.)    ExprHandle(&0:ONE_T:0:anon_ptr.)    ExprHandle(&N:0:.predef_I4)    ExprHandle(&10) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&0:ONE:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &0:ONE:0:anon_ptr. )
+
+            ExprHandle(&0:TWO:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &0:TWO:0:anon_ptr. )
+
+            ExprHandle(&0:THREE:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &0:THREE:0:anon_ptr. )
+
+            ExprHandle(&0:ONE_T:0:anon_ptr.)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &0:ONE_T:0:anon_ptr. )
+
+            ExprHandle(&N:0:.predef_I4)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &N:0:.predef_I4 )
+
+            ExprHandle(&10)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &10 )
+
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(matrix_bits_(&0:ONE:0:anon_ptr., &0:TWO:0:anon_ptr., &0:THREE:0:anon_ptr., &0:ONE_T:0:anon_ptr., &N:0:.predef_I4, &10))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(matrix_bits_::A)	 => ExprHandle(&0:ONE:0:anon_ptr.)
+                    SymHandle(matrix_bits_::B)	 => ExprHandle(&0:TWO:0:anon_ptr.)
+                    SymHandle(matrix_bits_::C)	 => ExprHandle(&0:THREE:0:anon_ptr.)
+                    SymHandle(matrix_bits_::A_T)	 => ExprHandle(&0:ONE_T:0:anon_ptr.)
+                    SymHandle(matrix_bits_::N)	 => ExprHandle(&N:0:.predef_I4)
+                    SymHandle(matrix_bits_::MAX)	 => ExprHandle(&10)
+
+
+)

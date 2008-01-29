@@ -1,0 +1,56 @@
+
+UDDUChainsStandard(
+    mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+            
+            Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
+            Define Statements: [ StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    4.000000000000000)    StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    2.000000000000000) ] 
+            
+            Use StatementHandle : StmtHandle(if (L:0:.log.4&&0:X:0:anon_ptr.(1)>    0.000000000000000))	 => 
+            Define Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(L:0:.log.4 = 1) ] 
+            
+            Use StatementHandle : StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    4.000000000000000)	 => 
+            Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+            
+            Use StatementHandle : StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    2.000000000000000)	 => 
+            Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+    mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+            
+            Def StmtHandle: StmtHandle(StmtHandle(0))	 => 
+            Use Statements: [ StmtHandle(if (L:0:.log.4&&0:X:0:anon_ptr.(1)>    0.000000000000000))    StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    4.000000000000000)    StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    2.000000000000000) ] 
+            
+            Def StmtHandle: StmtHandle(L:0:.log.4 = 1)	 => 
+            Use Statements: [ StmtHandle(if (L:0:.log.4&&0:X:0:anon_ptr.(1)>    0.000000000000000)) ] 
+            
+            Def StmtHandle: StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    4.000000000000000)	 => 
+            Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+            
+            Def StmtHandle: StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)*    2.000000000000000)	 => 
+            Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+    mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+            
+            Use MemRefHandle: MemRefHandle(L:0:.log.4)	 => 
+            Def Statements: [ StmtHandle(L:0:.log.4 = 1) ] 
+            
+            Use MemRefHandle: MemRefHandle(0:X:0:anon_ptr.(1))	 => 
+            Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+            
+            Use MemRefHandle: MemRefHandle(0:X:0:anon_ptr.(1))	 => 
+            Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+            
+            Use MemRefHandle: MemRefHandle(0:X:0:anon_ptr.(1))	 => 
+            Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+    mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+            
+            Def MemRefHandle: MemRefHandle(L:0:.log.4)	 => 
+            Use Statements: [ StmtHandle(if (L:0:.log.4&&0:X:0:anon_ptr.(1)>    0.000000000000000)) ] 
+            
+            Def MemRefHandle: MemRefHandle(Y:0:anon_ptr.(1))	 => 
+            Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+            
+            Def MemRefHandle: MemRefHandle(Y:0:anon_ptr.(1))	 => 
+            Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+    mMemRefToStmtMap: MemRefHandle	 => StmtHandle

@@ -1,0 +1,82 @@
+
+InterActive(
+    Procedure( head_::head_ ): 
+    ActiveLocSet([ 
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            InvisibleLoc(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::Y)
+                    )
+                    mNumDeref: 1
+                )
+            )    
+            LocSubSet(
+                mLoc: 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::X)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+                mFull: 0
+            )    
+            LocSubSet(
+                mLoc: 
+                InvisibleLoc(
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(head_::Y)
+                        )
+                        mNumDeref: 1
+                    )
+                )
+                mFull: 0
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(2) = SIN(&X:0:anon_ptr.(1)))
+                StmtHandle(Y:0:anon_ptr.(1) = COS(&X:0:anon_ptr.(2)))
+                StmtHandle(Y:0:anon_ptr.(2) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(2)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(2))
+                MemRefHandle(&X:0:anon_ptr.(1))
+                MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(&X:0:anon_ptr.(2))
+                MemRefHandle(Y:0:anon_ptr.(2))
+                MemRefHandle(0:Y:0:anon_ptr.(1))
+                MemRefHandle(0:Y:0:anon_ptr.(2)) ] 
+    )
+    mNumIterUseful: 3
+    mNumIterVary: 3
+    mNumIterActive: 1
+)
+
+
+Total Iters: 8

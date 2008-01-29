@@ -1,0 +1,153 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/armstrong-gcc-3.3.6/UseOA-Open64/TestCases/MemRefExpr/interalias_proc_call2.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(head_::T1)
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::X)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::F)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)
+	mre = 
+AddressOf(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::T1)
+    )
+)
+
+	mre = 
+AddressOf(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::T2)
+    )
+)
+
+============================================
+OA::StmtHandle: T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mSymHandle: SymHandle(head_::T3)
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::F)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(head_::F)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::T1)
+)
+
+	mre = 
+NamedRef(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mSymHandle: SymHandle(head_::T2)
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: B:0:.predef_F8 = A:0:.predef_F8
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(bar_::B)
+    )
+    mNumDeref: 1
+)
+
+	mre = 
+Deref(
+    mFullAccuracy: 1
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mFullAccuracy: 1
+        mMemRefType: USE
+        mSymHandle: SymHandle(bar_::A)
+    )
+    mNumDeref: 1
+)
+
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: return

@@ -1,0 +1,8 @@
+echo "Testing TestCases/CFGtests/conditional.B, TestResults/CFGtests/conditional.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-CFG TestCases/CFGtests/conditional.B > t
+diff t TestResults/CFGtests/conditional.B.out
+
+echo "Testing TestCases/CFGtests/loop.B, TestResults/CFGtests/loop.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-CFG TestCases/CFGtests/loop.B > t
+diff t TestResults/CFGtests/loop.B.out
+

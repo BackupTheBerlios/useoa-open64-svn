@@ -1,0 +1,26 @@
+# comment in file.test
+# Regression tests for AliasIRInterface generation
+testname::DiffUseMREs
+inputdir::TestCases/DiffUseMREs
+outputdir::TestResults/DiffUseMREs
+driverexec::./test-open64 --oa-DiffUseMREs
+
+# list of tests
+#       input file,                 status
+test::formalarray.B,                Checked by PLM 10/15/07
+test::formalstructpointer.B,        Checked by PLM 10/15/07
+test::localpointerToscalar.B,       Checked by PLM 10/15/07
+test::formalpointerToArray.B,       Checked by PLM 10/15/07
+test::formalstructvar.B,            Checked by PLM 10/15/07
+test::localscalar.B,                Checked by PLM 10/15/07  
+test::formalpointerToscalar.B,      Checked by PLM 10/15/07 
+test::localarray.B,                 Checked by PLM 10/15/07
+test::localstructpointer.B,         Checked by PLM 10/15/07
+test::formalscalar.B,               Checked by PLM 10/15/07
+test::localpointerToArray.B,        Checked by PLM 10/15/07
+test::localstructvar.B,             Checked by PLM 10/15/07
+
+
+
+
+

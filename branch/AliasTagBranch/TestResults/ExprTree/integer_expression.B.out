@@ -1,0 +1,24 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/integer_expression.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: A:0:.predef_I4 = B:0:.predef_I4+C:0:.predef_I4
+
+==> ExprHandle: B:0:.predef_I4+C:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( B:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( C:0:.predef_I4 )
+
+
+============================================
+StmtHandle: return
+
