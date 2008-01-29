@@ -741,3 +741,8 @@
   - Added TestCases for ExprTree and AssignPairs after adding
     ExprHandles for the index Expressions of ALLOCATE call.
 
+01/28/08  UseOA-Open64 svn trunk 249 Priyadarshini Malusare
+  - AliasTagBranch got compiled with the new FIAliasAliasMap
+    using AliasTags.
+  - Compiled with the OpenAnalysis revision 636.
+

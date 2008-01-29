@@ -41,6 +41,7 @@ static const char* usage_details =
 "\n"
 "Modes:\n"
 "      --oa-CFG                 test OA CFG\n"
+"      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-MemRefExpr          test OA MemRefExpr analysis\n"
 //"      --oa-Alias      test OA Alias analysis\n"
 "      --oa-CallGraph           test OA CallGraph analysis\n"
@@ -67,7 +68,6 @@ static const char* usage_details =
 "      --oa-AliasMapInter       test OA ManagerInsNoPtrInterAliasMap analysis\n"
 "      --oa-AliasMapXAIFBasic   test OA AliasMapXAIF from AliasMapBasic analysis\n"
 "      --oa-AliasMapXAIFInter   test OA AliasMapXAIF from ManagerInsNoPtrInterAliasMap analysis\n"
-"      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-AliasMapXAIFFIAlias test OA AliasMapXAIF from FIAlias analysis\n"
 "      --oa-Linearity           test Linearity Analysis\n"
 "      --oa-AssignPairs         test AssignPair Analysis\n"
@@ -91,6 +91,7 @@ static const char* usage_details =
 CmdLineParser::OptArgDesc Args::optArgs[] = {
   // Modes
   {  0 , "oa-CFG",                   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-MemRefExpr",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   //{  0 , "oa-Alias",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   //{  0 , "oa-AliasMap",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -118,7 +119,6 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-AliasMapInter",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFBasic",     CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFInter",     CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIFFIAlias",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-Linearity",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AssignPairs",           CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -232,7 +232,8 @@ Args::Parse(int argc, const char* const argv[])
 //    if (parser.IsOpt("oa-ujnum")) { runMode = 2; }
 //    if (parser.IsOpt("whirl2f")) { runMode = 3; }
     if (parser.IsOpt("oa-CFG")) { runMode = 1; }
-    if (parser.IsOpt("oa-MemRefExpr")) { runMode = 2; }
+    if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 2; }
+    if (parser.IsOpt("oa-MemRefExpr")) { runMode = 27; }
     //if (parser.IsOpt("oa-Alias")) { runMode = 3; }
     //if (parser.IsOpt("oa-AliasMap")) { runMode = 4; }
     if (parser.IsOpt("oa-CallGraph")) { runMode = 5; }
@@ -257,7 +258,6 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-AliasMapInter")) { runMode = 24; }
     if (parser.IsOpt("oa-AliasMapXAIFBasic")) { runMode = 25; }
     if (parser.IsOpt("oa-AliasMapXAIFInter")) { runMode = 26; }
-    if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 27; }
     if (parser.IsOpt("oa-AliasMapXAIFFIAlias")) { runMode = 28; }
     if (parser.IsOpt("oa-ICFGDep")) { runMode = 29; }
     if (parser.IsOpt("oa-Linearity")) { runMode = 30; }

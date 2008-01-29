@@ -22,7 +22,7 @@ EXES = $(EXE1) $(EXE2) extractDOT
 
 # The Open64 test drivers
 EXE1 = test-open64
-EXE2 = FORTRANtoOA
+#EXE2 = FORTRANtoOA
 
 
 LIBS1 = $(OPEN64TARG)/be/be.so $(WHIRL2OA)/lib/Whirl2OA.a $(OA_LIB)
@@ -36,7 +36,7 @@ EXE1_OBJS = \
 	Args.o
 
 EXE2_OBJS = \
-	FORTRANtoOA.o \
+#	FORTRANtoOA.o \
 	CmdLineParser.o \
 	Args.o
 
