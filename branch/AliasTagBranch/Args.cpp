@@ -41,28 +41,27 @@ static const char* usage_details =
 "\n"
 "Modes:\n"
 "      --oa-CFG                 test OA CFG\n"
-"      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-MemRefExpr          test OA MemRefExpr analysis\n"
-//"      --oa-Alias      test OA Alias analysis\n"
+"      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
+"      --oa-ExprTree            test source IR ExprTree creation\n"
 "      --oa-CallGraph           test OA CallGraph analysis\n"
+"      --oa-ICFG                test ICFG analysis\n"
+"      --oa-ParamBindings       test analysis of parameter bindings\n"
+"      --oa-SideEffect          test OA SideEffect\n"
+"      --oa-ICFGDep             test ICFGDep analysis\n"
+"      --oa-ICFGActivity        test interprocedural Activity analysis\n"
+"      --oa-ICFGReachConsts     test OA ICFGReachConsts\n"
 "      --oa-ReachDefs           test OA ReachDefs analysis\n"
 "      --oa-UDDUChains          test OA UDDUChains analysis\n"
 "      --oa-UDDUChainsXAIF 	test OA UDDUChainsXAIF analysis\n"
-"      --oa-ExprTree            test source IR ExprTree creation\n"
-"      --oa-ReachConsts  	test OA ReachConsts\n"
 //"      --oa-AliasMapXAIF 	test OA AliasMapXAIF analysis\n"
-"      --oa-SideEffect  	test OA SideEffect\n"
 "      --oa-InterSideEffect  	test OA InterSideEffect\n"
 "      --oa-Activity        	test Activity Analysis \n"
 "      --oa-EachActivity  	test Activity analysis where specify indep/dep for root proc and others use side-effect estimate (currently broken)\n"
 "      --oa-InterActivity  	test interprocedural Activity analysis\n"
-"      --oa-ICFGActivity  	test interprocedural Activity analysis\n"
-"      --oa-ParamBindings       test analysis of parameter bindings\n"
 "      --oa-InvisibleSymMapBottom  test analysis that generates pessimistic InvisibleSymMap\n"
 "      --oa-InterDep            test differentiable deps analysis\n"
-"      --oa-ICFG                test ICFG analysis\n"
-"      --oa-ICFGDep             test ICFGDep analysis\n"
-"      --oa-ICFGReachConsts     test ICFGReachConsts analysis\n"
+"      --oa-ReachConsts     test ICFGReachConsts analysis\n"
 "      --oa-CommonBlock         learning about common blocks\n"
 "      --oa-AliasMapBasic       test OA AliasMapBasic analysis\n"
 "      --oa-AliasMapInter       test OA ManagerInsNoPtrInterAliasMap analysis\n"
@@ -91,29 +90,27 @@ static const char* usage_details =
 CmdLineParser::OptArgDesc Args::optArgs[] = {
   // Modes
   {  0 , "oa-CFG",                   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-MemRefExpr",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  //{  0 , "oa-Alias",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  //{  0 , "oa-AliasMap",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ExprTree",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CallGraph",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ICFG",                  CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ParamBindings",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-SideEffect",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ICFGDep",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ICFGActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ICFGReachConsts",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ReachDefs",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-UDDUChains",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-UDDUChainsXAIF",        CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-ExprTree",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ReachConsts",           CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   //{  0 , "oa-AliasMapXAIF",        CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-SideEffect",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-InterSideEffect",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-Activity",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-EachActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-InterActivity",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-ICFGActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-ParamBindings",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-InvisibleSymMapBottom", CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-InterDep",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-ICFG",                  CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-ICFGDep",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-ICFGReachConsts",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CommonBlock",           CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapBasic",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapInter",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -232,36 +229,34 @@ Args::Parse(int argc, const char* const argv[])
 //    if (parser.IsOpt("oa-ujnum")) { runMode = 2; }
 //    if (parser.IsOpt("whirl2f")) { runMode = 3; }
     if (parser.IsOpt("oa-CFG")) { runMode = 1; }
-    if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 2; }
-    if (parser.IsOpt("oa-MemRefExpr")) { runMode = 27; }
-    //if (parser.IsOpt("oa-Alias")) { runMode = 3; }
-    //if (parser.IsOpt("oa-AliasMap")) { runMode = 4; }
+    if (parser.IsOpt("oa-MemRefExpr")) { runMode = 2; }
+    if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 3; }
+    if (parser.IsOpt("oa-ExprTree")) { runMode = 4; }
     if (parser.IsOpt("oa-CallGraph")) { runMode = 5; }
-    if (parser.IsOpt("oa-ReachDefs")) { runMode = 6; }
-    if (parser.IsOpt("oa-UDDUChains")) { runMode = 7; }
+    if (parser.IsOpt("oa-ICFG")) { runMode = 6; }
+    if (parser.IsOpt("oa-ParamBindings")) { runMode = 7; }
+    if (parser.IsOpt("oa-SideEffect")) { runMode = 8; }
+    if (parser.IsOpt("oa-ICFGDep")) { runMode = 9; }
+    if (parser.IsOpt("oa-ICFGActivity")) { runMode = 10; }
+    if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 11; }
+    if (parser.IsOpt("oa-ReachDefs")) { runMode = 20; }
+    if (parser.IsOpt("oa-UDDUChains")) { runMode = 16; }
     if (parser.IsOpt("oa-UDDUChainsXAIF")) { runMode = 8; }
-    if (parser.IsOpt("oa-ExprTree")) { runMode = 9; }
     if (parser.IsOpt("oa-ReachConsts")) { runMode = 10; }
     //if (parser.IsOpt("oa-AliasMapXAIF")) { runMode = 11; }
-    if (parser.IsOpt("oa-SideEffect")) { runMode = 12; }
     if (parser.IsOpt("oa-InterSideEffect")) { runMode = 13; }
     if (parser.IsOpt("oa-Activity")) { runMode = 14; }
     if (parser.IsOpt("oa-EachActivity")) { runMode = 15; }
-    if (parser.IsOpt("oa-ParamBindings")) { runMode = 16; }
     if (parser.IsOpt("oa-InvisibleSymMapBottom")) { runMode = 17; }
     if (parser.IsOpt("oa-InterDep")) { runMode = 18; }
     if (parser.IsOpt("oa-InterActivity")) { runMode = 19; }
-    if (parser.IsOpt("oa-ICFG")) { runMode = 20; }
-    if (parser.IsOpt("oa-ICFGActivity")) { runMode = 21; }
     if (parser.IsOpt("oa-CommonBlock")) { runMode = 22; }
     if (parser.IsOpt("oa-AliasMapBasic")) { runMode = 23; }
     if (parser.IsOpt("oa-AliasMapInter")) { runMode = 24; }
     if (parser.IsOpt("oa-AliasMapXAIFBasic")) { runMode = 25; }
     if (parser.IsOpt("oa-AliasMapXAIFInter")) { runMode = 26; }
     if (parser.IsOpt("oa-AliasMapXAIFFIAlias")) { runMode = 28; }
-    if (parser.IsOpt("oa-ICFGDep")) { runMode = 29; }
     if (parser.IsOpt("oa-Linearity")) { runMode = 30; }
-    if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 31; }
     if (parser.IsOpt("oa-CSFIActivity")) { runMode = 32; }
     if (parser.IsOpt("oa-AssignPairs")) { runMode = 33; }
     if (parser.IsOpt("oa-UseMREs")) { runMode = 34; }
