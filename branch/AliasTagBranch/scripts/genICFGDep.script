@@ -1,8 +1,0 @@
-echo "Generating TestResults/ICFGDep/activity_int4.B.out"
-./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int4.B > TestResults/ICFGDep/activity_int4.B.out
-echo "Generating TestResults/ICFGDep/activity_int5.B.out"
-./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int5.B > TestResults/ICFGDep/activity_int5.B.out
-echo "Generating TestResults/ICFGDep/activity_int6.B.out"
-./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int6.B > TestResults/ICFGDep/activity_int6.B.out
-echo "Generating TestResults/ICFGDep/activity_int7.B.out"
-./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int7.B > TestResults/ICFGDep/activity_int7.B.out

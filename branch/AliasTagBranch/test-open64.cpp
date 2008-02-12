@@ -793,8 +793,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     gettimeofday(&tim, NULL);
     t2=tim.tv_sec+(tim.tv_usec/1000000.0);
     printf("%.6lf ICFGActivity seconds elapsed\n", t2-t1);
-
-    active->output(*irInterface);
+    active->output(*irInterface,*alias);
 }
 
 
@@ -821,7 +820,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
-    alias->output(*irInterface);
+    //alias->output(*irInterface);
 
     //interAlias->output(*irInterface);
 
@@ -866,7 +865,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
         = ircsman->performAnalysis(icfg, parambind, alias, interSideEffectInter, 
                                    OA::DataFlow::ITERATIVE);
  
-    ircs->output(*irInterface);
+    ircs->output(*irInterface,*alias);
     return 0;
 }
 

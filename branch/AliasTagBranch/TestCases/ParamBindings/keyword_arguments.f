@@ -1,4 +1,20 @@
 
+! Example of Keyword Optional Arguments
+    
+! Keyword Technique must be used to omit an optional argument that 
+! is not at the end of the list. For this reason, optional arguments 
+! require explicit procedure interfaces.
+
+! During execution of a procedure with an optional dummy argument, 
+! it is usually necessary to know in that particular reference if
+! an actual argument has been supplied for that dummy argument.
+! The PRESENT intrinsic function is available for that purpose.
+      
+! ============================================================
+! ParamBindings Output:
+!       
+      
+      
        IMPLICIT NONE 
        INTERFACE 
           SUBROUTINE SOLVE (A, B, N) 
@@ -26,3 +42,4 @@
        A = TEMP_B + N 
        RETURN 
        END 
+       
