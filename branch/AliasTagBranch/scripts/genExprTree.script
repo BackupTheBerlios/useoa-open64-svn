@@ -1,0 +1,6 @@
+echo "Generating TestResults/ExprTree/call.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/call.B > TestResults/ExprTree/call.B.out
+echo "Generating TestResults/ExprTree/conditional.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/conditional.B > TestResults/ExprTree/conditional.B.out
+echo "Generating TestResults/ExprTree/expressions.B.out"
+./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > TestResults/ExprTree/expressions.B.out

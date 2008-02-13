@@ -1,0 +1,12 @@
+echo "Testing TestCases/ExprTree/call.B, TestResults/ExprTree/call.B.out Checked by PLM 02/13/08"
+./test-open64 --oa-ExprTree TestCases/ExprTree/call.B > t
+diff t TestResults/ExprTree/call.B.out
+
+echo "Testing TestCases/ExprTree/conditional.B, TestResults/ExprTree/conditional.B.out Checked by PLM 02/13/08"
+./test-open64 --oa-ExprTree TestCases/ExprTree/conditional.B > t
+diff t TestResults/ExprTree/conditional.B.out
+
+echo "Testing TestCases/ExprTree/expressions.B, TestResults/ExprTree/expressions.B.out Checked by PLM 02/13/08"
+./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > t
+diff t TestResults/ExprTree/expressions.B.out
+
