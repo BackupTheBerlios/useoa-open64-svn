@@ -202,13 +202,6 @@ main(int argc, char* argv[])
         TestIR_OAExprTree(std::cout, pu, irInterface);
         break;
       }
-
-      case 11:
-      {
-        TestIR_OAICFGReachConsts(std::cout, pu_forest, irInterface);
-        break;
-      }
-      
     }
   }
 
@@ -265,6 +258,13 @@ main(int argc, char* argv[])
         TestIR_OAICFGActivity(std::cout, pu_forest, irInterface);
         break;
      }
+
+     case 11:
+     {
+        TestIR_OAICFGReachConsts(std::cout, pu_forest, irInterface);
+        break;
+     }
+
   }
 
   FreeIR(pu_forest); // N.B. cannot use with WriteIR

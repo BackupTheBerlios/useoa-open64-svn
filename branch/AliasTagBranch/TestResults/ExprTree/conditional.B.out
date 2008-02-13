@@ -1,0 +1,145 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ExprTree/conditional.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: T:0:.log.4 = 1
+
+==> ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+============================================
+StmtHandle: F:0:.log.4 = 0
+
+==> ExprHandle: 0
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 0 )
+
+
+============================================
+StmtHandle: do_loop (I:0:.predef_I4<=10)
+
+==> ExprHandle: I:0:.predef_I4<=10
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_LE )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::I)
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode ( 10 )
+
+
+============================================
+StmtHandle: I:0:.predef_I4 = 1
+
+==> ExprHandle: 1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 1 )
+
+
+============================================
+StmtHandle: I:0:.predef_I4 = I:0:.predef_I4+1
+
+==> ExprHandle: I:0:.predef_I4+1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_ADD )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::I)
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode ( 1 )
+
+
+============================================
+StmtHandle: if (F:0:.log.4&&T:0:.log.4)
+
+==> ExprHandle: F:0:.log.4&&T:0:.log.4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_LAND )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::F)
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::T)
+        )
+
+        Node 2: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: A:0:.predef_I4 = A:0:.predef_I4+1
+
+==> ExprHandle: A:0:.predef_I4+1
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_ADD )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::A)
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        Node 2: ET ConstValNode ( 1 )
+
+
+============================================
+StmtHandle: F:0:.log.4 = !F:0:.log.4
+
+==> ExprHandle: !F:0:.log.4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_LNOT )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::F)
+        )
+
+        Node 1: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: return
+

@@ -1,19 +1,24 @@
-! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! pointer p is pointing at unknown location on
-! one path and then location r on the other path
-! I dont know if this is a valid program
-! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
-       
+
+      ! alias analysis results along conditional paths
+      ! AliasPairs:  (r, s, *q) => 3
+      
        program main
-           double precision, pointer :: p
-           double precision, target  :: r,t
-           double precision :: x
-           if ( x .ge. 5 ) then     ! {x,1}
-                x=10
+           double precision, pointer :: p,q
+           double precision, target  :: r,s,t,x
+           
+           if ( x .ge. 5 ) then        ! AliasTag("x") => {1, MUST}
+               
+               
+                q=>r                   ! AliasTag("q") => {2, MUST}
+                                       ! AliasTag("r") => {3, MUST}
+                                       
            else
-                p=>r                ! {p,2}, { (*p,r), 3 }  
-           endif 
-                                    ! {p,2}, { (*p,r), 3 }, {x,1}
-                                    
-           t=p                      ! {t,4}, {p,2}, { (*p,r), 3 }, {x,1} 
+                q=>s                   ! AliasTag("q") => {2, MUST}
+                                       ! AliasTag("s") => {4, MUST}
+                
+           endif
+           
+           t=q                         ! AliasTag("t") => {4, MUST}
+                                       ! AliasTag("*q") =>{{3,4}, MUST}
+
        end program
