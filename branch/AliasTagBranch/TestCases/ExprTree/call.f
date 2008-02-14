@@ -5,51 +5,51 @@
           
           call bar(a, b+c, 3)
           ! ExprHandle: a
-          !   ExprTree: MemRefHandle(a)
+          !   ExprTree: MemRefNode(&a)
           
           ! ExprHandle: b+c
-          !   ExprTree: + (OpNode)
-          !               => b (MemRefNode)
-          !               => c (MemRefNode)
+          !   ExprTree: OpNode( + )
+          !                 => MemRefNode (b)
+          !                 => MemRefNode (c)
           
           ! ExprHandle: &(b+c)
-          !   ExprTree: &(b+c) (MemRefNode)
+          !   ExprTree: MemRefNode(&(b+c))
           
           ! ExprHandle: 3
-          !   ExprTree:   => 3 (ConstValNode)
+          !   ExprTree: ConstValNode(3)
           
           ! ExprHandle: &3
-          !   ExprTree: &3     (MemRefNode)
+          !   ExprTree: MemRefNode(&3)
           
           
           allocate(d(1:3))
           ! ExprHandle: d(1:3)
-          !   ExprTree: d(1:3) (MemRefNode)
+          !   ExprTree: MemRefNode(d(1:3))
           
           
           t = func(a)
           ! ExprHandle: func(a)
-          !   ExprTree: func(a) (ConstValNode)
+          !   ExprTree: CallNode(func(a))
           
           ! ExprHandle: &a
-          !   ExprTree: &a (MemRefNode)
+          !   ExprTree: MemRefNode(&a)
           
           
           a = ((a*10)+func(b-c))
           ! ExprHandle: ((a*10)+func(b-c))
-          !   ExprTree: + (OpNode)
-          !               => * (OpNode)
-          !                    => a (MemRefNode)
-          !                    => 10 (ConstValNode)
-          !               => func(b-c) (CallNode)
+          !   ExprTree: OpNode(+)
+          !                 => OpNode(*)
+          !                        => MemRefNode(a)
+          !                        => ConstValNode(10)
+          !                 => CallNode(func(b-c))
 
           ! ExprHandle: b-c
-          !   ExprTree: - (OpNode)
-          !               => b (MemRefNode)
-          !               => c (MemRefNode)
+          !   ExprTree: OpNode(-)
+          !                 => MemRefNode(b)
+          !                 => MemRefNode(c)
 
           ! ExprHandle: &(b-c)
-          !   ExprTree: &(b-c) (MemRefNode)
+          !   ExprTree: MemRefNode(&(b-c))
           
       end subroutine
 
@@ -62,7 +62,7 @@
           double precision n
              res = n
              ! ExprHandle: res = n
-             !   ExprTree: n (MemRefNode)
+             !   ExprTree: MemRefNode(n)
              
       end function func
 

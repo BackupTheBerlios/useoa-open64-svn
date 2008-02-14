@@ -31,18 +31,18 @@
           ! ArithMatic Expression          
           a=b+c
           ! Expression: b+c
-          !    ExprTree: + (OpNode)
-          !                => b (MemRefNode)
-          !                => c (MemRefNode)
+          !    ExprTree: OpNode(+)
+          !                 => MemRefNode(b)
+          !                 => MemRefNode(c)
 
           ! precedence 
           a = (b+10)*c
           ! Expression: (b+10)*c
-          !    ExprTree: * (OpNode)
-          !                => + (OpNode)
-          !                     => b (MemRefNode)
-          !                     => 10 (ConstValNode)
-          !                => c (MemRefNode)
+          !    ExprTree: OpNode(*)
+          !                 => OpNode(+)
+          !                        => MemRefNode(b)
+          !                        => ConstValNode(10)
+          !                 => MemRefNode(c)
             
 
           ! Intrinsic Expression
@@ -51,25 +51,29 @@
           ! ConstValBasic at this point, can only accept Int constants.
           !d=sin(s+10)
           ! Expression: sin(s+10)
-          !    ExprTree: sin (OpNode)
-          !                => + (OpNode)
-          !                   => s (MemRefNode)
-          !                   => 10 (ConstNode) 
+          !    ExprTree: OpNode(sin)
+          !                 => OpNode(+)
+          !                       => MemRefNode(s)
+          !                       => ConstValNode(10)
 
           ! Logical Expression
           t = .TRUE. .AND. f
           ! Expression: .TRUE. .AND. f
-          !    ExprTree: .AND. (OpNode)
-          !                => .TRUE. (ConstNode)
-          !                => f      (MemRefNode)  
+          !    ExprTree: OpNode(.AND.)
+          !                 => ConstValNode(.TRUE.)
+          !                 => MemRefNode(f)
 
           ! Logical Unary expression
           f = .NOT. f
+          ! Expression: .NOT. f
+          !    ExprTree: OpNode(+)
+          !                  => MemRefNode(f)
+
 
           ! Pointer Assingment Expression
           p=>m
           ! Expression:
-          !    ExprTree: m (MemRefNode)
+          !    ExprTree: MemRefNode(m)
 
           ! Structure pointer assignment
           typed_y%field1=x
@@ -77,10 +81,10 @@
           ! String Concatenation Expression 
           STRING4 = STRING1 // STRING2 // STRING3 
           ! Expression: STRING1 // STRING2 // STRING3
-          !    ExprTree:  // (OpNode)
-          !                  => STRING1 (MemRefNode)
-          !                  => STRING2 (MemRefNode)
-          !                  => STRING3 (MemRefNode)
+          !    ExprTree:  OpNode(//)
+          !                       => MemRefNode(STRING1)
+          !                       => MemRefNode(STRING2)
+          !                       => MemRefNode(STRING3)
  
       end subroutine
 

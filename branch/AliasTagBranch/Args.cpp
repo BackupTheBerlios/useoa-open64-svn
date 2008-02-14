@@ -42,7 +42,7 @@ static const char* usage_details =
 "Modes:\n"
 "      --oa-CFG                 test OA CFG\n"
 "      --oa-MemRefExpr          test OA MemRefExpr analysis\n"
-"      --oa-AliasMapFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
+"      --oa-AliasTagFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-ExprTree            test source IR ExprTree creation\n"
 "      --oa-CallGraph           test OA CallGraph analysis\n"
 "      --oa-ICFG                test ICFG analysis\n"
@@ -91,7 +91,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   // Modes
   {  0 , "oa-CFG",                   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-MemRefExpr",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  {  0 , "oa-AliasMapFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AliasTagFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ExprTree",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CallGraph",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ICFG",                  CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -230,7 +230,7 @@ Args::Parse(int argc, const char* const argv[])
 //    if (parser.IsOpt("whirl2f")) { runMode = 3; }
     if (parser.IsOpt("oa-CFG")) { runMode = 1; }
     if (parser.IsOpt("oa-MemRefExpr")) { runMode = 2; }
-    if (parser.IsOpt("oa-AliasMapFIAlias")) { runMode = 3; }
+    if (parser.IsOpt("oa-AliasTagFIAlias")) { runMode = 3; }
     if (parser.IsOpt("oa-ExprTree")) { runMode = 4; }
     if (parser.IsOpt("oa-CallGraph")) { runMode = 5; }
     if (parser.IsOpt("oa-ICFG")) { runMode = 6; }

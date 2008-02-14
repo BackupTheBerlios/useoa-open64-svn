@@ -1,3 +1,10 @@
+echo "########################### running regressAll.script"
+
+
 echo "########################### running regressExprTree.script"
 source scripts/regressExprTree.script
+
+
+echo "########################### running regressAliasMapFIAlias.script"
+source scripts/regressAliasTagFIAlias.script
 

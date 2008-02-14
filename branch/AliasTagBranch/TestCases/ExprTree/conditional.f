@@ -12,43 +12,43 @@
           
           t = .TRUE.
           ! Expression t=.TRUE.
-          !     ExprTree: .TRUE.
+          !     ExprTree:  ConstValNode(.TRUE.)
           
           f = .FALSE.
           ! Expression f=.FALSE.
-          !     ExprTree: .FALSE.
+          !     ExprTree:  ConstValNode(.FALSE.)
           
           do i=1,10
           ! Expression: i=1
           !     ExprTree:  ConstValNode(1)
           
           ! Expression: i < = 10
-          !     ExprTree:   < = (OpNode)
-          !                   => i (MemRefNode)
-          !                   => 10 (ConstValNode)
+          !     ExprTree:   OpNode(<=)
+          !                    => MemRefNode(i)
+          !                    => ConstValNode(10)
           
           ! Expression: i=i+1
-          !     ExprTree:   + (OpNode) 
-          !                   => i (MemRefNode)
-          !                   => 1 (ConstValNode) 
+          !     ExprTree:   OpNode(+)
+          !                    => MemRefNode(i)
+          !                    => ConstValNode(1)
           
              if(t .AND. f) then
              ! Expression: t .AND. f
-             !    ExpreTree: .AND.  (OpNode)
-             !                  => t (MemRefNode)
-             !                  => f (MemRefNode)
+             !    ExpreTree: OpNode(.AND.)
+             !                   => MemRefNode(t)
+             !                   => MemRefNode(f)
              
                 a=a+1
                 ! Expression: a=a+1
-                !    ExprTree: + (OpNode)
-                !                => a (MemRefNode)
-                !                => 1 (ConstValNode)
+                !    ExprTree: OpNode(+)
+                !                 => MemRefNode(a)
+                !                 => ConstValNode(1)
                 
              else     
                 f = .NOT. f 
                 ! Expression: f=.NOT. f
-                !    ExprTree: .NOT. (OpNode)
-                !                 => f (MemRefNode)
+                !    ExprTree: OpNode(.NOT.)
+                !                  => MemRefNode(f)
                 
              end if   
           end do

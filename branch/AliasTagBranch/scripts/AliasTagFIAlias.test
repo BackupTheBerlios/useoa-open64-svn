@@ -1,0 +1,15 @@
+# Regression tests for AliasMapBasic generation
+testname::AliasTagFIAlias
+inputdir::TestCases/AliasTagFIAlias
+outputdir::TestResults/AliasTagFIAlias
+driverexec::./test-open64 --oa-AliasTagFIAlias
+
+# list of tests
+#       input file,                 status
+test::pointer.B,                   
+test::conditional.B,
+test::interalias_proc_call1.B,
+test::interalias_proc_call6.B,  
+test::interalias_proc_call5.B,  
+test::Unnamed_alias.B,
+

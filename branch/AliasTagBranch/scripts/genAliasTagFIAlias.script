@@ -1,0 +1,12 @@
+echo "Generating TestResults/AliasTagFIAlias/pointer.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/pointer.B > TestResults/AliasTagFIAlias/pointer.B.out
+echo "Generating TestResults/AliasTagFIAlias/conditional.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/conditional.B > TestResults/AliasTagFIAlias/conditional.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call1.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call1.B > TestResults/AliasTagFIAlias/interalias_proc_call1.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call6.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call6.B > TestResults/AliasTagFIAlias/interalias_proc_call6.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call5.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call5.B > TestResults/AliasTagFIAlias/interalias_proc_call5.B.out
+echo "Generating TestResults/AliasTagFIAlias/Unnamed_alias.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Unnamed_alias.B > TestResults/AliasTagFIAlias/Unnamed_alias.B.out
