@@ -644,7 +644,7 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
     icfgDep = icfgdepman->performAnalysis(icfg, parambind, alias,
                                         OA::DataFlow::ITERATIVE);
-    icfgDep->output(*irInterface);
+    icfgDep->output(*irInterface, *alias);
 
     return 0;
 }
@@ -750,7 +750,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     printf("%.6lf ICFG seconds elapsed\n", t2-t1);
 
 
-    /*
     //ICFGDep
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
@@ -773,9 +772,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind, alias,
                                 icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
-    //inActive->output(*irInterface);
+    inActive->output(*irInterface);
     //
-    */
 
     //! ====================================
     //! ICFGActivity

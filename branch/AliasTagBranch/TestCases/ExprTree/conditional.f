@@ -23,32 +23,32 @@
           !     ExprTree:  ConstValNode(1)
           
           ! Expression: i < = 10
-          !     ExprTree:   OpNode(<=)
-          !                    => MemRefNode(i)
-          !                    => ConstValNode(10)
+          !     ExprTree: OpNode(<=)
+          !                       => MemRefNode(i)
+          !                       => ConstValNode(10)
           
           ! Expression: i=i+1
-          !     ExprTree:   OpNode(+)
-          !                    => MemRefNode(i)
-          !                    => ConstValNode(1)
+          !     ExprTree: OpNode(+)
+          !                       => MemRefNode(i)
+          !                       => ConstValNode(1)
           
              if(t .AND. f) then
              ! Expression: t .AND. f
              !    ExpreTree: OpNode(.AND.)
-             !                   => MemRefNode(t)
-             !                   => MemRefNode(f)
+             !                        => MemRefNode(t)
+             !                        => MemRefNode(f)
              
                 a=a+1
                 ! Expression: a=a+1
                 !    ExprTree: OpNode(+)
-                !                 => MemRefNode(a)
-                !                 => ConstValNode(1)
+                !                     => MemRefNode(a)
+                !                     => ConstValNode(1)
                 
              else     
                 f = .NOT. f 
                 ! Expression: f=.NOT. f
                 !    ExprTree: OpNode(.NOT.)
-                !                  => MemRefNode(f)
+                !                     => MemRefNode(f)
                 
              end if   
           end do

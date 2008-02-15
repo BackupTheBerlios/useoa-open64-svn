@@ -1,0 +1,13 @@
+
+# comment in file.test
+# Regression tests for ICFGDep generation
+testname::ICFGDep
+inputdir::TestCases/ICFGDep
+outputdir::TestResults/ICFGDep
+driverexec::./test-open64 --oa-ICFGDep
+
+# list of tests
+#       input file,                 status
+
+test::  expressions.B,          
+

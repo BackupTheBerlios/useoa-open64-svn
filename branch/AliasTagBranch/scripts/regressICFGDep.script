@@ -1,0 +1,4 @@
+echo "Testing TestCases/ICFGDep/expressions.B, TestResults/ICFGDep/expressions.B.out "
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/expressions.B > t
+diff t TestResults/ICFGDep/expressions.B.out
+

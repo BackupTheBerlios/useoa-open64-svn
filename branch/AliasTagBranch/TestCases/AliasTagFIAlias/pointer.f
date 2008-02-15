@@ -2,6 +2,8 @@
 ! 
 ! Simple aliasing due to pointer
 !
+! AliasPairs: (*p,q)
+!      
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
       
       program foo

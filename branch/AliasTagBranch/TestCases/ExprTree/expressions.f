@@ -28,6 +28,9 @@
           ! Declaration ???
           integer::e=3
 
+
+
+
           ! ArithMatic Expression          
           a=b+c
           ! Expression: b+c
@@ -35,6 +38,8 @@
           !                 => MemRefNode(b)
           !                 => MemRefNode(c)
 
+
+          
           ! precedence 
           a = (b+10)*c
           ! Expression: (b+10)*c
@@ -45,6 +50,9 @@
           !                 => MemRefNode(c)
             
 
+
+
+            
           ! Intrinsic Expression
           ! FIXME:
           ! ConstValBasic does not accept double precision constants
@@ -56,6 +64,10 @@
           !                       => MemRefNode(s)
           !                       => ConstValNode(10)
 
+
+
+
+          
           ! Logical Expression
           t = .TRUE. .AND. f
           ! Expression: .TRUE. .AND. f
@@ -63,6 +75,10 @@
           !                 => ConstValNode(.TRUE.)
           !                 => MemRefNode(f)
 
+
+
+
+          
           ! Logical Unary expression
           f = .NOT. f
           ! Expression: .NOT. f
@@ -70,14 +86,27 @@
           !                  => MemRefNode(f)
 
 
+
+          
+          
           ! Pointer Assingment Expression
           p=>m
           ! Expression:
           !    ExprTree: MemRefNode(m)
 
-          ! Structure pointer assignment
-          typed_y%field1=x
 
+
+          
+          
+          ! Structure pointer assignment
+          x=typed_y%field1
+          ! Expression : typed_y%field1 
+          !    ExprTree: MemRefNode(typed_y%field1)
+
+          
+
+          
+          
           ! String Concatenation Expression 
           STRING4 = STRING1 // STRING2 // STRING3 
           ! Expression: STRING1 // STRING2 // STRING3

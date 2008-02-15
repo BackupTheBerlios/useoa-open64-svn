@@ -2,6 +2,7 @@
 !
 ! A simple program that involves aliasing due to a reference parameter.
 !
+! AliasPairs : (t1,a,b)      
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
        subroutine head(x, f) 

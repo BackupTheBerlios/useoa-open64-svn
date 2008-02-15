@@ -2,6 +2,7 @@
 !
 ! Aliasing in the presence of intraprocedural control flow      
 !      
+! AliasPairs : (*q,r,s)       
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
 
       program main

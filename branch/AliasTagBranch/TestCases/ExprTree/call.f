@@ -4,23 +4,22 @@
           REAL, ALLOCATABLE :: d(:)
           
           call bar(a, b+c, 3)
-          ! ExprHandle: a
+          ! ExprHandle: &a
           !   ExprTree: MemRefNode(&a)
-          
+         
+          ! ExprHandle: &(b+c)
+          !   ExprTree: MemRefNode(&(b+c))
+
+          ! ExprHandle: &3
+          !   ExprTree: MemRefNode(&3)
+
           ! ExprHandle: b+c
           !   ExprTree: OpNode( + )
           !                 => MemRefNode (b)
           !                 => MemRefNode (c)
           
-          ! ExprHandle: &(b+c)
-          !   ExprTree: MemRefNode(&(b+c))
-          
           ! ExprHandle: 3
           !   ExprTree: ConstValNode(3)
-          
-          ! ExprHandle: &3
-          !   ExprTree: MemRefNode(&3)
-          
           
           allocate(d(1:3))
           ! ExprHandle: d(1:3)
