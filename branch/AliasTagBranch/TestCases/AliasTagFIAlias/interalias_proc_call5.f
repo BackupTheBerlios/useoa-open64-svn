@@ -3,9 +3,9 @@
 ! A simple program that involves aliasing of a reference parameter to a 
 ! global variable.
 !
-! AliasPairs: 1. (t1,a)  
-!             2. (g1,b)      
-!             3. (g,c)      
+! AliasPairs: 1. (t1,*a)  
+!             2. (g1,*b)      
+!             3. (g,*c)      
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
        program testing

@@ -1,3 +1,8 @@
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!  Expression Trees for different tyoes of expressions in F90
+!
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
@@ -25,95 +30,102 @@
           double precision  x
           type(myType) :: typed_y
 
-          ! Declaration ???
+c         Declaration ???
           integer::e=3
 
 
 
 
-          ! ArithMatic Expression          
+c         ArithMatic Expression          
           a=b+c
-          ! Expression: b+c
-          !    ExprTree: OpNode(+)
-          !                 => MemRefNode(b)
-          !                 => MemRefNode(c)
+          
+c                  ExprHandle: b+c
+c                      ExprTree: OpNode(+)
+c                                         => MemRefNode(b)
+c                                         => MemRefNode(c)
 
 
           
-          ! precedence 
+c         precedence 
           a = (b+10)*c
-          ! Expression: (b+10)*c
-          !    ExprTree: OpNode(*)
-          !                 => OpNode(+)
-          !                        => MemRefNode(b)
-          !                        => ConstValNode(10)
-          !                 => MemRefNode(c)
+         
+c                  ExprHandle: (b+10)*c
+c                      ExprTree: OpNode(*)
+c                                         => OpNode(+)
+c                                                     => MemRefNode(b)
+c                                                     => ConstValNode(10)
+c                                         => MemRefNode(c)
             
 
 
 
             
-          ! Intrinsic Expression
-          ! FIXME:
-          ! ConstValBasic does not accept double precision constants
-          ! ConstValBasic at this point, can only accept Int constants.
-          !d=sin(s+10)
-          ! Expression: sin(s+10)
-          !    ExprTree: OpNode(sin)
-          !                 => OpNode(+)
-          !                       => MemRefNode(s)
-          !                       => ConstValNode(10)
+c          Intrinsic Expression
+c          FIXME:
+c          ConstValBasic does not accept double precision constants
+c          ConstValBasic at this point, can only accept Int constants.
+c          d=sin(s+10)
+c           Expression: sin(s+10)
+c              ExprTree: OpNode(sin)
+c                           => OpNode(+)
+c                                 => MemRefNode(s)
+c                                 => ConstValNode(10)
 
 
 
 
           
-          ! Logical Expression
+c         Logical Expression
           t = .TRUE. .AND. f
-          ! Expression: .TRUE. .AND. f
-          !    ExprTree: OpNode(.AND.)
-          !                 => ConstValNode(.TRUE.)
-          !                 => MemRefNode(f)
+          
+c                  ExprHandle: .TRUE. .AND. f
+c                      ExprTree: OpNode(.AND.)
+c                                             => ConstValNode(.TRUE.)
+c                                             => MemRefNode(f)
 
 
 
 
           
-          ! Logical Unary expression
+c         Logical Unary expression
           f = .NOT. f
-          ! Expression: .NOT. f
-          !    ExprTree: OpNode(+)
-          !                  => MemRefNode(f)
+          
+c                  ExprHandle: .NOT. f
+c                      ExprTree: OpNode(+)
+c                                         => MemRefNode(f)
 
 
 
           
           
-          ! Pointer Assingment Expression
+c         Pointer Assingment Expression
           p=>m
-          ! Expression:
-          !    ExprTree: MemRefNode(m)
+          
+c                  ExprHandle:
+c                      ExprTree: MemRefNode(m)
 
 
 
           
           
-          ! Structure pointer assignment
+c         Structure pointer assignment
           x=typed_y%field1
-          ! Expression : typed_y%field1 
-          !    ExprTree: MemRefNode(typed_y%field1)
+         
+c                  ExprHandle : typed_y%field1 
+c                      ExprTree: MemRefNode(typed_y%field1)
 
           
 
           
           
-          ! String Concatenation Expression 
+c         String Concatenation Expression 
           STRING4 = STRING1 // STRING2 // STRING3 
-          ! Expression: STRING1 // STRING2 // STRING3
-          !    ExprTree:  OpNode(//)
-          !                       => MemRefNode(STRING1)
-          !                       => MemRefNode(STRING2)
-          !                       => MemRefNode(STRING3)
+          
+c                  ExprHandle: STRING1 // STRING2 // STRING3
+c                      ExprTree:  OpNode(//)
+c                                           => MemRefNode(STRING1)
+c                                           => MemRefNode(STRING2)
+c                                           => MemRefNode(STRING3)
  
       end subroutine
 

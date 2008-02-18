@@ -1,9 +1,9 @@
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!  Expression Trees for Loops and Conditionals
+!
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-      ! This example simulates
-      ! 1. Loop initialization
-      ! 2. Loop conditions (generally arithmatic),
-      ! 3. Loop Increament
-      ! 4. Logical Conditions
       
       subroutine foo
           integer :: a
@@ -11,44 +11,51 @@
           logical :: t,f
           
           t = .TRUE.
-          ! Expression t=.TRUE.
-          !     ExprTree:  ConstValNode(.TRUE.)
+
+c                       ExprHandle: t=.TRUE.
+c                           ExprTree:  ConstValNode(.TRUE.)
           
           f = .FALSE.
-          ! Expression f=.FALSE.
-          !     ExprTree:  ConstValNode(.FALSE.)
+
+c                       ExprHandle f=.FALSE.
+c                           ExprTree:  ConstValNode(.FALSE.)
           
           do i=1,10
-          ! Expression: i=1
-          !     ExprTree:  ConstValNode(1)
-          
-          ! Expression: i < = 10
-          !     ExprTree: OpNode(<=)
-          !                       => MemRefNode(i)
-          !                       => ConstValNode(10)
-          
-          ! Expression: i=i+1
-          !     ExprTree: OpNode(+)
-          !                       => MemRefNode(i)
-          !                       => ConstValNode(1)
-          
+
+c                       ExprHandle: i=1
+c                           ExprTree:  ConstValNode(1)
+c          
+c                       ExprHandle: i < = 10
+c                           ExprTree: OpNode( < = )
+c                                                  => MemRefNode(i)
+c                                                  => ConstValNode(10)
+c          
+c                       ExprHandle: i=i+1
+c                           ExprTree: OpNode(+)
+c                                              => MemRefNode(i)
+c                                              => ConstValNode(1)
+c          
              if(t .AND. f) then
-             ! Expression: t .AND. f
-             !    ExpreTree: OpNode(.AND.)
-             !                        => MemRefNode(t)
-             !                        => MemRefNode(f)
+
+c                       ExprHandle: t .AND. f
+c                           ExpreTree: OpNode(.AND.)
+c                                                   => MemRefNode(t)
+c                                                   => MemRefNode(f)
              
                 a=a+1
-                ! Expression: a=a+1
-                !    ExprTree: OpNode(+)
-                !                     => MemRefNode(a)
-                !                     => ConstValNode(1)
+
+c                       ExprHandle: a=a+1
+c                           ExprTree: OpNode(+)
+c                                               => MemRefNode(a)
+c                                               => ConstValNode(1)
                 
              else     
                 f = .NOT. f 
-                ! Expression: f=.NOT. f
-                !    ExprTree: OpNode(.NOT.)
-                !                     => MemRefNode(f)
+
+c                       ExprHandle: f=.NOT. f
+c                           ExprTree: OpNode(.NOT.)
+c                                                  => MemRefNode(f)
+
                 
              end if   
           end do

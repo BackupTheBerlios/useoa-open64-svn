@@ -35,99 +35,115 @@
           ! 1. Declaration ???
           integer::e=3
 
-          ! =========================================================
+
+
+
 
 
           ! 2. Simple ArithMatic Expression          
 
           a=b+c
 
-          ! mUses       => mDefs 
-          ! NamedRef(b) => NamedRef(a)
-          ! NamedRef(c) => NamedRef(a) 
+c                        mUses           => mDefs
+c                        ==============================
+c                        [2: foo::b]     => [1: foo::a]
+c                        [3: foo::c]     => [1: foo::a]       
+c
+c                        ImplicitRemoves:
+c                        ================
+c                        [1: foo::a ]
 
-          ! mDefs       => mUses
-          ! NamedRef(a) => NamedRef(b)
-          !             => NamedRef(c)
 
-          ! ImplicitRemoves: NamedRef(a)
 
-          
-          
-          ! ============================================================
+
+
+
 
 
 
           ! 3. ArithMatic Expression where LHS and RHS are same
 
           ! The reflexive pairs (eg. <a,a>) are implicitly assumed
-          ! to be dependent. For the example below, 'a' still depends 
-          ! on itself because it is on the rhs and lhs.
+          ! to be dependent. 
 
 
           a=a+b
 
-          ! mUses       => mDefs 
-          ! NamedRef(b) => NamedRef(a)
+c                        mUses           => mDefs
+c                        ==============================
+c                        [2: foo::b]     => [1: foo::a]
+c
+c                        ImplicitRemoves:
+c                        ================
 
-          ! mDefs       => mUses 
-          ! NamedRef(a) => NamedRef(b)
-
-          ! ImplicitRemoves: {}
 
 
-          
-          ! ============================================================
+
+
+
+
 
 
           ! 4. Arrays, do not get killed. Thus, no ImpliciteRemoves.
           
           array(k) = brray(k) + 10
 
-          ! mUses                      => mDefs
-          ! SubSetRef(NamedRef(brray)) => SubSetRef(NamedRef(array))
-          
-          ! mDefs                      => mUses
-          ! SubSetRef(NamedRef(array)) => SubSetRef(NamedRef(brray))
+c                        mUses                => mDefs
+c                        ==============================
+c                        [4: foo::brray(),    => [5: foo::array(),
+c                            foo::brray]                  array]
+c
+c                        ImplicitRemoves:
+c                        ================
+c
 
-          ! mImplicitRemoves : ()
 
 
 
-          ! ============================================================
+
+
+
 
 
           ! 5. FieldAccess do not get killed. Thus, no ImpliciteRemoved
 
           typed_y%field1=x
 
-          ! mUses       => mDefs  
-          ! NamedRef(x) => FieldAccess(NamedRef(y),field1)
 
-          ! mDefs                           => mUse   
-          ! FieldAccess(NamedRef(y),field1) => NamedRef(x)
+c                        mUses           => mDefs
+c                        ==============================
+c                        [6: foo::x]     => [7: foo::typed_y%field1,
+c                                               foo::typed_y]
+c    
+c                        ImplicitRemoves:
+c                        ================
+c 
 
-          ! ImplicitRemoves :
 
 
 
-          ! ==============================================================
+
 
             
           ! 6. Intrinsic Expression. Used as an operator not callsites
           
           d=sin(s+10)
 
-          ! mUses       => mDefs   
-          ! NamedRef(s) => NamedRef(d)
 
-          ! mDefs       => mUses  
-          ! NamedRef(d) => NamedRef(s)
+c                        mUses          => mDefs
+c                        ==============================
+c                        [8: foo::s]    => [9: foo::d]
+c
+c                        ImplicitRemoves:
+c                        ================
+c                        [9: foo::d]
+c
 
-          ! mImplicitRemoves : NamedRef(d)
 
-          
-          ! ==============================================================
+
+
+
+
           
 
           ! 7. Pointer Assingment Expression
@@ -137,36 +153,33 @@
           
           p=>m
 
-          ! mUses => mDefs   : {}
-          
-          ! mDefs => mUses   : {}
-
-          ! ImplicitRemoves  : {}
 
 
-          ! ============================================================
+
+
 
 
           ! 8. String Concatenation Expression 
           
           STRING4 = STRING1 // STRING2 // STRING3 
- 
-          ! mUses                        => mDefs
-          ! SubSetRef(NamedRef(STRING1)) => SubSetRef(NamedRef(STRING4))
-          ! SubSetRef(NamedRef(STRING2)) => SubSetRef(NamedRef(STRING4))
-          ! SubSetRef(NamedRef(STRING3)) => SubSetRef(NamedRef(STRING4))
 
-          ! mDefs             => mUses
-          ! NamedRef(STRING4) => SubSetRef(NamedRef(STRING1)),
-          !                   => SubSetRef(NamedRef(STRING2)),
-          !                   => SubSetRef(NamedRef(STRING3))
- 
-          ! ImplicitRemoves  : SubSetRef(NamedRef(STRING4))
+c                        mUses                => mDefs
+c                        ==============================
+c                        [10: foo::STRING1,    => [13: foo::STRING4,
+c                             foo::STRING1()]          foo::STRING4()]
+c
+c                        [11: foo::STRING2,    => [13: foo::STRING4,
+c                             foo::STRING2()]          foo::STRING4()]
+c
+c                        [12: foo::STRING3,    => [13: foo::STRING4,
+c                             foo::STRING3()]          foo::STRING4()]
+c
+c                        ImplicitRemoves:
+c                        ================
+c
 
-          
 
-          ! =========================================================
-          
+
 
       end subroutine
 

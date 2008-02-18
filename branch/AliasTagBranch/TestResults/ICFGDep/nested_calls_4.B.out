@@ -1,0 +1,384 @@
+ Dep Analysis 
+
+MustDefMap: StmtHandle	 => LocSet
+        P:0:.predef_F8 =     2.000000000000000	 => [ 
+            Tag(
+                mTagID: 6
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(foo_::B))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )
+ ] 
+        C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8)	 => [ 
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::C)
+                # Deref(NamedRef(foo_::C))
+            )
+ ] 
+        D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8)	 => [ 
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::D)
+                # Deref(NamedRef(foo_::D))
+            )
+ ] 
+
+mDepDFSet: StmtHandle	 => DepDFSet
+         LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ICFGDep/nested_calls_4.f"
+PRAGMA 0 188 <1,22,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: P:0:.predef_F8 =     2.000000000000000	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Tag(
+                mTagID: 6
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(foo_::B))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )
+
+            Uses:
+            Defs:
+        stmt: foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &C:0:.predef_F8, &D:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: foo_(&X:0:anon_ptr.(1), &P:0:.predef_F8, &C:0:.predef_F8, &D:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: Y:0:anon_ptr.(3) = C:0:.predef_F8*D:0:.predef_F8	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(head_::C)
+                        # Deref(NamedRef(foo_::C))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 13
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(Deref(NamedRef(head_::Y)))
+                    )
+
+                    
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(head_::D)
+                        # Deref(NamedRef(foo_::D))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 13
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(Deref(NamedRef(head_::Y)))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 13
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(Deref(NamedRef(head_::Y)))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(head_::C)
+                        # Deref(NamedRef(foo_::C))
+                    )
+
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(head_::D)
+                        # Deref(NamedRef(foo_::D))
+                    )
+
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::C)
+                # Deref(NamedRef(foo_::C))
+            )
+
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::D)
+                # Deref(NamedRef(foo_::D))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 13
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(Deref(NamedRef(head_::Y)))
+            )
+
+        stmt: Y:0:anon_ptr.(4) = C:0:.predef_F8+D:0:.predef_F8	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(head_::C)
+                        # Deref(NamedRef(foo_::C))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 13
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(Deref(NamedRef(head_::Y)))
+                    )
+
+                    
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(head_::D)
+                        # Deref(NamedRef(foo_::D))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 13
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(Deref(NamedRef(head_::Y)))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 13
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(Deref(NamedRef(head_::Y)))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(head_::C)
+                        # Deref(NamedRef(foo_::C))
+                    )
+
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(head_::D)
+                        # Deref(NamedRef(foo_::D))
+                    )
+
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::C)
+                # Deref(NamedRef(foo_::C))
+            )
+
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::D)
+                # Deref(NamedRef(foo_::D))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 13
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(Deref(NamedRef(head_::Y)))
+            )
+
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        PRAGMA 0 188 <1,22,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 6
+                        # NamedRef(head_::P)
+                        # Deref(NamedRef(foo_::A))
+                        # Deref(NamedRef(foo_::B))
+                        # SubSetRef(Deref(NamedRef(head_::X)))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(head_::C)
+                        # Deref(NamedRef(foo_::C))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(head_::C)
+                        # Deref(NamedRef(foo_::C))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 6
+                        # NamedRef(head_::P)
+                        # Deref(NamedRef(foo_::A))
+                        # Deref(NamedRef(foo_::B))
+                        # SubSetRef(Deref(NamedRef(head_::X)))
+                    )
+
+
+            ImplicitRemoves:
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::C)
+                # Deref(NamedRef(foo_::C))
+            )
+
+            Uses:
+            Tag(
+                mTagID: 6
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(foo_::B))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::C)
+                # Deref(NamedRef(foo_::C))
+            )
+
+        stmt: D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 6
+                        # NamedRef(head_::P)
+                        # Deref(NamedRef(foo_::A))
+                        # Deref(NamedRef(foo_::B))
+                        # SubSetRef(Deref(NamedRef(head_::X)))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(head_::D)
+                        # Deref(NamedRef(foo_::D))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(head_::D)
+                        # Deref(NamedRef(foo_::D))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 6
+                        # NamedRef(head_::P)
+                        # Deref(NamedRef(foo_::A))
+                        # Deref(NamedRef(foo_::B))
+                        # SubSetRef(Deref(NamedRef(head_::X)))
+                    )
+
+
+            ImplicitRemoves:
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::D)
+                # Deref(NamedRef(foo_::D))
+            )
+
+            Uses:
+            Tag(
+                mTagID: 6
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(foo_::B))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::D)
+                # Deref(NamedRef(foo_::D))
+            )
+
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:

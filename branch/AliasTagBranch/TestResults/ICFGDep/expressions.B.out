@@ -214,6 +214,51 @@ stmt: 	 => Inside DepDFSet output
                 # SubSetRef(NamedRef(foo_::ARRAY))
             )
 
+        U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 16
+                        # NamedRef(foo_::X)
+                    )
+	 => 
+                    Tag(
+                        mTagID: 17
+                        # NamedRef(foo_::TYPED_Y)
+                        # FieldAccess(NamedRef(foo_::TYPED_Y))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 17
+                        # NamedRef(foo_::TYPED_Y)
+                        # FieldAccess(NamedRef(foo_::TYPED_Y))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 16
+                        # NamedRef(foo_::X)
+                    )
+
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 16
+                # NamedRef(foo_::X)
+            )
+
+            Defs:
+            Tag(
+                mTagID: 17
+                # NamedRef(foo_::TYPED_Y)
+                # FieldAccess(NamedRef(foo_::TYPED_Y))
+            )
+
         stmt: D:0:.predef_F8 = SIN(&S:0:.predef_F8+    10.00000000000000)	 => Inside DepDFSet output
 
             mUseToDefsMap: UseLoc	 => DefLocSet
@@ -275,51 +320,6 @@ stmt: 	 => Inside DepDFSet output
 
             Uses:
             Defs:
-        U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
-stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
-
-            mUseToDefsMap: UseLoc	 => DefLocSet
-                    
-                    Tag(
-                        mTagID: 16
-                        # NamedRef(foo_::X)
-                    )
-	 => 
-                    Tag(
-                        mTagID: 17
-                        # NamedRef(foo_::TYPED_Y)
-                        # FieldAccess(NamedRef(foo_::TYPED_Y))
-                    )
-
-
-            mDefToUsesMap: DefLoc	 => UseLocSet
-                    
-                    Tag(
-                        mTagID: 17
-                        # NamedRef(foo_::TYPED_Y)
-                        # FieldAccess(NamedRef(foo_::TYPED_Y))
-                    )
-	 => 
-                    Tag(
-                        mTagID: 16
-                        # NamedRef(foo_::X)
-                    )
-
-
-            ImplicitRemoves:
-            Uses:
-            Tag(
-                mTagID: 16
-                # NamedRef(foo_::X)
-            )
-
-            Defs:
-            Tag(
-                mTagID: 17
-                # NamedRef(foo_::TYPED_Y)
-                # FieldAccess(NamedRef(foo_::TYPED_Y))
-            )
-
         stmt: CASSIGNSTMT(&STRING4:0:anon_ptr.(0), &CONCATEXPR(60, &STRING1:0:anon_ptr.(0), &STRING2:0:anon_ptr.(0), &STRING3:0:anon_ptr.(0), 20, 20), 20, 60)	 => Inside DepDFSet output
 
             mUseToDefsMap: UseLoc	 => DefLocSet

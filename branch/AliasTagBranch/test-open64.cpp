@@ -756,7 +756,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
     icfgDep = icfgdepman->performAnalysis(icfg, parambind, alias,
                                         OA::DataFlow::ITERATIVE);
-    //icfgDep->output(*irInterface); 
+    //icfgDep->output(*irInterface,*alias); 
 
     // ICFGUseful   (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
@@ -772,7 +772,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind, alias,
                                 icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
-    inActive->output(*irInterface);
+    //inActive->output(*irInterface);
     //
 
     //! ====================================
