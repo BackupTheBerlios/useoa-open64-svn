@@ -7,9 +7,9 @@ driverexec::./test-open64 --oa-SideEffect
 
 # list of tests
 #       input file,                 status
-test::Jean2.B,
-test::Jean.B,
-test::swap.B,
-test::test.B,
+test::Jean2.B,           checked by PLM 02/19/08, lots of issues
+test::Jean.B,            checked by PLM 02/19/08, lots of isses 
+test::swap.B,            checked by PLM 02/19/08, lots of issues
+test::test.B,            checked by PLM 02/19/08, lots of issues 
 #test::stringcmp.B,      missing do-while loop in whirl representation
 
