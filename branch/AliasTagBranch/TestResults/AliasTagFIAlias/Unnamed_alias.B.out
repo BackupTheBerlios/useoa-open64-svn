@@ -8,6 +8,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 1
+                    # NamedRef(foo_::foo_)
                 ) ] 
             
             NamedRef(
@@ -16,6 +17,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(foo_::bar_)
                 ) ] 
             
             NamedRef(
@@ -24,6 +26,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 3
+                    # NamedRef(foo_::A1)
                 ) ] 
             
             NamedRef(
@@ -32,22 +35,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 4
-                ) ] 
-            
-            NamedRef(
-                mMemRefType: DEF
-                mSymHandle: SymHandle(myproc_::A1)
-            )	 => [ 
-                Tag(
-                    mTagID: 5
-                ) ] 
-            
-            NamedRef(
-                mMemRefType: DEF
-                mSymHandle: SymHandle(myproc_::A2)
-            )	 => [ 
-                Tag(
-                    mTagID: 6
+                    # NamedRef(bar_::A2)
                 ) ] 
             
             NamedRef(
@@ -55,7 +43,11 @@ AliasTagResults(
                 mSymHandle: SymHandle(head_::I)
             )	 => [ 
                 Tag(
-                    mTagID: 7
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             NamedRef(
@@ -63,7 +55,10 @@ AliasTagResults(
                 mSymHandle: SymHandle(head_::J)
             )	 => [ 
                 Tag(
-                    mTagID: 8
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
                 ) ] 
             
             UnnamedRef(
@@ -73,7 +68,11 @@ AliasTagResults(
                 mProcHandle: ProcHandle(foo_::head_)
             )	 => [ 
                 Tag(
-                    mTagID: 7
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             UnnamedRef(
@@ -83,7 +82,11 @@ AliasTagResults(
                 mProcHandle: ProcHandle(foo_::head_)
             )	 => [ 
                 Tag(
-                    mTagID: 7
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             UnnamedRef(
@@ -93,7 +96,10 @@ AliasTagResults(
                 mProcHandle: ProcHandle(foo_::head_)
             )	 => [ 
                 Tag(
-                    mTagID: 8
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
                 ) ] 
             
             Deref(
@@ -106,7 +112,11 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 7
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             Deref(
@@ -119,13 +129,17 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 8
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
                 ) ] 
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
             
             Tag(
                 mTagID: 1
+                # NamedRef(foo_::foo_)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -134,6 +148,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
+                # NamedRef(foo_::bar_)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -142,6 +157,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
+                # NamedRef(foo_::A1)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -150,6 +166,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
+                # NamedRef(bar_::A2)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -158,22 +175,10 @@ AliasTagResults(
             
             Tag(
                 mTagID: 5
-            )	 => [ 
-                NamedRef(
-                    mMemRefType: DEF
-                    mSymHandle: SymHandle(myproc_::A1)
-                ) ] 
-            
-            Tag(
-                mTagID: 6
-            )	 => [ 
-                NamedRef(
-                    mMemRefType: DEF
-                    mSymHandle: SymHandle(myproc_::A2)
-                ) ] 
-            
-            Tag(
-                mTagID: 7
+                # NamedRef(head_::I)
+                # UnnamedRef()
+                # UnnamedRef()
+                # Deref(NamedRef(foo_::A1))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -202,7 +207,10 @@ AliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 8
+                mTagID: 6
+                # NamedRef(head_::J)
+                # UnnamedRef()
+                # Deref(NamedRef(bar_::A2))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -246,16 +254,6 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(bar_::A2)
-            )	 => 1
-            
-            NamedRef(
-                mMemRefType: DEF
-                mSymHandle: SymHandle(myproc_::A1)
-            )	 => 1
-            
-            NamedRef(
-                mMemRefType: DEF
-                mSymHandle: SymHandle(myproc_::A2)
             )	 => 1
             
             NamedRef(

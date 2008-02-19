@@ -22,8 +22,9 @@ c                            [1: head::i]
              
 c                            mUses             =>  mDefs
 c                            ========================================
-c                            [2: head::x()]    =>  [3: head::y()]
-
+c                            [2: head::x(),    =>  [3: head::y(),
+c                                head::x]              head::y]
+c
 c                            ImplicitRemoves:
 c                            =================
 c
@@ -34,8 +35,9 @@ c
              
 c                            mUses            => mDefs
 c                            =======================================
-c                            [2: head::x()]   => [3: head::y()]
-
+c                            [2: head::x(),   => [3: head::y(),
+c                                head::x]            head::y] 
+c
 c                            ImplicitRemoves: 
 c                            ================
 

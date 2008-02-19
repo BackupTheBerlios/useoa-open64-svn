@@ -27,7 +27,7 @@ c                           ========================
 c                           [1: head::x]    => [2: head::t1, 
 c                                                  bar::*a ]
 c
-c                           [3: head::f]    => [2: head::t1, 
+c                           [3: head::*f]   => [2: head::t1, 
 c                                                  bar::*a ]
 c      
 c                           ImplicitRemoves:   
@@ -47,7 +47,7 @@ c                               bar::*a ]
        
 c                           mUses          => mDefs
 c                           ==========================
-c                           [3: head::f]   => [4: head::t3]
+c                           [3: head::*f]  => [4: head::t3]
 c
 c                           ImplicitRemoves:
 c                           ===============
@@ -59,10 +59,10 @@ c                           [4: head::t3]
 
 c                           mUses            => mDefs
 c                           ===================== 
-c                           [2: head::t1     => [3: head::f]
+c                           [2: head::t1     => [3: head::*f]
 c                               bar::*a ]                   
 c
-c                           [4: head::t2,    => [3: head::f]
+c                           [4: head::t2,    => [3: head::*f]
 c                               bar::*b ]  
 
 c                           ImplicitRemoves: 

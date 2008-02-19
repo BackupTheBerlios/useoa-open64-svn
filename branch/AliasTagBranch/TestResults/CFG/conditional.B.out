@@ -1,0 +1,131 @@
+
+graph DGraph:
+
+    Node 1: 
+        ====== CFG node 1 ======
+
+
+    Node 2: 
+         LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/CFG/conditional.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 2 ======
+
+A:0:.predef_F8 =     5.000000000000000
+B:0:.predef_F8 =     2.000000000000000
+C:0:.predef_F8 =     3.000000000000000
+if (A:0:.predef_F8<B:0:.predef_F8)
+
+
+    Node 3: 
+        ====== CFG node 3 ======
+if (A:0:.predef_F8<C:0:.predef_F8)
+
+
+    Node 4: 
+        ====== CFG node 4 ======
+RES:0:.predef_F8 = A:0:.predef_F8
+
+
+    Node 5: 
+        ====== CFG node 5 ======
+RES:0:.predef_F8 = C:0:.predef_F8
+
+
+    Node 6: 
+        ====== CFG node 6 ======
+if (B:0:.predef_F8<C:0:.predef_F8)
+
+
+    Node 7: 
+        ====== CFG node 7 ======
+RES:0:.predef_F8 = B:0:.predef_F8
+
+
+    Node 8: 
+        ====== CFG node 8 ======
+RES:0:.predef_F8 = C:0:.predef_F8
+
+
+    Node 9: 
+        ====== CFG node 9 ======
+_END()
+return
+
+
+    Node 10: 
+        ====== CFG node 10 ======
+return
+
+
+    Node 11: 
+        ====== CFG node 11 ======
+
+
+    Edge: 1 => 2
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 3 => 4
+        { TRUE_EDGE expr(0) }
+
+    Edge: 3 => 5
+        { FALSE_EDGE expr(0) }
+
+    Edge: 2 => 3
+        { TRUE_EDGE expr(0) }
+
+    Edge: 6 => 7
+        { TRUE_EDGE expr(0) }
+
+    Edge: 6 => 8
+        { FALSE_EDGE expr(0) }
+
+    Edge: 2 => 6
+        { FALSE_EDGE expr(0) }
+
+    Edge: 4 => 9
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 5 => 9
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 7 => 9
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 8 => 9
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 9 => 11
+        { RETURN_EDGE expr(0) }
+
+    Edge: 10 => 11
+        { RETURN_EDGE expr(0) }
+
+--------Dot Graph Output--------
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="====== CFG node 1 ======\n" ];
+    2 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 2 ======\n\nA:0:.predef_F8 =     5.000000000000000\nB:0:.predef_F8 =     2.000000000000000\nC:0:.predef_F8 =     3.000000000000000\nif (A:0:.predef_F8<B:0:.predef_F8)\n" ];
+    3 [ label="====== CFG node 3 ======\nif (A:0:.predef_F8<C:0:.predef_F8)\n" ];
+    4 [ label="====== CFG node 4 ======\nRES:0:.predef_F8 = A:0:.predef_F8\n" ];
+    5 [ label="====== CFG node 5 ======\nRES:0:.predef_F8 = C:0:.predef_F8\n" ];
+    6 [ label="====== CFG node 6 ======\nif (B:0:.predef_F8<C:0:.predef_F8)\n" ];
+    7 [ label="====== CFG node 7 ======\nRES:0:.predef_F8 = B:0:.predef_F8\n" ];
+    8 [ label="====== CFG node 8 ======\nRES:0:.predef_F8 = C:0:.predef_F8\n" ];
+    9 [ label="====== CFG node 9 ======\n_END()\nreturn\n" ];
+    10 [ label="====== CFG node 10 ======\nreturn\n" ];
+    11 [ label="====== CFG node 11 ======\n" ];
+    1 -> 2 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    3 -> 4 [ label="{ TRUE_EDGE expr(0) }" ];
+    3 -> 5 [ label="{ FALSE_EDGE expr(0) }" ];
+    2 -> 3 [ label="{ TRUE_EDGE expr(0) }" ];
+    6 -> 7 [ label="{ TRUE_EDGE expr(0) }" ];
+    6 -> 8 [ label="{ FALSE_EDGE expr(0) }" ];
+    2 -> 6 [ label="{ FALSE_EDGE expr(0) }" ];
+    4 -> 9 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    5 -> 9 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    7 -> 9 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    8 -> 9 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    9 -> 11 [ label="{ RETURN_EDGE expr(0) }" ];
+    10 -> 11 [ label="{ RETURN_EDGE expr(0) }" ];}

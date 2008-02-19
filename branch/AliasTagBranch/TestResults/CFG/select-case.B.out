@@ -1,0 +1,489 @@
+
+graph DGraph:
+
+    Node 1: 
+        ====== CFG node 1 ======
+
+
+    Node 2: 
+         LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/CFG/select-case.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 2 ======
+
+AVERAGE:0:.predef_F4 = (MARK3:0:.predef_F4+MARK1:0:.predef_F4+MARK2:0:.predef_F4)/    3.000000
+select_expr_temp_0:0:.predef_I4 = NINT(&AVERAGE:0:.predef_F4, NULL)
+falsebr (select_expr_temp_0:0:.predef_I4<=59), L10
+
+
+    Node 3: 
+        LABEL L10 0
+====== CFG node 3 ======
+
+falsebr (select_expr_temp_0:0:.predef_I4>=60), L11
+
+
+    Node 4: 
+        ====== CFG node 4 ======
+select_expr_temp_0:0:.predef_I4 = 59
+
+
+    Node 5: 
+        LABEL L11 0
+====== CFG node 5 ======
+
+falsebr (select_expr_temp_0:0:.predef_I4>=65), L12
+
+
+    Node 6: 
+        ====== CFG node 6 ======
+falsebr (select_expr_temp_0:0:.predef_I4<=64), L11
+
+
+    Node 7: 
+        ====== CFG node 7 ======
+select_expr_temp_0:0:.predef_I4 = 60
+
+
+    Node 8: 
+        LABEL L12 0
+====== CFG node 8 ======
+
+falsebr (select_expr_temp_0:0:.predef_I4>=70), L13
+
+
+    Node 9: 
+        ====== CFG node 9 ======
+falsebr (select_expr_temp_0:0:.predef_I4<=69), L12
+
+
+    Node 10: 
+        ====== CFG node 10 ======
+select_expr_temp_0:0:.predef_I4 = 65
+
+
+    Node 11: 
+        LABEL L13 0
+====== CFG node 11 ======
+
+falsebr (select_expr_temp_0:0:.predef_I4>=75), L14
+
+
+    Node 12: 
+        ====== CFG node 12 ======
+falsebr (select_expr_temp_0:0:.predef_I4<=74), L13
+
+
+    Node 13: 
+        ====== CFG node 13 ======
+select_expr_temp_0:0:.predef_I4 = 70
+
+
+    Node 14: 
+        LABEL L14 0
+====== CFG node 14 ======
+
+falsebr (select_expr_temp_0:0:.predef_I4>=80), L15
+
+
+    Node 15: 
+        ====== CFG node 15 ======
+falsebr (select_expr_temp_0:0:.predef_I4<=79), L14
+
+
+    Node 16: 
+        ====== CFG node 16 ======
+select_expr_temp_0:0:.predef_I4 = 75
+
+
+    Node 17: 
+        LABEL L15 0
+====== CFG node 17 ======
+
+falsebr (select_expr_temp_0:0:.predef_I4>=85), L16
+
+
+    Node 18: 
+        ====== CFG node 18 ======
+falsebr (select_expr_temp_0:0:.predef_I4<=84), L15
+
+
+    Node 19: 
+        ====== CFG node 19 ======
+select_expr_temp_0:0:.predef_I4 = 80
+
+
+    Node 20: 
+        LABEL L16 0
+SWITCH 7 1
+====== CFG node 20 ======
+
+
+
+
+    Node 21: 
+        ====== CFG node 21 ======
+falsebr (select_expr_temp_0:0:.predef_I4<=89), L16
+
+
+    Node 22: 
+        ====== CFG node 22 ======
+select_expr_temp_0:0:.predef_I4 = 85
+
+
+    Node 23: 
+        LABEL L2 0
+GOTO L1
+====== CFG node 23 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"F ", 2, 2)
+
+
+
+    Node 24: 
+        LABEL L3 0
+GOTO L1
+====== CFG node 24 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"D ", 2, 2)
+
+
+
+    Node 25: 
+        LABEL L4 0
+GOTO L1
+====== CFG node 25 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"CD", 2, 2)
+
+
+
+    Node 26: 
+        LABEL L5 0
+GOTO L1
+====== CFG node 26 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"C ", 2, 2)
+
+
+
+    Node 27: 
+        LABEL L6 0
+GOTO L1
+====== CFG node 27 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"BC", 2, 2)
+
+
+
+    Node 28: 
+        LABEL L7 0
+GOTO L1
+====== CFG node 28 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"B ", 2, 2)
+
+
+
+    Node 29: 
+        LABEL L8 0
+GOTO L1
+====== CFG node 29 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"AB", 2, 2)
+
+
+
+    Node 30: 
+        LABEL L9 0
+====== CFG node 30 ======
+
+CASSIGNSTMT(&GRADE:0:anon_ptr.(0), &"A ", 2, 2)
+
+
+    Node 31: 
+        LABEL L1 0
+====== CFG node 31 ======
+
+_END()
+return
+
+
+    Node 32: 
+        ====== CFG node 32 ======
+return
+
+
+    Node 33: 
+        ====== CFG node 33 ======
+
+
+    Edge: 1 => 2
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 2 => 3
+        { FALSE_EDGE expr(0) }
+
+    Edge: 2 => 4
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 4 => 3
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 3 => 5
+        { FALSE_EDGE expr(0) }
+
+    Edge: 3 => 6
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 6 => 5
+        { FALSE_EDGE expr(0) }
+
+    Edge: 6 => 7
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 7 => 5
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 5 => 8
+        { FALSE_EDGE expr(0) }
+
+    Edge: 5 => 9
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 9 => 8
+        { FALSE_EDGE expr(0) }
+
+    Edge: 9 => 10
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 10 => 8
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 8 => 11
+        { FALSE_EDGE expr(0) }
+
+    Edge: 8 => 12
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 12 => 11
+        { FALSE_EDGE expr(0) }
+
+    Edge: 12 => 13
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 13 => 11
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 11 => 14
+        { FALSE_EDGE expr(0) }
+
+    Edge: 11 => 15
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 15 => 14
+        { FALSE_EDGE expr(0) }
+
+    Edge: 15 => 16
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 16 => 14
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 14 => 17
+        { FALSE_EDGE expr(0) }
+
+    Edge: 14 => 18
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 18 => 17
+        { FALSE_EDGE expr(0) }
+
+    Edge: 18 => 19
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 19 => 17
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 17 => 20
+        { FALSE_EDGE expr(0) }
+
+    Edge: 17 => 21
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 21 => 20
+        { FALSE_EDGE expr(0) }
+
+    Edge: 21 => 22
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 22 => 20
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 20 => 23
+        { MULTIWAY_EDGE expr(1077788504) }
+
+    Edge: 20 => 24
+        { MULTIWAY_EDGE expr(1077788548) }
+
+    Edge: 20 => 25
+        { MULTIWAY_EDGE expr(1077788592) }
+
+    Edge: 20 => 26
+        { MULTIWAY_EDGE expr(1077788636) }
+
+    Edge: 20 => 27
+        { MULTIWAY_EDGE expr(1077788680) }
+
+    Edge: 20 => 28
+        { MULTIWAY_EDGE expr(1077788724) }
+
+    Edge: 20 => 29
+        { MULTIWAY_EDGE expr(1077788768) }
+
+    Edge: 20 => 30
+        { MULTIWAY_EDGE expr(0) }
+
+    Edge: 23 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 24 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 25 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 26 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 27 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 28 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 29 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 30 => 31
+        { FALLTHROUGH_EDGE expr(0) }
+
+    Edge: 31 => 33
+        { RETURN_EDGE expr(0) }
+
+    Edge: 32 => 33
+        { RETURN_EDGE expr(0) }
+
+--------Dot Graph Output--------
+
+digraph DGraph {
+    node [shape=rectangle];
+    1 [ label="====== CFG node 1 ======\n" ];
+    2 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 2 ======\n\nAVERAGE:0:.predef_F4 = (MARK3:0:.predef_F4+MARK1:0:.predef_F4+MARK2:0:.predef_F4)/    3.000000\nselect_expr_temp_0:0:.predef_I4 = NINT(&AVERAGE:0:.predef_F4, NULL)\nfalsebr (select_expr_temp_0:0:.predef_I4<=59), L10\n" ];
+    3 [ label="LABEL L10 0
+====== CFG node 3 ======\n\nfalsebr (select_expr_temp_0:0:.predef_I4>=60), L11\n" ];
+    4 [ label="====== CFG node 4 ======\nselect_expr_temp_0:0:.predef_I4 = 59\n" ];
+    5 [ label="LABEL L11 0
+====== CFG node 5 ======\n\nfalsebr (select_expr_temp_0:0:.predef_I4>=65), L12\n" ];
+    6 [ label="====== CFG node 6 ======\nfalsebr (select_expr_temp_0:0:.predef_I4<=64), L11\n" ];
+    7 [ label="====== CFG node 7 ======\nselect_expr_temp_0:0:.predef_I4 = 60\n" ];
+    8 [ label="LABEL L12 0
+====== CFG node 8 ======\n\nfalsebr (select_expr_temp_0:0:.predef_I4>=70), L13\n" ];
+    9 [ label="====== CFG node 9 ======\nfalsebr (select_expr_temp_0:0:.predef_I4<=69), L12\n" ];
+    10 [ label="====== CFG node 10 ======\nselect_expr_temp_0:0:.predef_I4 = 65\n" ];
+    11 [ label="LABEL L13 0
+====== CFG node 11 ======\n\nfalsebr (select_expr_temp_0:0:.predef_I4>=75), L14\n" ];
+    12 [ label="====== CFG node 12 ======\nfalsebr (select_expr_temp_0:0:.predef_I4<=74), L13\n" ];
+    13 [ label="====== CFG node 13 ======\nselect_expr_temp_0:0:.predef_I4 = 70\n" ];
+    14 [ label="LABEL L14 0
+====== CFG node 14 ======\n\nfalsebr (select_expr_temp_0:0:.predef_I4>=80), L15\n" ];
+    15 [ label="====== CFG node 15 ======\nfalsebr (select_expr_temp_0:0:.predef_I4<=79), L14\n" ];
+    16 [ label="====== CFG node 16 ======\nselect_expr_temp_0:0:.predef_I4 = 75\n" ];
+    17 [ label="LABEL L15 0
+====== CFG node 17 ======\n\nfalsebr (select_expr_temp_0:0:.predef_I4>=85), L16\n" ];
+    18 [ label="====== CFG node 18 ======\nfalsebr (select_expr_temp_0:0:.predef_I4<=84), L15\n" ];
+    19 [ label="====== CFG node 19 ======\nselect_expr_temp_0:0:.predef_I4 = 80\n" ];
+    20 [ label="LABEL L16 0
+SWITCH 7 1
+====== CFG node 20 ======\n\n\n" ];
+    21 [ label="====== CFG node 21 ======\nfalsebr (select_expr_temp_0:0:.predef_I4<=89), L16\n" ];
+    22 [ label="====== CFG node 22 ======\nselect_expr_temp_0:0:.predef_I4 = 85\n" ];
+    23 [ label="LABEL L2 0
+GOTO L1
+====== CFG node 23 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"F \", 2, 2)\n\n" ];
+    24 [ label="LABEL L3 0
+GOTO L1
+====== CFG node 24 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"D \", 2, 2)\n\n" ];
+    25 [ label="LABEL L4 0
+GOTO L1
+====== CFG node 25 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"CD\", 2, 2)\n\n" ];
+    26 [ label="LABEL L5 0
+GOTO L1
+====== CFG node 26 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"C \", 2, 2)\n\n" ];
+    27 [ label="LABEL L6 0
+GOTO L1
+====== CFG node 27 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"BC\", 2, 2)\n\n" ];
+    28 [ label="LABEL L7 0
+GOTO L1
+====== CFG node 28 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"B \", 2, 2)\n\n" ];
+    29 [ label="LABEL L8 0
+GOTO L1
+====== CFG node 29 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"AB\", 2, 2)\n\n" ];
+    30 [ label="LABEL L9 0
+====== CFG node 30 ======\n\nCASSIGNSTMT(&GRADE:0:anon_ptr.(0), &\"A \", 2, 2)\n" ];
+    31 [ label="LABEL L1 0
+====== CFG node 31 ======\n\n_END()\nreturn\n" ];
+    32 [ label="====== CFG node 32 ======\nreturn\n" ];
+    33 [ label="====== CFG node 33 ======\n" ];
+    1 -> 2 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    2 -> 3 [ label="{ FALSE_EDGE expr(0) }" ];
+    2 -> 4 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    4 -> 3 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    3 -> 5 [ label="{ FALSE_EDGE expr(0) }" ];
+    3 -> 6 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    6 -> 5 [ label="{ FALSE_EDGE expr(0) }" ];
+    6 -> 7 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    7 -> 5 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    5 -> 8 [ label="{ FALSE_EDGE expr(0) }" ];
+    5 -> 9 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    9 -> 8 [ label="{ FALSE_EDGE expr(0) }" ];
+    9 -> 10 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    10 -> 8 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    8 -> 11 [ label="{ FALSE_EDGE expr(0) }" ];
+    8 -> 12 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    12 -> 11 [ label="{ FALSE_EDGE expr(0) }" ];
+    12 -> 13 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    13 -> 11 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    11 -> 14 [ label="{ FALSE_EDGE expr(0) }" ];
+    11 -> 15 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    15 -> 14 [ label="{ FALSE_EDGE expr(0) }" ];
+    15 -> 16 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    16 -> 14 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    14 -> 17 [ label="{ FALSE_EDGE expr(0) }" ];
+    14 -> 18 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    18 -> 17 [ label="{ FALSE_EDGE expr(0) }" ];
+    18 -> 19 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    19 -> 17 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    17 -> 20 [ label="{ FALSE_EDGE expr(0) }" ];
+    17 -> 21 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    21 -> 20 [ label="{ FALSE_EDGE expr(0) }" ];
+    21 -> 22 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    22 -> 20 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    20 -> 23 [ label="{ MULTIWAY_EDGE expr(1077788504) }" ];
+    20 -> 24 [ label="{ MULTIWAY_EDGE expr(1077788548) }" ];
+    20 -> 25 [ label="{ MULTIWAY_EDGE expr(1077788592) }" ];
+    20 -> 26 [ label="{ MULTIWAY_EDGE expr(1077788636) }" ];
+    20 -> 27 [ label="{ MULTIWAY_EDGE expr(1077788680) }" ];
+    20 -> 28 [ label="{ MULTIWAY_EDGE expr(1077788724) }" ];
+    20 -> 29 [ label="{ MULTIWAY_EDGE expr(1077788768) }" ];
+    20 -> 30 [ label="{ MULTIWAY_EDGE expr(0) }" ];
+    23 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    24 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    25 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    26 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    27 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    28 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    29 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    30 -> 31 [ label="{ FALLTHROUGH_EDGE expr(0) }" ];
+    31 -> 33 [ label="{ RETURN_EDGE expr(0) }" ];
+    32 -> 33 [ label="{ RETURN_EDGE expr(0) }" ];}

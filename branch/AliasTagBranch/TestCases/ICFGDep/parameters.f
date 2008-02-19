@@ -3,10 +3,10 @@
            double precision :: x,y
            y=x
 
-c                      mUses                => mDefs
+c                      mUses            => mDefs
 c                      ==============================
-c                      [1: foo::x,            [2: foo::y,
-c                          bar::*xx]              bar::*yy]
+c                      [1: foo::x,      => [2: foo::y,
+c                          bar::*xx]           bar::*yy]
 c
 c                      ImplicitRemoves:
 c                      ================
@@ -24,9 +24,9 @@ c                          bar::*yy]
            t=yy
 
 
-c                      mUses                => mDefs
-c                      ==============================
-c                      [1: bar::*yy,           [2: bar::t]
+c                      mUses           => mDefs
+c                      ================================
+c                      [1: bar::*yy,      [2: bar::t]
 c                          foo::y]
 c
 c                      ImplicitRemoves:
@@ -39,8 +39,8 @@ c
            xx=t
 
 
-c                      mUses                => mDefs
-c                      ==============================
+c                      mUses              => mDefs
+c                      =====================================
 c                      [1: bar::t]           [2: bar::*xx,
 c                                                foo::x]
 c    
