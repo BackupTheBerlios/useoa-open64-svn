@@ -1,0 +1,14 @@
+# comment in file.test
+# Regression tests for ReachDef generation
+testname::CFG
+inputdir::TestCases/CFG
+outputdir::TestResults/CFG
+driverexec::./test-open64 --oa-CFG
+
+# list of tests
+#       input file,             status
+test::conditional.B,          
+test::loop.B,                 
+test::unstructured.B,         
+test::select-case.B,
+

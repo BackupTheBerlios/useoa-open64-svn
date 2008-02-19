@@ -1,0 +1,16 @@
+echo "Testing TestCases/ParamBindings/keyword_arguments.B, TestResults/ParamBindings/keyword_arguments.B.out "
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/keyword_arguments.B > t
+diff t TestResults/ParamBindings/keyword_arguments.B.out
+
+echo "Testing TestCases/ParamBindings/optional_param.B, TestResults/ParamBindings/optional_param.B.out "
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/optional_param.B > t
+diff t TestResults/ParamBindings/optional_param.B.out
+
+echo "Testing TestCases/ParamBindings/param_expressions.B, TestResults/ParamBindings/param_expressions.B.out "
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/param_expressions.B > t
+diff t TestResults/ParamBindings/param_expressions.B.out
+
+echo "Testing TestCases/ParamBindings/recursion.B, TestResults/ParamBindings/recursion.B.out "
+./test-open64 --oa-ParamBindings TestCases/ParamBindings/recursion.B > t
+diff t TestResults/ParamBindings/recursion.B.out
+

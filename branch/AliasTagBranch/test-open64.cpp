@@ -514,7 +514,6 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
   fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
   OA::OA_ptr<OA::Alias::Interface> alias;
   alias = fialiasman->performAnalysis(procIter);
-  alias->output(*irInterface);
 
   //! CallGraph
   OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -527,9 +526,7 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
   pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
   OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
   parambind = pbman->performAnalysis(cgraph);
-  std::cout << "before ParamBind Output" << std::endl;
   parambind->output(*irInterface);
-  std::cout << "after ParamBind Output" << std::endl;
 
   return 0;
 }

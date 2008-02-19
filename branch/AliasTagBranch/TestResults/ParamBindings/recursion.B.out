@@ -1,0 +1,45 @@
+
+ParamBindings(
+        CallHandle(factorial_(&N:0:.predef_I4+-1))	 => 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(factorial_::N)
+                )
+                mNumDeref: 1
+            )	 => 
+            graph EXPRESSION TREE:
+
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(N:0:.predef_I4+-1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(factorial_::factorial_)
+                )
+                Node 0: ET MemRefNode (  )
+
+
+    CallHandle(factorial_(&N:0:.predef_I4))	 => 
+        
+        Deref(
+            mMemRefType: USE
+            mMRE: 
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(factorial_::N)
+            )
+            mNumDeref: 1
+        )	 => 
+        graph EXPRESSION TREE:
+
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(recfunc_::N)
+            )
+            Node 0: ET MemRefNode (  )
+
+
+)

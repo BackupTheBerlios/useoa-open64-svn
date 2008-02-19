@@ -1,0 +1,8 @@
+echo "Generating TestResults/CFG/conditional.B.out"
+./test-open64 --oa-CFG TestCases/CFG/conditional.B > TestResults/CFG/conditional.B.out
+echo "Generating TestResults/CFG/loop.B.out"
+./test-open64 --oa-CFG TestCases/CFG/loop.B > TestResults/CFG/loop.B.out
+echo "Generating TestResults/CFG/unstructured.B.out"
+./test-open64 --oa-CFG TestCases/CFG/unstructured.B > TestResults/CFG/unstructured.B.out
+echo "Generating TestResults/CFG/select-case.B.out"
+./test-open64 --oa-CFG TestCases/CFG/select-case.B > TestResults/CFG/select-case.B.out

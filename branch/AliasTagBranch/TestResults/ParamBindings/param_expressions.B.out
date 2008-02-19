@@ -1,0 +1,85 @@
+
+ParamBindings(
+        CallHandle(bar_(&A:0:.predef_F8, &B:0:.predef_F8+C:0:.predef_F8, &2, &D:0:anon_ptr.(I:0:.predef_I4)))	 => 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::P)
+                )
+                mNumDeref: 1
+            )	 => 
+            graph EXPRESSION TREE:
+
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::A)
+                )
+                Node 0: ET MemRefNode (  )
+
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::Q)
+                )
+                mNumDeref: 1
+            )	 => 
+            graph EXPRESSION TREE:
+
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(B:0:.predef_F8+C:0:.predef_F8)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(foo_::foo_)
+                )
+                Node 0: ET MemRefNode (  )
+
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::R)
+                )
+                mNumDeref: 1
+            )	 => 
+            graph EXPRESSION TREE:
+
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(2)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(foo_::foo_)
+                )
+                Node 0: ET MemRefNode (  )
+
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::S)
+                )
+                mNumDeref: 1
+            )	 => 
+            graph EXPRESSION TREE:
+
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::D)
+                    )
+                )
+                Node 0: ET MemRefNode (  )
+
+
+)
