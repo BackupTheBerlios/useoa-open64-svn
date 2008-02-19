@@ -11,10 +11,10 @@
            integer, target  :: q
            integer :: t
            
-           p=>q      ! AliasTag("p")  = (1,MUST)
-                     ! AliasTag("q")  = (2,MUST)
+           p=>q      ! AliasTag("foo::p")  = (1,MUST)
+                     ! AliasTag("foo::q")  = (2,MUST)
                      
-           t = p     ! AliasTag("*p") = (2,MUST)
-                     ! AliasTag("t")  = (3,MUST)
+           t = p     ! AliasTag("foo::*p") = (2,MUST)
+                     ! AliasTag("foo::t")  = (3,MUST)
                      
       end program

@@ -8,6 +8,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 1
+                    # NamedRef(foo_::P)
                 ) ] 
             
             NamedRef(
@@ -16,6 +17,8 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(foo_::Q)
+                    # Deref(NamedRef(foo_::P))
                 ) ] 
             
             NamedRef(
@@ -24,6 +27,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 3
+                    # NamedRef(foo_::T)
                 ) ] 
             
             Deref(
@@ -37,12 +41,15 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(foo_::Q)
+                    # Deref(NamedRef(foo_::P))
                 ) ] 
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
             
             Tag(
                 mTagID: 1
+                # NamedRef(foo_::P)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -51,6 +58,8 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
+                # NamedRef(foo_::Q)
+                # Deref(NamedRef(foo_::P))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -68,6 +77,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
+                # NamedRef(foo_::T)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF

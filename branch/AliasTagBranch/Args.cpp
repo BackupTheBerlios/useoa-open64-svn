@@ -241,7 +241,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 11; }
     if (parser.IsOpt("oa-ReachDefs")) { runMode = 20; }
     if (parser.IsOpt("oa-UDDUChains")) { runMode = 16; }
-    if (parser.IsOpt("oa-UDDUChainsXAIF")) { runMode = 8; }
+    if (parser.IsOpt("oa-UDDUChainsXAIF")) { runMode = 18; }
     if (parser.IsOpt("oa-ReachConsts")) { runMode = 10; }
     //if (parser.IsOpt("oa-AliasMapXAIF")) { runMode = 11; }
     if (parser.IsOpt("oa-InterSideEffect")) { runMode = 13; }

@@ -549,15 +549,12 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
   fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
   OA::OA_ptr<OA::Alias::Interface> alias;
   alias = fialiasman->performAnalysis(procIter);
-  alias->output(*irInterface);
 
   //! CallGraph
   OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
   cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
   OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
       cgraphman->performAnalysis(procIter, alias);
-
-  //cgraph->dump(std::cout, irInterface);
 
   OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
   pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
@@ -581,9 +578,8 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
       OA::ProcHandle proc = procIter->current();
       results = sideeffectman->performAnalysis(proc, alias, 
                                                interSideEffectInter);
+      results->output(*irInterface,*alias);
   }
-
-  results->output(*irInterface);
 
   return 0;
 }

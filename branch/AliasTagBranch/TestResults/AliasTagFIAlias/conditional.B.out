@@ -8,6 +8,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 1
+                    # NamedRef(main_::Q)
                 ) ] 
             
             NamedRef(
@@ -16,6 +17,9 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(main_::R)
+                    # NamedRef(main_::S)
+                    # Deref(NamedRef(main_::Q))
                 ) ] 
             
             NamedRef(
@@ -24,6 +28,9 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(main_::R)
+                    # NamedRef(main_::S)
+                    # Deref(NamedRef(main_::Q))
                 ) ] 
             
             NamedRef(
@@ -32,6 +39,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 3
+                    # NamedRef(main_::T)
                 ) ] 
             
             Deref(
@@ -45,12 +53,16 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(main_::R)
+                    # NamedRef(main_::S)
+                    # Deref(NamedRef(main_::Q))
                 ) ] 
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
             
             Tag(
                 mTagID: 1
+                # NamedRef(main_::Q)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -59,6 +71,9 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
+                # NamedRef(main_::R)
+                # NamedRef(main_::S)
+                # Deref(NamedRef(main_::Q))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -80,6 +95,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
+                # NamedRef(main_::T)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE

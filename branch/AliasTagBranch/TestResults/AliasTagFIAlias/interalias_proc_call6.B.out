@@ -8,6 +8,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 1
+                    # NamedRef(head_::bar_)
                 ) ] 
             
             NamedRef(
@@ -16,6 +17,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 2
+                    # NamedRef(head_::X)
                 ) ] 
             
             NamedRef(
@@ -24,6 +26,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 3
+                    # NamedRef(head_::F)
                 ) ] 
             
             NamedRef(
@@ -32,6 +35,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 4
+                    # NamedRef(head_::T1)
                 ) ] 
             
             NamedRef(
@@ -40,6 +44,7 @@ AliasTagResults(
             )	 => [ 
                 Tag(
                     mTagID: 5
+                    # NamedRef(head_::T2)
                 ) ] 
             
             NamedRef(
@@ -47,7 +52,8 @@ AliasTagResults(
                 mSymHandle: SymHandle(head_::T3)
             )	 => [ 
                 Tag(
-                    mTagID: 4
+                    mTagID: 6
+                    # NamedRef(head_::T3)
                 ) ] 
             
             NamedRef(
@@ -55,7 +61,8 @@ AliasTagResults(
                 mSymHandle: SymHandle(bar_::A)
             )	 => [ 
                 Tag(
-                    mTagID: 6
+                    mTagID: 7
+                    # NamedRef(bar_::A)
                 ) ] 
             
             NamedRef(
@@ -63,7 +70,8 @@ AliasTagResults(
                 mSymHandle: SymHandle(bar_::B)
             )	 => [ 
                 Tag(
-                    mTagID: 7
+                    mTagID: 8
+                    # NamedRef(bar_::B)
                 ) ] 
             
             Deref(
@@ -76,7 +84,8 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 8
+                    mTagID: 9
+                    # Deref(NamedRef(head_::X))
                 ) ] 
             
             Deref(
@@ -89,7 +98,55 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 9
+                    mTagID: 10
+                    # Deref(NamedRef(head_::F))
+                ) ] 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T1)
+                )
+                mNumDeref: 1
+            )	 => [ 
+                Tag(
+                    mTagID: 11
+                    # Deref(NamedRef(head_::T1))
+                    # Deref(NamedRef(head_::T3))
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T2)
+                )
+                mNumDeref: 1
+            )	 => [ 
+                Tag(
+                    mTagID: 12
+                    # Deref(NamedRef(head_::T2))
+                    # Deref(NamedRef(bar_::B))
+                ) ] 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T3)
+                )
+                mNumDeref: 1
+            )	 => [ 
+                Tag(
+                    mTagID: 11
+                    # Deref(NamedRef(head_::T1))
+                    # Deref(NamedRef(head_::T3))
+                    # Deref(NamedRef(bar_::A))
                 ) ] 
             
             Deref(
@@ -102,7 +159,10 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 4
+                    mTagID: 11
+                    # Deref(NamedRef(head_::T1))
+                    # Deref(NamedRef(head_::T3))
+                    # Deref(NamedRef(bar_::A))
                 ) ] 
             
             Deref(
@@ -115,13 +175,16 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 5
+                    mTagID: 12
+                    # Deref(NamedRef(head_::T2))
+                    # Deref(NamedRef(bar_::B))
                 ) ] 
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
             
             Tag(
                 mTagID: 1
+                # NamedRef(head_::bar_)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -130,6 +193,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
+                # NamedRef(head_::X)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -138,6 +202,7 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
+                # NamedRef(head_::F)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -146,44 +211,34 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
+                # NamedRef(head_::T1)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
                     mSymHandle: SymHandle(head_::T1)
-                )    
-                NamedRef(
-                    mMemRefType: DEF
-                    mSymHandle: SymHandle(head_::T3)
-                )    
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::A)
-                    )
-                    mNumDeref: 1
                 ) ] 
             
             Tag(
                 mTagID: 5
+                # NamedRef(head_::T2)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(head_::T2)
-                )    
-                Deref(
-                    mMemRefType: DEF
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::B)
-                    )
-                    mNumDeref: 1
                 ) ] 
             
             Tag(
                 mTagID: 6
+                # NamedRef(head_::T3)
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(head_::T3)
+                ) ] 
+            
+            Tag(
+                mTagID: 7
+                # NamedRef(bar_::A)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -191,7 +246,8 @@ AliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 7
+                mTagID: 8
+                # NamedRef(bar_::B)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -199,7 +255,8 @@ AliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 8
+                mTagID: 9
+                # Deref(NamedRef(head_::X))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -212,7 +269,8 @@ AliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 9
+                mTagID: 10
+                # Deref(NamedRef(head_::F))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -220,6 +278,64 @@ AliasTagResults(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(head_::F)
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 11
+                # Deref(NamedRef(head_::T1))
+                # Deref(NamedRef(head_::T3))
+                # Deref(NamedRef(bar_::A))
+            )	 => [ 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::T1)
+                    )
+                    mNumDeref: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::T3)
+                    )
+                    mNumDeref: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_::A)
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 12
+                # Deref(NamedRef(head_::T2))
+                # Deref(NamedRef(bar_::B))
+            )	 => [ 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::T2)
+                    )
+                    mNumDeref: 1
+                )    
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_::B)
                     )
                     mNumDeref: 1
                 ) ] 
@@ -246,7 +362,7 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(head_::T1)
-            )	 => 0
+            )	 => 1
             
             NamedRef(
                 mMemRefType: USE
@@ -256,7 +372,7 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(head_::T3)
-            )	 => 0
+            )	 => 1
             
             NamedRef(
                 mMemRefType: USE
@@ -293,6 +409,36 @@ AliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T1)
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T2)
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T3)
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
                     mSymHandle: SymHandle(bar_::A)
                 )
                 mNumDeref: 1
@@ -306,7 +452,7 @@ AliasTagResults(
                     mSymHandle: SymHandle(bar_::B)
                 )
                 mNumDeref: 1
-            )	 => 1
+            )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
 

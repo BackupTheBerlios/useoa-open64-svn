@@ -12,8 +12,8 @@
        double precision g,g1
        common /cpad/ g,g1
        double precision t1, t2
-       call head(t1, t2)                 ! AliasTag("t1") => (1,MUST)
-                                         ! AliasTag("t2") => (2,MUST)
+       call head(t1, t2)                 ! AliasTag("testing::t1") => (1,MUST)
+                                         ! AliasTag("testing::t2") => (2,MUST)
                                          
        end
 
@@ -23,23 +23,28 @@
        double precision :: f
        double precision t1, t2, t3
 
-       t1=x*f                            ! AliasTag("t1") => (3,MUST)
-                                         ! AliasTag("*x") => (4,MUST)
-                                         ! AliasTag("x")  => (5,MUST)
-                                         ! AliasTag("*f") => (6,MUST)
-                                         ! AliasTag("f")  => (7,MUST)
+       t1=x*f                            ! AliasTag("head::t1") => (3,MUST)
+                                         ! AliasTag("head::*x") => (4,MUST)
+                                         ! AliasTag("head::x")  => (5,MUST)
+                                         ! AliasTag("head::*f") => (6,MUST)
+                                         ! AliasTag("head::f")  => (7,MUST)
 
                                          
-       g=1.0                             ! AliasTag("g")  => (8,MUST)
+       g=1.0                             ! AliasTag("testing::g")  => (8,MUST)
        
-       g1=2.0                            ! AliasTag("g1") => (9,MUST)
+       g1=2.0                            ! AliasTag("testing::g1") => (9,MUST)
        
-       call bar(t1,g1,g)               
+       call bar(t1,g1,g)                 ! AliasTag("bar::*a") => (3,MUST)
+                                         ! AliasTag("bar::a")  => (10,MUST)
+                                         ! AliasTag("bar::*c") => (8,MUST)
+                                         ! AliasTag("bar::c")  => (11,MUST)
+                                         ! AliasTag("bar::*b") => (9,MUST)
+                                         ! AliasTag("bar::b")  => (12,MUST)
 
                                          
-       t3=f*30*g                         ! AliasTag("t3") => (10,MUST)
+       t3=f*30*g                         ! AliasTag("head::t3") => (13,MUST)
                                          
-       f=t1+t2                           ! AliasTag("t2") => (11,MUST)
+       f=t1+t2                           ! AliasTag("head::t2") => (14,MUST)
 
        end subroutine
 
@@ -48,14 +53,7 @@
        common /cpad/ g,g1
        double precision a,b,c
 
-       b = a + g + g1 + c                ! AliasTag("g")  => (8,MUST)
-                                         ! AliasTag("g1") => (9,MUST)
-                                         ! AliasTag("*a") => (3,MUST)
-                                         ! AliasTag("a")  => (12,MUST)
-                                         ! AliasTag("*c") => (8,MUST)
-                                         ! AliasTag("c")  => (13,MUST)
-                                         ! AliasTag("*b") => (9,MUST)
-                                         ! AliasTag("b")  => (14,MUST)
+       b = a + g + g1 + c               
        
        return
        end

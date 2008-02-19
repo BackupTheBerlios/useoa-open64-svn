@@ -12,31 +12,41 @@
 
        subroutine foo(a1)  
          integer a1
-         print *, a1       ! AliasTag("*a1") => (1,MAY)
-                           ! AliasTag("a1")  => (4,MUST)
+         print *, a1   
        end subroutine
 
        subroutine bar(a2)  
          integer a2
-         print *, a2       ! AliasTag("*a2") => (2,MAY)
-                           ! AliasTag("a2")  => (3,MUST)
+         print *, a2   
        end subroutine
 
        program head
          integer i,j
          
-         i=1               ! AliasTag("i")            => (1,MAY) 
+         i=1               ! AliasTag("head::i")  => (1,MUST) 
          
-         j=4               ! AliasTag("j")            => (2,MAY)
          
-         call foo(i) 
+         j=4               ! AliasTag("head::j")  => (2,MUST)
          
-         call foo(2)       ! AliasTag("Unnamed(2)")   => (1,MAY)
+         
+         call foo(i)       ! AliasTag("foo::*a1")  => (1,MUST)
+                           ! AliasTag("foo::a1")   => (3,MUST)
+                           
+                           
+         call foo(2)       ! AliasTag("head::Unnamed(2)") => (1,MAY)
+                           ! AliasTag("head::i")          => (1,MAY)
+                           ! AliasTag("foo::*a1")         => (1,MAY)
 
-         call foo(i+j)     ! AliasTag("Unnamed(i+j)") => (1,MAY)
+                           
+         call foo(i+j)     ! AliasTag("head::Unnamed(i+j)") => (1,MAY)
          
-         call bar(j)  
          
-         call bar(3)       ! AliasTag("Unnamed(3)")   => (2,MAY)
+         call bar(j)       ! AliasTag("bar::*a2")   => (2,MUST)
+                           ! AliasTag("bar::a2")    => (4,MUST)
+         
+         
+         call bar(3)       ! AliasTag("head::Unnamed(3)")  => (2,MAY)
+                           ! AliasTag("head::j")           => (2,MAY)
+                           ! AliasTag("bar::*a2")          => (2,MAY)
          
        end

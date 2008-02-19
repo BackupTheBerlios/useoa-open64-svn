@@ -10,3 +10,5 @@ echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call5.B.out"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call5.B > TestResults/AliasTagFIAlias/interalias_proc_call5.B.out
 echo "Generating TestResults/AliasTagFIAlias/Unnamed_alias.B.out"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Unnamed_alias.B > TestResults/AliasTagFIAlias/Unnamed_alias.B.out
+echo "Generating TestResults/AliasTagFIAlias/Jean.B.out"
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Jean.B > TestResults/AliasTagFIAlias/Jean.B.out
