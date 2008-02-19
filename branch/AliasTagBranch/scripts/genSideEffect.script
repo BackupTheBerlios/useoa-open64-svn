@@ -1,0 +1,8 @@
+echo "Generating TestResults/SideEffect/Jean2.B.out"
+./test-open64 --oa-SideEffect TestCases/SideEffect/Jean2.B > TestResults/SideEffect/Jean2.B.out
+echo "Generating TestResults/SideEffect/Jean.B.out"
+./test-open64 --oa-SideEffect TestCases/SideEffect/Jean.B > TestResults/SideEffect/Jean.B.out
+echo "Generating TestResults/SideEffect/swap.B.out"
+./test-open64 --oa-SideEffect TestCases/SideEffect/swap.B > TestResults/SideEffect/swap.B.out
+echo "Generating TestResults/SideEffect/test.B.out"
+./test-open64 --oa-SideEffect TestCases/SideEffect/test.B > TestResults/SideEffect/test.B.out

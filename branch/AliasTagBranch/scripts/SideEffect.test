@@ -1,0 +1,15 @@
+# comment in file.test
+# Regression tests for SideEffect generation
+testname::SideEffect
+inputdir::TestCases/SideEffect
+outputdir::TestResults/SideEffect
+driverexec::./test-open64 --oa-SideEffect
+
+# list of tests
+#       input file,                 status
+test::Jean2.B,
+test::Jean.B,
+test::swap.B,
+test::test.B,
+#test::stringcmp.B,      missing do-while loop in whirl representation
+

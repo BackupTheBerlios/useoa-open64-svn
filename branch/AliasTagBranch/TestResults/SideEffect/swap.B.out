@@ -1,0 +1,504 @@
+
+SideEffectStandard(
+    mLMODSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::A)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::V)
+                    )
+                    mNumDeref: 1
+                )    
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(swap_::V)
+                        )
+                        mNumDeref: 1
+                    )
+                ) ]  ] 
+    )
+    mMODSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::A)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::V)
+                    )
+                    mNumDeref: 1
+                )    
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(swap_::V)
+                        )
+                        mNumDeref: 1
+                    )
+                ) ]  ] 
+    )
+    mLDEFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]  ] 
+    )
+    mDEFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]  ] 
+    )
+    mLUSESet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(swap_::main_)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::J)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::A)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::V)
+                    )
+                    mNumDeref: 1
+                )    
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(swap_::V)
+                        )
+                        mNumDeref: 1
+                    )
+                ) ]  ] 
+    )
+    mUSESet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(swap_::main_)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::J)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::A)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::V)
+                    )
+                    mNumDeref: 1
+                )    
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(swap_::V)
+                        )
+                        mNumDeref: 1
+                    )
+                ) ]  ] 
+    )
+    mLREFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(swap_::main_)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::J)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::A)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::V)
+                    )
+                    mNumDeref: 1
+                )    
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(swap_::V)
+                        )
+                        mNumDeref: 1
+                    )
+                ) ]  ] 
+    )
+    mREFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(swap_::TEMP)
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(swap_::main_)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::J)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::A)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::V)
+                    )
+                    mNumDeref: 1
+                )    
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(swap_::V)
+                        )
+                        mNumDeref: 1
+                    )
+                ) ]  ] 
+    )
+)
+
+SideEffectStandard(
+    mLMODSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(swap_::main_)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::J)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mMODSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]     [ 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(swap_::main_)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::J)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mLDEFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mDEFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mLUSESet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mUSESet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mLREFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+    mREFSet: 
+    mIsMust: false
+    mTags([ [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::I)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(swap_::I)
+                    )
+                    mNumDeref: 1
+                ) ]  ] 
+    )
+)
