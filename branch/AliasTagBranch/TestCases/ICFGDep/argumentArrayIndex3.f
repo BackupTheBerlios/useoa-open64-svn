@@ -1,4 +1,8 @@
-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Alias Analysis results for this TestCase are not proper
+! This ICFGDep Results are not correct.     
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
+      
 
       subroutine foo(a,b) 
        double precision a
@@ -9,7 +13,8 @@ c                        mUses                => mDefs
 c                        ==============================
 c                        [1: foo::*a,            [2: foo::*b, 
 c                            head::*x(),             head::*y,
-c                            head::p() ]             head::q() ]
+c                            head::*x,               head::q() ]
+c                            head::p()]
 c
 c                        ImplicitRemoves: 
 c                        ================

@@ -45,6 +45,9 @@ AliasTagResults(
                 Tag(
                     mTagID: 5
                     # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             NamedRef(
@@ -54,6 +57,8 @@ AliasTagResults(
                 Tag(
                     mTagID: 6
                     # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
                 ) ] 
             
             UnnamedRef(
@@ -63,8 +68,11 @@ AliasTagResults(
                 mProcHandle: ProcHandle(foo_::head_)
             )	 => [ 
                 Tag(
-                    mTagID: 7
+                    mTagID: 5
+                    # NamedRef(head_::I)
                     # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             UnnamedRef(
@@ -74,8 +82,11 @@ AliasTagResults(
                 mProcHandle: ProcHandle(foo_::head_)
             )	 => [ 
                 Tag(
-                    mTagID: 8
+                    mTagID: 5
+                    # NamedRef(head_::I)
                     # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
                 ) ] 
             
             UnnamedRef(
@@ -85,8 +96,10 @@ AliasTagResults(
                 mProcHandle: ProcHandle(foo_::head_)
             )	 => [ 
                 Tag(
-                    mTagID: 9
+                    mTagID: 6
+                    # NamedRef(head_::J)
                     # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
                 ) ] 
             
             Deref(
@@ -99,11 +112,11 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 10
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
                     # Deref(NamedRef(foo_::A1))
-                    # Deref(NamedRef(head_::I))
-                    # Deref(UnnamedRef())
-                    # Deref(UnnamedRef())
                 ) ] 
             
             Deref(
@@ -116,99 +129,10 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 11
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
                     # Deref(NamedRef(bar_::A2))
-                    # Deref(NamedRef(head_::J))
-                    # Deref(UnnamedRef())
-                ) ] 
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(head_::I)
-                )
-                mNumDeref: 1
-            )	 => [ 
-                Tag(
-                    mTagID: 10
-                    # Deref(NamedRef(foo_::A1))
-                    # Deref(NamedRef(head_::I))
-                    # Deref(UnnamedRef())
-                    # Deref(UnnamedRef())
-                ) ] 
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(head_::J)
-                )
-                mNumDeref: 1
-            )	 => [ 
-                Tag(
-                    mTagID: 11
-                    # Deref(NamedRef(bar_::A2))
-                    # Deref(NamedRef(head_::J))
-                    # Deref(UnnamedRef())
-                ) ] 
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(2)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
-                )
-                mNumDeref: 1
-            )	 => [ 
-                Tag(
-                    mTagID: 10
-                    # Deref(NamedRef(foo_::A1))
-                    # Deref(NamedRef(head_::I))
-                    # Deref(UnnamedRef())
-                    # Deref(UnnamedRef())
-                ) ] 
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
-                )
-                mNumDeref: 1
-            )	 => [ 
-                Tag(
-                    mTagID: 10
-                    # Deref(NamedRef(foo_::A1))
-                    # Deref(NamedRef(head_::I))
-                    # Deref(UnnamedRef())
-                    # Deref(UnnamedRef())
-                ) ] 
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(3)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
-                )
-                mNumDeref: 1
-            )	 => [ 
-                Tag(
-                    mTagID: 11
-                    # Deref(NamedRef(bar_::A2))
-                    # Deref(NamedRef(head_::J))
-                    # Deref(UnnamedRef())
                 ) ] 
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
@@ -252,61 +176,26 @@ AliasTagResults(
             Tag(
                 mTagID: 5
                 # NamedRef(head_::I)
+                # UnnamedRef()
+                # UnnamedRef()
+                # Deref(NamedRef(foo_::A1))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
                     mSymHandle: SymHandle(head_::I)
-                ) ] 
-            
-            Tag(
-                mTagID: 6
-                # NamedRef(head_::J)
-            )	 => [ 
-                NamedRef(
-                    mMemRefType: DEF
-                    mSymHandle: SymHandle(head_::J)
-                ) ] 
-            
-            Tag(
-                mTagID: 7
-                # UnnamedRef()
-            )	 => [ 
+                )    
                 UnnamedRef(
                     mMemRefType: USE
                     mExprHandle: ExprHandle(2)
                     mLocal: 1
                     mProcHandle: ProcHandle(foo_::head_)
-                ) ] 
-            
-            Tag(
-                mTagID: 8
-                # UnnamedRef()
-            )	 => [ 
+                )    
                 UnnamedRef(
                     mMemRefType: USE
                     mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
                     mLocal: 1
                     mProcHandle: ProcHandle(foo_::head_)
-                ) ] 
-            
-            Tag(
-                mTagID: 9
-                # UnnamedRef()
-            )	 => [ 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(3)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
-                ) ] 
-            
-            Tag(
-                mTagID: 10
-                # Deref(NamedRef(foo_::A1))
-                # Deref(NamedRef(head_::I))
-                # Deref(UnnamedRef())
-                # Deref(UnnamedRef())
-            )	 => [ 
+                )    
                 Deref(
                     mMemRefType: USE
                     mMRE: 
@@ -315,71 +204,30 @@ AliasTagResults(
                         mSymHandle: SymHandle(foo_::A1)
                     )
                     mNumDeref: 1
-                )    
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::I)
-                    )
-                    mNumDeref: 1
-                )    
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    UnnamedRef(
-                        mMemRefType: USE
-                        mExprHandle: ExprHandle(2)
-                        mLocal: 1
-                        mProcHandle: ProcHandle(foo_::head_)
-                    )
-                    mNumDeref: 1
-                )    
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    UnnamedRef(
-                        mMemRefType: USE
-                        mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                        mLocal: 1
-                        mProcHandle: ProcHandle(foo_::head_)
-                    )
-                    mNumDeref: 1
                 ) ] 
             
             Tag(
-                mTagID: 11
+                mTagID: 6
+                # NamedRef(head_::J)
+                # UnnamedRef()
                 # Deref(NamedRef(bar_::A2))
-                # Deref(NamedRef(head_::J))
-                # Deref(UnnamedRef())
             )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(head_::J)
+                )    
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(3)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(foo_::head_)
+                )    
                 Deref(
                     mMemRefType: USE
                     mMRE: 
                     NamedRef(
                         mMemRefType: DEF
                         mSymHandle: SymHandle(bar_::A2)
-                    )
-                    mNumDeref: 1
-                )    
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::J)
-                    )
-                    mNumDeref: 1
-                )    
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    UnnamedRef(
-                        mMemRefType: USE
-                        mExprHandle: ExprHandle(3)
-                        mLocal: 1
-                        mProcHandle: ProcHandle(foo_::head_)
                     )
                     mNumDeref: 1
                 ) ] 
@@ -411,12 +259,12 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(head_::I)
-            )	 => 1
+            )	 => 0
             
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(head_::J)
-            )	 => 1
+            )	 => 0
             
             UnnamedRef(
                 mMemRefType: USE
@@ -455,62 +303,6 @@ AliasTagResults(
                 NamedRef(
                     mMemRefType: DEF
                     mSymHandle: SymHandle(bar_::A2)
-                )
-                mNumDeref: 1
-            )	 => 0
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(head_::I)
-                )
-                mNumDeref: 1
-            )	 => 0
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(head_::J)
-                )
-                mNumDeref: 1
-            )	 => 0
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(2)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
-                )
-                mNumDeref: 1
-            )	 => 0
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(I:0:.predef_I4+J:0:.predef_I4)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
-                )
-                mNumDeref: 1
-            )	 => 0
-            
-            Deref(
-                mMemRefType: USE
-                mMRE: 
-                UnnamedRef(
-                    mMemRefType: USE
-                    mExprHandle: ExprHandle(3)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::head_)
                 )
                 mNumDeref: 1
             )	 => 0

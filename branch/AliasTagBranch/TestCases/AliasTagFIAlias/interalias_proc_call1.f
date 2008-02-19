@@ -11,16 +11,17 @@
        double precision t1, t2, t3
 
        t1=x*f                     ! AliasTag("head::t1") => (1,MUST)
-                                  ! AliasTag("head::*x") => (2,MUST)
+                                  ! AliasTag("head::*x") => (2,MAY)
                                   ! AliasTag("head::x")  => (3,MUST)
-                                  ! AliasTag("head::*f") => (4,MUST)
+                                  ! AliasTag("head::*f") => (4,MAY)
                                   ! AliasTag("head::f")  => (5,MUST)
                                   
                                   
-       call bar(t1,t1)            ! AliasTag("bar::*a") => (1,MUST)
+       call bar(t1,t1)            ! AliasTag("bar::*a") => (1,MAY)
                                   ! AliasTag("bar::a")  => (8,MUST)
-                                  ! AliasTag("bar::*b") => (1,MUST)
+                                  ! AliasTag("bar::*b") => (1,MAY)
                                   ! AliasTag("bar::b")  => (9,MUST)
+                                  ! AliasTag("bar::t1") => (1,MAY)
                                   
                                   
        t3=f*30                    ! AliasTag("head::t3") => (6,MUST)

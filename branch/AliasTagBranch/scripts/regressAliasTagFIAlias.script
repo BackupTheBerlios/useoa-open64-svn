@@ -22,7 +22,11 @@ echo "Testing TestCases/AliasTagFIAlias/Unnamed_alias.B, TestResults/AliasTagFIA
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Unnamed_alias.B > t
 diff t TestResults/AliasTagFIAlias/Unnamed_alias.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/Jean.B, TestResults/AliasTagFIAlias/Jean.B.out "
+echo "Testing TestCases/AliasTagFIAlias/Jean.B, TestResults/AliasTagFIAlias/Jean.B.out Checked by PLM 02/19/07"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Jean.B > t
 diff t TestResults/AliasTagFIAlias/Jean.B.out
+
+echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call7.B, TestResults/AliasTagFIAlias/interalias_proc_call7.B.out "
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call7.B > t
+diff t TestResults/AliasTagFIAlias/interalias_proc_call7.B.out
 

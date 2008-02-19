@@ -1,7 +1,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
 ! A simple program that involves possible aliasing of actual parameters 
-! due to multiple calls to the same procedure 
+! due to multiple calls to the same procedure  (Aliasing of Scalars)
 !
 ! AliasPairs : 1. (t1,t3,*a)
 !              2. (t2,*b)
