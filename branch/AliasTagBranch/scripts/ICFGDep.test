@@ -9,15 +9,15 @@ driverexec::./test-open64 --oa-ICFGDep
 # list of tests
 #       input file,                 status
 
-test::expressions.B,          
-test::activity_int5.B,
-test::argumentArrayIndex3.B,
-test::globalActive_7.B,
-test::multiple_calls2.B,
-test::parameters.B,
-test::simple_if2.B,
-test::activity_proc_call1.B,
-test::multiple_calls1.B,
-test::nested_calls_4.B,
-test::sideEffect_3.B,
+test::expressions.B,                checked by PLM 02/18/08
+test::activity_int5.B,              checked by PLM 02/18/08
+test::argumentArrayIndex3.B,        checked by PLM 02/18/08, issues because wrong Alias Results
+test::globalActive_7.B,             checked by PLM 02/18/08
+test::multiple_calls2.B,            checked by PLM 02/18/08
+test::parameters.B,                 checked by PLM 02/18/08
+test::simple_if2.B,                 checked by PLM 02/18/08
+test::activity_proc_call1.B,        checked by PLM 02/18/08
+test::multiple_calls1.B,            checked by PLM 02/18/08
+test::nested_calls_4.B,             checked by PLM 02/18/08 
+test::sideEffect_3.B,               checked by PLM 02/18/08
 

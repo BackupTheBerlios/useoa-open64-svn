@@ -13,9 +13,13 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                NamedRef(
+                AddressOf(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(main___::X)
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(main___::X)
+                    )
                 )
                 Node 0: ET MemRefNode (  )
 
@@ -31,11 +35,15 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                UnnamedRef(
+                AddressOf(
                     mMemRefType: USE
-                    mExprHandle: ExprHandle(100)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(main___::main___)
+                    mMRE: 
+                    UnnamedRef(
+                        mMemRefType: USE
+                        mExprHandle: ExprHandle(100)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(main___::main___)
+                    )
                 )
                 Node 0: ET MemRefNode (  )
 

@@ -13,9 +13,13 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                NamedRef(
+                AddressOf(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(merge_sort_::ARRAY)
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(merge_sort_::ARRAY)
+                    )
                 )
                 Node 0: ET MemRefNode (  )
 
@@ -33,9 +37,13 @@ ParamBindings(
         )	 => 
         graph EXPRESSION TREE:
 
-            NamedRef(
+            AddressOf(
                 mMemRefType: USE
-                mSymHandle: SymHandle(merge_sort_::ARRAY)
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(merge_sort_::ARRAY)
+                )
             )
             Node 0: ET MemRefNode (  )
 
@@ -51,11 +59,15 @@ ParamBindings(
         )	 => 
         graph EXPRESSION TREE:
 
-            UnnamedRef(
+            AddressOf(
                 mMemRefType: USE
-                mExprHandle: ExprHandle(0)
-                mLocal: 1
-                mProcHandle: ProcHandle(sort_::merge_sort_)
+                mMRE: 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(0)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(sort_::merge_sort_)
+                )
             )
             Node 0: ET MemRefNode (  )
 

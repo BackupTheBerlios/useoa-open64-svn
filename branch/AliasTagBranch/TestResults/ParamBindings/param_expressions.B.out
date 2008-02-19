@@ -13,9 +13,13 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                NamedRef(
+                AddressOf(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(foo_::A)
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::A)
+                    )
                 )
                 Node 0: ET MemRefNode (  )
 
@@ -31,11 +35,15 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                UnnamedRef(
+                AddressOf(
                     mMemRefType: USE
-                    mExprHandle: ExprHandle(B:0:.predef_F8+C:0:.predef_F8)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::foo_)
+                    mMRE: 
+                    UnnamedRef(
+                        mMemRefType: USE
+                        mExprHandle: ExprHandle(B:0:.predef_F8+C:0:.predef_F8)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(foo_::foo_)
+                    )
                 )
                 Node 0: ET MemRefNode (  )
 
@@ -51,11 +59,15 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                UnnamedRef(
+                AddressOf(
                     mMemRefType: USE
-                    mExprHandle: ExprHandle(2)
-                    mLocal: 1
-                    mProcHandle: ProcHandle(foo_::foo_)
+                    mMRE: 
+                    UnnamedRef(
+                        mMemRefType: USE
+                        mExprHandle: ExprHandle(2)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(foo_::foo_)
+                    )
                 )
                 Node 0: ET MemRefNode (  )
 
@@ -71,12 +83,16 @@ ParamBindings(
             )	 => 
             graph EXPRESSION TREE:
 
-                SubSetRef(
+                AddressOf(
                     mMemRefType: USE
                     mMRE: 
-                    NamedRef(
+                    SubSetRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::D)
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(foo_::D)
+                        )
                     )
                 )
                 Node 0: ET MemRefNode (  )
