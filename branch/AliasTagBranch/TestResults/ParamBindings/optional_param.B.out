@@ -2,14 +2,9 @@
 ParamBindings(
         CallHandle(MODULE_MERGE_SORT(&0:ARRAY:0:anon_ptr., NULL))	 => 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
             )	 => 
             graph EXPRESSION TREE:
 
@@ -26,14 +21,9 @@ ParamBindings(
 
     CallHandle(MODULE_MERGE_SORT(&0:ARRAY:0:anon_ptr., &0))	 => 
         
-        Deref(
+        NamedRef(
             mMemRefType: USE
-            mMRE: 
-            NamedRef(
-                mMemRefType: USE
-                mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
-            )
-            mNumDeref: 1
+            mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
         )	 => 
         graph EXPRESSION TREE:
 
@@ -48,14 +38,9 @@ ParamBindings(
             Node 0: ET MemRefNode (  )
 
         
-        Deref(
+        NamedRef(
             mMemRefType: USE
-            mMRE: 
-            NamedRef(
-                mMemRefType: USE
-                mSymHandle: SymHandle(MODULE_MERGE_SORT::ASCEND)
-            )
-            mNumDeref: 1
+            mSymHandle: SymHandle(MODULE_MERGE_SORT::ASCEND)
         )	 => 
         graph EXPRESSION TREE:
 

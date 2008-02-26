@@ -2,14 +2,9 @@
 ParamBindings(
         CallHandle(factorial_(&N:0:.predef_I4+-1))	 => 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(factorial_::N)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(factorial_::N)
             )	 => 
             graph EXPRESSION TREE:
 
@@ -28,14 +23,9 @@ ParamBindings(
 
     CallHandle(factorial_(&N:0:.predef_I4))	 => 
         
-        Deref(
+        NamedRef(
             mMemRefType: USE
-            mMRE: 
-            NamedRef(
-                mMemRefType: USE
-                mSymHandle: SymHandle(factorial_::N)
-            )
-            mNumDeref: 1
+            mSymHandle: SymHandle(factorial_::N)
         )	 => 
         graph EXPRESSION TREE:
 

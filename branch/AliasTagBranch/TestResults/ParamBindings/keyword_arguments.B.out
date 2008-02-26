@@ -2,14 +2,9 @@
 ParamBindings(
         CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(solve_::A)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(solve_::A)
             )	 => 
             graph EXPRESSION TREE:
 
@@ -24,14 +19,9 @@ ParamBindings(
                 Node 0: ET MemRefNode (  )
 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(solve_::N)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(solve_::N)
             )	 => 
             graph EXPRESSION TREE:
 

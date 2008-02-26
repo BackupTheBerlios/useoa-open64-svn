@@ -2,14 +2,9 @@
 ParamBindings(
         CallHandle(bar_(&A:0:.predef_F8, &B:0:.predef_F8+C:0:.predef_F8, &2, &D:0:anon_ptr.(I:0:.predef_I4)))	 => 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::P)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(bar_::P)
             )	 => 
             graph EXPRESSION TREE:
 
@@ -24,14 +19,9 @@ ParamBindings(
                 Node 0: ET MemRefNode (  )
 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::Q)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(bar_::Q)
             )	 => 
             graph EXPRESSION TREE:
 
@@ -48,14 +38,9 @@ ParamBindings(
                 Node 0: ET MemRefNode (  )
 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::R)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(bar_::R)
             )	 => 
             graph EXPRESSION TREE:
 
@@ -72,14 +57,9 @@ ParamBindings(
                 Node 0: ET MemRefNode (  )
 
             
-            Deref(
+            NamedRef(
                 mMemRefType: USE
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::S)
-                )
-                mNumDeref: 1
+                mSymHandle: SymHandle(bar_::S)
             )	 => 
             graph EXPRESSION TREE:
 
