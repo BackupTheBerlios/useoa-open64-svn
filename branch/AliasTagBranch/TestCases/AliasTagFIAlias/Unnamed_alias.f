@@ -23,7 +23,7 @@
        program head
          integer i,j
          
-         i=1               ! AliasTag("head::i")  => (1,MUST) 
+         i=1               ! AliasTag("head::i")  => (1,MAY) 
          
          
          j=4               ! AliasTag("head::j")  => (2,MUST)

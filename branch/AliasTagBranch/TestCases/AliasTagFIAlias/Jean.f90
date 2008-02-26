@@ -25,25 +25,22 @@
            double precision, dimension(2) :: x, px
            double precision y, py
            
-           px(1)=1.0       ! AliasTag("head::px()")   => (1,MAY) 
-                           ! AliasTag("head::px")     => ({1,2}, MUST)
+           call foo(x,y)   ! AliasTag("head::*x")  => ({1,2}, MUST)
+                           ! AliasTag("head::x")   => (3, MUST)
+                           ! AliasTag("foo::*x()") => {2, MAY}
+                           ! AliasTag("foo::*x")   => {{1,2}, MUST}
+                           ! AliasTag("foo::x")    => (4, MUST)
+                           
+                           ! AliasTag("head::*y")  => (5,MUST)
+                           ! AliasTag("head::y")   => (6,MUST)
+                           ! AliasTag("foo::*y")   => (5,MUST)
+                           ! AliasTag("foo::y")    => (7,MUST)
 
-           px(2)=2.0       
-
-           call foo(x,y)   ! AliasTag("head::*x")  => ({3,4}, MUST)
-                           ! AliasTag("head::x")   => (5, MUST)
-                           ! AliasTag("head::*y")  => (6,MUST)
-                           ! AliasTag("head::y")   => (7,MUST)
-                           ! AliasTag("foo::*x")   => ({3,4},MUST)
-                           ! AliasTag("foo::x")    => (8,MUST)
                            
 
-                           
+           call foo(px,py)     ! AliasTag("head::px") => ((1,2), MAY)
+                               ! AliasTag("foo::py")  => (5, MUST)
 
-           call foo(px,py)     ! AliasTag("head::px") => ((3,4), MAY)
-                               ! AliasTag("head::*x") => ((3,4), MAY)
-                               ! AliasTag("foo::*x")  => ((3,4), MAY)
-           
          end subroutine
 
 

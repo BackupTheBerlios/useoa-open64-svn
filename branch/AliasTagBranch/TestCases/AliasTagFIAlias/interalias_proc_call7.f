@@ -30,25 +30,22 @@ c$openad XXX Template ad_template
           integer k,l
 c$openad INDEPENDENT(x)
 
-          call foo(x(k),y)        ! AliasTag("head::*x()") => (1,MAY)
-                                  ! AliasTag("head::*x")   => ({1,2}, MUST)   
+          call foo(x(k),y)        ! AliasTag("head::*x")   => ({1,2},MUST)
+                                  ! AliasTag("head::*x()") => (2,MAY)   
                                   ! AliasTag("head::x")    => (3,MUST) 
-                                  ! AliasTag("head::*y")   => (4,MUST)
-                                  ! AliasTag("head::y")    => (5,MUST)
-                                  ! AliasTag("foo::*a")    => (1,MAY)
-                                  ! AliasTag("foo::a")     => (6,MUST)
-                                  ! AliasTag("foo::*b")    => (4,MAY)
+                                  ! AliasTag("foo::*a")    => (2,MAY)
+                                  ! AliasTag("foo::a")     => (4,MUST)
+                                  
+                                  ! AliasTag("head::*y")   => (5,MAY)
+                                  ! AliasTag("head::y")    => (6,MUST)
+                                  ! AliasTag("foo::*b")    => (5,MAY)
                                   ! AliasTag("foo::b")     => (7,MUST)
   
 
-          call foo(p(k),q(l))     ! AliasTag("head::p()")  => (1,MAY)    
-                                  ! AliasTag("head::p")    => ({1,8}, MUST)
-                                  ! AliasTag("head::q()")  => (4,MAY)
-                                  ! AliasTag("head::q")    => ((4,9), MUST)
-                                  ! AliasTag("head::*x()") => (1,MAY)
-                                  ! AliasTag("head::*y")   => (4,MAY)
-                                  ! AliasTag("foo::*a")    => (1,MAY)
-                                  ! AliasTag("foo::*b")    => (4,MAY) 
+          call foo(p(k),q(l))     ! AliasTag("head::p()")  => (2,MAY)    
+                                  ! AliasTag("head::p")    => ({8,2}, MUST)
+                                  ! AliasTag("head::q()")  => (5,MAY)
+                                  ! AliasTag("head::q")    => ((9,5), MUST)
 
 c$openad DEPENDENT(y)
  

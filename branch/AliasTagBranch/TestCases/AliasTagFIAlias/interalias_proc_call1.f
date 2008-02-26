@@ -5,6 +5,12 @@
 ! AliasPairs : (t1,*a,*b)      
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+! Problem:  *x, *f gets May Tag because we dont know where 
+!           they are pointing at
+!           Should *a and *b gets the May Tag or Must Tag ?
+!           Ofcourse, we know where there are pointing at
+!           Or should we consider this as Invalid Program ?
+      
        subroutine head(x, f) 
        double precision :: x
        double precision :: f
@@ -17,11 +23,10 @@
                                   ! AliasTag("head::f")  => (5,MUST)
                                   
                                   
-       call bar(t1,t1)            ! AliasTag("bar::*a") => (1,MAY)
+       call bar(t1,t1)            ! AliasTag("bar::*a") => (1,MUST)
                                   ! AliasTag("bar::a")  => (8,MUST)
-                                  ! AliasTag("bar::*b") => (1,MAY)
+                                  ! AliasTag("bar::*b") => (1,MUST)
                                   ! AliasTag("bar::b")  => (9,MUST)
-                                  ! AliasTag("bar::t1") => (1,MAY)
                                   
                                   
        t3=f*30                    ! AliasTag("head::t3") => (6,MUST)
