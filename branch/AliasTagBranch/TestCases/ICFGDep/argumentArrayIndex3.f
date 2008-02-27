@@ -11,16 +11,14 @@
        
 c                        mUses                => mDefs
 c                        ==============================
-c                        [1: foo::*a,            [2: foo::*b, 
+c                        [1: foo::*a,         => [2: foo::*b, 
 c                            head::*x(),             head::*y,
 c                            head::*x,               head::q() ]
 c                            head::p()]
 c
 c                        ImplicitRemoves: 
 c                        ================
-c                        [2: foo::*b,
-c                            head::*y,
-c                            head::q() ]
+c 
 
       end subroutine
 
