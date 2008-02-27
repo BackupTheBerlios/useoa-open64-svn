@@ -1,4 +1,9 @@
-
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Aliasing in the presence of pointer to the structure
+!
+! AliasPairs : (*carPtr, first)
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
          module myModule
@@ -17,7 +22,13 @@
 
             real, target :: x
             real :: y
-            carPtr=>first
-            y = carPtr%labor
+            carPtr=>first      ! AliasTag("first")  => ({1,2},MUST)
+                               ! AliasTag("carPtr") => (3,MUST)
+             
+            
+            y = carPtr%labor   ! AliasTag("(*carPtr)%labor") => (2,MAY)
+                               ! AliasTag("*carPtr")         => ({1,2},MUST)
+                               ! AliasTag("y")               => (4,MUST)
+            
          end subroutine
 

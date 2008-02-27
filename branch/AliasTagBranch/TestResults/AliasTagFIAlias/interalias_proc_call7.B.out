@@ -77,6 +77,7 @@ AliasTagResults(
                     mTagID: 10
                     # NamedRef(head_::P)
                     # Deref(NamedRef(foo_::A))
+                    # Deref(NamedRef(head_::X))
                     # SubSetRef(NamedRef(head_::P))
                     # SubSetRef(Deref(NamedRef(head_::X)))
                 ) ] 
@@ -110,6 +111,7 @@ AliasTagResults(
                     mTagID: 10
                     # NamedRef(head_::P)
                     # Deref(NamedRef(foo_::A))
+                    # Deref(NamedRef(head_::X))
                     # SubSetRef(NamedRef(head_::P))
                     # SubSetRef(Deref(NamedRef(head_::X)))
                 ) ] 
@@ -141,8 +143,12 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => [ 
                 Tag(
-                    mTagID: 0
+                    mTagID: 10
+                    # NamedRef(head_::P)
+                    # Deref(NamedRef(foo_::A))
                     # Deref(NamedRef(head_::X))
+                    # SubSetRef(NamedRef(head_::P))
+                    # SubSetRef(Deref(NamedRef(head_::X)))
                 )    
                 Tag(
                     mTagID: 12
@@ -178,6 +184,7 @@ AliasTagResults(
                     mTagID: 10
                     # NamedRef(head_::P)
                     # Deref(NamedRef(foo_::A))
+                    # Deref(NamedRef(head_::X))
                     # SubSetRef(NamedRef(head_::P))
                     # SubSetRef(Deref(NamedRef(head_::X)))
                 ) ] 
@@ -215,25 +222,12 @@ AliasTagResults(
                     mTagID: 10
                     # NamedRef(head_::P)
                     # Deref(NamedRef(foo_::A))
+                    # Deref(NamedRef(head_::X))
                     # SubSetRef(NamedRef(head_::P))
                     # SubSetRef(Deref(NamedRef(head_::X)))
                 ) ] 
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
-            
-            Tag(
-                mTagID: 0
-                # Deref(NamedRef(head_::X))
-            )	 => [ 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::X)
-                    )
-                    mNumDeref: 1
-                ) ] 
             
             Tag(
                 mTagID: 1
@@ -320,6 +314,7 @@ AliasTagResults(
                 mTagID: 10
                 # NamedRef(head_::P)
                 # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
                 # SubSetRef(NamedRef(head_::P))
                 # SubSetRef(Deref(NamedRef(head_::X)))
             )	 => [ 
@@ -333,6 +328,15 @@ AliasTagResults(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::A)
+                    )
+                    mNumDeref: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
                     )
                     mNumDeref: 1
                 )    

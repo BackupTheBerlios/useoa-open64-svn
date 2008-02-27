@@ -1,3 +1,9 @@
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Aliasing for structure member variable of type pointer.
+!
+! AliasPairs : (*(first%insurance), x)
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
@@ -17,7 +23,12 @@
 
             real, target :: x
             real :: y
-            first%insurance=>x
-            y = first%insurance
+            first%insurance=>x     ! AliasTag("first") => ({1,2},MUST)  
+                                   ! AliasTag("x")     => (3,MUST)
+
+            y = first%insurance    ! AliasTag("first%insurance")    => (2,MAY)
+                                   ! AliasTag("*(first%insurance)") => (3,MUST)
+                                   ! AliasTag("y")                  => (4,MUST)
+
          end subroutine
 

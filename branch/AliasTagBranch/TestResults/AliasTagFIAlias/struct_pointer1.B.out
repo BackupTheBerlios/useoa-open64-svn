@@ -1,0 +1,182 @@
+
+AliasTagResults(
+    mMREToTags: OA::OA_ptr<MemRefExpr> 	 => OA::OA_ptr<std::set<AliasTag> > 
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::FIRST)
+            )	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(foo_::FIRST)
+                )    
+                Tag(
+                    mTagID: 4
+                    # NamedRef(foo_::FIRST)
+                    # FieldAccess(NamedRef(foo_::FIRST))
+                ) ] 
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::X)
+            )	 => [ 
+                Tag(
+                    mTagID: 2
+                    # NamedRef(foo_::X)
+                    # Deref(FieldAccess(NamedRef(foo_::FIRST)))
+                ) ] 
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(foo_::Y)
+            )	 => [ 
+                Tag(
+                    mTagID: 3
+                    # NamedRef(foo_::Y)
+                ) ] 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                FieldAccess(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::FIRST)
+                    )
+                    mFieldName: INSURANCE
+                )
+                mNumDeref: 1
+            )	 => [ 
+                Tag(
+                    mTagID: 2
+                    # NamedRef(foo_::X)
+                    # Deref(FieldAccess(NamedRef(foo_::FIRST)))
+                ) ] 
+            
+            FieldAccess(
+                mMemRefType: DEF
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                )
+                mFieldName: INSURANCE
+            )	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(foo_::FIRST)
+                    # FieldAccess(NamedRef(foo_::FIRST))
+                ) ] 
+
+    mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
+            
+            Tag(
+                mTagID: 1
+                # NamedRef(foo_::FIRST)
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                ) ] 
+            
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::X)
+                # Deref(FieldAccess(NamedRef(foo_::FIRST)))
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::X)
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    FieldAccess(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(foo_::FIRST)
+                        )
+                        mFieldName: INSURANCE
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 3
+                # NamedRef(foo_::Y)
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(foo_::Y)
+                ) ] 
+            
+            Tag(
+                mTagID: 4
+                # NamedRef(foo_::FIRST)
+                # FieldAccess(NamedRef(foo_::FIRST))
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                )    
+                FieldAccess(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::FIRST)
+                    )
+                    mFieldName: INSURANCE
+                ) ] 
+
+    mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+
+    mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::FIRST)
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::X)
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(foo_::Y)
+            )	 => 1
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                FieldAccess(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::FIRST)
+                    )
+                    mFieldName: INSURANCE
+                )
+                mNumDeref: 1
+            )	 => 1
+            
+            FieldAccess(
+                mMemRefType: DEF
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                )
+                mFieldName: INSURANCE
+            )	 => 0
+
+    mMemRefToMustFlag: MemRefHandle	 => bool
+
+)
