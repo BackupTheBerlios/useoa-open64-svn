@@ -2,8 +2,8 @@ echo "Generating TestResults/ICFGDep/expressions.B.out"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/expressions.B > TestResults/ICFGDep/expressions.B.out
 echo "Generating TestResults/ICFGDep/activity_int5.B.out"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int5.B > TestResults/ICFGDep/activity_int5.B.out
-echo "Generating TestResults/ICFGDep/argumentArrayIndex3.B.out"
-./test-open64 --oa-ICFGDep TestCases/ICFGDep/argumentArrayIndex3.B > TestResults/ICFGDep/argumentArrayIndex3.B.out
+echo "Generating TestResults/ICFGDep/interalias_proc_call7.B.out"
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/interalias_proc_call7.B > TestResults/ICFGDep/interalias_proc_call7.B.out
 echo "Generating TestResults/ICFGDep/globalActive_7.B.out"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/globalActive_7.B > TestResults/ICFGDep/globalActive_7.B.out
 echo "Generating TestResults/ICFGDep/multiple_calls2.B.out"

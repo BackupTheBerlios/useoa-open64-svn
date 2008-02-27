@@ -11,7 +11,7 @@ driverexec::./test-open64 --oa-ICFGDep
 
 test::expressions.B,                checked by PLM 02/18/08
 test::activity_int5.B,              checked by PLM 02/18/08
-test::argumentArrayIndex3.B,        checked by PLM 02/18/08, issues because wrong Alias Results
+test::interalias_proc_call7.B,      checked by PLM 02/18/08
 test::globalActive_7.B,             checked by PLM 02/18/08
 test::multiple_calls2.B,            checked by PLM 02/18/08
 test::parameters.B,                 checked by PLM 02/18/08
