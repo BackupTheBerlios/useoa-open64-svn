@@ -257,6 +257,46 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(T1:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(head_::T1)
+                    # NamedRef(head_::T3)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
+            MemRefHandle(T3:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(head_::T1)
+                    # NamedRef(head_::T3)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
+            MemRefHandle(T1:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(head_::T1)
+                    # NamedRef(head_::T3)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
+            MemRefHandle(T2:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::T2)
+                    # Deref(NamedRef(bar_::B))
+                ) ] 
+            MemRefHandle(B:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::T2)
+                    # Deref(NamedRef(bar_::B))
+                ) ] 
+            MemRefHandle(A:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(head_::T1)
+                    # NamedRef(head_::T3)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -341,5 +381,11 @@ AliasTagResults(
             )	 => 1
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(T1:0:.predef_F8)	 => 0
+            MemRefHandle(T3:0:.predef_F8)	 => 0
+            MemRefHandle(T1:0:.predef_F8)	 => 0
+            MemRefHandle(T2:0:.predef_F8)	 => 1
+            MemRefHandle(B:0:.predef_F8)	 => 1
+            MemRefHandle(A:0:.predef_F8)	 => 0
 
 )

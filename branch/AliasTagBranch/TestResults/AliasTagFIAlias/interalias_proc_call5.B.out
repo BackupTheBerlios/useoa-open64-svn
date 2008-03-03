@@ -387,6 +387,90 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(T1:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 9
+                    # NamedRef(head_::T1)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
+            MemRefHandle(X:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(testing_::T1)
+                    # Deref(NamedRef(head_::X))
+                ) ] 
+            MemRefHandle(F:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 6
+                    # NamedRef(testing_::T2)
+                    # Deref(NamedRef(head_::F))
+                ) ] 
+            MemRefHandle(G:0:.predef_F4)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(testing_::G)
+                    # Deref(NamedRef(bar_::C))
+                ) ] 
+            MemRefHandle(G1:0:.predef_F4)	 => [ 
+                Tag(
+                    mTagID: 2
+                    # NamedRef(testing_::G1)
+                    # Deref(NamedRef(bar_::B))
+                ) ] 
+            MemRefHandle(G:0:.predef_F4)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(testing_::G)
+                    # Deref(NamedRef(bar_::C))
+                ) ] 
+            MemRefHandle(F:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 6
+                    # NamedRef(testing_::T2)
+                    # Deref(NamedRef(head_::F))
+                ) ] 
+            MemRefHandle(F:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 6
+                    # NamedRef(testing_::T2)
+                    # Deref(NamedRef(head_::F))
+                ) ] 
+            MemRefHandle(T1:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 9
+                    # NamedRef(head_::T1)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
+            MemRefHandle(B:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 2
+                    # NamedRef(testing_::G1)
+                    # Deref(NamedRef(bar_::B))
+                ) ] 
+            MemRefHandle(C:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(testing_::G)
+                    # Deref(NamedRef(bar_::C))
+                ) ] 
+            MemRefHandle(G1:0:.predef_F4)	 => [ 
+                Tag(
+                    mTagID: 2
+                    # NamedRef(testing_::G1)
+                    # Deref(NamedRef(bar_::B))
+                ) ] 
+            MemRefHandle(G:0:.predef_F4)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(testing_::G)
+                    # Deref(NamedRef(bar_::C))
+                ) ] 
+            MemRefHandle(A:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 9
+                    # NamedRef(head_::T1)
+                    # Deref(NamedRef(bar_::A))
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -511,5 +595,19 @@ AliasTagResults(
             )	 => 1
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(T1:0:.predef_F8)	 => 1
+            MemRefHandle(X:0:.predef_F8)	 => 1
+            MemRefHandle(F:0:.predef_F8)	 => 1
+            MemRefHandle(G:0:.predef_F4)	 => 1
+            MemRefHandle(G1:0:.predef_F4)	 => 1
+            MemRefHandle(G:0:.predef_F4)	 => 1
+            MemRefHandle(F:0:.predef_F8)	 => 1
+            MemRefHandle(F:0:.predef_F8)	 => 1
+            MemRefHandle(T1:0:.predef_F8)	 => 1
+            MemRefHandle(B:0:.predef_F8)	 => 1
+            MemRefHandle(C:0:.predef_F8)	 => 1
+            MemRefHandle(G1:0:.predef_F4)	 => 1
+            MemRefHandle(G:0:.predef_F4)	 => 1
+            MemRefHandle(A:0:.predef_F8)	 => 1
 
 )

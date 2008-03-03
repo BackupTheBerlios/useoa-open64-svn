@@ -152,6 +152,11 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(CARPTR:0:anon_ptr.)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(foo_::CARPTR)
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -196,5 +201,6 @@ AliasTagResults(
             )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(CARPTR:0:anon_ptr.)	 => 1
 
 )

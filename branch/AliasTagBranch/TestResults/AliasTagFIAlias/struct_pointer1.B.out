@@ -134,6 +134,14 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/AliasTagFIAlias/struct_pointer1.f"
+U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,8> <field_id:3>
+MemRefHandle(0:)	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(foo_::FIRST)
+                    # FieldAccess(NamedRef(foo_::FIRST))
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -178,5 +186,7 @@ AliasTagResults(
             )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,8> <field_id:3>
+MemRefHandle(0:)	 => 0
 
 )

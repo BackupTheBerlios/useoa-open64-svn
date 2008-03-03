@@ -103,6 +103,16 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(Q:0:anon_ptr.)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(main_::Q)
+                ) ] 
+            MemRefHandle(Q:0:anon_ptr.)	 => [ 
+                Tag(
+                    mTagID: 1
+                    # NamedRef(main_::Q)
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -137,5 +147,7 @@ AliasTagResults(
             )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(Q:0:anon_ptr.)	 => 1
+            MemRefHandle(Q:0:anon_ptr.)	 => 1
 
 )

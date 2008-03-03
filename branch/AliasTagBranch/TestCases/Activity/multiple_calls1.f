@@ -1,8 +1,10 @@
 
       subroutine foo()
           double precision ::x,a,y
+c$openad INDEPENDENT(x)
           call bar(x,a,y)
           call bar(x,a,y)
+c$openad DEPENDENT(y)
       end subroutine
 
 

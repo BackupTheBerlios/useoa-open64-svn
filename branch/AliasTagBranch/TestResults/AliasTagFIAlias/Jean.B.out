@@ -354,6 +354,59 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(Y:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 7
+                    # NamedRef(head_::PY)
+                    # Deref(NamedRef(foo_::Y))
+                    # Deref(NamedRef(head_::Y))
+                ) ] 
+            MemRefHandle(0:X:0:anon_ptr.(1))	 => [ 
+                Tag(
+                    mTagID: 8
+                    # NamedRef(head_::PX)
+                    # Deref(NamedRef(foo_::X))
+                    # Deref(NamedRef(head_::X))
+                    # SubSetRef(NamedRef(head_::PX))
+                    # SubSetRef(Deref(NamedRef(foo_::X)))
+                ) ] 
+            MemRefHandle(0:X:0:anon_ptr.(2))	 => [ 
+                Tag(
+                    mTagID: 8
+                    # NamedRef(head_::PX)
+                    # Deref(NamedRef(foo_::X))
+                    # Deref(NamedRef(head_::X))
+                    # SubSetRef(NamedRef(head_::PX))
+                    # SubSetRef(Deref(NamedRef(foo_::X)))
+                ) ] 
+            MemRefHandle(PX:0:anon_ptr.(1))	 => [ 
+                Tag(
+                    mTagID: 8
+                    # NamedRef(head_::PX)
+                    # Deref(NamedRef(foo_::X))
+                    # Deref(NamedRef(head_::X))
+                    # SubSetRef(NamedRef(head_::PX))
+                    # SubSetRef(Deref(NamedRef(foo_::X)))
+                ) ] 
+            MemRefHandle(PX:0:anon_ptr.(2))	 => [ 
+                Tag(
+                    mTagID: 8
+                    # NamedRef(head_::PX)
+                    # Deref(NamedRef(foo_::X))
+                    # Deref(NamedRef(head_::X))
+                    # SubSetRef(NamedRef(head_::PX))
+                    # SubSetRef(Deref(NamedRef(foo_::X)))
+                ) ] 
+            MemRefHandle(&0:X:0:anon_ptr.)	 => [ 
+                Tag(
+                    mTagID: 4
+                    # NamedRef(head_::X)
+                ) ] 
+            MemRefHandle(&Y:0:.predef_F8)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::Y)
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -456,5 +509,12 @@ AliasTagResults(
             )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(Y:0:.predef_F8)	 => 1
+            MemRefHandle(0:X:0:anon_ptr.(1))	 => 0
+            MemRefHandle(0:X:0:anon_ptr.(2))	 => 0
+            MemRefHandle(PX:0:anon_ptr.(1))	 => 0
+            MemRefHandle(PX:0:anon_ptr.(2))	 => 0
+            MemRefHandle(&0:X:0:anon_ptr.)	 => 1
+            MemRefHandle(&Y:0:.predef_F8)	 => 1
 
 )

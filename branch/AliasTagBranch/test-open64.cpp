@@ -60,6 +60,7 @@
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
 #include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
+#include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 
 #include <sys/time.h>
 
@@ -118,7 +119,13 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
-              OA::OA_ptr<Open64IRInterface> irInterface);
+                         OA::OA_ptr<Open64IRInterface> irInterface);
+
+
+
+static int
+TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface);
 
 //***************************************************************************
 
@@ -265,6 +272,12 @@ main(int argc, char* argv[])
         break;
      }
 
+     case 12:
+     {
+        //TestIR_OAICFGReachDefs(std::cout, pu_forest, irInterface);
+        break;
+     }
+     
   }
 
   FreeIR(pu_forest); // N.B. cannot use with WriteIR
@@ -765,7 +778,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind, alias,
                                 icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
-    //inActive->output(*irInterface);
+    inActive->output(*irInterface);
     //
 
     //! ====================================
@@ -864,5 +877,76 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
 
 
 
+/*
+static int
+TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
+                         OA::OA_ptr<Open64IRInterface> irInterface)
+{
+    std::cout << "Test reaching defs analysis\n";
+
+    // CFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //! FIAliasAliasMap
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias = fialiasman->performAnalysis(procIter);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
+      cgraphman->performAnalysis(procIter, alias);
+
+    // param bindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
 
 
+    // intra side effects
+    OA::OA_ptr<SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
+    intraSideEffectMgr = new SideEffect::ManagerSideEffectStandard(irInterface);
+
+    // inter side effects
+    OA::OA_ptr<SideEffect::InterSideEffectStandard> interSideEffects;
+    OA::OA_ptr<SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
+    interSideEffectMgr =
+        new SideEffect::ManagerInterSideEffectStandard(irInterface);
+    interSideEffects = interSideEffectMgr->performAnalysis(
+        cgraph,
+        parambind,
+        alias,
+        intraSideEffectMgr,
+        OA::DataFlow::ITERATIVE);
+
+    // Reaching Defs
+    OA::OA_ptr<ReachDefs::ReachDefsStandard> reachDefResults;
+    OA::OA_ptr<ReachDefs::ManagerReachDefsStandard> reachDefMgr;
+    reachDefMgr = new ReachDefs::ManagerReachDefsStandard(irInterface);
+
+    procIter = new SCIRProcIterator(root);
+    for(; procIter->isValid(); ++(*procIter))
+    {
+        ProcHandle proc = procIter->current();
+
+        reachDefResults = reachDefMgr->performAnalysis(
+            proc,
+            eachCFG->getCFGResults(proc),
+            aliasTag,
+            interSideEffects,
+            OA::DataFlow::ITERATIVE);
+
+        reachDefResults->output(*irInterface);
+    }
+    return 0;    
+}
+*/

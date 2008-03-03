@@ -233,6 +233,59 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(I:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
+                ) ] 
+            MemRefHandle(J:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
+                ) ] 
+            MemRefHandle(2)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
+                ) ] 
+            MemRefHandle(I:0:.predef_I4+J:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
+                ) ] 
+            MemRefHandle(I:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 5
+                    # NamedRef(head_::I)
+                    # UnnamedRef()
+                    # UnnamedRef()
+                    # Deref(NamedRef(foo_::A1))
+                ) ] 
+            MemRefHandle(J:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
+                ) ] 
+            MemRefHandle(3)	 => [ 
+                Tag(
+                    mTagID: 6
+                    # NamedRef(head_::J)
+                    # UnnamedRef()
+                    # Deref(NamedRef(bar_::A2))
+                ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
             
@@ -308,5 +361,12 @@ AliasTagResults(
             )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(I:0:.predef_I4)	 => 0
+            MemRefHandle(J:0:.predef_I4)	 => 0
+            MemRefHandle(2)	 => 0
+            MemRefHandle(I:0:.predef_I4+J:0:.predef_I4)	 => 0
+            MemRefHandle(I:0:.predef_I4)	 => 0
+            MemRefHandle(J:0:.predef_I4)	 => 0
+            MemRefHandle(3)	 => 0
 
 )
