@@ -778,7 +778,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind, alias,
                                 icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
-    inActive->output(*irInterface);
+    //inActive->output(*irInterface);
     //
 
     //! ====================================

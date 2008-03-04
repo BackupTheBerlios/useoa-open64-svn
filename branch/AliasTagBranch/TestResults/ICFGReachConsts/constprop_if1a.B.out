@@ -1,0 +1,141 @@
+
+mProcToReachConstsMap: ProcHandle	 => ReachConsts
+        ProcHandle(constprop_if1a_::constprop_if1a_)	 => 
+        ReachConstStandard: 
+        ReachConstsStandard(
+            mReachConsts: StmtHandle	 => OA::OA_ptr<RCPairSet> 
+                    
+                    Statement:  LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ReachConsts/constprop_if1a.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(X:0:.predef_I4 = 2)	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    Statement: StmtHandle(if (X:0:.predef_I4>=0))	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 1
+                                    # NamedRef(constprop_if1a_::X)
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(Y:0:.predef_I4 = 5)	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 1
+                                    # NamedRef(constprop_if1a_::X)
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 1
+                                    # NamedRef(constprop_if1a_::X)
+                                )
+                                mCDType: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 2
+                                    # NamedRef(constprop_if1a_::Y)
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(Y:0:.predef_I4 = 5)	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 1
+                                    # NamedRef(constprop_if1a_::X)
+                                )
+                                mCDType: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(Z:0:.predef_I4 = Y:0:.predef_I4)	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 2
+                                    # NamedRef(constprop_if1a_::Y)
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(_END())	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 2
+                                    # NamedRef(constprop_if1a_::Y)
+                                )
+                                mCDType: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 3
+                                    # NamedRef(constprop_if1a_::Z)
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(return)	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 2
+                                    # NamedRef(constprop_if1a_::Y)
+                                )
+                                mCDType: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 3
+                                    # NamedRef(constprop_if1a_::Z)
+                                )
+                                mCDType: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    Statement: StmtHandle(return)	 => 
+                    RCPairSet([  ] 
+                    )
+
+        )
+
