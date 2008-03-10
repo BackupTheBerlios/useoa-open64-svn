@@ -1,3 +1,4 @@
+file nameTestCases/AliasTagFIAlias/conditional.B
 
 AliasTagResults(
     mMREToTags: OA::OA_ptr<MemRefExpr> 	 => OA::OA_ptr<std::set<AliasTag> > 
@@ -5,6 +6,7 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(main_::Q)
+                mStrictlyLocal: 1
             )	 => [ 
                 Tag(
                     mTagID: 1
@@ -14,6 +16,7 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(main_::R)
+                mStrictlyLocal: 1
             )	 => [ 
                 Tag(
                     mTagID: 2
@@ -25,6 +28,7 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(main_::S)
+                mStrictlyLocal: 1
             )	 => [ 
                 Tag(
                     mTagID: 2
@@ -36,6 +40,7 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(main_::T)
+                mStrictlyLocal: 1
             )	 => [ 
                 Tag(
                     mTagID: 3
@@ -48,6 +53,7 @@ AliasTagResults(
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(main_::Q)
+                    mStrictlyLocal: 1
                 )
                 mNumDeref: 1
             )	 => [ 
@@ -67,6 +73,7 @@ AliasTagResults(
                 NamedRef(
                     mMemRefType: DEF
                     mSymHandle: SymHandle(main_::Q)
+                    mStrictlyLocal: 1
                 ) ] 
             
             Tag(
@@ -78,10 +85,12 @@ AliasTagResults(
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(main_::R)
+                    mStrictlyLocal: 1
                 )    
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(main_::S)
+                    mStrictlyLocal: 1
                 )    
                 Deref(
                     mMemRefType: USE
@@ -89,6 +98,7 @@ AliasTagResults(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(main_::Q)
+                        mStrictlyLocal: 1
                     )
                     mNumDeref: 1
                 ) ] 
@@ -100,9 +110,15 @@ AliasTagResults(
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(main_::T)
+                    mStrictlyLocal: 1
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<std::set<AliasTag> > 
+            MemRefHandle(T:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 3
+                    # NamedRef(main_::T)
+                ) ] 
             MemRefHandle(Q:0:anon_ptr.)	 => [ 
                 Tag(
                     mTagID: 1
@@ -112,6 +128,18 @@ AliasTagResults(
                 Tag(
                     mTagID: 1
                     # NamedRef(main_::Q)
+                ) ] 
+            MemRefHandle(T:0:.predef_I4)	 => [ 
+                Tag(
+                    mTagID: 3
+                    # NamedRef(main_::T)
+                ) ] 
+            MemRefHandle(Q:0:anon_ptr.)	 => [ 
+                Tag(
+                    mTagID: 2
+                    # NamedRef(main_::R)
+                    # NamedRef(main_::S)
+                    # Deref(NamedRef(main_::Q))
                 ) ] 
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
@@ -119,22 +147,26 @@ AliasTagResults(
             NamedRef(
                 mMemRefType: DEF
                 mSymHandle: SymHandle(main_::Q)
-            )	 => 1
+                mStrictlyLocal: 1
+            )	 => 0
             
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(main_::R)
+                mStrictlyLocal: 1
             )	 => 0
             
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(main_::S)
+                mStrictlyLocal: 1
             )	 => 0
             
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(main_::T)
-            )	 => 1
+                mStrictlyLocal: 1
+            )	 => 0
             
             Deref(
                 mMemRefType: USE
@@ -142,12 +174,16 @@ AliasTagResults(
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(main_::Q)
+                    mStrictlyLocal: 1
                 )
                 mNumDeref: 1
             )	 => 0
 
     mMemRefToMustFlag: MemRefHandle	 => bool
-            MemRefHandle(Q:0:anon_ptr.)	 => 1
-            MemRefHandle(Q:0:anon_ptr.)	 => 1
+            MemRefHandle(T:0:.predef_I4)	 => 0
+            MemRefHandle(Q:0:anon_ptr.)	 => 0
+            MemRefHandle(Q:0:anon_ptr.)	 => 0
+            MemRefHandle(T:0:.predef_I4)	 => 0
+            MemRefHandle(Q:0:anon_ptr.)	 => 0
 
 )

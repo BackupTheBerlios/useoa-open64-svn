@@ -1,3 +1,4 @@
+file nameTestCases/ParamBindings/optional_param.B
 
 ParamBindings(
         CallHandle(MODULE_MERGE_SORT(&0:ARRAY:0:anon_ptr., NULL))	 => 
@@ -5,6 +6,7 @@ ParamBindings(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
+                mStrictlyLocal: 0
             )	 => 
             graph EXPRESSION TREE:
 
@@ -14,6 +16,7 @@ ParamBindings(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(merge_sort_::ARRAY)
+                        mStrictlyLocal: 1
                     )
                 )
                 Node 0: ET MemRefNode (  )
@@ -24,6 +27,7 @@ ParamBindings(
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
+            mStrictlyLocal: 0
         )	 => 
         graph EXPRESSION TREE:
 
@@ -33,6 +37,7 @@ ParamBindings(
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(merge_sort_::ARRAY)
+                    mStrictlyLocal: 1
                 )
             )
             Node 0: ET MemRefNode (  )
@@ -41,6 +46,7 @@ ParamBindings(
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(MODULE_MERGE_SORT::ASCEND)
+            mStrictlyLocal: 0
         )	 => 
         graph EXPRESSION TREE:
 

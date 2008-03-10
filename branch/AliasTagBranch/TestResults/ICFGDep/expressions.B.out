@@ -1,35 +1,11 @@
+file nameTestCases/ICFGDep/expressions.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
-        A:0:.predef_I4 = B:0:.predef_I4+C:0:.predef_I4	 => [ 
-            Tag(
-                mTagID: 1
-                # NamedRef(foo_::A)
-            )
- ] 
-        A:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4	 => [ 
-            Tag(
-                mTagID: 1
-                # NamedRef(foo_::A)
-            )
- ] 
-        D:0:.predef_F8 = SIN(&S:0:.predef_F8+    10.00000000000000)	 => [ 
-            Tag(
-                mTagID: 6
-                # NamedRef(foo_::D)
-            )
- ]  LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ICFGDep/expressions.f"
-U8PSTID 0 <2,11,P> T<31,anon_ptr.,8>
-
-        	 => [ 
-            Tag(
-                mTagID: 9
-                # NamedRef(foo_::P)
-            )
- ] 
 
 mDepDFSet: StmtHandle	 => DepDFSet
-        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/expressions.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 stmt: 	 => Inside DepDFSet output
 
             mUseToDefsMap: UseLoc	 => DefLocSet
@@ -104,11 +80,6 @@ stmt: 	 => Inside DepDFSet output
 
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 1
-                # NamedRef(foo_::A)
-            )
-
             Uses:
             Tag(
                 mTagID: 3
@@ -227,7 +198,7 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
                     Tag(
                         mTagID: 17
                         # NamedRef(foo_::TYPED_Y)
-                        # FieldAccess(NamedRef(foo_::TYPED_Y))
+                        # FieldAccess(NamedRef(foo_::TYPED_Y), FIELD1)
                     )
 
 
@@ -236,7 +207,7 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
                     Tag(
                         mTagID: 17
                         # NamedRef(foo_::TYPED_Y)
-                        # FieldAccess(NamedRef(foo_::TYPED_Y))
+                        # FieldAccess(NamedRef(foo_::TYPED_Y), FIELD1)
                     )
 	 => 
                     Tag(
@@ -256,7 +227,7 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
             Tag(
                 mTagID: 17
                 # NamedRef(foo_::TYPED_Y)
-                # FieldAccess(NamedRef(foo_::TYPED_Y))
+                # FieldAccess(NamedRef(foo_::TYPED_Y), FIELD1)
             )
 
         stmt: D:0:.predef_F8 = SIN(&S:0:.predef_F8+    10.00000000000000)	 => Inside DepDFSet output
@@ -288,11 +259,6 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
 
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 6
-                # NamedRef(foo_::D)
-            )
-
             Uses:
             Tag(
                 mTagID: 10
@@ -313,11 +279,6 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 9
-                # NamedRef(foo_::P)
-            )
-
             Uses:
             Defs:
         stmt: CASSIGNSTMT(&STRING4:0:anon_ptr.(0), &CONCATEXPR(60, &STRING1:0:anon_ptr.(0), &STRING2:0:anon_ptr.(0), &STRING3:0:anon_ptr.(0), 20, 20), 20, 60)	 => Inside DepDFSet output

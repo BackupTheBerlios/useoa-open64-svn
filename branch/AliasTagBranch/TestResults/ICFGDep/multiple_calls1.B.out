@@ -1,23 +1,10 @@
+file nameTestCases/ICFGDep/multiple_calls1.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
-        G:0:.predef_F8 = B:0:.predef_F8	 => [ 
-            Tag(
-                mTagID: 4
-                # NamedRef(foo_::Y)
-                # Deref(NamedRef(bar_::G))
-            )
- ] 
-        B:0:.predef_F8 = F:0:.predef_F8	 => [ 
-            Tag(
-                mTagID: 2
-                # NamedRef(foo_::A)
-                # Deref(NamedRef(bar_::B))
-            )
- ] 
 
 mDepDFSet: StmtHandle	 => DepDFSet
-         LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ICFGDep/multiple_calls1.f"
+         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/multiple_calls1.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 stmt: 	 => Inside DepDFSet output
 
@@ -98,12 +85,6 @@ stmt: 	 => Inside DepDFSet output
 
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 4
-                # NamedRef(foo_::Y)
-                # Deref(NamedRef(bar_::G))
-            )
-
             Uses:
             Tag(
                 mTagID: 2
@@ -151,12 +132,6 @@ stmt: 	 => Inside DepDFSet output
 
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 2
-                # NamedRef(foo_::A)
-                # Deref(NamedRef(bar_::B))
-            )
-
             Uses:
             Tag(
                 mTagID: 3

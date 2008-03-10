@@ -158,6 +158,8 @@ main(int argc, char* argv[])
   
   Args args(argc, argv);
 
+  std::cout << "file name" << args.whirlFileNm.c_str() << std::endl;
+
   // -------------------------------------------------------
   // 3. Read WHIRL IR
   // -------------------------------------------------------

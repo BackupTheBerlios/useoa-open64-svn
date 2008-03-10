@@ -1,5 +1,6 @@
+file nameTestCases/ExprTree/call.B
 ============================================
-StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ExprTree/call.f"
+StmtHandle:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ExprTree/call.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
 
@@ -16,6 +17,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(foo_::A)
+            mStrictlyLocal: 1
         )
     )
 
@@ -50,6 +52,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(foo_::B)
+            mStrictlyLocal: 1
         )
 
         Node 1: ET MemRefNode (  )
@@ -58,6 +61,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(foo_::C)
+            mStrictlyLocal: 1
         )
 
         Node 2: ET MemRefNode (  )
@@ -101,6 +105,7 @@ graph EXPRESSION TREE:
     NamedRef(
         mMemRefType: DEF
         mSymHandle: SymHandle(foo_::D)
+        mStrictlyLocal: 1
     )
 
     Node 0: ET MemRefNode (  )
@@ -126,6 +131,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(foo_::A)
+            mStrictlyLocal: 1
         )
     )
 
@@ -151,6 +157,7 @@ graph EXPRESSION TREE:
                 NamedRef(
                     mMemRefType: USE
                     mSymHandle: SymHandle(foo_::A)
+                    mStrictlyLocal: 1
                 )
 
                 Node 3: ET MemRefNode (  )
@@ -190,6 +197,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(foo_::B)
+            mStrictlyLocal: 1
         )
 
         Node 1: ET MemRefNode (  )
@@ -198,6 +206,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(foo_::C)
+            mStrictlyLocal: 1
         )
 
         Node 2: ET MemRefNode (  )
@@ -230,6 +239,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(func_::N)
+            mStrictlyLocal: 0
         )
         mNumDeref: 1
     )

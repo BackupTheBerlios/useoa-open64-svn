@@ -1,43 +1,11 @@
+file nameTestCases/ICFGDep/nested_calls_4.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
-        P:0:.predef_F8 =     2.000000000000000	 => [ 
-            Tag(
-                mTagID: 6
-                # NamedRef(head_::P)
-                # Deref(NamedRef(foo_::A))
-                # Deref(NamedRef(foo_::B))
-                # SubSetRef(Deref(NamedRef(head_::X)))
-            )
- ] 
-        C:0:.predef_F8 = SIN(&A:0:.predef_F8*B:0:.predef_F8)	 => [ 
-            Tag(
-                mTagID: 4
-                # NamedRef(head_::C)
-                # Deref(NamedRef(foo_::C))
-            )
- ] 
-        D:0:.predef_F8 = COS(&A:0:.predef_F8+B:0:.predef_F8)	 => [ 
-            Tag(
-                mTagID: 5
-                # NamedRef(head_::D)
-                # Deref(NamedRef(foo_::D))
-            )
- ] 
 
 mDepDFSet: StmtHandle	 => DepDFSet
-         LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ICFGDep/nested_calls_4.f"
-PRAGMA 0 188 <1,22,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-stmt: 	 => Inside DepDFSet output
-
-            mUseToDefsMap: UseLoc	 => DefLocSet
-
-            mDefToUsesMap: DefLoc	 => UseLocSet
-
-            ImplicitRemoves:
-            Uses:
-            Defs:
-        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/nested_calls_4.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 stmt: 	 => Inside DepDFSet output
 
             mUseToDefsMap: UseLoc	 => DefLocSet
@@ -54,14 +22,6 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 6
-                # NamedRef(head_::P)
-                # Deref(NamedRef(foo_::A))
-                # Deref(NamedRef(foo_::B))
-                # SubSetRef(Deref(NamedRef(head_::X)))
-            )
-
             Uses:
             Defs:
         stmt: foo_(&X:0:anon_ptr.(1), &X:0:anon_ptr.(2), &C:0:.predef_F8, &D:0:.predef_F8)	 => Inside DepDFSet output
@@ -235,16 +195,6 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Defs:
-        PRAGMA 0 188 <1,22,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-stmt: 	 => Inside DepDFSet output
-
-            mUseToDefsMap: UseLoc	 => DefLocSet
-
-            mDefToUsesMap: DefLoc	 => UseLocSet
-
-            ImplicitRemoves:
-            Uses:
-            Defs:
         PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 stmt: 	 => Inside DepDFSet output
 
@@ -262,6 +212,7 @@ stmt: 	 => Inside DepDFSet output
                     Tag(
                         mTagID: 6
                         # NamedRef(head_::P)
+                        # Deref(NamedRef(head_::X))
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(foo_::B))
                         # SubSetRef(Deref(NamedRef(head_::X)))
@@ -285,6 +236,7 @@ stmt: 	 => Inside DepDFSet output
                     Tag(
                         mTagID: 6
                         # NamedRef(head_::P)
+                        # Deref(NamedRef(head_::X))
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(foo_::B))
                         # SubSetRef(Deref(NamedRef(head_::X)))
@@ -292,16 +244,11 @@ stmt: 	 => Inside DepDFSet output
 
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 4
-                # NamedRef(head_::C)
-                # Deref(NamedRef(foo_::C))
-            )
-
             Uses:
             Tag(
                 mTagID: 6
                 # NamedRef(head_::P)
+                # Deref(NamedRef(head_::X))
                 # Deref(NamedRef(foo_::A))
                 # Deref(NamedRef(foo_::B))
                 # SubSetRef(Deref(NamedRef(head_::X)))
@@ -321,6 +268,7 @@ stmt: 	 => Inside DepDFSet output
                     Tag(
                         mTagID: 6
                         # NamedRef(head_::P)
+                        # Deref(NamedRef(head_::X))
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(foo_::B))
                         # SubSetRef(Deref(NamedRef(head_::X)))
@@ -344,6 +292,7 @@ stmt: 	 => Inside DepDFSet output
                     Tag(
                         mTagID: 6
                         # NamedRef(head_::P)
+                        # Deref(NamedRef(head_::X))
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(foo_::B))
                         # SubSetRef(Deref(NamedRef(head_::X)))
@@ -351,16 +300,11 @@ stmt: 	 => Inside DepDFSet output
 
 
             ImplicitRemoves:
-            Tag(
-                mTagID: 5
-                # NamedRef(head_::D)
-                # Deref(NamedRef(foo_::D))
-            )
-
             Uses:
             Tag(
                 mTagID: 6
                 # NamedRef(head_::P)
+                # Deref(NamedRef(head_::X))
                 # Deref(NamedRef(foo_::A))
                 # Deref(NamedRef(foo_::B))
                 # SubSetRef(Deref(NamedRef(head_::X)))

@@ -1,3 +1,4 @@
+file nameTestCases/ParamBindings/keyword_arguments.B
 
 ParamBindings(
         CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => 
@@ -5,6 +6,7 @@ ParamBindings(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(solve_::A)
+                mStrictlyLocal: 0
             )	 => 
             graph EXPRESSION TREE:
 
@@ -14,6 +16,7 @@ ParamBindings(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(main___::X)
+                        mStrictlyLocal: 1
                     )
                 )
                 Node 0: ET MemRefNode (  )
@@ -22,6 +25,7 @@ ParamBindings(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(solve_::N)
+                mStrictlyLocal: 0
             )	 => 
             graph EXPRESSION TREE:
 
