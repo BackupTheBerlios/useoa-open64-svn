@@ -61,6 +61,8 @@
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
 #include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
+#include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
+
 
 #include <sys/time.h>
 
@@ -126,6 +128,11 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
+
+
+static int
+TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
+                         OA::OA_ptr<Open64IRInterface> irInterface);
 
 //***************************************************************************
 
@@ -279,7 +286,13 @@ main(int argc, char* argv[])
         //TestIR_OAICFGReachDefs(std::cout, pu_forest, irInterface);
         break;
      }
-     
+    
+     case 13:
+     {
+        TestIR_OAUDDUChains(std::cout, pu_forest, irInterface);
+        break;
+     }
+ 
   }
 
   FreeIR(pu_forest); // N.B. cannot use with WriteIR
@@ -878,8 +891,6 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
 
 
 
-
-/*
 static int
 TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface)
@@ -895,11 +906,15 @@ TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<Open64IRProcIterator> procIter;
     procIter = new Open64IRProcIterator(pu_forest);
 
+
     //! FIAliasAliasMap
     OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
     fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
+    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+    interAlias = new OA::Alias::InterAliasResults(alias);
+
 
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -907,7 +922,8 @@ TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
       cgraphman->performAnalysis(procIter, alias);
 
-    // param bindings
+
+   //ParamBindings
     OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
     pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
     OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
@@ -915,40 +931,135 @@ TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
 
 
     // intra side effects
-    OA::OA_ptr<SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
-    intraSideEffectMgr = new SideEffect::ManagerSideEffectStandard(irInterface);
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
+    intraSideEffectMgr
+        = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
 
     // inter side effects
-    OA::OA_ptr<SideEffect::InterSideEffectStandard> interSideEffects;
-    OA::OA_ptr<SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSideEffects;
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
     interSideEffectMgr =
-        new SideEffect::ManagerInterSideEffectStandard(irInterface);
+        new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
     interSideEffects = interSideEffectMgr->performAnalysis(
         cgraph,
         parambind,
-        alias,
+        interAlias,
         intraSideEffectMgr,
         OA::DataFlow::ITERATIVE);
 
-    // Reaching Defs
-    OA::OA_ptr<ReachDefs::ReachDefsStandard> reachDefResults;
-    OA::OA_ptr<ReachDefs::ManagerReachDefsStandard> reachDefMgr;
-    reachDefMgr = new ReachDefs::ManagerReachDefsStandard(irInterface);
 
-    procIter = new SCIRProcIterator(root);
-    for(; procIter->isValid(); ++(*procIter))
+    // Reaching Defs
+    OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> reachDefResults;
+    OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> reachDefMgr;
+    reachDefMgr = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
+
+    for(procIter->reset(); procIter->isValid(); ++(*procIter))
     {
-        ProcHandle proc = procIter->current();
+        OA::ProcHandle proc = procIter->current();
 
         reachDefResults = reachDefMgr->performAnalysis(
             proc,
             eachCFG->getCFGResults(proc),
-            aliasTag,
+            alias,
             interSideEffects,
             OA::DataFlow::ITERATIVE);
 
         reachDefResults->output(*irInterface);
+        std::cout << std::endl;
     }
-    return 0;    
+
+    return 0;
 }
-*/
+
+
+
+
+static int
+TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
+                         OA::OA_ptr<Open64IRInterface> irInterface)
+{
+    std::cout << "Test UDDUChains analysis\n";
+
+    // CFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+
+    //! FIAliasAliasMap
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias = fialiasman->performAnalysis(procIter);
+    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+    interAlias = new OA::Alias::InterAliasResults(alias);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
+      cgraphman->performAnalysis(procIter, alias);
+
+
+    //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+
+    // intra side effects
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
+    intraSideEffectMgr
+        = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+
+    // inter side effects
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSideEffects;
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
+    interSideEffectMgr =
+        new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+    interSideEffects = interSideEffectMgr->performAnalysis(
+        cgraph,
+        parambind,
+        interAlias,
+        intraSideEffectMgr,
+        OA::DataFlow::ITERATIVE);
+
+    // Reaching Defs
+    OA::OA_ptr<OA::ReachDefs::ReachDefsStandard> reachDefResults;
+    OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> reachDefMgr;
+    reachDefMgr = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
+
+    OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains;
+    OA::OA_ptr<OA::UDDUChains::ManagerUDDUChainsStandard> udman;
+    udman = new OA::UDDUChains::ManagerUDDUChainsStandard(irInterface);
+
+    for(procIter->reset(); procIter->isValid(); ++(*procIter))
+    {
+        OA::ProcHandle proc = procIter->current();
+
+        reachDefResults = reachDefMgr->performAnalysis(
+            proc,
+            eachCFG->getCFGResults(proc),
+            alias,
+            interSideEffects,
+            OA::DataFlow::ITERATIVE);
+
+
+        udduchains = udman->performAnalysis(proc,
+                                           alias,
+                                           reachDefResults,
+                                           interSideEffects);
+
+        udduchains->output(*irInterface);
+     }
+
+    return 0;
+}
+
+
+
