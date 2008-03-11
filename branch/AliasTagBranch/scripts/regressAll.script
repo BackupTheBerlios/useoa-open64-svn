@@ -8,3 +8,12 @@ source scripts/regressExprTree.script
 echo "########################### running regressAliasMapFIAlias.script"
 source scripts/regressAliasTagFIAlias.script
 
+
+echo "########################### running regressParamBindigns.script"
+source scripts/regressParamBindings.script
+
+
+echo "########################### running regressICFGDep.script"
+source scripts/regressICFGDep.script
+
+
