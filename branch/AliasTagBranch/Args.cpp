@@ -53,8 +53,9 @@ static const char* usage_details =
 "      --oa-ICFGReachConsts     test OA ICFGReachConsts\n"
 "      --oa-ReachDefs           test OA ReachDefs analysis\n"
 "      --oa-UDDUChains          test OA UDDUChains analysis\n"
+"      --oa-AliasTagXAIF        test OA AliasTagXAIF analysis\n"
 "      --oa-UDDUChainsXAIF 	test OA UDDUChainsXAIF analysis\n"
-//"      --oa-AliasMapXAIF 	test OA AliasMapXAIF analysis\n"
+"      --oa-ReachDefsOverwrite  test OA ReachDefsOverwrite analysis\n"
 "      --oa-InterSideEffect  	test OA InterSideEffect\n"
 "      --oa-Activity        	test Activity Analysis \n"
 "      --oa-EachActivity  	test Activity analysis where specify indep/dep for root proc and others use side-effect estimate (currently broken)\n"
@@ -102,9 +103,10 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-ICFGReachConsts",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ReachDefs",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-UDDUChains",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-AliasTagXAIF",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-UDDUChainsXAIF",        CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ReachDefsOverwrite",    CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL }, 
   {  0 , "oa-ReachConsts",           CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
-  //{  0 , "oa-AliasMapXAIF",        CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-InterSideEffect",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-Activity",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-EachActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -241,9 +243,10 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-ICFGReachConsts")) { runMode = 11; }
     if (parser.IsOpt("oa-ReachDefs")) { runMode = 12; }
     if (parser.IsOpt("oa-UDDUChains")) { runMode = 13; }
-    if (parser.IsOpt("oa-UDDUChainsXAIF")) { runMode = 18; }
+    if (parser.IsOpt("oa-AliasTagXAIF")) { runMode = 14; }
+    if (parser.IsOpt("oa-UDDUChainsXAIF")) { runMode = 15; }
+    if (parser.IsOpt("oa-ReachDefsOverwrite")) { runMode = 16; }
     if (parser.IsOpt("oa-ReachConsts")) { runMode = 10; }
-    //if (parser.IsOpt("oa-AliasMapXAIF")) { runMode = 11; }
     if (parser.IsOpt("oa-InterSideEffect")) { runMode = 13; }
     if (parser.IsOpt("oa-Activity")) { runMode = 14; }
     if (parser.IsOpt("oa-EachActivity")) { runMode = 15; }

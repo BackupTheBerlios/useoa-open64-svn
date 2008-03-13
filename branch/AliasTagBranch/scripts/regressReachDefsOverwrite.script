@@ -1,0 +1,4 @@
+echo "Testing TestCases/ReachDefsOverwrite/multiple_definitions.B, TestResults/ReachDefsOverwrite/multiple_definitions.B.out "
+./test-open64 --oa-ReachDefsOverwrite TestCases/ReachDefsOverwrite/multiple_definitions.B > t
+diff t TestResults/ReachDefsOverwrite/multiple_definitions.B.out
+

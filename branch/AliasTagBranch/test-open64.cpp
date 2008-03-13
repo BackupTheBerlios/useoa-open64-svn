@@ -61,8 +61,9 @@
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
 #include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
+#include <OpenAnalysis/ReachDefsOverwrite/ManagerReachDefsOverwriteStandard.hpp>
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
-
+#include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
 
 #include <sys/time.h>
 
@@ -133,6 +134,16 @@ TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface);
+
+
+static int
+TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
+                      OA::OA_ptr<Open64IRInterface> irInterface);
+
+
+static int
+TestIR_OAICFGReachDefsOverwrite(std::ostream& os, PU_Info* pu_forest,
+                                OA::OA_ptr<Open64IRInterface> irInterface);
 
 //***************************************************************************
 
@@ -292,6 +303,21 @@ main(int argc, char* argv[])
         TestIR_OAUDDUChains(std::cout, pu_forest, irInterface);
         break;
      }
+
+
+     case 14:
+     {
+        TestIR_OAAliasMapXAIF(std::cout, pu_forest, irInterface);
+        break;
+     }
+
+
+     case 16:
+     {
+        TestIR_OAICFGReachDefsOverwrite(std::cout, pu_forest, irInterface);
+        break;
+     }
+
  
   }
 
@@ -315,6 +341,9 @@ main(int argc, char* argv[])
 }
 
 
+//! =================================================================
+//! Control Flow Graph
+//! =================================================================
 
 static int
 TestIR_OACFG_ForEachWNPU(std::ostream& os, PU_Info* pu,
@@ -343,6 +372,9 @@ TestIR_OACFG_ForEachWNPU(std::ostream& os, PU_Info* pu,
 }
 
 
+//! =============================================================
+//! Expression Tree
+//! =============================================================
 
 static int
 TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
@@ -383,6 +415,10 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
 }
 
 
+
+//! ===================================================================
+//! Memory Reference Expressions
+//! ===================================================================
 
 static int
 TestIR_OAMemRefExpr_ForEachWNPU(std::ostream& os, PU_Info* pu,
@@ -436,6 +472,9 @@ TestIR_OAMemRefExpr_ForEachWNPU(std::ostream& os, PU_Info* pu,
 
 
 
+//! =================================================================
+//! CallGraph
+//! ================================================================
 
 static int
 TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
@@ -473,7 +512,9 @@ TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
 
 
 
-
+//! ====================================================================
+//! Interprocedural Control Flow Graph
+//! =====================================================================
 
 static int
 TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
@@ -527,6 +568,10 @@ TestIR_OAICFG(std::ostream& os, PU_Info* pu_forest,
 
 
 
+//! ===============================================================
+//! ParamBindings
+//! ===============================================================
+
 
 static int
 TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
@@ -561,7 +606,9 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
 
 
 
-
+//! ================================================================
+//! SideEffect
+//! ==================================================================
 
 static int
 TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
@@ -614,7 +661,9 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
 
 
 
-
+//! ==============================================================
+//! ICFGDep
+//! ==============================================================
 
 static int
 TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
@@ -672,7 +721,9 @@ TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
 
 
 
-
+//! ==============================================================
+//! ICFGActivity
+//! ==============================================================
 
 
 static int
@@ -816,6 +867,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 }
 
 
+//! ===============================================================
+//! ICFGReachConst
+//! ===============================================================
 
 
 static int
@@ -888,6 +942,11 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     return 0;
 }
 
+
+
+//! ==================================================================
+//! ICFGReachDefs
+//! ==================================================================
 
 
 
@@ -972,6 +1031,101 @@ TestIR_OAICFGReachDefs(std::ostream& os, PU_Info* pu_forest,
 }
 
 
+
+
+//! =========================================================================
+//! ReachDefsOverwrite,  Needed by OpenAD 
+//! =========================================================================
+
+static int
+TestIR_OAICFGReachDefsOverwrite(std::ostream& os, PU_Info* pu_forest,
+                                OA::OA_ptr<Open64IRInterface> irInterface)
+{
+    std::cout << "Test reaching defs analysis\n";
+
+    // CFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+
+    //! FIAliasAliasMap
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias = fialiasman->performAnalysis(procIter);
+    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+    interAlias = new OA::Alias::InterAliasResults(alias);
+
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
+      cgraphman->performAnalysis(procIter, alias);
+
+
+   //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+
+   // intra side effects
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
+    intraSideEffectMgr
+        = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+
+    // inter side effects
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSideEffects;
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
+    interSideEffectMgr =
+        new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+    interSideEffects = interSideEffectMgr->performAnalysis(
+        cgraph,
+        parambind,
+        interAlias,
+        intraSideEffectMgr,
+        OA::DataFlow::ITERATIVE);
+
+
+    // Reaching Defs
+    OA::OA_ptr<OA::ReachDefsOverwrite::ReachDefsOverwriteStandard> reachDefResults;
+
+    OA::OA_ptr<OA::ReachDefsOverwrite::ManagerReachDefsOverwriteStandard> 
+                                           reachDefsOverwriteMgr;
+
+    reachDefsOverwriteMgr 
+         = new OA::ReachDefsOverwrite::ManagerReachDefsOverwriteStandard(irInterface);
+
+    for(procIter->reset(); procIter->isValid(); ++(*procIter))
+    {
+        OA::ProcHandle proc = procIter->current();
+
+        reachDefResults = reachDefsOverwriteMgr->performAnalysis(
+            proc,
+            eachCFG->getCFGResults(proc),
+            alias,
+            interSideEffects,
+            OA::DataFlow::ITERATIVE);
+
+        reachDefResults->output(*irInterface);
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
+
+
+
+//! =================================================================
+//! UDDUChains
+//! =================================================================
 
 
 static int
@@ -1061,5 +1215,51 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
     return 0;
 }
 
+
+
+//! ===============================================================
+//! AliasMapXAIF, Needed by OpenAD
+//! ===============================================================
+
+static int
+TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
+                        OA::OA_ptr<Open64IRInterface> irInterface)
+{
+    std::cout << "Test AliasMapXAIF analysis\n";
+
+    // CFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+
+    //! FIAliasAliasMap
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias = fialiasman->performAnalysis(procIter);
+    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+    interAlias = new OA::Alias::InterAliasResults(alias);
+
+
+    // XAIF AliasMap
+
+    OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF;
+    OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
+    aliasmapxaifman = new OA::XAIF::ManagerAliasMapXAIF(irInterface);
+
+    for(procIter->reset(); procIter->isValid(); ++(*procIter))
+    {
+        OA::ProcHandle proc = procIter->current();
+        aliasMapXAIF = aliasmapxaifman->performAnalysis(proc,alias);
+        aliasMapXAIF->output(*irInterface, *alias);
+    }
+
+    return 0;
+}
 
 
