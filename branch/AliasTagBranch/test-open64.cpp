@@ -63,7 +63,7 @@
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 #include <OpenAnalysis/ReachDefsOverwrite/ManagerReachDefsOverwriteStandard.hpp>
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
-#include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
+#include <OpenAnalysis/XAIF/ManagerAliasTagXAIF.hpp>
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
 
 #include <sys/time.h>
@@ -138,7 +138,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
 
 
 static int
-TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
+TestIR_OAAliasTagXAIF(std::ostream& os, PU_Info* pu_forest,
                       OA::OA_ptr<Open64IRInterface> irInterface);
 
 
@@ -182,8 +182,6 @@ main(int argc, char* argv[])
 
   
   Args args(argc, argv);
-
-  std::cout << "file name" << args.whirlFileNm.c_str() << std::endl;
 
   // -------------------------------------------------------
   // 3. Read WHIRL IR
@@ -314,7 +312,7 @@ main(int argc, char* argv[])
 
      case 14:
      {
-        TestIR_OAAliasMapXAIF(std::cout, pu_forest, irInterface);
+        TestIR_OAAliasTagXAIF(std::cout, pu_forest, irInterface);
         break;
      }
 
@@ -1235,10 +1233,10 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
 //! ===============================================================
 
 static int
-TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
+TestIR_OAAliasTagXAIF(std::ostream& os, PU_Info* pu_forest,
                         OA::OA_ptr<Open64IRInterface> irInterface)
 {
-    std::cout << "Test AliasMapXAIF analysis\n";
+    std::cout << "Test AliasTagXAIF analysis\n";
 
     // CFG
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
@@ -1259,17 +1257,17 @@ TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
     interAlias = new OA::Alias::InterAliasResults(alias);
 
 
-    // XAIF AliasMap
+    // XAIF AliasTag
 
-    OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF;
-    OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
-    aliasmapxaifman = new OA::XAIF::ManagerAliasMapXAIF(irInterface);
+    OA::OA_ptr<OA::XAIF::AliasTagXAIF> aliasTagXAIF;
+    OA::OA_ptr<OA::XAIF::ManagerAliasTagXAIF> aliastagxaifman;
+    aliastagxaifman = new OA::XAIF::ManagerAliasTagXAIF(irInterface);
 
     for(procIter->reset(); procIter->isValid(); ++(*procIter))
     {
         OA::ProcHandle proc = procIter->current();
-        aliasMapXAIF = aliasmapxaifman->performAnalysis(proc,alias);
-        aliasMapXAIF->output(*irInterface, *alias);
+        aliasTagXAIF = aliastagxaifman->performAnalysis(proc,alias);
+        aliasTagXAIF->output(*irInterface, *alias);
     }
 
     return 0;
