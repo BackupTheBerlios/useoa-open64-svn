@@ -635,6 +635,9 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
   fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
   OA::OA_ptr<OA::Alias::Interface> alias;
   alias = fialiasman->performAnalysis(procIter);
+  OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+  interAlias = new OA::Alias::InterAliasResults(alias);
+
 
   //! CallGraph
   OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -652,7 +655,7 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
   // empty intraprocedural
   // results
   OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffectInter;
-  interSideEffectInter = new OA::SideEffect::InterSideEffectStandard();
+  interSideEffectInter = new OA::SideEffect::InterSideEffectStandard(interAlias);
 
   OA::OA_ptr<OA::SideEffect::SideEffectStandard> results;
 
@@ -904,6 +907,9 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
+    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+    interAlias = new OA::Alias::InterAliasResults(alias);
+
     //alias->output(*irInterface);
 
     //interAlias->output(*irInterface);
@@ -936,7 +942,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     // empty intraprocedural
     // results
     OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffectInter;
-    interSideEffectInter = new OA::SideEffect::InterSideEffectStandard();
+    interSideEffectInter = new OA::SideEffect::InterSideEffectStandard(interAlias);
     OA::OA_ptr<OA::SideEffect::SideEffectStandard> results;
     // Perform the analyis on each procedure.
     OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
