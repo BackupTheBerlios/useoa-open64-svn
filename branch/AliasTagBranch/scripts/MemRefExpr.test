@@ -1,0 +1,16 @@
+
+# comment in file.test
+# Regression tests for Memory Reference Expression
+# It also checks strictlyLocal field of NamedRef
+
+testname::MemRefExpr
+inputdir::TestCases/MemRefExpr
+outputdir::TestResults/MemRefExpr
+driverexec::./test-open64 --oa-MemRefExpr
+
+# list of tests
+#       input file,                 status
+
+test::local.B,                 Tested by PLM 04/04/08
+test::global.B,                Tested by PLM 04/04/08
+

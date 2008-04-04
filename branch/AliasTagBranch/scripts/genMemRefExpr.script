@@ -1,0 +1,4 @@
+echo "Generating TestResults/MemRefExpr/local.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local.B > TestResults/MemRefExpr/local.B.out
+echo "Generating TestResults/MemRefExpr/global.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/global.B > TestResults/MemRefExpr/global.B.out

@@ -1,0 +1,8 @@
+echo "Testing TestCases/MemRefExpr/local.B, TestResults/MemRefExpr/local.B.out Tested by PLM 04/04/08"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local.B > t
+diff t TestResults/MemRefExpr/local.B.out
+
+echo "Testing TestCases/MemRefExpr/global.B, TestResults/MemRefExpr/global.B.out Tested by PLM 04/04/08"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/global.B > t
+diff t TestResults/MemRefExpr/global.B.out
+

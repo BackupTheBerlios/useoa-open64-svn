@@ -429,6 +429,7 @@ TestIR_OAExprTree(std::ostream& os, PU_Info* pu,
 
 //! ===================================================================
 //! Memory Reference Expressions
+//! StrictlyLocal Field of NamedRef.
 //! ===================================================================
 
 static int

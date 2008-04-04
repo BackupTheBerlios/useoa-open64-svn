@@ -1,0 +1,69 @@
+============================================
+OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/dump/UseOA-Open64/TestCases/MemRefExpr/global.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: VUSE <1,20,global_>
+
+============================================
+OA::StmtHandle: _END()
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: return
+============================================
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+============================================
+OA::StmtHandle: VUSE <1,20,global_>
+
+============================================
+OA::StmtHandle: MODULE_A:0:.predef_F8 =     10.00000000000000
+MemRefHandleMODULE_A:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(global_::MODULE_A)
+    mStrictlyLocal: 0
+)
+
+============================================
+OA::StmtHandle: GLOBAL_C:0:.predef_F4 =     20.00000
+MemRefHandleGLOBAL_C:0:.predef_F4
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(global_::GLOBAL_C)
+    mStrictlyLocal: 0
+)
+
+============================================
+OA::StmtHandle: U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+K:0:.predef_F4 = 0:
+MemRefHandleK:0:.predef_F4
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::K)
+    mStrictlyLocal: 1
+)
+
+U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+MemRefHandle0:
+	mre = 
+FieldAccess(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::FIRST)
+        mStrictlyLocal: 1
+    )
+    mFieldName: LABOR
+)
+
+============================================
+OA::StmtHandle: return
