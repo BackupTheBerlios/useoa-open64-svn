@@ -439,6 +439,10 @@ TestIR_OAMemRefExpr_ForEachWNPU(std::ostream& os, PU_Info* pu,
   OA::OA_ptr<Open64IRInterface> ir; ir = new Open64IRInterface();
   OA::ProcHandle proc((OA::irhandle_t)pu);
 
+  std::cout << "======================================" << std::endl;
+  
+  std::cout << "ProcHandle : " << irInterface->toString(proc) << std::endl;
+  
   // for each statement stmt
   //   for each memory reference in stmt
   //     for each mem-ref-expr for the memory reference
@@ -447,7 +451,7 @@ TestIR_OAMemRefExpr_ForEachWNPU(std::ostream& os, PU_Info* pu,
   for ( ; sIt->isValid(); (*sIt)++) {
     OA::StmtHandle stmt = sIt->current();
 
-    std::cout << "============================================" << std::endl;
+    std::cout << std::endl << std::endl << std::endl;
     std::cout << "OA::StmtHandle: ";
     // do not combine the line before and after this comment, with
     // some g++ compilers that can result in certain statements being
@@ -479,6 +483,9 @@ TestIR_OAMemRefExpr_ForEachWNPU(std::ostream& os, PU_Info* pu,
       }
     }
   }
+
+  std::cout << "======================================" << std::endl;
+ 
   return 0;
 }
 

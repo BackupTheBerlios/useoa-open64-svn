@@ -6,3 +6,7 @@ echo "Testing TestCases/MemRefExpr/global.B, TestResults/MemRefExpr/global.B.out
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/global.B > t
 diff t TestResults/MemRefExpr/global.B.out
 
+echo "Testing TestCases/MemRefExpr/nested_procedure.B, TestResults/MemRefExpr/nested_procedure.B.out Tested by PLM 04/04/08"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_procedure.B > t
+diff t TestResults/MemRefExpr/nested_procedure.B.out
+
