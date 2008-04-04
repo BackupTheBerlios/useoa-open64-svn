@@ -1,0 +1,58 @@
+Test AliasTagXAIF analysis
+
+setId2vTag: int	 => OA::OA_ptr<OA::Alias::AliasTagSet> 
+        2	 => [ 
+            Tag(
+                mTagID: 3
+                # NamedRef(foo_::Y)
+                # Deref(NamedRef(bar_::YY))
+            )
+ ] 
+        3	 => [ 
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::X)
+                # Deref(NamedRef(bar_::XX))
+            )
+ ] 
+
+setId2PartialFlag: int	 => bool
+        2	 => 0
+        3	 => 0
+
+mMemRef2setId: MemRefHandle	 => int
+        MemRefHandle(Y:0:.predef_F8)	 => 2
+        MemRefHandle(X:0:.predef_F8)	 => 3
+
+setId2vTag: int	 => OA::OA_ptr<OA::Alias::AliasTagSet> 
+        4	 => [ 
+            Tag(
+                mTagID: 6
+                # NamedRef(bar_::T)
+            )
+ ] 
+        5	 => [ 
+            Tag(
+                mTagID: 3
+                # NamedRef(foo_::Y)
+                # Deref(NamedRef(bar_::YY))
+            )
+ ] 
+        6	 => [ 
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::X)
+                # Deref(NamedRef(bar_::XX))
+            )
+ ] 
+
+setId2PartialFlag: int	 => bool
+        4	 => 0
+        5	 => 0
+        6	 => 0
+
+mMemRef2setId: MemRefHandle	 => int
+        MemRefHandle(T:0:.predef_F4)	 => 4
+        MemRefHandle(YY:0:.predef_F8)	 => 5
+        MemRefHandle(XX:0:.predef_F8)	 => 6
+        MemRefHandle(T:0:.predef_F4)	 => 4

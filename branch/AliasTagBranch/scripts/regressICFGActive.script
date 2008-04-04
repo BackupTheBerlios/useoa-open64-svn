@@ -1,0 +1,36 @@
+echo "Testing TestCases/Activity/activity_int5.B, TestResults/ICFGActive/activity_int5.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_int5.B > t
+diff t TestResults/ICFGActive/activity_int5.B.out
+
+echo "Testing TestCases/Activity/argumentArrayIndex3.B, TestResults/ICFGActive/argumentArrayIndex3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentArrayIndex3.B > t
+diff t TestResults/ICFGActive/argumentArrayIndex3.B.out
+
+echo "Testing TestCases/Activity/multiple_calls1.B, TestResults/ICFGActive/multiple_calls1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls1.B > t
+diff t TestResults/ICFGActive/multiple_calls1.B.out
+
+echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/ICFGActive/sideEffect_3.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_3.B > t
+diff t TestResults/ICFGActive/sideEffect_3.B.out
+
+echo "Testing TestCases/Activity/activity_proc_call1.B, TestResults/ICFGActive/activity_proc_call1.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_proc_call1.B > t
+diff t TestResults/ICFGActive/activity_proc_call1.B.out
+
+echo "Testing TestCases/Activity/globalActive_7.B, TestResults/ICFGActive/globalActive_7.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/globalActive_7.B > t
+diff t TestResults/ICFGActive/globalActive_7.B.out
+
+echo "Testing TestCases/Activity/multiple_calls2.B, TestResults/ICFGActive/multiple_calls2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls2.B > t
+diff t TestResults/ICFGActive/multiple_calls2.B.out
+
+echo "Testing TestCases/Activity/parameters.B, TestResults/ICFGActive/parameters.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/parameters.B > t
+diff t TestResults/ICFGActive/parameters.B.out
+
+echo "Testing TestCases/Activity/simple_if2.B, TestResults/ICFGActive/simple_if2.B.out "
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple_if2.B > t
+diff t TestResults/ICFGActive/simple_if2.B.out
+

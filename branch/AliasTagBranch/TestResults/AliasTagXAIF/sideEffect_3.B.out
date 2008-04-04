@@ -1,0 +1,58 @@
+Test AliasTagXAIF analysis
+
+setId2vTag: int	 => OA::OA_ptr<OA::Alias::AliasTagSet> 
+        2	 => [ 
+            Tag(
+                mTagID: 10
+                # Deref(NamedRef(bar_::D))
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(Deref(NamedRef(head_::Y)))
+            )
+ ] 
+        3	 => [ 
+            Tag(
+                mTagID: 9
+                # Deref(NamedRef(bar_::C))
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )
+ ] 
+
+setId2PartialFlag: int	 => bool
+        2	 => 0
+        3	 => 0
+
+mMemRef2setId: MemRefHandle	 => int
+        MemRefHandle(D:0:.predef_F8)	 => 2
+        MemRefHandle(C:0:.predef_F8)	 => 3
+        MemRefHandle(C:0:.predef_F8)	 => 3
+
+setId2vTag: int	 => OA::OA_ptr<OA::Alias::AliasTagSet> 
+        4	 => [ 
+            Tag(
+                mTagID: 5
+                # NamedRef(foo_::A)
+            )
+ ] 
+        5	 => [ 
+            Tag(
+                mTagID: 6
+                # NamedRef(foo_::B)
+            )
+ ] 
+
+setId2PartialFlag: int	 => bool
+        4	 => 0
+        5	 => 0
+
+mMemRef2setId: MemRefHandle	 => int
+        MemRefHandle(&A:0:.predef_F8)	 => 4
+        MemRefHandle(&B:0:.predef_F8)	 => 5
+
+setId2vTag: int	 => OA::OA_ptr<OA::Alias::AliasTagSet> 
+
+setId2PartialFlag: int	 => bool
+
+mMemRef2setId: MemRefHandle	 => int

@@ -1,0 +1,48 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/Activity/simple_if2.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(A:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000)
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(if (A:0:.predef_F8>    10.00000000000000))
+                StmtHandle(C:0:.predef_F8 =     3.000000000000000)
+                StmtHandle(C:0:.predef_F8 = -A:0:.predef_F8)
+                StmtHandle(Y:0:.predef_F8 = C:0:.predef_F8+B:0:.predef_F8*    3.000000000000000)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 3
+                # NamedRef(head_::A)
+            )    
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::B)
+            )    
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::C)
+            )    
+            Tag(
+                mTagID: 6
+                # Deref(NamedRef(head_::X))
+            )    
+            Tag(
+                mTagID: 7
+                # Deref(NamedRef(head_::Y))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::A)
+            SymHandle(head_::B)
+            SymHandle(head_::C) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)

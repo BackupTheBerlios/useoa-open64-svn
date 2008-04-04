@@ -1,0 +1,36 @@
+echo "Testing TestCases/Activity/activity_int5.B, TestResults/AliasTagXAIF/activity_int5.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/activity_int5.B > t
+diff t TestResults/AliasTagXAIF/activity_int5.B.out
+
+echo "Testing TestCases/Activity/argumentArrayIndex3.B, TestResults/AliasTagXAIF/argumentArrayIndex3.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/argumentArrayIndex3.B > t
+diff t TestResults/AliasTagXAIF/argumentArrayIndex3.B.out
+
+echo "Testing TestCases/Activity/multiple_calls1.B, TestResults/AliasTagXAIF/multiple_calls1.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/multiple_calls1.B > t
+diff t TestResults/AliasTagXAIF/multiple_calls1.B.out
+
+echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/AliasTagXAIF/sideEffect_3.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/sideEffect_3.B > t
+diff t TestResults/AliasTagXAIF/sideEffect_3.B.out
+
+echo "Testing TestCases/Activity/activity_proc_call1.B, TestResults/AliasTagXAIF/activity_proc_call1.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/activity_proc_call1.B > t
+diff t TestResults/AliasTagXAIF/activity_proc_call1.B.out
+
+echo "Testing TestCases/Activity/globalActive_7.B, TestResults/AliasTagXAIF/globalActive_7.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/globalActive_7.B > t
+diff t TestResults/AliasTagXAIF/globalActive_7.B.out
+
+echo "Testing TestCases/Activity/multiple_calls2.B, TestResults/AliasTagXAIF/multiple_calls2.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/multiple_calls2.B > t
+diff t TestResults/AliasTagXAIF/multiple_calls2.B.out
+
+echo "Testing TestCases/Activity/parameters.B, TestResults/AliasTagXAIF/parameters.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/parameters.B > t
+diff t TestResults/AliasTagXAIF/parameters.B.out
+
+echo "Testing TestCases/Activity/simple_if2.B, TestResults/AliasTagXAIF/simple_if2.B.out "
+./test-open64 --oa-AliasTagXAIF TestCases/Activity/simple_if2.B > t
+diff t TestResults/AliasTagXAIF/simple_if2.B.out
+

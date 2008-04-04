@@ -1,0 +1,18 @@
+echo "Generating TestResults/ICFGActive/activity_int5.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_int5.B > TestResults/ICFGActive/activity_int5.B.out
+echo "Generating TestResults/ICFGActive/argumentArrayIndex3.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/argumentArrayIndex3.B > TestResults/ICFGActive/argumentArrayIndex3.B.out
+echo "Generating TestResults/ICFGActive/multiple_calls1.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls1.B > TestResults/ICFGActive/multiple_calls1.B.out
+echo "Generating TestResults/ICFGActive/sideEffect_3.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_3.B > TestResults/ICFGActive/sideEffect_3.B.out
+echo "Generating TestResults/ICFGActive/activity_proc_call1.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/activity_proc_call1.B > TestResults/ICFGActive/activity_proc_call1.B.out
+echo "Generating TestResults/ICFGActive/globalActive_7.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/globalActive_7.B > TestResults/ICFGActive/globalActive_7.B.out
+echo "Generating TestResults/ICFGActive/multiple_calls2.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls2.B > TestResults/ICFGActive/multiple_calls2.B.out
+echo "Generating TestResults/ICFGActive/parameters.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/parameters.B > TestResults/ICFGActive/parameters.B.out
+echo "Generating TestResults/ICFGActive/simple_if2.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/simple_if2.B > TestResults/ICFGActive/simple_if2.B.out

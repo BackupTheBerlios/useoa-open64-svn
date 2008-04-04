@@ -1,0 +1,66 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/Activity/activity_proc_call1.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8)
+                StmtHandle(bar_(&T1:0:.predef_F8, &T2:0:.predef_F8))
+                StmtHandle(T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000)
+                StmtHandle(F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::T1)
+                # Deref(NamedRef(bar_::A))
+            )    
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::T2)
+                # Deref(NamedRef(bar_::B))
+            )    
+            Tag(
+                mTagID: 9
+                # Deref(NamedRef(head_::X))
+            )    
+            Tag(
+                mTagID: 10
+                # Deref(NamedRef(head_::F))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( head_::bar_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 4
+                # NamedRef(head_::T1)
+                # Deref(NamedRef(bar_::A))
+            )    
+            Tag(
+                mTagID: 5
+                # NamedRef(head_::T2)
+                # Deref(NamedRef(bar_::B))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::F)
+            SymHandle(head_::T1)
+            SymHandle(head_::T2)
+            SymHandle(bar_::A)
+            SymHandle(bar_::B) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)

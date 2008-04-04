@@ -753,8 +753,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     //! =================================
     //! Control Flow Graph Timings
     //! ================================
-    gettimeofday(&tim, NULL);
-    t1=tim.tv_sec+(tim.tv_usec/1000000.0);
 
     // eachCFG
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
@@ -762,16 +760,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
     eachCFG = new OA::CFG::EachCFGStandard(cfgman);
 
-    gettimeofday(&tim, NULL);
-    t2=tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%.6lf CFG seconds elapsed\n", t2-t1);
-
     //! ================================
     //! AliasMapFIAlias Timings
     //! ================================
-
-    gettimeofday(&tim, NULL);
-    t1=tim.tv_sec+(tim.tv_usec/1000000.0);
 
     //! FIAliasAliasMap
     OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
@@ -780,16 +771,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     alias = fialiasman->performAnalysis(procIter);
     //alias->output(*irInterface);
 
-    gettimeofday(&tim, NULL);
-    t2=tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%.6lf FIAliasAliasMap seconds elapsed\n", t2-t1);
-
     //! =================================
     //! CallGraph Timings
     //! =================================
-
-    gettimeofday(&tim, NULL);
-    t1=tim.tv_sec+(tim.tv_usec/1000000.0);
 
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -797,16 +781,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
       cgraphman->performAnalysis(procIter, alias);
 
-    gettimeofday(&tim, NULL);
-    t2=tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%.6lf CallGraph seconds elapsed\n", t2-t1);
-
     //! =====================================
     //! ParamBindings
     //! =====================================
-
-    gettimeofday(&tim, NULL);
-    t1=tim.tv_sec+(tim.tv_usec/1000000.0);
 
     //ParamBindings
     OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
@@ -814,16 +791,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
     parambind = pbman->performAnalysis(cgraph);
 
-    gettimeofday(&tim, NULL);
-    t2=tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%.6lf ParamBings seconds elapsed\n", t2-t1);
-
     //! =====================================
-    //! ICFG
-    //! =====================================
-
-    gettimeofday(&tim, NULL);
-    t1=tim.tv_sec+(tim.tv_usec/1000000.0);
 
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
@@ -831,18 +799,16 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
-    gettimeofday(&tim, NULL);
-    t2=tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%.6lf ICFG seconds elapsed\n", t2-t1);
-
-
+    /*
     //ICFGDep
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
     OA::OA_ptr<OA::Activity::ICFGDep> icfgDep;
     icfgDep = icfgdepman->performAnalysis(icfg, parambind, alias,
                                         OA::DataFlow::ITERATIVE);
+
     //icfgDep->output(*irInterface,*alias); 
+
 
     // ICFGUseful   (for testing)
     OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
@@ -850,7 +816,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::InterUseful> icfgUseful;
     icfgUseful = usefulman->performAnalysis(icfg, parambind, alias,
                                             icfgDep, OA::DataFlow::ITERATIVE);
+
     //icfgUseful->output(*irInterface);
+
 
     // ICFGVaryActive
     OA::OA_ptr<OA::Activity::ManagerICFGVaryActive> varyman;
@@ -858,6 +826,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
     inActive = varyman->performAnalysis(icfg, parambind, alias,
                                 icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
+    */
     //inActive->output(*irInterface);
     //
 
@@ -865,18 +834,12 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     //! ICFGActivity
     //! ====================================
 
-    gettimeofday(&tim, NULL);
-    t1=tim.tv_sec+(tim.tv_usec/1000000.0);
-
     OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
     activeman = new OA::Activity::ManagerICFGActive(irInterface);
     OA::OA_ptr<OA::Activity::InterActiveFortran> active;
     active = activeman->performAnalysis(icfg, parambind,
                                         alias, OA::DataFlow::ITERATIVE);
 
-    gettimeofday(&tim, NULL);
-    t2=tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%.6lf ICFGActivity seconds elapsed\n", t2-t1);
     active->output(*irInterface,*alias);
 }
 

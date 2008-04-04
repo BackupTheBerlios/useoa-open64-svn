@@ -1,0 +1,94 @@
+
+InterActiveFortran(
+    Procedure( bar_::bar_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/Activity/sideEffect_3.f"
+PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+StmtHandle()
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(D:0:.predef_F8 = C:0:.predef_F8*C:0:.predef_F8)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 9
+                # Deref(NamedRef(bar_::C))
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )    
+            Tag(
+                mTagID: 10
+                # Deref(NamedRef(bar_::D))
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(Deref(NamedRef(head_::Y)))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( bar_::foo_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+StmtHandle()
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(bar_(&A:0:.predef_F8, &B:0:.predef_F8))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 9
+                # Deref(NamedRef(bar_::C))
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )    
+            Tag(
+                mTagID: 10
+                # Deref(NamedRef(bar_::D))
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(Deref(NamedRef(head_::Y)))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( bar_::head_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+StmtHandle()
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(foo_(&X:0:anon_ptr.(1), &Y:0:anon_ptr.(1)))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 9
+                # Deref(NamedRef(bar_::C))
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )    
+            Tag(
+                mTagID: 10
+                # Deref(NamedRef(bar_::D))
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(Deref(NamedRef(head_::Y)))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(bar_::C)
+            SymHandle(bar_::D)
+            SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)

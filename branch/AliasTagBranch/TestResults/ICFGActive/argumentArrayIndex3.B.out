@@ -1,0 +1,78 @@
+
+InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/Activity/argumentArrayIndex3.f"
+PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+StmtHandle()
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::A)
+            )    
+            Tag(
+                mTagID: 10
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(NamedRef(head_::P))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )    
+            Tag(
+                mTagID: 11
+                # NamedRef(head_::Q)
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(NamedRef(head_::Q))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+StmtHandle()
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8))
+                StmtHandle(foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::A)
+            )    
+            Tag(
+                mTagID: 10
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(NamedRef(head_::P))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )    
+            Tag(
+                mTagID: 11
+                # NamedRef(head_::Q)
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(NamedRef(head_::Q))
+            ) ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::P)
+            SymHandle(head_::Q) ] 
+    mNumIterUseful: 4
+    mNumIterVary: 3
+)
