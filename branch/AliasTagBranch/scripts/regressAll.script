@@ -9,11 +9,19 @@ echo "########################### running regressAliasMapFIAlias.script"
 source scripts/regressAliasTagFIAlias.script
 
 
-echo "########################### running regressParamBindigns.script"
-source scripts/regressParamBindings.script
+#echo "########################### running regressParamBindigns.script"
+#source scripts/regressParamBindings.script
 
 
 echo "########################### running regressICFGDep.script"
 source scripts/regressICFGDep.script
+
+
+echo "########################### running regressICFGctive.script"
+source scripts/regressICFGActive.script
+
+
+echo "########################### running regressAliasTagXAIF.script"
+source scripts/regressAliasTagXAIF.script
 
 
