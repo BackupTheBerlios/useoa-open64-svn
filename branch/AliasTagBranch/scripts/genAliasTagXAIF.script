@@ -1,8 +1,6 @@
-echo "Generating TestResults/AliasTagXAIF/activity_int5.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/Activity/activity_int5.B > TestResults/AliasTagXAIF/activity_int5.B.out
-echo "Generating TestResults/AliasTagXAIF/argumentArrayIndex3.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/Activity/argumentArrayIndex3.B > TestResults/AliasTagXAIF/argumentArrayIndex3.B.out
-echo "Generating TestResults/AliasTagXAIF/activity_proc_call1.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/Activity/activity_proc_call1.B > TestResults/AliasTagXAIF/activity_proc_call1.B.out
-echo "Generating TestResults/AliasTagXAIF/simple_if2.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/Activity/simple_if2.B > TestResults/AliasTagXAIF/simple_if2.B.out
+echo "Generating TestResults/AliasTagXAIF/example1.B.out"
+./test-open64 --oa-AliasTagXAIF TestCases/AliasTagXAIF/example1.B > TestResults/AliasTagXAIF/example1.B.out
+echo "Generating TestResults/AliasTagXAIF/example2.B.out"
+./test-open64 --oa-AliasTagXAIF TestCases/AliasTagXAIF/example2.B > TestResults/AliasTagXAIF/example2.B.out
+echo "Generating TestResults/AliasTagXAIF/example3.B.out"
+./test-open64 --oa-AliasTagXAIF TestCases/AliasTagXAIF/example3.B > TestResults/AliasTagXAIF/example3.B.out

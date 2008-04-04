@@ -2,16 +2,15 @@
 # comment in file.test
 # Regression tests for ICFGActive generation
 testname::AliasTagXAIF
-inputdir::TestCases/Activity
+inputdir::TestCases/AliasTagXAIF
 outputdir::TestResults/AliasTagXAIF
 driverexec::./test-open64 --oa-AliasTagXAIF
 
 # list of tests
 #       input file,                 status
 
-test::activity_int5.B,              Tested by PLM 04/04/08
-test::argumentArrayIndex3.B,        Tested by PLM 04/04/08
-test::activity_proc_call1.B,        Tested by PLM 04/04/08
-test::simple_if2.B,                 Tested by PLM 04/04/08
+test::example1.B,        Tested by PLM 04/04/08
+test::example2.B,        Tested by PLM 04/04/08
+test::example3.B,        Tested by PLM 04/04/08
 
 
