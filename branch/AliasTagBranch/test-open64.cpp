@@ -1215,12 +1215,6 @@ TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
 {
     std::cout << "Test AliasMapXAIF analysis\n";
 
-    // CFG
-    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
-    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
-    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
-    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
-
     OA::OA_ptr<Open64IRProcIterator> procIter;
     procIter = new Open64IRProcIterator(pu_forest);
 
@@ -1230,15 +1224,15 @@ TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
     fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
-    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
-    interAlias = new OA::Alias::InterAliasResults(alias);
 
 
     // XAIF AliasTag
 
-    OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF;
     OA::OA_ptr<OA::XAIF::ManagerAliasMapXAIF> aliasmapxaifman;
     aliasmapxaifman = new OA::XAIF::ManagerAliasMapXAIF(irInterface);
+
+    // Following for loop will generate aliasMapXAIF for each procedure.
+    OA::OA_ptr<OA::XAIF::AliasMapXAIF> aliasMapXAIF;
 
     for(procIter->reset(); procIter->isValid(); ++(*procIter))
     {
