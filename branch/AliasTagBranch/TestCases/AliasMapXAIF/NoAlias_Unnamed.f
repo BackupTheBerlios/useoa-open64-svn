@@ -9,7 +9,17 @@
 !          [X] Virtual LocTuple range.
 !          [X] Partial Flags
 !
-! Status : Should UnnamedRef has multiple virtual Addresses ?
+! Status /Issues :
+!          Should UnnamedRef has multiple virtual Addresses ?
+!
+!          - UnnamedRef (not specific to fortran) are 2 types :
+!             - temporaries (expressions as actual parameters)
+!             - allocate statements 
+!
+!          - How do we expect AliasTagFIAlias results for the Unnamed ?
+!             - AliasTag("temporary1") => (1, Must)
+!             - AliasTag("allocated1") => ((1,2), May)
+! 
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

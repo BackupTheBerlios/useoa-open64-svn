@@ -10,7 +10,8 @@
 !          [X] Virtual LocTuple range.
 !          [X] Partial Flags
 !
-! Status : OpenAnalysis still model complete Arrays refereces as SubSetRefs.
+! Status / Issues : 
+!          OpenAnalysis still model complete Arrays refereces as SubSetRefs.
 !          Therefore, AliasMaPXAIF does not correctly model virtual addresses 
 !          for the arrays as complete refereces.
 !          It needs special handling of complete array references.

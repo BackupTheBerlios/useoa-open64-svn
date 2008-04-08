@@ -9,7 +9,16 @@
 !          [X] Virtual LocTuple range.
 !          [X] Partial Flags
 !
-! Status : MemRefHandle for P and *P. Need to talk to Michelle.
+! Status /Issues: 
+!          I am not sure if this is a valid question or not.
+!
+!          OpenAnalysis knows the difference between MemRefHandle for P and *P ?
+!          How would OpenADFortTk know about it ? It needs to do
+!          some processing.
+!
+!          Jean says he would find out that information based on whirl.
+!          - i.e. pstore is always P
+!          - everything else is *P  Is that true ?
 !
 ! Note   : Following Analysis does not take into consideration of 
 !          srictly local modification algorithm. For the reference
@@ -54,8 +63,8 @@
        !
        !   [ MemRefHandle => AliasTag]
        !
-       ! MemRefHandle("p")      => (1, Must)
-       ! MemRefHandle("p")      => (2, Must)
+       ! MemRefHandle("p")      => (1, Must)  , this is p
+       ! MemRefHandle("p")      => (2, Must)  , this is *p
        ! MemRefHandle("q")      => (2, Must)
        ! MemRefHandle("t")      => (3, Must)
 
@@ -67,8 +76,8 @@
        !
        !   [  MemRefHandle => SetId ]
        !   ===========================
-       ! MemRefHandle("p")   => SetId(1)
-       ! MemRefHamdle("*p")  => SetId(2)
+       ! MemRefHandle("p")   => SetId(1)  , this is p
+       ! MemRefHamdle("p")   => SetId(2)  , this is *p
        ! MemRefHandle("q")   => SetId(2)
        ! MemRefHandle("t")   => SetId(3)
        ! 
