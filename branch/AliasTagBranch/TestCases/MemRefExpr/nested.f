@@ -23,8 +23,8 @@
 !                   ===========
 
 ! Procedure main:
-!             - MemRefHandle b => NamedRef(def, main::b, 1)
-!             - MemRefHandle a => NamedRef(use, main::a, 1)
+!             - MemRefHandle b => NamedRef(def, main::b, 0)
+!             - MemRefHandle a => NamedRef(use, main::a, 0)
 
 ! Procedure Sub1:
 !             - MemRefHandle c => NamedRef(def, sub1::c, 1)
