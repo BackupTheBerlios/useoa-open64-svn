@@ -11,7 +11,8 @@ driverexec::./test-open64 --oa-MemRefExpr
 # list of tests
 #       input file,                 status
 
+test::nested.B,                Tested by PLM 04/04/08
 test::local.B,                 Tested by PLM 04/04/08
 test::global.B,                Tested by PLM 04/04/08
-test::nested_procedure.B,      Tested by PLM 04/04/08
+test::module.B,                Tested by PLM 04/07/08
 

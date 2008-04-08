@@ -1,8 +1,14 @@
-============================================
-OA::StmtHandle:  LOC 0 0 source files:	1	"/home/malusare/dump/UseOA-Open64/TestCases/MemRefExpr/local.f"
+======================================
+ProcHandle : foo_::foo_
+
+
+
+OA::StmtHandle:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/MemRefExpr/local.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 
-============================================
+
+
+
 OA::StmtHandle: A:0:.predef_F8 =     10.00000000000000
 MemRefHandleA:0:.predef_F8
 	mre = 
@@ -12,7 +18,9 @@ NamedRef(
     mStrictlyLocal: 1
 )
 
-============================================
+
+
+
 OA::StmtHandle: B:0:anon_ptr.(1) = 1
 MemRefHandleB:0:anon_ptr.(1)
 	mre = 
@@ -26,7 +34,9 @@ SubSetRef(
     )
 )
 
-============================================
+
+
+
 OA::StmtHandle: U8PSTID 0 <2,5,P> T<33,anon_ptr.,8>
 
 MemRefHandleP:0:anon_ptr.
@@ -49,7 +59,9 @@ AddressOf(
     )
 )
 
-============================================
+
+
+
 OA::StmtHandle: A:0:.predef_F8 = OPC_F8U8CVT(P:0:anon_ptr.)
 MemRefHandleA:0:.predef_F8
 	mre = 
@@ -72,7 +84,9 @@ Deref(
     mNumDeref: 1
 )
 
-============================================
+
+
+
 OA::StmtHandle: U8PSTID 0 <2,5,P> T<33,anon_ptr.,8>
 
 MemRefHandleP:0:anon_ptr.
@@ -91,7 +105,9 @@ NamedRef(
     mStrictlyLocal: 0
 )
 
-============================================
+
+
+
 OA::StmtHandle: F:0:.predef_F8 = OPC_F8U8CVT(P:0:anon_ptr.)
 MemRefHandleF:0:.predef_F8
 	mre = 
@@ -119,7 +135,9 @@ Deref(
     mNumDeref: 1
 )
 
-============================================
+
+
+
 OA::StmtHandle: MSTORE 0 T<35,anon_ptr.,8>
 
 MemRefHandleFIRST:0:anon_ptr.
@@ -139,5 +157,8 @@ NamedRef(
     mStrictlyLocal: 1
 )
 
-============================================
+
+
+
 OA::StmtHandle: return
+======================================
