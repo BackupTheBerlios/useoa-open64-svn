@@ -24,9 +24,13 @@
 !          srictly local modification algorithm. For the reference
 !          I would write what Michelle and I discussed in the meeting
 !          
-!          AliasTag Results with Strictly Local Modiciations for the following example
+!          AliasTag Results with Strictly Local Modiciations 
+!          for the following example
 !          - MemRefHandle(q) => (2, Must)
 !          - MemRefHandle(*p) =>  ((2,3), May)
+!         
+!          - At this point everything is May
+!
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -41,7 +45,7 @@
          integer          :: t 
  
          p=>q            
-         t = p   
+         t=p   
   
        end program 
 
@@ -65,7 +69,6 @@
        !
        ! MemRefHandle("p")      => (1, Must)  , this is p
        ! MemRefHandle("p")      => (2, Must)  , this is *p
-       ! MemRefHandle("q")      => (2, Must)
        ! MemRefHandle("t")      => (3, Must)
 
 
@@ -78,7 +81,6 @@
        !   ===========================
        ! MemRefHandle("p")   => SetId(1)  , this is p
        ! MemRefHamdle("p")   => SetId(2)  , this is *p
-       ! MemRefHandle("q")   => SetId(2)
        ! MemRefHandle("t")   => SetId(3)
        ! 
        !   [  SetId  =>  Virtual Address ]
