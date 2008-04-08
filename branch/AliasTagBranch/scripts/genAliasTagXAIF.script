@@ -1,6 +1,0 @@
-echo "Generating TestResults/AliasTagXAIF/example1.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/AliasTagXAIF/example1.B > TestResults/AliasTagXAIF/example1.B.out
-echo "Generating TestResults/AliasTagXAIF/example2.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/AliasTagXAIF/example2.B > TestResults/AliasTagXAIF/example2.B.out
-echo "Generating TestResults/AliasTagXAIF/example3.B.out"
-./test-open64 --oa-AliasTagXAIF TestCases/AliasTagXAIF/example3.B > TestResults/AliasTagXAIF/example3.B.out
