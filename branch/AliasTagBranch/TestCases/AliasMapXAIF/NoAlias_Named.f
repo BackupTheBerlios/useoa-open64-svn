@@ -12,6 +12,8 @@
 !
 ! Status : No Issues
 !
+! Note: To Date April 8th 2008, all memory references are "May".
+!
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -38,15 +40,10 @@
 
         ! ========= AliasTagFIAlias Results =========
         !
-        !   [  MemRefExpr => AliasTags ]
-        !   ============================
-        ! NamedRef("local_var")        => (1, Must)   
-        ! NamedRef("global_var")       => (2, Must)
-        ! 
         !   [ MemRefHandle => AliasTags ]           
         !   =============================
-        ! MemRefHandle("local_var")    => (1, Must)
-        ! MemRefHandle("global_var")   => (2, Must)
+        ! MemRefHandle("local_var")    => (2, May)
+        ! MemRefHandle("global_var")   => (1, May)
 
 
 
@@ -61,6 +58,6 @@
         !
         !   [  SetId  =>  Virtual Address ]
         ! ==================================
-        ! SetId(1) => { LocTuple(1:1, Must }
-        ! SetId(2) => { LocTuple(2:2), Must }
+        ! SetId(1) => { LocTuple(2:2, May }
+        ! SetId(2) => { LocTuple(2:2, May }
 

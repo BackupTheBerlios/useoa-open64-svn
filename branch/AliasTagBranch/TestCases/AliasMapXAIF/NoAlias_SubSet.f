@@ -16,7 +16,12 @@
 !          for the arrays as complete refereces.
 !          It needs special handling of complete array references.
 !
-! Priority: ??
+!          I discussed this issue in the meeting with Michelle on
+!          April 8th 2008, Michelle suggests that we would like to do 
+!          whole array analysis only if that would make a significant
+!          difference for OpenAD.
+!
+! Note :   To Date April 8th 2008, all memory references are "May".
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -37,18 +42,10 @@
 
         ! ========= AliasTagFIAlias Results =========
         !
-        !   [  MemRefExpr => AliasTags ]
-        !   ============================
-        ! NamedRef("local_array1")              => ((1,2), Must)
-        ! SubSetRef(NamedRef("local_array1"))   => (2, May)
-        ! NamedRef("local_array2")              => ((3,4), Must)
-        ! SubSetRef(NamedRef("local_Array2"))   => (4, May)
-        !
-        !
         !   [ MemRefHandle => AliasTags ]
         !   =============================
-        ! MemRefHandle("local_array1[]")    => (2, May)
-        ! MemRefHandle("local_array2[]")    => (4, May)
+        ! MemRefHandle("local_array1[]")    => AliasTagResults(3, May)
+        ! MemRefHandle("local_array2[]")    => AliasTagResults(4, May)
 
 
 
@@ -65,7 +62,7 @@
         !
         !   [  SetId  =>  Virtual Address ]
         ! ==================================
-        ! SetId(1) => { LocTuple(2:2, Must }
-        ! SetId(2) => { LocTuple(4:4), Must }
+        ! SetId(1) => { LocTuple(3:3, May }
+        ! SetId(2) => { LocTuple(4:4, May }
 
 

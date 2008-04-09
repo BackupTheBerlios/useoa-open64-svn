@@ -11,6 +11,7 @@
 !
 ! Status : No Issues
 !
+! Note: To Date April 8th 2008, all memory references are "May".
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! Example :
@@ -41,29 +42,18 @@
 
          ! ========= AliasTagFIAlias Results =========
          !
-         !   [ MemRefExpr => AliasTags ]
-         !   ===========================
-         ! NamedRef("red_ferrari")                      => ((1,2), May)
-         ! FieldAccess(NamedRef(red_ferrari), labor")   => (2, May)
-         ! NamedRef("x")                                => (3, May)
-         !
-         !   [ MemRefHandle => AliasTags ]
-         !   =============================
-         ! MemRefHandle("foo::red_ferrari%labor") => (2, May)
-         ! MemRefHandle("foo::x")                 => (3, May)
+         ! MemRefHandle("X") => (2, May)
+         ! MemRefHandle("Red_Ferrari%labor") => 3
   
-
-
-
-                     
 
           ! ======== AliasMapXAIF Results ============== 
           ! 
           !   [  MemRefHandle => SetId ]
           !   ===========================
-          ! MemRefHandle("foo::red_ferrari%labor") => SetId(1)
-          ! MemRefHandle("foo::x")                 => SetId(2)
           !
+          ! MemRefHandle("X") => SetId(1)
+          ! MemRefHandle("Red_Ferrari%labor") => SetId(2)
+ 
           !   [  SetId  =>  Virtual Address ]
           ! ================================== 
           ! SetId(1) => { LocTuple(2:2, May) }

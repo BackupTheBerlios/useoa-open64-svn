@@ -22,3 +22,15 @@ echo "Testing TestCases/AliasMapXAIF/NoAlias_SubSet.B, TestResults/AliasMapXAIF/
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_SubSet.B > t
 diff t TestResults/AliasMapXAIF/NoAlias_SubSet.B.out
 
+echo "Testing TestCases/AliasMapXAIF/Param_Alias.B, TestResults/AliasMapXAIF/Param_Alias.B.out "
+./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/Param_Alias.B > t
+diff t TestResults/AliasMapXAIF/Param_Alias.B.out
+
+echo "Testing TestCases/AliasMapXAIF/multiple_calls.B, TestResults/AliasMapXAIF/multiple_calls.B.out "
+./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/multiple_calls.B > t
+diff t TestResults/AliasMapXAIF/multiple_calls.B.out
+
+echo "Testing TestCases/AliasMapXAIF/pointer_to_local.B, TestResults/AliasMapXAIF/pointer_to_local.B.out "
+./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/pointer_to_local.B > t
+diff t TestResults/AliasMapXAIF/pointer_to_local.B.out
+

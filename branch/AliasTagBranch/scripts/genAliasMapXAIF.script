@@ -10,3 +10,9 @@ echo "Generating TestResults/AliasMapXAIF/NoAlias_FieldAccess.B.out"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_FieldAccess.B > TestResults/AliasMapXAIF/NoAlias_FieldAccess.B.out
 echo "Generating TestResults/AliasMapXAIF/NoAlias_SubSet.B.out"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_SubSet.B > TestResults/AliasMapXAIF/NoAlias_SubSet.B.out
+echo "Generating TestResults/AliasMapXAIF/Param_Alias.B.out"
+./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/Param_Alias.B > TestResults/AliasMapXAIF/Param_Alias.B.out
+echo "Generating TestResults/AliasMapXAIF/multiple_calls.B.out"
+./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/multiple_calls.B > TestResults/AliasMapXAIF/multiple_calls.B.out
+echo "Generating TestResults/AliasMapXAIF/pointer_to_local.B.out"
+./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/pointer_to_local.B > TestResults/AliasMapXAIF/pointer_to_local.B.out

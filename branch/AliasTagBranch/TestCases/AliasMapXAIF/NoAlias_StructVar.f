@@ -17,6 +17,8 @@
 !       therefore gets multiple AliasTags (indicates red_ferrari and
 !       red_ferrari%labor overlap).
 !
+! Note:  To Date April 8th 2008, all memory references are "May".
+!
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -52,37 +54,26 @@
 
           ! ========= AliasTagFIAlias Results =========
           !
-          !   [ MemRefExpr  =>  AliasTag ]
-          !   ============================
-          ! NamedRef("red_ferrari")           => ((1,2), Must)
-          ! NamedRef("black_berry")           => (3, Must)
-          ! NamedRef("red_ferrari%labor")     => ((2,2), May)
-          !
-          !
           !   [ MemRefHandle  =>  AliasTag]
           !   =============================
-          ! MemRefHandle("red_ferrari")       => ((1,2), Must)
-          ! MemRefHandle("black_berry")       => (3, Must)
-          ! MemRefHandle("red_ferrari%labor") => ((2,2), May)
-
-
-
+          !   MemRefHandle(RED_FERRARI%LABOR) => ((2,4), May)    
+          !   MemRefHandle(BLACK_BERRY)       => (1, May)
+          !   MemRefHandle(X:0:.predef_F4)    => (3, May)
 
 
           ! ======== AliasMapXAIF Results ================
           !
           !   [  MemRefHandle => SetId ]
           !   ===========================
-          ! MemRefHandle("red_ferrari")        => SetId(1)
-          ! MemRefHandle("black_berry")        => SetId(2)
-          ! MemRefHandle("red_ferrari%labor")  => SetId(3)
-          !
+          !   MemRefHandle(RED_FERRARI%LABOR) => SetId(1)
+          !   MemRefHandle(BLACK_BERRY)       => SetId(2)
+          !   MemRefHandle(X:0:.predef_F4)    => SetId(3)
           !
           !   [  SetId  =>  Virtual Address ]
           ! ==================================
-          ! SetId(1) => { LocTuple(1:1, May),
-          !               LocTuple(2:2, May) }
-          ! SetId(2) => { LocTuple(3:3, May}
-          ! SetId(3) => { LocTuple(2:2, May) }
+          ! SetId(1) => { LocTuple(2:2, May),
+          !               LocTuple(4:4, May) }
+          ! SetId(2) => { LocTuple(1:1, May}
+          ! SetId(3) => { LocTuple(3:3, May) }
 
 
