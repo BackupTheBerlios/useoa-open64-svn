@@ -12,6 +12,9 @@
 ! Status : No Issues
 !
 ! Note: To Date April 8th 2008, all memory references are "May".
+!
+! Author : Priyadarshini Malusare, Argonne National Laboratory, April 8th 2008
+!
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! Example :
@@ -43,7 +46,7 @@
          ! ========= AliasTagFIAlias Results =========
          !
          ! MemRefHandle("X") => (2, May)
-         ! MemRefHandle("Red_Ferrari%labor") => 3
+         ! MemRefHandle("Red_Ferrari%labor") => (3, May)
   
 
           ! ======== AliasMapXAIF Results ============== 

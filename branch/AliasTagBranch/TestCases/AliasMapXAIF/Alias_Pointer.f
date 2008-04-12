@@ -23,6 +23,7 @@
 !          - MemRefHandle(q) => (2, Must)
 !          - MemRefHandle(*p) =>  ((2,3), May)
 !         
+! Author : Priyadarshini Malusare, Argonne National Laboratory, April 8th 2008
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
