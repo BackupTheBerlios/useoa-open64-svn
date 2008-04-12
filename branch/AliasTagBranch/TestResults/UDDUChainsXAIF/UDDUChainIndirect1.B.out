@@ -1,0 +1,19 @@
+Test UDDUChains analysis
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[3] = { , <StmtHandle(0)> , <P:0:anon_ptr. = 5>  }
+ChainsSet[4] = { , <StmtHandle(0)> , <P:0:anon_ptr. = 5> , <A:0:.predef_F8 =     3.000000000000000>  }
+ChainsSet[5] = { , <M:0:.predef_F8 = T:0:.predef_F8> , <N:0:.predef_F8 = A:0:.predef_F8>  }
+ChainsSet[6] = { , <N:0:.predef_F8 = A:0:.predef_F8>  }
+MemRef mapping to UDDUChains sets:
+(47394235077568) I:0:.predef_I4 --> 2
+(47394235077736) P:0:anon_ptr. --> 1
+(47394235077904) P:0:anon_ptr. --> 1
+(47394235078008) P:0:anon_ptr. --> 5
+(47394235078112) M:0:.predef_F8 --> 1
+(47394235078152) T:0:.predef_F8 --> 3
+(47394235078216) A:0:.predef_F8 --> 6
+(47394235078320) N:0:.predef_F8 --> 1
+(47394235078360) A:0:.predef_F8 --> 4

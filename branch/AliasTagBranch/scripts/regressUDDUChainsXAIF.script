@@ -1,0 +1,28 @@
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainConditional.B, TestResults/UDDUChainsXAIF/UDDUChainConditional.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainConditional.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainConditional.B.out
+
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainInterProcedural1.B, TestResults/UDDUChainsXAIF/UDDUChainInterProcedural1.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainInterProcedural1.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainInterProcedural1.B.out
+
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainNestedGlobals.B, TestResults/UDDUChainsXAIF/UDDUChainNestedGlobals.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainNestedGlobals.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainNestedGlobals.B.out
+
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainIndirect1.B, TestResults/UDDUChainsXAIF/UDDUChainIndirect1.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainIndirect1.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainIndirect1.B.out
+
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainInterProcedural2.B, TestResults/UDDUChainsXAIF/UDDUChainInterProcedural2.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainInterProcedural2.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainInterProcedural2.B.out
+
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainIndirect2.B, TestResults/UDDUChainsXAIF/UDDUChainIndirect2.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainIndirect2.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainIndirect2.B.out
+
+echo "Testing TestCases/UDDUChainsXAIF/UDDUChainLoop.B, TestResults/UDDUChainsXAIF/UDDUChainLoop.B.out "
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainLoop.B > t
+diff t TestResults/UDDUChainsXAIF/UDDUChainLoop.B.out
+

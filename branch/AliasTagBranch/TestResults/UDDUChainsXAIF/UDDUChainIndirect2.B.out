@@ -1,0 +1,22 @@
+Test UDDUChains analysis
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+MemRef mapping to UDDUChains sets:
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[3] = { , <StmtHandle(0)> ,  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/UDDUChainsXAIF/UDDUChainIndirect2.f"
+U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+< =     5.300000>  }
+ChainsSet[4] = { , U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+<X:0:.predef_F4 = 0:>  }
+MemRef mapping to UDDUChains sets:
+(47894743717192) FIRSTPTR:0:anon_ptr. --> 1
+U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+(47894743717376)  --> 4
+(47894743717560) X:0:.predef_F4 --> 1
+U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+(47894743717600) 0: --> 3

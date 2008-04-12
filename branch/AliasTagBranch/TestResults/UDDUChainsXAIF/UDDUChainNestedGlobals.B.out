@@ -1,0 +1,37 @@
+Test UDDUChains analysis
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+MemRef mapping to UDDUChains sets:
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[3] = { , <StmtHandle(0)> , <T:0:.predef_F8 = BARX:0:.predef_F8>  }
+ChainsSet[4] = { , <BARY:0:.predef_F8 = T:0:.predef_F8>  }
+MemRef mapping to UDDUChains sets:
+(47727743534440) T:0:.predef_F8 --> 4
+(47727743534480) BARX:0:.predef_F8 --> 2
+(47727743534544) BARX:0:.predef_F8 --> 2
+(47727743534584) BARY:0:.predef_F8 --> 2
+(47727743534648) BARY:0:.predef_F8 --> 2
+(47727743534688) T:0:.predef_F8 --> 3
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+MemRef mapping to UDDUChains sets:
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[5] = { , <StmtHandle(0)> , <GX:0:.predef_F8 = 0:X:0:anon_ptr.(1)>  }
+ChainsSet[6] = { , <StmtHandle(0)> , <Y:0:anon_ptr.(1) = GX:0:.predef_F8>  }
+MemRef mapping to UDDUChains sets:
+(47727743536520) GX:0:.predef_F8 --> 6
+(47727743536560) 0:X:0:anon_ptr.(1) --> 2
+(47727743536792) Y:0:anon_ptr.(1) --> 2
+(47727743536832) GX:0:.predef_F8 --> 5
+(47727743537064) Y:0:anon_ptr.(2) --> 2
+(47727743537104) GY:0:.predef_F8 --> 2

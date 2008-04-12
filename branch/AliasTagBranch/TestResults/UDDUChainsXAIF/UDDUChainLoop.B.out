@@ -1,0 +1,27 @@
+Test UDDUChains analysis
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[3] = { , <StmtHandle(0)> , <I:0:.predef_I4 = 1> , <I:0:.predef_I4 = I:0:.predef_I4+1>  }
+ChainsSet[4] = { , <StmtHandle(0)> , <X:0:.predef_I4 = 2> , <X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4>  }
+ChainsSet[5] = { , <StmtHandle(0)> , <Y:0:.predef_I4 = 2> , <Y:0:.predef_I4 = 5> , <Y:0:.predef_I4 = 3>  }
+ChainsSet[6] = { , <X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4> , <Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4>  }
+ChainsSet[7] = { , <do_loop (I:0:.predef_I4<=10)> , <I:0:.predef_I4 = I:0:.predef_I4+1>  }
+ChainsSet[8] = { , <if (X:0:.predef_I4>=0)> , <Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4>  }
+MemRef mapping to UDDUChains sets:
+(46952285356880) Y:0:.predef_I4 --> 6
+(46952285357112) I:0:.predef_I4 --> 7
+(46952285357232) I:0:.predef_I4 --> 3
+(46952285357336) I:0:.predef_I4 --> 7
+(46952285357416) I:0:.predef_I4 --> 3
+(46952285357584) X:0:.predef_I4 --> 8
+(46952285357776) X:0:.predef_I4 --> 4
+(46952285357944) Y:0:.predef_I4 --> 6
+(46952285358048) X:0:.predef_I4 --> 8
+(46952285358128) Y:0:.predef_I4 --> 5
+(46952285358168) Y:0:.predef_I4 --> 5
+(46952285358296) Y:0:.predef_I4 --> 6
+(46952285358400) Z:0:.predef_I4 --> 1
+(46952285358480) X:0:.predef_I4 --> 4
+(46952285358520) Y:0:.predef_I4 --> 5

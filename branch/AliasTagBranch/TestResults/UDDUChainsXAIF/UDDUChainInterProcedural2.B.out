@@ -1,0 +1,34 @@
+Test UDDUChains analysis
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[3] = { , <StmtHandle(0)> , <bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)> , <bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)>  }
+ChainsSet[4] = { , <StmtHandle(0)> , <M:0:.predef_I4 = 2> , <P:0:.predef_I4 = 5> , <bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)> , <M:0:.predef_I4 = 5> , <P:0:.predef_I4 = 2> , <bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)>  }
+ChainsSet[5] = { , <bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)> , <bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)> , <F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4>  }
+ChainsSet[6] = { , <bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)> , <F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4>  }
+MemRef mapping to UDDUChains sets:
+(47152098620360) M:0:.predef_I4 --> 5
+(47152098620464) P:0:.predef_I4 --> 5
+(47152098620864) &X:0:.predef_I4 --> 2
+(47152098620968) M:0:.predef_I4 --> 6
+(47152098621072) P:0:.predef_I4 --> 6
+(47152098621472) &X:0:.predef_I4 --> 2
+(47152098621576) F:0:.predef_I4 --> 2
+(47152098621656) X:0:.predef_I4 --> 2
+(47152098621736) V:0:.predef_I4 --> 3
+(47152098621816) M:0:.predef_I4 --> 4
+(47152098621856) P:0:.predef_I4 --> 4
+============= ChainsXAIF ============
+ChainsSet[0] = {  }
+ChainsSet[1] = {  }
+ChainsSet[2] = { , <StmtHandle(0)>  }
+ChainsSet[7] = { , <StmtHandle(0)> , <C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4>  }
+ChainsSet[8] = { , <StmtHandle(0)> , <B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4>  }
+MemRef mapping to UDDUChains sets:
+(47152098622872) C:0:.predef_I4 --> 8
+(47152098622952) A:0:.predef_I4 --> 2
+(47152098622992) B:0:.predef_I4 --> 2
+(47152098623056) B:0:.predef_I4 --> 2
+(47152098623136) C:0:.predef_I4 --> 7
+(47152098623176) D:0:.predef_I4 --> 2

@@ -1,0 +1,14 @@
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainConditional.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainConditional.B > TestResults/UDDUChainsXAIF/UDDUChainConditional.B.out
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainInterProcedural1.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainInterProcedural1.B > TestResults/UDDUChainsXAIF/UDDUChainInterProcedural1.B.out
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainNestedGlobals.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainNestedGlobals.B > TestResults/UDDUChainsXAIF/UDDUChainNestedGlobals.B.out
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainIndirect1.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainIndirect1.B > TestResults/UDDUChainsXAIF/UDDUChainIndirect1.B.out
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainInterProcedural2.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainInterProcedural2.B > TestResults/UDDUChainsXAIF/UDDUChainInterProcedural2.B.out
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainIndirect2.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainIndirect2.B > TestResults/UDDUChainsXAIF/UDDUChainIndirect2.B.out
+echo "Generating TestResults/UDDUChainsXAIF/UDDUChainLoop.B.out"
+./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainLoop.B > TestResults/UDDUChainsXAIF/UDDUChainLoop.B.out
