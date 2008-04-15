@@ -2,7 +2,7 @@
 InterActiveFortran(
     Procedure( head_::head_ ): 
     ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/Activity/activity_proc_call1.f"
+             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/activity_proc_call1.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()
                 StmtHandle(T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8)
@@ -31,8 +31,6 @@ StmtHandle()
                 # Deref(NamedRef(head_::F))
             ) ] 
     )
-    ActiveMemRefSet([  ] 
-    )
     Procedure( head_::bar_ ): 
     ActiveStmtSet([ 
             PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -51,8 +49,6 @@ StmtHandle()
                 # NamedRef(head_::T2)
                 # Deref(NamedRef(bar_::B))
             ) ] 
-    )
-    ActiveMemRefSet([  ] 
     )
     ActiveSymSet: [ 
         SymHandle(head_::X)

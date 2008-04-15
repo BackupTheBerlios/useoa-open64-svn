@@ -14,3 +14,15 @@ echo "Testing TestCases/Activity/simple_if2.B, TestResults/ICFGActive/simple_if2
 ./test-open64 --oa-ICFGActivity TestCases/Activity/simple_if2.B > t
 diff t TestResults/ICFGActive/simple_if2.B.out
 
+echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/ICFGActive/sideEffect_3.B.out Tested by PLM 04/15/08"
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_3.B > t
+diff t TestResults/ICFGActive/sideEffect_3.B.out
+
+echo "Testing TestCases/Activity/multiple_calls1.B, TestResults/ICFGActive/multiple_calls1.B.out Tested by PLM 04/15/08"
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls1.B > t
+diff t TestResults/ICFGActive/multiple_calls1.B.out
+
+echo "Testing TestCases/Activity/multiple_calls2.B, TestResults/ICFGActive/multiple_calls2.B.out Tested by PLM 04/15/08"
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls2.B > t
+diff t TestResults/ICFGActive/multiple_calls2.B.out
+

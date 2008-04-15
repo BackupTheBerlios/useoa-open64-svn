@@ -6,3 +6,9 @@ echo "Generating TestResults/ICFGActive/activity_proc_call1.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/activity_proc_call1.B > TestResults/ICFGActive/activity_proc_call1.B.out
 echo "Generating TestResults/ICFGActive/simple_if2.B.out"
 ./test-open64 --oa-ICFGActivity TestCases/Activity/simple_if2.B > TestResults/ICFGActive/simple_if2.B.out
+echo "Generating TestResults/ICFGActive/sideEffect_3.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/sideEffect_3.B > TestResults/ICFGActive/sideEffect_3.B.out
+echo "Generating TestResults/ICFGActive/multiple_calls1.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls1.B > TestResults/ICFGActive/multiple_calls1.B.out
+echo "Generating TestResults/ICFGActive/multiple_calls2.B.out"
+./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls2.B > TestResults/ICFGActive/multiple_calls2.B.out

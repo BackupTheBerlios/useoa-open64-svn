@@ -2,7 +2,7 @@
 InterActiveFortran(
     Procedure( foo_::foo_ ): 
     ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/Activity/argumentArrayIndex3.f"
+             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/argumentArrayIndex3.f"
 PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
 StmtHandle()
                 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -30,8 +30,6 @@ StmtHandle()
                 # Deref(NamedRef(head_::Y))
                 # SubSetRef(NamedRef(head_::Q))
             ) ] 
-    )
-    ActiveMemRefSet([  ] 
     )
     Procedure( foo_::head_ ): 
     ActiveStmtSet([ 
@@ -63,8 +61,6 @@ StmtHandle()
                 # Deref(NamedRef(head_::Y))
                 # SubSetRef(NamedRef(head_::Q))
             ) ] 
-    )
-    ActiveMemRefSet([  ] 
     )
     ActiveSymSet: [ 
         SymHandle(foo_::A)

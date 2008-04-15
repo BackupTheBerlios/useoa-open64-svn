@@ -5,16 +5,12 @@ InterActiveFortran(
     )
     ActiveTagSet => MemRefExprSet([  ] 
     )
-    ActiveMemRefSet([  ] 
-    )
     Procedure( foo_::bar_ ): 
     ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([  ] 
     )
-    ActiveMemRefSet([  ] 
-    )
     ActiveSymSet: [  ] 
     mNumIterUseful: 1
-    mNumIterVary: 1
+    mNumIterVary: 3
 )
