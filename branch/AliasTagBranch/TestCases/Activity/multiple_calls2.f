@@ -39,7 +39,7 @@
 c$openad INDEPENDENT(x)
          call bar(x,a,y)
          call bar(x,a,y)
-c$openad INDEPENDENT(y)
+c$openad DEPENDENT(y)
       end subroutine
 
       subroutine bar(f,b,g)
@@ -128,7 +128,8 @@ c$openad INDEPENDENT(y)
 !                          [u: y,a,x]  [v: x]      [iA: x]
 !         call bar(x,a,y)
 !         
-!                          [u: y,a,x]  [v: x,a,y]  [iA: x,a,y]                      !         call bar(x,a,y) 
+!                          [u: y,a,x]  [v: x,a,y]  [iA: x,a,y]   
+!         call bar(x,a,y) 
 !                          [u: y]      [v: x,a,y]  [iA: y]
 !      end subroutine
 !

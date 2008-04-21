@@ -39,7 +39,9 @@
                 p=>a               ! Defs = {p},      Uses = { }
             end if
 
-            p=5                    ! Defs = {*p},     Uses = { }
+            p=5                    ! Defs = {*p},     Uses = { }   
+//add the Use of P
+
             m=t                    ! Defs = {m},      Uses = {t}
             a=3                    ! Defs = {a},      Uses = { }
             n=a                    ! Defs = {n},      Uses = {a}

@@ -299,7 +299,7 @@ main(int argc, char* argv[])
 
      case 12:
      {
-        //TestIR_OAICFGReachDefs(std::cout, pu_forest, irInterface);
+        TestIR_OAICFGReachDefs(std::cout, pu_forest, irInterface);
         break;
      }
     
