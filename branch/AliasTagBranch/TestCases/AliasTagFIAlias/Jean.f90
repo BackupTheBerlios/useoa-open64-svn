@@ -13,11 +13,11 @@
 ! MUST in the AliasTagFIAlias output.      
 
 
-         subroutine foo(x,y) 
-           double precision, dimension(2) :: x
-           double precision y
+         subroutine foo(a,b) 
+           double precision, dimension(2) :: a
+           double precision b
 
-           y=x(1)*x(2)    ! AliasTag("foo::x()") => (4,MAY)
+           b=a(1)*a(2)    ! AliasTag("foo::x()") => (4,MAY)
 
          end subroutine
 
@@ -42,5 +42,39 @@
                                ! AliasTag("foo::py")  => (5, MUST)
 
          end subroutine
+
+
+
+! MemRefHandle => AliasTags
+! =========================
+! MemRefHandle(B)   => (12,13), May
+! MemRefHandle(A(1))=> (14),    May
+! MemRefHandle(A(2))=> (14),    May
+! MemRefHandle(X)   => (7),     Must
+! MemRefHandle(Y)   => (9),     Must
+
+
+! MemRefExpr => AliasTags
+! =======================
+! NamedRef(A) => (3),        Must, Local
+! NamedRef(B) => (5),        Must, Local
+! NamedRef(X) => (7),        Must, Local
+! NamedRef(Y) => (9),        Must, Local
+! NamedRef(PX)=> (10,11,14), May,  Local
+! NamedRef(PY)=> (13),       Must, Local
+! *NamedRef(A)=> (10,11,14), May,  Local
+! *NamedRef(B)=> (12,13),    May,  Local
+! *NamedRef(X)=> (10,11),    May,  Local
+! *NamedRef(Y)=> (12,13),    May,  Local
+! *NamedRef(A)[]=>(14)       May, Local
+
+
+
+
+
+
+
+
+
 
 

@@ -8,10 +8,6 @@
 !      
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! Problem: Intutive analysis does not match with the actual output.
-! AliasTags of head::*x, head::*x() does not overlap in the output of
-! AliasTagFIAlias.      
-
 
         subroutine foo(a,b)
           double precision a
@@ -30,23 +26,49 @@ c$openad XXX Template ad_template
           integer k,l
 c$openad INDEPENDENT(x)
 
-          call foo(x(k),y)        ! AliasTag("head::*x")   => ({1,2},MUST)
-                                  ! AliasTag("head::*x()") => (2,MAY)   
-                                  ! AliasTag("head::x")    => (3,MUST) 
-                                  ! AliasTag("foo::*a")    => (2,MAY)
-                                  ! AliasTag("foo::a")     => (4,MUST)
-                                  
-                                  ! AliasTag("head::*y")   => (5,MAY)
-                                  ! AliasTag("head::y")    => (6,MUST)
-                                  ! AliasTag("foo::*b")    => (5,MAY)
-                                  ! AliasTag("foo::b")     => (7,MUST)
-  
+          call foo(x(k),y)   
 
-          call foo(p(k),q(l))     ! AliasTag("head::p()")  => (2,MAY)    
-                                  ! AliasTag("head::p")    => ({8,2}, MUST)
-                                  ! AliasTag("head::q()")  => (5,MAY)
-                                  ! AliasTag("head::q")    => ((9,5), MUST)
+          call foo(p(k),q(l))
 
 c$openad DEPENDENT(y)
  
         end subroutine
+
+
+! AliasTagFIAlias
+! ===============
+
+! MemRefHandle => AliasTag
+! ========================
+! MemRefHandle(B) => 19
+! MemRefHandle(A) => 18
+! MemRefHandle(K) => 11
+! MemRefHandle(Y) => 9
+! MemRefHandle(L) => 13
+
+
+! MemRefExpr => AliasTag
+! ======================
+! NamedRef(A) => 3, Must, Local
+! NamedRef(B) => 5, Must, Local
+! NamedRef(X) => 7, Must, Local
+! NamedRef(Y) => 9, Must, Local
+! NamedRef(K) => 11,Must, Local
+! NamedRef(L) => 13,Must, Local
+! NamedRef(P) => (14,15,18), May, Local
+! NamedRef(Q) => (16,17,19), May, Local
+! *NamedRef(A)=> (18), May, Local
+! *NamedRef(B)=> (19), May, Local
+! *NamedRef(X)=> (18,20), May, Local
+! *NamedRef(Y)=> (19), May, Local
+! NamedRef(P)[]=>(18), May, Local
+! NamedRef(Q)[]=>(19), May, Local
+! *NamedRef(X)[]=>(18), May, Local
+
+
+
+
+
+
+
+

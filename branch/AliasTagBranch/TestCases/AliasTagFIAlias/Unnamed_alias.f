@@ -8,6 +8,8 @@
 !      
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
 
+! Need to find out why a1 and a2 are non-local, because they are
+! formal reference parameters to foo and bar
 
 
        subroutine foo(a1)  
@@ -23,30 +25,52 @@
        program head
          integer i,j
          
-         i=1               ! AliasTag("head::i")  => (1,MAY) 
+         i=1    
          
+         j=4       
          
-         j=4               ! AliasTag("head::j")  => (2,MUST)
-         
-         
-         call foo(i)       ! AliasTag("foo::*a1")  => (1,MUST)
-                           ! AliasTag("foo::a1")   => (3,MUST)
+         call foo(i)   
                            
-                           
-         call foo(2)       ! AliasTag("head::Unnamed(2)") => (1,MAY)
-                           ! AliasTag("head::i")          => (1,MAY)
-                           ! AliasTag("foo::*a1")         => (1,MAY)
+         call foo(2)      
 
-                           
-         call foo(i+j)     ! AliasTag("head::Unnamed(i+j)") => (1,MAY)
+         call foo(i+j) 
          
+         call bar(j) 
          
-         call bar(j)       ! AliasTag("bar::*a2")   => (2,MUST)
-                           ! AliasTag("bar::a2")    => (4,MUST)
-         
-         
-         call bar(3)       ! AliasTag("head::Unnamed(3)")  => (2,MAY)
-                           ! AliasTag("head::j")           => (2,MAY)
-                           ! AliasTag("bar::*a2")          => (2,MAY)
+         call bar(3)    
          
        end
+
+
+! AliasTagFIAlias Output
+! ======================
+
+! MemRefHandle => AliasTag
+! ========================
+
+! MemRefHandle(I)  => 6,     Must
+! MemRefHandle(J)  => 8,     Must
+! MemRefHandle(2)  => (5,6), May
+! MemRefHandle(I+J)=> (5,6), May
+! MemRefHandle(I)  => 6,     Must
+! MemRefHandle(J)  => 8,     Must
+! MemRefHandle(3)  => (7,8), May
+
+! MemRefExpr => AliasTag
+! ======================
+
+! NamedRef(A1) => 3, May, non-local
+! NamedRef(A2) => 4, May, non-local
+! NamedRef(I)  => 6, Must,local
+! NamedRef(J)  => 8, Must, Local
+! UnnamedRef(2)=>(5,6), May, Local
+! UnnamedRef(I+J)=>(5,6), May, Local
+! UnnamedRef(3)=> (7,8), May, Local
+! *NamedRef(A1)=> (5,6), May, non-local
+! *NamedRef(A2)=> (7,8), May, non-local
+
+
+
+
+
+
