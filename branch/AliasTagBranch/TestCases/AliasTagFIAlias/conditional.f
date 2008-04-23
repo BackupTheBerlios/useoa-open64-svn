@@ -2,7 +2,7 @@
 !
 ! Aliasing in the presence of intraprocedural control flow      
 !      
-! AliasPairs : (*q,r,s)       
+! Aliased MREs : (*q,r,s)       
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
 
       program main
@@ -13,14 +13,15 @@
           if( t < 5 ) then     ! AliasTag("t") => (1,MUST)
               
               q=>r             ! AliasTag("q") => (2,MUST)
-                               ! AliasTag("r") => (3,MAY)
+              r=24             ! AliasTag("r") => (3,MUST)
                                
           else 
               
-              q=>s             ! AliasTag("s") => (4,MAY)
+              q=>s             ! AliasTag("q") => (2,MUST)           
+              s=42             ! AliasTag("s") => (4,MUST)
               
           endif
 
-          t=q                  ! AliasTag(*q) => (3,MAY)
+          t=q                  ! AliasTag(*q) => ({3,4,5},MAY)
           
       end program

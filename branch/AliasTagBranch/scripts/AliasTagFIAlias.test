@@ -6,10 +6,10 @@ driverexec::./test-open64 --oa-AliasTagFIAlias
 
 # list of tests
 #       input file,                 status
-test::pointer.B,                    Checked by PLM 02/14/08
-test::conditional.B,                Checked by PLM 02/14/08
-test::interalias_proc_call1.B,      Checked by PLM 02/14/08
-test::interalias_proc_call6.B,      Checked by PLM 02/14/08
+test::pointer.B,                    Checked by MMS 04/22/08
+test::conditional.B,                Checked by MMS 04/22/08
+test::interalias_proc_call1.B,      Checked by MMS 04/22/08
+test::interalias_proc_call6.B,      Checked by MMS 04/22/08
 test::interalias_proc_call5.B,      Checked by PLM 02/14/08
 test::Unnamed_alias.B,              Checked by PLM 02/14/08
 test::Jean.B,                       Checked by PLM 02/19/08

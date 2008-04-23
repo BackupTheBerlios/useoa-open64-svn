@@ -1,16 +1,16 @@
-echo "Testing TestCases/AliasTagFIAlias/pointer.B, TestResults/AliasTagFIAlias/pointer.B.out Checked by PLM 02/14/08"
+echo "Testing TestCases/AliasTagFIAlias/pointer.B, TestResults/AliasTagFIAlias/pointer.B.out Checked by MMS 04/22/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/pointer.B > t
 diff t TestResults/AliasTagFIAlias/pointer.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/conditional.B, TestResults/AliasTagFIAlias/conditional.B.out Checked by PLM 02/14/08"
+echo "Testing TestCases/AliasTagFIAlias/conditional.B, TestResults/AliasTagFIAlias/conditional.B.out Checked by MMS 04/22/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/conditional.B > t
 diff t TestResults/AliasTagFIAlias/conditional.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call1.B, TestResults/AliasTagFIAlias/interalias_proc_call1.B.out Checked by PLM 02/14/08"
+echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call1.B, TestResults/AliasTagFIAlias/interalias_proc_call1.B.out Checked by MMS 04/22/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call1.B > t
 diff t TestResults/AliasTagFIAlias/interalias_proc_call1.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call6.B, TestResults/AliasTagFIAlias/interalias_proc_call6.B.out Checked by PLM 02/14/08"
+echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call6.B, TestResults/AliasTagFIAlias/interalias_proc_call6.B.out Checked by MMS 04/22/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call6.B > t
 diff t TestResults/AliasTagFIAlias/interalias_proc_call6.B.out
 
@@ -22,19 +22,19 @@ echo "Testing TestCases/AliasTagFIAlias/Unnamed_alias.B, TestResults/AliasTagFIA
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Unnamed_alias.B > t
 diff t TestResults/AliasTagFIAlias/Unnamed_alias.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/Jean.B, TestResults/AliasTagFIAlias/Jean.B.out Checked by PLM 02/19/07"
+echo "Testing TestCases/AliasTagFIAlias/Jean.B, TestResults/AliasTagFIAlias/Jean.B.out Checked by PLM 02/19/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Jean.B > t
 diff t TestResults/AliasTagFIAlias/Jean.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call7.B, TestResults/AliasTagFIAlias/interalias_proc_call7.B.out Checked by PLM 02/19/07"
+echo "Testing TestCases/AliasTagFIAlias/interalias_proc_call7.B, TestResults/AliasTagFIAlias/interalias_proc_call7.B.out Checked by PLM 02/19/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call7.B > t
 diff t TestResults/AliasTagFIAlias/interalias_proc_call7.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/struct_pointer1.B, TestResults/AliasTagFIAlias/struct_pointer1.B.out "
+echo "Testing TestCases/AliasTagFIAlias/struct_pointer1.B, TestResults/AliasTagFIAlias/struct_pointer1.B.out Checked by PLM 02/26/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/struct_pointer1.B > t
 diff t TestResults/AliasTagFIAlias/struct_pointer1.B.out
 
-echo "Testing TestCases/AliasTagFIAlias/struct_pointer2.B, TestResults/AliasTagFIAlias/struct_pointer2.B.out "
+echo "Testing TestCases/AliasTagFIAlias/struct_pointer2.B, TestResults/AliasTagFIAlias/struct_pointer2.B.out Checked by PLM 02/26/08"
 ./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/struct_pointer2.B > t
 diff t TestResults/AliasTagFIAlias/struct_pointer2.B.out
 
