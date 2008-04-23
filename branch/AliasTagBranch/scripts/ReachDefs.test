@@ -1,0 +1,13 @@
+
+# comment in file.test
+# Regression tests for UDDUChains Analysis
+testname::ReachDefs
+inputdir::TestCases/ReachDefs
+outputdir::TestResults/ReachDefs
+driverexec::./test-open64 --oa-ReachDefs
+
+# list of tests
+#       input file,                  status
+
+test::pointer.B,
+

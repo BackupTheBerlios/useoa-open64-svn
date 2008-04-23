@@ -751,3 +751,9 @@
     Modifications to ManagerAliasTagFIAlias.
   - Compiled with OpenAnalysis revision 779.
 
+04/23/08  UseOA-Open64 svn trunk 308 Priyadarshini Malusare
+  - Added Reaching Definition Test suit
+  - Trying to Tests Pointer assignment as Reaching definition
+    to the program point where pointer is derefernced.
+
+

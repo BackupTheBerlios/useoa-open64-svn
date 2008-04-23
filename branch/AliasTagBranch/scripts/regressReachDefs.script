@@ -1,0 +1,4 @@
+echo "Testing TestCases/ReachDefs/pointer.B, TestResults/ReachDefs/pointer.B.out "
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/pointer.B > t
+diff t TestResults/ReachDefs/pointer.B.out
+

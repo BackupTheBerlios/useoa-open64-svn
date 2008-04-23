@@ -21,7 +21,10 @@ echo "########################### running regressICFGctive.script"
 source scripts/regressICFGActive.script
 
 
+echo "########################### running regressReachDefs.script"
+source scripts/regressReachDefs.script
+
+
 #echo "########################### running regressAliasTagXAIF.script"
 #source scripts/regressAliasTagXAIF.script
-
 
