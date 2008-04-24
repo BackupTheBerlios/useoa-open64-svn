@@ -43,12 +43,6 @@
 ! Analysis :
 ! =========
 
-         ! ========= AliasTagFIAlias Results =========
-         !
-         ! MemRefHandle("X") => (2, May)
-         ! MemRefHandle("Red_Ferrari%labor") => (3, May)
-  
-
           ! ======== AliasMapXAIF Results ============== 
           ! 
           !   [  MemRefHandle => SetId ]
@@ -59,8 +53,8 @@
  
           !   [  SetId  =>  Virtual Address ]
           ! ================================== 
-          ! SetId(1) => { LocTuple(2:2, May) }
-          ! SetId(2) => { LocTuple(3:3, May) }
+          ! SetId(1) => { LocTuple(4:4, Must) }
+          ! SetId(2) => { LocTuple(5:5, May) }
 
 
 

@@ -23,7 +23,8 @@
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
+! Problem: Not sure why red_ferrari gets 3 Tags
+! ==============================================
 
 ! Example : 
 ! ==========
@@ -54,28 +55,22 @@
 ! =========
 
 
-          ! ========= AliasTagFIAlias Results =========
-          !
-          !   [ MemRefHandle  =>  AliasTag]
-          !   =============================
-          !   MemRefHandle(RED_FERRARI%LABOR) => ((2,4), May)    
-          !   MemRefHandle(BLACK_BERRY)       => (1, May)
-          !   MemRefHandle(X:0:.predef_F4)    => (3, May)
-
-
           ! ======== AliasMapXAIF Results ================
           !
           !   [  MemRefHandle => SetId ]
           !   ===========================
-          !   MemRefHandle(RED_FERRARI%LABOR) => SetId(1)
+          !   MemRefHandle(RED_FERRARI)       => SetId(1)
           !   MemRefHandle(BLACK_BERRY)       => SetId(2)
           !   MemRefHandle(X:0:.predef_F4)    => SetId(3)
+          !   MemRefHandle(RED_FERRARI%LABOR) => SetId(4)
           !
           !   [  SetId  =>  Virtual Address ]
           ! ==================================
-          ! SetId(1) => { LocTuple(2:2, May),
-          !               LocTuple(4:4, May) }
-          ! SetId(2) => { LocTuple(1:1, May}
-          ! SetId(3) => { LocTuple(3:3, May) }
+          ! SetId(1) => { LocTuple(3:3, May),
+          !               LocTuple(4:4, May),
+          !               LocTuple(7:7, May) }
+          ! SetId(2) => { LocTuple(2:2, Must) }
+          ! SetId(2) => { LocTuple(6:6, Must}
+          ! SetId(3) => { LocTuple(7:7, May) }
 
 

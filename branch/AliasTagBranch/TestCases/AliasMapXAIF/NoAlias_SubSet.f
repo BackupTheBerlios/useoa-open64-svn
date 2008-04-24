@@ -42,29 +42,18 @@
 ! Analysis :
 ! ==========
 
-        ! ========= AliasTagFIAlias Results =========
-        !
-        !   [ MemRefHandle => AliasTags ]
-        !   =============================
-        ! MemRefHandle("local_array1[]")    => AliasTagResults(3, May)
-        ! MemRefHandle("local_array2[]")    => AliasTagResults(4, May)
-
-
-
-
-
 
         ! ======== AliasMapXAIF Results ==============
         !
         !   [  MemRefHandle => SetId ]
         !   ===========================
         ! MemRefHandle("local_array1[]")  => SetId(1)
-        ! MemRefHandle("global_array2[]") => SetId(2)
+        ! MemRefHandle("local_array2[]") => SetId(2)
         !
         !
         !   [  SetId  =>  Virtual Address ]
         ! ==================================
-        ! SetId(1) => { LocTuple(3:3, May }
-        ! SetId(2) => { LocTuple(4:4, May }
+        ! SetId(1) => { LocTuple(6:6, May }
+        ! SetId(2) => { LocTuple(5:5, May }
 
 

@@ -45,13 +45,6 @@
 ! Analysis :
 ! =========
 
-       ! ======== AliasTagFIAlias ================
-       ! MemRefhandle("T")  => AliasTagResults(3, May)
-       ! MemRefHandle("Q")  => AliasTagResults(1, May)
-       ! MemRefHandle("Q")  => AliasTagResults(1, May)
-       ! MemRefHandle("T")  => AliasTagResults(3, May)
-       ! MemRefHandle("Q")  => AliasTagResults(2, May)
-
        ! ======== AliasMapXAIF Results ==============
        !
        !   [  MemRefHandle => SetId ]
@@ -59,15 +52,15 @@
        !
        ! MemRefhandle("T")  => SetId(1)
        ! MemRefHandle("Q")  => SetId(2)
+       ! MemRefHandle("Q")  => SetId(2)
+       ! MemRefHandle("T")  => SetId(1)
        ! MemRefHandle("Q")  => SetId(3)
-       ! MemRefHandle("T")  => SetId(4)
-       ! MemRefHandle("Q")  => SetId(5)
 
        !   [  SetId  =>  Virtual Address ]
        ! ==================================
-       ! SetId(1) => { LocTuple(3:3, May) }
-       ! SetId(2) => { LocTuple(1:1, May) }
-       ! SetId(3) => { LocTuple(1:1, May) }
-       ! SetId(4) => { LocTuple(3:3, May) }
-       ! SetId(5) => { LocTuple(2:2, May) }
+       ! SetId(1) => { LocTuple(7:7, Must) }
+       ! SetId(2) => { LocTuple(2:2, Must) }
+       ! SetId(3) => { LocTuple(3:3, May) }
+       ! SetId(4) => { LocTuple(4:4, May) }
+       ! SetId(5) => { LocTuple(5:5, May) }
 

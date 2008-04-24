@@ -49,13 +49,6 @@
 ! Analysis :
 ! =========
 
-       ! ========= AliasTagFIAlias Results =========
-       ! 
-       ! MemRefHandle(P)  => AliasTagResults(1, May)
-       ! MemRefHandle(T)  => AliasTagResults(3, May)
-       ! MemRefHandle(P)  => AliasTagResults(2, May)
-
-
        ! ======== AliasMapXAIF Results ==============
        !
        !   [  MemRefHandle => SetId ]
@@ -67,7 +60,8 @@
 
        !   [  SetId  =>  Virtual Address ]
        ! ==================================
-       ! SetId(1) => { LocTuple(1:1, May) }
-       ! SetId(2) => { LocTuple(3:3, May} }
-       ! SetId(3) => { LocTuple(2:2, May)}
+       ! SetId(1) => { LocTuple(2:2, Must) }
+       ! SetId(2) => { LocTuple(6:6, Must) }
+       ! SetId(3) => { LocTuple(3:3, May) 
+       !               LocTuple(4:4, May) }
 
