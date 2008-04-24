@@ -6,12 +6,21 @@ AliasMapXAIF(ProcHandle(foo_::foo_)
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 1
-                        mEnd: 1
+                        mStart: 2
+                        mEnd: 2
                     )
-                    mFullOverlap: 0
+                    mFullOverlap: 1
                 ) ] 
             2	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 6
+                        mEnd: 6
+                    )
+                    mFullOverlap: 1
+                ) ] 
+            3	 => [ 
                 LocTuple(
                     mRange: 
                     LocRange(
@@ -19,13 +28,12 @@ AliasMapXAIF(ProcHandle(foo_::foo_)
                         mEnd: 3
                     )
                     mFullOverlap: 0
-                ) ] 
-            3	 => [ 
+                )    
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 2
-                        mEnd: 2
+                        mStart: 4
+                        mEnd: 4
                     )
                     mFullOverlap: 0
                 ) ] 

@@ -13,17 +13,17 @@ AliasMapXAIF(ProcHandle(mymodule_::foo_)
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 2
-                        mEnd: 2
+                        mStart: 4
+                        mEnd: 4
                     )
-                    mFullOverlap: 0
+                    mFullOverlap: 1
                 ) ] 
             2	 => [ 
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 3
-                        mEnd: 3
+                        mStart: 5
+                        mEnd: 5
                     )
                     mFullOverlap: 0
                 ) ] 

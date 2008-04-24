@@ -6,8 +6,8 @@ AliasMapXAIF(ProcHandle(foo_::foo_)
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 5
-                        mEnd: 5
+                        mStart: 8
+                        mEnd: 8
                     )
                     mFullOverlap: 0
                 ) ] 
@@ -15,19 +15,19 @@ AliasMapXAIF(ProcHandle(foo_::foo_)
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 2
-                        mEnd: 2
+                        mStart: 3
+                        mEnd: 3
                     )
-                    mFullOverlap: 0
+                    mFullOverlap: 1
                 ) ] 
             3	 => [ 
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 3
-                        mEnd: 3
+                        mStart: 5
+                        mEnd: 5
                     )
-                    mFullOverlap: 0
+                    mFullOverlap: 1
                 ) ] 
 
     mMemRefToIdMap: MemRefHandle	 => int
@@ -43,8 +43,8 @@ AliasMapXAIF(ProcHandle(foo_::bar_)
                 LocTuple(
                     mRange: 
                     LocRange(
-                        mStart: 5
-                        mEnd: 5
+                        mStart: 8
+                        mEnd: 8
                     )
                     mFullOverlap: 0
                 ) ] 
