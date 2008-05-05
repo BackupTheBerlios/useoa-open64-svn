@@ -9,14 +9,14 @@ driverexec::./test-open64 --oa-AliasMapXAIF
 # list of tests
 #       input file,                 status
 
-test::Alias_Pointer.B,              Checked by PLM 04/23/08
-test::NoAlias_StructVar.B,          Checked by PLM 04/23/08
-test::NoAlias_Named.B,              Checked by PLM 04/23/08
-test::NoAlias_Unnamed.B,            Checked by PLM 04/23/08
-test::NoAlias_FieldAccess.B,        Checked by PLM 04/23/08
-test::NoAlias_SubSet.B,             Checked by PLM 04/23/08
-test::Param_Alias.B,                Checked by PLM 04/23/08
-test::multiple_calls.B,             Checked by PLM 04/23/08 
-test::pointer_to_local.B,           Checked by PLM 04/23/08
+test::Alias_Pointer.B,              Checked by PLM 04/28/08
+test::NoAlias_StructVar.B,          Checked by PLM 04/28/08
+test::NoAlias_Named.B,              Checked by PLM 04/28/08
+test::NoAlias_Unnamed.B,            Checked by PLM 04/28/08
+test::NoAlias_FieldAccess.B,        Checked by PLM 04/28/08
+test::NoAlias_SubSet.B,             Checked by PLM 04/28/08
+test::Param_Alias.B,                Checked by PLM 04/28/08
+test::multiple_calls.B,             Checked by PLM 04/28/08 
+test::pointer_to_local.B,           Checked by PLM 04/28/08
 
 

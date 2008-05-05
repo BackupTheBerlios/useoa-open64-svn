@@ -12,30 +12,22 @@ StmtHandle()
     ActiveTagSet => MemRefExprSet([ 
             Tag(
                 mTagID: 2
-                # NamedRef(foo_::A)
                 # Deref(NamedRef(bar_::B))
             )    
             Tag(
                 mTagID: 3
+                # NamedRef(foo_::A)
+                # Deref(NamedRef(bar_::B))
+            )    
+            Tag(
+                mTagID: 5
                 # NamedRef(foo_::X)
                 # Deref(NamedRef(bar_::F))
             )    
             Tag(
-                mTagID: 4
+                mTagID: 7
                 # NamedRef(foo_::Y)
                 # Deref(NamedRef(bar_::G))
-            )    
-            Tag(
-                mTagID: 5
-                # NamedRef(bar_::F)
-            )    
-            Tag(
-                mTagID: 6
-                # NamedRef(bar_::B)
-            )    
-            Tag(
-                mTagID: 7
-                # NamedRef(bar_::G)
             ) ] 
     )
     Procedure( foo_::bar_ ): 
@@ -49,30 +41,22 @@ StmtHandle()
     ActiveTagSet => MemRefExprSet([ 
             Tag(
                 mTagID: 2
-                # NamedRef(foo_::A)
                 # Deref(NamedRef(bar_::B))
             )    
             Tag(
                 mTagID: 3
+                # NamedRef(foo_::A)
+                # Deref(NamedRef(bar_::B))
+            )    
+            Tag(
+                mTagID: 5
                 # NamedRef(foo_::X)
                 # Deref(NamedRef(bar_::F))
             )    
             Tag(
-                mTagID: 4
+                mTagID: 7
                 # NamedRef(foo_::Y)
                 # Deref(NamedRef(bar_::G))
-            )    
-            Tag(
-                mTagID: 5
-                # NamedRef(bar_::F)
-            )    
-            Tag(
-                mTagID: 6
-                # NamedRef(bar_::B)
-            )    
-            Tag(
-                mTagID: 7
-                # NamedRef(bar_::G)
             ) ] 
     )
     ActiveSymSet: [ 
@@ -82,6 +66,6 @@ StmtHandle()
             SymHandle(bar_::F)
             SymHandle(bar_::B)
             SymHandle(bar_::G) ] 
-    mNumIterUseful: 4
+    mNumIterUseful: 3
     mNumIterVary: 3
 )

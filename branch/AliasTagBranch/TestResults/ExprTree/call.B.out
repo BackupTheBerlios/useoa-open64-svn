@@ -1,4 +1,3 @@
-file nameTestCases/ExprTree/call.B
 ============================================
 StmtHandle:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ExprTree/call.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -239,7 +238,7 @@ graph EXPRESSION TREE:
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(func_::N)
-            mStrictlyLocal: 0
+            mStrictlyLocal: 1
         )
         mNumDeref: 1
     )

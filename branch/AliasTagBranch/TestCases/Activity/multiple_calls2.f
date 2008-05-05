@@ -125,19 +125,19 @@ c$openad DEPENDENT(y)
       ! =====================================
 
 !      subroutine foo
-!                          [u: y,a,x]  [v: x]      [iA: x]
+!                          [u: x,a,y]  [v: x]      [iA: a]
 !         call bar(x,a,y)
 !         
-!                          [u: y,a,x]  [v: x,a,y]  [iA: x,a,y]   
+!                          [u: x,a,y]  [v: x,a,y]  [iA: x,a,y]   
 !         call bar(x,a,y) 
 !                          [u: y]      [v: x,a,y]  [iA: y]
 !      end subroutine
 !
 !
 !      subroutine bar(f,b,g)
-!                          [u: *g,*b,*f] [v: *f]       [iA: *f]
+!                          [u: *g,*b,*f] [v: *f,*b,*g] [iA: *f,*b,*g]
 !         b=f
-!                          [u: *g,*b,*f] [v: *f,*b]    [iA: *f,*b]
+!                          [u: *g,*b,*f] [v: *f,*b,*g] [iA: *f,*b,*g]
 !         g=b
 !                          [u: *g,*b,*f] [v: *f,*b,*g] [iA: *f,*b,*g]
 !

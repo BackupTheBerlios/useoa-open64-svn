@@ -88,52 +88,52 @@ c$openad DEPENDENT(y)
 !
 
 !      subroutine head(x,y)
-                             !  [u:  y,*y,b,c,a,*x] 
-                             !  [v:  x,*x]
+                             !  [u:  *y,b,c,a,*x] 
+                             !  [v:  *x]
                              !  [iA: *x]
 !
 !         a = x * 5          Active Stmt  
 !
-                             !  [u:  y,*y,b,c,a]    
-                             !  [v:  x,*x,a]
+                             !  [u:  *y,b,c,a]    
+                             !  [v:  *x,a]
                              !  [iA: a]
 !
 !         b = a              Active Stmt
 !  
-                             !  [u:  y,*y,b,c,a] 
-                             !  [v:  x,*x,a,b]
+                             !  [u:  *y,b,c,a] 
+                             !  [v:  *x,a,b]
                              !  [iA: a,b]
 !
 !         if (a > 10) then   Active Stmt
 !           
-                             !  [u:  y,*y,b,c]
-                             !  [v:  x,*x,a,b]
+                             !  [u:  *y,b,c]
+                             !  [v:  *x,a,b]
                              !  [iA: b]
 !
 !            c = 3           Active Stmt
 !         
-                             !  [u:  y,*y,b,c]   
-                             !  [v:  x,*x,a,b]
+                             !  [u:  *y,b,c]   
+                             !  [v:  *x,a,b]
                              !  [iA: b]
 !         else
-                             !  [u:  y,*y,b,c,a]  
-                             !  [v:  x,*x,a,b]
+                             !  [u:  *y,b,c,a]  
+                             !  [v:  *x,a,b]
                              !  [iA: a,b]
 !
 !            c = a * (-1)    Active Stmt
 !           
-                             !  [u:  y,*y,b,c]     
-                             !  [v:  x,*x,a,b,c]
+                             !  [u:  *y,b,c]     
+                             !  [v:  *x,a,b,c]
                              !  [iA: b,c]
 !         end if 
-                             !  [u:  y,*y,b,c]  
-                             !  [v:  x,*x,a,b,c]
+                             !  [u:  *y,b,c]  
+                             !  [v:  *x,a,b,c]
                              !  [iA: b,c]
 !
 !         y = 3 * b + c      Active Stmt
 !
-                             !  [u:  y,*y]  
-                             !  [v:  x,*x,a,b,c,*y]
+                             !  [u:  *y]  
+                             !  [v:  *x,a,b,c,*y]
                              !  [iA: *y]
 !       end subroutine
 

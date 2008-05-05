@@ -96,11 +96,11 @@ c$openad DEPENDENT(y)
 !
 !       subroutine head()
 !
-                    ! [u: y,*y(),*x()] [v: *x,*x()]      [iA:*x()] 
+                    ! [u: y,y(),x,x()] [v: x,x()]      [iA:x,x()] 
 !
 !         call foo(x(1),y(1))  [Active Stmt]
 !
-                    ! [u: *y,*y()]     [v: *x,*x(),*y()] [iA:*y()]
+                    ! [u: y,y()]     [v: x,x(),y,y()]  [iA:y,y()]
 !
 !       end subroutine
 !

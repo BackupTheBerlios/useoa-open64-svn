@@ -79,22 +79,22 @@ c$openad DEPENDENT(f)
 
 !     subroutine head(x, f) 
 !
-!                         [u: f,*f,t1,t2,*x]  [v: x,*x]           [iA: x]           !      
+!                         [u: *f,t1,t2,*x]    [v: *x]             [iA: x]           !      
 !       t1=x*f            [Stmt: Active]
 !
-!                         [u: t1,*f,t1,t2]    [v: x,*x,t1]        [iA: t1]
+!                         [u: *f,t1,t2]       [v: *x,t1]          [iA: t1]
 !
 !       call bar(t1,t2)   [Stmt: Active]
 !
-!                         [u: f,*f,t1,t2]     [v: x,*x,t1,t2]     [iA: t1,t2]
+!                         [u: *f,t1,t2]       [v: *x,t1,t2]       [iA: t1,t2]
 !
 !       t3=f*30           [Stmt: InActive]
 !
-!                         [u: f,*f,t1,t2]     [v: x,*x,t1,t2]     [iA: t1,t2]
+!                         [u: *f,t1,t2]       [v: *x,t1,t2]       [iA: t1,t2]
 !
 !       f=t1+t2           [Stmt: Active]
 !
-!                         [u: f,*f]           [v: x,*x,t1,t2,*f]  [iA: *f]  
+!                         [u: *f]             [v: *x,t1,t2,*f]    [iA: *f]  
 !
 !     end subroutine
 !

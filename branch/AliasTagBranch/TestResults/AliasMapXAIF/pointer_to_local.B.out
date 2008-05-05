@@ -2,6 +2,7 @@ Test AliasMapXAIF analysis
 
 AliasMapXAIF(ProcHandle(main_::main_)
     mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
+            0	 => [  ] 
             1	 => [ 
                 LocTuple(
                     mRange: 
@@ -49,7 +50,9 @@ AliasMapXAIF(ProcHandle(main_::main_)
     mMemRefToIdMap: MemRefHandle	 => int
             MemRefHandle(T:0:.predef_I4)	 => 1
             MemRefHandle(Q:0:anon_ptr.)	 => 2
+            MemRefHandle(R:0:.predef_I4)	 => 0
             MemRefHandle(Q:0:anon_ptr.)	 => 2
+            MemRefHandle(S:0:.predef_I4)	 => 0
             MemRefHandle(T:0:.predef_I4)	 => 1
             MemRefHandle(Q:0:anon_ptr.)	 => 3
 

@@ -1,11 +1,35 @@
-file nameTestCases/ICFGDep/expressions.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
+        A:0:.predef_I4 = B:0:.predef_I4+C:0:.predef_I4	 => [ 
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::A)
+            )
+ ] 
+        A:0:.predef_I4 = A:0:.predef_I4+B:0:.predef_I4	 => [ 
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::A)
+            )
+ ] 
+        D:0:.predef_F8 = SIN(&S:0:.predef_F8+    10.00000000000000)	 => [ 
+            Tag(
+                mTagID: 12
+                # NamedRef(foo_::D)
+            )
+ ]  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/expressions.f"
+U8PSTID 0 <2,11,P> T<31,anon_ptr.,8>
+
+        	 => [ 
+            Tag(
+                mTagID: 18
+                # NamedRef(foo_::P)
+            )
+ ] 
 
 mDepDFSet: StmtHandle	 => DepDFSet
-         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/expressions.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 stmt: 	 => Inside DepDFSet output
 
             mUseToDefsMap: UseLoc	 => DefLocSet
@@ -40,23 +64,23 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 3
+                        mTagID: 6
                         # NamedRef(foo_::B)
                     )
 	 => 
                     Tag(
-                        mTagID: 1
+                        mTagID: 2
                         # NamedRef(foo_::A)
                     )
 
                     
                     Tag(
-                        mTagID: 5
+                        mTagID: 10
                         # NamedRef(foo_::C)
                     )
 	 => 
                     Tag(
-                        mTagID: 1
+                        mTagID: 2
                         # NamedRef(foo_::A)
                     )
 
@@ -64,36 +88,41 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 1
+                        mTagID: 2
                         # NamedRef(foo_::A)
                     )
 	 => 
                     Tag(
-                        mTagID: 3
+                        mTagID: 6
                         # NamedRef(foo_::B)
                     )
 
                     Tag(
-                        mTagID: 5
+                        mTagID: 10
                         # NamedRef(foo_::C)
                     )
 
 
             ImplicitRemoves:
+            Tag(
+                mTagID: 2
+                # NamedRef(foo_::A)
+            )
+
             Uses:
             Tag(
-                mTagID: 3
+                mTagID: 6
                 # NamedRef(foo_::B)
             )
 
             Tag(
-                mTagID: 5
+                mTagID: 10
                 # NamedRef(foo_::C)
             )
 
             Defs:
             Tag(
-                mTagID: 1
+                mTagID: 2
                 # NamedRef(foo_::A)
             )
 
@@ -102,12 +131,12 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 3
+                        mTagID: 6
                         # NamedRef(foo_::B)
                     )
 	 => 
                     Tag(
-                        mTagID: 1
+                        mTagID: 2
                         # NamedRef(foo_::A)
                     )
 
@@ -115,12 +144,12 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 1
+                        mTagID: 2
                         # NamedRef(foo_::A)
                     )
 	 => 
                     Tag(
-                        mTagID: 3
+                        mTagID: 6
                         # NamedRef(foo_::B)
                     )
 
@@ -128,13 +157,13 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 3
+                mTagID: 6
                 # NamedRef(foo_::B)
             )
 
             Defs:
             Tag(
-                mTagID: 1
+                mTagID: 2
                 # NamedRef(foo_::A)
             )
 
@@ -143,13 +172,13 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 19
+                        mTagID: 35
                         # NamedRef(foo_::BRRAY)
                         # SubSetRef(NamedRef(foo_::BRRAY))
                     )
 	 => 
                     Tag(
-                        mTagID: 18
+                        mTagID: 34
                         # NamedRef(foo_::ARRAY)
                         # SubSetRef(NamedRef(foo_::ARRAY))
                     )
@@ -158,13 +187,13 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 18
+                        mTagID: 34
                         # NamedRef(foo_::ARRAY)
                         # SubSetRef(NamedRef(foo_::ARRAY))
                     )
 	 => 
                     Tag(
-                        mTagID: 19
+                        mTagID: 35
                         # NamedRef(foo_::BRRAY)
                         # SubSetRef(NamedRef(foo_::BRRAY))
                     )
@@ -173,14 +202,14 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 19
+                mTagID: 35
                 # NamedRef(foo_::BRRAY)
                 # SubSetRef(NamedRef(foo_::BRRAY))
             )
 
             Defs:
             Tag(
-                mTagID: 18
+                mTagID: 34
                 # NamedRef(foo_::ARRAY)
                 # SubSetRef(NamedRef(foo_::ARRAY))
             )
@@ -191,12 +220,12 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 16
+                        mTagID: 32
                         # NamedRef(foo_::X)
                     )
 	 => 
                     Tag(
-                        mTagID: 17
+                        mTagID: 33
                         # NamedRef(foo_::TYPED_Y)
                         # FieldAccess(NamedRef(foo_::TYPED_Y), FIELD1)
                     )
@@ -205,13 +234,13 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 17
+                        mTagID: 33
                         # NamedRef(foo_::TYPED_Y)
                         # FieldAccess(NamedRef(foo_::TYPED_Y), FIELD1)
                     )
 	 => 
                     Tag(
-                        mTagID: 16
+                        mTagID: 32
                         # NamedRef(foo_::X)
                     )
 
@@ -219,13 +248,13 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 16
+                mTagID: 32
                 # NamedRef(foo_::X)
             )
 
             Defs:
             Tag(
-                mTagID: 17
+                mTagID: 33
                 # NamedRef(foo_::TYPED_Y)
                 # FieldAccess(NamedRef(foo_::TYPED_Y), FIELD1)
             )
@@ -235,12 +264,12 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 10
+                        mTagID: 20
                         # NamedRef(foo_::S)
                     )
 	 => 
                     Tag(
-                        mTagID: 6
+                        mTagID: 12
                         # NamedRef(foo_::D)
                     )
 
@@ -248,26 +277,31 @@ stmt:  = X:0:.predef_F8	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 6
+                        mTagID: 12
                         # NamedRef(foo_::D)
                     )
 	 => 
                     Tag(
-                        mTagID: 10
+                        mTagID: 20
                         # NamedRef(foo_::S)
                     )
 
 
             ImplicitRemoves:
+            Tag(
+                mTagID: 12
+                # NamedRef(foo_::D)
+            )
+
             Uses:
             Tag(
-                mTagID: 10
+                mTagID: 20
                 # NamedRef(foo_::S)
             )
 
             Defs:
             Tag(
-                mTagID: 6
+                mTagID: 12
                 # NamedRef(foo_::D)
             )
 
@@ -279,6 +313,11 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
 
             ImplicitRemoves:
+            Tag(
+                mTagID: 18
+                # NamedRef(foo_::P)
+            )
+
             Uses:
             Defs:
         stmt: CASSIGNSTMT(&STRING4:0:anon_ptr.(0), &CONCATEXPR(60, &STRING1:0:anon_ptr.(0), &STRING2:0:anon_ptr.(0), &STRING3:0:anon_ptr.(0), 20, 20), 20, 60)	 => Inside DepDFSet output
@@ -286,39 +325,39 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 20
+                        mTagID: 36
                         # NamedRef(foo_::STRING1)
                         # SubSetRef(NamedRef(foo_::STRING1))
                     )
 	 => 
                     Tag(
-                        mTagID: 23
+                        mTagID: 39
                         # NamedRef(foo_::STRING4)
                         # SubSetRef(NamedRef(foo_::STRING4))
                     )
 
                     
                     Tag(
-                        mTagID: 21
+                        mTagID: 37
                         # NamedRef(foo_::STRING2)
                         # SubSetRef(NamedRef(foo_::STRING2))
                     )
 	 => 
                     Tag(
-                        mTagID: 23
+                        mTagID: 39
                         # NamedRef(foo_::STRING4)
                         # SubSetRef(NamedRef(foo_::STRING4))
                     )
 
                     
                     Tag(
-                        mTagID: 22
+                        mTagID: 38
                         # NamedRef(foo_::STRING3)
                         # SubSetRef(NamedRef(foo_::STRING3))
                     )
 	 => 
                     Tag(
-                        mTagID: 23
+                        mTagID: 39
                         # NamedRef(foo_::STRING4)
                         # SubSetRef(NamedRef(foo_::STRING4))
                     )
@@ -327,25 +366,25 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 23
+                        mTagID: 39
                         # NamedRef(foo_::STRING4)
                         # SubSetRef(NamedRef(foo_::STRING4))
                     )
 	 => 
                     Tag(
-                        mTagID: 20
+                        mTagID: 36
                         # NamedRef(foo_::STRING1)
                         # SubSetRef(NamedRef(foo_::STRING1))
                     )
 
                     Tag(
-                        mTagID: 21
+                        mTagID: 37
                         # NamedRef(foo_::STRING2)
                         # SubSetRef(NamedRef(foo_::STRING2))
                     )
 
                     Tag(
-                        mTagID: 22
+                        mTagID: 38
                         # NamedRef(foo_::STRING3)
                         # SubSetRef(NamedRef(foo_::STRING3))
                     )
@@ -354,26 +393,26 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 20
+                mTagID: 36
                 # NamedRef(foo_::STRING1)
                 # SubSetRef(NamedRef(foo_::STRING1))
             )
 
             Tag(
-                mTagID: 21
+                mTagID: 37
                 # NamedRef(foo_::STRING2)
                 # SubSetRef(NamedRef(foo_::STRING2))
             )
 
             Tag(
-                mTagID: 22
+                mTagID: 38
                 # NamedRef(foo_::STRING3)
                 # SubSetRef(NamedRef(foo_::STRING3))
             )
 
             Defs:
             Tag(
-                mTagID: 23
+                mTagID: 39
                 # NamedRef(foo_::STRING4)
                 # SubSetRef(NamedRef(foo_::STRING4))
             )

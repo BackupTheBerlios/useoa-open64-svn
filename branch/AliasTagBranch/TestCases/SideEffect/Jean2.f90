@@ -1,3 +1,7 @@
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! 
+!                       SideEffect Analysis
+!
 ! Definitions of different abstractions used in SideEffect Analysis
 ! Reference: Optimizing Compilers and Modern Architectures by Kennedy
 !
@@ -17,48 +21,52 @@
 ! LUSE(stmt) = uses in the procedure.
 !              e.g. &x => x is not in the LUse set
 !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! displays possible MOD. LMOD imprecision for x
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-! Problem: No results for the callsites ????
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
 
        subroutine foo(m,t) 
          integer :: m,t
          t = m
-
-!    MOD()  = (foo::*t, head::q),     LMOD() = (foo::*t, head::q)
-!    DEF()  = ( ),                    LDEF() = ( )         
-!    REF()  = (foo::*t, head::q),     LREF() = (foo::*m, head::x, head::p)
-!    USE()  = (foo::*t, head::q),     LUSE() = (foo::*m, head::x, head::p)
-         
        end subroutine
 
        subroutine head() 
          integer x
          integer p,q
+
          call foo(x,q)
-
-!    MOD()  = (head::q, foo::*t),              LMOD() = ()
-!    DEF()  = (head::q, foo::*t),              LDEF() = ()
-!    REF()  = (head::x, head::p, foo::*m),     LREF() = ()
-!    USE()  = (head::x, head::p, foo::*m),     LUSE() = ()
-         
          p = 5
-
-!    MOD()  = (head::p, head::x, foo::*m),      LMOD() = (head::p, head::x, foo::*m)
-!    DEF()  = (head::p, head::x, foo::*m),      LDEF() = (head::p, head::x, foo::*m)
-!    REF()  = (),                               LREF() = ()
-!    USE()  = (),                               LUSE() = ()
-         
          call foo(p,q)
 
-!    MOD()  = (head::q, foo::*t),              LMOD() = ()
-!    DEF()  = (head::q, foo::*t),              LDEF() = ()
-!    REF()  = (head::x, head::p, foo::*m),     LREF() = ()
-!    USE()  = (head::x, head::p, foo::*m),     LUSE() = ()
-
-
        end subroutine
+
+
+! =======================================
+! Interprocedural SideEffect Results
+! =======================================
+
+! Procedure foo:
+! 
+! LMOD : *t
+! MOD  : *t
+! LDEF : 
+! DEF  : 
+! LUSE : *m
+! USE  : *m
+! LREF : *m
+! REF  : *m
+
+
+! Procedure head:
+!
+! LMOD : p
+! MOD  : p,q
+! LDEF : p
+! DEF  : p
+! LUSE : 
+! USE  : p,x
+! LREF : 
+! REF  : p,x
+
+
 
 

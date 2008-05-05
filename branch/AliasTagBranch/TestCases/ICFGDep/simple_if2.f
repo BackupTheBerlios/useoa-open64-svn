@@ -1,4 +1,10 @@
-      subroutine head(x,y)
+      
+! no Definitions for c=3 because we only consider differentiable
+! memory references.
+! ===============================================================
+
+
+       subroutine head(x,y)
 c  x and y should be IN and OUT parameters 
          double precision x
          double precision y

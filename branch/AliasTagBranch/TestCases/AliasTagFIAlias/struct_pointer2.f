@@ -5,11 +5,6 @@
 ! AliasPairs : (*carPtr, first)
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! Problem: April 22nd 2008
-! Why carPtr%labor gets AliasTag 7 instead of 5 ?
-! ================================================
-
-
          module myModule
             type repair_bill
                  real parts(20)
@@ -47,9 +42,9 @@
 ! =======================
 ! MemRefExprs                        => AliasTags
 ! NamedRef(carPtr)                   => (2),     Must, Local
-! NamedRef(First)                    => (3,4,5), May,  Local
+! NamedRef(First)                    => (3,4,7), May,  Local
 ! NamedRef(Y)                        => (6),     Must, Local
-! Deref(NamedRef(carPtr))            => (3,4,5), May,  Local
+! Deref(NamedRef(carPtr))            => (3,4,7), May,  Local
 ! FieldAccess(Deref(carPtr),labor)   => (7),     May,  Local
 
 

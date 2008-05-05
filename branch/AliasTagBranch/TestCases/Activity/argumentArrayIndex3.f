@@ -97,20 +97,20 @@ c$openad DEPENDENT(y)
 !
 !     subroutine head(x,y) 
 !
-!                             [u: y,*y,q(),p(),*x()]  
-!                             [v: *x,*x(),p()]  
-!                             [iA: *x(),p()]
+!                             [u: y,*y,q,q(),p,p(),*x()]  
+!                             [v: *x,*x(),p,p()]  
+!                             [iA: *x(),p,p()]
 !
 !       call foo(x(k),y)      [Stmt: Active]
 !
-!                             [u: y,*y,q(),p(),*x()] 
-!                             [v: *x,*x(),p(),*y,q()] 
-!                             [iA: *x(),p(),*y,q()]
+!                             [u: y,*y,q,q(),p,p(),*x()] 
+!                             [v: *x,*x(),p,p(),*y,q,q()] 
+!                             [iA: *x(),p,p(),*y,q,q()]
 !
 !       call foo(p(k),q(l))   [Stmt: Active]
 !
-!                             [u: y,*y,q()]
-!                             [v: *x,*x(),p(),*y,q()] 
+!                             [u: y,*y,q,q()]
+!                             [v: *x,*x(),p,p(),*y,q,q()] 
 !                             [iA: *y,q()]
 !
 !      end subroutine

@@ -3,20 +3,14 @@ InterActiveFortran(
     Procedure( foo_::foo_ ): 
     ActiveStmtSet([ 
              LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/argumentArrayIndex3.f"
-PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-StmtHandle()
-                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()
                 StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000)
                 StmtHandle(return) ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 2
-                # NamedRef(foo_::A)
-            )    
-            Tag(
-                mTagID: 10
+                mTagID: 18
                 # NamedRef(head_::P)
                 # Deref(NamedRef(foo_::A))
                 # Deref(NamedRef(head_::X))
@@ -24,7 +18,7 @@ StmtHandle()
                 # SubSetRef(Deref(NamedRef(head_::X)))
             )    
             Tag(
-                mTagID: 11
+                mTagID: 19
                 # NamedRef(head_::Q)
                 # Deref(NamedRef(foo_::B))
                 # Deref(NamedRef(head_::Y))
@@ -33,7 +27,7 @@ StmtHandle()
     )
     Procedure( foo_::head_ ): 
     ActiveStmtSet([ 
-            PRAGMA 0 188 <1,21,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+            PRAGMA 0 188 <1,23,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
 StmtHandle()
                 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()
@@ -43,11 +37,7 @@ StmtHandle()
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 2
-                # NamedRef(foo_::A)
-            )    
-            Tag(
-                mTagID: 10
+                mTagID: 18
                 # NamedRef(head_::P)
                 # Deref(NamedRef(foo_::A))
                 # Deref(NamedRef(head_::X))
@@ -55,7 +45,7 @@ StmtHandle()
                 # SubSetRef(Deref(NamedRef(head_::X)))
             )    
             Tag(
-                mTagID: 11
+                mTagID: 19
                 # NamedRef(head_::Q)
                 # Deref(NamedRef(foo_::B))
                 # Deref(NamedRef(head_::Y))
@@ -69,6 +59,6 @@ StmtHandle()
             SymHandle(head_::Y)
             SymHandle(head_::P)
             SymHandle(head_::Q) ] 
-    mNumIterUseful: 4
+    mNumIterUseful: 3
     mNumIterVary: 3
 )

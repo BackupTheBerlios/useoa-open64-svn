@@ -1,4 +1,3 @@
-file nameTestCases/ICFGDep/sideEffect_3.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
@@ -20,7 +19,7 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 9
+                        mTagID: 15
                         # Deref(NamedRef(bar_::C))
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(head_::X))
@@ -28,7 +27,7 @@ stmt: 	 => Inside DepDFSet output
                     )
 	 => 
                     Tag(
-                        mTagID: 10
+                        mTagID: 16
                         # Deref(NamedRef(bar_::D))
                         # Deref(NamedRef(foo_::B))
                         # Deref(NamedRef(head_::Y))
@@ -39,7 +38,7 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 10
+                        mTagID: 16
                         # Deref(NamedRef(bar_::D))
                         # Deref(NamedRef(foo_::B))
                         # Deref(NamedRef(head_::Y))
@@ -47,7 +46,7 @@ stmt: 	 => Inside DepDFSet output
                     )
 	 => 
                     Tag(
-                        mTagID: 9
+                        mTagID: 15
                         # Deref(NamedRef(bar_::C))
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(head_::X))
@@ -58,7 +57,7 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 9
+                mTagID: 15
                 # Deref(NamedRef(bar_::C))
                 # Deref(NamedRef(foo_::A))
                 # Deref(NamedRef(head_::X))
@@ -67,7 +66,7 @@ stmt: 	 => Inside DepDFSet output
 
             Defs:
             Tag(
-                mTagID: 10
+                mTagID: 16
                 # Deref(NamedRef(bar_::D))
                 # Deref(NamedRef(foo_::B))
                 # Deref(NamedRef(head_::Y))

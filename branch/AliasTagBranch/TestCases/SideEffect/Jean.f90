@@ -1,3 +1,7 @@
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!                   SideEffect Analysis
+!
 ! Definitions of different abstractions used in SideEffect Analysis
 ! Reference: Optimizing Compilers and Modern Architectures by Kennedy
 !
@@ -19,81 +23,61 @@
 ! 
 ! LREF(stmt) = reference at statement s locally.     
 !              e.g. &x => x is in the LREF set.
-      
+!
+! Note: You will not get SideEffect results for MREs that are not
+!       referred in the procedure. e.g. In the example below
+!       px() is used but *x() is not used in the procedure head.
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!      
 
-! Problem: Wrong LMOD, LDEF, LUSE and LREF sets in the procedure foo.
-! Problem: In the procedure head, MOD, DEF, REF, USE sets at the Call-site 
-!          does not match.
-! AliasTags blow up SideEffect Results.
-      
+         subroutine foo(a,b) 
+           double precision, dimension(2) :: a
+           double precision :: b
 
-         subroutine foo(x,y) 
-           double precision, dimension(2) :: x
-           double precision y
-           y=x(1)*x(2)
-
-!  MOD()  = (foo::*y, head::*y, head::py),   
-!  LMOD() = (foo::*y, head::*y, head::py),
-!  DEF()  = (foo::*y, head::*y, head::py),
-!  LDEF() = (foo::*y, head::*y, head::py),
-!  REF()  = (foo::*x(), foo::*x, head::*x, head::px, head::px()), 
-!  LREF() = (foo::*x(), foo::*x, head::*x, head::px, head::px()),
-!  USE()  = (foo::*x(), foo::*x, head::*x, head::px, head::px()),
-!  LUSE() = (foo::*x(), foo::*x, head::*x, head::px, head::px())
+           b=a(1)*a(2)
 
          end subroutine
 
          subroutine head(x,y) 
            double precision, dimension(2) :: x, px
            double precision y, py
+
            px(1)=1.0
-
-!  MOD()  = (foo::*x(), foo::*x, head::*x, head::px, head::px())
-!  LMOD   = (foo::*x(), foo::*x, head::*x, head::px, head::px())           
-!  DEF()  = (),
-!  LDEF() = (),
-!  REF()  = (),   
-!  LREF() = (),
-!  USE()  = (),
-!  LUSE() = ()
-
            px(2)=2.0
-
-
-!  MOD()  = (foo::*x(), foo::*x, head::*x, head::px, head::px())
-!  LMOD   = (foo::*x(), foo::*x, head::*x, head::px, head::px())
-!  DEF()  = (),
-!  LDEF() = (),
-!  REF()  = (),
-!  LREF() = (),
-!  USE()  = (),
-!  LUSE() = ()
-
-
            call foo(x,y)
-
-!  MOD()  = (foo::*x(), foo::*x, head::*x, head::px, head::px(), head::*y, bar::*y, head::py)
-!  LMOD() = ()
-!  DEF()  = (head::*y, bar::*y, head:py),              
-!  LDEF() = ()
-!  REF()  = (head::*x, foo:*x, foo::*x(), head::x, head::y, head::py), 
-!  LREF() = ()
-!  USE()  = (head::*x, foo:*x, foo::*x(), head::x, head::y, head::py),
-!  LUSE() = ()
-
-
            call foo(px,py)
 
-!  MOD()  = (foo::*x(), foo::*x, head::*x, head::px, head::px(), head::*y, bar::*y, head::py)
-!  LMOD() = ()
-!  DEF()  = (head::*y, bar::*y, head::py),
-!  LDEF() = ()
-!  REF()  = (head::*x, foo:*x, foo::*x(), head::x, head::y, head::py),
-!  LREF() = ()
-!  USE()  = (head::*x, foo:*x, foo::*x(), head::x, head::y, head::py),
-!  LUSE() = ()
-
-
          end subroutine
+
+
+
+! =====================================================
+! Interprocedural SideEffect Analysis
+! =====================================================
+!
+! Procedure foo
+! 
+! LMOD = *b
+! MOD  = *b
+! LDEF =
+! DEF  =
+! LUSE = *a, *a()
+! USE  = *a, *a()
+! LREF = *a, *a()
+! REF  = *a, *a()
+!
+!
+! Procedure head
+!
+! LMOD = px(), px, *x
+! MOD  = px(), px *x, *y, py
+! LDEF = 
+! DEF  =
+! LUSE = x,y 
+! USE  = x,y,px,*x,px()
+! LREF = x,y
+! REF  = x,y,px,*x,px()
+
+
 
 

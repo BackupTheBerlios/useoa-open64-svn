@@ -60,7 +60,9 @@
           ! ===== Pointer to formal =====
 
           p=>f           ! NamedRef(def, foo::p, 1)
-                         ! NamedRef(use, dummy::f, 1)
+                         ! NamedRef(use, dummy::f, 1), because f is
+                         ! fomal, therefore &, * cancel out.
+
 
           f=p            ! NamedRef(def, foo::f, 0)
                          ! Deref(NamedRef(use, foo::p, 1), 1)

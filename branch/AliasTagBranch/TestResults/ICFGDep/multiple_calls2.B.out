@@ -1,4 +1,3 @@
-file nameTestCases/ICFGDep/multiple_calls2.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
@@ -57,13 +56,35 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 4
+                        mTagID: 6
+                        # Deref(NamedRef(bar_::F))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 2
+                        # Deref(NamedRef(bar_::B))
+                    )
+
+                    Tag(
+                        mTagID: 3
+                        # NamedRef(foo_::A)
+                        # Deref(NamedRef(bar_::B))
+                    )
+
+                    
+                    Tag(
+                        mTagID: 7
                         # NamedRef(foo_::X)
                         # Deref(NamedRef(bar_::F))
                     )
 	 => 
                     Tag(
                         mTagID: 2
+                        # Deref(NamedRef(bar_::B))
+                    )
+
+                    Tag(
+                        mTagID: 3
                         # NamedRef(foo_::A)
                         # Deref(NamedRef(bar_::B))
                     )
@@ -73,12 +94,34 @@ stmt: 	 => Inside DepDFSet output
                     
                     Tag(
                         mTagID: 2
+                        # Deref(NamedRef(bar_::B))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 6
+                        # Deref(NamedRef(bar_::F))
+                    )
+
+                    Tag(
+                        mTagID: 7
+                        # NamedRef(foo_::X)
+                        # Deref(NamedRef(bar_::F))
+                    )
+
+                    
+                    Tag(
+                        mTagID: 3
                         # NamedRef(foo_::A)
                         # Deref(NamedRef(bar_::B))
                     )
 	 => 
                     Tag(
-                        mTagID: 4
+                        mTagID: 6
+                        # Deref(NamedRef(bar_::F))
+                    )
+
+                    Tag(
+                        mTagID: 7
                         # NamedRef(foo_::X)
                         # Deref(NamedRef(bar_::F))
                     )
@@ -87,7 +130,12 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 4
+                mTagID: 6
+                # Deref(NamedRef(bar_::F))
+            )
+
+            Tag(
+                mTagID: 7
                 # NamedRef(foo_::X)
                 # Deref(NamedRef(bar_::F))
             )
@@ -95,6 +143,11 @@ stmt: 	 => Inside DepDFSet output
             Defs:
             Tag(
                 mTagID: 2
+                # Deref(NamedRef(bar_::B))
+            )
+
+            Tag(
+                mTagID: 3
                 # NamedRef(foo_::A)
                 # Deref(NamedRef(bar_::B))
             )
@@ -105,12 +158,34 @@ stmt: 	 => Inside DepDFSet output
                     
                     Tag(
                         mTagID: 2
+                        # Deref(NamedRef(bar_::B))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 4
+                        # Deref(NamedRef(bar_::G))
+                    )
+
+                    Tag(
+                        mTagID: 5
+                        # NamedRef(foo_::B)
+                        # Deref(NamedRef(bar_::G))
+                    )
+
+                    
+                    Tag(
+                        mTagID: 3
                         # NamedRef(foo_::A)
                         # Deref(NamedRef(bar_::B))
                     )
 	 => 
                     Tag(
-                        mTagID: 3
+                        mTagID: 4
+                        # Deref(NamedRef(bar_::G))
+                    )
+
+                    Tag(
+                        mTagID: 5
                         # NamedRef(foo_::B)
                         # Deref(NamedRef(bar_::G))
                     )
@@ -119,13 +194,35 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
+                        mTagID: 4
+                        # Deref(NamedRef(bar_::G))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 2
+                        # Deref(NamedRef(bar_::B))
+                    )
+
+                    Tag(
                         mTagID: 3
+                        # NamedRef(foo_::A)
+                        # Deref(NamedRef(bar_::B))
+                    )
+
+                    
+                    Tag(
+                        mTagID: 5
                         # NamedRef(foo_::B)
                         # Deref(NamedRef(bar_::G))
                     )
 	 => 
                     Tag(
                         mTagID: 2
+                        # Deref(NamedRef(bar_::B))
+                    )
+
+                    Tag(
+                        mTagID: 3
                         # NamedRef(foo_::A)
                         # Deref(NamedRef(bar_::B))
                     )
@@ -135,13 +232,23 @@ stmt: 	 => Inside DepDFSet output
             Uses:
             Tag(
                 mTagID: 2
+                # Deref(NamedRef(bar_::B))
+            )
+
+            Tag(
+                mTagID: 3
                 # NamedRef(foo_::A)
                 # Deref(NamedRef(bar_::B))
             )
 
             Defs:
             Tag(
-                mTagID: 3
+                mTagID: 4
+                # Deref(NamedRef(bar_::G))
+            )
+
+            Tag(
+                mTagID: 5
                 # NamedRef(foo_::B)
                 # Deref(NamedRef(bar_::G))
             )

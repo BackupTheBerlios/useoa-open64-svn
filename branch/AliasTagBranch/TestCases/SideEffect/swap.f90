@@ -1,8 +1,7 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Swap Function.
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!           SideEffect Analysis
+!
 ! Definitions of different abstractions used in SideEffect Analysis
 ! Reference: Optimizing Compilers and Modern Architectures by Kennedy
 !
@@ -24,33 +23,19 @@
 !
 ! LREF(stmt) = reference at statement s locally.
 !              e.g. &x => x is in the LREF set.
-      
-      
+!
+! Note: Temporary UnnamedRef(i+1) is in the LMOD and MOD set of 
+!       procedure head because t=i+1 modelling.
+!
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
 
         subroutine swap(v,i,j)
           integer v(5), i, j
           integer temp
 
           temp = v(i)
-
-!          MOD()  = (swap::temp),       LMOD() = (swap::temp)
-!          REF()  = (),       LREF() = (v)
-!          USE()  = (),       LUSE() = (v(),i)
-!          DEF()  = (),       LDEF() = ()          
-          
           v(i)=v(j)
-
-!          MOD()  = (),       LMOD() = (v())
-!          REF()  = (),       LREF() = (v)
-!          USE()  = (),       LUSE() = (v(),i,j)
-!          DEF()  = (),       LDEF() = ()
-
           v(j)=temp
-
-!          MOD()  = (),       LMOD() = (v())
-!          REF()  = (),       LREF() = (v)
-!          USE()  = (),       LUSE() = (temp.j)
-!          DEF()  = (),       LDEF() = ()
 
         end subroutine swap
 
@@ -59,22 +44,37 @@
           integer :: i, j
 
           do i=1,4
-
-!          MOD() = (main::i),    LMOD() = (main::i)
-!          DEF() = (main::i),    LDEF() = (main::i)          
-!          REF() = (main::i),    LREF() = (main::i)
-!          USE() = (main::i),    LUSE() = (main::i)
-
-
             call swap(a,i,i+1)
-
-! MOD() = (main::a(), swap::v()),                           LMOD() = ()
-! DEF() = (swap::temp),         ,                           LDEF() = (swap::temp)            
-! REF() = (main::i, main::a, swap::i, swap::j, swap::v),    LREF() = (a,i)
-! USE() = (main::i, main::a, swap::i, swap::j, swap::v),    LUSE() = (a,i)
-
-
           end do
+
         end program main
+
+
+! =====================================================
+! Interprocedural SideEffect Analysis
+! =====================================================
+!
+! Procedure swap
+!
+! LMOD = temp, *v, *v()
+! MOD  = temp, *v, *v()
+! LDEF = temp
+! DEF  = temp
+! LUSE = temp, *v, *v(), *i, *j
+! USE  = temp, *v, *v(), *i, *j
+! LREF = temp, *v, *v(), *i, *j
+! REF  = temp, *v, *v(), *i, *j
+!
+!
+! Procedure main
+!
+! LMOD = i, Unnamed(i+1)
+! MOD  = i, Unnamed(i+1), a
+! LDEF = i
+! DEF  = i
+! LUSE = i
+! USE  = i, Unnamed(i+1), a
+! LREF = i
+! REF  = i, Unnamed(i+1), a
 
 

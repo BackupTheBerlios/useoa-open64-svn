@@ -12,7 +12,13 @@
 !
 ! Status /Issues: No Issues
 !
-! Note:  To Date April 8th 2008, all memory references are "May".
+! Note: * Only strictlyLocal memory references are Must, all other 
+!         memory references are "May".
+!
+!       * All the MemRefHandles for which AliasTagsSet is empty
+!          are Mapped to AliasMapXAIF setId = 0, [jean's Suggestion, 
+!          April 2008].
+!
 !
 ! Author : Priyadarshini Malusare, Argonne National Laboratory, April 8th 2008
 !
@@ -55,9 +61,12 @@
        ! MemRefHandle("Q")  => SetId(2)
        ! MemRefHandle("T")  => SetId(1)
        ! MemRefHandle("Q")  => SetId(3)
+       ! MemRefHandle(&R)   => SetId(0)
+       ! MemRefHandle(&S)   => SetId(0)   
 
        !   [  SetId  =>  Virtual Address ]
        ! ==================================
+       ! SetId(0) => { }
        ! SetId(1) => { LocTuple(7:7, Must) }
        ! SetId(2) => { LocTuple(2:2, Must) }
        ! SetId(3) => { LocTuple(3:3, May) }

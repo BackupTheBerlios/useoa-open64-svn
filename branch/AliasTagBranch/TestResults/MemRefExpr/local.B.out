@@ -102,7 +102,7 @@ MemRefHandleF:0:.predef_F8
 NamedRef(
     mMemRefType: USE
     mSymHandle: SymHandle(foo_::F)
-    mStrictlyLocal: 0
+    mStrictlyLocal: 1
 )
 
 
@@ -117,7 +117,7 @@ Deref(
     NamedRef(
         mMemRefType: USE
         mSymHandle: SymHandle(foo_::F)
-        mStrictlyLocal: 0
+        mStrictlyLocal: 1
     )
     mNumDeref: 1
 )

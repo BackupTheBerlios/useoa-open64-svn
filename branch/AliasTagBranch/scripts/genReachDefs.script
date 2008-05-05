@@ -1,2 +1,16 @@
-echo "Generating TestResults/ReachDefs/pointer.B.out"
-./test-open64 --oa-ReachDefs TestCases/ReachDefs/pointer.B > TestResults/ReachDefs/pointer.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsConditional.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsConditional.B > TestResults/ReachDefs/ReachDefsConditional.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsInterProcedural1.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsInterProcedural1.B > TestResults/ReachDefs/ReachDefsInterProcedural1.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsNestedGlobals.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsNestedGlobals.B > TestResults/ReachDefs/ReachDefsNestedGlobals.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsIndirect1.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsIndirect1.B > TestResults/ReachDefs/ReachDefsIndirect1.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsInterProcedural2.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsInterProcedural2.B > TestResults/ReachDefs/ReachDefsInterProcedural2.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsIndirect2.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsIndirect2.B > TestResults/ReachDefs/ReachDefsIndirect2.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsPointer.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsPointer.B > TestResults/ReachDefs/ReachDefsPointer.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsLoop.B.out"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsLoop.B > TestResults/ReachDefs/ReachDefsLoop.B.out

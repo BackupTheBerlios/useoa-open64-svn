@@ -14,6 +14,7 @@
              double precision, target :: t
              double precision :: a
              p=>t 
-             a=p            ! Stmt(p=>t), StmtHandle(0)
-             return         ! Stmt(p=>t), StmtHandle(0)
+             a=p            ! Stmt(p=>t)
+
+! Exir ReachDefs:  Stmt(p=>t), Stmt(a=p)
         end subroutine

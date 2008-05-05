@@ -13,21 +13,21 @@ StmtHandle()
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 4
+                mTagID: 7
                 # NamedRef(head_::T1)
                 # Deref(NamedRef(bar_::A))
             )    
             Tag(
-                mTagID: 5
+                mTagID: 9
                 # NamedRef(head_::T2)
                 # Deref(NamedRef(bar_::B))
             )    
             Tag(
-                mTagID: 9
+                mTagID: 16
                 # Deref(NamedRef(head_::X))
             )    
             Tag(
-                mTagID: 10
+                mTagID: 17
                 # Deref(NamedRef(head_::F))
             ) ] 
     )
@@ -40,12 +40,12 @@ StmtHandle()
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 4
+                mTagID: 7
                 # NamedRef(head_::T1)
                 # Deref(NamedRef(bar_::A))
             )    
             Tag(
-                mTagID: 5
+                mTagID: 9
                 # NamedRef(head_::T2)
                 # Deref(NamedRef(bar_::B))
             ) ] 

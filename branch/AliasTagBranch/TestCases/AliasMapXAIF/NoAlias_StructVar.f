@@ -12,12 +12,17 @@
 !
 ! Status : No Issues
 !
-! Note: Both red_ferrari and black_berry are structure variables.
-!       but red_ferrari is involved in the fieldAccess operation and 
-!       therefore gets multiple AliasTags (indicates red_ferrari and
-!       red_ferrari%labor overlap).
+! Note: * Both red_ferrari and black_berry are structure variables.
+!         but red_ferrari is involved in the fieldAccess operation and 
+!         therefore gets multiple AliasTags (indicates red_ferrari and
+!         red_ferrari%labor overlap).
 !
-! Note:  To Date April 8th 2008, all memory references are "May".
+!       * All the MemRefHandles for which AliasTagsSet is empty
+!          are Mapped to AliasMapXAIF setId = 0, [jean's Suggestion, 
+!          April 2008].
+!
+!       * Only StrictlyLocal memory references are Must, all other 
+!         memory references are "May".
 !
 ! Author : Priyadarshini Malusare, Argonne National Laboratory, April 8th 2008
 !

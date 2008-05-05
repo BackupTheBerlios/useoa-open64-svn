@@ -1,6 +1,6 @@
 
 # comment in file.test
-# Regression tests for UDDUChains Analysis
+# Regression tests for ReachDefs Analysis
 testname::ReachDefs
 inputdir::TestCases/ReachDefs
 outputdir::TestResults/ReachDefs
@@ -9,5 +9,12 @@ driverexec::./test-open64 --oa-ReachDefs
 # list of tests
 #       input file,                  status
 
-test::pointer.B,
+test::ReachDefsConditional.B,         Checked by PLM 05/04/08
+test::ReachDefsInterProcedural1.B,    Checked by PLM 05/04/08
+test::ReachDefsNestedGlobals.B,       Checked by PLM 05/04/08
+test::ReachDefsIndirect1.B,           Checked by PLM 05/04/08
+test::ReachDefsInterProcedural2.B,    Checked by PLM 05/04/08
+test::ReachDefsIndirect2.B,           Checked by PLM 05/04/08
+test::ReachDefsPointer.B,             Checked by PLM 05/04/08
+test::ReachDefsLoop.B,                Chekced by PLM 05/04/08
 

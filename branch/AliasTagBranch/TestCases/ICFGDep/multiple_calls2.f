@@ -16,9 +16,7 @@ c                    foo::x,                 foo::a]
 c
 c                ImplicitRemoves:
 c                ================
-c                [2: bar::*b
-c                    foo::a]
-          
+c          
 
           
           g=b
@@ -31,8 +29,6 @@ c                    foo::a,                 foo::b]
 c
 c                ImplicitRemoves:
 c                ================
-c                [3: bar::*g
-c                    foo::b]
-
+c
 
       end subroutine

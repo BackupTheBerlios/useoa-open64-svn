@@ -3,8 +3,9 @@
 ! Below Different types of expressions are used to show the the
 ! ICFGDep Results.  Results are showed using following abstractions
 !
+! Note: No Defs for pointer assignment because we only consider
+!       Differentiable Memory References.
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!     
-
 
       module myTypeModule
 

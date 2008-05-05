@@ -1,4 +1,3 @@
-file nameTestCases/ICFGDep/globalActive_7.B
  Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
@@ -30,7 +29,7 @@ stmt: 	 => Inside DepDFSet output
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
                     Tag(
-                        mTagID: 11
+                        mTagID: 17
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(head_::X))
                         # Deref(NamedRef(bar_::P))
@@ -55,7 +54,7 @@ stmt: 	 => Inside DepDFSet output
                     )
 	 => 
                     Tag(
-                        mTagID: 11
+                        mTagID: 17
                         # Deref(NamedRef(foo_::A))
                         # Deref(NamedRef(head_::X))
                         # Deref(NamedRef(bar_::P))
@@ -66,7 +65,7 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Tag(
-                mTagID: 11
+                mTagID: 17
                 # Deref(NamedRef(foo_::A))
                 # Deref(NamedRef(head_::X))
                 # Deref(NamedRef(bar_::P))
@@ -131,7 +130,7 @@ stmt: 	 => Inside DepDFSet output
                     )
 	 => 
                     Tag(
-                        mTagID: 12
+                        mTagID: 18
                         # Deref(NamedRef(head_::Y))
                         # SubSetRef(Deref(NamedRef(head_::Y)))
                     )
@@ -140,7 +139,7 @@ stmt: 	 => Inside DepDFSet output
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
                     Tag(
-                        mTagID: 12
+                        mTagID: 18
                         # Deref(NamedRef(head_::Y))
                         # SubSetRef(Deref(NamedRef(head_::Y)))
                     )
@@ -164,7 +163,7 @@ stmt: 	 => Inside DepDFSet output
 
             Defs:
             Tag(
-                mTagID: 12
+                mTagID: 18
                 # Deref(NamedRef(head_::Y))
                 # SubSetRef(Deref(NamedRef(head_::Y)))
             )

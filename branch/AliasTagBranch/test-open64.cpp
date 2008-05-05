@@ -658,6 +658,8 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
   parambind = pbman->performAnalysis(cgraph);
 
+
+/*
   //! SideEffect
   // Create empty interprocedural side-effect analysis results and
   // empty intraprocedural
@@ -677,7 +679,24 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
                                                interSideEffectInter);
       results->output(*irInterface,*alias);
   }
+*/
 
+
+
+  // Intra Side-Effect
+  OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
+  sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+
+  // InterSideEffect
+  OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSEman;
+  interSEman = new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+
+  OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSE;
+  interSE = interSEman->performAnalysis(cgraph, parambind,
+                                        interAlias, sideeffectman,             
+                                        OA::DataFlow::ITERATIVE);
+  interSE->output(*irInterface,*alias);
+ 
   return 0;
 }
 
@@ -807,8 +826,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
+/*
 
-    /*
     //ICFGDep
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
     icfgdepman = new OA::Activity::ManagerICFGDep(irInterface);
@@ -841,7 +860,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
 
     std::cout << "after ICFGVaryActive" << std::endl;
-    */
+*/
 
     //! ====================================
     //! ICFGActivity
@@ -854,6 +873,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                                         alias, OA::DataFlow::ITERATIVE);
 
     active->output(*irInterface,*alias);
+
+
 }
 
 

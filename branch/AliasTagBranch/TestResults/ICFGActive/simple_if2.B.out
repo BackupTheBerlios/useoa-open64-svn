@@ -15,23 +15,23 @@ StmtHandle()
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 3
+                mTagID: 6
                 # NamedRef(head_::A)
             )    
             Tag(
-                mTagID: 4
+                mTagID: 8
                 # NamedRef(head_::B)
             )    
             Tag(
-                mTagID: 5
+                mTagID: 10
                 # NamedRef(head_::C)
             )    
             Tag(
-                mTagID: 6
+                mTagID: 11
                 # Deref(NamedRef(head_::X))
             )    
             Tag(
-                mTagID: 7
+                mTagID: 12
                 # Deref(NamedRef(head_::Y))
             ) ] 
     )

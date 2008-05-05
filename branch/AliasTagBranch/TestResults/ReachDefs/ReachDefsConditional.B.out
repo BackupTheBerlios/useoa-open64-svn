@@ -1,0 +1,15 @@
+Test reaching defs analysis
+
+ReachDefsStandard(
+    mReachDefs: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
+            StmtHandle(if (X:0:.predef_I4>=0))	 => [ StmtHandle(X:0:.predef_I4 = 2) ] 
+            StmtHandle(Y:0:.predef_I4 = 5)	 => [ StmtHandle(X:0:.predef_I4 = 2) ] 
+            StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(Y:0:.predef_I4 = 5) ] 
+            StmtHandle(Y:0:.predef_I4 = 3)	 => [ StmtHandle(X:0:.predef_I4 = 2) ] 
+            StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)	 => [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(Y:0:.predef_I4 = 5)    StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Y:0:.predef_I4 = 3) ] 
+            StmtHandle(_END())	 => [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(Y:0:.predef_I4 = 5)    StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Y:0:.predef_I4 = 3)    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
+            StmtHandle(return)	 => [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(Y:0:.predef_I4 = 5)    StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Y:0:.predef_I4 = 3)    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
+
+    mExitReachDefs: [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(Y:0:.predef_I4 = 5)    StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Y:0:.predef_I4 = 3)    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
+)
+

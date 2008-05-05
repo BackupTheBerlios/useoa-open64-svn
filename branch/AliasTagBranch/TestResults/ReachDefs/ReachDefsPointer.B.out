@@ -2,7 +2,7 @@ Test reaching defs analysis
 
 ReachDefsStandard(
     mReachDefs: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
-            StmtHandle(A:0:.predef_F8 = OPC_F8U8CVT(P:0:anon_ptr.))	 => [  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/ReachDefs/pointer.f"
+            StmtHandle(A:0:.predef_F8 = OPC_F8U8CVT(P:0:anon_ptr.))	 => [  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/ReachDefs/ReachDefsPointer.f"
 U8PSTID 0 <2,2,P> T<29,anon_ptr.,8>
 StmtHandle() ] 
             StmtHandle(return)	 => [ U8PSTID 0 <2,2,P> T<29,anon_ptr.,8>

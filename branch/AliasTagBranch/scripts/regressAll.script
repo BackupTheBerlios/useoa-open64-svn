@@ -1,16 +1,24 @@
 echo "########################### running regressAll.script"
 
 
-echo "########################### running regressExprTree.script"
-source scripts/regressExprTree.script
+echo "########################### running regressMemRefExpr.script"
+source scripts/regressMemRefExpr.script
 
 
 echo "########################### running regressAliasTagFIAlias.script"
 source scripts/regressAliasTagFIAlias.script
 
 
-#echo "########################### running regressParamBindigns.script"
-#source scripts/regressParamBindings.script
+echo "########################### running regressExprTree.script"
+source scripts/regressExprTree.script
+
+
+echo "########################### running regressParamBindigns.script"
+source scripts/regressParamBindings.script
+
+
+echo "########################### running regressAliasMapXAIF.script"
+source scripts/regressAliasMapXAIF.script
 
 
 echo "########################### running regressICFGDep.script"
@@ -21,10 +29,10 @@ echo "########################### running regressICFGctive.script"
 source scripts/regressICFGActive.script
 
 
+echo "########################### running regressSideEffect.script"
+source scripts/regressSideEffect.script
+
+
 echo "########################### running regressReachDefs.script"
 source scripts/regressReachDefs.script
-
-
-#echo "########################### running regressAliasTagXAIF.script"
-#source scripts/regressAliasTagXAIF.script
 
