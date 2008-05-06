@@ -22,12 +22,12 @@ UDDUChainsStandard(
                 Define Statements: [ StmtHandle(StmtHandle(0)) ] 
                 
                 Use StatementHandle : StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8)	 => 
-                Define Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8) ] 
+                Define Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8) ] 
 
         mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
                 
                 Def StatementHandle : StmtHandle(StmtHandle(0))	 => 
-                Use Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)    StmtHandle(BARX:0:.predef_F8 = BARY:0:.predef_F8)    StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8) ] 
+                Use Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)    StmtHandle(BARX:0:.predef_F8 = BARY:0:.predef_F8) ] 
                 
                 Def StatementHandle : StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)	 => 
                 Use Statements: [ StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8) ] 
@@ -47,7 +47,7 @@ UDDUChainsStandard(
                 Def Statements: [ StmtHandle(StmtHandle(0)) ] 
                 
                 Use MemRefHandle: MemRefHandle(T:0:.predef_F8)	 => 
-                Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8) ] 
+                Def Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8) ] 
 
         mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
                 

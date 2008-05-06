@@ -3,6 +3,9 @@ Test UDDUChains analysis
 UDDUChainsStandard(
     mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
             
+            Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
+            Define Statements: [ StmtHandle(P:0:anon_ptr. = 5) ] 
+            
             Use StatementHandle : StmtHandle(if (I:0:.predef_I4<5))	 => 
             Define Statements: [ StmtHandle(StmtHandle(0)) ] 
             
@@ -10,15 +13,15 @@ UDDUChainsStandard(
             Define Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(P:0:anon_ptr. = 5) ] 
             
             Use StatementHandle : StmtHandle(N:0:.predef_F8 = A:0:.predef_F8)	 => 
-            Define Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(P:0:anon_ptr. = 5)    StmtHandle(A:0:.predef_F8 =     3.000000000000000) ] 
+            Define Statements: [ StmtHandle(P:0:anon_ptr. = 5)    StmtHandle(A:0:.predef_F8 =     3.000000000000000) ] 
 
     mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
             
             Def StatementHandle : StmtHandle(StmtHandle(0))	 => 
-            Use Statements: [ StmtHandle(if (I:0:.predef_I4<5))    StmtHandle(M:0:.predef_F8 = T:0:.predef_F8)    StmtHandle(N:0:.predef_F8 = A:0:.predef_F8) ] 
+            Use Statements: [ StmtHandle(if (I:0:.predef_I4<5))    StmtHandle(M:0:.predef_F8 = T:0:.predef_F8) ] 
             
             Def StatementHandle : StmtHandle(P:0:anon_ptr. = 5)	 => 
-            Use Statements: [ StmtHandle(M:0:.predef_F8 = T:0:.predef_F8)    StmtHandle(N:0:.predef_F8 = A:0:.predef_F8) ] 
+            Use Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(M:0:.predef_F8 = T:0:.predef_F8)    StmtHandle(N:0:.predef_F8 = A:0:.predef_F8) ] 
             
             Def StatementHandle : StmtHandle(A:0:.predef_F8 =     3.000000000000000)	 => 
             Use Statements: [ StmtHandle(N:0:.predef_F8 = A:0:.predef_F8) ] 
@@ -32,7 +35,7 @@ UDDUChainsStandard(
             Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(P:0:anon_ptr. = 5) ] 
             
             Use MemRefHandle: MemRefHandle(A:0:.predef_F8)	 => 
-            Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(P:0:anon_ptr. = 5)    StmtHandle(A:0:.predef_F8 =     3.000000000000000) ] 
+            Def Statements: [ StmtHandle(P:0:anon_ptr. = 5)    StmtHandle(A:0:.predef_F8 =     3.000000000000000) ] 
 
     mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
             
@@ -43,7 +46,7 @@ UDDUChainsStandard(
             Use Statements: [  ] 
             
             Def MemRefHandle: MemRefHandle(P:0:anon_ptr.)	 => 
-            Use Statements: [ StmtHandle(M:0:.predef_F8 = T:0:.predef_F8)    StmtHandle(N:0:.predef_F8 = A:0:.predef_F8) ] 
+            Use Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(M:0:.predef_F8 = T:0:.predef_F8)    StmtHandle(N:0:.predef_F8 = A:0:.predef_F8) ] 
             
             Def MemRefHandle: MemRefHandle(M:0:.predef_F8)	 => 
             Use Statements: [  ] 

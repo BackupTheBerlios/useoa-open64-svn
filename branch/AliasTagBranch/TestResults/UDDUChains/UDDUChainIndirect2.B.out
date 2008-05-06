@@ -12,8 +12,12 @@ UDDUChainsStandard(
     UDDUChainsStandard(
         mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
                 
-                Use StatementHandle :  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/UDDUChains/UDDUChainIndirect2.f"
+                Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                Define Statements: [  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/UDDUChains/UDDUChainIndirect2.f"
 U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+StmtHandle( =     5.300000) ] 
+                
+                Use StatementHandle : U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
 StmtHandle(X:0:.predef_F4 = 0:)	 => 
                 Define Statements: [ StmtHandle(StmtHandle(0))    U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
 StmtHandle( =     5.300000) ] 
@@ -26,7 +30,7 @@ StmtHandle(X:0:.predef_F4 = 0:) ]
                 
                 Def StatementHandle : U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
 StmtHandle( =     5.300000)	 => 
-                Use Statements: [ U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+                Use Statements: [ StmtHandle(StmtHandle(0))    U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
 StmtHandle(X:0:.predef_F4 = 0:) ] 
 
         mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
@@ -43,7 +47,7 @@ StmtHandle( =     5.300000) ]
                 
                 Def MemRefHandle: U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
 MemRefHandle()	 => 
-                Use Statements: [ U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
+                Use Statements: [ StmtHandle(StmtHandle(0))    U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,4> <field_id:2>
 StmtHandle(X:0:.predef_F4 = 0:) ] 
                 
                 Def MemRefHandle: MemRefHandle(X:0:.predef_F4)	 => 

@@ -4,7 +4,7 @@ UDDUChainsStandard(
     mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
             
             Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
-            Define Statements: [ StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))    StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4) ] 
+            Define Statements: [ StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4) ] 
             
             Use StatementHandle : StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))	 => 
             Define Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(M:0:.predef_I4 = 2)    StmtHandle(P:0:.predef_I4 = 5) ] 
@@ -24,7 +24,7 @@ UDDUChainsStandard(
             Use Statements: [ StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))    StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4) ] 
             
             Def StatementHandle : StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))	 => 
-            Use Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4) ] 
+            Use Statements: [ StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4) ] 
             
             Def StatementHandle : StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
             Use Statements: [ StmtHandle(StmtHandle(0)) ] 
@@ -38,13 +38,13 @@ UDDUChainsStandard(
             Def Statements: [ StmtHandle(StmtHandle(0)) ] 
             
             Use MemRefHandle: MemRefHandle(V:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)) ] 
+            Def Statements: [ StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)) ] 
             
             Use MemRefHandle: MemRefHandle(M:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(M:0:.predef_I4 = 2) ] 
+            Def Statements: [ StmtHandle(M:0:.predef_I4 = 2) ] 
             
             Use MemRefHandle: MemRefHandle(P:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(P:0:.predef_I4 = 5)    StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)) ] 
+            Def Statements: [ StmtHandle(P:0:.predef_I4 = 5)    StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4)) ] 
 
     mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
             
