@@ -23,6 +23,21 @@
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+! FIXME:
+! PLM, May 4th 2008
+! Pointer Definition UDDUChains missing
+! We need to use getUseMREs and getDefMREs for precise Use and Defs
+! in the ManagerUDDUChains, but then the question is how to retrive
+! MemRefHandles from Memory Reference Expressions.
+! Need to Talk to Michelle.
+
+
+! FIXME:
+! PLM, May 4th 2008
+! talk to Michelle why p=5 Reaches n=a and therefore not killed
+! by a=3 and thus forms UDDUChains.
+
+
 ! Example:
 ! --------
       
@@ -39,8 +54,7 @@
                 p=>a               ! Defs = {p},      Uses = { }
             end if
 
-            p=5                    ! Defs = {*p},     Uses = { }   
-//add the Use of P
+            p=5                    ! Defs = {*p},     Uses = {p}   
 
             m=t                    ! Defs = {m},      Uses = {t}
             a=3                    ! Defs = {a},      Uses = { }
@@ -62,37 +76,35 @@
 ! <Stmt>     => set<Stmt>
 ! ====================================
 ! if(i<5)    =>     (StmtHandle(0))
-! (m=t)      =>     (StmtHandle(0)), (*p=5)
-! (n=a)      =>     (StmtHandle(0)), (*p=5), (a=3)
+! (m=t)      =>     (StmtHandle(0)), (p=5)
+! (n=a)      =>     (p=5), (a=3)
+! StmtHandle(0)=>   (p=5)
 
 
 ! DUChains<Stmt>
 ! <Stmt>     => set<Stmt>
 !===================================
-! (p=>t)     =>     (*p=5), (m=t), (a=3), (n=a)
-! (p=>a)     =>     (*p=5), (m=t), (a=3), (n=a) 
-! (*p=5)     =>     (m=t), (a=3), (n=a)
-! (m=t)      =>     (StmtHandle(0))
-! (a=3)      =>     (n=a)
-! (n=a)      =>     (StmtHandle(0))
+! StmtHandle(0) =>  (i<5), (m=t)
+! (p=>t)        =>  (p=5), (m=t), (a=3), (n=a)
+! (p=>a)        =>  (p=5), (m=t), (a=3), (n=a) 
+! (p=5)         =>  (m=t), (n=a), StmtHandle(0)
+! (a=3)         =>  (n=a)
 
 
 
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
-! (t)     => (p=>t)
-! (a)     => (a=3)
+! (I)     => (StmtHandle(0))
+! (t)     => (StmtHandle(0)), (p=5), (p=>t)
+! (a)     => (a=3), (p=>a)
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (p)     => (*p=5), (m=t), (a=3), (n=a)
-! (p)     => (*p=5), (m=t), (a=3), (n=a)
-! (*p)    => (m=t), (a=3), (n=a)
-! (m)     => (StmtHandle(0))
+! (p)     => (p=5), (m=t), (a=3), (n=a), StmtHandle(0)
+! (p)     => (m=t), (n=a)
 ! (a)     => (n=a)
-! (n)     => (StmtHandle(0))
 
 

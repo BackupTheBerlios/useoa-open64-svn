@@ -22,6 +22,11 @@
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+! FIXME:
+! PLM May 4th 2008
+! Missing Structure Pointer UDDUChains.
+
+
 ! Example:
 !=========
 
@@ -42,8 +47,8 @@
          real x 
 
          firstPtr=>first        ! Defs = {firstPtr}      , Uses = { }
-         firstPtr%labor = 5.3   ! Defs = {firstPtr%labor}, Uses = { }
-         x = firstPtr%labor     ! Defs = {x}             , Uses = {firstPtr%labor}
+         firstPtr%labor = 5.3   ! Defs = {firstPtr%labor}, Uses ={firstPtr}
+         x = firstPtr%labor     ! Defs = {x}             , Uses = {firstPtr%labor, firstPtr},
 
        end subroutine 
 
@@ -60,27 +65,29 @@
 ! UDChains<Stmt>
 ! <Stmt>     => set<Stmt>
 ! ====================================
+! StmtHandle(0)             =>  (firstPtr%labor = 5.3)
 ! ( x = firstPtr%labor )    =>  (StmtHandle(0)), (firstPtr=>first), 
 !                               (firstPtr%labor = 5.3)
 
 ! DUChains<Stmt>
 ! <Stmt>     => set<Stmt>
 !===================================
+! StmtHandle(0)             => ( x = firstPtr%labor )
 ! ( firstPtr=>first )       => (firstPtr%labor = 5.3), (x=firstPtr%labor)
 ! ( firstPtr%labor = 5.3 )  => (x=firstPtr%labor)
-! ( x = firstPtr%labor )    => StmtHandle(0)
 
 
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
-! (firstPtr)          => (firstPtr%labor = 5.3), (x=firstPtr%labor) 
-! (firstPtr%labor)    => (x=firstPtr%labor)
-! (x)                 => (StmtHandle(0))
+! (firstPtr)          => (firstPtr->first)
+! (firstPtr%labor)    => (firstPtr%labor=5.3), (firstPtr=>first),
+!                        (StmtHandle(0))
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (firstPtr%labor)     =>     (x=firstPtr%labor)
+! (firstPtr%labor)     =>     (x=firstPtr%labor), StmtHandle(0)
+! (firstPtr=>first)    =>     (firstPtr%labor)=5.3, (x=firstPtr%labor)
 

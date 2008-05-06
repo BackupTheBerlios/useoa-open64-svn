@@ -54,27 +54,21 @@
 ! UDChains<Stmt>
 ! <Stmt>     => set<Stmt>
 ! ====================================
-! (i<=10)    =>     (StmtHandle(0)), (i=1), (i=i+1)
+! (i<=10)    =>     (i=1), (i=i+1)
 !
-! (i=i+1)    =>     (StmtHandle(0)), (i=1), (i=i+1)
+! (i=i+1)    =>     (i=1), (i=i+1)
 !
-! if(x.ge.0) =>     (StmtHandle(0)), (x=2), (x=y+y)
+! if(x.ge.0) =>     (x=2)
 !
-! (x=y+y)    =>     (StmtHandle(0)), (y=5), (y=3), (y=2)
+! (x=y+y)    =>     (y=5)
 !
-! (z=x+y)    =>     (StmtHandle(0)), (x=2), (x=y+y),
-!                   (y=5), (y=3), (y=2)
-!
+! (z=x+y)    =>     (x=2), (x=y+y), (y=5), (y=3)
 
 
 
 ! DUChains<Stmt>
 ! <Stmt>     => set<Stmt>
 !===================================
-! StmtHandle(0)  => (i<=10), (i=i+1), if(x.ge.0), 
-!                   (x=y+y), (z=x+y)
-!
-! (y=2)          => (x=y+y), (z=x+y)
 !
 ! (i=1)          => (i<=10), (i=i+1)
 !
@@ -84,34 +78,33 @@
 !
 ! (y=5)          => (x=y+y), (z=x+y)
 !
-! (x=y+y)        => if(x.ge.0), (z=x+y)
+! (x=y+y)        => (z=x+y)
 !
-! <y=3>          => (x=y+y), (z=x+y)
+! <y=3>          => (z=x+y)
 !
 
 
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
-! (i)     =>     (StmtHandle(0)), (i=1), (i=i+1)
-! (i)     =>     (StmtHandle(0)), (i=1), (i=i+1)
-! (x)     =>     (StmtHandle(0)), (x=2), (x=y+y)
-! (y)     =>     (StmtHandle(0)), (y=5), (y=3), (y=2)
-! (y)     =>     (StmtHandle(0)), (y=5), (y=3), (y=2)
-! (x)     =>     (StmtHandle(0)), (x=2), (x=y+y)
-! (y)     =>     (StmtHandle(0)), (y=5), (y=3), (y=2)
-!
+! (i)     =>     (i=1), (i=i+1)
+! (i)     =>     (i=1), (i=i+1)
+! (x)     =>     (x=2)
+! (y)     =>     (y=5)
+! (y)     =>     (y=5)
+! (x)     =>     (x=2), (x=y+y)
+! (y)     =>     (y=5), (y=3)
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (y)     =>     (x=y+y),    (z=x+y)
+! (y)     =>     
 ! (i)     =>     (i<=10),    (i=i+1)
 ! (i)     =>     (i<=10),    (i=i+1)
 ! (x)     =>     if(x.ge.0), (z=x+y)
 ! (y)     =>     (x=y+y),    (z=x+y)
-! (x)     =>     if(x.ge.0), (z=x+y)
-! (y)     =>     (x=y+y),    (z=x+y)
+! (x)     =>     (z=x+y)
+! (y)     =>     (z=x+y)
 ! (z)     =>     ( )
 

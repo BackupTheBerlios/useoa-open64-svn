@@ -46,16 +46,15 @@
 ! UDChains<Stmt>
 ! <Stmt>     => set<Stmt>
 ! ====================================
-! if<x.ge.0> => <StmtHandle(0)>, <x=2>
-! <x=y+y>    => <StmtHandle(0)>, <y=5>
-! <z=x+y>    => <StmtHandle(0)>, <y=5>, <x=y+y>, <x=2>, <y=3>
+! if<x.ge.0> => <x=2>
+! <x=y+y>    => <y=5>
+! <z=x+y>    => <y=5>, <x=y+y>, <x=2>, <y=3>
 
 
 
 ! DUChains<Stmt>
 ! <Stmt>     => set<Stmt>
 !===================================
-! StmtHandle(0) => if<x.ge.0>, <x=y+y>, <z=x+y>
 ! <x=2>         => if<x.ge.0>, <z=x+y> 
 ! <y=5>         => <x=y+y>, <z=x+y>
 ! <x=y+y>       => <z=x+y>
@@ -66,11 +65,11 @@
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
-! <x>   => <StmtHandle(0)>, <x=2>
-! <y>   => <StmtHandle(0)>, <y=5>
-! <y>   => <StmtHandle(0)>, <y=5>
-! <x>   => Stmtandle(0), <x=2>, <x=y+y>
-! <y>   => <StmtHandle(0)>, <y=5>, <y=3>
+! <x>   => <x=2>
+! <y>   => <y=5>
+! <y>   => <y=5>
+! <x>   => <x=2>, <x=y+y>
+! <y>   => <y=5>, <y=3>
 
 
 

@@ -75,13 +75,13 @@
 ! StmtHandle(0)       => (barx=bary), (bary=t)
 ! t=barx              => (StmtHandle(0))
 ! barx=bary           => (StmtHandle(0))
-! bary=t              => (t=barx), StmtHandle(0)
+! bary=t              => (t=barx)
 
 
 ! DUChains<Stmt>
 ! <Stmt>     => set<Stmt>
 !===================================
-! StmtHandle(0)       =>  (t=barx), (barx=bary), (bary=t)
+! StmtHandle(0)       =>  (t=barx), (barx=bary)
 ! t=barx              =>  (bary=t)
 ! barx=bary           =>  StmtHandle(0)
 ! bary=t              =>  StmtHandle(0)
@@ -92,7 +92,7 @@
 !=======================================================
 ! (barx)            => StmtHandle(0)
 ! (bary)            => StmtHandle(0)
-! (t)               => (t=barx), StmtHandle(0)
+! (t)               => (t=barx)
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
@@ -174,7 +174,7 @@
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! gx       => (y(1)=gy), StmtHandle(0)
+! gx       => (y(1)=gx), StmtHandle(0)
 ! (y(1))   => StmtHandle(0)
 ! (y(2))   => StmtHandle(0)
 !
