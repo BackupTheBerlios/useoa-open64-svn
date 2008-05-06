@@ -91,20 +91,26 @@
 ! (a=3)         =>  (n=a)
 
 
-
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
 ! (I)     => (StmtHandle(0))
-! (t)     => (StmtHandle(0)), (p=5), (p=>t)
-! (a)     => (a=3), (p=>a)
+! (t)     => (StmtHandle(0)), (p=5)
+! (a)     => (p=5), (a=3)
+
+
+! (p)     => (p=>t), (p=>a), is missing because pointer UDChains not
+!                             working
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (p)     => (p=5), (m=t), (a=3), (n=a), StmtHandle(0)
-! (p)     => (m=t), (n=a)
+! (p)     => [] pointer DUChains not yet working
+! (p)     => [] pointer DUChains not yet working
+! (p)    =>  (m=t), (n=a), StmtHandle(0)
+! (m)     => (StmtHandle(0))
 ! (a)     => (n=a)
+! (n)     => (StmtHandle(0))
 
 
