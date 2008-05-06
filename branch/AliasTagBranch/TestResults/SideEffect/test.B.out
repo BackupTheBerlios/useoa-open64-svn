@@ -344,11 +344,68 @@ InterSideEffectStandard(
                 )
                 mLREFSet: 
                 mIsMust: false
-                mTags([  ] 
+                mTags([ 
+                            
+                            Tag(
+                                mTagID: 11
+                                # NamedRef(test_::X)
+                                # Deref(NamedRef(f_::N))
+                            )	 => [ 
+                                NamedRef(
+                                    mMemRefType: DEF
+                                    mSymHandle: SymHandle(test_::X)
+                                    mStrictlyLocal: 1
+                                )    
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::N)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ]  ] 
                 )
                 mREFSet: 
                 mIsMust: false
                 mTags([ 
+                            
+                            Tag(
+                                mTagID: 2
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
+                                mTagID: 3
+                                # NamedRef(test_::A)
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(test_::A)
+                                    mStrictlyLocal: 1
+                                )    
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
                             
                             Tag(
                                 mTagID: 4
@@ -1030,6 +1087,42 @@ InterSideEffectStandard(
                 mTags([ 
                             
                             Tag(
+                                mTagID: 2
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
+                                mTagID: 3
+                                # NamedRef(test_::A)
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(test_::A)
+                                    mStrictlyLocal: 1
+                                )    
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
                                 mTagID: 4
                                 # Deref(NamedRef(f_::P))
                             )	 => [ 
@@ -1176,6 +1269,42 @@ InterSideEffectStandard(
                 mREFSet: 
                 mIsMust: false
                 mTags([ 
+                            
+                            Tag(
+                                mTagID: 2
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
+                                mTagID: 3
+                                # NamedRef(test_::A)
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(test_::A)
+                                    mStrictlyLocal: 1
+                                )    
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
                             
                             Tag(
                                 mTagID: 4
@@ -1859,6 +1988,42 @@ InterSideEffectStandard(
                 mTags([ 
                             
                             Tag(
+                                mTagID: 2
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
+                                mTagID: 3
+                                # NamedRef(test_::A)
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(test_::A)
+                                    mStrictlyLocal: 1
+                                )    
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
                                 mTagID: 4
                                 # Deref(NamedRef(f_::P))
                             )	 => [ 
@@ -2005,6 +2170,42 @@ InterSideEffectStandard(
                 mREFSet: 
                 mIsMust: false
                 mTags([ 
+                            
+                            Tag(
+                                mTagID: 2
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
+                                mTagID: 3
+                                # NamedRef(test_::A)
+                                # Deref(NamedRef(f_::O))
+                            )	 => [ 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(test_::A)
+                                    mStrictlyLocal: 1
+                                )    
+                                Deref(
+                                    mMemRefType: DEF
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(f_::O)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                ) ] 
                             
                             Tag(
                                 mTagID: 4

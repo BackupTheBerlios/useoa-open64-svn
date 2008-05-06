@@ -922,6 +922,28 @@ InterSideEffectStandard(
                                         mStrictlyLocal: 1
                                     )
                                     mNumDeref: 1
+                                ) ] 
+                            
+                            Tag(
+                                mTagID: 14
+                                # UnnamedRef()
+                                # Deref(NamedRef(swap_::J))
+                            )	 => [ 
+                                UnnamedRef(
+                                    mMemRefType: USE
+                                    mExprHandle: ExprHandle(I:0:.predef_I4+1)
+                                    mLocal: 1
+                                    mProcHandle: ProcHandle(swap_::main_)
+                                )    
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(swap_::J)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
                                 ) ]  ] 
                 )
                 mREFSet: 

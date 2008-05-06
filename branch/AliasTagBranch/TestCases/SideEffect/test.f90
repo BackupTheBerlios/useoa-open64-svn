@@ -8,11 +8,6 @@
 ! d is only being used                                      !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! FIXME: 
-! PLM May 3rd 2008
-! Question: Should we get 'a' as ref in the procedure test ?
-
-
       
         program test
           integer :: x
@@ -36,22 +31,25 @@
 ! test()
 ! ======
 ! LMOD : x
-! MOD  : x,a,c
+! MOD  : a,c,x
 ! LDEF : x
 ! DEF  : x
 ! LUSE : 
-! USE  : x,b,c,d
-! LREF : x,b,c,d
-! REF  : x,b,c,d
+! USE  : b,c,d,x
+! LREF : x
+! REF  : a,b,c,d,x
+
+
 
 ! f()
 ! =====
-! LMOD : *n, *o, *q
-! MOD  : *n, *o, *q
+! LMOD : *o, *q, *n
+! MOD  : *o, *q, *n
 ! LDEF :
 ! DEF  :
-! LUSE : *n, *p, *q, *r
-! USE  : *n, *p, *q, *r
-! LREF : *n, *p, *q, *r
-! REF  : *n, *p, *q, *r
+! LUSE : *p, *q, *r, *n
+! USE  : *p, *q, *r, *n
+! LREF : *o, *p, *q, *r, *n
+! REF  : *o, *p, *q, *r, *n
+
 

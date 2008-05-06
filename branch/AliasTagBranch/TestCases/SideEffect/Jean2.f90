@@ -40,32 +40,40 @@
        end subroutine
 
 
-! =======================================
-! Interprocedural SideEffect Results
-! =======================================
+ 
 
-! Procedure foo:
+
+! ======================================= 
+! Interprocedural SideEffect Results 
+! ======================================= 
+ 
+! Procedure foo: 
 ! 
-! LMOD : *t
-! MOD  : *t
+! LMOD : *t 
+! MOD  : *t 
 ! LDEF : 
 ! DEF  : 
-! LUSE : *m
-! USE  : *m
-! LREF : *m
-! REF  : *m
-
-
-! Procedure head:
-!
-! LMOD : p
-! MOD  : p,q
-! LDEF : p
-! DEF  : p
+! LUSE : *m 
+! USE  : *m 
+! LREF : *m, *t 
+! REF  : *m, *t 
+ 
+ 
+! Procedure head: 
+! 
+! LMOD : p 
+! MOD  : p,q 
+! LDEF : p 
+! DEF  : p 
 ! LUSE : 
-! USE  : p,x
-! LREF : 
-! REF  : p,x
+! USE  : p,x 
+! LREF : p 
+! REF  : p,q,x 
+ 
+ 
+
+
+
 
 
 

@@ -56,6 +56,7 @@
 ! =====================================================
 !
 ! Procedure foo
+! =============
 ! 
 ! LMOD = *b
 ! MOD  = *b
@@ -63,20 +64,22 @@
 ! DEF  =
 ! LUSE = *a, *a()
 ! USE  = *a, *a()
-! LREF = *a, *a()
-! REF  = *a, *a()
+! LREF = *a, *a(), *b
+! REF  = *a, *a(), *b
 !
 !
 ! Procedure head
+! ==============
 !
 ! LMOD = px(), px, *x
 ! MOD  = px(), px *x, *y, py
 ! LDEF = 
 ! DEF  =
 ! LUSE = x,y 
-! USE  = x,y,px,*x,px()
-! LREF = x,y
-! REF  = x,y,px,*x,px()
+! USE  = x, y, *x, px, px()
+! LREF = x, *x, y, px, px()
+! REF  = x, y, px, px(), *x, py, *y
+
 
 
 
