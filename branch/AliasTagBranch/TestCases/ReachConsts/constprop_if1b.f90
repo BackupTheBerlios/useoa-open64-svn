@@ -21,7 +21,7 @@ program constprop_if1b
     !Reaching Constant x=2, y=TOP, z=TOP  
     y = 5
 
-    !Reaching Constant z=2, y=5, z=TOP
+    !Reaching Constant x=2, y=5, z=TOP
     x = y + y
   else
 

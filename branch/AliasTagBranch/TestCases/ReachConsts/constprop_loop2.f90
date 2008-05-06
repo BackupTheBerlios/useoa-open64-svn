@@ -29,6 +29,8 @@ program constprop_loop2
 
       !Reaching Consts x=2, y=BOTTOM, z=BOTTOM, i=BOTTOM  
       y = 3
+
+      x=5
     endif
 
     !Reaching Consts x=BOTTOM, y=BOTTOM, z=BOTTOM, i=BOTTOM

@@ -52,24 +52,24 @@
 ! [0]         =>     ( )
 ! [1]         =>     ( )
 ! [2]         =>     (StmtHandle(0))
-! [3]         =>     (p=>t), StmtHandle(0)
-! [4]         =>     (a=3), StmtHandle(0)
-! [5]         =>     (*p=5), (m=t), (a=3), (n=a)
-! [6]         =>     (m=t), (a=3), (n=a)
-! [7]         =>     (n=a)
+! [3]         =>     (p=5), StmtHandle(0)
+! [4]         =>     (p=5), (a=3)
+! [5]         =>     (m=t), (n=a), StmtHandle(0)
+! [6]         =>     (n=a)
 
 
 
 ! MemRefHandle => ChainID
 ! -----------------------
+! (i)     =>     2
+! (p)     =>     1
+! (p)     =>     1
+! (p)     =>     5
+! (m)     =>     1
 ! (t)     =>     3
+! (a)     =>     6
+! (n)     =>     1
 ! (a)     =>     4
-! (p)     =>     5
-! (p)     =>     5
-! (*p)    =>     6
-! (m)     =>     2
-! (a)     =>     7
-! (n)     =>     2
 
 
 
@@ -81,16 +81,19 @@
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
-! (t)     => (p=>t) (StmtHandle(0))
-! (a)     => (a=3)  (StmtHandle(0))
+! (t)     => (p=5) (StmtHandle(0))
+! (a)     => (p=5) (a=3) 
+
+! (p)     => (p=>t), (p=>a), is missing because pointer UDChains not
+!                             working
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (p)     => (*p=5), (m=t), (a=3), (n=a)
-! (p)     => (*p=5), (m=t), (a=3), (n=a)
-! (*p)    => (m=t), (a=3), (n=a)
+! (p)     => [] pointer DUChains not yet working
+! (p)     => [] pointer DUChains not yet working
+! (p)    =>  (m=t), (n=a), StmtHandle(0)
 ! (m)     => (StmtHandle(0))
 ! (a)     => (n=a)
 ! (n)     => (StmtHandle(0))

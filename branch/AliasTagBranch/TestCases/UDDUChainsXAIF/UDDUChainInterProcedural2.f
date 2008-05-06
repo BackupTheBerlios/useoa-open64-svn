@@ -57,29 +57,26 @@
 ! [0]     =>   ( )
 ! [1]     =>   ( )
 ! [2]     =>   (StmtHandle(0))
-! [3]     =>   (StmtHandle(0)), (call bar(m,p,v,x)),
-!              (call bar(p,m,v,x))
-! [4]     =>   (m=5), (m=2), (call bar(m,p,v,x)), 
-!              (m=2), (p=5), (call bar(p,m,v,x)),
-!              StmtHandle(0)
-! [5]     =>   (call bar(m,p,v,x)), (call bar(p,m,v,x))
-!              (f=m+p+v+x)
-! [6]     =>   (call bar(p,m,v,x)), (f=m+p+v+x)
+! [3]     =>   (call bar(m,p,v,x)), (call bar(p,m,v,x))
+! [4]     =>   (m=5), (call bar(m,p,v,x)), (call bar(p,m,v,x))
+! [5]     =>   (p=2), (call bar(m,p,v,x)), (call bar(p,m,v,x))
+! [6]     =>   (call bar(m,p,v,x))
+! [7]     =>   (call bar(p,m,v,x)), (f=m+p+v+x)
 
 
 
 
-! (x)     =>     2   
-! (x)     =>     2   
-! (m)     =>     4   
-! (p)     =>     4   
-! (v)     =>     3    
-! (x)     =>     2    
-! (m)     =>     5    
-! (p)     =>     5    
-! (m)     =>     6    
-! (p)     =>     6    
+! (m)     =>     6
+! (p)     =>     6   
+! (&x)    =>     2   
+! (m)     =>     7   
+! (p)     =>     7    
+! (&x)    =>     2    
 ! (f)     =>     2    
+! (x)     =>     2    
+! (v)     =>     3    
+! (m)     =>     4    
+! (p)     =>     5    
 
 
 
@@ -95,28 +92,19 @@
 !
 ! (x)     =>    StmtHandle(0)
 !
-! (m)     =>    (m=5), (m=2), (call bar(m,p,v,x)),
-!               (m=2), (p=5), (call bar(p,m,v,x)),
-!               StmtHandle(0)
+! (m)     =>    (m=5), (call bar(m,p,v,x)), (call bar(p,m,v,x))
 !
-! (p)     =>    (m=5), (p=2), (call bar(m,p,v,x)),
-!               (m=2), (p=5), (call bar(p,m,v,x)),
-!               StmtHandle(0)
+! (p)     =>    (p=2), (call bar(m,p,v,x)), (call bar(p,m,v,x))
 !
-! (v)     =>    (StmtHandle(0)), (call bar(m,p,v,x)),
-!               (call bar(p,m,v,x))
+! (v)     =>    (call bar(m,p,v,x)), (call bar(p,m,v,x))
 !
-! (x)     =>    (StmtHandle(0))
-
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (m)     =>    (call bar(m,p,v,x)), (call bar(p,m,v,x))
-!               (f=m+p+v+x)
+! (m)     =>    (call bar(m,p,v,x))
 !
-! (p)     =>    (call bar(m,p,v,x)), (call bar(p,m,v,x))
-!               (f=m+p+v+x)
+! (p)     =>    (call bar(m,p,v,x))
 !
 ! (m)     =>    (call bar(p,m,v,x)), (f=m+p+v+x)
 !
@@ -133,17 +121,17 @@
                 ! ==============
 
 
-! [7]     =>  (c=a*b), StmtHandle(0)
-! [8]     =>  (b=c-d), (StmtHandle(0))
+! [8]     =>  (c=a*b), StmtHandle(0)
+! [9]     =>  (b=c-d), (StmtHandle(0))
 
 
 
-! (a)     =>  2   
-! (b)     =>  2  
-! (c)     =>  7   
-! (d)     =>  2   
-! (c)     =>  8   
+! (c)     =>  9 
+! (a)     =>  2  
 ! (b)     =>  2   
+! (b)     =>  2   
+! (c)     =>  8   
+! (d)     =>  2   
 
 
 

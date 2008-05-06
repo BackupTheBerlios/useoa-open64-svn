@@ -53,6 +53,7 @@
           ! MemRefHandle(A)   => SetId(2)
           ! MemRefHandle(B)   => SetId(3)
           ! MemRefHandle(&A)  => SetId(0)
+          ! MemRefHandle(C)   => SetId(4)
 
           !
           !   [  SetId  =>  Virtual Address ]
@@ -61,5 +62,6 @@
           ! SetId(1) => { LocTuple(8:8, May) }
           ! SetId(2) => { LocTuple(3:3, Must) }
           ! SetId(3) => { LocTuple(5:5, Must) }
+          ! SetId(4) => { LocTuple(8:8, May) }
 
          

@@ -57,20 +57,19 @@
 ! --------------------------
 ! [0]      => ( )
 ! [1]      => ( )
-! [3]      => (StmtHandle(0))
-! [4]      => (firstPtr%labor = 5.3), (x=firstPtr%labor), StmtHandle(0)
-! [5]      => (x=firstPtr%labor), StmtHandle(0)
-! [6]      => (x=firstPtr%labor)     
+! [2]      => (StmtHandle(0))
+! [3]      => (firstPtr%labor = 5.3), StmtHandle(0)
+! [4]      => (x=firstPtr%labor), StmtHandle(0)
 
 
 
 
 ! MemRefHandle => ChainID
 ! ------------------------------
-! (firstPtr)           =>     4
-! (firstPtr%labor)     =>     5
-! (x)                  =>     2
-! (firstPtr%labor)     =>     6
+! (firstPtr%labor)     => 4
+! (firstPtr%labor)     => 3
+! (x)                  => 1
+! (firstPtr)           => 1 
 
 
 
@@ -84,14 +83,18 @@
 ! UDChains<MemRefHandle>  [Please see Uses per statement]
 ! <Use MemRefHandle>  =>  set<Stmt>
 !=======================================================
-! (firstPtr)          => (firstPtr%labor = 5.3), (x=firstPtr%labor), StmtHandle(0)
-! (firstPtr%labor)    => (x=firstPtr%labor), StmtHandle(0)
-! (x)                 => (StmtHandle(0))
+! (firstPtr%labor)    => (firstPtr%labor = 5.3), StmtHandle(0)
+
+! Missing:
+! ========
+! (firstPtr)          => (firstPtr=>first)
+
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (firstPtr%labor)     =>     (x=firstPtr%labor)
-
+! (firstPtr%labor)     => (x=firstPtr%labor), StmtHandle(0)
+! (x)                  => [ ]
+! firstPtr             => [ ], missing pointer DUChains.
 

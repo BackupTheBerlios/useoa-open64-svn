@@ -1364,7 +1364,7 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu_forest,
                                            interSideEffects);
 
 
-
+        udduchains->output(*irInterface); 
 
         udduchainsXAIF =
         udmanXAIF->performAnalysis(eachCFG->getCFGResults(proc), 

@@ -7,13 +7,13 @@ driverexec::./test-open64 --oa-ICFGReachConsts
 
 # list of tests
 #       input file,                 status
-test::  constprop_if1a.B,       Checked by BK 08/29/06 
-test::  constprop_if1.B,        Checked by BK 08/29/06
-test::  constprop_if1b.B,       Checked by BK 08/29/06
-test::  constprop_if1c.B,       Checked by BK 08/29/06
+test::  constprop_if1a.B,       Checked by PLM 05/05/08
+test::  constprop_if1.B,        Checked by PLM 05/05/08
+test::  constprop_if1b.B,       Checked by PLM 05/05/08 
+test::  constprop_if1c.B,       Checked by PLM 05/05/08
 
 # constants set in loop do not survive meet at top
-test::  constprop_loop1.B,      Checked by BK 08/29/06 
+test::  constprop_loop1.B,      Checked by PLM 05/05/08
 test::  constprop_loop2.B,      Checked by BK 08/29/06
 
 # less precise, call-return interference

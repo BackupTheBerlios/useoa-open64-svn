@@ -58,21 +58,21 @@
 ! [0]         => ( )
 ! [1]         => ( )
 ! [2]         => StmtHandle(0)
-! [3]         => StmtHandle(0), call bar(m,p,v,x)
-! [4]         => StmtHandle(0), (m=2)
-! [5]         => StmtHandle(0), (p=5), call bar(m,p,v,x)
+! [3]         => call bar(m,p,v,x)
+! [4]         => (m=2)
+! [5]         => (p=5), call bar(m,p,v,x)
 ! [6]         => call bar(m,p,v,x), (f=m+p+v+x)
 
 
 ! MemRefHandle   => ChainID
+! (m)            => 6
+! (p)            => 6     
+! (&x)           => 2     
+! (f)            => 2     
 ! (x)            => 2     
+! (v)            => 3     
 ! (m)            => 4     
 ! (p)            => 5     
-! (v)            => 3     
-! (x)            => 2     
-! (m)            => 6     
-! (p)            => 6     
-! (f)            => 2     
 
 
 
@@ -84,9 +84,9 @@
 !=======================================================
 ! (x)     => StmtHandle(0)
 ! (x)     => StmtHandle(0)
-! (v)     => StmtHandle(0), (call bar(m,p,v,x))
-! (m)     => StmtHandle(0), (m=2)
-! (p)     => StmtHandle(0), (p=5), call bar(m,p,v,x)
+! (v)     => (call bar(m,p,v,x))
+! (m)     => (m=2)
+! (p)     => (p=5), call bar(m,p,v,x)
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
@@ -112,12 +112,12 @@
 
 
 ! MemRefHandle   => ChainID
+! (c)            => 8
 ! (a)            => 2   
+! (b)            => 2   
 ! (b)            => 2   
 ! (c)            => 7   
 ! (d)            => 2   
-! (c)            => 8   
-! (b)            => 2   
 
 
 
