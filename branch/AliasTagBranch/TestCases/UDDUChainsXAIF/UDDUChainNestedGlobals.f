@@ -14,7 +14,7 @@
 !
 ! Status /Issues:
 !
-! Note:
+! Note:    [X] Only strictlyLocal NamedRef are Must, everything else is May
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -64,18 +64,18 @@
 ! [0]     => ( )
 ! [1]     => ( )
 ! [2]     => (StmtHandle(0))
-! [3]     => (t=barx), StmtHandle(0)
+! [3]     => (t=barx)
 ! [4]     => (bary=t)
 
 
 ! MemRefHandle => ChainID
 ! -----------------------
-! (barx)     =>     2  
-! (bary)     =>     2  
-! (t)        =>     3  
-! (t)        =>     4  
-! (barx)     =>     2  
-! (bary)     =>     2  
+! (t)     => 4
+! (barx)  => 2
+! (barx)  => 2
+! (bary)  => 2
+! (bary)  => 2
+! (t)     => 3
 
 
 
@@ -101,13 +101,13 @@
 
 ! MemRefHandle => ChainID
 ! -----------------------
-! x(1)     => 2
-! gx       => 5
-! gy       => 2
-! gx       => 6
-! (y(1))   => 2
-! (y(2))   => 2
-!
+! gx  => 6
+! x() => 2
+! y() => 2
+! gx  => 5
+! y() => 2
+! gy  => 2
+
 
 ! ========================================================
 
@@ -123,7 +123,7 @@
 !=======================================================
 ! (barx)            => StmtHandle(0)
 ! (bary)            => StmtHandle(0)
-! (t)               => (t=barx), StmtHandle(0)
+! (t)               => (t=barx)
 
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
@@ -132,7 +132,22 @@
 ! (t)        => (bary=t)
 ! (barx)     => StmtHandle(0)
 ! (bary)     => StmtHandle(0)
-!
+
+
+
+                   
+                   ! Procedure(foo)
+                   ! --------------
+
+! UDChains<MemRefHandle>  [Please see Uses per statement]
+! <Use MemRefHandle>  =>  set<Stmt>
+!=======================================================
+
+
+! DUChains<MemRefHandle>  [Please see Defs per statement]
+! <Def MemRefHandle>  =>  set<Stmt>
+!========================================================
+
 
 
                    ! Procedure(head)
@@ -150,7 +165,7 @@
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! gx       => (y(1)=gy), StmtHandle(0)
+! gx       => (y(1)=gx), StmtHandle(0)
 ! (y(1))   => StmtHandle(0)
 ! (y(2))   => StmtHandle(0)
 !

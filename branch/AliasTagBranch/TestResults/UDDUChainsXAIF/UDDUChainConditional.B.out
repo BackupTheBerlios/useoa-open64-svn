@@ -1,83 +1,29 @@
 Test UDDUChains analysis
 
-UDDUChainsStandard(
-    mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
-            
-            Use StatementHandle : StmtHandle(if (X:0:.predef_I4>=0))	 => 
-            Define Statements: [ StmtHandle(X:0:.predef_I4 = 2) ] 
-            
-            Use StatementHandle : StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => 
-            Define Statements: [ StmtHandle(Y:0:.predef_I4 = 5) ] 
-            
-            Use StatementHandle : StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)	 => 
-            Define Statements: [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(Y:0:.predef_I4 = 5)    StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Y:0:.predef_I4 = 3) ] 
+UDDUChainsXAIF(
+    ChainsXAIF(
+        mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                0	 => 
+                1	 => 
+                2	 => StmtHandle(StmtHandle(0))
+                3	 => StmtHandle(X:0:.predef_I4 = 2)
+                4	 => StmtHandle(Y:0:.predef_I4 = 5)
+                5	 => StmtHandle(X:0:.predef_I4 = 2)StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)
+                6	 => StmtHandle(Y:0:.predef_I4 = 5)StmtHandle(Y:0:.predef_I4 = 3)
+                7	 => StmtHandle(if (X:0:.predef_I4>=0))StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)
+                8	 => StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)
+                9	 => StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)
 
-    mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
-            
-            Def StatementHandle : StmtHandle(X:0:.predef_I4 = 2)	 => 
-            Use Statements: [ StmtHandle(if (X:0:.predef_I4>=0))    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def StatementHandle : StmtHandle(Y:0:.predef_I4 = 5)	 => 
-            Use Statements: [ StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def StatementHandle : StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => 
-            Use Statements: [ StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def StatementHandle : StmtHandle(Y:0:.predef_I4 = 3)	 => 
-            Use Statements: [ StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
+        mMemRefToIdMap: MemRefHandle	 => int
+                MemRefHandle(X:0:.predef_I4)	 => 7
+                MemRefHandle(X:0:.predef_I4)	 => 3
+                MemRefHandle(Y:0:.predef_I4)	 => 8
+                MemRefHandle(X:0:.predef_I4)	 => 9
+                MemRefHandle(Y:0:.predef_I4)	 => 4
+                MemRefHandle(Y:0:.predef_I4)	 => 4
+                MemRefHandle(Y:0:.predef_I4)	 => 9
+                MemRefHandle(Z:0:.predef_I4)	 => 1
+                MemRefHandle(X:0:.predef_I4)	 => 5
+                MemRefHandle(Y:0:.predef_I4)	 => 6
 
-    mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
-            
-            Use MemRefHandle: MemRefHandle(X:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(X:0:.predef_I4 = 2) ] 
-            
-            Use MemRefHandle: MemRefHandle(Y:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(Y:0:.predef_I4 = 5) ] 
-            
-            Use MemRefHandle: MemRefHandle(Y:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(Y:0:.predef_I4 = 5) ] 
-            
-            Use MemRefHandle: MemRefHandle(X:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(X:0:.predef_I4 = 2)    StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Use MemRefHandle: MemRefHandle(Y:0:.predef_I4)	 => 
-            Def Statements: [ StmtHandle(Y:0:.predef_I4 = 5)    StmtHandle(Y:0:.predef_I4 = 3) ] 
-
-    mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
-            
-            Def MemRefHandle: MemRefHandle(X:0:.predef_I4)	 => 
-            Use Statements: [ StmtHandle(if (X:0:.predef_I4>=0))    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def MemRefHandle: MemRefHandle(Y:0:.predef_I4)	 => 
-            Use Statements: [ StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)    StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def MemRefHandle: MemRefHandle(X:0:.predef_I4)	 => 
-            Use Statements: [ StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def MemRefHandle: MemRefHandle(Y:0:.predef_I4)	 => 
-            Use Statements: [ StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4) ] 
-            
-            Def MemRefHandle: MemRefHandle(Z:0:.predef_I4)	 => 
-            Use Statements: [  ] 
-============= ChainsXAIF ============
-ChainsSet[0] = {  }
-ChainsSet[1] = {  }
-ChainsSet[2] = { , <StmtHandle(0)>  }
-ChainsSet[3] = { , <X:0:.predef_I4 = 2>  }
-ChainsSet[4] = { , <Y:0:.predef_I4 = 5>  }
-ChainsSet[5] = { , <X:0:.predef_I4 = 2> , <X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4>  }
-ChainsSet[6] = { , <Y:0:.predef_I4 = 5> , <Y:0:.predef_I4 = 3>  }
-ChainsSet[7] = { , <if (X:0:.predef_I4>=0)> , <Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4>  }
-ChainsSet[8] = { , <X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4> , <Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4>  }
-ChainsSet[9] = { , <Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4>  }
-MemRef mapping to UDDUChains sets:
-(47607099327256) X:0:.predef_I4 --> 7
-(47607099327448) X:0:.predef_I4 --> 3
-(47607099327616) Y:0:.predef_I4 --> 8
-(47607099327720) X:0:.predef_I4 --> 9
-(47607099327800) Y:0:.predef_I4 --> 4
-(47607099327840) Y:0:.predef_I4 --> 4
-(47607099327968) Y:0:.predef_I4 --> 9
-(47607099328072) Z:0:.predef_I4 --> 1
-(47607099328152) X:0:.predef_I4 --> 5
-(47607099328192) Y:0:.predef_I4 --> 6
+    )

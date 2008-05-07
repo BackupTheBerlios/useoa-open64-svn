@@ -13,10 +13,17 @@
 !
 ! Status /Issues:
 !
-! Note:  I think ChainID 4 for the DUChain is just spurious because
-!        we have StmtHandle(0) everywhere in the UDChain.
+! Note:    [X] Only strictlyLocal NamedRef are Must, everything else is May
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+! FIXME:
+! PLM May 5th 2008
+! Pointer UDDUChains missing i.e. firstPtr=>first have no uses
+! i.e. first%labor. Do we need that information ? How do we 
+! represent that information for UDDUChainsXAIF ? (Need discussion with
+! Jean)
 
 
 ! Example:
@@ -85,16 +92,11 @@
 !=======================================================
 ! (firstPtr%labor)    => (firstPtr%labor = 5.3), StmtHandle(0)
 
-! Missing:
-! ========
-! (firstPtr)          => (firstPtr=>first)
-
-
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
 ! (firstPtr%labor)     => (x=firstPtr%labor), StmtHandle(0)
 ! (x)                  => [ ]
-! firstPtr             => [ ], missing pointer DUChains.
+! firstPtr             => [ ]
 

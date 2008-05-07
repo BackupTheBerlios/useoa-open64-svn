@@ -14,9 +14,15 @@
 !
 ! Status /Issues:
 !
-! Note:
+! Note:    [X] Only strictlyLocal NamedRef are Must, everything else is May 
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! FIXME:
+! PLM May 5th 2008
+! Pointer UDDUChains missing. i.e. p=>t or p=>a definitions have no uses
+! i.e. p=5.  Do we need that information ? How do we represent that 
+! information for UDDUChainsXAIF ? ((Need discussion with Jean)
 
 
 ! Example:
@@ -84,15 +90,12 @@
 ! (t)     => (p=5) (StmtHandle(0))
 ! (a)     => (p=5) (a=3) 
 
-! (p)     => (p=>t), (p=>a), is missing because pointer UDChains not
-!                             working
-
 
 ! DUChains<MemRefHandle>  [Please see Defs per statement]
 ! <Def MemRefHandle>  =>  set<Stmt>
 !========================================================
-! (p)     => [] pointer DUChains not yet working
-! (p)     => [] pointer DUChains not yet working
+! (p)     => [] 
+! (p)     => [] 
 ! (p)    =>  (m=t), (n=a), StmtHandle(0)
 ! (m)     => (StmtHandle(0))
 ! (a)     => (n=a)

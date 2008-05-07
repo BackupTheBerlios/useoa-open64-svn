@@ -14,7 +14,7 @@
 !
 ! Status /Issues:
 !
-! Note:
+! Note:     [X] Only strictlyLocal NamedRef are Must, everything else is May 
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
