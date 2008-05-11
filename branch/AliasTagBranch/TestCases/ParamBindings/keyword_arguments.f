@@ -1,4 +1,6 @@
 
+! Example:
+! ========
       
        IMPLICIT NONE 
        INTERFACE 
@@ -12,9 +14,6 @@
        REAL X 
  
        CALL SOLVE(N=100,A=X)           
-c                                Formal => Actual       
-c                                *A     => MemRefNode(X)
-c                                *N     => MemRefNode(UnnamedRef(100))
  
        END 
  
@@ -28,3 +27,15 @@ c                                *N     => MemRefNode(UnnamedRef(100))
        A = TEMP_B + N 
        RETURN 
        END 
+
+
+
+! ParamBindings (Formal => Actual) :
+! ==================================
+!
+! - CallHandle = CALL SOLVE(N=100,A=X)
+!
+!       1. A   => MemRefNode(&X)
+!       2. N   => MemRefNode(&UnnamedRef(100))
+!
+
