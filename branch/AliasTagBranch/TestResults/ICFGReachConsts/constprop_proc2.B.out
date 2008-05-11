@@ -5,7 +5,7 @@ mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<RCPairSet> 
                     
-                    Statement:  LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ReachConsts/constprop_proc2.f90"
+                    Statement:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ReachConsts/constprop_proc2.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()	 => 
                     RCPairSet([  ] 
@@ -21,9 +21,8 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
-                                    # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::A))
                                     # Deref(NamedRef(bar_::B))
                                 )
@@ -37,8 +36,18 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
+                                    # Deref(NamedRef(bar_::A))
+                                    # Deref(NamedRef(bar_::B))
+                                )
+                                mCDType: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 8
                                     # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::A))
                                     # Deref(NamedRef(bar_::B))
@@ -48,19 +57,7 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(M:0:.predef_I4 = 5)	 => 
-                    RCPairSet([ 
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 4
-                                    # NamedRef(head_::M)
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=5>
-                            ) ] 
+                    RCPairSet([  ] 
                     )
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 2)	 => 
@@ -69,9 +66,8 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
-                                    # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::A))
                                     # Deref(NamedRef(bar_::B))
                                 )
@@ -85,8 +81,18 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
+                                    # Deref(NamedRef(bar_::A))
+                                    # Deref(NamedRef(bar_::B))
+                                )
+                                mCDType: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                Tag: 
+                                Tag(
+                                    mTagID: 8
                                     # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::A))
                                     # Deref(NamedRef(bar_::B))
@@ -96,35 +102,11 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
-                    RCPairSet([ 
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 4
-                                    # NamedRef(head_::M)
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=2>
-                            ) ] 
+                    RCPairSet([  ] 
                     )
                     
                     Statement: StmtHandle(return)	 => 
-                    RCPairSet([ 
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 4
-                                    # NamedRef(head_::M)
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=2>
-                            ) ] 
+                    RCPairSet([  ] 
                     )
 
         )

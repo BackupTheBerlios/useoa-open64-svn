@@ -1,16 +1,16 @@
-echo "Testing TestCases/SideEffect/Jean2.B, TestResults/SideEffect/Jean2.B.out "
+echo "Testing TestCases/SideEffect/Jean2.B, TestResults/SideEffect/Jean2.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/Jean2.B > t
 diff t TestResults/SideEffect/Jean2.B.out
 
-echo "Testing TestCases/SideEffect/Jean.B, TestResults/SideEffect/Jean.B.out "
+echo "Testing TestCases/SideEffect/Jean.B, TestResults/SideEffect/Jean.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/Jean.B > t
 diff t TestResults/SideEffect/Jean.B.out
 
-echo "Testing TestCases/SideEffect/swap.B, TestResults/SideEffect/swap.B.out "
+echo "Testing TestCases/SideEffect/swap.B, TestResults/SideEffect/swap.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/swap.B > t
 diff t TestResults/SideEffect/swap.B.out
 
-echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out "
+echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/test.B > t
 diff t TestResults/SideEffect/test.B.out
 

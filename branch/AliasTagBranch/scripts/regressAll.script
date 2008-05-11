@@ -44,3 +44,10 @@ source scripts/regressUDDUChains.script
 echo "########################### running regressUDDUChainsXAIF.script"
 source scripts/regressUDDUChainsXAIF.script 
 
+
+echo "########################### running regressReachConsts.script"
+source scripts/regressICFGReachConsts.script
+
+
+
+

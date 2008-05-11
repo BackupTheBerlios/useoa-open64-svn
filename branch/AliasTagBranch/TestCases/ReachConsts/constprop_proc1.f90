@@ -24,27 +24,25 @@
        ! all BOTTOM, m=2, p=5
        call bar(m,p,v,x)
 
-       !                    most precise: all BOTTOM, m=2, v=10
-       ! call-return interference causes: all BOTTOM, m=2
+       ! most precise: all BOTTOM, m=2, v=10
        f = m + p + v + x
 
-       !                    most precise: all BOTTOM, m=2, v=10
-       ! call-return interference causes: all BOTTOM, m=2
+       ! most precise: all BOTTOM, m=2, v=10
        end subroutine
 
 
        subroutine bar(a,b,c,d)
        integer a,b,c,d
 
-       ! all BOTTOM, a=2, b=5
+       ! all BOTTOM, *a=2, *b=5
        c = a * b
 
-       ! all BOTTOM, a=2, b=5, c=10
+       ! all BOTTOM, *a=2, *b=5, *c=10
        b = c - d
 
-       ! all BOTTOM, a=2, c=10
+       ! all BOTTOM, *a=2, *c=10
        return
 
-       ! all BOTTOM, a=2, c=10
+       ! all BOTTOM, *a=2, *c=10
        end subroutine
 

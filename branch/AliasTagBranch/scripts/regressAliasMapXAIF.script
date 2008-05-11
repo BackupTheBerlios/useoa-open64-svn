@@ -1,36 +1,36 @@
-echo "Testing TestCases/AliasMapXAIF/Alias_Pointer.B, TestResults/AliasMapXAIF/Alias_Pointer.B.out Checked by PLM 04/07/08"
+echo "Testing TestCases/AliasMapXAIF/Alias_Pointer.B, TestResults/AliasMapXAIF/Alias_Pointer.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/Alias_Pointer.B > t
 diff t TestResults/AliasMapXAIF/Alias_Pointer.B.out
 
-echo "Testing TestCases/AliasMapXAIF/NoAlias_StructVar.B, TestResults/AliasMapXAIF/NoAlias_StructVar.B.out Checked by PLM 04/07/08"
+echo "Testing TestCases/AliasMapXAIF/NoAlias_StructVar.B, TestResults/AliasMapXAIF/NoAlias_StructVar.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_StructVar.B > t
 diff t TestResults/AliasMapXAIF/NoAlias_StructVar.B.out
 
-echo "Testing TestCases/AliasMapXAIF/NoAlias_Named.B, TestResults/AliasMapXAIF/NoAlias_Named.B.out Checked by PLM 04/07/08"
+echo "Testing TestCases/AliasMapXAIF/NoAlias_Named.B, TestResults/AliasMapXAIF/NoAlias_Named.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_Named.B > t
 diff t TestResults/AliasMapXAIF/NoAlias_Named.B.out
 
-echo "Testing TestCases/AliasMapXAIF/NoAlias_Unnamed.B, TestResults/AliasMapXAIF/NoAlias_Unnamed.B.out Checked by PLM 04/07/08"
+echo "Testing TestCases/AliasMapXAIF/NoAlias_Unnamed.B, TestResults/AliasMapXAIF/NoAlias_Unnamed.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_Unnamed.B > t
 diff t TestResults/AliasMapXAIF/NoAlias_Unnamed.B.out
 
-echo "Testing TestCases/AliasMapXAIF/NoAlias_FieldAccess.B, TestResults/AliasMapXAIF/NoAlias_FieldAccess.B.out Checked by PLM 04/07/08"
+echo "Testing TestCases/AliasMapXAIF/NoAlias_FieldAccess.B, TestResults/AliasMapXAIF/NoAlias_FieldAccess.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_FieldAccess.B > t
 diff t TestResults/AliasMapXAIF/NoAlias_FieldAccess.B.out
 
-echo "Testing TestCases/AliasMapXAIF/NoAlias_SubSet.B, TestResults/AliasMapXAIF/NoAlias_SubSet.B.out Chekced by PLM 04/07/08"
+echo "Testing TestCases/AliasMapXAIF/NoAlias_SubSet.B, TestResults/AliasMapXAIF/NoAlias_SubSet.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/NoAlias_SubSet.B > t
 diff t TestResults/AliasMapXAIF/NoAlias_SubSet.B.out
 
-echo "Testing TestCases/AliasMapXAIF/Param_Alias.B, TestResults/AliasMapXAIF/Param_Alias.B.out "
+echo "Testing TestCases/AliasMapXAIF/Param_Alias.B, TestResults/AliasMapXAIF/Param_Alias.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/Param_Alias.B > t
 diff t TestResults/AliasMapXAIF/Param_Alias.B.out
 
-echo "Testing TestCases/AliasMapXAIF/multiple_calls.B, TestResults/AliasMapXAIF/multiple_calls.B.out "
+echo "Testing TestCases/AliasMapXAIF/multiple_calls.B, TestResults/AliasMapXAIF/multiple_calls.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/multiple_calls.B > t
 diff t TestResults/AliasMapXAIF/multiple_calls.B.out
 
-echo "Testing TestCases/AliasMapXAIF/pointer_to_local.B, TestResults/AliasMapXAIF/pointer_to_local.B.out "
+echo "Testing TestCases/AliasMapXAIF/pointer_to_local.B, TestResults/AliasMapXAIF/pointer_to_local.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-AliasMapXAIF TestCases/AliasMapXAIF/pointer_to_local.B > t
 diff t TestResults/AliasMapXAIF/pointer_to_local.B.out
 

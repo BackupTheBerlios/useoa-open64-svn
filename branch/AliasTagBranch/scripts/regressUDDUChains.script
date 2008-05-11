@@ -1,28 +1,28 @@
-echo "Testing TestCases/UDDUChains/UDDUChainConditional.B, TestResults/UDDUChains/UDDUChainConditional.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainConditional.B, TestResults/UDDUChains/UDDUChainConditional.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainConditional.B > t
 diff t TestResults/UDDUChains/UDDUChainConditional.B.out
 
-echo "Testing TestCases/UDDUChains/UDDUChainInterProcedural1.B, TestResults/UDDUChains/UDDUChainInterProcedural1.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainInterProcedural1.B, TestResults/UDDUChains/UDDUChainInterProcedural1.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainInterProcedural1.B > t
 diff t TestResults/UDDUChains/UDDUChainInterProcedural1.B.out
 
-echo "Testing TestCases/UDDUChains/UDDUChainNestedGlobals.B, TestResults/UDDUChains/UDDUChainNestedGlobals.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainNestedGlobals.B, TestResults/UDDUChains/UDDUChainNestedGlobals.B.out Checked by PLM 05/05/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainNestedGlobals.B > t
 diff t TestResults/UDDUChains/UDDUChainNestedGlobals.B.out
 
-echo "Testing TestCases/UDDUChains/UDDUChainIndirect1.B, TestResults/UDDUChains/UDDUChainIndirect1.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainIndirect1.B, TestResults/UDDUChains/UDDUChainIndirect1.B.out Checked by PLM 05/05/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainIndirect1.B > t
 diff t TestResults/UDDUChains/UDDUChainIndirect1.B.out
 
-echo "Testing TestCases/UDDUChains/UDDUChainInterProcedural2.B, TestResults/UDDUChains/UDDUChainInterProcedural2.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainInterProcedural2.B, TestResults/UDDUChains/UDDUChainInterProcedural2.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainInterProcedural2.B > t
 diff t TestResults/UDDUChains/UDDUChainInterProcedural2.B.out
 
-echo "Testing TestCases/UDDUChains/UDDUChainIndirect2.B, TestResults/UDDUChains/UDDUChainIndirect2.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainIndirect2.B, TestResults/UDDUChains/UDDUChainIndirect2.B.out Checked by PLM 05/05/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainIndirect2.B > t
 diff t TestResults/UDDUChains/UDDUChainIndirect2.B.out
 
-echo "Testing TestCases/UDDUChains/UDDUChainLoop.B, TestResults/UDDUChains/UDDUChainLoop.B.out "
+echo "Testing TestCases/UDDUChains/UDDUChainLoop.B, TestResults/UDDUChains/UDDUChainLoop.B.out Checked by PLM 05/04/08"
 ./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainLoop.B > t
 diff t TestResults/UDDUChains/UDDUChainLoop.B.out
 

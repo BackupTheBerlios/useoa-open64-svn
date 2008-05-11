@@ -5,7 +5,7 @@ mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<RCPairSet> 
                     
-                    Statement:  LOC 0 0 source files:	1	"/home/malusare/Dec18/UseOA-Open64/TestCases/ReachConsts/constprop_proc1.f90"
+                    Statement:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ReachConsts/constprop_proc1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()	 => 
                     RCPairSet([  ] 
@@ -21,7 +21,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -35,7 +35,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -45,7 +45,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
+                                    mTagID: 9
                                     # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::B))
                                 )
@@ -59,7 +59,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -69,18 +69,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 6
-                                    # NamedRef(head_::V)
+                                    mTagID: 10
                                     # Deref(NamedRef(bar_::C))
                                 )
                                 mCDType: ,VALUE=10>
@@ -89,19 +78,11 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 7
-                                    # NamedRef(bar_::A)
+                                    mTagID: 11
+                                    # NamedRef(head_::V)
+                                    # Deref(NamedRef(bar_::C))
                                 )
-                                mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(bar_::B)
-                                )
-                                mCDType: ,VALUE=5>
+                                mCDType: ,VALUE=10>
                             ) ] 
                     )
                     
@@ -111,7 +92,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -121,18 +102,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 6
-                                    # NamedRef(head_::V)
+                                    mTagID: 10
                                     # Deref(NamedRef(bar_::C))
                                 )
                                 mCDType: ,VALUE=10>
@@ -141,19 +111,11 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 7
-                                    # NamedRef(bar_::A)
+                                    mTagID: 11
+                                    # NamedRef(head_::V)
+                                    # Deref(NamedRef(bar_::C))
                                 )
-                                mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(bar_::B)
-                                )
-                                mCDType: ,VALUE=5>
+                                mCDType: ,VALUE=10>
                             ) ] 
                     )
 
@@ -171,7 +133,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -181,27 +143,9 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
+                                    mTagID: 9
                                     # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 7
-                                    # NamedRef(bar_::A)
-                                )
-                                mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(bar_::B)
                                 )
                                 mCDType: ,VALUE=5>
                             ) ] 
@@ -213,7 +157,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -223,27 +167,9 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
+                                    mTagID: 9
                                     # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 7
-                                    # NamedRef(bar_::A)
-                                )
-                                mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(bar_::B)
                                 )
                                 mCDType: ,VALUE=5>
                             ) ] 
@@ -255,7 +181,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -265,7 +191,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
+                                    mTagID: 9
                                     # NamedRef(head_::P)
                                     # Deref(NamedRef(bar_::B))
                                 )
@@ -275,8 +201,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 6
-                                    # NamedRef(head_::V)
+                                    mTagID: 10
                                     # Deref(NamedRef(bar_::C))
                                 )
                                 mCDType: ,VALUE=10>
@@ -285,19 +210,11 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 7
-                                    # NamedRef(bar_::A)
+                                    mTagID: 11
+                                    # NamedRef(head_::V)
+                                    # Deref(NamedRef(bar_::C))
                                 )
-                                mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(bar_::B)
-                                )
-                                mCDType: ,VALUE=5>
+                                mCDType: ,VALUE=10>
                             ) ] 
                     )
                     
@@ -307,7 +224,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 7
                                     # NamedRef(head_::M)
                                     # Deref(NamedRef(bar_::A))
                                 )
@@ -317,18 +234,7 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 5
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::B))
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 6
-                                    # NamedRef(head_::V)
+                                    mTagID: 10
                                     # Deref(NamedRef(bar_::C))
                                 )
                                 mCDType: ,VALUE=10>
@@ -337,19 +243,11 @@ StmtHandle()	 =>
                             RCpair(
                                 Tag: 
                                 Tag(
-                                    mTagID: 7
-                                    # NamedRef(bar_::A)
+                                    mTagID: 11
+                                    # NamedRef(head_::V)
+                                    # Deref(NamedRef(bar_::C))
                                 )
-                                mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(bar_::B)
-                                )
-                                mCDType: ,VALUE=5>
+                                mCDType: ,VALUE=10>
                             ) ] 
                     )
                     

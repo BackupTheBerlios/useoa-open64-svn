@@ -14,10 +14,11 @@ program constprop_loop
 
   do i = 1, 10
     ! i=1     Reaching Consts x=TOP,    y=5, z=TOP, i=TOP
-    ! i<=10   Reaching Consts x=TOP,    y=5, z=TOP, i=TOP
-    ! i=i+1   Reaching Consts x=BOTTOM, y=5, z=5,   i=TOP
+    ! i<=10   Reaching Consts x=TOP,    y=5, z=5,   i=BOTTOM
+    ! i=i+1   Reaching Consts x=BOTTOM, y=5, z=5,   i=BOTTOM
 
-    x = 2
+    !Reaching Consts y=5, z=5, i=BOTTOM
+    x = 2    
 
     !Reaching Consts x=2, y=5 z=5
     if ( x .ge. 0 ) then

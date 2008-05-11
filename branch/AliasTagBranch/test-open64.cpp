@@ -1,4 +1,4 @@
-// -*-Mode: C++;-*-
+
 // $Header$
 
 // * BeginCopyright *********************************************************
@@ -934,22 +934,29 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
 
-    //! SideEffect
-    // Create empty interprocedural side-effect analysis results and
-    // empty intraprocedural
-    // results
-    OA::OA_ptr<OA::SideEffect::InterSideEffectInterface> interSideEffectInter;
-    interSideEffectInter = new OA::SideEffect::InterSideEffectStandard(interAlias);
-    OA::OA_ptr<OA::SideEffect::SideEffectStandard> results;
-    // Perform the analyis on each procedure.
-    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> sideeffectman;
-    sideeffectman = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+    // intra side effects
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
+    intraSideEffectMgr
+        = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+
+    // inter side effects
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSideEffects;
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
+    interSideEffectMgr =
+        new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+    interSideEffects = interSideEffectMgr->performAnalysis(
+        cgraph,
+        parambind,
+        interAlias,
+        intraSideEffectMgr,
+        OA::DataFlow::ITERATIVE);
+
 
     // ICFGReachConsts
     OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
     ircsman = new OA::ReachConsts::ManagerICFGReachConsts(irInterface);
     OA::OA_ptr<OA::ReachConsts::InterReachConsts> ircs
-        = ircsman->performAnalysis(icfg, parambind, alias, interSideEffectInter, 
+        = ircsman->performAnalysis(icfg, parambind, alias, interSideEffects,
                                    OA::DataFlow::ITERATIVE);
  
     ircs->output(*irInterface,*alias);
