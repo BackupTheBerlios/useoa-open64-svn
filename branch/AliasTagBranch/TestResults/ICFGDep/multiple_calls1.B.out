@@ -262,3 +262,23 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Defs:
+
+mDepDFSet: CallHandle	 => DepDFSet
+        call: bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        call: bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:

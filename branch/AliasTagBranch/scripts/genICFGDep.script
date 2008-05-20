@@ -14,3 +14,5 @@ echo "Generating TestResults/ICFGDep/multiple_calls1.B.out"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/multiple_calls1.B > TestResults/ICFGDep/multiple_calls1.B.out
 echo "Generating TestResults/ICFGDep/sideEffect_3.B.out"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/sideEffect_3.B > TestResults/ICFGDep/sideEffect_3.B.out
+echo "Generating TestResults/ICFGDep/actualAsExpression.B.out"
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/actualAsExpression.B > TestResults/ICFGDep/actualAsExpression.B.out

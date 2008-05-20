@@ -22,21 +22,22 @@
       
       subroutine foo
           use myTypeModule
-          integer :: a,b,c
+          integer :: a,b,c,k
           double precision, dimension(5) :: array,brray
-          integer k
           logical :: t,f
           double precision, pointer :: p
           double precision, target  :: m
-          double precision:: d,s
+          double precision:: d,s,x
           CHARACTER STRING1*20, STRING2*20, STRING3*20, STRING4*20
-          double precision  x
           type(myType) :: typed_y
 
           ! 1. Declaration ???
           integer::e=3
 
-
+          a=b+c
+          a=a+b
+          array(k) = brray(k) + 10
+          typed_y%field1=x
 
 
 

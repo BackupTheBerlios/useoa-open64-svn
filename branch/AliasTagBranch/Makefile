@@ -33,7 +33,9 @@ dep = $(WHIRL2OA)/lib/Whirl2OA.a
 EXE1_OBJS = \
 	test-open64.o \
 	CmdLineParser.o \
-	Args.o
+	Args.o 
+
+
 
 EXE2_OBJS = \
 #	FORTRANtoOA.o \

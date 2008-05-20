@@ -205,3 +205,23 @@ stmt: 	 => Inside DepDFSet output
             ImplicitRemoves:
             Uses:
             Defs:
+
+mDepDFSet: CallHandle	 => DepDFSet
+        call: foo_(&0:X:0:anon_ptr., &AGLOBAL:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        call: foo_(&0:P:0:anon_ptr., &Q:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:

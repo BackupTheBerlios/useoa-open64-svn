@@ -5,7 +5,7 @@ mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ReachConstsStandard(
             mReachConsts: StmtHandle	 => OA::OA_ptr<RCPairSet> 
                     
-                    Statement:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ReachConsts/constprop_loop1.f90"
+                    Statement:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/ReachConsts/constprop_loop1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()	 => 
                     RCPairSet([  ] 
@@ -23,15 +23,6 @@ StmtHandle()	 =>
                                 Tag(
                                     mTagID: 6
                                     # NamedRef(constprop_loop_::Y)
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
                                 )
                                 mCDType: ,VALUE=5>
                             ) ] 
@@ -82,15 +73,6 @@ StmtHandle()	 =>
                                     # NamedRef(constprop_loop_::Y)
                                 )
                                 mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
-                                )
-                                mCDType: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -113,15 +95,6 @@ StmtHandle()	 =>
                                     # NamedRef(constprop_loop_::Y)
                                 )
                                 mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
-                                )
-                                mCDType: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -142,15 +115,6 @@ StmtHandle()	 =>
                                 Tag(
                                     mTagID: 6
                                     # NamedRef(constprop_loop_::Y)
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
                                 )
                                 mCDType: ,VALUE=5>
                             ) ] 
@@ -175,15 +139,6 @@ StmtHandle()	 =>
                                     # NamedRef(constprop_loop_::Y)
                                 )
                                 mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
-                                )
-                                mCDType: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -206,15 +161,6 @@ StmtHandle()	 =>
                                     # NamedRef(constprop_loop_::Y)
                                 )
                                 mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
-                                )
-                                mCDType: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -226,15 +172,6 @@ StmtHandle()	 =>
                                 Tag(
                                     mTagID: 6
                                     # NamedRef(constprop_loop_::Y)
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
                                 )
                                 mCDType: ,VALUE=5>
                             ) ] 
@@ -250,15 +187,6 @@ StmtHandle()	 =>
                                     # NamedRef(constprop_loop_::Y)
                                 )
                                 mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
-                                )
-                                mCDType: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -270,15 +198,6 @@ StmtHandle()	 =>
                                 Tag(
                                     mTagID: 6
                                     # NamedRef(constprop_loop_::Y)
-                                )
-                                mCDType: ,VALUE=5>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 8
-                                    # NamedRef(constprop_loop_::Z)
                                 )
                                 mCDType: ,VALUE=5>
                             ) ] 

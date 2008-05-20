@@ -12,6 +12,7 @@
 !     within the ReachConsts set that reaches p=5.  However, since
 !     m and p MayAlias, only <p,VALUE,5> reaches the call to bar.
 !
+! Note: Current ReachConsts results are intraprocedural
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
        subroutine head(x, f)
@@ -23,31 +24,36 @@
        ! all BOTTOM
        m = 2
 
-       !                    most precise: all BOTTOM, m=2
+       ! all BOTTOM, m=2
        p = 5
        
-       !                    most precise: all BOTTOM, m=2, p=5
+       ! all BOTTOM, m=2, p=5
        call bar(m,p,v,4)
 
        !                 most precise: all BOTTOM, m=2, p=6, v=10, temp=4
        ! context insensativity causes: all BOTTOM, temp=4
+       !                 Current     : all BOTTOM
        p = 2
 
        !                 most precise: all BOTTOM, m=2, p=2, v=10, temp=4
        ! context insensativity causes: all BOTTOM, p=2, temp=4
+       !                 Current     : all BOTTOM, p=2
        m = 5
 
        !                 most precise: all BOTTOM, m=5, p=2, v=10, temp=4
        ! context insensativity causes: all BOTTOM, m=5, p=2, temp=4
+       !                 Current     : all BOTTOM, p=2, m=5
        call bar(p,m,v,4)
 
 
        !                    most precise: all BOTTOM, m=6, p=2, v=10, temp=4
        ! call-return interference causes: all BOTTOM, temp=4
+       !                 Current        : all BOTTOM
        f = m + p + v + x
 
        !                    most precise: all BOTTOM, m=6, p=2, v=10, temp=4
        !    context insensativity causes: all BOTTOM, temp=4
+       !                 Current        : all BOTTOM
        end subroutine
 
 

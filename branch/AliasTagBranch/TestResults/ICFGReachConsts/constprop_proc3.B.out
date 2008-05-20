@@ -57,18 +57,7 @@ StmtHandle()	 =>
                     )
                     
                     Statement: StmtHandle(P:0:.predef_I4 = 2)	 => 
-                    RCPairSet([ 
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 19
-                                    # UnnamedRef()
-                                    # UnnamedRef()
-                                    # Deref(NamedRef(bar_::D))
-                                )
-                                mCDType: ,VALUE=4>
-                            ) ] 
+                    RCPairSet([  ] 
                     )
                     
                     Statement: StmtHandle(M:0:.predef_I4 = 5)	 => 
@@ -83,17 +72,6 @@ StmtHandle()	 =>
                                     # Deref(NamedRef(bar_::B))
                                 )
                                 mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 19
-                                    # UnnamedRef()
-                                    # UnnamedRef()
-                                    # Deref(NamedRef(bar_::D))
-                                )
-                                mCDType: ,VALUE=4>
                             ) ] 
                     )
                     
@@ -120,48 +98,15 @@ StmtHandle()	 =>
                                     # Deref(NamedRef(bar_::B))
                                 )
                                 mCDType: ,VALUE=2>
-                            )    
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 19
-                                    # UnnamedRef()
-                                    # UnnamedRef()
-                                    # Deref(NamedRef(bar_::D))
-                                )
-                                mCDType: ,VALUE=4>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)	 => 
-                    RCPairSet([ 
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 19
-                                    # UnnamedRef()
-                                    # UnnamedRef()
-                                    # Deref(NamedRef(bar_::D))
-                                )
-                                mCDType: ,VALUE=4>
-                            ) ] 
+                    RCPairSet([  ] 
                     )
                     
                     Statement: StmtHandle(return)	 => 
-                    RCPairSet([ 
-                            RCPair: 
-                            RCpair(
-                                Tag: 
-                                Tag(
-                                    mTagID: 19
-                                    # UnnamedRef()
-                                    # UnnamedRef()
-                                    # Deref(NamedRef(bar_::D))
-                                )
-                                mCDType: ,VALUE=4>
-                            ) ] 
+                    RCPairSet([  ] 
                     )
 
         )

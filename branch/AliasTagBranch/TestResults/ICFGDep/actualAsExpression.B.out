@@ -1,0 +1,213 @@
+ Dep Analysis 
+
+MustDefMap: StmtHandle	 => LocSet
+        X:0:.predef_I4 = N:0:.predef_I4	 => [ 
+            Tag(
+                mTagID: 6
+                # NamedRef(main_::X)
+            )
+ ] 
+
+mDepDFSet: StmtHandle	 => DepDFSet
+         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/ICFGDep/actualAsExpression.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: sub1_(&L:0:.predef_I4+1)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: X:0:.predef_I4 = N:0:.predef_I4	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 1
+                        # NamedRef(main_::N)
+                    )
+	 => 
+                    Tag(
+                        mTagID: 6
+                        # NamedRef(main_::X)
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 6
+                        # NamedRef(main_::X)
+                    )
+	 => 
+                    Tag(
+                        mTagID: 1
+                        # NamedRef(main_::N)
+                    )
+
+
+            ImplicitRemoves:
+            Tag(
+                mTagID: 6
+                # NamedRef(main_::X)
+            )
+
+            Uses:
+            Tag(
+                mTagID: 1
+                # NamedRef(main_::N)
+            )
+
+            Defs:
+            Tag(
+                mTagID: 6
+                # NamedRef(main_::X)
+            )
+
+        stmt: _END()	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: N:0:.predef_I4 = F:0:.predef_I4	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 9
+                        # UnnamedRef()
+                        # Deref(NamedRef(sub1_::F))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 1
+                        # NamedRef(main_::N)
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 1
+                        # NamedRef(main_::N)
+                    )
+	 => 
+                    Tag(
+                        mTagID: 9
+                        # UnnamedRef()
+                        # Deref(NamedRef(sub1_::F))
+                    )
+
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 9
+                # UnnamedRef()
+                # Deref(NamedRef(sub1_::F))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 1
+                # NamedRef(main_::N)
+            )
+
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+
+mDepDFSet: CallHandle	 => DepDFSet
+        call: sub1_(&L:0:.predef_I4+1)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(main_::L)
+                    )
+	 => 
+                    Tag(
+                        mTagID: 9
+                        # UnnamedRef()
+                        # Deref(NamedRef(sub1_::F))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 9
+                        # UnnamedRef()
+                        # Deref(NamedRef(sub1_::F))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 4
+                        # NamedRef(main_::L)
+                    )
+
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 4
+                # NamedRef(main_::L)
+            )
+
+            Defs:
+            Tag(
+                mTagID: 9
+                # UnnamedRef()
+                # Deref(NamedRef(sub1_::F))
+            )
+

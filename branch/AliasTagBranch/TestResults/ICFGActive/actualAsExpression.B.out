@@ -1,0 +1,52 @@
+
+InterActiveFortran(
+    Procedure( main_::main_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/actualAsExpression.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(sub1_(&L:0:.predef_I4+1))
+                StmtHandle(X:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(_END())
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 1
+                # NamedRef(main_::N)
+            )    
+            Tag(
+                mTagID: 4
+                # NamedRef(main_::L)
+            )    
+            Tag(
+                mTagID: 6
+                # NamedRef(main_::X)
+            ) ] 
+    )
+    Procedure( main_::sub1_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(N:0:.predef_I4 = F:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 1
+                # NamedRef(main_::N)
+            )    
+            Tag(
+                mTagID: 9
+                # UnnamedRef()
+                # Deref(NamedRef(sub1_::F))
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(main_::N)
+            SymHandle(main_::L)
+            SymHandle(main_::X)
+            SymHandle(sub1_::F) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)

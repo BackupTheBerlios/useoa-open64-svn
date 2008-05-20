@@ -7,7 +7,15 @@
 !
 ! still at call-return interference ...
 !
+! Note: Even if we use ICFGDFSolver, the analysis is still 
+!       Intraprocedural.
+!
+! Issue: We are getting spurious Entry nodes for procedure bar
+!        for which IN set is BOTTOM, which affects analysis
+!        Talk to Michelle. May 19th 2008.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 
        subroutine head(x, f)
        integer :: x
@@ -25,9 +33,11 @@
        call bar(m,p,v,x)
 
        ! most precise: all BOTTOM, m=2, v=10
+       ! Current     : all BOTTOM
        f = m + p + v + x
 
        ! most precise: all BOTTOM, m=2, v=10
+       ! current     : all BOTTOM
        end subroutine
 
 

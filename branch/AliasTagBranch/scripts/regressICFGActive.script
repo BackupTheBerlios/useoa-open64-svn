@@ -26,3 +26,7 @@ echo "Testing TestCases/Activity/multiple_calls2.B, TestResults/ICFGActive/multi
 ./test-open64 --oa-ICFGActivity TestCases/Activity/multiple_calls2.B > t
 diff t TestResults/ICFGActive/multiple_calls2.B.out
 
+echo "Testing TestCases/Activity/actualAsExpression.B, TestResults/ICFGActive/actualAsExpression.B.out Tested by PLM 05/17/08"
+./test-open64 --oa-ICFGActivity TestCases/Activity/actualAsExpression.B > t
+diff t TestResults/ICFGActive/actualAsExpression.B.out
+

@@ -956,8 +956,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
     ircsman = new OA::ReachConsts::ManagerICFGReachConsts(irInterface);
     OA::OA_ptr<OA::ReachConsts::InterReachConsts> ircs
-        = ircsman->performAnalysis(icfg, parambind, alias, interSideEffects,
-                                   OA::DataFlow::ITERATIVE);
+        = ircsman->performAnalysis(icfg, alias, OA::DataFlow::ITERATIVE);
  
     ircs->output(*irInterface,*alias);
     return 0;
