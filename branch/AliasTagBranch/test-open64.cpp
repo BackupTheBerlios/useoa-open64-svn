@@ -695,7 +695,7 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
   interSE = interSEman->performAnalysis(cgraph, parambind,
                                         interAlias, sideeffectman,             
                                         OA::DataFlow::ITERATIVE);
-  interSE->output(*irInterface,*alias);
+//  interSE->output(*irInterface,*alias);
  
   return 0;
 }
@@ -797,6 +797,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
     //alias->output(*irInterface);
+    
+    std::cout << "Done Alias" << std::endl;
 
     //! =================================
     //! CallGraph Timings
@@ -808,6 +810,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
       cgraphman->performAnalysis(procIter, alias);
 
+    std::cout << "Done CallGraph" << std::endl;
+
     //! =====================================
     //! ParamBindings
     //! =====================================
@@ -818,6 +822,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
     parambind = pbman->performAnalysis(cgraph);
 
+    std::cout << "Done ParamBindings" << std::endl;
+
     //! =====================================
 
     // ICFG
@@ -826,7 +832,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
-/*
+    std::cout << "Done ICFG" << std::endl;
+
 
     //ICFGDep
     OA::OA_ptr<OA::Activity::ManagerICFGDep> icfgdepman;
@@ -836,6 +843,8 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                                         OA::DataFlow::ITERATIVE);
 
     //icfgDep->output(*irInterface,*alias); 
+    
+    std::cout << "Done ICFGDep" << std::endl;
 
     std::cout << "before Useful" << std::endl;
 
@@ -845,8 +854,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Activity::InterUseful> icfgUseful;
     icfgUseful = usefulman->performAnalysis(icfg, parambind, alias,
                                             icfgDep, OA::DataFlow::ITERATIVE);
-    icfgUseful->output(*irInterface);
+//    icfgUseful->output(*irInterface);
 
+/*
     std::cout << "after Useful" << std::endl;
 
     // ICFGVaryActive
@@ -862,6 +872,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     std::cout << "after ICFGVaryActive" << std::endl;
 */
 
+/*
     //! ====================================
     //! ICFGActivity
     //! ====================================
@@ -872,9 +883,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     active = activeman->performAnalysis(icfg, parambind,
                                         alias, OA::DataFlow::ITERATIVE);
 
+    std::cout << "Output of Activity Analysis" << std::endl;
     active->output(*irInterface,*alias);
-
-
+*/
 }
 
 
@@ -952,6 +963,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
         OA::DataFlow::ITERATIVE);
 
 
+/*
     // ICFGReachConsts
     OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
     ircsman = new OA::ReachConsts::ManagerICFGReachConsts(irInterface);
@@ -959,6 +971,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
         = ircsman->performAnalysis(icfg, alias, OA::DataFlow::ITERATIVE);
  
     ircs->output(*irInterface,*alias);
+*/
     return 0;
 }
 
