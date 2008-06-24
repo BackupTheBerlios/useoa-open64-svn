@@ -1,0 +1,8 @@
+AD_PROG  = c2.cmp
+AD_TOP   = fcn2
+AD_IVARS = y
+AD_OVARS = yp
+AD_PMAX  = 20
+AD_OUTPUT_DIR = dense
+AD_FLAVOR = dense
+AD_EXCEPTION_FLAVOR = reportonce

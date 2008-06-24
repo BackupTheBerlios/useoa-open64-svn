@@ -1,0 +1,209 @@
+0.000024 CFG seconds elapsed
+0.009645 AliasTagFIAlias seconds elapsed
+0.000608 CallGraph seconds elapsed
+0.000174 ParamBindings seconds elapsed
+0.001342 ICFG seconds elapsed
+0.009544 ICFGUseful seconds elapsed
+0.006754 ICFGVaryActive seconds elapsed
+0.001548 ICFGActivity(3rd phase) seconds elapsed
+0.018595 Total ICFGActivity seconds elapsed
+Output of Activity Analysis
+
+InterActiveFortran(
+    Procedure( main_::main_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(fcn2_(&M:0:.predef_I4, &X:0:.predef_F8, &0:Y:0:anon_ptr., &0:YP:0:anon_ptr.))
+                StmtHandle(_END())
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 11
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+            )    
+            Tag(
+                mTagID: 12
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(fcn_::SUM)
+            )    
+            Tag(
+                mTagID: 50
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 54
+                # NamedRef(fcn_::YTEMP)
+                # SubSetRef(NamedRef(fcn_::YTEMP))
+            )    
+            Tag(
+                mTagID: 55
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+                # SubSetRef(Deref(NamedRef(fcn_::Y)))
+            )    
+            Tag(
+                mTagID: 56
+                # NamedRef(main_::YP)
+                # Deref(NamedRef(fcn_::YP))
+                # Deref(NamedRef(fcn2_::YP))
+                # SubSetRef(Deref(NamedRef(fcn_::YP)))
+            ) ] 
+    )
+    Procedure( main_::fcn_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/c2/c2.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(truebr (IWT:0:.predef_I4<0), L3)
+                StmtHandle(t__1:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__1:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(YTEMP:0:anon_ptr.(I:0:.predef_I4) = 0:Y:0:anon_ptr.(I:0:.predef_I4))
+                StmtHandle(Y:0:anon_ptr.(I:0:.predef_I4) = 0:Y:0:anon_ptr.(I:0:.predef_I4)*0:W:0:anon_ptr.(I:0:.predef_I4))
+                LABEL L1 0
+StmtHandle()
+                LABEL L3 0
+StmtHandle()
+                StmtHandle(IID:0:.predef_I4 = MOD(&ID:0:.predef_I4, &10))
+                StmtHandle(YP:0:anon_ptr.(1) =     2.000000000000000-0:Y:0:anon_ptr.(1))
+                StmtHandle(SUM:0:.predef_F8 = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(1))
+                StmtHandle(t__2:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__2:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 2)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(YP:0:anon_ptr.(I:0:.predef_I4) = SUM:0:.predef_F8*OPC_F8I4CVT(I4EXPEXPR(2, I:0:.predef_I4))*0:CPARM:0:anon_ptr.(IID:0:.predef_I4+-1)-0:Y:0:anon_ptr.(I:0:.predef_I4)*OPC_F8I4CVT(I:0:.predef_I4)*    10.00000000000000)
+                StmtHandle(SUM:0:.predef_F8 = SQRT(&F8I4EXPEXPR(SUM:0:.predef_F8, 2)+0:Y:0:anon_ptr.(I:0:.predef_I4)*0:Y:0:anon_ptr.(I:0:.predef_I4)))
+                LABEL L4 0
+StmtHandle()
+                StmtHandle(truebr (IWT:0:.predef_I4<0), L8)
+                StmtHandle(t__3:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__3:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(YP:0:anon_ptr.(I:0:.predef_I4) = 0:YP:0:anon_ptr.(I:0:.predef_I4)/0:W:0:anon_ptr.(I:0:.predef_I4))
+                StmtHandle(Y:0:anon_ptr.(I:0:.predef_I4) = 0:YTEMP:0:anon_ptr.(I:0:.predef_I4))
+                LABEL L6 0
+StmtHandle()
+                LABEL L8 0
+StmtHandle()
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 11
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+            )    
+            Tag(
+                mTagID: 12
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(fcn_::SUM)
+            )    
+            Tag(
+                mTagID: 50
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 54
+                # NamedRef(fcn_::YTEMP)
+                # SubSetRef(NamedRef(fcn_::YTEMP))
+            )    
+            Tag(
+                mTagID: 55
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+                # SubSetRef(Deref(NamedRef(fcn_::Y)))
+            )    
+            Tag(
+                mTagID: 56
+                # NamedRef(main_::YP)
+                # Deref(NamedRef(fcn_::YP))
+                # Deref(NamedRef(fcn2_::YP))
+                # SubSetRef(Deref(NamedRef(fcn_::YP)))
+            ) ] 
+    )
+    Procedure( main_::fcn2_ ): 
+    ActiveStmtSet([ 
+            XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                StmtHandle(t__4:0:.predef_I8 = M:0:.predef_I4)
+                StmtHandle(t__5:0:.predef_I8 = MAX(t__4:0:.predef_I8,0))
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IWT:0:.predef_I4 = -1)
+                StmtHandle(ID:0:.predef_I4 = 3)
+                StmtHandle(N:0:.predef_I4 = M:0:.predef_I4)
+                StmtHandle(fcn_(&X:0:.predef_F8, &0:Y:0:anon_ptr., &0:YP:0:anon_ptr.))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 11
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+            )    
+            Tag(
+                mTagID: 12
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(fcn_::SUM)
+            )    
+            Tag(
+                mTagID: 50
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 54
+                # NamedRef(fcn_::YTEMP)
+                # SubSetRef(NamedRef(fcn_::YTEMP))
+            )    
+            Tag(
+                mTagID: 55
+                # NamedRef(main_::Y)
+                # Deref(NamedRef(fcn_::Y))
+                # Deref(NamedRef(fcn2_::Y))
+                # SubSetRef(Deref(NamedRef(fcn_::Y)))
+            )    
+            Tag(
+                mTagID: 56
+                # NamedRef(main_::YP)
+                # Deref(NamedRef(fcn_::YP))
+                # Deref(NamedRef(fcn2_::YP))
+                # SubSetRef(Deref(NamedRef(fcn_::YP)))
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(main_::Y)
+            SymHandle(main_::YP)
+            SymHandle(fcn_::Y)
+            SymHandle(fcn_::YP)
+            SymHandle(fcn_::SUM)
+            SymHandle(fcn_::YTEMP)
+            SymHandle(fcn2_::Y)
+            SymHandle(fcn2_::YP) ] 
+    mNumIterUseful: 4
+    mNumIterVary: 0
+)

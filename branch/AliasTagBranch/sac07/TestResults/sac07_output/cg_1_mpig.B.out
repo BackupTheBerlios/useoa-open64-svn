@@ -1,0 +1,3036 @@
+0.000023 CFG seconds elapsed
+0.147200 AliasTagFIAlias seconds elapsed
+0.004173 CallGraph seconds elapsed
+0.006736 ParamBindings seconds elapsed
+0.014194 ICFG seconds elapsed
+0.308135 ICFGUseful seconds elapsed
+0.178651 ICFGVaryActive seconds elapsed
+0.038037 ICFGActivity(3rd phase) seconds elapsed
+0.539669 Total ICFGActivity seconds elapsed
+Output of Activity Analysis
+
+InterActiveFortran(
+    Procedure( cg_::cg_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(setup_proc_info_(&4, &2, &2))
+                StmtHandle(setup_submatrix_info_(&L2NPCOLS:0:.predef_I4, &0:REDUCE_EXCH_PROC:0:anon_ptr., &0:REDUCE_SEND_STARTS:0:anon_ptr., &0:REDUCE_SEND_LENGTHS:0:anon_ptr., &0:REDUCE_RECV_STARTS:0:anon_ptr., &0:REDUCE_RECV_LENGTHS:0:anon_ptr.))
+                StmtHandle(TRAN:0:.predef_F8 =     314159265.0000000)
+                StmtHandle(AMULT:0:.predef_F8 =     1220703125.000000)
+                StmtHandle(makea_(&NAA:0:.predef_I4, &NZZ:0:.predef_I4, &0:A:0:anon_ptr., &0:COLIDX:0:anon_ptr., &0:ROWSTR:0:anon_ptr., &15, &FIRSTROW:0:.predef_I4, &LASTROW:0:.predef_I4, &FIRSTCOL:0:.predef_I4, &LASTCOL:0:.predef_I4, &   0.1000000000000000, &0:AROW:0:anon_ptr., &0:ACOL:0:anon_ptr., &0:AELT:0:anon_ptr., &0:V:0:anon_ptr., &0:IV:0:anon_ptr., &    110.0000000000000))
+                StmtHandle(t__25:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__25:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(t__26:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__27:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4+1)+-1)
+                StmtHandle(do_loop (K:0:.predef_I4<=t__27:0:.predef_I4))
+                StmtHandle(K:0:.predef_I4 = t__26:0:.predef_I4)
+                StmtHandle(K:0:.predef_I4 = K:0:.predef_I4+1)
+                StmtHandle(COLIDX:0:anon_ptr.(K:0:.predef_I4) = 0:COLIDX:0:anon_ptr.(K:0:.predef_I4)-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (I:0:.predef_I4<=75001))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(X:0:anon_ptr.(I:0:.predef_I4) =     1.000000000000000)
+                StmtHandle(ZETA:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(do_loop (IT:0:.predef_I4<=1))
+                StmtHandle(IT:0:.predef_I4 = 1)
+                StmtHandle(IT:0:.predef_I4 = IT:0:.predef_I4+1)
+                StmtHandle(conj_grad_(&0:COLIDX:0:anon_ptr., &0:ROWSTR:0:anon_ptr., &0:X:0:anon_ptr., &0:Z:0:anon_ptr., &0:A:0:anon_ptr., &0:P:0:anon_ptr., &0:Q:0:anon_ptr., &0:R:0:anon_ptr., &0:W:0:anon_ptr., &RNORM:0:.predef_F8, &L2NPCOLS:0:.predef_I4, &0:REDUCE_EXCH_PROC:0:anon_ptr., &0:REDUCE_SEND_STARTS:0:anon_ptr., &0:REDUCE_SEND_LENGTHS:0:anon_ptr., &0:REDUCE_RECV_STARTS:0:anon_ptr., &0:REDUCE_RECV_LENGTHS:0:anon_ptr.))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(1) =     0.000000000000000)
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) =     0.000000000000000)
+                StmtHandle(t__28:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__28:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(1) = 0:NORM_TEMP1:0:anon_ptr.(1)+0:X:0:anon_ptr.(J:0:.predef_I4)*0:Z:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) = 0:NORM_TEMP1:0:anon_ptr.(2)+0:Z:0:anon_ptr.(J:0:.predef_I4)*0:Z:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__29:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__29:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(mpi_irecv_(&0:NORM_TEMP2:0:anon_ptr., &2, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&0:NORM_TEMP1:0:anon_ptr., &2, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(1) = 0:NORM_TEMP1:0:anon_ptr.(1)+0:NORM_TEMP2:0:anon_ptr.(1))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) = 0:NORM_TEMP1:0:anon_ptr.(2)+0:NORM_TEMP2:0:anon_ptr.(2))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) = RECIP(SQRT(&NORM_TEMP1:0:anon_ptr.(2))))
+                StmtHandle(t__30:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__30:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(X:0:anon_ptr.(J:0:.predef_I4) = 0:NORM_TEMP1:0:anon_ptr.(2)*0:Z:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(do_loop (I:0:.predef_I4<=75001))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(X:0:anon_ptr.(I:0:.predef_I4) =     1.000000000000000)
+                StmtHandle(ZETA:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(mpi_barrier_(&91, &IERR:0:.predef_I4))
+                StmtHandle(timer_clear_(&1))
+                StmtHandle(timer_start_(&1))
+                StmtHandle(do_loop (IT:0:.predef_I4<=75))
+                StmtHandle(IT:0:.predef_I4 = 1)
+                StmtHandle(IT:0:.predef_I4 = IT:0:.predef_I4+1)
+                StmtHandle(conj_grad_(&0:COLIDX:0:anon_ptr., &0:ROWSTR:0:anon_ptr., &0:X:0:anon_ptr., &0:Z:0:anon_ptr., &0:A:0:anon_ptr., &0:P:0:anon_ptr., &0:Q:0:anon_ptr., &0:R:0:anon_ptr., &0:W:0:anon_ptr., &RNORM:0:.predef_F8, &L2NPCOLS:0:.predef_I4, &0:REDUCE_EXCH_PROC:0:anon_ptr., &0:REDUCE_SEND_STARTS:0:anon_ptr., &0:REDUCE_SEND_LENGTHS:0:anon_ptr., &0:REDUCE_RECV_STARTS:0:anon_ptr., &0:REDUCE_RECV_LENGTHS:0:anon_ptr.))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(1) =     0.000000000000000)
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) =     0.000000000000000)
+                StmtHandle(t__31:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__31:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(1) = 0:NORM_TEMP1:0:anon_ptr.(1)+0:X:0:anon_ptr.(J:0:.predef_I4)*0:Z:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) = 0:NORM_TEMP1:0:anon_ptr.(2)+0:Z:0:anon_ptr.(J:0:.predef_I4)*0:Z:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__32:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__32:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(mpi_irecv_(&0:NORM_TEMP2:0:anon_ptr., &2, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&0:NORM_TEMP1:0:anon_ptr., &2, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(1) = 0:NORM_TEMP1:0:anon_ptr.(1)+0:NORM_TEMP2:0:anon_ptr.(1))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) = 0:NORM_TEMP1:0:anon_ptr.(2)+0:NORM_TEMP2:0:anon_ptr.(2))
+                StmtHandle(NORM_TEMP1:0:anon_ptr.(2) = RECIP(SQRT(&NORM_TEMP1:0:anon_ptr.(2))))
+                StmtHandle(if (ME:0:.predef_I4==ROOT:0:.predef_I4))
+                StmtHandle(ZETA:0:.predef_F8 = RECIP(0:NORM_TEMP1:0:anon_ptr.(1))+    110.0000000000000)
+                StmtHandle(if (IT:0:.predef_I4==1))
+                 LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/CG/cg_1_mpig.f"
+ LOC 0 0 source files:	2	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/CG/npbparams.h"
+ LOC 0 0 source files:	3	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/CG/mpinpb.h"
+ LOC 0 0 source files:	4	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/CG/mpif.h"
+ LOC 0 0 source files:	5	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/CG/stub_global.h"
+ LOC 0 0 source files:	6	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/CG/all_stubs_mpig.f"
+COMMENT <2,226,if( it .eq. 1 ) write( *,9000 )> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,227,write( *,9001 ) it, rnorm, zeta> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                StmtHandle(t__33:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__33:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(X:0:anon_ptr.(J:0:.predef_I4) = 0:NORM_TEMP1:0:anon_ptr.(2)*0:Z:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(mpi_reduce_(&T:0:.predef_F8, &TMAX:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &100, &ROOT:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(if (ME:0:.predef_I4==ROOT:0:.predef_I4))
+                COMMENT <2,228,write(*,100)> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                StmtHandle(EPSILON:0:.predef_F8 = 1.000000000000000d-10)
+                StmtHandle(if (CNEEXPR(&CLASS:0:anon_ptr.(0), &"U", 1, 1)))
+                StmtHandle(ERR:0:.predef_F8 = ABS(&ZETA:0:.predef_F8-ZETA_VERIFY_VALUE:0:.predef_F8)/ZETA_VERIFY_VALUE:0:.predef_F8)
+                StmtHandle(if (EPSILON:0:.predef_F8>=ERR:0:.predef_F8))
+                StmtHandle(VERIFIED:0:.log.4 = 1)
+                COMMENT <2,229,write(*, 200)> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,230,write(*, 201) zeta> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,231,write(*, 202) err> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                StmtHandle(VERIFIED:0:.log.4 = 0)
+                COMMENT <2,232,write(*, 300) > # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,233,write(*, 301) zeta> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,234,write(*, 302) zeta_verify_value> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                StmtHandle(VERIFIED:0:.log.4 = 0)
+                COMMENT <2,235,write (*, 400)> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,236,write (*, 401)> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                StmtHandle(if (TMAX:0:.predef_F8!=    0.000000000000000))
+                StmtHandle(MFLOPS:0:.predef_F8 = OPC_F8F4CVT(FLOAT(&22500000)*(FLOAT(&240)+    3.000000+(FLOAT(&240)+    5.000000)*    25.00000+    3.000000))/TMAX:0:.predef_F8/    1000000.000000000)
+                StmtHandle(MFLOPS:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(print_results_(&"CG", &CLASS:0:anon_ptr.(0), &150000, &0, &0, &75, &4, &NPROCS:0:.predef_I4, &TMAX:0:.predef_F8, &MFLOPS:0:.predef_F8, &"          floating point", &VERIFIED:0:.log.4, &"3.1", &"07 Dec 2004", &"f77", &"f77", &"-L/usr/local/lib -lmpi", &"-I/usr/local/include", &"-O3 ", &"(none)", &"randi8", 2, 1, 24, 3, 11, 3, 3, 22, 20, 4, 6, 6))
+                StmtHandle(mpi_finalize_(&IERR:0:.predef_I4))
+                StmtHandle(_END())
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 42
+                # Deref(NamedRef(conj_grad_::RNORM))
+            )    
+            Tag(
+                mTagID: 43
+                # NamedRef(cg_::RNORM)
+                # Deref(NamedRef(conj_grad_::RNORM))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 53
+                # NamedRef(cg_::ZETA)
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 644
+                # NamedRef(conj_grad_::ALPHA)
+            )    
+            Tag(
+                mTagID: 646
+                # NamedRef(conj_grad_::BETA)
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::initialize_mpi_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::setup_proc_info_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(mpi_finalize_(&IERR:0:.predef_I4))
+                StmtHandle(STOP_F90(&"", 0))
+                StmtHandle(return)
+                StmtHandle(mpi_finalize_(&IERR:0:.predef_I4))
+                StmtHandle(STOP_F90(&"", 0))
+                StmtHandle(return)
+                StmtHandle(mpi_finalize_(&IERR:0:.predef_I4))
+                StmtHandle(STOP_F90(&"", 0))
+                StmtHandle(return)
+                StmtHandle(mpi_finalize_(&IERR:0:.predef_I4))
+                StmtHandle(STOP_F90(&"", 0))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::setup_submatrix_info_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(PROC_ROW:0:.predef_I4 = ME:0:.predef_I4/NPCOLS:0:.predef_I4)
+                StmtHandle(PROC_COL:0:.predef_I4 = ME:0:.predef_I4-NPCOLS:0:.predef_I4*PROC_ROW:0:.predef_I4)
+                StmtHandle(if (NAA:0:.predef_I4==NPCOLS:0:.predef_I4*NAA:0:.predef_I4/NPCOLS:0:.predef_I4))
+                StmtHandle(COL_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPCOLS:0:.predef_I4)
+                StmtHandle(FIRSTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4*PROC_COL:0:.predef_I4+1)
+                StmtHandle(LASTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4+FIRSTCOL:0:.predef_I4+-1)
+                StmtHandle(ROW_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPROWS:0:.predef_I4)
+                StmtHandle(FIRSTROW:0:.predef_I4 = ROW_SIZE:0:.predef_I4*PROC_ROW:0:.predef_I4+1)
+                StmtHandle(LASTROW:0:.predef_I4 = ROW_SIZE:0:.predef_I4+FIRSTROW:0:.predef_I4+-1)
+                StmtHandle(if (PROC_ROW:0:.predef_I4<NAA:0:.predef_I4-NPROWS:0:.predef_I4*NAA:0:.predef_I4/NPROWS:0:.predef_I4))
+                StmtHandle(ROW_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPROWS:0:.predef_I4+1)
+                StmtHandle(FIRSTROW:0:.predef_I4 = ROW_SIZE:0:.predef_I4*PROC_ROW:0:.predef_I4+1)
+                StmtHandle(LASTROW:0:.predef_I4 = ROW_SIZE:0:.predef_I4+FIRSTROW:0:.predef_I4+-1)
+                StmtHandle(ROW_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPROWS:0:.predef_I4)
+                StmtHandle(FIRSTROW:0:.predef_I4 = ROW_SIZE:0:.predef_I4*PROC_ROW:0:.predef_I4-NAA:0:.predef_I4-NPROWS:0:.predef_I4*NAA:0:.predef_I4/NPROWS:0:.predef_I4+ROW_SIZE:0:.predef_I4+1*NAA:0:.predef_I4-NPROWS:0:.predef_I4*NAA:0:.predef_I4/NPROWS:0:.predef_I4+1)
+                StmtHandle(LASTROW:0:.predef_I4 = ROW_SIZE:0:.predef_I4+FIRSTROW:0:.predef_I4+-1)
+                StmtHandle(if (NPCOLS:0:.predef_I4==NPROWS:0:.predef_I4))
+                StmtHandle(if (PROC_COL:0:.predef_I4<NAA:0:.predef_I4-NPCOLS:0:.predef_I4*NAA:0:.predef_I4/NPCOLS:0:.predef_I4))
+                StmtHandle(COL_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPCOLS:0:.predef_I4+1)
+                StmtHandle(FIRSTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4*PROC_COL:0:.predef_I4+1)
+                StmtHandle(LASTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4+FIRSTCOL:0:.predef_I4+-1)
+                StmtHandle(COL_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPCOLS:0:.predef_I4)
+                StmtHandle(FIRSTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4*PROC_COL:0:.predef_I4-NAA:0:.predef_I4-NPCOLS:0:.predef_I4*NAA:0:.predef_I4/NPCOLS:0:.predef_I4+COL_SIZE:0:.predef_I4+1*NAA:0:.predef_I4-NPCOLS:0:.predef_I4*NAA:0:.predef_I4/NPCOLS:0:.predef_I4+1)
+                StmtHandle(LASTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4+FIRSTCOL:0:.predef_I4+-1)
+                StmtHandle(if (PROC_COL:0:.predef_I4/2<NAA:0:.predef_I4-NAA:0:.predef_I4/NPCOLS:0:.predef_I4/2*NPCOLS:0:.predef_I4/2))
+                StmtHandle(COL_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPCOLS:0:.predef_I4/2+1)
+                StmtHandle(FIRSTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4*PROC_COL:0:.predef_I4/2+1)
+                StmtHandle(LASTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4+FIRSTCOL:0:.predef_I4+-1)
+                StmtHandle(COL_SIZE:0:.predef_I4 = NAA:0:.predef_I4/NPCOLS:0:.predef_I4/2)
+                StmtHandle(FIRSTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4*PROC_COL:0:.predef_I4/2-NAA:0:.predef_I4-NAA:0:.predef_I4/NPCOLS:0:.predef_I4/2*NPCOLS:0:.predef_I4/2+COL_SIZE:0:.predef_I4+1*NAA:0:.predef_I4-NAA:0:.predef_I4/NPCOLS:0:.predef_I4/2*NPCOLS:0:.predef_I4/2+1)
+                StmtHandle(LASTCOL:0:.predef_I4 = COL_SIZE:0:.predef_I4+FIRSTCOL:0:.predef_I4+-1)
+                StmtHandle(if (MOD(&ME:0:.predef_I4, &2)==0))
+                StmtHandle(LASTCOL:0:.predef_I4 = FIRSTCOL:0:.predef_I4+COL_SIZE:0:.predef_I4+-1/2)
+                StmtHandle(FIRSTCOL:0:.predef_I4 = FIRSTCOL:0:.predef_I4+COL_SIZE:0:.predef_I4+-1/2+1)
+                StmtHandle(LASTCOL:0:.predef_I4 = FIRSTCOL:0:.predef_I4+COL_SIZE:0:.predef_I4/2+-1)
+                StmtHandle(if (NPCOLS:0:.predef_I4==NPROWS:0:.predef_I4))
+                StmtHandle(SEND_START:0:.predef_I4 = 1)
+                StmtHandle(SEND_LEN:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(if (MOD(&ME:0:.predef_I4, &2)==0))
+                StmtHandle(SEND_START:0:.predef_I4 = 1)
+                StmtHandle(SEND_LEN:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+2/2)
+                StmtHandle(SEND_START:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+2/2+1)
+                StmtHandle(SEND_LEN:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1/2)
+                StmtHandle(if (NPCOLS:0:.predef_I4==NPROWS:0:.predef_I4))
+                StmtHandle(EXCH_PROC:0:.predef_I4 = ME:0:.predef_I4/NPROWS:0:.predef_I4+NPROWS:0:.predef_I4*MOD(&ME:0:.predef_I4, &NPROWS:0:.predef_I4))
+                StmtHandle(EXCH_PROC:0:.predef_I4 = MOD(&ME:0:.predef_I4, &2)+ME:0:.predef_I4/2/NPROWS:0:.predef_I4+NPROWS:0:.predef_I4*MOD(&ME:0:.predef_I4/2, &NPROWS:0:.predef_I4)*2)
+                StmtHandle(I:0:.predef_I4 = NPCOLS:0:.predef_I4/2)
+                StmtHandle(L2NPCOLS:0:.predef_I4 = 0)
+                StmtHandle(t__37:0:.log.4 = I:0:.predef_I4>0)
+                StmtHandle(while_do (t__37:0:.log.4))
+                StmtHandle(L2NPCOLS:0:.predef_I4 = L2NPCOLS:0:.predef_I4+1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4/2)
+                StmtHandle(t__37:0:.log.4 = I:0:.predef_I4>0)
+                StmtHandle(DIV_FACTOR:0:.predef_I4 = NPCOLS:0:.predef_I4)
+                StmtHandle(t__38:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__38:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(J:0:.predef_I4 = MOD(&PROC_COL:0:.predef_I4+DIV_FACTOR:0:.predef_I4/2, &DIV_FACTOR:0:.predef_I4)+DIV_FACTOR:0:.predef_I4*PROC_COL:0:.predef_I4/DIV_FACTOR:0:.predef_I4)
+                StmtHandle(REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4) = J:0:.predef_I4+NPCOLS:0:.predef_I4*PROC_ROW:0:.predef_I4)
+                StmtHandle(DIV_FACTOR:0:.predef_I4 = DIV_FACTOR:0:.predef_I4/2)
+                StmtHandle(t__39:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4>=1))
+                StmtHandle(I:0:.predef_I4 = t__39:0:.predef_I4)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+-1)
+                StmtHandle(if (NPCOLS:0:.predef_I4==NPROWS:0:.predef_I4))
+                StmtHandle(REDUCE_SEND_STARTS:0:anon_ptr.(I:0:.predef_I4) = SEND_START:0:.predef_I4)
+                StmtHandle(REDUCE_SEND_LENGTHS:0:anon_ptr.(I:0:.predef_I4) = SEND_LEN:0:.predef_I4)
+                StmtHandle(REDUCE_RECV_LENGTHS:0:anon_ptr.(I:0:.predef_I4) = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(REDUCE_RECV_LENGTHS:0:anon_ptr.(I:0:.predef_I4) = SEND_LEN:0:.predef_I4)
+                StmtHandle(if (L2NPCOLS:0:.predef_I4==I:0:.predef_I4))
+                StmtHandle(REDUCE_SEND_LENGTHS:0:anon_ptr.(I:0:.predef_I4) = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4-SEND_LEN:0:.predef_I4+1)
+                StmtHandle(if (ME:0:.predef_I4==ME:0:.predef_I4/2*2))
+                StmtHandle(REDUCE_SEND_STARTS:0:anon_ptr.(I:0:.predef_I4) = SEND_LEN:0:.predef_I4+SEND_START:0:.predef_I4)
+                StmtHandle(REDUCE_SEND_STARTS:0:anon_ptr.(I:0:.predef_I4) = 1)
+                StmtHandle(REDUCE_SEND_LENGTHS:0:anon_ptr.(I:0:.predef_I4) = SEND_LEN:0:.predef_I4)
+                StmtHandle(REDUCE_SEND_STARTS:0:anon_ptr.(I:0:.predef_I4) = SEND_START:0:.predef_I4)
+                StmtHandle(REDUCE_RECV_STARTS:0:anon_ptr.(I:0:.predef_I4) = SEND_START:0:.predef_I4)
+                StmtHandle(EXCH_RECV_LENGTH:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::conj_grad_ ): 
+    ActiveStmtSet([ 
+            XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                StmtHandle(t__41:0:.predef_I8 = NZZ:0:.predef_I4)
+                StmtHandle(t__44:0:.predef_I8 = MAX(t__41:0:.predef_I8,0))
+                StmtHandle(t__42:0:.predef_I8 = OPC_I8I4CVT(NAA:0:.predef_I4+1))
+                StmtHandle(t__45:0:.predef_I8 = MAX(t__42:0:.predef_I8,0))
+                StmtHandle(t__43:0:.predef_I8 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(t__46:0:.predef_I8 = MAX(t__43:0:.predef_I8,0))
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(t__47:0:.predef_I4 = NAA:0:.predef_I4/NPROWS:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__47:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(Q:0:anon_ptr.(J:0:.predef_I4) =     0.000000000000000)
+                StmtHandle(Z:0:anon_ptr.(J:0:.predef_I4) =     0.000000000000000)
+                StmtHandle(R:0:anon_ptr.(J:0:.predef_I4) = 0:X:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(P:0:anon_ptr.(J:0:.predef_I4) = 0:R:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(W:0:anon_ptr.(J:0:.predef_I4) =     0.000000000000000)
+                StmtHandle(SUM:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(t__48:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__48:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 = SUM:0:.predef_F8+0:R:0:anon_ptr.(J:0:.predef_I4)*0:R:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__49:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__49:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(mpi_irecv_(&RHO:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&SUM:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(SUM:0:.predef_F8 = RHO:0:.predef_F8+SUM:0:.predef_F8)
+                StmtHandle(RHO:0:.predef_F8 = SUM:0:.predef_F8)
+                StmtHandle(t__50:0:.predef_I4 = CGITMAX:0:.predef_I4)
+                StmtHandle(do_loop (CGIT:0:.predef_I4<=t__50:0:.predef_I4))
+                StmtHandle(CGIT:0:.predef_I4 = 1)
+                StmtHandle(CGIT:0:.predef_I4 = CGIT:0:.predef_I4+1)
+                StmtHandle(t__51:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__51:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(t__52:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__53:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4+1)+-1)
+                StmtHandle(do_loop (K:0:.predef_I4<=t__53:0:.predef_I4))
+                StmtHandle(K:0:.predef_I4 = t__52:0:.predef_I4)
+                StmtHandle(K:0:.predef_I4 = K:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 = SUM:0:.predef_F8+0:A:0:anon_ptr.(K:0:.predef_I4)*0:P:0:anon_ptr.(0:COLIDX:0:anon_ptr.(K:0:.predef_I4)))
+                StmtHandle(W:0:anon_ptr.(J:0:.predef_I4) = SUM:0:.predef_F8)
+                StmtHandle(t__54:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4>=1))
+                StmtHandle(I:0:.predef_I4 = t__54:0:.predef_I4)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+-1)
+                StmtHandle(mpi_irecv_(&Q:0:anon_ptr.(0:REDUCE_RECV_STARTS:0:anon_ptr.(I:0:.predef_I4)), &REDUCE_RECV_LENGTHS:0:anon_ptr.(I:0:.predef_I4), &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&W:0:anon_ptr.(0:REDUCE_SEND_STARTS:0:anon_ptr.(I:0:.predef_I4)), &REDUCE_SEND_LENGTHS:0:anon_ptr.(I:0:.predef_I4), &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(t__55:0:.predef_I4 = SEND_START:0:.predef_I4)
+                StmtHandle(t__56:0:.predef_I4 = 0:REDUCE_RECV_LENGTHS:0:anon_ptr.(I:0:.predef_I4)+SEND_START:0:.predef_I4+-1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__56:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = t__55:0:.predef_I4)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(W:0:anon_ptr.(J:0:.predef_I4) = 0:Q:0:anon_ptr.(J:0:.predef_I4)+0:W:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(if (L2NPCOLS:0:.predef_I4!=0))
+                StmtHandle(mpi_irecv_(&0:Q:0:anon_ptr., &EXCH_RECV_LENGTH:0:.predef_I4, &DP_TYPE:0:.predef_I4, &EXCH_PROC:0:.predef_I4, &1, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&W:0:anon_ptr.(SEND_START:0:.predef_I4), &SEND_LEN:0:.predef_I4, &DP_TYPE:0:.predef_I4, &EXCH_PROC:0:.predef_I4, &1, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(t__57:0:.predef_I4 = EXCH_RECV_LENGTH:0:.predef_I4)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__57:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(Q:0:anon_ptr.(J:0:.predef_I4) = 0:W:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__58:0:.predef_I4 = MAX(LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1,LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1))
+                StmtHandle(do_loop (J:0:.predef_I4<=t__58:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(W:0:anon_ptr.(J:0:.predef_I4) =     0.000000000000000)
+                StmtHandle(SUM:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(t__59:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__59:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 = SUM:0:.predef_F8+0:P:0:anon_ptr.(J:0:.predef_I4)*0:Q:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__60:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__60:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(mpi_irecv_(&D:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&SUM:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(SUM:0:.predef_F8 = D:0:.predef_F8+SUM:0:.predef_F8)
+                StmtHandle(D:0:.predef_F8 = SUM:0:.predef_F8)
+                StmtHandle(ALPHA:0:.predef_F8 = RHO:0:.predef_F8/D:0:.predef_F8)
+                StmtHandle(RHO0:0:.predef_F8 = RHO:0:.predef_F8)
+                StmtHandle(t__61:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__61:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(Z:0:anon_ptr.(J:0:.predef_I4) = 0:Z:0:anon_ptr.(J:0:.predef_I4)+0:P:0:anon_ptr.(J:0:.predef_I4)*ALPHA:0:.predef_F8)
+                StmtHandle(R:0:anon_ptr.(J:0:.predef_I4) = 0:R:0:anon_ptr.(J:0:.predef_I4)-0:Q:0:anon_ptr.(J:0:.predef_I4)*ALPHA:0:.predef_F8)
+                StmtHandle(SUM:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(t__62:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__62:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 = SUM:0:.predef_F8+0:R:0:anon_ptr.(J:0:.predef_I4)*0:R:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__63:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__63:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(mpi_irecv_(&RHO:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&SUM:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(SUM:0:.predef_F8 = RHO:0:.predef_F8+SUM:0:.predef_F8)
+                StmtHandle(RHO:0:.predef_F8 = SUM:0:.predef_F8)
+                StmtHandle(BETA:0:.predef_F8 = RHO:0:.predef_F8/RHO0:0:.predef_F8)
+                StmtHandle(t__64:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__64:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(P:0:anon_ptr.(J:0:.predef_I4) = 0:R:0:anon_ptr.(J:0:.predef_I4)+0:P:0:anon_ptr.(J:0:.predef_I4)*BETA:0:.predef_F8)
+                StmtHandle(t__65:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__65:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(t__66:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(t__67:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4+1)+-1)
+                StmtHandle(do_loop (K:0:.predef_I4<=t__67:0:.predef_I4))
+                StmtHandle(K:0:.predef_I4 = t__66:0:.predef_I4)
+                StmtHandle(K:0:.predef_I4 = K:0:.predef_I4+1)
+                StmtHandle(SUM:0:.predef_F8 = SUM:0:.predef_F8+0:Z:0:anon_ptr.(0:COLIDX:0:anon_ptr.(K:0:.predef_I4))*0:A:0:anon_ptr.(K:0:.predef_I4))
+                StmtHandle(W:0:anon_ptr.(J:0:.predef_I4) = SUM:0:.predef_F8)
+                StmtHandle(t__68:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4>=1))
+                StmtHandle(I:0:.predef_I4 = t__68:0:.predef_I4)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+-1)
+                StmtHandle(mpi_irecv_(&R:0:anon_ptr.(0:REDUCE_RECV_STARTS:0:anon_ptr.(I:0:.predef_I4)), &REDUCE_RECV_LENGTHS:0:anon_ptr.(I:0:.predef_I4), &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&W:0:anon_ptr.(0:REDUCE_SEND_STARTS:0:anon_ptr.(I:0:.predef_I4)), &REDUCE_SEND_LENGTHS:0:anon_ptr.(I:0:.predef_I4), &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(t__69:0:.predef_I4 = SEND_START:0:.predef_I4)
+                StmtHandle(t__70:0:.predef_I4 = 0:REDUCE_RECV_LENGTHS:0:anon_ptr.(I:0:.predef_I4)+SEND_START:0:.predef_I4+-1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__70:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = t__69:0:.predef_I4)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(W:0:anon_ptr.(J:0:.predef_I4) = 0:R:0:anon_ptr.(J:0:.predef_I4)+0:W:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(if (L2NPCOLS:0:.predef_I4!=0))
+                StmtHandle(mpi_irecv_(&0:R:0:anon_ptr., &EXCH_RECV_LENGTH:0:.predef_I4, &DP_TYPE:0:.predef_I4, &EXCH_PROC:0:.predef_I4, &1, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&W:0:anon_ptr.(SEND_START:0:.predef_I4), &SEND_LEN:0:.predef_I4, &DP_TYPE:0:.predef_I4, &EXCH_PROC:0:.predef_I4, &1, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(t__71:0:.predef_I4 = EXCH_RECV_LENGTH:0:.predef_I4)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__71:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(R:0:anon_ptr.(J:0:.predef_I4) = 0:W:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(SUM:0:.predef_F8 =     0.000000000000000)
+                StmtHandle(t__72:0:.predef_I4 = LASTCOL:0:.predef_I4-FIRSTCOL:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__72:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(D:0:.predef_F8 = 0:X:0:anon_ptr.(J:0:.predef_I4)-0:R:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(SUM:0:.predef_F8 = SUM:0:.predef_F8+D:0:.predef_F8*D:0:.predef_F8)
+                StmtHandle(t__73:0:.predef_I4 = L2NPCOLS:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__73:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(mpi_irecv_(&D:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &REQUEST:0:.predef_I4, &IERR:0:.predef_I4))
+                StmtHandle(mpi_send_(&SUM:0:.predef_F8, &1, &DP_TYPE:0:.predef_I4, &REDUCE_EXCH_PROC:0:anon_ptr.(I:0:.predef_I4), &I:0:.predef_I4, &91, &IERR:0:.predef_I4))
+                StmtHandle(mpi_wait_(&REQUEST:0:.predef_I4, &0:STATUS:0:anon_ptr., &IERR:0:.predef_I4))
+                StmtHandle(SUM:0:.predef_F8 = D:0:.predef_F8+SUM:0:.predef_F8)
+                StmtHandle(D:0:.predef_F8 = SUM:0:.predef_F8)
+                StmtHandle(if (ME:0:.predef_I4==ROOT:0:.predef_I4))
+                StmtHandle(RNORM:0:.predef_F8 = SQRT(&D:0:.predef_F8))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 42
+                # Deref(NamedRef(conj_grad_::RNORM))
+            )    
+            Tag(
+                mTagID: 43
+                # NamedRef(cg_::RNORM)
+                # Deref(NamedRef(conj_grad_::RNORM))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 644
+                # NamedRef(conj_grad_::ALPHA)
+            )    
+            Tag(
+                mTagID: 646
+                # NamedRef(conj_grad_::BETA)
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::makea_ ): 
+    ActiveStmtSet([ 
+            XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                StmtHandle(t__74:0:.predef_I8 = NZ:0:.predef_I4)
+                StmtHandle(t__77:0:.predef_I8 = MAX(t__74:0:.predef_I8,0))
+                StmtHandle(t__75:0:.predef_I8 = OPC_I8I4CVT(N:0:.predef_I4+1))
+                StmtHandle(t__78:0:.predef_I8 = MAX(t__75:0:.predef_I8,0))
+                StmtHandle(t__76:0:.predef_I8 = OPC_I8I4CVT(N:0:.predef_I4*2+1))
+                StmtHandle(t__79:0:.predef_I8 = MAX(t__76:0:.predef_I8,0))
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(SIZE:0:.predef_F8 =     1.000000000000000)
+                StmtHandle(RATIO:0:.predef_F8 = F8EXPEXPR(RCOND:0:.predef_F8, (RECIP(OPC_F8F4CVT(FLOAT(&N:0:.predef_I4))))))
+                StmtHandle(NNZA:0:.predef_I4 = 0)
+                StmtHandle(t__80:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__80:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(IV:0:anon_ptr.(N:0:.predef_I4+I:0:.predef_I4) = 0)
+                StmtHandle(t__81:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (IOUTER:0:.predef_I4<=t__81:0:.predef_I4))
+                StmtHandle(IOUTER:0:.predef_I4 = 1)
+                StmtHandle(IOUTER:0:.predef_I4 = IOUTER:0:.predef_I4+1)
+                StmtHandle(NZV:0:.predef_I4 = NONZER:0:.predef_I4)
+                StmtHandle(sprnvc_(&N:0:.predef_I4, &NZV:0:.predef_I4, &0:V:0:anon_ptr., &0:COLIDX:0:anon_ptr., &IV:0:anon_ptr.(1), &IV:0:anon_ptr.(N:0:.predef_I4+1)))
+                StmtHandle(vecset_(&N:0:.predef_I4, &0:V:0:anon_ptr., &0:COLIDX:0:anon_ptr., &NZV:0:.predef_I4, &IOUTER:0:.predef_I4, &   0.5000000000000000))
+                StmtHandle(t__82:0:.predef_I4 = NZV:0:.predef_I4)
+                StmtHandle(do_loop (IVELT:0:.predef_I4<=t__82:0:.predef_I4))
+                StmtHandle(IVELT:0:.predef_I4 = 1)
+                StmtHandle(IVELT:0:.predef_I4 = IVELT:0:.predef_I4+1)
+                StmtHandle(JCOL:0:.predef_I4 = 0:COLIDX:0:anon_ptr.(IVELT:0:.predef_I4))
+                StmtHandle(if (LASTCOL:0:.predef_I4>=JCOL:0:.predef_I4&&FIRSTCOL:0:.predef_I4<=JCOL:0:.predef_I4))
+                StmtHandle(SCALE:0:.predef_F8 = 0:V:0:anon_ptr.(IVELT:0:.predef_I4)*SIZE:0:.predef_F8)
+                StmtHandle(t__83:0:.predef_I4 = NZV:0:.predef_I4)
+                StmtHandle(do_loop (IVELT1:0:.predef_I4<=t__83:0:.predef_I4))
+                StmtHandle(IVELT1:0:.predef_I4 = 1)
+                StmtHandle(IVELT1:0:.predef_I4 = IVELT1:0:.predef_I4+1)
+                StmtHandle(IROW:0:.predef_I4 = 0:COLIDX:0:anon_ptr.(IVELT1:0:.predef_I4))
+                StmtHandle(if (LASTROW:0:.predef_I4>=IROW:0:.predef_I4&&FIRSTROW:0:.predef_I4<=IROW:0:.predef_I4))
+                StmtHandle(NNZA:0:.predef_I4 = NNZA:0:.predef_I4+1)
+                StmtHandle(truebr (NZ:0:.predef_I4<NNZA:0:.predef_I4), L6)
+                StmtHandle(ACOL:0:anon_ptr.(NNZA:0:.predef_I4) = JCOL:0:.predef_I4)
+                StmtHandle(AROW:0:anon_ptr.(NNZA:0:.predef_I4) = IROW:0:.predef_I4)
+                StmtHandle(AELT:0:anon_ptr.(NNZA:0:.predef_I4) = 0:V:0:anon_ptr.(IVELT1:0:.predef_I4)*SCALE:0:.predef_F8)
+                StmtHandle(SIZE:0:.predef_F8 = RATIO:0:.predef_F8*SIZE:0:.predef_F8)
+                StmtHandle(t__84:0:.predef_I4 = FIRSTROW:0:.predef_I4)
+                StmtHandle(t__85:0:.predef_I4 = LASTROW:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__85:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = t__84:0:.predef_I4)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(if (LASTCOL:0:.predef_I4>=I:0:.predef_I4&&FIRSTCOL:0:.predef_I4<=I:0:.predef_I4))
+                StmtHandle(IOUTER:0:.predef_I4 = N:0:.predef_I4+I:0:.predef_I4)
+                StmtHandle(NNZA:0:.predef_I4 = NNZA:0:.predef_I4+1)
+                StmtHandle(truebr (NZ:0:.predef_I4<NNZA:0:.predef_I4), L6)
+                StmtHandle(ACOL:0:anon_ptr.(NNZA:0:.predef_I4) = I:0:.predef_I4)
+                StmtHandle(AROW:0:anon_ptr.(NNZA:0:.predef_I4) = I:0:.predef_I4)
+                StmtHandle(AELT:0:anon_ptr.(NNZA:0:.predef_I4) = RCOND:0:.predef_F8-SHIFT:0:.predef_F8)
+                StmtHandle(sparse_(&0:A:0:anon_ptr., &0:COLIDX:0:anon_ptr., &0:ROWSTR:0:anon_ptr., &N:0:.predef_I4, &0:AROW:0:anon_ptr., &0:ACOL:0:anon_ptr., &0:AELT:0:anon_ptr., &FIRSTROW:0:.predef_I4, &LASTROW:0:.predef_I4, &0:V:0:anon_ptr., &IV:0:anon_ptr.(1), &IV:0:anon_ptr.(N:0:.predef_I4+1), &NNZA:0:.predef_I4))
+                StmtHandle(return)
+                LABEL L6 0
+StmtHandle()
+                COMMENT <2,44,write(*,*) 'Space for matrix elements exceeded in makea'> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,45,write(*,*) 'nnza, nzmax = ',nnza, nz> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                COMMENT <2,46,write(*,*) ' iouter = ',iouter> # 
+StmtHandle()
+                PRAGMA 0 177 <null-st> 0 (0x0) # START_STMT_CLUMP
+StmtHandle()
+                IO <22,FORMATTED_WRITE,cray> 2
+StmtHandle()
+                PRAGMA 0 178 <null-st> 0 (0x0) # END_STMT_CLUMP
+StmtHandle()
+                StmtHandle(STOP_F90(&"", 0))
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::sparse_ ): 
+    ActiveStmtSet([ 
+            XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                StmtHandle(t__86:0:.predef_I8 = N:0:.predef_I4)
+                StmtHandle(t__88:0:.predef_I8 = MAX(t__86:0:.predef_I8,0))
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(NROWS:0:.predef_I4 = LASTROW:0:.predef_I4-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(t__89:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__89:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(ROWSTR:0:anon_ptr.(J:0:.predef_I4) = 0)
+                StmtHandle(MARK:0:anon_ptr.(J:0:.predef_I4) = 0)
+                StmtHandle(ROWSTR:0:anon_ptr.(N:0:.predef_I4+1) = 0)
+                StmtHandle(t__90:0:.predef_I4 = NNZA:0:.predef_I4)
+                StmtHandle(do_loop (NZA:0:.predef_I4<=t__90:0:.predef_I4))
+                StmtHandle(NZA:0:.predef_I4 = 1)
+                StmtHandle(NZA:0:.predef_I4 = NZA:0:.predef_I4+1)
+                StmtHandle(J:0:.predef_I4 = 0:AROW:0:anon_ptr.(NZA:0:.predef_I4)-FIRSTROW:0:.predef_I4+2)
+                StmtHandle(ROWSTR:0:anon_ptr.(J:0:.predef_I4) = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4)+1)
+                StmtHandle(ROWSTR:0:anon_ptr.(1) = 1)
+                StmtHandle(t__91:0:.predef_I4 = NROWS:0:.predef_I4+1)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__91:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 2)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(ROWSTR:0:anon_ptr.(J:0:.predef_I4) = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4)+0:ROWSTR:0:anon_ptr.(J:0:.predef_I4+-1))
+                StmtHandle(t__92:0:.predef_I4 = NNZA:0:.predef_I4)
+                StmtHandle(do_loop (NZA:0:.predef_I4<=t__92:0:.predef_I4))
+                StmtHandle(NZA:0:.predef_I4 = 1)
+                StmtHandle(NZA:0:.predef_I4 = NZA:0:.predef_I4+1)
+                StmtHandle(J:0:.predef_I4 = 0:AROW:0:anon_ptr.(NZA:0:.predef_I4)-FIRSTROW:0:.predef_I4+1)
+                StmtHandle(K:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(A:0:anon_ptr.(K:0:.predef_I4) = 0:AELT:0:anon_ptr.(NZA:0:.predef_I4))
+                StmtHandle(COLIDX:0:anon_ptr.(K:0:.predef_I4) = 0:ACOL:0:anon_ptr.(NZA:0:.predef_I4))
+                StmtHandle(ROWSTR:0:anon_ptr.(J:0:.predef_I4) = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4)+1)
+                StmtHandle(t__93:0:.predef_I4 = NROWS:0:.predef_I4)
+                StmtHandle(do_loop (J:0:.predef_I4>=1))
+                StmtHandle(J:0:.predef_I4 = t__93:0:.predef_I4)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+-1)
+                StmtHandle(ROWSTR:0:anon_ptr.(J:0:.predef_I4+1) = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4))
+                StmtHandle(ROWSTR:0:anon_ptr.(1) = 1)
+                StmtHandle(NZA:0:.predef_I4 = 0)
+                StmtHandle(t__94:0:.predef_I4 = N:0:.predef_I4)
+                StmtHandle(do_loop (I:0:.predef_I4<=t__94:0:.predef_I4))
+                StmtHandle(I:0:.predef_I4 = 1)
+                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+                StmtHandle(X:0:anon_ptr.(I:0:.predef_I4) =     0.000000)
+                StmtHandle(MARK:0:anon_ptr.(I:0:.predef_I4) = 0)
+                StmtHandle(JAJP1:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(1))
+                StmtHandle(t__95:0:.predef_I4 = NROWS:0:.predef_I4)
+                StmtHandle(do_loop (J:0:.predef_I4<=t__95:0:.predef_I4))
+                StmtHandle(J:0:.predef_I4 = 1)
+                StmtHandle(J:0:.predef_I4 = J:0:.predef_I4+1)
+                StmtHandle(NZROW:0:.predef_I4 = 0)
+                StmtHandle(t__96:0:.predef_I4 = JAJP1:0:.predef_I4)
+                StmtHandle(t__97:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4+1)+-1)
+                StmtHandle(do_loop (K:0:.predef_I4<=t__97:0:.predef_I4))
+                StmtHandle(K:0:.predef_I4 = t__96:0:.predef_I4)
+                StmtHandle(K:0:.predef_I4 = K:0:.predef_I4+1)
+                StmtHandle(I:0:.predef_I4 = 0:COLIDX:0:anon_ptr.(K:0:.predef_I4))
+                StmtHandle(X:0:anon_ptr.(I:0:.predef_I4) = 0:A:0:anon_ptr.(K:0:.predef_I4)+0:X:0:anon_ptr.(I:0:.predef_I4))
+                StmtHandle(if (0:X:0:anon_ptr.(I:0:.predef_I4)!=    0.000000000000000&&!0:MARK:0:anon_ptr.(I:0:.predef_I4)))
+                StmtHandle(MARK:0:anon_ptr.(I:0:.predef_I4) = 1)
+                StmtHandle(NZROW:0:.predef_I4 = NZROW:0:.predef_I4+1)
+                StmtHandle(NZLOC:0:anon_ptr.(NZROW:0:.predef_I4) = I:0:.predef_I4)
+                StmtHandle(t__98:0:.predef_I4 = NZROW:0:.predef_I4)
+                StmtHandle(do_loop (K:0:.predef_I4<=t__98:0:.predef_I4))
+                StmtHandle(K:0:.predef_I4 = 1)
+                StmtHandle(K:0:.predef_I4 = K:0:.predef_I4+1)
+                StmtHandle(I:0:.predef_I4 = 0:NZLOC:0:anon_ptr.(K:0:.predef_I4))
+                StmtHandle(MARK:0:anon_ptr.(I:0:.predef_I4) = 0)
+                StmtHandle(XI:0:.predef_F8 = 0:X:0:anon_ptr.(I:0:.predef_I4))
+                StmtHandle(X:0:anon_ptr.(I:0:.predef_I4) =     0.000000000000000)
+                StmtHandle(if (XI:0:.predef_F8!=    0.000000000000000))
+                StmtHandle(NZA:0:.predef_I4 = NZA:0:.predef_I4+1)
+                StmtHandle(A:0:anon_ptr.(NZA:0:.predef_I4) = XI:0:.predef_F8)
+                StmtHandle(COLIDX:0:anon_ptr.(NZA:0:.predef_I4) = I:0:.predef_I4)
+                StmtHandle(JAJP1:0:.predef_I4 = 0:ROWSTR:0:anon_ptr.(J:0:.predef_I4+1))
+                StmtHandle(ROWSTR:0:anon_ptr.(J:0:.predef_I4+1) = 0:ROWSTR:0:anon_ptr.(1)+NZA:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::sprnvc_ ): 
+    ActiveStmtSet([ 
+            XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                StmtHandle(t__99:0:.predef_I8 = N:0:.predef_I4)
+                StmtHandle(t__100:0:.predef_I8 = MAX(t__99:0:.predef_I8,0))
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(NZV:0:.predef_I4 = 0)
+                StmtHandle(NZROW:0:.predef_I4 = 0)
+                StmtHandle(NN1:0:.predef_I4 = 1)
+                LABEL L4 0
+StmtHandle()
+                StmtHandle(NN1:0:.predef_I4 = NN1:0:.predef_I4*2)
+                StmtHandle(truebr (N:0:.predef_I4>NN1:0:.predef_I4), L4)
+                LABEL L1 0
+StmtHandle()
+                StmtHandle(truebr (NZ:0:.predef_I4<=NZV:0:.predef_I4), L2)
+                StmtHandle(I:0:.predef_I4 = icnvrt_(&VECLOC:0:.predef_F8, &NN1:0:.predef_I4)+1)
+                StmtHandle(truebr (N:0:.predef_I4<I:0:.predef_I4), L1)
+                StmtHandle(if (0:MARK:0:anon_ptr.(I:0:.predef_I4)==0))
+                StmtHandle(MARK:0:anon_ptr.(I:0:.predef_I4) = 1)
+                StmtHandle(NZROW:0:.predef_I4 = NZROW:0:.predef_I4+1)
+                StmtHandle(NZLOC:0:anon_ptr.(NZROW:0:.predef_I4) = I:0:.predef_I4)
+                StmtHandle(NZV:0:.predef_I4 = NZV:0:.predef_I4+1)
+                StmtHandle(V:0:anon_ptr.(NZV:0:.predef_I4) = VECELT:0:.predef_F8)
+                StmtHandle(IV:0:anon_ptr.(NZV:0:.predef_I4) = I:0:.predef_I4)
+                GOTO L1
+StmtHandle()
+                LABEL L2 0
+StmtHandle()
+                StmtHandle(t__101:0:.predef_I4 = NZROW:0:.predef_I4)
+                StmtHandle(do_loop (II:0:.predef_I4<=t__101:0:.predef_I4))
+                StmtHandle(II:0:.predef_I4 = 1)
+                StmtHandle(II:0:.predef_I4 = II:0:.predef_I4+1)
+                StmtHandle(I:0:.predef_I4 = 0:NZLOC:0:anon_ptr.(II:0:.predef_I4))
+                StmtHandle(MARK:0:anon_ptr.(I:0:.predef_I4) = 0)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::icnvrt_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(ICNVRT:0:.predef_I4 = INT(&OPC_F8I4CVT(IPWR2:0:.predef_I4)*X:0:.predef_F8, ))
+                StmtHandle(return (ICNVRT:0:.predef_I4)) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::vecset_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(SET:0:.log.4 = 0)
+                StmtHandle(t__102:0:.predef_I4 = NZV:0:.predef_I4)
+                StmtHandle(do_loop (K:0:.predef_I4<=t__102:0:.predef_I4))
+                StmtHandle(K:0:.predef_I4 = 1)
+                StmtHandle(K:0:.predef_I4 = K:0:.predef_I4+1)
+                StmtHandle(if (0:IV:0:anon_ptr.(K:0:.predef_I4)==I:0:.predef_I4))
+                StmtHandle(V:0:anon_ptr.(K:0:.predef_I4) = VAL:0:.predef_F8)
+                StmtHandle(SET:0:.log.4 = 1)
+                StmtHandle(if (!SET:0:.log.4))
+                StmtHandle(NZV:0:.predef_I4 = NZV:0:.predef_I4+1)
+                StmtHandle(V:0:anon_ptr.(NZV:0:.predef_I4) = VAL:0:.predef_F8)
+                StmtHandle(IV:0:anon_ptr.(NZV:0:.predef_I4) = I:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::print_results_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::timer_clear_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::timer_start_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::timer_stop_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::timer_read_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_send_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IERROR:0:.predef_I4 = COMM:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = TAG:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = DEST:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = DATATYPE:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = COUNT:0:.predef_I4)
+                StmtHandle(MPI_GLOBAL_VAR:0:.predef_I4 = BUF:0:.predef_I4+MPI_GLOBAL_VAR:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_isend_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_recv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_irecv_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IERROR:0:.predef_I4 = COMM:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = TAG:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = SOURCE:0:.predef_I4)
+                StmtHandle(REQUEST:0:.predef_I4 = DATATYPE:0:.predef_I4)
+                StmtHandle(REQUEST:0:.predef_I4 = COUNT:0:.predef_I4)
+                StmtHandle(BUF:0:.predef_I4 = MPI_GLOBAL_VAR:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_bcast_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_reduce_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IERROR:0:.predef_I4 = COMM:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = CNT:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = TYPE:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = OP:0:.predef_I4)
+                StmtHandle(IERROR:0:.predef_I4 = ROOT:0:.predef_I4)
+                StmtHandle(MPI_GLOBAL_VAR:0:.predef_I4 = SBUF:0:.predef_I4+MPI_GLOBAL_VAR:0:.predef_I4)
+                StmtHandle(RBUF:0:.predef_I4 = MPI_GLOBAL_VAR:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_allreduce_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_init_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_rank_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_size_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_dup_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_split_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_barrier_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IERROR:0:.predef_I4 = COMM:0:.predef_I4)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_wait_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IERROR:0:.predef_I4 = REQUEST:0:.predef_I4)
+                StmtHandle(STATUS:0:anon_ptr.(1) = REQUEST:0:.predef_I4)
+                StmtHandle(REQUEST:0:.predef_I4 = 5)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_waitall_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_finalize_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(IERROR:0:.predef_I4 = 5)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 48
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 49
+                # NamedRef(cg_::TMAX)
+                # Deref(NamedRef(print_results_::A9))
+                # Deref(NamedRef(mpi_reduce_::RBUF))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 563
+                # NamedRef(cg_::MFLOPS)
+                # Deref(NamedRef(print_results_::A10))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 682
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_abort_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(cg_::MPI_GLOBAL_VAR)
+            SymHandle(cg_::NORM_TEMP1)
+            SymHandle(cg_::NORM_TEMP2)
+            SymHandle(cg_::RNORM)
+            SymHandle(cg_::TMAX)
+            SymHandle(cg_::ZETA)
+            SymHandle(conj_grad_::RHO)
+            SymHandle(conj_grad_::RHO0)
+            SymHandle(conj_grad_::SUM)
+            SymHandle(print_results_::A9)
+            SymHandle(print_results_::A10)
+            SymHandle(mpi_send_::BUF)
+            SymHandle(mpi_irecv_::BUF)
+            SymHandle(mpi_reduce_::RBUF)
+            SymHandle(cg_::MFLOPS)
+            SymHandle(conj_grad_::X)
+            SymHandle(conj_grad_::Z)
+            SymHandle(conj_grad_::P)
+            SymHandle(conj_grad_::Q)
+            SymHandle(conj_grad_::R)
+            SymHandle(conj_grad_::W)
+            SymHandle(conj_grad_::RNORM)
+            SymHandle(conj_grad_::ALPHA)
+            SymHandle(conj_grad_::BETA)
+            SymHandle(conj_grad_::D)
+            SymHandle(cg_::P)
+            SymHandle(cg_::Q)
+            SymHandle(cg_::R)
+            SymHandle(cg_::W)
+            SymHandle(cg_::X)
+            SymHandle(cg_::Z) ] 
+    mNumIterUseful: 11
+    mNumIterVary: 0
+)

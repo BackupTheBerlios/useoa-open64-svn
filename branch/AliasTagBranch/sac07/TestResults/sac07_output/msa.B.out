@@ -1,0 +1,70 @@
+0.000024 CFG seconds elapsed
+0.031230 AliasTagFIAlias seconds elapsed
+0.001209 CallGraph seconds elapsed
+0.000541 ParamBindings seconds elapsed
+0.004112 ICFG seconds elapsed
+0.064584 ICFGUseful seconds elapsed
+0.014514 ICFGVaryActive seconds elapsed
+0.002753 ICFGActivity(3rd phase) seconds elapsed
+0.085104 Total ICFGActivity seconds elapsed
+Output of Activity Analysis
+
+InterActiveFortran(
+    Procedure( dmsamain_::dmsamain_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/sac07/msa/msa.f"
+XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                XPRAGMA 0 161 <null-st> # COPYIN_BOUND
+StmtHandle()
+                StmtHandle(t__1:0:.predef_I8 = OPC_I8I4CVT(NX:0:.predef_I4*NY:0:.predef_I4))
+                StmtHandle(t__2:0:.predef_I8 = MAX(t__1:0:.predef_I8,0))
+                StmtHandle(t__3:0:.predef_I8 = OPC_I8I4CVT(I4CLEN(0:TASK:0:anon_ptr.)))
+                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle() ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 178
+                # NamedRef(nps_msa_dummy_driver_::X)
+                # Deref(NamedRef(dmsamain_::X))
+                # Deref(NamedRef(dmsafg_::X))
+            )    
+            Tag(
+                mTagID: 179
+                # NamedRef(nps_msa_dummy_driver_::X)
+                # Deref(NamedRef(dmsamain_::X))
+                # Deref(NamedRef(dmsafg_::X))
+            )    
+            Tag(
+                mTagID: 218
+                # NamedRef(nps_msa_dummy_driver_::X)
+                # Deref(NamedRef(dmsamain_::X))
+                # Deref(NamedRef(dmsafg_::X))
+                # SubSetRef(Deref(NamedRef(dmsafg_::X)))
+            ) ] 
+    )
+    Procedure( dmsamain_::dmsafg_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( dmsamain_::dmsabc_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( dmsamain_::nps_msa_dummy_driver_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(dmsamain_::X)
+            SymHandle(dmsafg_::X)
+            SymHandle(nps_msa_dummy_driver_::X) ] 
+    mNumIterUseful: 10
+    mNumIterVary: 0
+)

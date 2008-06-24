@@ -1,0 +1,246 @@
+0.000029 CFG seconds elapsed
+0.654736 AliasTagFIAlias seconds elapsed
+0.015577 CallGraph seconds elapsed
+0.011443 ParamBindings seconds elapsed
+0.045691 ICFG seconds elapsed
+0.067610 ICFGUseful seconds elapsed
+0.370266 ICFGVaryActive seconds elapsed
+0.041326 ICFGActivity(3rd phase) seconds elapsed
+0.486792 Total ICFGActivity seconds elapsed
+Output of Activity Analysis
+
+InterActiveFortran(
+    Procedure( bcast_inputs_::bcast_inputs_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::blts_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::buts_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::erhs_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::error_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::exact_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::exchange_1_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::exchange_3_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::exchange_4_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::exchange_5_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::exchange_6_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::init_comm_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::jacld_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::jacu_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::l2norm_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::applu_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::neighbors_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::nodedim_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::pintgr_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::proc_grid_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::read_input_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::rhs_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::setbv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::setcoeff_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::sethyper_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::setiv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::ssor_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::subdomain_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::verify_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_send_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_isend_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_recv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_irecv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_bcast_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_reduce_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_allreduce_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_init_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_comm_rank_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_comm_size_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_comm_dup_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_comm_split_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_barrier_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_wait_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_waitall_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_finalize_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( bcast_inputs_::mpi_abort_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    ActiveSymSet: [  ] 
+    mNumIterUseful: 1
+    mNumIterVary: 0
+)
