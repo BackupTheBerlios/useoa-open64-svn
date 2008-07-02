@@ -9,7 +9,7 @@ include Makeinclude.config
 WD := $(shell pwd)
 
 
-#CXXFLAGS += -g -O0 -DOA_IRHANDLETYPE_UL \
+#CXXFLAGS += -pg -O0 -DOA_IRHANDLETYPE_UL \
 
 CXXFLAGS += -O2 -pg -DOA_IRHANDLETYPE_UL \
             -I. -I$(WHIRL2OA) $(OA_INC) \
