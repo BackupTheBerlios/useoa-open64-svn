@@ -21,10 +21,6 @@ echo "########################### running regressAliasMapXAIF.script"
 source scripts/regressAliasMapXAIF.script
 
 
-echo "########################### running regressICFGDep.script"
-source scripts/regressICFGDep.script
-
-
 echo "########################### running regressICFGctive.script"
 source scripts/regressICFGActive.script
 
@@ -45,8 +41,6 @@ echo "########################### running regressUDDUChainsXAIF.script"
 source scripts/regressUDDUChainsXAIF.script 
 
 
-echo "########################### running regressReachConsts.script"
-source scripts/regressICFGReachConsts.script
 
 
 
