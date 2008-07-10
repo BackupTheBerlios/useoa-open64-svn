@@ -1,0 +1,32 @@
+echo "Testing TestCases/Activity/activity_int5.B, TestResults/CSFIActive/activity_int5.B.out Tested by PLM 05/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/activity_int5.B > t
+diff t TestResults/CSFIActive/activity_int5.B.out
+
+echo "Testing TestCases/Activity/argumentArrayIndex3.B, TestResults/CSFIActive/argumentArrayIndex3.B.out Tested by PLM 05/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/argumentArrayIndex3.B > t
+diff t TestResults/CSFIActive/argumentArrayIndex3.B.out
+
+echo "Testing TestCases/Activity/activity_proc_call1.B, TestResults/CSFIActive/activity_proc_call1.B.out Tested by PLM 04/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/activity_proc_call1.B > t
+diff t TestResults/CSFIActive/activity_proc_call1.B.out
+
+echo "Testing TestCases/Activity/simple_if2.B, TestResults/CSFIActive/simple_if2.B.out Tested by PLM 04/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/simple_if2.B > t
+diff t TestResults/CSFIActive/simple_if2.B.out
+
+echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/CSFIActive/sideEffect_3.B.out Tested by PLM 04/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/sideEffect_3.B > t
+diff t TestResults/CSFIActive/sideEffect_3.B.out
+
+echo "Testing TestCases/Activity/multiple_calls1.B, TestResults/CSFIActive/multiple_calls1.B.out Tested by PLM 04/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/multiple_calls1.B > t
+diff t TestResults/CSFIActive/multiple_calls1.B.out
+
+echo "Testing TestCases/Activity/multiple_calls2.B, TestResults/CSFIActive/multiple_calls2.B.out Tested by PLM 04/02/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/multiple_calls2.B > t
+diff t TestResults/CSFIActive/multiple_calls2.B.out
+
+echo "Testing TestCases/Activity/actualAsExpression.B, TestResults/CSFIActive/actualAsExpression.B.out Tested by PLM 05/17/08"
+./test-open64 --oa-CSFIActivity TestCases/Activity/actualAsExpression.B > t
+diff t TestResults/CSFIActive/actualAsExpression.B.out
+
