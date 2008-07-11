@@ -58,7 +58,7 @@
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
-//#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
+#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 #include <OpenAnalysis/ReachDefsOverwrite/ManagerReachDefsOverwriteStandard.hpp>
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
@@ -116,12 +116,9 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
 
 
-
-/*
 static int
 TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface);
-*/
 
 
 static int
@@ -289,7 +286,7 @@ main(int argc, char* argv[])
 
      case 11:
      {
-        //TestIR_OAICFGReachConsts(std::cout, pu_forest, irInterface);
+        TestIR_OAICFGReachConsts(std::cout, pu_forest, irInterface);
         break;
      }
 
@@ -831,8 +828,6 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 //! ICFGReachConst
 //! ===============================================================
 
-
-/*
  
 static int
 TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
@@ -914,8 +909,6 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
 
     return 0;
 }
-
-*/
 
 
 //! ==================================================================
