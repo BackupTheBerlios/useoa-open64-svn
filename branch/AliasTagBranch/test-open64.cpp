@@ -55,11 +55,10 @@
 #include <OpenAnalysis/SideEffect/ManagerSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/InterSideEffectStandard.hpp>
 #include <OpenAnalysis/SideEffect/ManagerInterSideEffectStandard.hpp>
-#include <OpenAnalysis/Activity/ManagerICFGDep.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGActive.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
-#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
+//#include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 #include <OpenAnalysis/ReachDefsOverwrite/ManagerReachDefsOverwriteStandard.hpp>
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
@@ -110,12 +109,6 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
                     OA::OA_ptr<Open64IRInterface> irInterface);
-
-
-
-static int
-TestIR_OAICFGDep(std::ostream& os, PU_Info* pu_forest,
-                       OA::OA_ptr<Open64IRInterface> irInterface);
 
 
 static int
@@ -285,12 +278,6 @@ main(int argc, char* argv[])
      case 8:
      {
         TestIR_OASideEffect(std::cout, pu_forest, irInterface);
-        break;
-     }
-
-     case 9:
-     {
-        TestIR_OAICFGDep(std::cout, pu_forest, irInterface);
         break;
      }
 

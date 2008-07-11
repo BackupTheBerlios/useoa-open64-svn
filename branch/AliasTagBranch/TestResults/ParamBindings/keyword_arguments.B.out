@@ -1,7 +1,6 @@
-file nameTestCases/ParamBindings/keyword_arguments.B
 
 ParamBindings(
-        CallHandle(solve_(&X:0:.predef_F4, NULL, &100))	 => 
+        CallHandle(solve_(&X:0:.predef_F4, , &100))	 => 
             
             NamedRef(
                 mMemRefType: USE
