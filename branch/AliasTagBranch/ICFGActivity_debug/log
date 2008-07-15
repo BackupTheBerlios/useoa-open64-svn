@@ -1,4 +1,0 @@
-useful 1: Started profiling ICFGUseful analysis for OpenAnalysis revision 798.
-useful 2: modified ICFGDep::getMayDefsIterator, ICFGDep::getDiffUseIterator
-          functions to remove many calls to find and thus save some time.
-
