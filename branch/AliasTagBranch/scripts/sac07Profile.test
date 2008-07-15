@@ -1,0 +1,18 @@
+mkdir Profile/sac07ICFGActive/newProfile
+
+./test-open64 --oa-sac07ICFGActivity TestCases/Activity/sac07/CG/cg_1_mpig.B > TestResults/sac07ICFGActive/CG/cg_1_mpig.B.out
+gprof test-open64 gmon.out >Profile/sac07ICFGActive/newProfile/cg_1_mpig.profile
+
+./test-open64 --oa-sac07ICFGActivity TestCases/Activity/sac07/adiabatic/adiabatic2.B > TestResults/sac07ICFGActive/adiabatic/adiabatic2.B.out
+gprof test-open64 gmon.out >Profile/sac07ICFGActive/newProfile/adiabatic2.profile
+
+./test-open64 --oa-sac07ICFGActivity TestCases/Activity/sac07//msa/msa.B > TestResults/sac07ICFGActive/msa/msa.B.out
+gprof test-open64 gmon.out >&Profile/sac07ICFGActive/newProfile/msa.profile
+
+./test-open64 --oa-sac07ICFGActivity TestCases/Activity/sac07/swirl/swirl.B > TestResults/sac07ICFGActive/swirl/swirl.B.out
+gprof test-open64 gmon.out >Profile/sac07ICFGActive/newProfile/swirl.profile
+
+./test-open64 --oa-sac07ICFGActivity TestCases/Activity/sac07/c2/c2.B > TestResults/sac07ICFGActive/c2/c2.B.out
+gprof test-open64 gmon.out >Profile/sac07ICFGActive/newProfile/c2.profile
+
+

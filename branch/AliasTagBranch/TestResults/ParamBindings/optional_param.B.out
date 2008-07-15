@@ -1,7 +1,6 @@
-file nameTestCases/ParamBindings/optional_param.B
 
 ParamBindings(
-        CallHandle(MODULE_MERGE_SORT(&0:ARRAY:0:anon_ptr., NULL))	 => 
+        CallHandle(MODULE_MERGE_SORT(&0:ARRAY:0:anon_ptr., ))	 => 
             
             NamedRef(
                 mMemRefType: USE

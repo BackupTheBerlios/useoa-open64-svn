@@ -75,9 +75,11 @@ static const char* usage_details =
 "      --oa-UseMREs          test useMREs for the given MemRefHandle\n"
 "      --oa-DefMREs          test defMREs for the given MemRefHandle\n"
 "      --oa-DiffUseMREs      test DiffuseMREs for the given MemRefHandle\n"
+"      --oa-sac07ICFGActivity      test ICFGActivity for the benchmarks \n"
 "\n"
 "Options:\n"
 "  -d, --dump          dump the WHIRL IR\n"
+
 "  -V, --version       print version information\n"
 "  -h, --help          print this help\n"
 "      --debug [lvl]   debug mode at level `lvl'\n";
@@ -125,6 +127,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-UseMREs",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-DefMREs",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-DiffUseMREs",           CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-sac07ICFGActivity",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "ir",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
 //  {  0 , "oa-ujnum",   CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -265,8 +268,9 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-UseMREs")) { runMode = 34; }
     if (parser.IsOpt("oa-DefMREs")) { runMode = 35; }
     if (parser.IsOpt("oa-DiffUseMREs")) { runMode = 36; }
+    if (parser.IsOpt("oa-sac07ICFGActivity")) { runMode = 37; } 
 
- 
+
     // Check for other options
     if (parser.IsOpt("dump")) { dumpIR = true; }
     
