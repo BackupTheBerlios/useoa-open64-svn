@@ -23,12 +23,12 @@ StmtHandle()	 =>
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
-                                Tag: 
+                                mTag: 
                                 Tag(
                                     mTagID: 6
                                     # NamedRef(constprop_loop2_::Y)
                                 )
-                                mCDType: ,VALUE=5>
+                                mConstPtr: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -44,12 +44,12 @@ StmtHandle()	 =>
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
-                                Tag: 
+                                mTag: 
                                 Tag(
                                     mTagID: 4
                                     # NamedRef(constprop_loop2_::X)
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
@@ -57,12 +57,12 @@ StmtHandle()	 =>
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
-                                Tag: 
+                                mTag: 
                                 Tag(
                                     mTagID: 4
                                     # NamedRef(constprop_loop2_::X)
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
@@ -70,21 +70,21 @@ StmtHandle()	 =>
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
-                                Tag: 
+                                mTag: 
                                 Tag(
                                     mTagID: 4
                                     # NamedRef(constprop_loop2_::X)
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             )    
                             RCPair: 
                             RCpair(
-                                Tag: 
+                                mTag: 
                                 Tag(
                                     mTagID: 6
                                     # NamedRef(constprop_loop2_::Y)
                                 )
-                                mCDType: ,VALUE=5>
+                                mConstPtr: ,VALUE=5>
                             ) ] 
                     )
                     
@@ -92,12 +92,12 @@ StmtHandle()	 =>
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
-                                Tag: 
+                                mTag: 
                                 Tag(
                                     mTagID: 4
                                     # NamedRef(constprop_loop2_::X)
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
@@ -112,10 +112,8 @@ StmtHandle()	 =>
                     Statement: StmtHandle(return)	 => 
                     RCPairSet([  ] 
                     )
-                    
-                    Statement: StmtHandle(return)	 => 
-                    RCPairSet([  ] 
-                    )
+
+            mReachConstsForCallStmt: CallHandle	 => OA::OA_ptr<RCPairSet> 
 
         )
 

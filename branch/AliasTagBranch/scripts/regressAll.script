@@ -44,3 +44,7 @@ source scripts/regressUDDUChainsXAIF.script
 echo "########################### running regressCSFIActive.script"
 source scripts/regressCSFIActive.script
 
+
+echo "########################### running regressICFGReachConsts.script"
+source scripts/regressICFGReachConsts.script
+

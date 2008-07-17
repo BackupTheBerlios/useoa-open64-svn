@@ -1,10 +1,18 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! constprop_proc2.f90
+!
 ! Due to context insensativity across calls, no constants get through 
 ! either call
 !
-! Due to context insensitive alias analysis, m, p and v get placed 
-! into the same Loc Id set, so they mayOverlap each other.
-! Therefore, now, output is all BOTTOM, no constants get thru.
+! current == FIAliasAliasTag
+!
+! Due to context insensitive alias analysis, we see the following aliasTagSets:
+! (M, deref-A, deref-B)  and (P, deref-A, deref-B) and (V, deref-C).  Also,
+! since A, B, and C are reference parameters, they do not have their own 
+! storage locations, so assignments to them within bar cannot define reaching
+! constants.
+!
+! Therefore, currently, output is all BOTTOM, no constants get thru.
 !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

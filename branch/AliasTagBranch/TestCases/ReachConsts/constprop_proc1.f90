@@ -1,18 +1,21 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! constprop_proc1.f90
 !
 ! most precise results (not here yet)
 ! p should be constant before the call, and not after the call
 ! v should be constant after the call, but not before the call
 ! m should be constant before and after the call
 !
-! still at call-return interference ...
+! current == FIAliasAliasTags, is FI and CI, and causes the following:
+!
+!    any non-local (and formal parameters are non-local because they do not
+!            have their own storage space) is mayDef and cannot define
+!            a reaching constant (although they may hold a reaching const
+!            as seen in *b in subroutine bar below)
 !
 ! Note: Even if we use ICFGDFSolver, the analysis is still 
 !       Intraprocedural.
 !
-! Issue: We are getting spurious Entry nodes for procedure bar
-!        for which IN set is BOTTOM, which affects analysis
-!        Talk to Michelle. May 19th 2008.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -33,11 +36,11 @@
        call bar(m,p,v,x)
 
        ! most precise: all BOTTOM, m=2, v=10
-       ! Current     : all BOTTOM
+       ! current     : all BOTTOM, m=2
        f = m + p + v + x
 
        ! most precise: all BOTTOM, m=2, v=10
-       ! current     : all BOTTOM
+       ! current     : all BOTTOM, m=2
        end subroutine
 
 
@@ -47,12 +50,15 @@
        ! all BOTTOM, *a=2, *b=5
        c = a * b
 
-       ! all BOTTOM, *a=2, *b=5, *c=10
+       ! most precise: all BOTTOM, *a=2, *b=5, *c=10
+       ! current     : all BOTTOM, *a=2, *b=5
        b = c - d
 
-       ! all BOTTOM, *a=2, *c=10
+       ! most precise: all BOTTOM, *a=2, *c=10
+       ! current     : all BOTTOM, *a=2
        return
 
-       ! all BOTTOM, *a=2, *c=10
+       ! most precise: all BOTTOM, *a=2, *c=10
+       ! current     : all BOTTOM, *a=2
        end subroutine
 
