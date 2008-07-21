@@ -26,7 +26,7 @@ double timer_()
   void* ptr;
   ptr = NULL;
   
-  gettimeofday (&tv, ptr);
+  gettimeofday (&tv, (struct timezone*)ptr);
   retval = (double)tv.tv_sec + (double)tv.tv_usec/1.0E6;
   return retval;
 } /* timer_ */
