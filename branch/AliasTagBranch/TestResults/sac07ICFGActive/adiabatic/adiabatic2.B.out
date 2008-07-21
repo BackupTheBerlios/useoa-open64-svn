@@ -1,9 +1,12 @@
-0.000029 CFG seconds elapsed
-0.393139 AliasTagFIAlias seconds elapsed
-0.012944 CallGraph seconds elapsed
-0.004672 ParamBindings seconds elapsed
-0.067131 ICFG seconds elapsed
-9.922845 ICFGActivity seconds elapsed
+0.000016 CFG seconds elapsed
+0.334682 AliasTagFIAlias seconds elapsed
+0.011677 CallGraph seconds elapsed
+0.004521 ParamBindings seconds elapsed
+0.032537 ICFG seconds elapsed
+2.137548 ICFGUseful seconds elapsed
+2.411609 ICFGVaryActive and ICFGActivity seconds elapsed
+0.470150 ICFGActivity seconds elapsed 1
+5.097889 ICFGActivity seconds elapsed
 
 InterActiveFortran(
     Procedure( flash_::flash_ ): 

@@ -1,9 +1,12 @@
-0.000028 CFG seconds elapsed
-0.169010 AliasTagFIAlias seconds elapsed
-0.004016 CallGraph seconds elapsed
-0.001536 ParamBindings seconds elapsed
-0.023045 ICFG seconds elapsed
-0.576007 ICFGActivity seconds elapsed
+0.000015 CFG seconds elapsed
+0.129538 AliasTagFIAlias seconds elapsed
+0.003749 CallGraph seconds elapsed
+0.001476 ParamBindings seconds elapsed
+0.010584 ICFG seconds elapsed
+0.163137 ICFGUseful seconds elapsed
+0.111512 ICFGVaryActive and ICFGActivity seconds elapsed
+0.014796 ICFGActivity seconds elapsed 1
+0.293854 ICFGActivity seconds elapsed
 
 InterActiveFortran(
     Procedure( dmsamain_::dmsamain_ ): 

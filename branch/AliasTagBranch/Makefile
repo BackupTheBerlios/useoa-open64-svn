@@ -33,6 +33,7 @@ dep = $(WHIRL2OA)/lib/Whirl2OA.a
 EXE1_OBJS = \
 	test-open64.o \
 	CmdLineParser.o \
+	timer.o \
 	Args.o 
 
 

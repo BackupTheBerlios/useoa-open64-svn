@@ -1,9 +1,12 @@
-0.000031 CFG seconds elapsed
-0.819567 AliasTagFIAlias seconds elapsed
-0.015042 CallGraph seconds elapsed
-0.026720 ParamBindings seconds elapsed
-0.085258 ICFG seconds elapsed
-4.586802 ICFGActivity seconds elapsed
+0.000018 CFG seconds elapsed
+0.620502 AliasTagFIAlias seconds elapsed
+0.013743 CallGraph seconds elapsed
+0.019809 ParamBindings seconds elapsed
+0.037548 ICFG seconds elapsed
+1.297030 ICFGUseful seconds elapsed
+0.810095 ICFGVaryActive and ICFGActivity seconds elapsed
+0.181099 ICFGActivity seconds elapsed 1
+2.310978 ICFGActivity seconds elapsed
 
 InterActiveFortran(
     Procedure( cg_::cg_ ): 

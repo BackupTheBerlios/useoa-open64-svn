@@ -40,6 +40,7 @@
 
 #include "Args.hpp"
 //#include "StrToHandle.hpp"
+#include "timer.h"
 
 #include <Open64IRInterface.hpp>
 #include <WhirlIO.h>
@@ -845,8 +846,9 @@ static int
 TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface)
 {
-    timeval tim;
-    double t1,t2;
+    // FIXME: put timer usage in debug statements and have debug be
+    // set with command line flag
+    TIMER mytimer;
 
     OA::OA_ptr<Open64IRProcIterator> procIter;
     procIter = new Open64IRProcIterator(pu_forest);
@@ -855,8 +857,7 @@ TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
     //! Control Flow Graph Timings
     //! ================================
 
-    gettimeofday(&tim, NULL);
-    t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
+    timer_start(&mytimer);
 
     //! eachCFG
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
@@ -864,35 +865,32 @@ TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
     cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
     eachCFG = new OA::CFG::EachCFGStandard(cfgman);
 
-    gettimeofday(&tim, NULL);
-    t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%6lf CFG seconds elapsed\n", t2-t1);
+    timer_end(&mytimer);
+    printf("%6lf CFG seconds elapsed\n", timer_numsecs(&mytimer));
 
 
     //! ================================
     //! AliasTagFIAlias Timings
     //! ================================
 
-    gettimeofday(&tim, NULL);
-    t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
 
-    //! FIAliasAliasMap
+    timer_start(&mytimer);
+
+    //! FIAliasAliasTag
     OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
     fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
 
-    gettimeofday(&tim, NULL);
-    t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%6lf AliasTagFIAlias seconds elapsed\n", t2-t1);
+    timer_end(&mytimer);
+    printf("%6lf FIAliasAliasTag seconds elapsed\n", timer_numsecs(&mytimer));
 
 
     //! =================================
     //! CallGraph Timings
     //! =================================
 
-    gettimeofday(&tim, NULL);
-    t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
+    timer_start(&mytimer);
 
     // call graph
     OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
@@ -900,17 +898,17 @@ TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
       cgraphman->performAnalysis(procIter, alias);
 
-    gettimeofday(&tim, NULL);
-    t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%6lf CallGraph seconds elapsed\n", t2-t1);
+    timer_end(&mytimer);
+    printf("%6lf CallGraph seconds elapsed\n", timer_numsecs(&mytimer));
 
 
     //! =====================================
     //! ParamBindings
     //! =====================================
 
-    gettimeofday(&tim, NULL);
-    t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
+
+    // FIXME: are these still being used?
+    timer_start(&mytimer);
 
     //ParamBindings
     OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
@@ -918,55 +916,29 @@ TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
     parambind = pbman->performAnalysis(cgraph);
 
-    gettimeofday(&tim, NULL);
-    t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%6lf ParamBindings seconds elapsed\n", t2-t1);
+    timer_end(&mytimer);
+    printf("%6lf ParamBindings seconds elapsed\n", timer_numsecs(&mytimer));
 
     //! =====================================
     //! ICFG
     //! =====================================
 
-    gettimeofday(&tim, NULL);
-    t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
+    timer_start(&mytimer);
 
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
-    gettimeofday(&tim, NULL);
-    t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%6lf ICFG seconds elapsed\n", t2-t1);
-
-    //! =====================================
-    //! ICFGUseful   (for testing)
-    //! =====================================
-
-    // OA::OA_ptr<OA::Activity::ManagerICFGUseful> usefulman;
-    // usefulman = new OA::Activity::ManagerICFGUseful(irInterface);
-    // OA::OA_ptr<OA::Activity::InterUseful> icfgUseful;
-    // icfgUseful = usefulman->performAnalysis(icfg, parambind, alias,
-    //                                        OA::DataFlow::ITERATIVE);
-    // icfgUseful->output(*irInterface);
-
-    //! ====================================
-    //! ICFGVaryActive
-    //! ====================================
-
-    // OA::OA_ptr<OA::Activity::ManagerICFGVaryActive> varyman;
-    // varyman = new OA::Activity::ManagerICFGVaryActive(irInterface);
-    // OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
-    // inActive = varyman->performAnalysis(icfg, parambind, alias,
-    //                            icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
-    // inActive->output(*irInterface);
+    timer_end(&mytimer);
+    printf("%6lf ICFG seconds elapsed\n", timer_numsecs(&mytimer));
 
 
     //! ====================================
     //! ICFGActivity
     //! ====================================
 
-    gettimeofday(&tim, NULL);
-    t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
+    timer_start(&mytimer);
 
     OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
     activeman = new OA::Activity::ManagerICFGActive(irInterface);
@@ -974,9 +946,8 @@ TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
     active = activeman->performAnalysis(icfg, parambind,
                                         alias, OA::DataFlow::ITERATIVE);
 
-    gettimeofday(&tim, NULL);
-    t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    printf("%6lf ICFGActivity seconds elapsed\n", t2-t1);
+    timer_end(&mytimer);
+    printf("%6lf ICFGActivity seconds elapsed\n", timer_numsecs(&mytimer));
 
     active->output(*irInterface,*alias);
 
