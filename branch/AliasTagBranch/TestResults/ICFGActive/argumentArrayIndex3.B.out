@@ -1,12 +1,7 @@
 
 InterActiveFortran(
     Procedure( foo_::foo_ ): 
-    ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/argumentArrayIndex3.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000)
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
@@ -26,14 +21,7 @@ StmtHandle()
             ) ] 
     )
     Procedure( foo_::head_ ): 
-    ActiveStmtSet([ 
-            PRAGMA 0 188 <1,23,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
-StmtHandle()
-                PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8))
-                StmtHandle(foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)))
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(

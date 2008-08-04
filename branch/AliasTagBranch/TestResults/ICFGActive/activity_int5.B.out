@@ -1,20 +1,7 @@
 
 InterActiveFortran(
     Procedure( head_::head_ ): 
-    ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/activity_int5.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(I:0:.predef_I4 = 1)
-                StmtHandle(t__1:0:.log.4 = I:0:.predef_I4<3)
-                StmtHandle(while_do (t__1:0:.log.4))
-                StmtHandle(if (I:0:.predef_I4<2))
-                StmtHandle(Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1))
-                StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(2))
-                StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
-                StmtHandle(t__1:0:.log.4 = I:0:.predef_I4<3)
-                StmtHandle(Y:0:anon_ptr.(2) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(2))
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(

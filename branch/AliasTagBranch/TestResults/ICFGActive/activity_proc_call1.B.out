@@ -1,15 +1,7 @@
 
 InterActiveFortran(
     Procedure( head_::head_ ): 
-    ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/activity_proc_call1.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8)
-                StmtHandle(bar_(&T1:0:.predef_F8, &T2:0:.predef_F8))
-                StmtHandle(T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000)
-                StmtHandle(F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8)
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
@@ -32,11 +24,7 @@ StmtHandle()
             ) ] 
     )
     Procedure( head_::bar_ ): 
-    ActiveStmtSet([ 
-            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(

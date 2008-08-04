@@ -1,12 +1,7 @@
 
 InterActiveFortran(
     Procedure( bar_::bar_ ): 
-    ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/Activity/sideEffect_3.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(D:0:.predef_F8 = C:0:.predef_F8*C:0:.predef_F8)
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
@@ -25,11 +20,7 @@ StmtHandle()
             ) ] 
     )
     Procedure( bar_::foo_ ): 
-    ActiveStmtSet([ 
-            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(bar_(&A:0:.predef_F8, &B:0:.predef_F8))
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
@@ -48,11 +39,7 @@ StmtHandle()
             ) ] 
     )
     Procedure( bar_::head_ ): 
-    ActiveStmtSet([ 
-            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(foo_(&X:0:anon_ptr.(1), &Y:0:anon_ptr.(1)))
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(

@@ -1,14 +1,7 @@
 
 InterActiveFortran(
     Procedure( main_::main_ ): 
-    ActiveStmtSet([ 
-             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/regress/UseOA-Open64/TestCases/Activity/actualAsExpression.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(sub1_(&L:0:.predef_I4+1))
-                StmtHandle(X:0:.predef_I4 = N:0:.predef_I4)
-                StmtHandle(_END())
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
@@ -25,11 +18,7 @@ StmtHandle()
             ) ] 
     )
     Procedure( main_::sub1_ ): 
-    ActiveStmtSet([ 
-            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-                StmtHandle(N:0:.predef_I4 = F:0:.predef_I4)
-                StmtHandle(return) ] 
+    ActiveStmtSet([  ] 
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
