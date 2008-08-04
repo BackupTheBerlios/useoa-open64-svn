@@ -1,12 +1,9 @@
-0.000015 CFG seconds elapsed
-0.021273 AliasTagFIAlias seconds elapsed
-0.000770 CallGraph seconds elapsed
-0.000430 ParamBindings seconds elapsed
-0.002020 ICFG seconds elapsed
-0.017046 ICFGUseful seconds elapsed
-0.011658 ICFGVaryActive and ICFGActivity seconds elapsed
-0.002100 ICFGActivity seconds elapsed 1
-0.031211 ICFGActivity seconds elapsed
+0.000008 CFG seconds elapsed
+0.005868 FIAliasAliasTag seconds elapsed
+0.000239 CallGraph seconds elapsed
+0.000155 ParamBindings seconds elapsed
+0.000662 ICFG seconds elapsed
+0.009334 ICFGActivity seconds elapsed
 
 InterActiveFortran(
     Procedure( main_::main_ ): 
@@ -60,7 +57,15 @@ StmtHandle()
                 # NamedRef(fcn_::SUM)
             )    
             Tag(
+                mTagID: 49
+                # UnnamedRef()
+            )    
+            Tag(
                 mTagID: 50
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 51
                 # UnnamedRef()
             )    
             Tag(
@@ -118,6 +123,6 @@ StmtHandle()
             SymHandle(fcn_::SUM)
             SymHandle(fcn2_::Y)
             SymHandle(fcn2_::YP) ] 
-    mNumIterUseful: 5
+    mNumIterUseful: 4
     mNumIterVary: 3
 )

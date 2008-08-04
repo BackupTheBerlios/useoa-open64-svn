@@ -1,0 +1,52 @@
+
+InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([ 
+             LOC 0 0 source files:	1	"/s/parsons/c/fac/mstrout/OA/vega-gcc-4.1.2/UseOA-Open64-AliasTagBranch/TestCases/Activity/multiple_calls3.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(A:0:.predef_F8 = X:0:.predef_F8)
+                StmtHandle(B:0:.predef_F8 =     2.000000000000000)
+                StmtHandle(bar_(&B:0:.predef_F8))
+                StmtHandle(B:0:.predef_F8 =     3.000000000000000)
+                StmtHandle(A:0:.predef_F8 =     4.000000000000000)
+                StmtHandle(B:0:.predef_F8 =     5.000000000000000)
+                StmtHandle(bar_(&C:0:.predef_F8))
+                StmtHandle(B:0:.predef_F8 =     6.000000000000000)
+                StmtHandle(Y:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 3
+                # NamedRef(foo_::A)
+            )    
+            Tag(
+                mTagID: 8
+                # NamedRef(foo_::X)
+            )    
+            Tag(
+                mTagID: 10
+                # NamedRef(foo_::Y)
+            ) ] 
+    )
+    Procedure( foo_::bar_ ): 
+    ActiveStmtSet([ 
+            PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                StmtHandle(F:0:.predef_F8 = F:0:.predef_F8*    2.000000000000000)
+                StmtHandle(return) ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 3
+                # NamedRef(foo_::A)
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::A)
+            SymHandle(foo_::X)
+            SymHandle(foo_::Y) ] 
+    mNumIterUseful: 3
+    mNumIterVary: 3
+)

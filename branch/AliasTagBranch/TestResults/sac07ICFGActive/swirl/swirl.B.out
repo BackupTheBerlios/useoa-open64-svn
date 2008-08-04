@@ -1,12 +1,9 @@
-0.000015 CFG seconds elapsed
-0.128320 AliasTagFIAlias seconds elapsed
-0.004065 CallGraph seconds elapsed
-0.000524 ParamBindings seconds elapsed
-0.013522 ICFG seconds elapsed
-0.138868 ICFGUseful seconds elapsed
-0.138914 ICFGVaryActive and ICFGActivity seconds elapsed
-0.018154 ICFGActivity seconds elapsed 1
-0.298769 ICFGActivity seconds elapsed
+0.000008 CFG seconds elapsed
+0.031319 FIAliasAliasTag seconds elapsed
+0.001186 CallGraph seconds elapsed
+0.000196 ParamBindings seconds elapsed
+0.004394 ICFG seconds elapsed
+0.095375 ICFGActivity seconds elapsed
 
 InterActiveFortran(
     Procedure( main_::main_ ): 
@@ -377,6 +374,6 @@ StmtHandle()
             SymHandle(dsfdfj_::FVEC)
             SymHandle(dsfdfj_::WF)
             SymHandle(dsfdfj_::WG) ] 
-    mNumIterUseful: 10
+    mNumIterUseful: 9
     mNumIterVary: 7
 )
