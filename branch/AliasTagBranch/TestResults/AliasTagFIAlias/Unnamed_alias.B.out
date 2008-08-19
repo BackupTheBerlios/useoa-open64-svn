@@ -188,7 +188,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 1
-                # NamedRef(foo_::foo_)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -198,7 +197,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
-                # NamedRef(foo_::bar_)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -208,7 +206,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
-                # NamedRef(foo_::A1)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -218,7 +215,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
-                # NamedRef(bar_::A2)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -228,9 +224,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 5
-                # UnnamedRef()
-                # UnnamedRef()
-                # Deref(NamedRef(foo_::A1))
             )	 => [ 
                 UnnamedRef(
                     mMemRefType: USE
@@ -257,10 +250,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 6
-                # NamedRef(head_::I)
-                # UnnamedRef()
-                # UnnamedRef()
-                # Deref(NamedRef(foo_::A1))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -292,8 +281,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 7
-                # UnnamedRef()
-                # Deref(NamedRef(bar_::A2))
             )	 => [ 
                 UnnamedRef(
                     mMemRefType: USE
@@ -314,9 +301,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 8
-                # NamedRef(head_::J)
-                # UnnamedRef()
-                # Deref(NamedRef(bar_::A2))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF

@@ -70,7 +70,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
-                # NamedRef(foo_::P)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -80,7 +79,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
-                # Deref(NamedRef(foo_::P))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -95,8 +93,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
-                # NamedRef(foo_::Q)
-                # Deref(NamedRef(foo_::P))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -116,7 +112,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 6
-                # NamedRef(foo_::T)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF

@@ -203,7 +203,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 1
-                # NamedRef(head_::bar_)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -213,7 +212,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
-                # NamedRef(head_::X)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -223,7 +221,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 5
-                # NamedRef(head_::F)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -233,7 +230,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 6
-                # Deref(NamedRef(bar_::A))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -248,8 +244,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 7
-                # NamedRef(head_::T1)
-                # Deref(NamedRef(bar_::A))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -269,7 +263,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 8
-                # Deref(NamedRef(bar_::B))
             )	 => [ 
                 Deref(
                     mMemRefType: DEF
@@ -284,8 +277,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 9
-                # NamedRef(head_::T2)
-                # Deref(NamedRef(bar_::B))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -305,8 +296,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 10
-                # NamedRef(head_::T3)
-                # Deref(NamedRef(bar_::A))
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -326,7 +315,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 12
-                # NamedRef(bar_::A)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -336,7 +324,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 14
-                # NamedRef(bar_::B)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -346,7 +333,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 15
-                # Deref(NamedRef(head_::X))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -361,7 +347,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 16
-                # Deref(NamedRef(head_::F))
             )	 => [ 
                 Deref(
                     mMemRefType: USE

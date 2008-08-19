@@ -22,9 +22,6 @@ StmtHandle()	 =>
                                 mTag: 
                                 Tag(
                                     mTagID: 7
-                                    # NamedRef(head_::M)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
                                 )
                                 mConstPtr: ,VALUE=2>
                             ) ] 
@@ -45,9 +42,6 @@ StmtHandle()	 =>
                                 mTag: 
                                 Tag(
                                     mTagID: 8
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
                                 )
                                 mConstPtr: ,VALUE=2>
                             ) ] 
@@ -74,9 +68,6 @@ StmtHandle()	 =>
                                 mTag: 
                                 Tag(
                                     mTagID: 7
-                                    # NamedRef(head_::M)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
                                 )
                                 mConstPtr: ,VALUE=2>
                             )    
@@ -85,9 +76,6 @@ StmtHandle()	 =>
                                 mTag: 
                                 Tag(
                                     mTagID: 8
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
                                 )
                                 mConstPtr: ,VALUE=5>
                             ) ] 
@@ -100,9 +88,6 @@ StmtHandle()	 =>
                                 mTag: 
                                 Tag(
                                     mTagID: 7
-                                    # NamedRef(head_::M)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
                                 )
                                 mConstPtr: ,VALUE=5>
                             )    
@@ -111,9 +96,6 @@ StmtHandle()	 =>
                                 mTag: 
                                 Tag(
                                     mTagID: 8
-                                    # NamedRef(head_::P)
-                                    # Deref(NamedRef(bar_::A))
-                                    # Deref(NamedRef(bar_::B))
                                 )
                                 mConstPtr: ,VALUE=2>
                             ) ] 

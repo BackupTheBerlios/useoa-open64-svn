@@ -6,21 +6,15 @@ InterActiveFortran(
     ActiveTagSet => MemRefExprSet([ 
             Tag(
                 mTagID: 7
-                # NamedRef(head_::T1)
-                # Deref(NamedRef(bar_::A))
             )    
             Tag(
                 mTagID: 9
-                # NamedRef(head_::T2)
-                # Deref(NamedRef(bar_::B))
             )    
             Tag(
                 mTagID: 16
-                # Deref(NamedRef(head_::X))
             )    
             Tag(
                 mTagID: 17
-                # Deref(NamedRef(head_::F))
             ) ] 
     )
     Procedure( head_::bar_ ): 
@@ -29,13 +23,9 @@ InterActiveFortran(
     ActiveTagSet => MemRefExprSet([ 
             Tag(
                 mTagID: 7
-                # NamedRef(head_::T1)
-                # Deref(NamedRef(bar_::A))
             )    
             Tag(
                 mTagID: 9
-                # NamedRef(head_::T2)
-                # Deref(NamedRef(bar_::B))
             ) ] 
     )
     ActiveSymSet: [ 

@@ -6,18 +6,9 @@ InterActiveFortran(
     ActiveTagSet => MemRefExprSet([ 
             Tag(
                 mTagID: 18
-                # NamedRef(head_::P)
-                # Deref(NamedRef(foo_::A))
-                # Deref(NamedRef(head_::X))
-                # SubSetRef(NamedRef(head_::P))
-                # SubSetRef(Deref(NamedRef(head_::X)))
             )    
             Tag(
                 mTagID: 19
-                # NamedRef(head_::Q)
-                # Deref(NamedRef(foo_::B))
-                # Deref(NamedRef(head_::Y))
-                # SubSetRef(NamedRef(head_::Q))
             ) ] 
     )
     Procedure( foo_::head_ ): 
@@ -26,18 +17,9 @@ InterActiveFortran(
     ActiveTagSet => MemRefExprSet([ 
             Tag(
                 mTagID: 18
-                # NamedRef(head_::P)
-                # Deref(NamedRef(foo_::A))
-                # Deref(NamedRef(head_::X))
-                # SubSetRef(NamedRef(head_::P))
-                # SubSetRef(Deref(NamedRef(head_::X)))
             )    
             Tag(
                 mTagID: 19
-                # NamedRef(head_::Q)
-                # Deref(NamedRef(foo_::B))
-                # Deref(NamedRef(head_::Y))
-                # SubSetRef(NamedRef(head_::Q))
             ) ] 
     )
     ActiveSymSet: [ 

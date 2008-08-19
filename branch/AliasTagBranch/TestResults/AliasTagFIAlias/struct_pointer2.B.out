@@ -103,7 +103,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
-                # NamedRef(foo_::CARPTR)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -113,8 +112,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
-                # NamedRef(foo_::FIRST)
-                # Deref(NamedRef(foo_::CARPTR))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -134,8 +131,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
-                # NamedRef(foo_::FIRST)
-                # Deref(NamedRef(foo_::CARPTR))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -155,7 +150,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 6
-                # NamedRef(foo_::Y)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -165,9 +159,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 7
-                # NamedRef(foo_::FIRST)
-                # Deref(NamedRef(foo_::CARPTR))
-                # FieldAccess(Deref(NamedRef(foo_::CARPTR)), LABOR)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE

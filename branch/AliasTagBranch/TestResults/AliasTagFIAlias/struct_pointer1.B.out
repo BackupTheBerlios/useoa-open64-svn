@@ -100,7 +100,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 1
-                # NamedRef(foo_::FIRST)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -110,7 +109,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
-                # NamedRef(foo_::FIRST)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -120,7 +118,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
-                # Deref(FieldAccess(NamedRef(foo_::FIRST), INSURANCE))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -140,8 +137,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
-                # NamedRef(foo_::X)
-                # Deref(FieldAccess(NamedRef(foo_::FIRST), INSURANCE))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -166,7 +161,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 6
-                # NamedRef(foo_::Y)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -176,8 +170,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 7
-                # NamedRef(foo_::FIRST)
-                # FieldAccess(NamedRef(foo_::FIRST), INSURANCE)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE

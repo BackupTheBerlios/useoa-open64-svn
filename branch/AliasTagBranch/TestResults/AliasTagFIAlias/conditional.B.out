@@ -87,7 +87,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 2
-                # NamedRef(main_::Q)
             )	 => [ 
                 NamedRef(
                     mMemRefType: DEF
@@ -97,7 +96,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 3
-                # Deref(NamedRef(main_::Q))
             )	 => [ 
                 Deref(
                     mMemRefType: USE
@@ -112,8 +110,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 4
-                # NamedRef(main_::R)
-                # Deref(NamedRef(main_::Q))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -133,8 +129,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 5
-                # NamedRef(main_::S)
-                # Deref(NamedRef(main_::Q))
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
@@ -154,7 +148,6 @@ AliasTagResults(
             
             Tag(
                 mTagID: 7
-                # NamedRef(main_::T)
             )	 => [ 
                 NamedRef(
                     mMemRefType: USE
