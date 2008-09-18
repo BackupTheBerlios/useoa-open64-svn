@@ -1,16 +1,24 @@
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ParamBindings/keyword_arguments.f
+mv keyword_arguments.B TestCases/ParamBindings/keyword_arguments.B
 echo "Testing TestCases/ParamBindings/keyword_arguments.B, TestResults/ParamBindings/keyword_arguments.B.out checked by PLM 02/18/08"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/keyword_arguments.B > t
-diff t TestResults/ParamBindings/keyword_arguments.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ParamBindings/keyword_arguments.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ParamBindings/optional_param.f90
+mv optional_param.B TestCases/ParamBindings/optional_param.B
 echo "Testing TestCases/ParamBindings/optional_param.B, TestResults/ParamBindings/optional_param.B.out checked by PLM 02/18/08"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/optional_param.B > t
-diff t TestResults/ParamBindings/optional_param.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ParamBindings/optional_param.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ParamBindings/param_expressions.f
+mv param_expressions.B TestCases/ParamBindings/param_expressions.B
 echo "Testing TestCases/ParamBindings/param_expressions.B, TestResults/ParamBindings/param_expressions.B.out checked by PLM 02/18/08"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/param_expressions.B > t
-diff t TestResults/ParamBindings/param_expressions.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ParamBindings/param_expressions.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ParamBindings/recursion.f90
+mv recursion.B TestCases/ParamBindings/recursion.B
 echo "Testing TestCases/ParamBindings/recursion.B, TestResults/ParamBindings/recursion.B.out checked by PLM 02/18/08"
 ./test-open64 --oa-ParamBindings TestCases/ParamBindings/recursion.B > t
-diff t TestResults/ParamBindings/recursion.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ParamBindings/recursion.B.out
 

@@ -1,6 +1,12 @@
 echo "Generating TestResults/ExprTree/call.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/call.f
+mv call.B TestCases/ExprTree/call.B
 ./test-open64 --oa-ExprTree TestCases/ExprTree/call.B > TestResults/ExprTree/call.B.out
 echo "Generating TestResults/ExprTree/conditional.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/conditional.f
+mv conditional.B TestCases/ExprTree/conditional.B
 ./test-open64 --oa-ExprTree TestCases/ExprTree/conditional.B > TestResults/ExprTree/conditional.B.out
 echo "Generating TestResults/ExprTree/expressions.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/expressions.f
+mv expressions.B TestCases/ExprTree/expressions.B
 ./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > TestResults/ExprTree/expressions.B.out

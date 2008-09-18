@@ -1,14 +1,28 @@
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainConditional.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainConditional.f
+mv UDDUChainConditional.B TestCases/UDDUChainsXAIF/UDDUChainConditional.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainConditional.B > TestResults/UDDUChainsXAIF/UDDUChainConditional.B.out
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainInterProcedural1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainInterProcedural1.f
+mv UDDUChainInterProcedural1.B TestCases/UDDUChainsXAIF/UDDUChainInterProcedural1.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainInterProcedural1.B > TestResults/UDDUChainsXAIF/UDDUChainInterProcedural1.B.out
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainNestedGlobals.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainNestedGlobals.f
+mv UDDUChainNestedGlobals.B TestCases/UDDUChainsXAIF/UDDUChainNestedGlobals.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainNestedGlobals.B > TestResults/UDDUChainsXAIF/UDDUChainNestedGlobals.B.out
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainIndirect1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainIndirect1.f
+mv UDDUChainIndirect1.B TestCases/UDDUChainsXAIF/UDDUChainIndirect1.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainIndirect1.B > TestResults/UDDUChainsXAIF/UDDUChainIndirect1.B.out
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainInterProcedural2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainInterProcedural2.f
+mv UDDUChainInterProcedural2.B TestCases/UDDUChainsXAIF/UDDUChainInterProcedural2.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainInterProcedural2.B > TestResults/UDDUChainsXAIF/UDDUChainInterProcedural2.B.out
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainIndirect2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainIndirect2.f
+mv UDDUChainIndirect2.B TestCases/UDDUChainsXAIF/UDDUChainIndirect2.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainIndirect2.B > TestResults/UDDUChainsXAIF/UDDUChainIndirect2.B.out
 echo "Generating TestResults/UDDUChainsXAIF/UDDUChainLoop.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChainsXAIF/UDDUChainLoop.f
+mv UDDUChainLoop.B TestCases/UDDUChainsXAIF/UDDUChainLoop.B
 ./test-open64 --oa-UDDUChainsXAIF TestCases/UDDUChainsXAIF/UDDUChainLoop.B > TestResults/UDDUChainsXAIF/UDDUChainLoop.B.out

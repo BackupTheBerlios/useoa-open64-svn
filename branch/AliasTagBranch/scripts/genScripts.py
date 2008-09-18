@@ -105,19 +105,21 @@ for line in filelines:
         genfile.write("echo \"Generating %s/%s\"\n" \
             % (outputdir,inputfile+".out"))
         ### uncomment this to regenerate B files ################
-	#inputName=inputfile[:-1]
-	#fFiles=glob.glob("../"+inputdir+"/"+inputName+"f")
-	#fFiles=fFiles+glob.glob("../"+inputdir+"/"+inputName+"f90")
-        #if (len(fFiles) > 1): 
-	#  print "ambiguous match for "+inputdir+"/"+inputName+"*"
-        #  print fFiles
-        #  sys.exit(-1)
-        #if (len(fFiles) < 1): 
-	#  print "no match for "+inputdir+"/"+inputName+"*"
-        #  print fFiles
-        #  sys.exit(-1)
-	#genfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
-	#genfile.write("mv %s %s/%s\n" % (inputfile, inputdir,inputfile))
+	inputName=inputfile[:-1]
+	fFiles=glob.glob("../"+inputdir+"/"+inputName+"f")
+	fFiles=fFiles+glob.glob("../"+inputdir+"/"+inputName+"f90")
+        if (len(fFiles) > 1): 
+	  print "ambiguous match for "+inputdir+"/"+inputName+"*"
+          print fFiles
+          sys.exit(-1)
+        if (len(fFiles) < 1): 
+	  print "no match for "+inputdir+"/"+inputName+"*"
+          print fFiles
+          sys.exit(-1)
+	genfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
+	genfile.write("mv %s %s/%s\n" % (inputfile, inputdir,inputfile))
+	regfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
+	regfile.write("mv %s %s/%s\n" % (inputfile, inputdir,inputfile))
         ### until here ##########################################
         genfile.write("%s %s/%s > %s/%s\n"  \
             % (driverexec,inputdir,inputfile,outputdir,inputfile+".out"))
@@ -125,7 +127,7 @@ for line in filelines:
             % (inputdir,inputfile,outputdir,inputfile+".out", status))
         regfile.write("%s %s/%s > t\n" \
             % (driverexec,inputdir,inputfile))
-        regfile.write("diff t %s/%s\n\n" \
+        regfile.write("diff -I \"LOC 0 0 source files:\" t %s/%s\n\n" \
             % (outputdir,inputfile+".out"))
 
 # output

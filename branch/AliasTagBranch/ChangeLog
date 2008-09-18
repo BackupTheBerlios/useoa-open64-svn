@@ -762,4 +762,13 @@
   - added regressICFGReachConsts to regressAll
   - Complied with OpenAnalysis branch AliasTagBranch r845
 
+09/17/08  UseOA-Open64 svn AliasTagBranch 349 Barbara Kreaseck
+  - removed TestCases/*/*.B files from repository
+  - changed scripts/genScript.py to generate *.B files during gen and regress
+  - regress diffs now ignores lines with "LOC 0 0 source files:" that specifies 
+    the location of the source file that generated the *.B file.
+  - re-generated all scripts/gen*.script and scripts/regress*.script accordingly
+  - needed for differences between targ_ia32 and targ_ia64 *.B files
+  - Compiled with OpenAnalysis branch AliasTagBranch r880
+
 

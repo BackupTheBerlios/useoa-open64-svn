@@ -1,2 +1,4 @@
 echo "Generating TestResults/ReachDefsOverwrite/multiple_definitions.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefsOverwrite/multiple_definitions.f
+mv multiple_definitions.B TestCases/ReachDefsOverwrite/multiple_definitions.B
 ./test-open64 --oa-ReachDefsOverwrite TestCases/ReachDefsOverwrite/multiple_definitions.B > TestResults/ReachDefsOverwrite/multiple_definitions.B.out

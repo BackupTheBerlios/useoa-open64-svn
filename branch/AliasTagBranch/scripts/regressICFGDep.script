@@ -1,36 +1,54 @@
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/expressions.f
+mv expressions.B TestCases/ICFGDep/expressions.B
 echo "Testing TestCases/ICFGDep/expressions.B, TestResults/ICFGDep/expressions.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/expressions.B > t
-diff t TestResults/ICFGDep/expressions.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/expressions.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/activity_int5.f
+mv activity_int5.B TestCases/ICFGDep/activity_int5.B
 echo "Testing TestCases/ICFGDep/activity_int5.B, TestResults/ICFGDep/activity_int5.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int5.B > t
-diff t TestResults/ICFGDep/activity_int5.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/activity_int5.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/globalActive_7.f
+mv globalActive_7.B TestCases/ICFGDep/globalActive_7.B
 echo "Testing TestCases/ICFGDep/globalActive_7.B, TestResults/ICFGDep/globalActive_7.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/globalActive_7.B > t
-diff t TestResults/ICFGDep/globalActive_7.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/globalActive_7.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/multiple_calls2.f
+mv multiple_calls2.B TestCases/ICFGDep/multiple_calls2.B
 echo "Testing TestCases/ICFGDep/multiple_calls2.B, TestResults/ICFGDep/multiple_calls2.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/multiple_calls2.B > t
-diff t TestResults/ICFGDep/multiple_calls2.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/multiple_calls2.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/simple_if2.f
+mv simple_if2.B TestCases/ICFGDep/simple_if2.B
 echo "Testing TestCases/ICFGDep/simple_if2.B, TestResults/ICFGDep/simple_if2.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/simple_if2.B > t
-diff t TestResults/ICFGDep/simple_if2.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/simple_if2.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/activity_proc_call1.f
+mv activity_proc_call1.B TestCases/ICFGDep/activity_proc_call1.B
 echo "Testing TestCases/ICFGDep/activity_proc_call1.B, TestResults/ICFGDep/activity_proc_call1.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_proc_call1.B > t
-diff t TestResults/ICFGDep/activity_proc_call1.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/activity_proc_call1.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/multiple_calls1.f
+mv multiple_calls1.B TestCases/ICFGDep/multiple_calls1.B
 echo "Testing TestCases/ICFGDep/multiple_calls1.B, TestResults/ICFGDep/multiple_calls1.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/multiple_calls1.B > t
-diff t TestResults/ICFGDep/multiple_calls1.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/multiple_calls1.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/sideEffect_3.f
+mv sideEffect_3.B TestCases/ICFGDep/sideEffect_3.B
 echo "Testing TestCases/ICFGDep/sideEffect_3.B, TestResults/ICFGDep/sideEffect_3.B.out checked by PLM 05/16/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/sideEffect_3.B > t
-diff t TestResults/ICFGDep/sideEffect_3.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/sideEffect_3.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/actualAsExpression.f
+mv actualAsExpression.B TestCases/ICFGDep/actualAsExpression.B
 echo "Testing TestCases/ICFGDep/actualAsExpression.B, TestResults/ICFGDep/actualAsExpression.B.out checked by PLM 05/19/08"
 ./test-open64 --oa-ICFGDep TestCases/ICFGDep/actualAsExpression.B > t
-diff t TestResults/ICFGDep/actualAsExpression.B.out
+diff -I "LOC 0 0 source files:" t TestResults/ICFGDep/actualAsExpression.B.out
 

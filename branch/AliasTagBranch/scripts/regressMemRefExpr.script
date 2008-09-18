@@ -1,16 +1,24 @@
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/nested.f
+mv nested.B TestCases/MemRefExpr/nested.B
 echo "Testing TestCases/MemRefExpr/nested.B, TestResults/MemRefExpr/nested.B.out Tested by PLM 04/28/08"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested.B > t
-diff t TestResults/MemRefExpr/nested.B.out
+diff -I "LOC 0 0 source files:" t TestResults/MemRefExpr/nested.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/local.f
+mv local.B TestCases/MemRefExpr/local.B
 echo "Testing TestCases/MemRefExpr/local.B, TestResults/MemRefExpr/local.B.out Tested by PLM 04/28/08"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local.B > t
-diff t TestResults/MemRefExpr/local.B.out
+diff -I "LOC 0 0 source files:" t TestResults/MemRefExpr/local.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/global.f
+mv global.B TestCases/MemRefExpr/global.B
 echo "Testing TestCases/MemRefExpr/global.B, TestResults/MemRefExpr/global.B.out Tested by PLM 04/28/08"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/global.B > t
-diff t TestResults/MemRefExpr/global.B.out
+diff -I "LOC 0 0 source files:" t TestResults/MemRefExpr/global.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/module.f
+mv module.B TestCases/MemRefExpr/module.B
 echo "Testing TestCases/MemRefExpr/module.B, TestResults/MemRefExpr/module.B.out Tested by PLM 04/28/08"
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/module.B > t
-diff t TestResults/MemRefExpr/module.B.out
+diff -I "LOC 0 0 source files:" t TestResults/MemRefExpr/module.B.out
 
