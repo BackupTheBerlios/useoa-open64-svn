@@ -67,6 +67,7 @@
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
 #include <OpenAnalysis/CSFIActivity/ManagerDUGStandard.hpp>
 #include <OpenAnalysis/CSFIActivity/ManagerDUActive.hpp>
+#include <OpenAnalysis/Alias/ManagerCSFIAliasAliasTag.hpp>
 
 
 #include <sys/time.h>
@@ -155,6 +156,10 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface);
+
+static int
+TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
 
 //***************************************************************************
@@ -337,6 +342,12 @@ main(int argc, char* argv[])
      case 37:
      {
         TestIR_OAsac07ICFGActivity(std::cout, pu_forest, irInterface);
+        break;
+     }
+ 
+     case 38:
+     {
+        TestIR_OACSFIAliasAliasTag(std::cout, pu_forest, irInterface);
         break;
      }
  
@@ -1541,3 +1552,55 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
 
 }
 
+static int
+TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
+                       OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+    Diag_Set_Phase("WHIRL tester: TestIR_OACSFIAliasAliasTag (Context-Sensitive Flow-Insensitive)");
+
+    /*
+
+    //! CFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+    */
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+
+    // need FIAlias to make call graph
+
+    //! FIAliasAliasMap
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias = fialiasman->performAnalysis(procIter);
+
+
+    //! call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
+      cgraphman->performAnalysis(procIter, alias);
+
+
+    /*
+    //! ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+    */
+
+    OA::OA_ptr<OA::Alias::ManagerCSFIAliasAliasTag> csfialiasman;
+    csfialiasman = new OA::Alias::ManagerCSFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> csfialias;
+    csfialias = csfialiasman->performAnalysis(cgraph);
+    
+    csfialias->output(*irInterface);
+
+}

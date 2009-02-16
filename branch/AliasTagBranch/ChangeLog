@@ -771,4 +771,11 @@
   - needed for differences between targ_ia32 and targ_ia64 *.B files
   - Compiled with OpenAnalysis branch AliasTagBranch r880
 
+02/11/09  UseOA-Open64 svn AliasTagBranch 350 Barbara Kreaseck
+  - added --oa-AliasTagCSFIAlias routine to test-open64
+  - added regression test and associated structures
+  - TestCases/AliasTagCSFIAlias/*
+  - TestResults/AliasTagCSFIAlias/*
+  - Compiled with OpenAnalysis branch AliasTagBranch r890
+
 
