@@ -1,0 +1,82 @@
+
+graph DGraph:
+
+    Node 2: 
+        ====== CFG node 2 ======
+
+
+    Node 3: 
+         LOC 0 0 source files:	1	"/home/malusare/duudChain/UseOA-Open64/TestCases/CFGtests/conditional.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 3 ======
+
+X:0:.predef_F8 =     2.000000000000000
+if (X:0:.predef_F8>=    0.000000000000000)
+
+
+    Node 4: 
+        ====== CFG node 4 ======
+Y:0:.predef_F8 =     5.000000000000000
+
+
+    Node 5: 
+        ====== CFG node 5 ======
+Y:0:.predef_F8 =     3.000000000000000
+
+
+    Node 6: 
+        ====== CFG node 6 ======
+Z:0:.predef_F8 = Y:0:.predef_F8
+_END()
+return
+
+
+    Node 7: 
+        ====== CFG node 7 ======
+return
+
+
+    Node 8: 
+        ====== CFG node 8 ======
+
+
+    Edge: 2 => 3
+        { FALLTHROUGH_EDGE 0 }
+
+    Edge: 3 => 4
+        { TRUE_EDGE 0 }
+
+    Edge: 3 => 5
+        { FALSE_EDGE 0 }
+
+    Edge: 4 => 6
+        { FALLTHROUGH_EDGE 0 }
+
+    Edge: 5 => 6
+        { FALLTHROUGH_EDGE 0 }
+
+    Edge: 6 => 8
+        { RETURN_EDGE 0 }
+
+    Edge: 7 => 8
+        { RETURN_EDGE 0 }
+
+--------Dot Graph Output--------
+
+digraph DGraph {
+    node [shape=rectangle];
+    2 [ label="====== CFG node 2 ======\n" ];
+    3 [ label="PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+====== CFG node 3 ======\n\nX:0:.predef_F8 =     2.000000000000000\nif (X:0:.predef_F8>=    0.000000000000000)\n" ];
+    4 [ label="====== CFG node 4 ======\nY:0:.predef_F8 =     5.000000000000000\n" ];
+    5 [ label="====== CFG node 5 ======\nY:0:.predef_F8 =     3.000000000000000\n" ];
+    6 [ label="====== CFG node 6 ======\nZ:0:.predef_F8 = Y:0:.predef_F8\n_END()\nreturn\n" ];
+    7 [ label="====== CFG node 7 ======\nreturn\n" ];
+    8 [ label="====== CFG node 8 ======\n" ];
+    2 -> 3 [ label="{ FALLTHROUGH_EDGE 0 }" ];
+    3 -> 4 [ label="{ TRUE_EDGE 0 }" ];
+    3 -> 5 [ label="{ FALSE_EDGE 0 }" ];
+    4 -> 6 [ label="{ FALLTHROUGH_EDGE 0 }" ];
+    5 -> 6 [ label="{ FALLTHROUGH_EDGE 0 }" ];
+    6 -> 8 [ label="{ RETURN_EDGE 0 }" ];
+    7 -> 8 [ label="{ RETURN_EDGE 0 }" ];}

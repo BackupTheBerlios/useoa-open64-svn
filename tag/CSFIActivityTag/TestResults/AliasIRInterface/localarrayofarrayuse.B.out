@@ -1,0 +1,33 @@
+
+PROCEDURE = { < ProcHandle("head_::head_"), SymHandle("head_::head_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/localarrayofarrayuse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("B:0:anon_ptr.(1:1:3) = 0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(1:1:3))") =>
+        [
+            MemRefHandle("B:0:anon_ptr.(1:1:3)") => 
+                SubSetRef( DEF, NamedRef( USE, SymHandle("head_::B")))
+            MemRefHandle("0:A:0:anon_ptr.(0:VECTOR:0:anon_ptr.(1:1:3))") => 
+                SubSetRef( USE, NamedRef( USE, SymHandle("head_::A")))
+            MemRefHandle("0:VECTOR:0:anon_ptr.(1:1:3)") => 
+                SubSetRef( USE, NamedRef( USE, SymHandle("head_::VECTOR")))
+        ] }
+    MEMREFEXPRS = { StmtHandle("A:0:anon_ptr.(1:1:3) = 0:B:0:anon_ptr.(0:t__1:0:anon_ptr.(1:1:3))") =>
+        [
+            MemRefHandle("A:0:anon_ptr.(1:1:3)") => 
+                SubSetRef( DEF, NamedRef( USE, SymHandle("head_::A")))
+            MemRefHandle("0:B:0:anon_ptr.(0:t__1:0:anon_ptr.(1:1:3))") => 
+                SubSetRef( USE, NamedRef( USE, SymHandle("head_::B")))
+            MemRefHandle("0:t__1:0:anon_ptr.(1:1:3)") => 
+                SubSetRef( USE, NamedRef( USE, SymHandle("head_::t__1")))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("head_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::A"), local > }
+    LOCATION = { < SymHandle("head_::B"), local > }
+    LOCATION = { < SymHandle("head_::VECTOR"), local > }
+    LOCATION = { < SymHandle("head_::t__1"), local > }

@@ -1,0 +1,604 @@
+echo "Testing TestCases/MemRefExpr/arrays1.B, TestResults/MemRefExpr/arrays1.B.out conservatively correct MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/arrays1.B > t
+diff t TestResults/MemRefExpr/arrays1.B.out
+
+echo "Testing TestCases/MemRefExpr/arrays5.B, TestResults/MemRefExpr/arrays5.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/arrays5.B > t
+diff t TestResults/MemRefExpr/arrays5.B.out
+
+echo "Testing TestCases/MemRefExpr/functions1.B, TestResults/MemRefExpr/functions1.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/functions1.B > t
+diff t TestResults/MemRefExpr/functions1.B.out
+
+echo "Testing TestCases/MemRefExpr/globalActive_2.B, TestResults/MemRefExpr/globalActive_2.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalActive_2.B > t
+diff t TestResults/MemRefExpr/globalActive_2.B.out
+
+echo "Testing TestCases/MemRefExpr/interalias_proc_call1.B, TestResults/MemRefExpr/interalias_proc_call1.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call1.B > t
+diff t TestResults/MemRefExpr/interalias_proc_call1.B.out
+
+echo "Testing TestCases/MemRefExpr/interalias_proc_call2.B, TestResults/MemRefExpr/interalias_proc_call2.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call2.B > t
+diff t TestResults/MemRefExpr/interalias_proc_call2.B.out
+
+echo "Testing TestCases/MemRefExpr/interalias_proc_call3.B, TestResults/MemRefExpr/interalias_proc_call3.B.out checked by MMS 7/5/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > t
+diff t TestResults/MemRefExpr/interalias_proc_call3.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_actual_expression.B, TestResults/MemRefExpr/formal_actual_expression.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > t
+diff t TestResults/MemRefExpr/formal_actual_expression.B.out
+
+echo "Testing TestCases/MemRefExpr/local_actual_expression.B, TestResults/MemRefExpr/local_actual_expression.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression.B > t
+diff t TestResults/MemRefExpr/local_actual_expression.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual.B, TestResults/MemRefExpr/formal_array_subscript_actual.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/local_array_subscript_actual.B, TestResults/MemRefExpr/local_array_subscript_actual.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_subscript_actual.B > t
+diff t TestResults/MemRefExpr/local_array_subscript_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual.B, TestResults/MemRefExpr/formal_scalar_actual.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/local_scalar_actual.B, TestResults/MemRefExpr/local_scalar_actual.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_scalar_actual.B > t
+diff t TestResults/MemRefExpr/local_scalar_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual.B, TestResults/MemRefExpr/formal_array_actual.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual.B > t
+diff t TestResults/MemRefExpr/formal_array_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/local_array_actual.B, TestResults/MemRefExpr/local_array_actual.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_actual.B > t
+diff t TestResults/MemRefExpr/local_array_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual_in.B, TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_in.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual_out.B, TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_out.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual_inout.B, TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_inout.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual_in.B, TestResults/MemRefExpr/formal_array_actual_in.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_in.B > t
+diff t TestResults/MemRefExpr/formal_array_actual_in.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual_out.B, TestResults/MemRefExpr/formal_array_actual_out.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_out.B > t
+diff t TestResults/MemRefExpr/formal_array_actual_out.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual_inout.B, TestResults/MemRefExpr/formal_array_actual_inout.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_inout.B > t
+diff t TestResults/MemRefExpr/formal_array_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/local_actual_expression_assignment.B, TestResults/MemRefExpr/local_actual_expression_assignment.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression_assignment.B > t
+diff t TestResults/MemRefExpr/local_actual_expression_assignment.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual_in.B, TestResults/MemRefExpr/formal_scalar_actual_in.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_in.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual_in.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual_out.B, TestResults/MemRefExpr/formal_scalar_actual_out.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_out.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual_out.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual_inout.B, TestResults/MemRefExpr/formal_scalar_actual_inout.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/If_Loop4.B, TestResults/MemRefExpr/If_Loop4.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/If_Loop4.B > t
+diff t TestResults/MemRefExpr/If_Loop4.B.out
+
+echo "Testing TestCases/MemRefExpr/passiveStatement.B, TestResults/MemRefExpr/passiveStatement.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/passiveStatement.B > t
+diff t TestResults/MemRefExpr/passiveStatement.B.out
+
+echo "Testing TestCases/MemRefExpr/simple1.B, TestResults/MemRefExpr/simple1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple1.B > t
+diff t TestResults/MemRefExpr/simple1.B.out
+
+echo "Testing TestCases/MemRefExpr/If_Loop5.B, TestResults/MemRefExpr/If_Loop5.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/If_Loop5.B > t
+diff t TestResults/MemRefExpr/If_Loop5.B.out
+
+echo "Testing TestCases/MemRefExpr/simple2.B, TestResults/MemRefExpr/simple2.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple2.B > t
+diff t TestResults/MemRefExpr/simple2.B.out
+
+echo "Testing TestCases/MemRefExpr/simple3.B, TestResults/MemRefExpr/simple3.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple3.B > t
+diff t TestResults/MemRefExpr/simple3.B.out
+
+echo "Testing TestCases/MemRefExpr/float_intrinsic.B, TestResults/MemRefExpr/float_intrinsic.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/float_intrinsic.B > t
+diff t TestResults/MemRefExpr/float_intrinsic.B.out
+
+echo "Testing TestCases/MemRefExpr/lion.B, TestResults/MemRefExpr/lion.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/lion.B > t
+diff t TestResults/MemRefExpr/lion.B.out
+
+echo "Testing TestCases/MemRefExpr/tanh_f_arg.B, TestResults/MemRefExpr/tanh_f_arg.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/tanh_f_arg.B > t
+diff t TestResults/MemRefExpr/tanh_f_arg.B.out
+
+echo "Testing TestCases/MemRefExpr/nested_calls_1.B, TestResults/MemRefExpr/nested_calls_1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_1.B > t
+diff t TestResults/MemRefExpr/nested_calls_1.B.out
+
+echo "Testing TestCases/MemRefExpr/bat.B, TestResults/MemRefExpr/bat.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/bat.B > t
+diff t TestResults/MemRefExpr/bat.B.out
+
+echo "Testing TestCases/MemRefExpr/nested_calls_3.B, TestResults/MemRefExpr/nested_calls_3.B.out checked  by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_3.B > t
+diff t TestResults/MemRefExpr/nested_calls_3.B.out
+
+echo "Testing TestCases/MemRefExpr/cast1.B, TestResults/MemRefExpr/cast1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/cast1.B > t
+diff t TestResults/MemRefExpr/cast1.B.out
+
+echo "Testing TestCases/MemRefExpr/nested_calls_4.B, TestResults/MemRefExpr/nested_calls_4.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_4.B > t
+diff t TestResults/MemRefExpr/nested_calls_4.B.out
+
+echo "Testing TestCases/MemRefExpr/constPrec.B, TestResults/MemRefExpr/constPrec.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/constPrec.B > t
+diff t TestResults/MemRefExpr/constPrec.B.out
+
+echo "Testing TestCases/MemRefExpr/readWrite1.B, TestResults/MemRefExpr/readWrite1.B.out checked by PLM 10/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/readWrite1.B > t
+diff t TestResults/MemRefExpr/readWrite1.B.out
+
+echo "Testing TestCases/MemRefExpr/rung_kutta.B, TestResults/MemRefExpr/rung_kutta.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/rung_kutta.B > t
+diff t TestResults/MemRefExpr/rung_kutta.B.out
+
+echo "Testing TestCases/MemRefExpr/scalar_local.B, TestResults/MemRefExpr/scalar_local.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/scalar_local.B > t
+diff t TestResults/MemRefExpr/scalar_local.B.out
+
+echo "Testing TestCases/MemRefExpr/struct_simple.B, TestResults/MemRefExpr/struct_simple.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple.B > t
+diff t TestResults/MemRefExpr/struct_simple.B.out
+
+echo "Testing TestCases/MemRefExpr/struct_simple_local.B, TestResults/MemRefExpr/struct_simple_local.B.out checked by PLM 10/19/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple_local.B > t
+diff t TestResults/MemRefExpr/struct_simple_local.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactual.B, TestResults/MemRefExpr/formalarrayactual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactual.B > t
+diff t TestResults/MemRefExpr/formalarrayactual.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualin.B, TestResults/MemRefExpr/formalarrayactualin.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualin.B > t
+diff t TestResults/MemRefExpr/formalarrayactualin.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualout.B, TestResults/MemRefExpr/formalarrayactualout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualinout.B, TestResults/MemRefExpr/formalarrayactualinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualinout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualsubscript.B, TestResults/MemRefExpr/formalarrayactualsubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscript.B > t
+diff t TestResults/MemRefExpr/formalarrayactualsubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualsubscriptin.B, TestResults/MemRefExpr/formalarrayactualsubscriptin.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptin.B > t
+diff t TestResults/MemRefExpr/formalarrayactualsubscriptin.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualsubscriptout.B, TestResults/MemRefExpr/formalarrayactualsubscriptout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualsubscriptout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualsubscriptinout.B, TestResults/MemRefExpr/formalarrayactualsubscriptinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptinout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualsubscriptinout.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayactual.B, TestResults/MemRefExpr/localarrayactual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactual.B > t
+diff t TestResults/MemRefExpr/localarrayactual.B.out
+
+echo "Testing TestCases/MemRefExpr/localscalaractual.B, TestResults/MemRefExpr/localscalaractual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaractual.B > t
+diff t TestResults/MemRefExpr/localscalaractual.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayofarrayuse.B, TestResults/MemRefExpr/formalarrayofarrayuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayofarrayuse.B > t
+diff t TestResults/MemRefExpr/formalarrayofarrayuse.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayofarrayusesubscript.B, TestResults/MemRefExpr/formalarrayofarrayusesubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayofarrayusesubscript.B > t
+diff t TestResults/MemRefExpr/formalarrayofarrayusesubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayofarraydef.B, TestResults/MemRefExpr/formalarrayofarraydef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayofarraydef.B > t
+diff t TestResults/MemRefExpr/formalarrayofarraydef.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayofarrayuse.B, TestResults/MemRefExpr/localarrayofarrayuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayofarrayuse.B > t
+diff t TestResults/MemRefExpr/localarrayofarrayuse.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayofarrayusesubscript.B, TestResults/MemRefExpr/localarrayofarrayusesubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayofarrayusesubscript.B > t
+diff t TestResults/MemRefExpr/localarrayofarrayusesubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayofarraydef.B, TestResults/MemRefExpr/localarrayofarraydef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayofarraydef.B > t
+diff t TestResults/MemRefExpr/localarrayofarraydef.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearrayusewholearray.B, TestResults/MemRefExpr/modulearrayusewholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearrayusewholearray.B > t
+diff t TestResults/MemRefExpr/modulearrayusewholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearrayuse.B, TestResults/MemRefExpr/modulearrayuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearrayuse.B > t
+diff t TestResults/MemRefExpr/modulearrayuse.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearraysubscriptuse.B, TestResults/MemRefExpr/modulearraysubscriptuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraysubscriptuse.B > t
+diff t TestResults/MemRefExpr/modulearraysubscriptuse.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearraydefwholearray.B, TestResults/MemRefExpr/modulearraydefwholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraydefwholearray.B > t
+diff t TestResults/MemRefExpr/modulearraydefwholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearraydef.B, TestResults/MemRefExpr/modulearraydef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraydef.B > t
+diff t TestResults/MemRefExpr/modulearraydef.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearraysubscriptdef.B, TestResults/MemRefExpr/modulearraysubscriptdef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraysubscriptdef.B > t
+diff t TestResults/MemRefExpr/modulearraysubscriptdef.B.out
+
+echo "Testing TestCases/MemRefExpr/modulearraysectiondef.B, TestResults/MemRefExpr/modulearraysectiondef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraysectiondef.B > t
+diff t TestResults/MemRefExpr/modulearraysectiondef.B.out
+
+echo "Testing TestCases/MemRefExpr/modulescalaruse.B, TestResults/MemRefExpr/modulescalaruse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulescalaruse.B > t
+diff t TestResults/MemRefExpr/modulescalaruse.B.out
+
+echo "Testing TestCases/MemRefExpr/modulescalardef.B, TestResults/MemRefExpr/modulescalardef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulescalardef.B > t
+diff t TestResults/MemRefExpr/modulescalardef.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarrayusewholearray.B, TestResults/MemRefExpr/globalarrayusewholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarrayusewholearray.B > t
+diff t TestResults/MemRefExpr/globalarrayusewholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarrayuse.B, TestResults/MemRefExpr/globalarrayuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarrayuse.B > t
+diff t TestResults/MemRefExpr/globalarrayuse.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarrayusesubscript.B, TestResults/MemRefExpr/globalarrayusesubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarrayusesubscript.B > t
+diff t TestResults/MemRefExpr/globalarrayusesubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarraydefwholearray.B, TestResults/MemRefExpr/globalarraydefwholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraydefwholearray.B > t
+diff t TestResults/MemRefExpr/globalarraydefwholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarraydef.B, TestResults/MemRefExpr/globalarraydef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraydef.B > t
+diff t TestResults/MemRefExpr/globalarraydef.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarraydefsubscript.B, TestResults/MemRefExpr/globalarraydefsubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraydefsubscript.B > t
+diff t TestResults/MemRefExpr/globalarraydefsubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/globalarraysectiondef.B, TestResults/MemRefExpr/globalarraysectiondef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraysectiondef.B > t
+diff t TestResults/MemRefExpr/globalarraysectiondef.B.out
+
+echo "Testing TestCases/MemRefExpr/globalscalaruse.B, TestResults/MemRefExpr/globalscalaruse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalscalaruse.B > t
+diff t TestResults/MemRefExpr/globalscalaruse.B.out
+
+echo "Testing TestCases/MemRefExpr/globalscalardef.B, TestResults/MemRefExpr/globalscalardef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalscalardef.B > t
+diff t TestResults/MemRefExpr/globalscalardef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayusewholearray.B, TestResults/MemRefExpr/formalarrayusewholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayusewholearray.B > t
+diff t TestResults/MemRefExpr/formalarrayusewholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayuse.B, TestResults/MemRefExpr/formalarrayuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayuse.B > t
+diff t TestResults/MemRefExpr/formalarrayuse.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraysubscriptuse.B, TestResults/MemRefExpr/formalarraysubscriptuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraysubscriptuse.B > t
+diff t TestResults/MemRefExpr/formalarraysubscriptuse.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayusein.B, TestResults/MemRefExpr/formalarrayusein.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayusein.B > t
+diff t TestResults/MemRefExpr/formalarrayusein.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayuseout.B, TestResults/MemRefExpr/formalarrayuseout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayuseout.B > t
+diff t TestResults/MemRefExpr/formalarrayuseout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayuseinout.B, TestResults/MemRefExpr/formalarrayuseinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayuseinout.B > t
+diff t TestResults/MemRefExpr/formalarrayuseinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraydefwholearray.B, TestResults/MemRefExpr/formalarraydefwholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydefwholearray.B > t
+diff t TestResults/MemRefExpr/formalarraydefwholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraydef.B, TestResults/MemRefExpr/formalarraydef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydef.B > t
+diff t TestResults/MemRefExpr/formalarraydef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraysubscriptdef.B, TestResults/MemRefExpr/formalarraysubscriptdef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraysubscriptdef.B > t
+diff t TestResults/MemRefExpr/formalarraysubscriptdef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraysectiondef.B, TestResults/MemRefExpr/formalarraysectiondef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraysectiondef.B > t
+diff t TestResults/MemRefExpr/formalarraysectiondef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraydefout.B, TestResults/MemRefExpr/formalarraydefout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydefout.B > t
+diff t TestResults/MemRefExpr/formalarraydefout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarraydefinout.B, TestResults/MemRefExpr/formalarraydefinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydefinout.B > t
+diff t TestResults/MemRefExpr/formalarraydefinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaruse.B, TestResults/MemRefExpr/formalscalaruse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaruse.B > t
+diff t TestResults/MemRefExpr/formalscalaruse.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalarusein.B, TestResults/MemRefExpr/formalscalarusein.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalarusein.B > t
+diff t TestResults/MemRefExpr/formalscalarusein.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaruseout.B, TestResults/MemRefExpr/formalscalaruseout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaruseout.B > t
+diff t TestResults/MemRefExpr/formalscalaruseout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaruseinout.B, TestResults/MemRefExpr/formalscalaruseinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaruseinout.B > t
+diff t TestResults/MemRefExpr/formalscalaruseinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalardef.B, TestResults/MemRefExpr/formalscalardef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalardef.B > t
+diff t TestResults/MemRefExpr/formalscalardef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalardefout.B, TestResults/MemRefExpr/formalscalardefout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalardefout.B > t
+diff t TestResults/MemRefExpr/formalscalardefout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalardefinout.B, TestResults/MemRefExpr/formalscalardefinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalardefinout.B > t
+diff t TestResults/MemRefExpr/formalscalardefinout.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayuse.B, TestResults/MemRefExpr/localarrayuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayuse.B > t
+diff t TestResults/MemRefExpr/localarrayuse.B.out
+
+echo "Testing TestCases/MemRefExpr/localarraysubscriptuse.B, TestResults/MemRefExpr/localarraysubscriptuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysubscriptuse.B > t
+diff t TestResults/MemRefExpr/localarraysubscriptuse.B.out
+
+echo "Testing TestCases/MemRefExpr/localarraydef.B, TestResults/MemRefExpr/localarraydef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraydef.B > t
+diff t TestResults/MemRefExpr/localarraydef.B.out
+
+echo "Testing TestCases/MemRefExpr/localarraysubscriptdef.B, TestResults/MemRefExpr/localarraysubscriptdef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysubscriptdef.B > t
+diff t TestResults/MemRefExpr/localarraysubscriptdef.B.out
+
+echo "Testing TestCases/MemRefExpr/localscalaruse.B, TestResults/MemRefExpr/localscalaruse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaruse.B > t
+diff t TestResults/MemRefExpr/localscalaruse.B.out
+
+echo "Testing TestCases/MemRefExpr/localscalardef.B, TestResults/MemRefExpr/localscalardef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalardef.B > t
+diff t TestResults/MemRefExpr/localscalardef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleeusewholearray.B, TestResults/MemRefExpr/formalarrayactualcalleeusewholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusewholearray.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleeusewholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleeusesubscript.B, TestResults/MemRefExpr/formalarrayactualcalleeusesubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusesubscript.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleeusesubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualsubscriptcalleeuse.B, TestResults/MemRefExpr/formalarrayactualsubscriptcalleeuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptcalleeuse.B > t
+diff t TestResults/MemRefExpr/formalarrayactualsubscriptcalleeuse.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleeusein.B, TestResults/MemRefExpr/formalarrayactualcalleeusein.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusein.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleeusein.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleeuseout.B, TestResults/MemRefExpr/formalarrayactualcalleeuseout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeuseout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleeuseout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleeuseinout.B, TestResults/MemRefExpr/formalarrayactualcalleeuseinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeuseinout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleeuseinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleedefwholearray.B, TestResults/MemRefExpr/formalarrayactualcalleedefwholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefwholearray.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleedefwholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleedef.B, TestResults/MemRefExpr/formalarrayactualcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedef.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleedefsubscript.B, TestResults/MemRefExpr/formalarrayactualcalleedefsubscript.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefsubscript.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleedefsubscript.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleesectiondef.B, TestResults/MemRefExpr/formalarrayactualcalleesectiondef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleesectiondef.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleesectiondef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualsubscriptcalleedef.B, TestResults/MemRefExpr/formalarrayactualsubscriptcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptcalleedef.B > t
+diff t TestResults/MemRefExpr/formalarrayactualsubscriptcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleedefout.B, TestResults/MemRefExpr/formalarrayactualcalleedefout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleedefout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalarrayactualcalleedefinout.B, TestResults/MemRefExpr/formalarrayactualcalleedefinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefinout.B > t
+diff t TestResults/MemRefExpr/formalarrayactualcalleedefinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleeuse.B, TestResults/MemRefExpr/formalscalaractualcalleeuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeuse.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleeuse.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleeusein.B, TestResults/MemRefExpr/formalscalaractualcalleeusein.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeusein.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleeusein.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleeuseout.B, TestResults/MemRefExpr/formalscalaractualcalleeuseout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeuseout.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleeuseout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleeuseinout.B, TestResults/MemRefExpr/formalscalaractualcalleeuseinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeuseinout.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleeuseinout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleedef.B, TestResults/MemRefExpr/formalscalaractualcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleedef.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleedefout.B, TestResults/MemRefExpr/formalscalaractualcalleedefout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleedefout.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleedefout.B.out
+
+echo "Testing TestCases/MemRefExpr/formalscalaractualcalleedefinout.B, TestResults/MemRefExpr/formalscalaractualcalleedefinout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleedefinout.B > t
+diff t TestResults/MemRefExpr/formalscalaractualcalleedefinout.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayactualcalleeuse.B, TestResults/MemRefExpr/localarrayactualcalleeuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactualcalleeuse.B > t
+diff t TestResults/MemRefExpr/localarrayactualcalleeuse.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayactualcalleedefwholearray.B, TestResults/MemRefExpr/localarrayactualcalleedefwholearray.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactualcalleedefwholearray.B > t
+diff t TestResults/MemRefExpr/localarrayactualcalleedefwholearray.B.out
+
+echo "Testing TestCases/MemRefExpr/localarrayactualcalleedef.B, TestResults/MemRefExpr/localarrayactualcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactualcalleedef.B > t
+diff t TestResults/MemRefExpr/localarrayactualcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/localarraysubscriptactualcalleedef.B, TestResults/MemRefExpr/localarraysubscriptactualcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysubscriptactualcalleedef.B > t
+diff t TestResults/MemRefExpr/localarraysubscriptactualcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/localarraysectionactualcalleedef.B, TestResults/MemRefExpr/localarraysectionactualcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysectionactualcalleedef.B > t
+diff t TestResults/MemRefExpr/localarraysectionactualcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/localscalaractualcalleeuse.B, TestResults/MemRefExpr/localscalaractualcalleeuse.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaractualcalleeuse.B > t
+diff t TestResults/MemRefExpr/localscalaractualcalleeuse.B.out
+
+echo "Testing TestCases/MemRefExpr/localscalaractualcalleedef.B, TestResults/MemRefExpr/localscalaractualcalleedef.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaractualcalleedef.B > t
+diff t TestResults/MemRefExpr/localscalaractualcalleedef.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_actual_expression.B, TestResults/MemRefExpr/formal_actual_expression.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > t
+diff t TestResults/MemRefExpr/formal_actual_expression.B.out
+
+echo "Testing TestCases/MemRefExpr/local_actual_expression.B, TestResults/MemRefExpr/local_actual_expression.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression.B > t
+diff t TestResults/MemRefExpr/local_actual_expression.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual.B, TestResults/MemRefExpr/formal_array_subscript_actual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/local_array_subscript_actual.B, TestResults/MemRefExpr/local_array_subscript_actual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_subscript_actual.B > t
+diff t TestResults/MemRefExpr/local_array_subscript_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual.B, TestResults/MemRefExpr/formal_scalar_actual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/local_scalar_actual.B, TestResults/MemRefExpr/local_scalar_actual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_scalar_actual.B > t
+diff t TestResults/MemRefExpr/local_scalar_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual.B, TestResults/MemRefExpr/formal_array_actual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual.B > t
+diff t TestResults/MemRefExpr/formal_array_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/local_array_actual.B, TestResults/MemRefExpr/local_array_actual.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_actual.B > t
+diff t TestResults/MemRefExpr/local_array_actual.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual_in.B, TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_in.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual_out.B, TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_out.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_subscript_actual_inout.B, TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_inout.B > t
+diff t TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual_in.B, TestResults/MemRefExpr/formal_array_actual_in.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_in.B > t
+diff t TestResults/MemRefExpr/formal_array_actual_in.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual_out.B, TestResults/MemRefExpr/formal_array_actual_out.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_out.B > t
+diff t TestResults/MemRefExpr/formal_array_actual_out.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_array_actual_inout.B, TestResults/MemRefExpr/formal_array_actual_inout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_inout.B > t
+diff t TestResults/MemRefExpr/formal_array_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/local_actual_expression_assignment.B, TestResults/MemRefExpr/local_actual_expression_assignment.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression_assignment.B > t
+diff t TestResults/MemRefExpr/local_actual_expression_assignment.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual_in.B, TestResults/MemRefExpr/formal_scalar_actual_in.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_in.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual_in.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual_out.B, TestResults/MemRefExpr/formal_scalar_actual_out.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_out.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual_out.B.out
+
+echo "Testing TestCases/MemRefExpr/formal_scalar_actual_inout.B, TestResults/MemRefExpr/formal_scalar_actual_inout.B.out checked by PLM 12/16/06"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > t
+diff t TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
+
+echo "Testing TestCases/MemRefExpr/Intrinsic_min.B, TestResults/MemRefExpr/Intrinsic_min.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_min.B > t
+diff t TestResults/MemRefExpr/Intrinsic_min.B.out
+
+echo "Testing TestCases/MemRefExpr/Intrinsic_max.B, TestResults/MemRefExpr/Intrinsic_max.B.out Checked by PLM 08/21/07"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_max.B > t
+diff t TestResults/MemRefExpr/Intrinsic_max.B.out
+

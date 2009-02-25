@@ -1,0 +1,22324 @@
+        module w2f__types
+
+        integer :: w2f__4, w2f__8, w2f__16
+        parameter (w2f__4 = kind(0.0))
+        parameter (w2f__8 = kind(0.0d0))
+        parameter (w2f__16 = selected_real_kind(p=30))
+
+        integer :: w2f__i1, w2f__i2, w2f__i4,w2f__i8
+        parameter (w2f__i1 = selected_int_kind(r=2))
+        parameter (w2f__i2 = selected_int_kind(r=3))
+        parameter (w2f__i4 = selected_int_kind(r=8))
+        parameter (w2f__i8 = selected_int_kind(r=16))
+
+        end module w2f__types
+C ***********************************************************
+C Fortran file translated from WHIRL Mon Jun 25 13:54:57 2007
+C ***********************************************************
+C ***********************************************************
+
+      SUBROUTINE oad_s_max_i(FIRST, SECOND, RESULT)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) FIRST
+      INTEGER(w2f__i4) SECOND
+      INTEGER(w2f__i4) RESULT
+C
+C     **** Statements ****
+C
+      if ( FIRST .lt. SECOND ) then
+        RESULT = SECOND
+      ELSE
+        RESULT = FIRST
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE oad_s_max_r(FIRST, SECOND, RESULT)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) FIRST
+      REAL(w2f__8) SECOND
+      REAL(w2f__8) RESULT
+C
+C     **** Statements ****
+C
+      if ( FIRST .lt. SECOND ) then
+        RESULT = SECOND
+      ELSE
+        RESULT = FIRST
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE oad_s_max_d(FIRST, SECOND, RESULT)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) FIRST
+      REAL(w2f__8) SECOND
+      REAL(w2f__8) RESULT
+C
+C     **** Statements ****
+C
+      if ( FIRST .lt. SECOND ) then
+        RESULT = SECOND
+      ELSE
+        RESULT = FIRST
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE oad_s_min_i(FIRST, SECOND, RESULT)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) FIRST
+      INTEGER(w2f__i4) SECOND
+      INTEGER(w2f__i4) RESULT
+C
+C     **** Statements ****
+C
+      if ( FIRST .gt. SECOND ) then
+        RESULT = SECOND
+      ELSE
+        RESULT = FIRST
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE oad_s_min_r(FIRST, SECOND, RESULT)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) FIRST
+      REAL(w2f__8) SECOND
+      REAL(w2f__8) RESULT
+C
+C     **** Statements ****
+C
+      if ( FIRST .gt. SECOND ) then
+        RESULT = SECOND
+      ELSE
+        RESULT = FIRST
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE oad_s_min_d(FIRST, SECOND, RESULT)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) FIRST
+      REAL(w2f__8) SECOND
+      REAL(w2f__8) RESULT
+C
+C     **** Statements ****
+C
+      if ( FIRST .gt. SECOND ) then
+        RESULT = SECOND
+      ELSE
+        RESULT = FIRST
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      MODULE size_mod
+      use w2f__types
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) MAX_OLX
+      PARAMETER ( MAX_OLX = 3)
+      INTEGER(w2f__i4) MAX_OLY
+      PARAMETER ( MAX_OLY = 3)
+      INTEGER(w2f__i4) NOBCS
+      PARAMETER ( NOBCS = 4)
+      INTEGER(w2f__i4) NPX
+      PARAMETER ( NPX = 1)
+      INTEGER(w2f__i4) NPY
+      PARAMETER ( NPY = 1)
+      INTEGER(w2f__i4) NR
+      PARAMETER ( NR = 1)
+      INTEGER(w2f__i4) NSX
+      PARAMETER ( NSX = 1)
+      INTEGER(w2f__i4) NSY
+      PARAMETER ( NSY = 1)
+      INTEGER(w2f__i4) NX
+      PARAMETER ( NX = 90)
+      INTEGER(w2f__i4) NY
+      PARAMETER ( NY = 40)
+      INTEGER(w2f__i4) OLX
+      PARAMETER ( OLX = 3)
+      INTEGER(w2f__i4) OLY
+      PARAMETER ( OLY = 3)
+      INTEGER(w2f__i4) SNX
+      PARAMETER ( SNX = 90)
+      INTEGER(w2f__i4) SNY
+      PARAMETER ( SNY = 40)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE eeparams_mod
+      use w2f__types
+      use size_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      LOGICAL(w2f__i4) EEBOOTERROR
+      INTEGER(w2f__i4) EEDATAUNIT
+      LOGICAL(w2f__i4) EEENDERROR
+      INTEGER(w2f__i4) ERRORMESSAGEUNIT
+      LOGICAL(w2f__i4) FATALERROR
+      INTEGER(w2f__i4) IOERRORCOUNT(1 : 4)
+      INTEGER(w2f__i4) MODELDATAUNIT
+      INTEGER(w2f__i4) MYBXHI(1 : 4)
+      INTEGER(w2f__i4) MYBXLO(1 : 4)
+      INTEGER(w2f__i4) MYBYHI(1 : 4)
+      INTEGER(w2f__i4) MYBYLO(1 : 4)
+      INTEGER(w2f__i4) MYPROCID
+      INTEGER(w2f__i4) MYPX
+      INTEGER(w2f__i4) MYPY
+      INTEGER(w2f__i4) MYXGLOBALLO
+      INTEGER(w2f__i4) MYYGLOBALLO
+      INTEGER(w2f__i4) NTHREADS
+      INTEGER(w2f__i4) NTX
+      INTEGER(w2f__i4) NTY
+      INTEGER(w2f__i4) NUMBEROFPROCS
+      INTEGER(w2f__i4) PIDIO
+      INTEGER(w2f__i4) SCRUNIT1
+      INTEGER(w2f__i4) SCRUNIT2
+      INTEGER(w2f__i4) STANDARDMESSAGEUNIT
+      LOGICAL(w2f__i4) USECOUPLER
+      LOGICAL(w2f__i4) USECUBEDSPHEREEXCHANGE
+      LOGICAL(w2f__i4) USESETRLSTK
+      LOGICAL(w2f__i4) USESIGREG
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) CACHELINESIZE
+      PARAMETER ( CACHELINESIZE = 256)
+      CHARACTER(1) COMMENTCHARACTER
+      PARAMETER ( COMMENTCHARACTER = "#")
+      INTEGER(w2f__i4) EXCH_IGNORE_CORNERS
+      PARAMETER ( EXCH_IGNORE_CORNERS = 0)
+      INTEGER(w2f__i4) EXCH_UPDATE_CORNERS
+      PARAMETER ( EXCH_UPDATE_CORNERS = 1)
+      INTEGER(w2f__i4) FORWARD_SIMULATION
+      PARAMETER ( FORWARD_SIMULATION = 0)
+      INTEGER(w2f__i4) INDEX_I
+      PARAMETER ( INDEX_I = 1)
+      INTEGER(w2f__i4) INDEX_J
+      PARAMETER ( INDEX_J = 2)
+      INTEGER(w2f__i4) INDEX_K
+      PARAMETER ( INDEX_K = 3)
+      INTEGER(w2f__i4) INDEX_NONE
+      PARAMETER ( INDEX_NONE = 4)
+      INTEGER(w2f__i4) LSHARE1
+      PARAMETER ( LSHARE1 = 256)
+      INTEGER(w2f__i4) LSHARE4
+      PARAMETER ( LSHARE4 = 64)
+      INTEGER(w2f__i4) LSHARE8
+      PARAMETER ( LSHARE8 = 32)
+      INTEGER(w2f__i4) MAX_LEN_FNAM
+      PARAMETER ( MAX_LEN_FNAM = 512)
+      INTEGER(w2f__i4) MAX_LEN_MBUF
+      PARAMETER ( MAX_LEN_MBUF = 512)
+      INTEGER(w2f__i4) MAX_LEN_PREC
+      PARAMETER ( MAX_LEN_PREC = 200)
+      INTEGER(w2f__i4) MAX_NO_BARRIERS
+      PARAMETER ( MAX_NO_BARRIERS = 1)
+      INTEGER(w2f__i4) MAX_NO_PROCS
+      PARAMETER ( MAX_NO_PROCS = 2048)
+      INTEGER(w2f__i4) MAX_NO_THREADS
+      PARAMETER ( MAX_NO_THREADS = 4)
+      INTEGER(w2f__i4) MAX_VGS
+      PARAMETER ( MAX_VGS = 8192)
+      CHARACTER(2) PRINT_MAP_XY
+      PARAMETER ( PRINT_MAP_XY = "XY")
+      CHARACTER(2) PRINT_MAP_XZ
+      PARAMETER ( PRINT_MAP_XZ = "XZ")
+      CHARACTER(2) PRINT_MAP_YZ
+      PARAMETER ( PRINT_MAP_YZ = "YZ")
+      INTEGER(w2f__i4) REVERSE_SIMULATION
+      PARAMETER ( REVERSE_SIMULATION = 1)
+      CHARACTER(1) SQUEEZE_BOTH
+      PARAMETER ( SQUEEZE_BOTH = "B")
+      CHARACTER(1) SQUEEZE_LEFT
+      PARAMETER ( SQUEEZE_LEFT = "L")
+      CHARACTER(1) SQUEEZE_RIGHT
+      PARAMETER ( SQUEEZE_RIGHT = "R")
+      INTEGER(w2f__i4) TANGENT_SIMULATION
+      PARAMETER ( TANGENT_SIMULATION = 2)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE params_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) ABEPS
+      REAL(w2f__8) ADJDUMPFREQ
+      REAL(w2f__8) ADJMONITORFREQ
+      REAL(w2f__8) AFFACMOM
+      LOGICAL(w2f__i4) ALLOWFREEZING
+      REAL(w2f__8) ALPH_AB
+      REAL(w2f__8) ATM_CP
+      REAL(w2f__8) ATM_KAPPA
+      REAL(w2f__8) ATM_PO
+      REAL(w2f__8) ATM_RD
+      REAL(w2f__8) ATM_RQ
+      LOGICAL(w2f__i4) BALANCEEMPMR
+      LOGICAL(w2f__i4) BALANCEPRINTMEAN
+      LOGICAL(w2f__i4) BALANCEQNET
+      REAL(w2f__8) BASETIME
+      CHARACTER(512) BATHYFILE
+      REAL(w2f__8) BETA
+      REAL(w2f__8) BETA_AB
+      REAL(w2f__8) BL79LATVARY
+      REAL(w2f__8) BOTTOMDRAGLINEAR
+      REAL(w2f__8) BOTTOMDRAGQUADRATIC
+      CHARACTER(512) BUOYANCYRELATION
+      REAL(w2f__8) CADJFREQ
+      REAL(w2f__8) CELSIUS2K
+      REAL(w2f__8) CFFACMOM
+      INTEGER(w2f__i4) CG2DCHKRESFREQ
+      INTEGER(w2f__i4) CG2DMAXITERS
+      REAL(w2f__8) CG2DPCOFFDFAC
+      INTEGER(w2f__i4) CG2DPRECONDFREQ
+      REAL(w2f__8) CG2DTARGETRESIDUAL
+      REAL(w2f__8) CG2DTARGETRESWUNIT
+      INTEGER(w2f__i4) CG3DCHKRESFREQ
+      INTEGER(w2f__i4) CG3DMAXITERS
+      REAL(w2f__8) CG3DTARGETRESIDUAL
+      CHARACTER(5) CHECKPTSUFF(1 : 2)
+      REAL(w2f__8) CHKPTFREQ
+      REAL(w2f__8) CONVERTEMP2RUNIT
+      REAL(w2f__8) CONVERTFW2SALT
+      REAL(w2f__8) COSPOWER
+      REAL(w2f__8) DBDRREF(1 : 1)
+      INTEGER(w2f__i4) DEBUGLEVEL
+      LOGICAL(w2f__i4) DEBUGMODE
+      LOGICAL(w2f__i4) DEEPATMOSPHERE
+      REAL(w2f__8) DELR(1 : 1)
+      REAL(w2f__8) DELRC(1 : 2)
+      CHARACTER(512) DELRCFILE
+      CHARACTER(512) DELRFILE
+      REAL(w2f__8) DELT
+      REAL(w2f__8) DELTAT
+      REAL(w2f__8) DELTATCLOCK
+      REAL(w2f__8) DELTATFREESURF
+      REAL(w2f__8) DELTATMOM
+      REAL(w2f__8) DELX(1 : 90)
+      CHARACTER(512) DELXFILE
+      REAL(w2f__8) DELY(1 : 40)
+      CHARACTER(512) DELYFILE
+      REAL(w2f__8) DIAGFREQ
+      REAL(w2f__8) DIFFK4S
+      REAL(w2f__8) DIFFK4T
+      REAL(w2f__8) DIFFKHS
+      REAL(w2f__8) DIFFKHT
+      REAL(w2f__8) DIFFKRBL79DEEP
+      REAL(w2f__8) DIFFKRBL79HO
+      REAL(w2f__8) DIFFKRBL79SCL
+      REAL(w2f__8) DIFFKRBL79SURF
+      REAL(w2f__8) DIFFKRBLEQDEEP
+      REAL(w2f__8) DIFFKRBLEQHO
+      REAL(w2f__8) DIFFKRBLEQSCL
+      REAL(w2f__8) DIFFKRBLEQSURF
+      CHARACTER(512) DIFFKRFILE
+      REAL(w2f__8) DIFFKRNRS(1 : 1)
+      REAL(w2f__8) DIFFKRNRT(1 : 1)
+      LOGICAL(w2f__i4) DOAB_ONGTGS
+      LOGICAL(w2f__i4) DOSALTCLIMRELAX
+      LOGICAL(w2f__i4) DOTHETACLIMRELAX
+      LOGICAL(w2f__i4) DOTR1CLIMRELAX
+      CHARACTER(512) DQDTFILE
+      REAL(w2f__8) DTTRACERLEV(1 : 1)
+      REAL(w2f__8) DUMPFREQ
+      LOGICAL(w2f__i4) DUMPINITANDLAST
+      CHARACTER(512) EDDYTAUXFILE
+      CHARACTER(512) EDDYTAUYFILE
+      CHARACTER(512) EMPMRFILE
+      REAL(w2f__8) ENDTIME
+      CHARACTER(6) EOSTYPE
+      LOGICAL(w2f__i4) EXACTCONSERV
+      REAL(w2f__8) EXTERNFORCINGCYCLE
+      REAL(w2f__8) EXTERNFORCINGPERIOD
+      REAL(w2f__8) F0
+      LOGICAL(w2f__i4) FLUIDISAIR
+      LOGICAL(w2f__i4) FLUIDISWATER
+      REAL(w2f__8) FOFACMOM
+      REAL(w2f__8) FREESURFFAC
+      REAL(w2f__8) GBARO
+      LOGICAL(w2f__i4) GLOBALFILES
+      REAL(w2f__8) GRAVITY
+      REAL(w2f__8) HEATCAPACITY_CP
+      REAL(w2f__8) HFACINF
+      REAL(w2f__8) HFACMIN
+      REAL(w2f__8) HFACMINDP
+      REAL(w2f__8) HFACMINDR
+      REAL(w2f__8) HFACMINDZ
+      REAL(w2f__8) HFACSUP
+      LOGICAL(w2f__i4) HIGHORDERVORTICITY
+      REAL(w2f__8) HMIXCRITERIA
+      REAL(w2f__8) HORIVERTRATIO
+      CHARACTER(512) HORIZGRIDFILE
+      CHARACTER(512) HYDROGSALTFILE
+      CHARACTER(512) HYDROGTHETAFILE
+      REAL(w2f__8) IMPLICDIV2DFLOW
+      LOGICAL(w2f__i4) IMPLICITDIFFUSION
+      LOGICAL(w2f__i4) IMPLICITFREESURFACE
+      LOGICAL(w2f__i4) IMPLICITINTGRAVWAVE
+      LOGICAL(w2f__i4) IMPLICITVISCOSITY
+      REAL(w2f__8) IMPLICSURFPRESS
+      LOGICAL(w2f__i4) INADEXACT
+      LOGICAL(w2f__i4) INADFALSE
+      LOGICAL(w2f__i4) INADMODE
+      LOGICAL(w2f__i4) INADTRUE
+      INTEGER(w2f__i4) INTEGR_GEOPOT
+      REAL(w2f__8) IVDC_KAPPA
+      CHARACTER(512) LAMBDASALTFILE
+      CHARACTER(512) LAMBDATHETAFILE
+      REAL(w2f__8) LAMBDATR1CLIMRELAX
+      REAL(w2f__8) LATBANDCLIMRELAX
+      LOGICAL(w2f__i4) LINFSCONSERVETR
+      CHARACTER(512) MDSIOLOCALDIR
+      CHARACTER(512) MERIDWINDFILE
+      LOGICAL(w2f__i4) METRICTERMS
+      LOGICAL(w2f__i4) MOMADVECTION
+      LOGICAL(w2f__i4) MOMDISSIP_IN_AB
+      LOGICAL(w2f__i4) MOMFORCING
+      INTEGER(w2f__i4) MOMFORCINGOUTAB
+      LOGICAL(w2f__i4) MOMIMPLVERTADV
+      LOGICAL(w2f__i4) MOMPRESSUREFORCING
+      LOGICAL(w2f__i4) MOMSTEPPING
+      LOGICAL(w2f__i4) MOMVISCOSITY
+      REAL(w2f__8) MONITORFREQ
+      LOGICAL(w2f__i4) MONITOR_STDIO
+      REAL(w2f__8) MTFACMOM
+      LOGICAL(w2f__i4) MULTIDIMADVECTION
+      INTEGER(w2f__i4) NCHECKLEV
+      INTEGER(w2f__i4) NENDITER
+      REAL(w2f__8) NH_AM2
+      INTEGER(w2f__i4) NITER0
+      LOGICAL(w2f__i4) NONHYDROSTATIC
+      INTEGER(w2f__i4) NONLINFREESURF
+      LOGICAL(w2f__i4) NO_SLIP_BOTTOM
+      LOGICAL(w2f__i4) NO_SLIP_SIDES
+      INTEGER(w2f__i4) NTIMESTEPS
+      INTEGER(w2f__i4) NUMSTEPSPERPICKUP
+      REAL(w2f__8) OMEGA
+      LOGICAL(w2f__i4) OUTPUTTYPESINCLUSIVE
+      REAL(w2f__8) PCHKPTFREQ
+      LOGICAL(w2f__i4) PERIODICEXTERNALFORCING
+      REAL(w2f__8) PFFACMOM
+      REAL(w2f__8) PHIMIN
+      REAL(w2f__8) PHIREF(1 : 3)
+      CHARACTER(10) PICKUPSUFF
+      LOGICAL(w2f__i4) PICKUP_READ_MDSIO
+      LOGICAL(w2f__i4) PICKUP_WRITE_IMMED
+      LOGICAL(w2f__i4) PICKUP_WRITE_MDSIO
+      CHARACTER(512) PLOADFILE
+      CHARACTER(512) PSURFINITFILE
+      LOGICAL(w2f__i4) QUASIHYDROSTATIC
+      REAL(w2f__8) RCD
+      INTEGER(w2f__i4) READBINARYPREC
+      REAL(w2f__8) RECIP_CP
+      REAL(w2f__8) RECIP_GRAVITY
+      REAL(w2f__8) RECIP_HORIVERTRATIO
+      REAL(w2f__8) RECIP_RHOCONST
+      REAL(w2f__8) RECIP_RHOFACC(1 : 1)
+      REAL(w2f__8) RECIP_RHOFACF(1 : 2)
+      REAL(w2f__8) RECIP_RHONIL
+      REAL(w2f__8) RECIP_RSPHERE
+      REAL(w2f__8) RHOCONST
+      REAL(w2f__8) RHOCONSTFRESH
+      REAL(w2f__8) RHOFACC(1 : 1)
+      REAL(w2f__8) RHOFACF(1 : 2)
+      REAL(w2f__8) RHONIL
+      CHARACTER(512) RHOREFFILE
+      LOGICAL(w2f__i4) RIGIDLID
+      REAL(w2f__8) ROTATIONPERIOD
+      REAL(w2f__8) RO_SEALEVEL
+      REAL(w2f__8) RSPHERE
+      REAL(w2f__8) RVEL2WUNIT(1 : 2)
+      LOGICAL(w2f__i4) SADOURNYCORIOLIS
+      LOGICAL(w2f__i4) SALTADVECTION
+      INTEGER(w2f__i4) SALTADVSCHEME
+      CHARACTER(512) SALTCLIMFILE
+      CHARACTER(512) SALTFLUXFILE
+      LOGICAL(w2f__i4) SALTFORCING
+      LOGICAL(w2f__i4) SALTIMPLVERTADV
+      LOGICAL(w2f__i4) SALTSTEPPING
+      INTEGER(w2f__i4) SALTVERTADVSCHEME
+      REAL(w2f__8) SALT_EVPRRN
+      INTEGER(w2f__i4) SELECTFINDROSURF
+      INTEGER(w2f__i4) SELECTKESCHEME
+      INTEGER(w2f__i4) SELECT_RSTAR
+      LOGICAL(w2f__i4) SETCENTERDR
+      LOGICAL(w2f__i4) SETINTERFDR
+      CHARACTER(512) SHELFICEFILE
+      REAL(w2f__8) SIDEDRAGFACTOR
+      REAL(w2f__8) SMOOTHABSFUNCRANGE
+      LOGICAL(w2f__i4) SNAPSHOT_MDSIO
+      REAL(w2f__8) SREF(1 : 1)
+      CHARACTER(512) SREFFILE
+      LOGICAL(w2f__i4) STAGGERTIMESTEP
+      LOGICAL(w2f__i4) STARTFROMPICKUPAB2
+      REAL(w2f__8) STARTTIME
+      CHARACTER(512) SURFQFILE
+      CHARACTER(512) SURFQNETFILE
+      CHARACTER(512) SURFQSWFILE
+      REAL(w2f__8) TAUCD
+      REAL(w2f__8) TAUSALTCLIMRELAX
+      REAL(w2f__8) TAUTHETACLIMRELAX
+      REAL(w2f__8) TAUTR1CLIMRELAX
+      REAL(w2f__8) TAVEFREQ
+      REAL(w2f__8) TAVE_LASTITER
+      REAL(w2f__8) TCYLIN
+      REAL(w2f__8) TCYLOUT
+      LOGICAL(w2f__i4) TEMPADVECTION
+      INTEGER(w2f__i4) TEMPADVSCHEME
+      LOGICAL(w2f__i4) TEMPFORCING
+      LOGICAL(w2f__i4) TEMPIMPLVERTADV
+      LOGICAL(w2f__i4) TEMPSTEPPING
+      INTEGER(w2f__i4) TEMPVERTADVSCHEME
+      REAL(w2f__8) TEMP_EVPRRN
+      CHARACTER(512) THETACLIMFILE
+      REAL(w2f__8) THETAMIN
+      CHARACTER(100) THE_RUN_NAME
+      LOGICAL(w2f__i4) TIMEAVE_MDSIO
+      CHARACTER(512) TOPOFILE
+      INTEGER(w2f__i4) TRACFORCINGOUTAB
+      REAL(w2f__8) TREF(1 : 1)
+      CHARACTER(512) TREFFILE
+      LOGICAL(w2f__i4) UNIFORMLIN_PHISURF
+      LOGICAL(w2f__i4) UPWINDSHEAR
+      LOGICAL(w2f__i4) UPWINDVORTICITY
+      LOGICAL(w2f__i4) USE3DCORIOLIS
+      LOGICAL(w2f__i4) USE3DSOLVER
+      LOGICAL(w2f__i4) USEABSVORTICITY
+      LOGICAL(w2f__i4) USEAIM
+      LOGICAL(w2f__i4) USEAREAVISCLENGTH
+      LOGICAL(w2f__i4) USEATM2D
+      LOGICAL(w2f__i4) USEBETAPLANEF
+      LOGICAL(w2f__i4) USEBULKFORCE
+      LOGICAL(w2f__i4) USECAL
+      LOGICAL(w2f__i4) USECDSCHEME
+      LOGICAL(w2f__i4) USECONSTANTF
+      LOGICAL(w2f__i4) USECORIOLIS
+      LOGICAL(w2f__i4) USEDIAGNOSTICS
+      LOGICAL(w2f__i4) USEDYNP_INEOS_ZC
+      LOGICAL(w2f__i4) USEEBM
+      LOGICAL(w2f__i4) USEECCO
+      LOGICAL(w2f__i4) USEEMBED_FILES
+      LOGICAL(w2f__i4) USEENERGYCONSERVINGCORIOLIS
+      LOGICAL(w2f__i4) USEEXF
+      LOGICAL(w2f__i4) USEFIZHI
+      LOGICAL(w2f__i4) USEFLT
+      LOGICAL(w2f__i4) USEFULLLEITH
+      LOGICAL(w2f__i4) USEGAD
+      LOGICAL(w2f__i4) USEGCHEM
+      LOGICAL(w2f__i4) USEGGL90
+      LOGICAL(w2f__i4) USEGMREDI
+      LOGICAL(w2f__i4) USEGRDCHK
+      LOGICAL(w2f__i4) USEGRIDALT
+      LOGICAL(w2f__i4) USEJAMARTMOMADV
+      LOGICAL(w2f__i4) USEJAMARTWETPOINTS
+      LOGICAL(w2f__i4) USEKPP
+      LOGICAL(w2f__i4) USELAND
+      LOGICAL(w2f__i4) USEMATRIX
+      LOGICAL(w2f__i4) USEMNC
+      LOGICAL(w2f__i4) USEMULTIDIMADVEC
+      LOGICAL(w2f__i4) USEMY82
+      LOGICAL(w2f__i4) USEMYPACKAGE
+      LOGICAL(w2f__i4) USENHMTERMS
+      LOGICAL(w2f__i4) USEOBCS
+      LOGICAL(w2f__i4) USEOFFLINE
+      LOGICAL(w2f__i4) USEOLDFREEZING
+      LOGICAL(w2f__i4) USEOPPS
+      LOGICAL(w2f__i4) USEPICKUPBEFOREC54
+      LOGICAL(w2f__i4) USEPP81
+      LOGICAL(w2f__i4) USEPTRACERS
+      LOGICAL(w2f__i4) USERBCS
+      LOGICAL(w2f__i4) USEREALFRESHWATERFLUX
+      LOGICAL(w2f__i4) USEREGRID
+      LOGICAL(w2f__i4) USERUNCLOCK
+      LOGICAL(w2f__i4) USESBO
+      LOGICAL(w2f__i4) USESEAICE
+      LOGICAL(w2f__i4) USESHAP_FILT
+      LOGICAL(w2f__i4) USESHELFICE
+      LOGICAL(w2f__i4) USESINGLECPUIO
+      LOGICAL(w2f__i4) USESPHEREF
+      LOGICAL(w2f__i4) USESTRAINTENSIONVISC
+      LOGICAL(w2f__i4) USETHSICE
+      LOGICAL(w2f__i4) USEZONAL_FILT
+      LOGICAL(w2f__i4) USINGCARTESIANGRID
+      LOGICAL(w2f__i4) USINGCURVILINEARGRID
+      LOGICAL(w2f__i4) USINGCYLINDRICALGRID
+      LOGICAL(w2f__i4) USINGPCOORDS
+      LOGICAL(w2f__i4) USINGSPHERICALPOLARGRID
+      LOGICAL(w2f__i4) USINGZCOORDS
+      CHARACTER(512) UVELINITFILE
+      LOGICAL(w2f__i4) VECTORINVARIANTMOMENTUM
+      REAL(w2f__8) VFFACMOM
+      REAL(w2f__8) VISCA4
+      REAL(w2f__8) VISCA4D
+      REAL(w2f__8) VISCA4GRID
+      REAL(w2f__8) VISCA4GRIDMAX
+      REAL(w2f__8) VISCA4GRIDMIN
+      REAL(w2f__8) VISCA4MAX
+      REAL(w2f__8) VISCA4REMAX
+      REAL(w2f__8) VISCA4W
+      REAL(w2f__8) VISCA4Z
+      REAL(w2f__8) VISCAH
+      REAL(w2f__8) VISCAHD
+      REAL(w2f__8) VISCAHGRID
+      REAL(w2f__8) VISCAHGRIDMAX
+      REAL(w2f__8) VISCAHGRIDMIN
+      REAL(w2f__8) VISCAHMAX
+      REAL(w2f__8) VISCAHREMAX
+      REAL(w2f__8) VISCAHW
+      REAL(w2f__8) VISCAHZ
+      REAL(w2f__8) VISCAR
+      REAL(w2f__8) VISCC2LEITH
+      REAL(w2f__8) VISCC2LEITHD
+      REAL(w2f__8) VISCC2SMAG
+      REAL(w2f__8) VISCC4LEITH
+      REAL(w2f__8) VISCC4LEITHD
+      REAL(w2f__8) VISCC4SMAG
+      CHARACTER(512) VVELINITFILE
+      INTEGER(w2f__i4) WRITEBINARYPREC
+      INTEGER(w2f__i4) WRITESTATEPREC
+      REAL(w2f__8) WUNIT2RVEL(1 : 2)
+      CHARACTER(512) ZONALWINDFILE
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) DEBLEVA
+      PARAMETER ( DEBLEVA = 1)
+      INTEGER(w2f__i4) DEBLEVB
+      PARAMETER ( DEBLEVB = 2)
+      INTEGER(w2f__i4) DEBLEVZERO
+      PARAMETER ( DEBLEVZERO = 0)
+      REAL(w2f__8) DEG2RAD
+      PARAMETER ( DEG2RAD =   0.01745329251994330)
+      INTEGER(w2f__i4) MAXNOCHKPTLEV
+      PARAMETER ( MAXNOCHKPTLEV = 2)
+      REAL(w2f__8) PI
+      PARAMETER ( PI =     3.141592653589793)
+      INTEGER(w2f__i4) PRECFLOAT32
+      PARAMETER ( PRECFLOAT32 = 32)
+      INTEGER(w2f__i4) PRECFLOAT64
+      PARAMETER ( PRECFLOAT64 = 64)
+      REAL(w2f__4) UNSET_FLOAT4
+      PARAMETER ( UNSET_FLOAT4 =     123456.7)
+      REAL(w2f__8) UNSET_FLOAT8
+      PARAMETER ( UNSET_FLOAT8 =     123456.7000000000)
+      INTEGER(w2f__i4) UNSET_I
+      PARAMETER ( UNSET_I = 123456789)
+      REAL(w2f__8) UNSET_RL
+      PARAMETER ( UNSET_RL =     123456.7000000000)
+      REAL(w2f__8) UNSET_RS
+      PARAMETER ( UNSET_RS =     123456.7031250000)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE bar2_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      LOGICAL(w2f__i4) BAR2COLLECTSTATISTICS
+      INTEGER(w2f__i4) BAR2_BARRIERCOUNT(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) BAR2_LEVEL(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) BAR2_SPINSCOUNT(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) BAR2_SPINSMAX(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) BAR2_SPINSMIN(1 : 64, 1 : 4)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE barrier_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) BCOUNT(1 : 4)
+      INTEGER(w2f__i4) DOOR1
+      INTEGER(w2f__i4) DOOR2
+      INTEGER(w2f__i4) DOOR3
+      INTEGER(w2f__i4) KEY1(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) KEY2(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) KEY3(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) MASTERSET(1 : 4)
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) INVALID
+      PARAMETER ( INVALID = 0)
+      INTEGER(w2f__i4) OPEN
+      PARAMETER ( OPEN = 1)
+      INTEGER(w2f__i4) SHUT
+      PARAMETER ( SHUT = 0)
+      INTEGER(w2f__i4) VALID
+      PARAMETER ( VALID = 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE cg2d_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) AC2D(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) AS2D(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) AW2D(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) CG2DNORM
+      LOGICAL(w2f__i4) CG2DNORMALISERHS
+      REAL(w2f__8) CG2DTOLERANCE
+      REAL(w2f__8) CG2D_Q(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) CG2D_R(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) CG2D_S(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE cg3d_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE cost_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) CMEANTHETA(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) CMEANTHETAUVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1
+     > )
+      REAL(w2f__8) CMEANTHETAVVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1
+     > )
+      REAL(w2f__8) CMEANUVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) CMEANVVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) FC
+      INTEGER(w2f__i4) ILOCOUT
+      INTEGER(w2f__i4) JLOCOUT
+      INTEGER(w2f__i4) KLOCOUT
+      REAL(w2f__8) LASTINTERVAL
+      REAL(w2f__8) MULTETAN
+      REAL(w2f__8) MULTSALT
+      REAL(w2f__8) MULTTHETA
+      REAL(w2f__8) MULTUVEL
+      REAL(w2f__8) MULTVVEL
+      REAL(w2f__8) MULT_ATL
+      REAL(w2f__8) MULT_EFLUX
+      REAL(w2f__8) MULT_ENTROPY
+      REAL(w2f__8) MULT_TEST
+      REAL(w2f__8) MULT_TRACER
+      REAL(w2f__8) MULT_T_MISFIT
+      REAL(w2f__8) OBJF_ATL(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_EFLUX(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_ENTROPY(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_TEST(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_TRACER(1 : 1, 1 : 1)
+      REAL(w2f__8) OBJF_T_MISFIT(1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE ctrl_dummy_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) XX_APRESSURE_DUMMY
+      REAL(w2f__8) XX_APRESSURE_MEAN_DUMMY
+      REAL(w2f__8) XX_AQH_DUMMY
+      REAL(w2f__8) XX_AQH_MEAN_DUMMY
+      REAL(w2f__8) XX_ATEMP_DUMMY
+      REAL(w2f__8) XX_ATEMP_MEAN_DUMMY
+      REAL(w2f__8) XX_BOTTOMDRAG_DUMMY
+      REAL(w2f__8) XX_DEPTH_DUMMY
+      REAL(w2f__8) XX_DIFFKR_DUMMY
+      REAL(w2f__8) XX_EDTAUX_DUMMY
+      REAL(w2f__8) XX_EDTAUY_DUMMY
+      REAL(w2f__8) XX_EFLUXP_DUMMY
+      REAL(w2f__8) XX_EFLUXY_DUMMY
+      REAL(w2f__8) XX_ETAN_DUMMY
+      REAL(w2f__8) XX_EVAP_DUMMY
+      REAL(w2f__8) XX_EVAP_MEAN_DUMMY
+      REAL(w2f__8) XX_HFLUX_DUMMY
+      REAL(w2f__8) XX_HFLUX_MEAN_DUMMY
+      REAL(w2f__8) XX_KAPGM_DUMMY
+      REAL(w2f__8) XX_LWDOWN_DUMMY
+      REAL(w2f__8) XX_LWDOWN_MEAN_DUMMY
+      REAL(w2f__8) XX_LWFLUX_DUMMY
+      REAL(w2f__8) XX_LWFLUX_MEAN_DUMMY
+      REAL(w2f__8) XX_OBCSE_DUMMY
+      REAL(w2f__8) XX_OBCSN_DUMMY
+      REAL(w2f__8) XX_OBCSS_DUMMY
+      REAL(w2f__8) XX_OBCSW_DUMMY
+      REAL(w2f__8) XX_PRECIP_DUMMY
+      REAL(w2f__8) XX_PRECIP_MEAN_DUMMY
+      REAL(w2f__8) XX_PSBAR_MEAN_DUMMY
+      REAL(w2f__8) XX_RELAXSSS_DUMMY
+      REAL(w2f__8) XX_RELAXSST_DUMMY
+      REAL(w2f__8) XX_RUNOFF_DUMMY
+      REAL(w2f__8) XX_RUNOFF_MEAN_DUMMY
+      REAL(w2f__8) XX_SALT_DUMMY
+      REAL(w2f__8) XX_SALT_INI_FIN_DUMMY
+      REAL(w2f__8) XX_SBAR_MEAN_DUMMY
+      REAL(w2f__8) XX_SFLUX_DUMMY
+      REAL(w2f__8) XX_SFLUX_MEAN_DUMMY
+      REAL(w2f__8) XX_SIAREA_DUMMY
+      REAL(w2f__8) XX_SIHEFF_DUMMY
+      REAL(w2f__8) XX_SIHSNOW_DUMMY
+      REAL(w2f__8) XX_SMRAREABAR_MEAN_DUMMY
+      REAL(w2f__8) XX_SNOWPRECIP_DUMMY
+      REAL(w2f__8) XX_SNOWPRECIP_MEAN_DUMMY
+      REAL(w2f__8) XX_SSS_DUMMY
+      REAL(w2f__8) XX_SST_DUMMY
+      REAL(w2f__8) XX_SWDOWN_DUMMY
+      REAL(w2f__8) XX_SWDOWN_MEAN_DUMMY
+      REAL(w2f__8) XX_SWFLUX_DUMMY
+      REAL(w2f__8) XX_SWFLUX_MEAN_DUMMY
+      REAL(w2f__8) XX_TAUU_DUMMY
+      REAL(w2f__8) XX_TAUV_DUMMY
+      REAL(w2f__8) XX_TAUX_MEAN_DUMMY
+      REAL(w2f__8) XX_TAUY_MEAN_DUMMY
+      REAL(w2f__8) XX_TBAR_MEAN_DUMMY
+      REAL(w2f__8) XX_THETA_DUMMY
+      REAL(w2f__8) XX_THETA_INI_FIN_DUMMY
+      REAL(w2f__8) XX_TR1_DUMMY
+      REAL(w2f__8) XX_UBAR_MEAN_DUMMY
+      REAL(w2f__8) XX_UVEL_DUMMY
+      REAL(w2f__8) XX_UWIND_DUMMY
+      REAL(w2f__8) XX_UWIND_MEAN_DUMMY
+      REAL(w2f__8) XX_VBAR_MEAN_DUMMY
+      REAL(w2f__8) XX_VVEL_DUMMY
+      REAL(w2f__8) XX_VWIND_DUMMY
+      REAL(w2f__8) XX_VWIND_MEAN_DUMMY
+      REAL(w2f__8) XX_WBAR_MEAN_DUMMY
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE ctrl_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      CHARACTER(9) COSTNAME
+      CHARACTER(9) CTRLNAME
+      REAL(w2f__8) DELZEXP
+      LOGICAL(w2f__i4) DOADMTLM
+      LOGICAL(w2f__i4) DOADMTLMBYPASSAD
+      LOGICAL(w2f__i4) DOINITXX
+      LOGICAL(w2f__i4) DOMAINPACK
+      LOGICAL(w2f__i4) DOMAINUNPACK
+      LOGICAL(w2f__i4) DOPACKDIAG
+      LOGICAL(w2f__i4) DOZSCALEPACK
+      LOGICAL(w2f__i4) DOZSCALEUNPACK
+      REAL(w2f__8) FILEFC
+      INTEGER(w2f__i4) FILEI
+      INTEGER(w2f__i4) FILEIG
+      INTEGER(w2f__i4) FILEJ
+      INTEGER(w2f__i4) FILEJG
+      INTEGER(w2f__i4) FILEK
+      INTEGER(w2f__i4) FILENCBUFFINDEX
+      CHARACTER(1) FILENCVARGRD(1 : 60)
+      INTEGER(w2f__i4) FILENCVARINDEX(1 : 60)
+      INTEGER(w2f__i4) FILENCVARNRMAX(1 : 60)
+      INTEGER(w2f__i4) FILENCVARRECS(1 : 60)
+      INTEGER(w2f__i4) FILENCVARXMAX(1 : 60)
+      INTEGER(w2f__i4) FILENCVARYMAX(1 : 60)
+      INTEGER(w2f__i4) FILENSX
+      INTEGER(w2f__i4) FILENSY
+      INTEGER(w2f__i4) FILENVARLENGTH
+      INTEGER(w2f__i4) FILENVARTYPE
+      INTEGER(w2f__i4) FILENWETCGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILENWETSGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILENWETVGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILENWETWGLOBAL(1 : 1)
+      INTEGER(w2f__i4) FILEOPTIMCYCLE
+      CHARACTER(10) FILEYCTRLID
+      CHARACTER(80) FNAME_APRESSURE(1 : 2)
+      CHARACTER(80) FNAME_AQH(1 : 2)
+      CHARACTER(80) FNAME_ATEMP(1 : 2)
+      CHARACTER(80) FNAME_BOTTOMDRAG(1 : 2)
+      CHARACTER(80) FNAME_DEPTH(1 : 2)
+      CHARACTER(80) FNAME_DIFFKR(1 : 2)
+      CHARACTER(80) FNAME_EDTAUX(1 : 2)
+      CHARACTER(80) FNAME_EDTAUY(1 : 2)
+      CHARACTER(80) FNAME_EFLUXP(1 : 2)
+      CHARACTER(80) FNAME_EFLUXY(1 : 2)
+      CHARACTER(80) FNAME_ETAN(1 : 2)
+      CHARACTER(80) FNAME_EVAP(1 : 2)
+      CHARACTER(80) FNAME_HFACC(1 : 2)
+      CHARACTER(80) FNAME_HFLUX(1 : 2)
+      CHARACTER(80) FNAME_KAPGM(1 : 2)
+      CHARACTER(80) FNAME_LWDOWN(1 : 2)
+      CHARACTER(80) FNAME_LWFLUX(1 : 2)
+      CHARACTER(80) FNAME_OBCSE(1 : 2)
+      CHARACTER(80) FNAME_OBCSN(1 : 2)
+      CHARACTER(80) FNAME_OBCSS(1 : 2)
+      CHARACTER(80) FNAME_OBCSW(1 : 2)
+      CHARACTER(80) FNAME_PRECIP(1 : 2)
+      CHARACTER(80) FNAME_RELAXSSS(1 : 2)
+      CHARACTER(80) FNAME_RELAXSST(1 : 2)
+      CHARACTER(80) FNAME_RUNOFF(1 : 2)
+      CHARACTER(80) FNAME_SALT(1 : 2)
+      CHARACTER(80) FNAME_SFLUX(1 : 2)
+      CHARACTER(80) FNAME_SIAREA(1 : 2)
+      CHARACTER(80) FNAME_SIHEFF(1 : 2)
+      CHARACTER(80) FNAME_SIHSNOW(1 : 2)
+      CHARACTER(80) FNAME_SNOWPRECIP(1 : 2)
+      CHARACTER(80) FNAME_SSS(1 : 2)
+      CHARACTER(80) FNAME_SST(1 : 2)
+      CHARACTER(80) FNAME_SWDOWN(1 : 2)
+      CHARACTER(80) FNAME_SWFLUX(1 : 2)
+      CHARACTER(80) FNAME_TAUU(1 : 2)
+      CHARACTER(80) FNAME_TAUV(1 : 2)
+      CHARACTER(80) FNAME_THETA(1 : 2)
+      CHARACTER(80) FNAME_TR1(1 : 2)
+      CHARACTER(80) FNAME_UVEL(1 : 2)
+      CHARACTER(80) FNAME_UWIND(1 : 2)
+      CHARACTER(80) FNAME_VVEL(1 : 2)
+      CHARACTER(80) FNAME_VWIND(1 : 2)
+      REAL(w2f__8) FORCINGPRECOND
+      CHARACTER(9) MASKNAME
+      CHARACTER(9) METANAME
+      INTEGER(w2f__i4) NBUFFGLOBAL
+      CHARACTER(1) NCVARGRD(1 : 60)
+      INTEGER(w2f__i4) NCVARINDEX(1 : 60)
+      INTEGER(w2f__i4) NCVARNRMAX(1 : 60)
+      INTEGER(w2f__i4) NCVARRECS(1 : 60)
+      INTEGER(w2f__i4) NCVARRECSEND(1 : 60)
+      INTEGER(w2f__i4) NCVARRECSTART(1 : 60)
+      INTEGER(w2f__i4) NCVARXMAX(1 : 60)
+      INTEGER(w2f__i4) NCVARYMAX(1 : 60)
+      INTEGER(w2f__i4) NVARLENGTH
+      INTEGER(w2f__i4) NVARTYPE
+      INTEGER(w2f__i4) NWETCGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETCTILE(1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NWETSGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETSTILE(1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NWETVGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETVTILE(1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NWETWGLOBAL(1 : 1)
+      INTEGER(w2f__i4) NWETWTILE(1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(9) SCALNAME
+      REAL(w2f__8) TMPFLD2D(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TMPFLD3D(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WAPRESSURE(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WAQH(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WAREAUNIT(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WATEMP(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WEVAP(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WHFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WLWDOWN(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WLWFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WPRECIP(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WRUNOFF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSNOWPRECIP(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSSS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSST(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSWDOWN(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSWFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WTAUU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WTAUV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WUNIT(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WUWIND(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) WVWIND(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XX_APRESSUREPERIOD
+      INTEGER(w2f__i4) XX_APRESSURESTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_APRESSURESTARTDATE1
+      INTEGER(w2f__i4) XX_APRESSURESTARTDATE2
+      CHARACTER(512) XX_APRESSURE_FILE
+      REAL(w2f__8) XX_APRESSURE_REMO_INTERCEPT
+      REAL(w2f__8) XX_APRESSURE_REMO_SLOPE
+      REAL(w2f__8) XX_AQHPERIOD
+      INTEGER(w2f__i4) XX_AQHSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_AQHSTARTDATE1
+      INTEGER(w2f__i4) XX_AQHSTARTDATE2
+      CHARACTER(512) XX_AQH_FILE
+      REAL(w2f__8) XX_AQH_REMO_INTERCEPT
+      REAL(w2f__8) XX_AQH_REMO_SLOPE
+      REAL(w2f__8) XX_ATEMPPERIOD
+      INTEGER(w2f__i4) XX_ATEMPSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_ATEMPSTARTDATE1
+      INTEGER(w2f__i4) XX_ATEMPSTARTDATE2
+      CHARACTER(512) XX_ATEMP_FILE
+      REAL(w2f__8) XX_ATEMP_REMO_INTERCEPT
+      REAL(w2f__8) XX_ATEMP_REMO_SLOPE
+      CHARACTER(512) XX_BOTTOMDRAG_FILE
+      CHARACTER(512) XX_DEPTH_FILE
+      CHARACTER(512) XX_DIFFKR_FILE
+      CHARACTER(512) XX_EDTAUX_FILE
+      CHARACTER(512) XX_EDTAUY_FILE
+      CHARACTER(512) XX_EFLUXP_FILE
+      CHARACTER(512) XX_EFLUXY_FILE
+      REAL(w2f__8) XX_ETAN(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_ETAN_FILE
+      REAL(w2f__8) XX_EVAPPERIOD
+      INTEGER(w2f__i4) XX_EVAPSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_EVAPSTARTDATE1
+      INTEGER(w2f__i4) XX_EVAPSTARTDATE2
+      CHARACTER(512) XX_EVAP_FILE
+      REAL(w2f__8) XX_EVAP_REMO_INTERCEPT
+      REAL(w2f__8) XX_EVAP_REMO_SLOPE
+      REAL(w2f__8) XX_HFLUXPERIOD
+      INTEGER(w2f__i4) XX_HFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_HFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_HFLUXSTARTDATE2
+      CHARACTER(512) XX_HFLUX_FILE
+      REAL(w2f__8) XX_HFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_HFLUX_REMO_SLOPE
+      CHARACTER(512) XX_KAPGM_FILE
+      REAL(w2f__8) XX_LWDOWNPERIOD
+      INTEGER(w2f__i4) XX_LWDOWNSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_LWDOWNSTARTDATE1
+      INTEGER(w2f__i4) XX_LWDOWNSTARTDATE2
+      CHARACTER(512) XX_LWDOWN_FILE
+      REAL(w2f__8) XX_LWDOWN_REMO_INTERCEPT
+      REAL(w2f__8) XX_LWDOWN_REMO_SLOPE
+      REAL(w2f__8) XX_LWFLUXPERIOD
+      INTEGER(w2f__i4) XX_LWFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_LWFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_LWFLUXSTARTDATE2
+      CHARACTER(512) XX_LWFLUX_FILE
+      REAL(w2f__8) XX_LWFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_LWFLUX_REMO_SLOPE
+      REAL(w2f__8) XX_OBCSEPERIOD
+      INTEGER(w2f__i4) XX_OBCSESTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSESTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSESTARTDATE2
+      CHARACTER(512) XX_OBCSE_FILE
+      REAL(w2f__8) XX_OBCSNPERIOD
+      INTEGER(w2f__i4) XX_OBCSNSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSNSTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSNSTARTDATE2
+      CHARACTER(512) XX_OBCSN_FILE
+      REAL(w2f__8) XX_OBCSSPERIOD
+      INTEGER(w2f__i4) XX_OBCSSSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSSSTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSSSTARTDATE2
+      CHARACTER(512) XX_OBCSS_FILE
+      REAL(w2f__8) XX_OBCSWPERIOD
+      INTEGER(w2f__i4) XX_OBCSWSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_OBCSWSTARTDATE1
+      INTEGER(w2f__i4) XX_OBCSWSTARTDATE2
+      CHARACTER(512) XX_OBCSW_FILE
+      REAL(w2f__8) XX_PRECIPPERIOD
+      INTEGER(w2f__i4) XX_PRECIPSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_PRECIPSTARTDATE1
+      INTEGER(w2f__i4) XX_PRECIPSTARTDATE2
+      CHARACTER(512) XX_PRECIP_FILE
+      REAL(w2f__8) XX_PRECIP_REMO_INTERCEPT
+      REAL(w2f__8) XX_PRECIP_REMO_SLOPE
+      CHARACTER(512) XX_RELAXSSS_FILE
+      CHARACTER(512) XX_RELAXSST_FILE
+      REAL(w2f__8) XX_RUNOFFPERIOD
+      INTEGER(w2f__i4) XX_RUNOFFSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_RUNOFFSTARTDATE1
+      INTEGER(w2f__i4) XX_RUNOFFSTARTDATE2
+      CHARACTER(512) XX_RUNOFF_FILE
+      REAL(w2f__8) XX_RUNOFF_REMO_INTERCEPT
+      REAL(w2f__8) XX_RUNOFF_REMO_SLOPE
+      REAL(w2f__8) XX_SALT(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_SALT_FILE
+      CHARACTER(512) XX_SALT_INI_FIN_FILE
+      REAL(w2f__8) XX_SFLUXPERIOD
+      INTEGER(w2f__i4) XX_SFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_SFLUXSTARTDATE2
+      CHARACTER(512) XX_SFLUX_FILE
+      REAL(w2f__8) XX_SFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_SFLUX_REMO_SLOPE
+      CHARACTER(512) XX_SIAREA_FILE
+      CHARACTER(512) XX_SIHEFF_FILE
+      CHARACTER(512) XX_SIHSNOW_FILE
+      REAL(w2f__8) XX_SNOWPRECIPPERIOD
+      INTEGER(w2f__i4) XX_SNOWPRECIPSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SNOWPRECIPSTARTDATE1
+      INTEGER(w2f__i4) XX_SNOWPRECIPSTARTDATE2
+      CHARACTER(512) XX_SNOWPRECIP_FILE
+      REAL(w2f__8) XX_SNOWPRECIP_REMO_INTERCEPT
+      REAL(w2f__8) XX_SNOWPRECIP_REMO_SLOPE
+      REAL(w2f__8) XX_SSSPERIOD
+      INTEGER(w2f__i4) XX_SSSSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SSSSTARTDATE1
+      INTEGER(w2f__i4) XX_SSSSTARTDATE2
+      CHARACTER(512) XX_SSS_FILE
+      REAL(w2f__8) XX_SSTPERIOD
+      INTEGER(w2f__i4) XX_SSTSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SSTSTARTDATE1
+      INTEGER(w2f__i4) XX_SSTSTARTDATE2
+      CHARACTER(512) XX_SST_FILE
+      REAL(w2f__8) XX_SWDOWNPERIOD
+      INTEGER(w2f__i4) XX_SWDOWNSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SWDOWNSTARTDATE1
+      INTEGER(w2f__i4) XX_SWDOWNSTARTDATE2
+      CHARACTER(512) XX_SWDOWN_FILE
+      REAL(w2f__8) XX_SWDOWN_REMO_INTERCEPT
+      REAL(w2f__8) XX_SWDOWN_REMO_SLOPE
+      REAL(w2f__8) XX_SWFLUXPERIOD
+      INTEGER(w2f__i4) XX_SWFLUXSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_SWFLUXSTARTDATE1
+      INTEGER(w2f__i4) XX_SWFLUXSTARTDATE2
+      CHARACTER(512) XX_SWFLUX_FILE
+      REAL(w2f__8) XX_SWFLUX_REMO_INTERCEPT
+      REAL(w2f__8) XX_SWFLUX_REMO_SLOPE
+      REAL(w2f__8) XX_TAUUPERIOD
+      INTEGER(w2f__i4) XX_TAUUSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_TAUUSTARTDATE1
+      INTEGER(w2f__i4) XX_TAUUSTARTDATE2
+      CHARACTER(512) XX_TAUU_FILE
+      REAL(w2f__8) XX_TAUU_REMO_INTERCEPT
+      REAL(w2f__8) XX_TAUU_REMO_SLOPE
+      REAL(w2f__8) XX_TAUVPERIOD
+      INTEGER(w2f__i4) XX_TAUVSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_TAUVSTARTDATE1
+      INTEGER(w2f__i4) XX_TAUVSTARTDATE2
+      CHARACTER(512) XX_TAUV_FILE
+      REAL(w2f__8) XX_TAUV_REMO_INTERCEPT
+      REAL(w2f__8) XX_TAUV_REMO_SLOPE
+      REAL(w2f__8) XX_THETA(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_THETA_FILE
+      CHARACTER(512) XX_THETA_INI_FIN_FILE
+      CHARACTER(512) XX_TR1_FILE
+      REAL(w2f__8) XX_UVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_UVEL_FILE
+      REAL(w2f__8) XX_UWINDPERIOD
+      INTEGER(w2f__i4) XX_UWINDSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_UWINDSTARTDATE1
+      INTEGER(w2f__i4) XX_UWINDSTARTDATE2
+      CHARACTER(512) XX_UWIND_FILE
+      REAL(w2f__8) XX_UWIND_REMO_INTERCEPT
+      REAL(w2f__8) XX_UWIND_REMO_SLOPE
+      REAL(w2f__8) XX_VVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      CHARACTER(512) XX_VVEL_FILE
+      REAL(w2f__8) XX_VWINDPERIOD
+      INTEGER(w2f__i4) XX_VWINDSTARTDATE(1 : 4)
+      INTEGER(w2f__i4) XX_VWINDSTARTDATE1
+      INTEGER(w2f__i4) XX_VWINDSTARTDATE2
+      CHARACTER(512) XX_VWIND_FILE
+      REAL(w2f__8) XX_VWIND_REMO_INTERCEPT
+      REAL(w2f__8) XX_VWIND_REMO_SLOPE
+      CHARACTER(2) YADMARK
+      CHARACTER(2) YADPREFIX
+      CHARACTER(10) YCTRLID
+      CHARACTER(4) YCTRLPOSPACK
+      CHARACTER(4) YCTRLPOSUNPACK
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) CTRLPREC
+      PARAMETER ( CTRLPREC = 32)
+      INTEGER(w2f__i4) MAXCVARS
+      PARAMETER ( MAXCVARS = 60)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE ctrl_weights_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) WDIFFKR(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WEDTAUX(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WEDTAUY(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WETAN(1 : 90, 1 : 40, 1 : 1, 1 : 1)
+      REAL(w2f__8) WKAPGM(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WSALT(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WTHETA(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WUVVEL(1 : 1, 1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE dfile_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE dynvars_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) ETAH(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) ETAN(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) GS(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GSNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GT(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GTNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GU(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GUNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GV(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GVNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) HMIXLAYER(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) IVDCONVCOUNT(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) PHIHYDLOW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SALT(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) THETA(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) TOTPHIHYD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) UVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE eeio_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE eesupport_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      LOGICAL(w2f__i4) ALLMYEDGESARESHAREDMEMORY(1 : 4)
+      CHARACTER(10) COMMNAME(1 : 4)
+      INTEGER(w2f__i4) MYPID
+      CHARACTER(128) MYPROCESSSTR
+      LOGICAL(w2f__i4) NOTUSINGXPERIODICITY
+      LOGICAL(w2f__i4) NOTUSINGYPERIODICITY
+      INTEGER(w2f__i4) NPROCS
+      INTEGER(w2f__i4) PIDE
+      INTEGER(w2f__i4) PIDN
+      INTEGER(w2f__i4) PIDS
+      INTEGER(w2f__i4) PIDW
+      LOGICAL(w2f__i4) PRINTMAPINCLUDESZEROS
+      LOGICAL(w2f__i4) THERROR(1 : 4)
+      LOGICAL(w2f__i4) THREADISCOMPLETE(1 : 4)
+      LOGICAL(w2f__i4) THREADISRUNNING(1 : 4)
+      INTEGER(w2f__i4) TILEBIE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBIN(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBIS(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBIW(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBJE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBJN(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBJS(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEBJW(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILECOMMMODEE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILECOMMMODEN(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILECOMMMODES(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILECOMMMODEW(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILENO(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILENOE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILENON(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILENOS(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILENOW(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEPIDE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEPIDN(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEPIDS(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILEPIDW(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGRECVE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGRECVN(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGRECVS(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGRECVW(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGSENDE(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGSENDN(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGSENDS(1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TILETAGSENDW(1 : 1, 1 : 1)
+      LOGICAL(w2f__i4) USINGMPI
+      LOGICAL(w2f__i4) USINGSYNCMESSAGES
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) COMM_GET
+      PARAMETER ( COMM_GET = 4)
+      INTEGER(w2f__i4) COMM_MSG
+      PARAMETER ( COMM_MSG = 2)
+      INTEGER(w2f__i4) COMM_NONE
+      PARAMETER ( COMM_NONE = 1)
+      INTEGER(w2f__i4) COMM_PUT
+      PARAMETER ( COMM_PUT = 3)
+      CHARACTER(14) ERROR_HEADER
+      PARAMETER ( ERROR_HEADER = " *** ERROR ***")
+      INTEGER(w2f__i4) MAX_NUM_COMM_MODES
+      PARAMETER ( MAX_NUM_COMM_MODES = 4)
+      INTEGER(w2f__i4) NULL_TILE
+      PARAMETER ( NULL_TILE = -1)
+      CHARACTER(7) PROCESS_HEADER
+      PARAMETER ( PROCESS_HEADER = "PID.TID")
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE eos_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) EOSC(1 : 9, 1 : 2)
+      REAL(w2f__8) EOSJMDCFW(1 : 6)
+      REAL(w2f__8) EOSJMDCKFW(1 : 5)
+      REAL(w2f__8) EOSJMDCKP(1 : 14)
+      REAL(w2f__8) EOSJMDCKSW(1 : 7)
+      REAL(w2f__8) EOSJMDCSW(1 : 9)
+      REAL(w2f__8) EOSMDJWFDEN(0 : 12)
+      REAL(w2f__8) EOSMDJWFNUM(0 : 11)
+      REAL(w2f__8) EOSREFS(1 : 2)
+      REAL(w2f__8) EOSREFT(1 : 2)
+      REAL(w2f__8) EOSSIG0(1 : 2)
+      CHARACTER(6) EQUATIONOFSTATE
+      REAL(w2f__8) SBETA
+      REAL(w2f__8) TALPHA
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) SITOBAR
+      PARAMETER ( SITOBAR = 1.000000000000000d-05)
+      REAL(w2f__8) SITODBAR
+      PARAMETER ( SITODBAR = 0.0001000000000000000)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE exch_jam_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) EXCHBUF1(1 : 288)
+      REAL(w2f__8) EXCHBUF2(1 : 288)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE exch_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) EASTRECVACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) EASTRECVBUF_R4(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EASTRECVBUF_R8(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EASTRECVBUF_RL(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EASTRECVBUF_RS(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EASTSENDACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) EASTSENDBUF_R4(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EASTSENDBUF_R8(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EASTSENDBUF_RL(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EASTSENDBUF_RS(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHANGEBUFLEVEL(1 : 64, 1 : 1, 1 : 1)
+      LOGICAL(w2f__i4) EXCHCOLLECTSTATISTICS
+      LOGICAL(w2f__i4) EXCHNEEDSMEMSYNC
+      INTEGER(w2f__i4) EXCHNREQSX(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHNREQSY(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVXEXCHCOUNT(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVXSPINCOUNT(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVXSPINMAX(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVXSPINMIN(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVYEXCHCOUNT(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVYSPINCOUNT(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVYSPINMAX(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHRECVYSPINMIN(1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHREQIDX(1 : 4, 1 : 64, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) EXCHREQIDY(1 : 4, 1 : 64, 1 : 1, 1 : 1)
+      LOGICAL(w2f__i4) EXCHUSESBARRIER
+      INTEGER(w2f__i4) NORTHRECVACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) NORTHRECVBUF_R4(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) NORTHRECVBUF_R8(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) NORTHRECVBUF_RL(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) NORTHRECVBUF_RS(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) NORTHSENDACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) NORTHSENDBUF_R4(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) NORTHSENDBUF_R8(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) NORTHSENDBUF_RL(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) NORTHSENDBUF_RS(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) SOUTHRECVACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) SOUTHRECVBUF_R4(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SOUTHRECVBUF_R8(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SOUTHRECVBUF_RL(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SOUTHRECVBUF_RS(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) SOUTHSENDACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) SOUTHSENDBUF_R4(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SOUTHSENDBUF_R8(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SOUTHSENDBUF_RL(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SOUTHSENDBUF_RS(1 : 576, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) WESTRECVACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) WESTRECVBUF_R4(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WESTRECVBUF_R8(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WESTRECVBUF_RL(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WESTRECVBUF_RS(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) WESTSENDACK(1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) WESTSENDBUF_R4(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WESTSENDBUF_R8(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WESTSENDBUF_RL(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WESTSENDBUF_RS(1 : 276, 1 : 1, 1 : 1, 1 : 1)
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) EXCH_SPIN_LIMIT
+      PARAMETER ( EXCH_SPIN_LIMIT = 100000000)
+      INTEGER(w2f__i4) L_BUFFERX
+      PARAMETER ( L_BUFFERX = 276)
+      INTEGER(w2f__i4) L_BUFFERY
+      PARAMETER ( L_BUFFERY = 576)
+      INTEGER(w2f__i4) L_EBUFFER
+      PARAMETER ( L_EBUFFER = 276)
+      INTEGER(w2f__i4) L_NBUFFER
+      PARAMETER ( L_NBUFFER = 576)
+      INTEGER(w2f__i4) L_SBUFFER
+      PARAMETER ( L_SBUFFER = 576)
+      INTEGER(w2f__i4) L_WBUFFER
+      PARAMETER ( L_WBUFFER = 276)
+      INTEGER(w2f__i4) MAX_NR_EXCH
+      PARAMETER ( MAX_NR_EXCH = 2)
+      INTEGER(w2f__i4) MAX_OLX_EXCH
+      PARAMETER ( MAX_OLX_EXCH = 3)
+      INTEGER(w2f__i4) MAX_OLY_EXCH
+      PARAMETER ( MAX_OLY_EXCH = 3)
+      INTEGER(w2f__i4) NUMBER_OF_BUFFER_LEVELS
+      PARAMETER ( NUMBER_OF_BUFFER_LEVELS = 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE fc_namemangle_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE ffields_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) DQDT(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) EMPMR(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) EMPMR0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) EMPMR1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) LAMBDASALTCLIMRELAX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) LAMBDATHETACLIMRELAX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PLOAD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) QNET(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) QNET0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) QNET1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) QSW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SALTFLUX(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SALTFLUX0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SALTFLUX1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SICELOAD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SSS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SSS0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SSS1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SST(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SST0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SST1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SURFACEFORCINGS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SURFACEFORCINGT(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SURFACEFORCINGTICE(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SURFACEFORCINGU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SURFACEFORCINGV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TAUX0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TAUX1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TAUY0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TAUY1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE gad_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      LOGICAL(w2f__i4) ADAMSBASHFORTHGS
+      LOGICAL(w2f__i4) ADAMSBASHFORTHGT
+      LOGICAL(w2f__i4) ADAMSBASHFORTH_S
+      LOGICAL(w2f__i4) ADAMSBASHFORTH_T
+      LOGICAL(w2f__i4) SALTMULTIDIMADVEC
+      LOGICAL(w2f__i4) SALTSOM_ADVECTION
+      LOGICAL(w2f__i4) SALTSTARTAB
+      LOGICAL(w2f__i4) TEMPMULTIDIMADVEC
+      LOGICAL(w2f__i4) TEMPSOM_ADVECTION
+      LOGICAL(w2f__i4) TEMPSTARTAB
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) ENUM_CENTERED_2ND
+      PARAMETER ( ENUM_CENTERED_2ND = 2)
+      INTEGER(w2f__i4) ENUM_CENTERED_4TH
+      PARAMETER ( ENUM_CENTERED_4TH = 4)
+      INTEGER(w2f__i4) ENUM_DST2
+      PARAMETER ( ENUM_DST2 = 20)
+      INTEGER(w2f__i4) ENUM_DST3
+      PARAMETER ( ENUM_DST3 = 30)
+      INTEGER(w2f__i4) ENUM_DST3_FLUX_LIMIT
+      PARAMETER ( ENUM_DST3_FLUX_LIMIT = 33)
+      INTEGER(w2f__i4) ENUM_FLUX_LIMIT
+      PARAMETER ( ENUM_FLUX_LIMIT = 77)
+      INTEGER(w2f__i4) ENUM_OS7MP
+      PARAMETER ( ENUM_OS7MP = 7)
+      INTEGER(w2f__i4) ENUM_SOM_LIMITER
+      PARAMETER ( ENUM_SOM_LIMITER = 81)
+      INTEGER(w2f__i4) ENUM_SOM_PRATHER
+      PARAMETER ( ENUM_SOM_PRATHER = 80)
+      INTEGER(w2f__i4) ENUM_UPWIND_1RST
+      PARAMETER ( ENUM_UPWIND_1RST = 1)
+      INTEGER(w2f__i4) ENUM_UPWIND_3RD
+      PARAMETER ( ENUM_UPWIND_3RD = 3)
+      INTEGER(w2f__i4) GAD_SALINITY
+      PARAMETER ( GAD_SALINITY = 2)
+      INTEGER(w2f__i4) GAD_TEMPERATURE
+      PARAMETER ( GAD_TEMPERATURE = 1)
+      INTEGER(w2f__i4) GAD_TR1
+      PARAMETER ( GAD_TR1 = 3)
+      INTEGER(w2f__i4) NSOM
+      PARAMETER ( NSOM = 9)
+      REAL(w2f__8) ONESIXTH
+      PARAMETER ( ONESIXTH =    0.1666666666666667)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE g_cost_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) G_FC
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE global_max_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) PHIGMI(1 : 64, 1 : 4)
+      REAL(w2f__8) PHIGMRL(1 : 32, 1 : 4)
+      REAL(w2f__4) PHIGMRS(1 : 64, 1 : 4)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE global_sum_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) PHIGSI(1 : 64, 1 : 4)
+      REAL(w2f__8) PHIGSRL(1 : 32, 1 : 4)
+      REAL(w2f__4) PHIGSRS(1 : 64, 1 : 4)
+      INTEGER(w2f__i4) PHIVGSI(1 : 8192, 1 : 4)
+      REAL(w2f__8) PHIVGSRL(1 : 8192, 1 : 4)
+      REAL(w2f__4) PHIVGSRS(1 : 8192, 1 : 4)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE grdchk_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) ADXXMEM(1 : 4000)
+      INTEGER(w2f__i4) BIMEM(1 : 4000)
+      INTEGER(w2f__i4) BJMEM(1 : 4000)
+      REAL(w2f__8) FCPMMEM(1 : 4000)
+      REAL(w2f__8) FCPPMEM(1 : 4000)
+      REAL(w2f__8) FCRMEM(1 : 4000)
+      REAL(w2f__8) FTLXXMEM(1 : 4000)
+      REAL(w2f__8) GFDMEM(1 : 4000)
+      INTEGER(w2f__i4) GRDCHKVARINDEX
+      INTEGER(w2f__i4) GRDCHKWHICHPROC
+      REAL(w2f__8) GRDCHK_EPS
+      INTEGER(w2f__i4) ICGLOMEM(1 : 4000)
+      INTEGER(w2f__i4) ICHKMEM(1 : 4000)
+      INTEGER(w2f__i4) ICOMPMEM(1 : 4000)
+      INTEGER(w2f__i4) IDEP
+      INTEGER(w2f__i4) IERRMEM(1 : 4000)
+      INTEGER(w2f__i4) IGLOPOS
+      INTEGER(w2f__i4) IGLOTILE
+      INTEGER(w2f__i4) ILOCMEM(1 : 4000)
+      INTEGER(w2f__i4) IOBCSMEM(1 : 4000)
+      INTEGER(w2f__i4) IRECMEM(1 : 4000)
+      INTEGER(w2f__i4) ITESTMEM(1 : 4000)
+      INTEGER(w2f__i4) IWETSUM(1 : 1, 1 : 1, 0 : 1)
+      INTEGER(w2f__i4) JDEP
+      INTEGER(w2f__i4) JGLOPOS
+      INTEGER(w2f__i4) JGLOTILE
+      INTEGER(w2f__i4) JLOCMEM(1 : 4000)
+      INTEGER(w2f__i4) KGLOPOS
+      INTEGER(w2f__i4) KLOCMEM(1 : 4000)
+      INTEGER(w2f__i4) MAXNCVARCOMPS
+      INTEGER(w2f__i4) NBEG
+      INTEGER(w2f__i4) NCVARCOMP
+      INTEGER(w2f__i4) NEND
+      INTEGER(w2f__i4) NSTEP
+      INTEGER(w2f__i4) NWETTILE(1 : 1, 1 : 1, 1 : 1, 1 : 4)
+      INTEGER(w2f__i4) OBCSGLO
+      REAL(w2f__8) RATIOADMEM(1 : 4000)
+      REAL(w2f__8) RATIOFTLMEM(1 : 4000)
+      INTEGER(w2f__i4) RECGLO
+      LOGICAL(w2f__i4) USECENTRALDIFF
+      REAL(w2f__8) XXMEMPERT(1 : 4000)
+      REAL(w2f__8) XXMEMREF(1 : 4000)
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) MAXGRDCHECKS
+      PARAMETER ( MAXGRDCHECKS = 4000)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE grid_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) ANGLECOSC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) ANGLESINC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) COSFACU(-2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) COSFACV(-2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DEEPFAC2C(1 : 1)
+      REAL(w2f__8) DEEPFAC2F(1 : 2)
+      REAL(w2f__8) DEEPFACC(1 : 1)
+      REAL(w2f__8) DEEPFACF(1 : 2)
+      REAL(w2f__8) DRC(1 : 1)
+      REAL(w2f__8) DRF(1 : 1)
+      REAL(w2f__8) DXC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DXF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DXG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DXV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DYC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DYF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DYG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) DYU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FCORI(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FCORICOS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FCORIG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) GLOBALAREA
+      REAL(w2f__8) GRAVITYSIGN
+      REAL(w2f__8) HFACC(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) HFACS(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) HFACW(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) KLOWC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) MASKC(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MASKH(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) MASKS(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MASKW(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RA(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RAS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RAW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RAZ(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RC(1 : 1)
+      REAL(w2f__8) RECIP_DEEPFAC2C(1 : 1)
+      REAL(w2f__8) RECIP_DEEPFAC2F(1 : 2)
+      REAL(w2f__8) RECIP_DEEPFACC(1 : 1)
+      REAL(w2f__8) RECIP_DEEPFACF(1 : 2)
+      REAL(w2f__8) RECIP_DRC(1 : 1)
+      REAL(w2f__8) RECIP_DRF(1 : 1)
+      REAL(w2f__8) RECIP_DXC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DXF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DXG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DXV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DYC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DYF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DYG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_DYU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_HFACC(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_HFACS(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_HFACW(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_RA(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_RAS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_RAW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_RAZ(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_RCOL(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RF(1 : 2)
+      REAL(w2f__8) RKSIGN
+      REAL(w2f__8) RO_SURF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) R_LOW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SQCOSFACU(-2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SQCOSFACV(-2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TANPHIATU(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TANPHIATV(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XC0
+      REAL(w2f__8) XG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) YC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) YC0
+      REAL(w2f__8) YG(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE mpi_info_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) MPI_NORTHID
+      INTEGER(w2f__i4) MPI_NP
+      INTEGER(w2f__i4) MPI_PID
+      INTEGER(w2f__i4) MPI_SOUTHID
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE optim_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      CHARACTER(3) COPT
+      REAL(w2f__8) EPS
+      REAL(w2f__8) EPSF
+      REAL(w2f__8) EPSG
+      REAL(w2f__8) EPSX
+      REAL(w2f__8) FMIN
+      INTEGER(w2f__i4) IPRINT
+      INTEGER(w2f__i4) NFUNC
+      LOGICAL(w2f__i4) NONDIMCONTROL
+      INTEGER(w2f__i4) NUMITER
+      INTEGER(w2f__i4) NUPDATE
+      INTEGER(w2f__i4) NVARS
+      INTEGER(w2f__i4) OPTIMCYCLE
+C
+C     **** Local Variables and Functions ****
+C
+      CHARACTER(5) LSOPTVERSION
+      PARAMETER ( LSOPTVERSION = "2.1.0")
+      CHARACTER(5) OFFLINEVERSION
+      PARAMETER ( OFFLINEVERSION = "0.1.1")
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE solve_for_pressure3d_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE solve_for_pressure_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) CG2D_B(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) CG2D_X(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE surface_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) BO_SURF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) KSURFC(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) KSURFS(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) KSURFW(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PHI0SURF(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) RECIP_BO(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) SSURFCOR
+      REAL(w2f__8) TOPOZ(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) TSURFCOR
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE tamc_keys_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) IKEY
+      INTEGER(w2f__i4) KEY
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      MODULE tamc_mod
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      INTEGER(w2f__i4) ACT0
+      INTEGER(w2f__i4) ACT1
+      INTEGER(w2f__i4) ACT2
+      INTEGER(w2f__i4) ACT3
+      INTEGER(w2f__i4) ACT4
+      INTEGER(w2f__i4) IDYNKEY
+      INTEGER(w2f__i4) IGADKEY
+      INTEGER(w2f__i4) IGMKEY
+      INTEGER(w2f__i4) IIKEY
+      INTEGER(w2f__i4) IKEY_DAILY_1
+      INTEGER(w2f__i4) IKEY_DAILY_2
+      INTEGER(w2f__i4) IKEY_DYNAMICS
+      INTEGER(w2f__i4) IKEY_YEARLY
+      INTEGER(w2f__i4) IKPPKEY
+      INTEGER(w2f__i4) ILOOP_DAILY
+      INTEGER(w2f__i4) IPTRKEY
+      INTEGER(w2f__i4) ITDKEY
+      INTEGER(w2f__i4) KKEY
+      INTEGER(w2f__i4) MAX0
+      INTEGER(w2f__i4) MAX1
+      INTEGER(w2f__i4) MAX2
+      INTEGER(w2f__i4) MAX3
+      INTEGER(w2f__i4) PASSKEY
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) ISBYTE
+      PARAMETER ( ISBYTE = 8)
+      INTEGER(w2f__i4) MAXCUBE
+      PARAMETER ( MAXCUBE = 1)
+      INTEGER(w2f__i4) MAXIMPL
+      PARAMETER ( MAXIMPL = 6)
+      INTEGER(w2f__i4) MAXPASS
+      PARAMETER ( MAXPASS = 2)
+      INTEGER(w2f__i4) NCHECK_CHKPT
+      PARAMETER ( NCHECK_CHKPT = 6)
+      INTEGER(w2f__i4) NCHKLEV_1
+      PARAMETER ( NCHKLEV_1 = 4)
+      INTEGER(w2f__i4) NCHKLEV_2
+      PARAMETER ( NCHKLEV_2 = 3)
+      INTEGER(w2f__i4) NCHKLEV_3
+      PARAMETER ( NCHKLEV_3 = 2)
+      INTEGER(w2f__i4) NCHKLEV_4
+      PARAMETER ( NCHKLEV_4 = 0)
+      INTEGER(w2f__i4) NDAYS_CHKPT
+      PARAMETER ( NDAYS_CHKPT = 31)
+      INTEGER(w2f__i4) NGEOM_CHKPT
+      PARAMETER ( NGEOM_CHKPT = 1)
+      INTEGER(w2f__i4) NMONTHS_CHKPT
+      PARAMETER ( NMONTHS_CHKPT = 12)
+      INTEGER(w2f__i4) NTHREADS_CHKPT
+      PARAMETER ( NTHREADS_CHKPT = 1)
+      INTEGER(w2f__i4) NYEARS_CHKPT
+      PARAMETER ( NYEARS_CHKPT = 1)
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      SUBROUTINE cg2d(CG2D_B, CG2D_X, FIRSTRESIDUAL, LASTRESIDUAL,
+     >  NUMITERS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use cg2d_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) CG2D_B(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) CG2D_X(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FIRSTRESIDUAL
+      REAL(w2f__8) LASTRESIDUAL
+      INTEGER(w2f__i4) NUMITERS
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) ACTUALITS
+      REAL(w2f__8) ACTUALRESIDUAL
+      REAL(w2f__8) ALPHA
+      REAL(w2f__8) ALPHATILE
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) CGBETA
+      REAL(w2f__8) ERR
+      REAL(w2f__8) ERRTILE
+      REAL(w2f__8) ETA_QRN
+      REAL(w2f__8) ETA_QRNM1
+      REAL(w2f__8) ETA_QRNTILE
+      EXTERNAL exch_xy_rl
+      EXTERNAL global_max_r8
+      EXTERNAL global_sum_r8
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IT2D
+      INTEGER(w2f__i4) J
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_message
+      REAL(w2f__8) RHSMAX
+      REAL(w2f__8) RHSNORM
+      REAL(w2f__8) SUMRHS
+      REAL(w2f__8) SUMRHSTILE
+      INTEGER(w2f__i4) t__108
+      INTEGER(w2f__i4) t__109
+      INTEGER(w2f__i4) t__110
+      INTEGER(w2f__i4) t__111
+      INTEGER(w2f__i4) t__112
+      INTEGER(w2f__i4) t__113
+      INTEGER(w2f__i4) t__114
+      INTEGER(w2f__i4) t__115
+      INTEGER(w2f__i4) t__116
+      INTEGER(w2f__i4) t__117
+      INTEGER(w2f__i4) t__118
+      INTEGER(w2f__i4) t__119
+      LOGICAL(w2f__i4) t__120
+      INTEGER(w2f__i4) t__121
+      INTEGER(w2f__i4) t__122
+      INTEGER(w2f__i4) t__123
+      INTEGER(w2f__i4) t__124
+      INTEGER(w2f__i4) t__125
+      INTEGER(w2f__i4) t__126
+      INTEGER(w2f__i4) t__127
+      INTEGER(w2f__i4) t__128
+      INTEGER(w2f__i4) t__129
+      INTEGER(w2f__i4) t__130
+      INTEGER(w2f__i4) t__131
+      INTEGER(w2f__i4) t__132
+      INTEGER(w2f__i4) t__133
+      INTEGER(w2f__i4) t__134
+      INTEGER(w2f__i4) t__135
+      INTEGER(w2f__i4) t__136
+      INTEGER(w2f__i4) t__137
+      INTEGER(w2f__i4) t__138
+      INTEGER(w2f__i4) t__139
+      INTEGER(w2f__i4) t__140
+      real(w2f__8) oad_ctmp0
+      real oad_ctmp1
+      integer oad_ctmp2
+C
+C     **** Statements ****
+C
+      ETA_QRNM1 = 1.0D00
+      RHSMAX = 0.0D00
+      t__108 = MYBYLO(MYTHID)
+      t__109 = MYBYHI(MYTHID)
+      DO BJ = t__108, t__109, 1
+        t__110 = MYBXLO(MYTHID)
+        t__111 = MYBXHI(MYTHID)
+        DO BI = t__110, t__111, 1
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              CG2D_B(I,J,BI,BJ) = (CG2D_B(I,J,BI,BJ) * CG2DNORM)
+              oad_ctmp1 = ABS(CG2D_B(I,J,BI,BJ))
+              call oad_s_MAX_r(RHSMAX,oad_ctmp1,oad_ctmp0)
+              RHSMAX = oad_ctmp0
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( CG2DNORMALISERHS ) then
+        call global_max_r8(RHSMAX,MYTHID)
+        RHSNORM = 1.0D00
+        if ( RHSMAX .ne. 0.0D00 ) then
+          RHSNORM = 1D00 / RHSMAX
+        ENDIF
+        t__112 = MYBYLO(MYTHID)
+        t__113 = MYBYHI(MYTHID)
+        DO BJ = t__112, t__113, 1
+          t__114 = MYBXLO(MYTHID)
+          t__115 = MYBXHI(MYTHID)
+          DO BI = t__114, t__115, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                CG2D_B(I,J,BI,BJ) = (CG2D_B(I,J,BI,BJ) * RHSNORM)
+                CG2D_X(I,J,BI,BJ) = (CG2D_X(I,J,BI,BJ) * RHSNORM)
+              END DO
+            END DO
+          END DO
+        END DO
+      ENDIF
+      call exch_xy_rl(CG2D_B,MYTHID)
+      call exch_xy_rl(CG2D_X,MYTHID)
+      ERR = 0.0D00
+      SUMRHS = 0.0D00
+      t__116 = MYBYLO(MYTHID)
+      t__117 = MYBYHI(MYTHID)
+      DO BJ = t__116, t__117, 1
+        t__118 = MYBXLO(MYTHID)
+        t__119 = MYBXHI(MYTHID)
+        DO BI = t__118, t__119, 1
+          SUMRHSTILE = 0.0D00
+          ERRTILE = 0.0D00
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              CG2D_S(I,J,BI,BJ) = 0.0
+              CG2D_R(I,J,BI,BJ) = (CG2D_B(I,J,BI,BJ) - (CG2D_X(I + (-1),
+     +J,BI,BJ) * AW2D(I,J,BI,BJ) + CG2D_X(I + 1,J,BI,BJ) * AW2D(I + 1,J,
+     +BI,BJ) + CG2D_X(I,J + (-1),BI,BJ) * AS2D(I,J,BI,BJ) + CG2D_X(I,J +
+     + 1,BI,BJ) * AS2D(I,J + 1,BI,BJ) + CG2D_X(I,J,BI,BJ) * AC2D(I,J,BI,
+     +BJ)))
+
+              ERRTILE = ERRTILE + CG2D_R(I,J,BI,BJ) * CG2D_R(I,J,BI,BJ)
+              SUMRHSTILE = CG2D_B(I,J,BI,BJ) + SUMRHSTILE
+            END DO
+          END DO
+          SUMRHS = SUMRHS + SUMRHSTILE
+          ERR = ERR + ERRTILE
+        END DO
+      END DO
+      call exch_xy_rl(CG2D_R,MYTHID)
+      call exch_xy_rl(CG2D_S,MYTHID)
+      call global_sum_r8(SUMRHS,MYTHID)
+      call global_sum_r8(ERR,MYTHID)
+      ERR = SQRT(ERR)
+      ACTUALITS = 0
+      ACTUALRESIDUAL = ERR
+      if ( DEBUGLEVEL .ge. 0 ) then
+        if ( MYTHID .eq. 1 ) then
+          WRITE(STANDARDMESSAGEUNIT, '(A,1P2E22.14)')
+     >  ' cg2d: Sum(rhs),rhsMax = ', SUMRHS, RHSMAX
+        ENDIF
+      ENDIF
+      FIRSTRESIDUAL = ACTUALRESIDUAL
+      if ( ERR .ge. CG2DTOLERANCE ) then
+        IT2D = 1
+        t__120 = (NUMITERS .ge. IT2D) .and. (ERR .ge. CG2DTOLERANCE)
+        DO WHILE(t__120)
+          ETA_QRN = 0.0D00
+          t__121 = MYBYLO(MYTHID)
+          t__122 = MYBYHI(MYTHID)
+          DO BJ = t__121, t__122, 1
+            t__123 = MYBXLO(MYTHID)
+            t__124 = MYBXHI(MYTHID)
+            DO BI = t__123, t__124, 1
+              ETA_QRNTILE = 0.0D00
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  CG2D_Q(I,J,BI,BJ) = (CG2D_R(I,J,BI,BJ) * PC(I,J,BI,BJ)
+     + + CG2D_R(I + (-1),J,BI,BJ) * PW(I,J,BI,BJ) + CG2D_R(I + 1,J,BI,BJ
+     +) * PW(I + 1,J,BI,BJ) + CG2D_R(I,J + (-1),BI,BJ) * PS(I,J,BI,BJ) +
+     + CG2D_R(I,J + 1,BI,BJ) * PS(I,J + 1,BI,BJ))
+
+                  ETA_QRNTILE = ETA_QRNTILE + CG2D_Q(I,J,BI,BJ) * CG2D_R
+     +(I,J,BI,BJ)
+
+                END DO
+              END DO
+              ETA_QRN = ETA_QRN + ETA_QRNTILE
+            END DO
+          END DO
+          call global_sum_r8(ETA_QRN,MYTHID)
+          CGBETA = ETA_QRN / ETA_QRNM1
+          ETA_QRNM1 = ETA_QRN
+          t__125 = MYBYLO(MYTHID)
+          t__126 = MYBYHI(MYTHID)
+          DO BJ = t__125, t__126, 1
+            t__127 = MYBXLO(MYTHID)
+            t__128 = MYBXHI(MYTHID)
+            DO BI = t__127, t__128, 1
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  CG2D_S(I,J,BI,BJ) = (CG2D_Q(I,J,BI,BJ) + CG2D_S(I,J,BI
+     +,BJ) * CGBETA)
+
+                END DO
+              END DO
+            END DO
+          END DO
+          call exch_xy_rl(CG2D_S,MYTHID)
+          ALPHA = 0.0D00
+          t__129 = MYBYLO(MYTHID)
+          t__130 = MYBYHI(MYTHID)
+          DO BJ = t__129, t__130, 1
+            t__131 = MYBXLO(MYTHID)
+            t__132 = MYBXHI(MYTHID)
+            DO BI = t__131, t__132, 1
+              ALPHATILE = 0.0D00
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  CG2D_Q(I,J,BI,BJ) = (AW2D(I,J,BI,BJ) * CG2D_S(I + (-1)
+     +,J,BI,BJ) + AW2D(I + 1,J,BI,BJ) * CG2D_S(I + 1,J,BI,BJ) + AS2D(I,J
+     +,BI,BJ) * CG2D_S(I,J + (-1),BI,BJ) + AS2D(I,J + 1,BI,BJ) * CG2D_S(
+     +I,J + 1,BI,BJ) + AC2D(I,J,BI,BJ) * CG2D_S(I,J,BI,BJ))
+
+                  ALPHATILE = ALPHATILE + CG2D_Q(I,J,BI,BJ) * CG2D_S(I,J
+     +,BI,BJ)
+
+                END DO
+              END DO
+              ALPHA = ALPHA + ALPHATILE
+            END DO
+          END DO
+          call global_sum_r8(ALPHA,MYTHID)
+          ALPHA = ETA_QRN / ALPHA
+          ERR = 0.0D00
+          t__133 = MYBYLO(MYTHID)
+          t__134 = MYBYHI(MYTHID)
+          DO BJ = t__133, t__134, 1
+            t__135 = MYBXLO(MYTHID)
+            t__136 = MYBXHI(MYTHID)
+            DO BI = t__135, t__136, 1
+              ERRTILE = 0.0D00
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  CG2D_X(I,J,BI,BJ) = (CG2D_X(I,J,BI,BJ) + CG2D_S(I,J,BI
+     +,BJ) * ALPHA)
+
+                  CG2D_R(I,J,BI,BJ) = (CG2D_R(I,J,BI,BJ) - CG2D_Q(I,J,BI
+     +,BJ) * ALPHA)
+
+                  ERRTILE = ERRTILE + CG2D_R(I,J,BI,BJ) * CG2D_R(I,J,BI,
+     +BJ)
+
+                END DO
+              END DO
+              ERR = ERR + ERRTILE
+            END DO
+          END DO
+          call global_sum_r8(ERR,MYTHID)
+          ERR = SQRT(ERR)
+          ACTUALITS = IT2D
+          ACTUALRESIDUAL = ERR
+          if ( DEBUGLEVEL .gt. 2 ) then
+            if ( MYTHID .eq. 1 ) then
+              WRITE(MSGBUF, '(A,I6,A,1PE21.14)') ' cg2d: iter=',
+     >  ACTUALITS, ' ; resid.= ', ACTUALRESIDUAL
+              oad_ctmp2 = (1)
+              call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp
+     +2)
+
+            ENDIF
+          ENDIF
+          call exch_xy_rl(CG2D_R,MYTHID)
+          IT2D = IT2D + 1
+          t__120 = (NUMITERS .ge. IT2D) .and. (ERR .ge. CG2DTOLERANCE)
+        END DO
+      ENDIF
+      if ( CG2DNORMALISERHS ) then
+        t__137 = MYBYLO(MYTHID)
+        t__138 = MYBYHI(MYTHID)
+        DO BJ = t__137, t__138, 1
+          t__139 = MYBXLO(MYTHID)
+          t__140 = MYBXHI(MYTHID)
+          DO BI = t__139, t__140, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                CG2D_X(I,J,BI,BJ) = (CG2D_X(I,J,BI,BJ) / RHSNORM)
+              END DO
+            END DO
+          END DO
+        END DO
+      ENDIF
+      LASTRESIDUAL = ACTUALRESIDUAL
+      NUMITERS = ACTUALITS
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE do_the_model_io(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      EXTERNAL different_multiple
+      LOGICAL(w2f__i4) different_multiple
+      EXTERNAL plot_field_xyrl
+      EXTERNAL plot_field_xyzrl
+      EXTERNAL write_state
+      logical(w2f__i4) oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call oad_s_different_multiple(DUMPFREQ,MYTIME,DELTATCLOCK,oad_ct
+     +mp0)
+
+        if ( oad_ctmp0 ) then
+          call barrier(MYTHID)
+          oad_ctmp1 = (1)
+          call plot_field_xyzrl(UVEL,'Current uVel  ',oad_ctmp1,MYITER,M
+     +YTHID)
+
+          oad_ctmp2 = (1)
+          call plot_field_xyzrl(VVEL,'Current vVel  ',oad_ctmp2,MYITER,M
+     +YTHID)
+
+          oad_ctmp3 = (1)
+          call plot_field_xyzrl(THETA,'Current theta ',oad_ctmp3,MYITER,
+     +MYTHID)
+
+          call plot_field_xyrl(ETAN,'Current etaN  ',MYITER,MYTHID)
+        ENDIF
+      ENDIF
+      if ( .not. USEOFFLINE ) then
+        call write_state(MYTIME,MYITER,MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE exch_uv_xy_rs(UPHI, VPHI, WITHSIGNS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__4) UPHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__4) VPHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      LOGICAL(w2f__i4) WITHSIGNS
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__4) TEMP
+C
+C     **** Statements ****
+C
+      TEMP = UPHI(1,1,1,1)
+      UPHI(1,1,1,1) = VPHI(1,1,1,1)
+      VPHI(1,1,1,1) = TEMP
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE exch_uv_xyz_rl(UPHI, VPHI, WITHSIGNS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) UPHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VPHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      LOGICAL(w2f__i4) WITHSIGNS
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) TEMP
+C
+C     **** Statements ****
+C
+      TEMP = UPHI(1,1,1,1,1)
+      UPHI(1,1,1,1,1) = VPHI(1,1,1,1,1)
+      VPHI(1,1,1,1,1) = TEMP
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE exch_uv_xyz_rs(UPHI, VPHI, WITHSIGNS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__4) UPHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__4) VPHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      LOGICAL(w2f__i4) WITHSIGNS
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) TEMP
+C
+C     **** Statements ****
+C
+      TEMP = UPHI(1,1,1,1,1)
+      UPHI(1,1,1,1,1) = VPHI(1,1,1,1,1)
+      VPHI(1,1,1,1,1) = TEMP
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE exch_xy_rl(PHI, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) PHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      PHI(1,1,1,1) = (PHI(1,1,1,1) * 2.0D00)
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE exch_xyz_rl(PHI, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) PHI(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      PHI(1,1,1,1,1) = (PHI(1,1,1,1,1) * 2.0D00)
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE global_max_r8(MAXPHI, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MAXPHI
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      MAXPHI = MAXPHI * 2.0D00
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE global_sum_r8(SUMPHI, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use eesupport_mod
+      use exch_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) SUMPHI
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      SUMPHI = SUMPHI * 2.0D00
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_phiref(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      REAL(w2f__8) CONV_THETA2T
+      REAL(w2f__8) DDPI
+      EXTERNAL find_rho_scalar
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KS
+      CHARACTER(512) MSGBUF
+      REAL(w2f__8) PLOC
+      EXTERNAL print_error
+      EXTERNAL print_message
+      REAL(w2f__8) RHALF(1 : 3)
+      REAL(w2f__8) RHODW
+      REAL(w2f__8) RHOLOC
+      REAL(w2f__8) RHOREF(1 : 1)
+      REAL(w2f__8) RHOUP
+      INTEGER(w2f__i4) STDUNIT
+      REAL(w2f__8) THETALOC
+C
+C     **** Statements ****
+C
+      if ( MYTHID .eq. 1 ) then
+        DO K = 1, 2, 1
+          PHIREF(K) = 0.0
+        END DO
+        STDUNIT = STANDARDMESSAGEUNIT
+        DO K = 1, 1, 1
+          RHOREF(K) = 0.0
+          DBDRREF(K) = 0.0
+          RHALF(K * 2 + (-1)) = RF(K)
+          RHALF(K * 2) = RC(K)
+        END DO
+        RHALF(3) = RF(2)
+        DO K = 1, 2, 1
+          RVEL2WUNIT(K) = 1.0D00
+          WUNIT2RVEL(K) = 1.0D00
+        END DO
+        if ( EOSTYPE .eq. 'POLY3' ) then
+          if ( IMPLICITINTGRAVWAVE ) then
+            WRITE(MSGBUF, '(A)')
+     >  'INI_PHIREF: need to compute reference density fo' //
+     >  'r Impl.IGW'
+            call print_error(MSGBUF,MYTHID)
+            WRITE(MSGBUF, '(2A)')
+     >  'INI_PHIREF: but FIND_RHO_SCALAR(EOS="POLY3")',
+     >  ' not (yet) implemented'
+            call print_error(MSGBUF,MYTHID)
+            WRITE(*, *) 'ABNORMAL END: S/R INI_PHIREF'
+          ELSE
+            if ( NONHYDROSTATIC .and. (BUOYANCYRELATION .eq. 'OCEANICP')
+     + ) then
+
+              WRITE(MSGBUF, '(A)')
+     >  'INI_PHIREF: need to compute reference density fo' //
+     >  'r Non-Hyd'
+              call print_error(MSGBUF,MYTHID)
+              WRITE(MSGBUF, '(2A)')
+     >  'INI_PHIREF: but FIND_RHO_SCALAR(EOS="POLY3")',
+     >  ' not (yet) implemented'
+              call print_error(MSGBUF,MYTHID)
+              WRITE(*, *) 'ABNORMAL END: S/R INI_PHIREF'
+            ELSE
+              WRITE(MSGBUF, '(A)')
+     >  'INI_PHIREF: Unable to compute reference stratifi' // 'cation'
+              call print_message(MSGBUF,ERRORMESSAGEUNIT,'R',MYTHID)
+              WRITE(MSGBUF, '(A)')
+     >  'INI_PHIREF:  with EOS="POLY3" ; set dBdrRef(1:Nr' //
+     >  ') to zeros'
+              call print_message(MSGBUF,ERRORMESSAGEUNIT,'R',MYTHID)
+            ENDIF
+          ENDIF
+        ELSE
+          if ( BUOYANCYRELATION .eq. 'OCEANIC' ) then
+            DO K = 1, 1, 1
+              PLOC = -(GRAVITY * RC(K) * RHOCONST)
+              call find_rho_scalar(TREF(K),SREF(K),PLOC,RHOREF(K),MYTHID
+     +)
+
+              RHOREF(K) = (RHOREF(K) + RHOCONST)
+            END DO
+            DBDRREF(1) = 0.0D00
+            DO K = 2, 1, 1
+              PLOC = -(GRAVITY * RF(K) * RHOCONST)
+              call find_rho_scalar(TREF(K + (-1)),SREF(K + (-1)),PLOC,RH
+     +OUP,MYTHID)
+
+              call find_rho_scalar(TREF(K),SREF(K),PLOC,RHODW,MYTHID)
+              DBDRREF(K) = (GRAVITY * RECIP_RHOCONST * RECIP_DRC(K) * (R
+     +HODW - RHOUP))
+
+              if ( EOSTYPE .eq. 'LINEAR' ) then
+                DBDRREF(K) = (GRAVITY * RECIP_RHOCONST * RHONIL * RECIP_
+     +DRC(K) * (SBETA * (SREF(K) - SREF(K + (-1))) - TALPHA * (TREF(K) -
+     + TREF(K + (-1)))))
+
+              ENDIF
+            END DO
+          ELSE
+            if ( BUOYANCYRELATION .eq. 'OCEANICP' ) then
+              DO K = 1, 1, 1
+                PLOC = RC(K)
+                call find_rho_scalar(TREF(K),SREF(K),PLOC,RHOREF(K),MYTH
+     +ID)
+
+                RHOREF(K) = (RHOREF(K) + RHOCONST)
+              END DO
+              DBDRREF(1) = 0.0D00
+              DO K = 1, 2, 1
+                PLOC = RF(K)
+                if ( K .ge. 2 ) then
+                  call find_rho_scalar(TREF(K + (-1)),SREF(K + (-1)),PLO
+     +C,RHODW,MYTHID)
+
+                ENDIF
+                if ( K .le. 1 ) then
+                  call find_rho_scalar(TREF(K),SREF(K),PLOC,RHOUP,MYTHID
+     +)
+
+                ENDIF
+                if ( (K .ge. 2) .and. (K .le. 1) ) then
+                  DBDRREF(K) = (((RECIP_DRC(K) * (RHODW - RHOUP)) / (RHO
+     +DW + RHOCONST)) / (RHOUP + RHOCONST))
+
+                  RHOLOC = RHOCONST + (RHODW + RHOUP) * 5.0D-01
+                ELSE
+                  if ( K .eq. 1 ) then
+                    RHOLOC = RHOUP + RHOCONST
+                  ELSE
+                    RHOLOC = RHODW + RHOCONST
+                  ENDIF
+                ENDIF
+                WUNIT2RVEL(K) = (RHOLOC * GRAVITY)
+                RVEL2WUNIT(K) = 1D00 / (WUNIT2RVEL(K))
+              END DO
+            ELSE
+              if ( BUOYANCYRELATION .eq. 'ATMOSPHERIC' ) then
+                DBDRREF(1) = 0.0D00
+                DO K = 2, 1, 1
+                  CONV_THETA2T = (RF(K) / ATM_PO) ** ATM_KAPPA
+                  DDPI = ATM_CP * ((((RC(K + (-1)) / ATM_PO) ** ATM_KAPP
+     +A)) - (((RC(K) / ATM_PO) ** ATM_KAPPA)))
+
+                  DBDRREF(K) = (RECIP_DRC(K) * DDPI * RECIP_DRC(K) * (TR
+     +EF(K) - TREF(K + (-1))))
+
+                END DO
+                DO K = 1, 2, 1
+                  if ( K .eq. 1 ) then
+                    THETALOC = TREF(K)
+                  ELSE
+                    if ( K .gt. 1 ) then
+                      THETALOC = TREF(K + (-1))
+                    ELSE
+                      THETALOC = (TREF(K) + TREF(K + (-1))) * 5.0D-01
+                    ENDIF
+                  ENDIF
+                  if ( (RF(K) .gt. 0.0D00) .and. (THETALOC .gt. 0.0D00) 
+     +) then
+
+                    CONV_THETA2T = (RF(K) / ATM_PO) ** ATM_KAPPA
+                    WUNIT2RVEL(K) = ((RF(K) * GRAVITY) / (THETALOC * CON
+     +V_THETA2T * ATM_RD))
+
+                    RVEL2WUNIT(K) = 1D00 / (WUNIT2RVEL(K))
+                  ENDIF
+                END DO
+                PHIREF(1) = 0.0D00
+                if ( INTEGR_GEOPOT .eq. 1 ) then
+                  DO K = 1, 2, 1
+                    KS = (K + 1) / 2
+                    DDPI = ATM_CP * ((((RHALF(K) / ATM_PO) ** ATM_KAPPA)
+     +) - (((RHALF(K + 1) / ATM_PO) ** ATM_KAPPA)))
+
+                    PHIREF(K + 1) = (PHIREF(K) + TREF(KS) * DDPI)
+                  END DO
+                ELSE
+                  K = 1
+                  DDPI = ATM_CP * ((((RF(K) / ATM_PO) ** ATM_KAPPA)) - (
+     +((RC(K) / ATM_PO) ** ATM_KAPPA)))
+
+                  PHIREF(K * 2) = (PHIREF(1) + TREF(K) * DDPI)
+                  DO K = 1, 0, 1
+                    DDPI = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) -
+     + (((RC(K + 1) / ATM_PO) ** ATM_KAPPA)))
+
+                    PHIREF(K * 2 + 1) = (PHIREF(K * 2) + TREF(K) * DDPI 
+     +* 5.0D-01)
+
+                    PHIREF(K * 2 + 2) = (PHIREF(K * 2) + DDPI * 5.0D-01 
+     +* (TREF(K) + TREF(K + 1)))
+
+                  END DO
+                  K = 1
+                  DDPI = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) - (
+     +((RF(K + 1) / ATM_PO) ** ATM_KAPPA)))
+
+                  PHIREF(K * 2 + 1) = (PHIREF(K * 2) + TREF(K) * DDPI)
+                ENDIF
+              ELSE
+                WRITE(*, *)
+     >  'INI_PHIREF: Bad value of buoyancyRelation !'
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+        if ( BUOYANCYRELATION .eq. 'ATMOSPHERIC' ) then
+          WRITE(MSGBUF, '(A)') ' '
+          call print_message(MSGBUF,STDUNIT,'R',MYTHID)
+          WRITE(MSGBUF, '(A)')
+     >  'INI_PHIREF: PhiRef/g [m] at level Center (intege' // 'r)'
+          call print_message(MSGBUF,STDUNIT,'R',MYTHID)
+          WRITE(MSGBUF, '(A)')
+     >  '                     and at level Interface (hal' //
+     >  'f-int.) :'
+          call print_message(MSGBUF,STDUNIT,'R',MYTHID)
+          DO K = 1, 3, 1
+            WRITE(MSGBUF, '(A,F5.1,A,F10.1,A,F12.3)') ' K=', (K *
+     >  5.0E-01), '  ;  r=', RHALF(K), '  ;  phiRef/g=', (PHIREF(K) *
+     >  RECIP_GRAVITY)
+            call print_message(MSGBUF,STDUNIT,'R',MYTHID)
+          END DO
+        ENDIF
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE initialise_fixed(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      EXTERNAL bar_check
+      EXTERNAL config_check
+      EXTERNAL config_summary
+      EXTERNAL ini_eos
+      EXTERNAL ini_model_io
+      EXTERNAL ini_parms
+      EXTERNAL ini_phiref
+      EXTERNAL openad_ini_cg2d
+      EXTERNAL openad_ini_cori
+      EXTERNAL openad_ini_depths
+      EXTERNAL openad_ini_grid
+      EXTERNAL openad_ini_linear_phisurf
+      EXTERNAL openad_ini_masks_etc
+      EXTERNAL packages_boot
+      EXTERNAL packages_check
+      EXTERNAL packages_init_fixed
+      EXTERNAL packages_readparms
+      EXTERNAL set_parms
+      EXTERNAL write_grid
+      integer oad_ctmp0
+      integer oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp0 = (2)
+      call bar_check(oad_ctmp0,MYTHID)
+      call ini_parms(MYTHID)
+      call packages_boot(MYTHID)
+      call packages_readparms(MYTHID)
+      call set_parms(MYTHID)
+      call ini_model_io(MYTHID)
+      call openad_ini_grid(MYTHID)
+      call ini_eos(MYTHID)
+      call ini_phiref(MYTHID)
+      call openad_ini_depths(MYTHID)
+      call openad_ini_masks_etc(MYTHID)
+      call barrier(MYTHID)
+      call packages_init_fixed(MYTHID)
+      call packages_check(MYTHID)
+      call openad_ini_linear_phisurf(MYTHID)
+      call openad_ini_cori(MYTHID)
+      call openad_ini_cg2d(MYTHID)
+      call config_check(MYTHID)
+      call config_summary(MYTHID)
+      if ( (DEBUGLEVEL .ge. 1) .or. (BASETIME .eq. STARTTIME) ) then
+        call write_grid(MYTHID)
+      ENDIF
+      oad_ctmp1 = (3)
+      call bar_check(oad_ctmp1,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_first_level_loop(ILOOP, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) ILOOP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL forward_step
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_FIRST_LEVEL_LOOP',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_FIRST_LEVEL_LOOP: iloop=', ILOOP, ' of ',
+     >  NTIMESTEPS
+      if ( DEBUGMODE ) then
+        call debug_call('FORWARD_STEP',MYTHID)
+      ENDIF
+      call forward_step(ILOOP,MYTIME,MYITER,MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_FIRST_LEVEL_LOOP',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_fourth_level_loop(ILEV_4, UCHECKLEV1, UCHECKLEV2,
+     >  UCHECKLEV3, UCHECKLEV4, THECURRENTSTEP, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) ILEV_4
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) THECURRENTSTEP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      INTEGER(w2f__i4) ILEV_3
+      EXTERNAL the_third_level_loop
+      INTEGER(w2f__i4) t__177
+      integer(w2f__i4) oad_ctmp0
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_FOURTH_LEVEL_LOOP',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_FOURTH_LEVEL_LOOP(', ILEV_4, ')'
+      t__177 = UCHECKLEV3
+      DO ILEV_3 = 1, t__177, 1
+        if ( THECURRENTSTEP .le. NTIMESTEPS ) then
+          if ( DEBUGMODE ) then
+            call debug_call('THE_THIRD_LEVEL_LOOP',MYTHID)
+          ENDIF
+          oad_ctmp0 = (ILEV_3)
+          call the_third_level_loop(ILEV_4,oad_ctmp0,UCHECKLEV1,UCHECKLE
+     +V2,UCHECKLEV3,UCHECKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+
+        ENDIF
+      END DO
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_FOURTH_LEVEL_LOOP',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_fourth_level_plain(UCHECKLEV1, UCHECKLEV2,
+     >  UCHECKLEV3, UCHECKLEV4, THECURRENTSTEP, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) THECURRENTSTEP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      INTEGER(w2f__i4) ILEV_3
+      EXTERNAL the_third_level_loop
+      EXTERNAL the_third_level_plain
+      INTEGER(w2f__i4) t__178
+      integer oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_FOURTH_LEVEL_PLAIN',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_FOURTH_LEVEL_PLAIN()'
+      if ( UCHECKLEV3 .gt. 0 ) then
+        t__178 = UCHECKLEV3
+        DO ILEV_3 = 1, t__178, 1
+          if ( THECURRENTSTEP .le. NTIMESTEPS ) then
+            if ( DEBUGMODE ) then
+              call debug_call('THE_THIRD_LEVEL_LOOP',MYTHID)
+            ENDIF
+            oad_ctmp0 = (1)
+            oad_ctmp1 = (ILEV_3)
+            call the_third_level_loop(oad_ctmp0,oad_ctmp1,UCHECKLEV1,UCH
+     +ECKLEV2,UCHECKLEV3,UCHECKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+
+          ENDIF
+        END DO
+      ELSE
+        if ( DEBUGMODE ) then
+          call debug_call('THE_THIRD_LEVEL_PLAIN',MYTHID)
+        ENDIF
+        call the_third_level_plain(UCHECKLEV1,UCHECKLEV2,UCHECKLEV3,UCHE
+     +CKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+
+      ENDIF
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_FOURTH_LEVEL_LOOP',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_second_level_loop(ILEV_4, ILEV_3, ILEV_2,
+     >  UCHECKLEV1, UCHECKLEV2, UCHECKLEV3, UCHECKLEV4, THECURRENTSTEP,
+     >  MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) ILEV_4
+      INTEGER(w2f__i4) ILEV_3
+      INTEGER(w2f__i4) ILEV_2
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) THECURRENTSTEP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      INTEGER(w2f__i4) ILEV_1
+      EXTERNAL the_first_level_loop
+      INTEGER(w2f__i4) t__179
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_SECOND_LEVEL_LOOP',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_SECOND_LEVEL_LOOP(', ILEV_4, ',', ILEV_3,
+     >  ',', ILEV_2, ')'
+      t__179 = UCHECKLEV1
+      DO ILEV_1 = 1, t__179, 1
+        THECURRENTSTEP = ILEV_1 + UCHECKLEV1 * (ILEV_2 + (-1)) + UCHECKL
+     +EV1 * UCHECKLEV2 * (ILEV_3 + (-1)) + UCHECKLEV1 * UCHECKLEV2 * UCH
+     +ECKLEV3 * (ILEV_4 + (-1))
+
+        if ( THECURRENTSTEP .le. NTIMESTEPS ) then
+          if ( DEBUGMODE ) then
+            call debug_call('THE_FIRST_LEVEL_LOOP',MYTHID)
+          ENDIF
+          call the_first_level_loop(THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+        ENDIF
+      END DO
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_SECOND_LEVEL_LOOP',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_second_level_plain(UCHECKLEV1, UCHECKLEV2,
+     >  UCHECKLEV3, UCHECKLEV4, THECURRENTSTEP, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) THECURRENTSTEP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      INTEGER(w2f__i4) ILEV_1
+      EXTERNAL the_first_level_loop
+      INTEGER(w2f__i4) t__180
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_SECOND_LEVEL_PLAIN',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_SECOND_LEVEL_PLAIN()'
+      t__180 = UCHECKLEV1
+      DO ILEV_1 = 1, t__180, 1
+        THECURRENTSTEP = ILEV_1
+        if ( THECURRENTSTEP .le. NTIMESTEPS ) then
+          if ( DEBUGMODE ) then
+            call debug_call('THE_FIRST_LEVEL_LOOP',MYTHID)
+          ENDIF
+          call the_first_level_loop(THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+        ENDIF
+      END DO
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_SECOND_LEVEL_PLAIN',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_third_level_loop(ILEV_4, ILEV_3, UCHECKLEV1,
+     >  UCHECKLEV2, UCHECKLEV3, UCHECKLEV4, THECURRENTSTEP, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) ILEV_4
+      INTEGER(w2f__i4) ILEV_3
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) THECURRENTSTEP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      INTEGER(w2f__i4) ILEV_2
+      EXTERNAL the_second_level_loop
+      INTEGER(w2f__i4) t__181
+      integer(w2f__i4) oad_ctmp0
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_THIRD_LEVEL_LOOP',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_THIRD_LEVEL_LOOP(', ILEV_4, ',', ILEV_3, ')'
+      t__181 = UCHECKLEV2
+      DO ILEV_2 = 1, t__181, 1
+        if ( THECURRENTSTEP .le. NTIMESTEPS ) then
+          if ( DEBUGMODE ) then
+            call debug_call('THE_SECOND_LEVEL_LOOP',MYTHID)
+          ENDIF
+          oad_ctmp0 = (ILEV_2)
+          call the_second_level_loop(ILEV_4,ILEV_3,oad_ctmp0,UCHECKLEV1,
+     +UCHECKLEV2,UCHECKLEV3,UCHECKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTH
+     +ID)
+
+        ENDIF
+      END DO
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_THIRD_LEVEL_LOOP',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_third_level_plain(UCHECKLEV1, UCHECKLEV2,
+     >  UCHECKLEV3, UCHECKLEV4, THECURRENTSTEP, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) THECURRENTSTEP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      INTEGER(w2f__i4) ILEV_2
+      EXTERNAL the_second_level_loop
+      EXTERNAL the_second_level_plain
+      INTEGER(w2f__i4) t__182
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_THIRD_LEVEL_PLAIN',MYTHID)
+      ENDIF
+      WRITE(*, *) 'JU: THE_THIRD_LEVEL_PLAIN()'
+      if ( UCHECKLEV2 .gt. 0 ) then
+        t__182 = UCHECKLEV2
+        DO ILEV_2 = 1, t__182, 1
+          if ( THECURRENTSTEP .le. NTIMESTEPS ) then
+            if ( DEBUGMODE ) then
+              call debug_call('THE_SECOND_LEVEL_LOOP',MYTHID)
+            ENDIF
+            oad_ctmp0 = (1)
+            oad_ctmp1 = (1)
+            oad_ctmp2 = (ILEV_2)
+            call the_second_level_loop(oad_ctmp0,oad_ctmp1,oad_ctmp2,UCH
+     +ECKLEV1,UCHECKLEV2,UCHECKLEV3,UCHECKLEV4,THECURRENTSTEP,MYTIME,MYI
+     +TER,MYTHID)
+
+          ENDIF
+        END DO
+      ELSE
+        if ( DEBUGMODE ) then
+          call debug_call('THE_SECOND_LEVEL_PLAIN',MYTHID)
+        ENDIF
+        call the_second_level_plain(UCHECKLEV1,UCHECKLEV2,UCHECKLEV3,UCH
+     +ECKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+
+      ENDIF
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_THIRD_LEVEL_PLAIN',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_accumulate_mean(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__183
+      INTEGER(w2f__i4) t__184
+      INTEGER(w2f__i4) t__185
+      INTEGER(w2f__i4) t__186
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      t__183 = JTLO
+      t__184 = JTHI
+      DO BJ = t__183, t__184, 1
+        t__185 = ITLO
+        t__186 = ITHI
+        DO BI = t__185, t__186, 1
+          DO K = 1, 1, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                CMEANTHETA(I,J,K,BI,BJ) = (CMEANTHETA(I,J,K,BI,BJ) + DEL
+     +TATCLOCK * (THETA(I,J,K,BI,BJ) / LASTINTERVAL))
+
+                CMEANUVEL(I,J,K,BI,BJ) = (CMEANUVEL(I,J,K,BI,BJ) + DELTA
+     +TCLOCK * (UVEL(I,J,K,BI,BJ) / LASTINTERVAL))
+
+                CMEANVVEL(I,J,K,BI,BJ) = (CMEANVVEL(I,J,K,BI,BJ) + DELTA
+     +TCLOCK * (VVEL(I,J,K,BI,BJ) / LASTINTERVAL))
+
+                CMEANTHETAUVEL(I,J,K,BI,BJ) = (CMEANTHETAUVEL(I,J,K,BI,B
+     +J) + DELTATCLOCK * ((MASKC(I,J,K,BI,BJ) * MASKW(I,J,K,BI,BJ) * UVE
+     +L(I,J,K,BI,BJ) * (THETA(I,J,K,BI,BJ) + THETA(I + (-1),J,K,BI,BJ)))
+     + / LASTINTERVAL))
+
+                CMEANTHETAVVEL(I,J,K,BI,BJ) = (CMEANTHETAVVEL(I,J,K,BI,B
+     +J) + DELTATCLOCK * ((MASKC(I,J,K,BI,BJ) * MASKS(I,J,K,BI,BJ) * VVE
+     +L(I,J,K,BI,BJ) * (THETA(I,J,K,BI,BJ) + THETA(I,J + (-1),K,BI,BJ)))
+     + / LASTINTERVAL))
+
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_final(MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use cost_mod
+      use ctrl_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL cost_test
+      EXTERNAL global_sum_r8
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      INTEGER(w2f__i4) t__187
+      INTEGER(w2f__i4) t__188
+      INTEGER(w2f__i4) t__189
+      INTEGER(w2f__i4) t__190
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      call cost_test(MYTHID)
+      t__187 = JTLO
+      t__188 = JTHI
+      DO BJ = t__187, t__188, 1
+        t__189 = ITLO
+        t__190 = ITHI
+        DO BI = t__189, t__190, 1
+          WRITE(STANDARDMESSAGEUNIT, '(A,D22.15)')
+     >  ' --> objf_test(bi,bj)   = ', OBJF_TEST(BI, BJ)
+          WRITE(STANDARDMESSAGEUNIT, '(A,D22.15)')
+     >  ' --> objf_tracer(bi,bj) = ', OBJF_TRACER(BI, BJ)
+          WRITE(STANDARDMESSAGEUNIT, '(A,D22.15)')
+     >  ' --> objf_atl(bi,bj)    = ', OBJF_ATL(BI, BJ)
+          FC = FC + OBJF_TEST(BI,BJ) * MULT_TEST + OBJF_TRACER(BI,BJ) * 
+     +MULT_TRACER + OBJF_ATL(BI,BJ) * MULT_ATL
+
+        END DO
+      END DO
+      WRITE(STANDARDMESSAGEUNIT, '(A,D22.15)') '  local fc = ', FC
+      call global_sum_r8(FC,MYTHID)
+      WRITE(STANDARDMESSAGEUNIT, '(A,D22.15)') ' global fc = ', FC
+      TAVEFREQ = 0.0D00
+      DUMPFREQ = 0.0D00
+      PCHKPTFREQ = 0.0D00
+      MONITORFREQ = 0.0D00
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_init_varia(MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__191
+      INTEGER(w2f__i4) t__192
+      INTEGER(w2f__i4) t__193
+      INTEGER(w2f__i4) t__194
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      t__191 = JTLO
+      t__192 = JTHI
+      DO BJ = t__191, t__192, 1
+        t__193 = ITLO
+        t__194 = ITHI
+        DO BI = t__193, t__194, 1
+          OBJF_ATL(BI,BJ) = 0.0D00
+          OBJF_TEST(BI,BJ) = 0.0D00
+          OBJF_TRACER(BI,BJ) = 0.0D00
+          DO K = 1, 1, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                CMEANTHETA(I,J,K,BI,BJ) = 0.0D00
+                CMEANUVEL(I,J,K,BI,BJ) = 0.0D00
+                CMEANVVEL(I,J,K,BI,BJ) = 0.0D00
+                CMEANTHETAUVEL(I,J,K,BI,BJ) = 0.0D00
+                CMEANTHETAVVEL(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( MYTHID .eq. 1 ) then
+        FC = 0.0D00
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_tile(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use cost_mod
+      use tamc_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL cost_accumulate_mean
+      INTEGER(w2f__i4) t__195
+      INTEGER(w2f__i4) t__196
+      INTEGER(w2f__i4) t__197
+      INTEGER(w2f__i4) t__198
+C
+C     **** Statements ****
+C
+      t__195 = MYBYLO(MYTHID)
+      t__196 = MYBYHI(MYTHID)
+      DO BJ = t__195, t__196, 1
+        t__197 = MYBXLO(MYTHID)
+        t__198 = MYBXHI(MYTHID)
+        DO BI = t__197, t__198, 1
+          if ( MYTIME .gt. (ENDTIME - LASTINTERVAL) ) then
+            call cost_accumulate_mean(MYTHID)
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_test(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IG
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JG
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) THETAREF
+      INTEGER(w2f__i4) t__199
+      INTEGER(w2f__i4) t__200
+      INTEGER(w2f__i4) t__201
+      INTEGER(w2f__i4) t__202
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      if ( USECUBEDSPHEREEXCHANGE ) then
+        ILOCOUT = 7
+        JLOCOUT = 28
+        KLOCOUT = 1
+      ELSE
+        ILOCOUT = 80
+        JLOCOUT = 30
+        KLOCOUT = 1
+      ENDIF
+      THETAREF = 2.0D+01
+      K = 1
+      t__199 = JTLO
+      t__200 = JTHI
+      DO BJ = t__199, t__200, 1
+        t__201 = ITLO
+        t__202 = ITHI
+        DO BI = t__201, t__202, 1
+          DO J = 1, 40, 1
+            JG = J + MYYGLOBALLO + BJ * 40 + (-41)
+            DO I = 1, 90, 1
+              IG = I + MYXGLOBALLO + BI * 90 + (-91)
+              OBJF_TEST(BI,BJ) = (OBJF_TEST(BI,BJ) + MASKW(I,J,K,BI,BJ) 
+     +* (UVEL(I,J,K,BI,BJ)) * (UVEL(I,J,K,BI,BJ)))
+
+              WRITE(*, *) 'ph-cost: objf_test ', OBJF_TEST(BI, BJ)
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_tracer(BI, BJ, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_atlantic_heat(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_vector(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cost_state_final(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_depth_ini(MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use grid_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use optim_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_get_gen(XX_GEN_FILE, XX_GENSTARTDATE,
+     >  XX_GENPERIOD, GENMASK, GENFLD, XX_GEN0, XX_GEN1, XX_GEN_DUMMY,
+     >  XX_GEN_REMO_INTERCEPT, XX_GEN_REMO_SLOPE, MYTIME, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use grid_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use optim_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(512) XX_GEN_FILE
+      INTEGER(w2f__i4) XX_GENSTARTDATE(1 : 4)
+      REAL(w2f__8) XX_GENPERIOD
+      REAL(w2f__8) GENMASK(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GENFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XX_GEN0(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XX_GEN1(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) XX_GEN_DUMMY
+      REAL(w2f__8) XX_GEN_REMO_INTERCEPT
+      REAL(w2f__8) XX_GEN_REMO_SLOPE
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_get_gen_rec(XX_GENSTARTDATE, XX_GENPERIOD, FAC,
+     >  FIRST, CHANGED, COUNT0, COUNT1, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use ctrl_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) XX_GENSTARTDATE(1 : 4)
+      REAL(w2f__8) XX_GENPERIOD
+      REAL(w2f__8) FAC
+      LOGICAL(w2f__i4) FIRST
+      LOGICAL(w2f__i4) CHANGED
+      INTEGER(w2f__i4) COUNT0
+      INTEGER(w2f__i4) COUNT1
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_init_variables(MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use grid_mod
+      use ctrl_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      JMIN = -2
+      JMAX = 43
+      IMIN = -2
+      IMAX = 93
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_map_ini(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use optim_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL active_read_xy
+      EXTERNAL active_read_xyz
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      LOGICAL(w2f__i4) DOGLOBALREAD
+      LOGICAL(w2f__i4) EQUAL
+      EXTERNAL exch_xyz_rl
+      EXTERNAL exch_xy_rl
+      REAL(w2f__8) FAC
+      CHARACTER(80) FNAMEGENERIC
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IL
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) LADINIT
+      INTEGER(w2f__i4) t__211
+      INTEGER(w2f__i4) t__212
+      INTEGER(w2f__i4) t__213
+      INTEGER(w2f__i4) t__214
+      INTEGER(w2f__i4) t__215
+      INTEGER(w2f__i4) t__216
+      INTEGER(w2f__i4) t__217
+      INTEGER(w2f__i4) t__218
+      INTEGER(w2f__i4) t__219
+      INTEGER(w2f__i4) t__220
+      INTEGER(w2f__i4) t__221
+      INTEGER(w2f__i4) t__222
+      INTEGER(w2f__i4) t__223
+      INTEGER(w2f__i4) t__224
+      INTEGER(w2f__i4) t__225
+      INTEGER(w2f__i4) t__226
+      INTEGER(w2f__i4) t__227
+      INTEGER(w2f__i4) t__228
+      INTEGER(w2f__i4) t__229
+      INTEGER(w2f__i4) t__230
+      INTEGER(w2f__i4) t__231
+      INTEGER(w2f__i4) t__232
+      INTEGER(w2f__i4) t__233
+      INTEGER(w2f__i4) t__234
+      INTEGER(w2f__i4) t__235
+      INTEGER(w2f__i4) t__236
+      INTEGER(w2f__i4) t__237
+      INTEGER(w2f__i4) t__238
+      INTEGER(w2f__i4) t__239
+      INTEGER(w2f__i4) t__240
+      INTEGER(w2f__i4) t__241
+      INTEGER(w2f__i4) t__242
+      INTEGER(w2f__i4) t__243
+      INTEGER(w2f__i4) t__244
+      INTEGER(w2f__i4) t__245
+      INTEGER(w2f__i4) t__246
+      INTEGER(w2f__i4) t__247
+      INTEGER(w2f__i4) t__248
+      INTEGER(w2f__i4) t__249
+      INTEGER(w2f__i4) t__250
+      integer(w2f__i4) oad_ctmp0
+      integer oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+      integer oad_ctmp7
+      integer(w2f__i4) oad_ctmp8
+      integer oad_ctmp9
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      JMIN = 1
+      JMAX = 40
+      IMIN = 1
+      IMAX = 90
+      DOGLOBALREAD = .false.
+      LADINIT = .false.
+      EQUAL = .true.
+      if ( EQUAL ) then
+        FAC = 1.0D00
+      ELSE
+        FAC = 0.0D00
+      ENDIF
+      call oad_s_ilnblnk(XX_THETA_FILE,oad_ctmp0)
+      IL = oad_ctmp0
+      WRITE(FNAMEGENERIC, '(2a,i10.10)') XX_THETA_FILE(1_w2f__i8 : IL),
+     >  '.', OPTIMCYCLE
+      oad_ctmp1 = (1)
+      call active_read_xyz(FNAMEGENERIC,TMPFLD3D,oad_ctmp1,DOGLOBALREAD,
+     +LADINIT,OPTIMCYCLE,MYTHID,XX_THETA_DUMMY)
+
+      t__211 = JTLO
+      t__212 = JTHI
+      DO BJ = t__211, t__212, 1
+        t__213 = ITLO
+        t__214 = ITHI
+        DO BI = t__213, t__214, 1
+          DO K = 1, 1, 1
+            t__215 = JMIN
+            t__216 = JMAX
+            DO J = t__215, t__216, 1
+              t__217 = IMIN
+              t__218 = IMAX
+              DO I = t__217, t__218, 1
+                THETA(I,J,K,BI,BJ) = (THETA(I,J,K,BI,BJ) + XX_THETA(I,J,
+     +K,BI,BJ) * FAC + TMPFLD3D(I,J,K,BI,BJ) * FAC)
+
+                if ( THETA(I,J,K,BI,BJ) .lt. (-2.0D00) ) then
+                  THETA(I,J,K,BI,BJ) = (-2.0)
+                ENDIF
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call oad_s_ilnblnk(XX_SALT_FILE,oad_ctmp2)
+      IL = oad_ctmp2
+      WRITE(FNAMEGENERIC, '(2a,i10.10)') XX_SALT_FILE(1_w2f__i8 : IL),
+     >  '.', OPTIMCYCLE
+      oad_ctmp3 = (1)
+      call active_read_xyz(FNAMEGENERIC,TMPFLD3D,oad_ctmp3,DOGLOBALREAD,
+     +LADINIT,OPTIMCYCLE,MYTHID,XX_SALT_DUMMY)
+
+      t__219 = JTLO
+      t__220 = JTHI
+      DO BJ = t__219, t__220, 1
+        t__221 = ITLO
+        t__222 = ITHI
+        DO BI = t__221, t__222, 1
+          DO K = 1, 1, 1
+            t__223 = JMIN
+            t__224 = JMAX
+            DO J = t__223, t__224, 1
+              t__225 = IMIN
+              t__226 = IMAX
+              DO I = t__225, t__226, 1
+                SALT(I,J,K,BI,BJ) = (SALT(I,J,K,BI,BJ) + XX_SALT(I,J,K,B
+     +I,BJ) * FAC + TMPFLD3D(I,J,K,BI,BJ) * FAC)
+
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call oad_s_ilnblnk(XX_UVEL_FILE,oad_ctmp4)
+      IL = oad_ctmp4
+      WRITE(FNAMEGENERIC, '(2a,i10.10)') XX_UVEL_FILE(1_w2f__i8 : IL),
+     >  '.', OPTIMCYCLE
+      oad_ctmp5 = (1)
+      call active_read_xyz(FNAMEGENERIC,TMPFLD3D,oad_ctmp5,DOGLOBALREAD,
+     +LADINIT,OPTIMCYCLE,MYTHID,XX_UVEL_DUMMY)
+
+      t__227 = JTLO
+      t__228 = JTHI
+      DO BJ = t__227, t__228, 1
+        t__229 = ITLO
+        t__230 = ITHI
+        DO BI = t__229, t__230, 1
+          DO K = 1, 1, 1
+            t__231 = JMIN
+            t__232 = JMAX
+            DO J = t__231, t__232, 1
+              t__233 = IMIN
+              t__234 = IMAX
+              DO I = t__233, t__234, 1
+                UVEL(I,J,K,BI,BJ) = (UVEL(I,J,K,BI,BJ) + XX_UVEL(I,J,K,B
+     +I,BJ) * FAC)
+
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call oad_s_ilnblnk(XX_VVEL_FILE,oad_ctmp6)
+      IL = oad_ctmp6
+      WRITE(FNAMEGENERIC, '(2a,i10.10)') XX_VVEL_FILE(1_w2f__i8 : IL),
+     >  '.', OPTIMCYCLE
+      oad_ctmp7 = (1)
+      call active_read_xyz(FNAMEGENERIC,TMPFLD3D,oad_ctmp7,DOGLOBALREAD,
+     +LADINIT,OPTIMCYCLE,MYTHID,XX_VVEL_DUMMY)
+
+      t__235 = JTLO
+      t__236 = JTHI
+      DO BJ = t__235, t__236, 1
+        t__237 = ITLO
+        t__238 = ITHI
+        DO BI = t__237, t__238, 1
+          DO K = 1, 1, 1
+            t__239 = JMIN
+            t__240 = JMAX
+            DO J = t__239, t__240, 1
+              t__241 = IMIN
+              t__242 = IMAX
+              DO I = t__241, t__242, 1
+                VVEL(I,J,K,BI,BJ) = (VVEL(I,J,K,BI,BJ) + XX_VVEL(I,J,K,B
+     +I,BJ) * FAC)
+
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call oad_s_ilnblnk(XX_ETAN_FILE,oad_ctmp8)
+      IL = oad_ctmp8
+      WRITE(FNAMEGENERIC, '(2a,i10.10)') XX_ETAN_FILE(1_w2f__i8 : IL),
+     >  '.', OPTIMCYCLE
+      oad_ctmp9 = (1)
+      call active_read_xy(FNAMEGENERIC,TMPFLD2D,oad_ctmp9,DOGLOBALREAD,L
+     +ADINIT,OPTIMCYCLE,MYTHID,XX_ETAN_DUMMY)
+
+      t__243 = JTLO
+      t__244 = JTHI
+      DO BJ = t__243, t__244, 1
+        t__245 = ITLO
+        t__246 = ITHI
+        DO BI = t__245, t__246, 1
+          t__247 = JMIN
+          t__248 = JMAX
+          DO J = t__247, t__248, 1
+            t__249 = IMIN
+            t__250 = IMAX
+            DO I = t__249, t__250, 1
+              ETAN(I,J,BI,BJ) = (ETAN(I,J,BI,BJ) + XX_ETAN(I,J,BI,BJ) * 
+     +FAC)
+
+            END DO
+          END DO
+        END DO
+      END DO
+      call exch_xyz_rl(THETA,MYTHID)
+      call exch_xyz_rl(SALT,MYTHID)
+      call exch_xyz_rl(UVEL,MYTHID)
+      call exch_xyz_rl(VVEL,MYTHID)
+      call exch_xy_rl(ETAN,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_map_ini_ecco(MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use optim_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_map_forcing(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use ffields_mod
+      use dynvars_mod
+      use grid_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use optim_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      LOGICAL(w2f__i4) DOGLOBALREAD
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      LOGICAL(w2f__i4) LADINIT
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      JMIN = 1
+      JMAX = 40
+      IMIN = 1
+      IMAX = 90
+      DOGLOBALREAD = .false.
+      LADINIT = .false.
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_smooth(FLD, MASK)
+      use w2f__types
+      use size_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) FLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) MASK(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) FLD_TMP(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IM1
+      INTEGER(w2f__i4) IMAX
+      PARAMETER ( IMAX = 92)
+      INTEGER(w2f__i4) IMIN
+      PARAMETER ( IMIN = -1)
+      INTEGER(w2f__i4) IP1
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JM1
+      INTEGER(w2f__i4) JMAX
+      PARAMETER ( JMAX = 42)
+      INTEGER(w2f__i4) JMIN
+      PARAMETER ( JMIN = -1)
+      INTEGER(w2f__i4) JP1
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) P0
+      PARAMETER ( P0 =     0.000000000000000)
+      REAL(w2f__8) P0625
+      PARAMETER ( P0625 =   0.06250000000000000)
+      REAL(w2f__8) P125
+      PARAMETER ( P125 =    0.1250000000000000)
+      REAL(w2f__8) P25
+      PARAMETER ( P25 =    0.2500000000000000)
+      REAL(w2f__8) P5
+      PARAMETER ( P5 =    0.5000000000000000)
+      REAL(w2f__8) TEMPVAR
+      INTEGER(w2f__i4) t__258
+      INTEGER(w2f__i4) t__259
+      INTEGER(w2f__i4) t__260
+      INTEGER(w2f__i4) t__261
+C
+C     **** Statements ****
+C
+      JTLO = 1
+      JTHI = 1
+      ITLO = 1
+      ITHI = 1
+      K = 1
+      t__258 = JTLO
+      t__259 = JTHI
+      DO BJ = t__258, t__259, 1
+        t__260 = ITLO
+        t__261 = ITHI
+        DO BI = t__260, t__261, 1
+          DO J = -1, 42, 1
+            JM1 = J + (-1)
+            JP1 = J + 1
+            DO I = -1, 92, 1
+              IM1 = I + (-1)
+              IP1 = I + 1
+              TEMPVAR = MASK(I,J,K,BI,BJ) * 2.5D-01 + (MASK(I,JP1,K,BI,B
+     +J) + MASK(I,JM1,K,BI,BJ) + MASK(IM1,J,K,BI,BJ) + MASK(IP1,J,K,BI,B
+     +J)) * 1.25D-01 + (MASK(IP1,JP1,K,BI,BJ) + MASK(IP1,JM1,K,BI,BJ) + 
+     +MASK(IM1,JM1,K,BI,BJ) + MASK(IM1,JP1,K,BI,BJ)) * 6.25D-02
+
+              if ( TEMPVAR .ge. 2.5D-01 ) then
+                FLD_TMP(I,J) = ((MASK(I,J,K,BI,BJ) * FLD(I,J,BI,BJ) * 2.
+     +5D-01 + (FLD(IM1,J,BI,BJ) * MASK(IM1,J,K,BI,BJ) + FLD(IP1,J,BI,BJ)
+     + * MASK(IP1,J,K,BI,BJ) + FLD(I,JM1,BI,BJ) * MASK(I,JM1,K,BI,BJ) + 
+     +FLD(I,JP1,BI,BJ) * MASK(I,JP1,K,BI,BJ)) * 1.25D-01 + (FLD(IM1,JM1,
+     +BI,BJ) * MASK(IM1,JM1,K,BI,BJ) + FLD(IM1,JP1,BI,BJ) * MASK(IM1,JP1
+     +,K,BI,BJ) + FLD(IP1,JM1,BI,BJ) * MASK(IP1,JM1,K,BI,BJ) + FLD(IP1,J
+     +P1,BI,BJ) * MASK(IP1,JP1,K,BI,BJ)) * 6.25D-02) / TEMPVAR)
+
+              ELSE
+                FLD_TMP(I,J) = FLD(I,J,BI,BJ)
+              ENDIF
+            END DO
+          END DO
+          DO J = -1, 42, 1
+            DO I = -1, 92, 1
+              FLD(I,J,BI,BJ) = FLD_TMP(I,J)
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_getobcse(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_getobcsn(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_getobcss(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_getobcsw(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_obcsbal(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_init_obcs_variables(MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use grid_mod
+      use ctrl_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) ITHI
+      INTEGER(w2f__i4) ITLO
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JTHI
+      INTEGER(w2f__i4) JTLO
+C
+C     **** Statements ****
+C
+      JTLO = MYBYLO(MYTHID)
+      JTHI = MYBYHI(MYTHID)
+      ITLO = MYBXLO(MYTHID)
+      ITHI = MYBXHI(MYTHID)
+      JMIN = -2
+      JMAX = 43
+      IMIN = -2
+      IMAX = 93
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_getrec(THEFIELD, FAC, FIRST, CHANGED, COUNT0,
+     >  COUNT1, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use ctrl_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) THEFIELD
+      REAL(w2f__8) FAC
+      LOGICAL(w2f__i4) FIRST
+      LOGICAL(w2f__i4) CHANGED
+      INTEGER(w2f__i4) COUNT0
+      INTEGER(w2f__i4) COUNT1
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__262
+C
+C     **** Statements ****
+C
+      t__262 = LEN(THEFIELD)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ctrl_volflux(OBCSNCOUNT, SUMAREA, SUMFLUX, MYTHID)
+      use w2f__types
+      use eeparams_mod
+      use size_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use optim_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) OBCSNCOUNT
+      REAL(w2f__8) SUMAREA
+      REAL(w2f__8) SUMFLUX
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_advection(IMPLICITADVECTION, ADVECTIONSCHEME,
+     >  VERTADVECSCHEME, TRACERIDENTITY, UVEL, VVEL, WVEL, TRACER,
+     >  GTRACER, BI, BJ, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use gad_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      LOGICAL(w2f__i4) IMPLICITADVECTION
+      INTEGER(w2f__i4) ADVECTIONSCHEME
+      INTEGER(w2f__i4) VERTADVECSCHEME
+      INTEGER(w2f__i4) TRACERIDENTITY
+      REAL(w2f__8) UVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GTRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) AF(-2 : 93, -2 : 43)
+      REAL(w2f__8) AFX(-2 : 93, -2 : 43)
+      REAL(w2f__8) AFY(-2 : 93, -2 : 43)
+      EXTERNAL calc_common_factors
+      LOGICAL(w2f__i4) CALC_FLUXES_X
+      LOGICAL(w2f__i4) CALC_FLUXES_Y
+      EXTERNAL debug_cs_corner_uv
+      LOGICAL(w2f__i4) E_EDGE
+      REAL(w2f__8) FVERT(-2 : 93, -2 : 43, 1 : 2)
+      EXTERNAL gad_dst2u1_adv_r
+      EXTERNAL gad_dst2u1_adv_x
+      EXTERNAL gad_dst2u1_adv_y
+      EXTERNAL gad_dst3fl_adv_r
+      EXTERNAL gad_dst3fl_adv_x
+      EXTERNAL gad_dst3fl_adv_y
+      EXTERNAL gad_dst3_adv_r
+      EXTERNAL gad_dst3_adv_x
+      EXTERNAL gad_dst3_adv_y
+      EXTERNAL gad_fluxlimit_adv_r
+      EXTERNAL gad_fluxlimit_adv_x
+      EXTERNAL gad_fluxlimit_adv_y
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMAXUPD
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMINUPD
+      LOGICAL(w2f__i4) INTERIORONLY
+      INTEGER(w2f__i4) IPASS
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMAXUPD
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMINUPD
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KDOWN
+      REAL(w2f__8) KP1MSK
+      INTEGER(w2f__i4) KUP
+      REAL(w2f__8) LOCALTIJ(-2 : 93, -2 : 43)
+      REAL(w2f__8) LOCALTIJK(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) MASKLOCS(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCW(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) NCFACE
+      INTEGER(w2f__i4) NIPASS
+      LOGICAL(w2f__i4) N_EDGE
+      LOGICAL(w2f__i4) OVERLAPONLY
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSKP1(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) S_EDGE
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) W_EDGE
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) t__270
+      INTEGER(w2f__i4) t__271
+      INTEGER(w2f__i4) t__272
+      INTEGER(w2f__i4) t__273
+      INTEGER(w2f__i4) t__274
+      INTEGER(w2f__i4) t__275
+      INTEGER(w2f__i4) t__276
+      INTEGER(w2f__i4) t__277
+      INTEGER(w2f__i4) t__278
+      INTEGER(w2f__i4) t__279
+      INTEGER(w2f__i4) t__280
+      INTEGER(w2f__i4) t__281
+      INTEGER(w2f__i4) t__282
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      logical oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      logical oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      logical oad_ctmp6
+      integer(w2f__i4) oad_ctmp7
+      logical oad_ctmp8
+      integer(w2f__i4) oad_ctmp9
+      logical oad_ctmp10
+      integer(w2f__i4) oad_ctmp11
+      logical oad_ctmp12
+      integer(w2f__i4) oad_ctmp13
+      logical oad_ctmp14
+      integer(w2f__i4) oad_ctmp15
+      logical oad_ctmp16
+      integer(w2f__i4) oad_ctmp17
+      integer(w2f__i4) oad_ctmp18
+      integer(w2f__i4) oad_ctmp19
+      integer(w2f__i4) oad_ctmp20
+      integer(w2f__i4) oad_ctmp21
+C
+C     **** Statements ****
+C
+      ACT0 = TRACERIDENTITY + (-1)
+      MAX0 = 2
+      ACT1 = BI - MYBXLO(MYTHID)
+      MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+      ACT2 = BJ - MYBYLO(MYTHID)
+      MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+      ACT3 = MYTHID + (-1)
+      MAX3 = NTX * NTY
+      ACT4 = IKEY_DYNAMICS + (-1)
+      IGADKEY = ACT0 + ACT1 * MAX0 + MAX1 * ACT2 * MAX0 + MAX2 * MAX1 * 
+     +ACT3 * MAX0 + MAX3 * MAX2 * MAX1 * ACT4 * MAX0 + 1
+
+      if ( TRACERIDENTITY .gt. 2 ) then
+        WRITE(*, *) 'ph-pass gad_advection ', 2, TRACERIDENTITY
+        WRITE(*, *) 'maxpass seems smaller than tracerIdentity'
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          XA(I,J) = 0.0D00
+          YA(I,J) = 0.0D00
+          UTRANS(I,J) = 0.0D00
+          VTRANS(I,J) = 0.0D00
+          RTRANS(I,J) = 0.0D00
+          FVERT(I,J,1) = 0.0D00
+          FVERT(I,J,2) = 0.0D00
+          RTRANSKP1(I,J) = 0.0D00
+          LOCALTIJ(I,J) = 0.0D00
+          WFLD(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( USECUBEDSPHEREEXCHANGE ) then
+        NIPASS = 3
+        if ( NIPASS .gt. 1 ) then
+C         IF ( nipass.GT.maxcube ) PRINT *,'maxcube needs to be = 3'
+          WRITE(*, *) 'maxcube needs to be = 3'
+        ENDIF
+        NCFACE = BI
+        N_EDGE = .true.
+        S_EDGE = .true.
+        E_EDGE = .true.
+        W_EDGE = .true.
+      ELSE
+        NIPASS = 2
+        NCFACE = BI
+        N_EDGE = .false.
+        S_EDGE = .false.
+        E_EDGE = .false.
+        W_EDGE = .false.
+      ENDIF
+      IMIN = -2
+      IMAX = 93
+      JMIN = -2
+      JMAX = 43
+      DO K = 1, 1, 1
+        KKEY = K + IGADKEY + (-1)
+        oad_ctmp0 = (K)
+        call calc_common_factors(UVEL,VVEL,UFLD,VFLD,UTRANS,VTRANS,XA,YA
+     +,oad_ctmp0,BI,BJ,MYTHID)
+
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            LOCALTIJ(I,J) = TRACER(I,J,K,BI,BJ)
+            MASKLOCW(I,J) = MASKW(I,J,K,BI,BJ)
+            MASKLOCS(I,J) = MASKS(I,J,K,BI,BJ)
+          END DO
+        END DO
+        t__270 = NIPASS
+        DO IPASS = 1, t__270, 1
+          PASSKEY = IGADKEY + IPASS + K + (-2)
+          if ( NIPASS .gt. 2 ) then
+            WRITE(*, *) 'GAD_ADVECTION: nipass > maxcube. check tamc.h'
+          ENDIF
+          INTERIORONLY = .false.
+          OVERLAPONLY = .false.
+          if ( USECUBEDSPHEREEXCHANGE ) then
+            if ( IPASS .eq. 1 ) then
+              OVERLAPONLY = MOD(NCFACE,3) .eq. 0
+              INTERIORONLY = MOD(NCFACE,3) .ne. 0
+              CALC_FLUXES_X = (NCFACE .eq. 2) .or. ((NCFACE .eq. 1) .or.
+     + (NCFACE .eq. 6))
+
+              CALC_FLUXES_Y = (NCFACE .eq. 5) .or. ((NCFACE .eq. 3) .or.
+     + (NCFACE .eq. 4))
+
+            ELSE
+              if ( IPASS .eq. 2 ) then
+                OVERLAPONLY = MOD(NCFACE,3) .eq. 2
+                CALC_FLUXES_X = (NCFACE .eq. 4) .or. ((NCFACE .eq. 2) .o
+     +r. (NCFACE .eq. 3))
+
+                CALC_FLUXES_Y = (NCFACE .eq. 1) .or. ((NCFACE .eq. 5) .o
+     +r. (NCFACE .eq. 6))
+
+              ELSE
+                CALC_FLUXES_X = (NCFACE .eq. 5) .or. (NCFACE .eq. 6)
+                CALC_FLUXES_Y = (NCFACE .eq. 2) .or. (NCFACE .eq. 3)
+              ENDIF
+            ENDIF
+          ELSE
+            CALC_FLUXES_X = MOD(IPASS,2) .eq. 1
+            CALC_FLUXES_Y = .not. CALC_FLUXES_X
+          ENDIF
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              AF(I,J) = 0.0
+            END DO
+          END DO
+          if ( CALC_FLUXES_X ) then
+            if ( S_EDGE .or. (N_EDGE .or. (.not. OVERLAPONLY)) ) then
+              if ( (ADVECTIONSCHEME .eq. 1) .or. (ADVECTIONSCHEME .eq. 2
+     +0) ) then
+
+                oad_ctmp1 = (K)
+                oad_ctmp2 = (.true.)
+                call gad_dst2u1_adv_x(BI,BJ,oad_ctmp1,ADVECTIONSCHEME,oa
+     +d_ctmp2,DTTRACERLEV(K),UTRANS,UFLD,LOCALTIJ,AF,MYTHID)
+
+              ELSE
+                if ( ADVECTIONSCHEME .eq. 77 ) then
+                  oad_ctmp3 = (K)
+                  oad_ctmp4 = (.true.)
+                  call gad_fluxlimit_adv_x(BI,BJ,oad_ctmp3,oad_ctmp4,DTT
+     +RACERLEV(K),UTRANS,UFLD,MASKLOCW,LOCALTIJ,AF,MYTHID)
+
+                ELSE
+                  if ( ADVECTIONSCHEME .eq. 30 ) then
+                    oad_ctmp5 = (K)
+                    oad_ctmp6 = (.true.)
+                    call gad_dst3_adv_x(BI,BJ,oad_ctmp5,oad_ctmp6,DTTRAC
+     +ERLEV(K),UTRANS,UFLD,MASKLOCW,LOCALTIJ,AF,MYTHID)
+
+                  ELSE
+                    if ( ADVECTIONSCHEME .eq. 33 ) then
+                      oad_ctmp7 = (K)
+                      oad_ctmp8 = (.true.)
+                      call gad_dst3fl_adv_x(BI,BJ,oad_ctmp7,oad_ctmp8,DT
+     +TRACERLEV(K),UTRANS,UFLD,MASKLOCW,LOCALTIJ,AF,MYTHID)
+
+                    ELSE
+                      WRITE(*, *)
+     >  'GAD_ADVECTION: adv. scheme incompatibale with mu' // 'lti-dim'
+                    ENDIF
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+            if ( OVERLAPONLY ) then
+              IMINUPD = -1
+              IMAXUPD = 92
+              if ( W_EDGE ) then
+                IMINUPD = 1
+              ENDIF
+              if ( E_EDGE ) then
+                IMAXUPD = 90
+              ENDIF
+              if ( S_EDGE ) then
+                DO J = -2, 0, 1
+                  t__271 = IMINUPD
+                  t__272 = IMAXUPD
+                  DO I = t__271, t__272, 1
+                    LOCALTIJ(I,J) = (LOCALTIJ(I,J) - RECIP_DEEPFAC2C(K) 
+     +* RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,BJ) * 
+     +DTTRACERLEV(K) * RECIP_RHOFACC(K) * (AF(I + 1,J) - AF(I,J) - TRACE
+     +R(I,J,K,BI,BJ) * (UTRANS(I + 1,J) - UTRANS(I,J))))
+
+                  END DO
+                END DO
+              ENDIF
+              if ( N_EDGE ) then
+                DO J = 41, 43, 1
+                  t__273 = IMINUPD
+                  t__274 = IMAXUPD
+                  DO I = t__273, t__274, 1
+                    LOCALTIJ(I,J) = (LOCALTIJ(I,J) - RECIP_DEEPFAC2C(K) 
+     +* RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,BJ) * 
+     +DTTRACERLEV(K) * RECIP_RHOFACC(K) * (AF(I + 1,J) - AF(I,J) - TRACE
+     +R(I,J,K,BI,BJ) * (UTRANS(I + 1,J) - UTRANS(I,J))))
+
+                  END DO
+                END DO
+              ENDIF
+            ELSE
+              JMINUPD = -2
+              JMAXUPD = 43
+              if ( INTERIORONLY .and. S_EDGE ) then
+                JMINUPD = 1
+              ENDIF
+              if ( INTERIORONLY .and. N_EDGE ) then
+                JMAXUPD = 40
+              ENDIF
+              t__275 = JMINUPD
+              t__276 = JMAXUPD
+              DO J = t__275, t__276, 1
+                DO I = -1, 92, 1
+                  LOCALTIJ(I,J) = (LOCALTIJ(I,J) - RECIP_DEEPFAC2C(K) * 
+     +RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,BJ) * DT
+     +TRACERLEV(K) * RECIP_RHOFACC(K) * (AF(I + 1,J) - AF(I,J) - TRACER(
+     +I,J,K,BI,BJ) * (UTRANS(I + 1,J) - UTRANS(I,J))))
+
+                END DO
+              END DO
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  AFX(I,J) = AF(I,J)
+                END DO
+              END DO
+            ENDIF
+          ENDIF
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              AF(I,J) = 0.0
+            END DO
+          END DO
+          if ( CALC_FLUXES_Y ) then
+            if ( W_EDGE .or. (E_EDGE .or. (.not. OVERLAPONLY)) ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  AF(I,J) = 0.0
+                END DO
+              END DO
+              if ( (ADVECTIONSCHEME .eq. 1) .or. (ADVECTIONSCHEME .eq. 2
+     +0) ) then
+
+                oad_ctmp9 = (K)
+                oad_ctmp10 = (.true.)
+                call gad_dst2u1_adv_y(BI,BJ,oad_ctmp9,ADVECTIONSCHEME,oa
+     +d_ctmp10,DTTRACERLEV(K),VTRANS,VFLD,LOCALTIJ,AF,MYTHID)
+
+              ELSE
+                if ( ADVECTIONSCHEME .eq. 77 ) then
+                  oad_ctmp11 = (K)
+                  oad_ctmp12 = (.true.)
+                  call gad_fluxlimit_adv_y(BI,BJ,oad_ctmp11,oad_ctmp12,D
+     +TTRACERLEV(K),VTRANS,VFLD,MASKLOCS,LOCALTIJ,AF,MYTHID)
+
+                ELSE
+                  if ( ADVECTIONSCHEME .eq. 30 ) then
+                    oad_ctmp13 = (K)
+                    oad_ctmp14 = (.true.)
+                    call gad_dst3_adv_y(BI,BJ,oad_ctmp13,oad_ctmp14,DTTR
+     +ACERLEV(K),VTRANS,VFLD,MASKLOCS,LOCALTIJ,AF,MYTHID)
+
+                  ELSE
+                    if ( ADVECTIONSCHEME .eq. 33 ) then
+                      oad_ctmp15 = (K)
+                      oad_ctmp16 = (.true.)
+                      call gad_dst3fl_adv_y(BI,BJ,oad_ctmp15,oad_ctmp16,
+     +DTTRACERLEV(K),VTRANS,VFLD,MASKLOCS,LOCALTIJ,AF,MYTHID)
+
+                    ELSE
+                      WRITE(*, *)
+     >  'GAD_ADVECTION: adv. scheme incompatibale with mu' // 'tli-dim'
+                    ENDIF
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+            if ( OVERLAPONLY ) then
+              JMINUPD = -1
+              JMAXUPD = 42
+              if ( S_EDGE ) then
+                JMINUPD = 1
+              ENDIF
+              if ( N_EDGE ) then
+                JMAXUPD = 40
+              ENDIF
+              if ( W_EDGE ) then
+                t__277 = JMINUPD
+                t__278 = JMAXUPD
+                DO J = t__277, t__278, 1
+                  DO I = -2, 0, 1
+                    LOCALTIJ(I,J) = (LOCALTIJ(I,J) - RECIP_DEEPFAC2C(K) 
+     +* RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,BJ) * 
+     +DTTRACERLEV(K) * RECIP_RHOFACC(K) * (AF(I,J + 1) - AF(I,J) - TRACE
+     +R(I,J,K,BI,BJ) * (VTRANS(I,J + 1) - VTRANS(I,J))))
+
+                  END DO
+                END DO
+              ENDIF
+              if ( E_EDGE ) then
+                t__279 = JMINUPD
+                t__280 = JMAXUPD
+                DO J = t__279, t__280, 1
+                  DO I = 91, 93, 1
+                    LOCALTIJ(I,J) = (LOCALTIJ(I,J) - RECIP_DEEPFAC2C(K) 
+     +* RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,BJ) * 
+     +DTTRACERLEV(K) * RECIP_RHOFACC(K) * (AF(I,J + 1) - AF(I,J) - TRACE
+     +R(I,J,K,BI,BJ) * (VTRANS(I,J + 1) - VTRANS(I,J))))
+
+                  END DO
+                END DO
+              ENDIF
+            ELSE
+              IMINUPD = -2
+              IMAXUPD = 93
+              if ( INTERIORONLY .and. W_EDGE ) then
+                IMINUPD = 1
+              ENDIF
+              if ( E_EDGE .and. INTERIORONLY ) then
+                IMAXUPD = 90
+              ENDIF
+              DO J = -1, 42, 1
+                t__281 = IMINUPD
+                t__282 = IMAXUPD
+                DO I = t__281, t__282, 1
+                  LOCALTIJ(I,J) = (LOCALTIJ(I,J) - RECIP_DEEPFAC2C(K) * 
+     +RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,BJ) * DT
+     +TRACERLEV(K) * RECIP_RHOFACC(K) * (AF(I,J + 1) - AF(I,J) - TRACER(
+     +I,J,K,BI,BJ) * (VTRANS(I,J + 1) - VTRANS(I,J))))
+
+                END DO
+              END DO
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  AFY(I,J) = AF(I,J)
+                END DO
+              END DO
+            ENDIF
+          ENDIF
+        END DO
+        if ( IMPLICITADVECTION ) then
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              GTRACER(I,J,K,BI,BJ) = ((LOCALTIJ(I,J) - TRACER(I,J,K,BI,B
+     +J)) / DTTRACERLEV(K))
+
+            END DO
+          END DO
+        ELSE
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LOCALTIJK(I,J,K) = LOCALTIJ(I,J)
+            END DO
+          END DO
+        ENDIF
+        if ( USECUBEDSPHEREEXCHANGE .and. ((MYITER .eq. (NITER0 + 1)) .a
+     +nd. ((K .le. 3) .and. ((TRACERIDENTITY .eq. 1) .and. (DEBUGLEVEL .
+     +ge. 2)))) ) then
+
+          oad_ctmp17 = (K)
+          call debug_cs_corner_uv(' afx,afy from GAD_ADVECTION',AFX,AFY,
+     +oad_ctmp17,STANDARDMESSAGEUNIT,BI,BJ,MYTHID)
+
+        ENDIF
+      END DO
+      if ( .not. IMPLICITADVECTION ) then
+        DO K = 1, 1, (-1)
+          KKEY = K + IGADKEY + (-1)
+          KUP = MOD(K + 1,2) + 1
+          KDOWN = MOD(K,2) + 1
+          KP1MSK = 1.0D00
+          if ( K .eq. 1 ) then
+            KP1MSK = 0.0D00
+          ENDIF
+          if ( K .eq. 1 ) then
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                RTRANSKP1(I,J) = (RTRANS(I,J) * KP1MSK)
+                WFLD(I,J) = 0.0
+                RTRANS(I,J) = 0.0
+                FVERT(I,J,KUP) = 0.0
+              END DO
+            END DO
+          ELSE
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                RTRANSKP1(I,J) = (RTRANS(I,J) * KP1MSK)
+                WFLD(I,J) = WVEL(I,J,K,BI,BJ)
+                RTRANS(I,J) = (MASKC(I,J,K + (-1),BI,BJ) * RHOFACF(K) * 
+     +DEEPFAC2F(K) * RA(I,J,BI,BJ) * WVEL(I,J,K,BI,BJ))
+
+                FVERT(I,J,KUP) = 0.0
+              END DO
+            END DO
+            if ( (VERTADVECSCHEME .eq. 1) .or. (VERTADVECSCHEME .eq. 20)
+     + ) then
+
+              oad_ctmp18 = (K)
+              call gad_dst2u1_adv_r(BI,BJ,oad_ctmp18,ADVECTIONSCHEME,DTT
+     +RACERLEV(K),RTRANS,WFLD,LOCALTIJK,FVERT((-2),(-2),KUP),MYTHID)
+
+            ELSE
+              if ( VERTADVECSCHEME .eq. 77 ) then
+                oad_ctmp19 = (K)
+                call gad_fluxlimit_adv_r(BI,BJ,oad_ctmp19,DTTRACERLEV(K)
+     +,RTRANS,WFLD,LOCALTIJK,FVERT((-2),(-2),KUP),MYTHID)
+
+              ELSE
+                if ( VERTADVECSCHEME .eq. 30 ) then
+                  oad_ctmp20 = (K)
+                  call gad_dst3_adv_r(BI,BJ,oad_ctmp20,DTTRACERLEV(K),RT
+     +RANS,WFLD,LOCALTIJK,FVERT((-2),(-2),KUP),MYTHID)
+
+                ELSE
+                  if ( VERTADVECSCHEME .eq. 33 ) then
+                    oad_ctmp21 = (K)
+                    call gad_dst3fl_adv_r(BI,BJ,oad_ctmp21,DTTRACERLEV(K
+     +),RTRANS,WFLD,LOCALTIJK,FVERT((-2),(-2),KUP),MYTHID)
+
+                  ELSE
+                    WRITE(*, *)
+     >  'GAD_ADVECTION: adv. scheme incompatibale with mu' // 'tli-dim'
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+          ENDIF
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LOCALTIJ(I,J) = (LOCALTIJK(I,J,K) - RKSIGN * RECIP_DEEPFAC
+     +2C(K) * RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACC(I,J,K,BI,
+     +BJ) * DTTRACERLEV(K) * RECIP_RHOFACC(K) * (FVERT(I,J,KDOWN) - FVER
+     +T(I,J,KUP) - TRACER(I,J,K,BI,BJ) * (RTRANSKP1(I,J) - RTRANS(I,J)))
+     +)
+
+              GTRACER(I,J,K,BI,BJ) = ((LOCALTIJ(I,J) - TRACER(I,J,K,BI,B
+     +J)) / DTTRACERLEV(K))
+
+            END DO
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_biharm_x(BI, BJ, K, XA, DEL2T, DIFFK4, DFX, MYTHID
+     > )
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2T(-2 : 93, -2 : 43)
+      REAL(w2f__8) DIFFK4
+      REAL(w2f__8) DFX(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -1, 93, 1
+          DFX(I,J) = (DFX(I,J) + SQCOSFACU(J,BI,BJ) * RECIP_DEEPFACC(K) 
+     +* RECIP_DXC(I,J,BI,BJ) * XA(I,J) * DIFFK4 * (DEL2T(I,J) - DEL2T(I 
+     ++ (-1),J)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_biharm_y(BI, BJ, K, YA, DEL2T, DIFFK4, DFY, MYTHID
+     > )
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2T(-2 : 93, -2 : 43)
+      REAL(w2f__8) DIFFK4
+      REAL(w2f__8) DFY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          DFY(I,J) = (DFY(I,J) + RECIP_DEEPFACC(K) * RECIP_DYC(I,J,BI,BJ
+     +) * YA(I,J) * DIFFK4 * (DEL2T(I,J) - DEL2T(I,J + (-1))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_c2_adv_r(BI, BJ, K, RTRANS, TRACER, WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM1 = oad_ctmp0
+      if ( (K .eq. 1) .or. (K .gt. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WT(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WT(I,J) = (RTRANS(I,J) * MASKC(I,J,KM1,BI,BJ) * (TRACER(I,J,
+     +K,BI,BJ) + TRACER(I,J,KM1,BI,BJ)) * 5.0D-01)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_c2_adv_x(BI, BJ, K, UTRANS, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0
+        DO I = -1, 93, 1
+          UT(I,J) = (UTRANS(I,J) * (TRACER(I,J) + TRACER(I + (-1),J)) * 
+     +5.0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_c2_adv_y(BI, BJ, K, VTRANS, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0
+      END DO
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          VT(I,J) = (VTRANS(I,J) * (TRACER(I,J) + TRACER(I,J + (-1))) * 
+     +5.0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_c4_adv_r(BI, BJ, K, RTRANS, TRACER, WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KM2
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) MASKBOUND
+      REAL(w2f__8) MASKPM
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJJM
+      REAL(w2f__8) RJJP
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-2)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM2 = oad_ctmp0
+      oad_ctmp3 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp3,1,oad_ctmp2)
+      KM1 = oad_ctmp2
+      oad_ctmp5 = K + 1
+      call oad_s_MIN_i(oad_ctmp5,1,oad_ctmp4)
+      KP1 = oad_ctmp4
+      MASKPM = 1.0D00
+      if ( (K .ge. 1) .or. (K .le. 2) ) then
+        MASKPM = 0.0D00
+      ENDIF
+      if ( (K .eq. 1) .or. (K .gt. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WT(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            MASKBOUND = MASKC(I,J,KP1,BI,BJ) * MASKC(I,J,KM2,BI,BJ) * MA
+     +SKPM
+
+            RJP = MASKC(I,J,KP1,BI,BJ) * (TRACER(I,J,KP1,BI,BJ) - TRACER
+     +(I,J,K,BI,BJ))
+
+            RJ = (TRACER(I,J,K,BI,BJ) - TRACER(I,J,KM1,BI,BJ))
+            RJM = MASKC(I,J,KM1,BI,BJ) * (TRACER(I,J,KM1,BI,BJ) - TRACER
+     +(I,J,KM2,BI,BJ))
+
+            RJJP = (RJP - RJ)
+            RJJM = (RJ - RJM)
+            WT(I,J) = (MASKC(I,J,KM1,BI,BJ) * (RTRANS(I,J) * ((TRACER(I,
+     +J,K,BI,BJ) + TRACER(I,J,KM1,BI,BJ)) * 5.0D-01 - (RJJM + RJJP) * 1.
+     +66666666666666657415D-01 * 5.0D-01) + ABS(RTRANS(I,J)) * 1.6666666
+     +6666666657415D-01 * (RJJM - RJJP) * 5.0D-01 * (1.0D00 - MASKBOUND)
+     +))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_c4_adv_x(BI, BJ, K, UTRANS, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJJM
+      REAL(w2f__8) RJJP
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0
+        UT((-1),J) = 0.0
+        UT(93,J) = 0.0
+        DO I = 0, 92, 1
+          RJP = MASKW(I + 1,J,K,BI,BJ) * (TRACER(I + 1,J) - TRACER(I,J))
+          RJ = MASKW(I,J,K,BI,BJ) * (TRACER(I,J) - TRACER(I + (-1),J))
+          RJM = MASKW(I + (-1),J,K,BI,BJ) * (TRACER(I + (-1),J) - TRACER
+     +(I + (-2),J))
+
+          RJJP = (RJP - RJ)
+          RJJM = (RJ - RJM)
+          UT(I,J) = (UTRANS(I,J) * (TRACER(I,J) + TRACER(I + (-1),J) - (
+     +RJJM + RJJP) * 1.66666666666666657415D-01) * 5.0D-01 + ABS(UTRANS(
+     +I,J)) * 5.0D-01 * 1.66666666666666657415D-01 * (RJJP - RJJM) * (1.
+     +0D00 - MASKW(I + (-1),J,K,BI,BJ) * MASKW(I + 1,J,K,BI,BJ)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_c4_adv_y(BI, BJ, K, VTRANS, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJJM
+      REAL(w2f__8) RJJP
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0
+        VT(I,(-1)) = 0.0
+        VT(I,43) = 0.0
+      END DO
+      DO J = 0, 42, 1
+        DO I = -2, 93, 1
+          RJP = MASKS(I,J + 1,K,BI,BJ) * (TRACER(I,J + 1) - TRACER(I,J))
+          RJ = MASKS(I,J,K,BI,BJ) * (TRACER(I,J) - TRACER(I,J + (-1)))
+          RJM = MASKS(I,J + (-1),K,BI,BJ) * (TRACER(I,J + (-1)) - TRACER
+     +(I,J + (-2)))
+
+          RJJP = (RJP - RJ)
+          RJJM = (RJ - RJM)
+          VT(I,J) = (VTRANS(I,J) * (TRACER(I,J) + TRACER(I,J + (-1)) - (
+     +RJJM + RJJP) * 1.66666666666666657415D-01) * 5.0D-01 + ABS(VTRANS(
+     +I,J)) * 5.0D-01 * 1.66666666666666657415D-01 * (RJJP - RJJM) * (1.
+     +0D00 - MASKS(I,J + (-1),K,BI,BJ) * MASKS(I,J + 1,K,BI,BJ)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_calc_rhs(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KM1,
+     >  KUP, KDOWN, XA, YA, MASKUP, UFLD, VFLD, WFLD, UTRANS, VTRANS,
+     >  RTRANS, RTRANSKP1, DIFFKH, DIFFK4, KAPPAR, TRACERN, TRACAB,
+     >  TRACERIDENTITY, ADVECTIONSCHEME, VERTADVECSCHEME, CALCADVECTION
+     > , IMPLICITADVECTION, APPLYAB_ONTRACER, FVERT, GTRACER, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use gad_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KUP
+      INTEGER(w2f__i4) KDOWN
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKUP(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) DIFFKH
+      REAL(w2f__8) DIFFK4
+      REAL(w2f__8) KAPPAR(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACERN(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) TRACAB(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) TRACERIDENTITY
+      INTEGER(w2f__i4) ADVECTIONSCHEME
+      INTEGER(w2f__i4) VERTADVECSCHEME
+      LOGICAL(w2f__i4) CALCADVECTION
+      LOGICAL(w2f__i4) IMPLICITADVECTION
+      LOGICAL(w2f__i4) APPLYAB_ONTRACER
+      REAL(w2f__8) FVERT(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) GTRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) ADVFAC
+      REAL(w2f__8) AF(-2 : 93, -2 : 43)
+      EXTERNAL debug_cs_corner_uv
+      REAL(w2f__8) DF(-2 : 93, -2 : 43)
+      REAL(w2f__8) DF4(-2 : 93, -2 : 43)
+      REAL(w2f__8) FMER(-2 : 93, -2 : 43)
+      REAL(w2f__8) FZON(-2 : 93, -2 : 43)
+      EXTERNAL gad_biharm_x
+      EXTERNAL gad_biharm_y
+      EXTERNAL gad_c2_adv_r
+      EXTERNAL gad_c2_adv_x
+      EXTERNAL gad_c2_adv_y
+      EXTERNAL gad_c4_adv_r
+      EXTERNAL gad_c4_adv_x
+      EXTERNAL gad_c4_adv_y
+      EXTERNAL gad_del2
+      EXTERNAL gad_diff_r
+      EXTERNAL gad_diff_x
+      EXTERNAL gad_diff_y
+      EXTERNAL gad_dst2u1_adv_r
+      EXTERNAL gad_dst2u1_adv_x
+      EXTERNAL gad_dst2u1_adv_y
+      EXTERNAL gad_dst3fl_adv_r
+      EXTERNAL gad_dst3fl_adv_x
+      EXTERNAL gad_dst3fl_adv_y
+      EXTERNAL gad_dst3_adv_r
+      EXTERNAL gad_dst3_adv_x
+      EXTERNAL gad_dst3_adv_y
+      EXTERNAL gad_fluxlimit_adv_r
+      EXTERNAL gad_fluxlimit_adv_x
+      EXTERNAL gad_fluxlimit_adv_y
+      EXTERNAL gad_grad_x
+      EXTERNAL gad_grad_y
+      EXTERNAL gad_u3_adv_r
+      EXTERNAL gad_u3_adv_x
+      EXTERNAL gad_u3_adv_y
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) LOCABT(-2 : 93, -2 : 43)
+      REAL(w2f__8) LOCALT(-2 : 93, -2 : 43)
+      REAL(w2f__8) RADVFAC
+      logical oad_ctmp0
+      logical oad_ctmp1
+      logical oad_ctmp2
+      logical oad_ctmp3
+      logical oad_ctmp4
+      logical oad_ctmp5
+      logical oad_ctmp6
+      logical oad_ctmp7
+      logical oad_ctmp8
+      logical oad_ctmp9
+C
+C     **** Statements ****
+C
+      ADVFAC = 0.0D00
+      if ( CALCADVECTION ) then
+        ADVFAC = 1.0D00
+      ENDIF
+      RADVFAC = ADVFAC * RKSIGN
+      if ( IMPLICITADVECTION ) then
+        RADVFAC = 0.0D00
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          FZON(I,J) = 0.0D00
+          FMER(I,J) = 0.0D00
+          FVERT(I,J,KUP) = 0.0D00
+          DF(I,J) = 0.0D00
+          DF4(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( APPLYAB_ONTRACER ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            LOCALT(I,J) = TRACERN(I,J,K,BI,BJ)
+            LOCABT(I,J) = TRACAB(I,J,K,BI,BJ)
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            LOCALT(I,J) = TRACAB(I,J,K,BI,BJ)
+            LOCABT(I,J) = TRACAB(I,J,K,BI,BJ)
+          END DO
+        END DO
+      ENDIF
+      if ( DIFFK4 .ne. 0.0D00 ) then
+        call gad_grad_x(BI,BJ,K,XA,LOCALT,FZON,MYTHID)
+        call gad_grad_y(BI,BJ,K,YA,LOCALT,FMER,MYTHID)
+        call gad_del2(BI,BJ,K,FZON,FMER,DF4,MYTHID)
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          FZON(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( CALCADVECTION ) then
+        if ( ADVECTIONSCHEME .eq. 2 ) then
+          call gad_c2_adv_x(BI,BJ,K,UTRANS,LOCABT,AF,MYTHID)
+        ELSE
+          if ( (ADVECTIONSCHEME .eq. 1) .or. (ADVECTIONSCHEME .eq. 20) )
+     + then
+
+            oad_ctmp0 = (.true.)
+            call gad_dst2u1_adv_x(BI,BJ,K,ADVECTIONSCHEME,oad_ctmp0,DTTR
+     +ACERLEV(K),UTRANS,UFLD,LOCABT,AF,MYTHID)
+
+          ELSE
+            if ( ADVECTIONSCHEME .eq. 77 ) then
+              oad_ctmp1 = (.true.)
+              call gad_fluxlimit_adv_x(BI,BJ,K,oad_ctmp1,DTTRACERLEV(K),
+     +UTRANS,UFLD,MASKW((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+            ELSE
+              if ( ADVECTIONSCHEME .eq. 3 ) then
+                call gad_u3_adv_x(BI,BJ,K,UTRANS,LOCABT,AF,MYTHID)
+              ELSE
+                if ( ADVECTIONSCHEME .eq. 4 ) then
+                  call gad_c4_adv_x(BI,BJ,K,UTRANS,LOCABT,AF,MYTHID)
+                ELSE
+                  if ( ADVECTIONSCHEME .eq. 30 ) then
+                    oad_ctmp2 = (.true.)
+                    call gad_dst3_adv_x(BI,BJ,K,oad_ctmp2,DTTRACERLEV(K)
+     +,UTRANS,UFLD,MASKW((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+                  ELSE
+                    if ( ADVECTIONSCHEME .eq. 33 ) then
+                      if ( INADMODE ) then
+                        oad_ctmp3 = (.true.)
+                        call gad_dst3_adv_x(BI,BJ,K,oad_ctmp3,DTTRACERLE
+     +V(K),UTRANS,UFLD,MASKW((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+                      ELSE
+                        oad_ctmp4 = (.true.)
+                        call gad_dst3fl_adv_x(BI,BJ,K,oad_ctmp4,DTTRACER
+     +LEV(K),UTRANS,UFLD,MASKW((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+                      ENDIF
+                    ELSE
+                      WRITE(*, *)
+     >  'GAD_CALC_RHS: Bad advectionScheme (X)'
+                    ENDIF
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            FZON(I,J) = (AF(I,J) + FZON(I,J))
+          END DO
+        END DO
+      ENDIF
+      if ( DIFFKH .ne. 0.0D00 ) then
+        call gad_diff_x(BI,BJ,K,XA,DIFFKH,LOCALT,DF,MYTHID)
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            DF(I,J) = 0.0D00
+          END DO
+        END DO
+      ENDIF
+      if ( DIFFK4 .ne. 0.0D00 ) then
+        call gad_biharm_x(BI,BJ,K,XA,DF4,DIFFK4,DF,MYTHID)
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          FZON(I,J) = (FZON(I,J) + RHOFACC(K) * DF(I,J))
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          FMER(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( CALCADVECTION ) then
+        if ( ADVECTIONSCHEME .eq. 2 ) then
+          call gad_c2_adv_y(BI,BJ,K,VTRANS,LOCABT,AF,MYTHID)
+        ELSE
+          if ( (ADVECTIONSCHEME .eq. 1) .or. (ADVECTIONSCHEME .eq. 20) )
+     + then
+
+            oad_ctmp5 = (.true.)
+            call gad_dst2u1_adv_y(BI,BJ,K,ADVECTIONSCHEME,oad_ctmp5,DTTR
+     +ACERLEV(K),VTRANS,VFLD,LOCABT,AF,MYTHID)
+
+          ELSE
+            if ( ADVECTIONSCHEME .eq. 77 ) then
+              oad_ctmp6 = (.true.)
+              call gad_fluxlimit_adv_y(BI,BJ,K,oad_ctmp6,DTTRACERLEV(K),
+     +VTRANS,VFLD,MASKS((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+            ELSE
+              if ( ADVECTIONSCHEME .eq. 3 ) then
+                call gad_u3_adv_y(BI,BJ,K,VTRANS,LOCABT,AF,MYTHID)
+              ELSE
+                if ( ADVECTIONSCHEME .eq. 4 ) then
+                  call gad_c4_adv_y(BI,BJ,K,VTRANS,LOCABT,AF,MYTHID)
+                ELSE
+                  if ( ADVECTIONSCHEME .eq. 30 ) then
+                    oad_ctmp7 = (.true.)
+                    call gad_dst3_adv_y(BI,BJ,K,oad_ctmp7,DTTRACERLEV(K)
+     +,VTRANS,VFLD,MASKS((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+                  ELSE
+                    if ( ADVECTIONSCHEME .eq. 33 ) then
+                      if ( INADMODE ) then
+                        oad_ctmp8 = (.true.)
+                        call gad_dst3_adv_y(BI,BJ,K,oad_ctmp8,DTTRACERLE
+     +V(K),VTRANS,VFLD,MASKS((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+                      ELSE
+                        oad_ctmp9 = (.true.)
+                        call gad_dst3fl_adv_y(BI,BJ,K,oad_ctmp9,DTTRACER
+     +LEV(K),VTRANS,VFLD,MASKS((-2),(-2),K,BI,BJ),LOCABT,AF,MYTHID)
+
+                      ENDIF
+                    ELSE
+                      WRITE(*, *)
+     >  'GAD_CALC_RHS: Bad advectionScheme (Y)'
+                    ENDIF
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            FMER(I,J) = (AF(I,J) + FMER(I,J))
+          END DO
+        END DO
+      ENDIF
+      if ( DIFFKH .ne. 0.0D00 ) then
+        call gad_diff_y(BI,BJ,K,YA,DIFFKH,LOCALT,DF,MYTHID)
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            DF(I,J) = 0.0D00
+          END DO
+        END DO
+      ENDIF
+      if ( DIFFK4 .ne. 0.0D00 ) then
+        call gad_biharm_y(BI,BJ,K,YA,DF4,DIFFK4,DF,MYTHID)
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          FMER(I,J) = (FMER(I,J) + RHOFACC(K) * DF(I,J))
+        END DO
+      END DO
+      if ( (K .ge. 2) .and. (CALCADVECTION .and. (.not. IMPLICITADVECTIO
+     +N)) ) then
+
+        if ( VERTADVECSCHEME .eq. 2 ) then
+          call gad_c2_adv_r(BI,BJ,K,RTRANS,TRACAB,AF,MYTHID)
+        ELSE
+          if ( (VERTADVECSCHEME .eq. 1) .or. (VERTADVECSCHEME .eq. 20) )
+     + then
+
+            call gad_dst2u1_adv_r(BI,BJ,K,VERTADVECSCHEME,DTTRACERLEV(K)
+     +,RTRANS,WFLD,TRACAB((-2),(-2),1,BI,BJ),AF,MYTHID)
+
+          ELSE
+            if ( VERTADVECSCHEME .eq. 77 ) then
+              call gad_fluxlimit_adv_r(BI,BJ,K,DTTRACERLEV(K),RTRANS,WFL
+     +D,TRACAB((-2),(-2),1,BI,BJ),AF,MYTHID)
+
+            ELSE
+              if ( VERTADVECSCHEME .eq. 3 ) then
+                call gad_u3_adv_r(BI,BJ,K,RTRANS,TRACAB,AF,MYTHID)
+              ELSE
+                if ( VERTADVECSCHEME .eq. 4 ) then
+                  call gad_c4_adv_r(BI,BJ,K,RTRANS,TRACAB,AF,MYTHID)
+                ELSE
+                  if ( VERTADVECSCHEME .eq. 30 ) then
+                    call gad_dst3_adv_r(BI,BJ,K,DTTRACERLEV(K),RTRANS,WF
+     +LD,TRACAB((-2),(-2),1,BI,BJ),AF,MYTHID)
+
+                  ELSE
+                    if ( VERTADVECSCHEME .eq. 33 ) then
+                      if ( INADMODE ) then
+                        call gad_dst3_adv_r(BI,BJ,K,DTTRACERLEV(K),RTRAN
+     +S,WFLD,TRACAB((-2),(-2),1,BI,BJ),AF,MYTHID)
+
+                      ELSE
+                        call gad_dst3fl_adv_r(BI,BJ,K,DTTRACERLEV(K),RTR
+     +ANS,WFLD,TRACAB((-2),(-2),1,BI,BJ),AF,MYTHID)
+
+                      ENDIF
+                    ELSE
+                      WRITE(*, *)
+     >  'GAD_CALC_RHS: Bad vertAdvecScheme (R)'
+                    ENDIF
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            FVERT(I,J,KUP) = (AF(I,J) + FVERT(I,J,KUP))
+          END DO
+        END DO
+      ENDIF
+      if ( IMPLICITDIFFUSION ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            DF(I,J) = 0.0D00
+          END DO
+        END DO
+      ELSE
+        if ( APPLYAB_ONTRACER ) then
+          call gad_diff_r(BI,BJ,K,KAPPAR,TRACERN,DF,MYTHID)
+        ELSE
+          call gad_diff_r(BI,BJ,K,KAPPAR,TRACAB,DF,MYTHID)
+        ENDIF
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          FVERT(I,J,KUP) = (FVERT(I,J,KUP) + MASKUP(I,J) * DF(I,J))
+        END DO
+      END DO
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          GTRACER(I,J,K,BI,BJ) = (GTRACER(I,J,K,BI,BJ) - RECIP_RHOFACC(K
+     +) * RECIP_DEEPFAC2C(K) * RECIP_RA(I,J,BI,BJ) * RECIP_DRF(K) * RECI
+     +P_HFACC(I,J,K,BI,BJ) * ((FMER(I,J + 1) - FMER(I,J)) + (FZON(I + 1,
+     +J) - FZON(I,J)) + RKSIGN * (FVERT(I,J,KDOWN) - FVERT(I,J,KUP)) - A
+     +DVFAC * LOCALT(I,J) * ((UTRANS(I + 1,J) - UTRANS(I,J)) + (VTRANS(I
+     +,J + 1) - VTRANS(I,J)) + RADVFAC * (RTRANSKP1(I,J) - RTRANS(I,J)))
+     +))
+
+        END DO
+      END DO
+      if ( USECUBEDSPHEREEXCHANGE .and. ((MYITER .eq. (NITER0 + 1)) .and
+     +. ((K .eq. 2) .and. ((TRACERIDENTITY .eq. 1) .and. (DEBUGLEVEL .ge
+     +. 2)))) ) then
+
+        call debug_cs_corner_uv(' fZon,fMer from GAD_CALC_RHS',FZON,FMER
+     +,K,STANDARDMESSAGEUNIT,BI,BJ,MYTHID)
+
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_del2(BI, BJ, K, DTDX, DTDY, DEL2, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) DTDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) DTDY(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          DEL2(I,J) = 0.0D00
+        END DO
+      END DO
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          DEL2(I,J) = (RECIP_HFACC(I,J,K,BI,BJ) * RECIP_DRF(K) * RECIP_D
+     +EEPFAC2C(K) * RECIP_RA(I,J,BI,BJ) * ((DTDX(I + 1,J) - DTDX(I,J)) +
+     + (DTDY(I,J + 1) - DTDY(I,J))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_diff_r(BI, BJ, K, KAPPAR, TRACER, DFR, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) KAPPAR(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) DFR(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM1 = oad_ctmp0
+      if ( (K .eq. 1) .or. (K .gt. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            DFR(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            DFR(I,J) = (-(RKSIGN * RECIP_DRC(K) * RHOFACF(K) * DEEPFAC2F
+     +(K) * KAPPAR(I,J) * RA(I,J,BI,BJ) * (TRACER(I,J,K,BI,BJ) - TRACER(
+     +I,J,KM1,BI,BJ))))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_diff_x(BI, BJ, K, XA, DIFFKH, TRACER, DFX, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) DIFFKH
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) DFX(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DFX((-2),J) = 0.0
+        DO I = -1, 93, 1
+          DFX(I,J) = (-(COSFACU(J,BI,BJ) * RECIP_DEEPFACC(K) * RECIP_DXC
+     +(I,J,BI,BJ) * XA(I,J) * DIFFKH * (TRACER(I,J) - TRACER(I + (-1),J)
+     +)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_diff_y(BI, BJ, K, YA, DIFFKH, TRACER, DFY, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) DIFFKH
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) DFY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        DFY(I,(-2)) = 0.0
+      END DO
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          DFY(I,J) = (-(RECIP_DEEPFACC(K) * RECIP_DYC(I,J,BI,BJ) * YA(I,
+     +J) * DIFFKH * (TRACER(I,J) - TRACER(I,J + (-1)))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst2u1_adv_r(BI, BJ, K, ADVECTIONSCHEME, DELTATLOC
+     > , RTRANS, WFLD, TRACER, WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) ADVECTIONSCHEME
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      REAL(w2f__8) RLIMIT
+      REAL(w2f__8) WABS
+      REAL(w2f__8) WCFL
+      REAL(w2f__8) WLOC
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      RLIMIT = 0.0D00
+      if ( ADVECTIONSCHEME .eq. 20 ) then
+        RLIMIT = 1.0D00
+      ENDIF
+      oad_ctmp1 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM1 = oad_ctmp0
+      if ( (K .gt. 1) .or. (K .le. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WT(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WLOC = WFLD(I,J)
+            WCFL = ABS(RECIP_DRC(K) * DELTATLOC * WLOC)
+            WABS = RKSIGN * ABS(RTRANS(I,J)) * (1.0D00 - RLIMIT * (1.0D0
+     +0 - WCFL))
+
+            WT(I,J) = (MASKC(I,J,KM1,BI,BJ) * (TRACER(I,J,K) * (RTRANS(I
+     +,J) - WABS) * 5.0D-01 + TRACER(I,J,KM1) * (RTRANS(I,J) + WABS) * 5
+     +.0D-01))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst2u1_adv_x(BI, BJ, K, ADVECTIONSCHEME, CALCCFL,
+     >  DELTATLOC, UTRANS, UFLD, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) ADVECTIONSCHEME
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) UABS
+      REAL(w2f__8) UCFL
+      REAL(w2f__8) XLIMIT
+C
+C     **** Statements ****
+C
+      XLIMIT = 0.0D00
+      if ( ADVECTIONSCHEME .eq. 20 ) then
+        XLIMIT = 1.0D00
+      ENDIF
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0
+        DO I = -1, 93, 1
+          UCFL = UFLD(I,J)
+          if ( CALCCFL ) then
+            UCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DXC(I,J,BI,BJ) * UFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          UABS = ABS(UTRANS(I,J)) * (1.0D00 - XLIMIT * (1.0D00 - UCFL))
+          UT(I,J) = (TRACER(I,J) * (UTRANS(I,J) - UABS) * 5.0D-01 + TRAC
+     +ER(I + (-1),J) * (UTRANS(I,J) + UABS) * 5.0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst2u1_adv_y(BI, BJ, K, ADVECTIONSCHEME, CALCCFL,
+     >  DELTATLOC, VTRANS, VFLD, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) ADVECTIONSCHEME
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) VABS
+      REAL(w2f__8) VCFL
+      REAL(w2f__8) YLIMIT
+C
+C     **** Statements ****
+C
+      YLIMIT = 0.0D00
+      if ( ADVECTIONSCHEME .eq. 20 ) then
+        YLIMIT = 1.0D00
+      ENDIF
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0
+      END DO
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          VCFL = VFLD(I,J)
+          if ( CALCCFL ) then
+            VCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DYC(I,J,BI,BJ) * VFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          VABS = ABS(VTRANS(I,J)) * (1.0D00 - YLIMIT * (1.0D00 - VCFL))
+          VT(I,J) = (TRACER(I,J) * (VTRANS(I,J) - VABS) * 5.0D-01 + TRAC
+     +ER(I,J + (-1)) * (VTRANS(I,J) + VABS) * 5.0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst3_adv_x(BI, BJ, K, CALCCFL, DELTATLOC, UTRANS,
+     >  UFLD, MASKLOCW, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCW(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) D0
+      REAL(w2f__8) D1
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) UCFL
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0
+        UT((-1),J) = 0.0
+        UT(93,J) = 0.0
+        DO I = 0, 92, 1
+          RJP = MASKLOCW(I + 1,J) * (TRACER(I + 1,J) - TRACER(I,J))
+          RJ = MASKLOCW(I,J) * (TRACER(I,J) - TRACER(I + (-1),J))
+          RJM = MASKLOCW(I + (-1),J) * (TRACER(I + (-1),J) - TRACER(I + 
+     +(-2),J))
+
+          UCFL = UFLD(I,J)
+          if ( CALCCFL ) then
+            UCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DXC(I,J,BI,BJ) * UFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          D0 = (1.0D00 - UCFL) * (2.0D00 - UCFL) * 1.6666666666666665741
+     +5D-01
+
+          D1 = (1.0D00 - UCFL * UCFL) * 1.66666666666666657415D-01
+          UT(I,J) = ((UTRANS(I,J) + ABS(UTRANS(I,J))) * 5.0D-01 * (TRACE
+     +R(I + (-1),J) + (D0 * RJ + D1 * RJM)) + (UTRANS(I,J) - ABS(UTRANS(
+     +I,J))) * 5.0D-01 * (TRACER(I,J) - (D0 * RJ + D1 * RJP)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst3_adv_y(BI, BJ, K, CALCCFL, DELTATLOC, VTRANS,
+     >  VFLD, MASKLOCS, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) D0
+      REAL(w2f__8) D1
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) VCFL
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0
+        VT(I,(-1)) = 0.0
+        VT(I,43) = 0.0
+      END DO
+      DO J = 0, 42, 1
+        DO I = -2, 93, 1
+          RJP = MASKLOCS(I,J + 1) * (TRACER(I,J + 1) - TRACER(I,J))
+          RJ = MASKLOCS(I,J) * (TRACER(I,J) - TRACER(I,J + (-1)))
+          RJM = MASKLOCS(I,J + (-1)) * (TRACER(I,J + (-1)) - TRACER(I,J 
+     ++ (-2)))
+
+          VCFL = VFLD(I,J)
+          if ( CALCCFL ) then
+            VCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DYC(I,J,BI,BJ) * VFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          D0 = (1.0D00 - VCFL) * (2.0D00 - VCFL) * 1.6666666666666665741
+     +5D-01
+
+          D1 = (1.0D00 - VCFL * VCFL) * 1.66666666666666657415D-01
+          VT(I,J) = ((VTRANS(I,J) + ABS(VTRANS(I,J))) * 5.0D-01 * (TRACE
+     +R(I,J + (-1)) + (D0 * RJ + D1 * RJM)) + (VTRANS(I,J) - ABS(VTRANS(
+     +I,J))) * 5.0D-01 * (TRACER(I,J) - (D0 * RJ + D1 * RJP)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst3_adv_r(BI, BJ, K, DTARG, RTRANS, WFLD, TRACER,
+     >  WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) DTARG
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) CFL
+      REAL(w2f__8) D0
+      REAL(w2f__8) D1
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KM2
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) WLOC
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-2)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM2 = oad_ctmp0
+      oad_ctmp3 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp3,1,oad_ctmp2)
+      KM1 = oad_ctmp2
+      oad_ctmp5 = K + 1
+      call oad_s_MIN_i(oad_ctmp5,1,oad_ctmp4)
+      KP1 = oad_ctmp4
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          RJP = MASKC(I,J,KP1,BI,BJ) * (TRACER(I,J,K) - TRACER(I,J,KP1))
+          RJ = MASKC(I,J,KM1,BI,BJ) * MASKC(I,J,K,BI,BJ) * (TRACER(I,J,K
+     +M1) - TRACER(I,J,K))
+
+          RJM = MASKC(I,J,KM1,BI,BJ) * (TRACER(I,J,KM2) - TRACER(I,J,KM1
+     +))
+
+          WLOC = WFLD(I,J)
+          CFL = ABS(RECIP_DRC(K) * DTARG * WLOC)
+          D0 = (1.0D00 - CFL) * (2.0D00 - CFL) * 1.66666666666666657415D
+     +-01
+
+          D1 = (1.0D00 - CFL * CFL) * 1.66666666666666657415D-01
+          WT(I,J) = ((RTRANS(I,J) + ABS(RTRANS(I,J))) * 5.0D-01 * (TRACE
+     +R(I,J,K) + (D0 * RJ + D1 * RJP)) + (RTRANS(I,J) - ABS(RTRANS(I,J))
+     +) * 5.0D-01 * (TRACER(I,J,KM1) - (D0 * RJ + D1 * RJM)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst3fl_adv_x(BI, BJ, K, CALCCFL, DELTATLOC, UTRANS
+     > , UFLD, MASKLOCW, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCW(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) D0
+      REAL(w2f__8) D1
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) PSIM
+      REAL(w2f__8) PSIP
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) THETAM
+      REAL(w2f__8) THETAMAX
+      PARAMETER ( THETAMAX = 1.000000000000000d+20)
+      REAL(w2f__8) THETAP
+      REAL(w2f__8) UCFL
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+      double precision  oad_ctmp2
+      double precision  oad_ctmp3
+      double precision  oad_ctmp4
+      double precision  oad_ctmp5
+      double precision  oad_ctmp6
+      double precision  oad_ctmp7
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0D00
+        UT((-1),J) = 0.0D00
+        UT(93,J) = 0.0D00
+        DO I = 0, 92, 1
+          RJP = MASKLOCW(I + 1,J) * (TRACER(I + 1,J) - TRACER(I,J))
+          RJ = MASKLOCW(I,J) * (TRACER(I,J) - TRACER(I + (-1),J))
+          RJM = MASKLOCW(I + (-1),J) * (TRACER(I + (-1),J) - TRACER(I + 
+     +(-2),J))
+
+          UCFL = UFLD(I,J)
+          if ( CALCCFL ) then
+            UCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DXC(I,J,BI,BJ) * UFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          D0 = (1.0D00 - UCFL) * (2.0D00 - UCFL) * 1.6666666666666665741
+     +5D-01
+
+          D1 = (1.0D00 - UCFL * UCFL) * 1.66666666666666657415D-01
+          if ( ABS(RJM) .ge. (ABS(RJ) * 1.0D+20) ) then
+            THETAP = SIGN(1.0D+20,RJ * RJM)
+          ELSE
+            THETAP = RJM / RJ
+          ENDIF
+          if ( ABS(RJP) .ge. (ABS(RJ) * 1.0D+20) ) then
+            THETAM = SIGN(1.0D+20,RJ * RJP)
+          ELSE
+            THETAM = RJP / RJ
+          ENDIF
+          PSIP = D0 + D1 * THETAP
+          oad_ctmp3 = (THETAP * (1.0D00 - UCFL)) / (UCFL + 9.99999999999
+     +999945153D-21)
+
+          call oad_s_MIN_d(PSIP,oad_ctmp3,oad_ctmp2)
+          call oad_s_MIN_d(oad_ctmp2,1.0D00,oad_ctmp1)
+          call oad_s_MAX_d(oad_ctmp1,0.0D00,oad_ctmp0)
+          PSIP = oad_ctmp0
+          PSIM = D0 + D1 * THETAM
+          oad_ctmp7 = (THETAM * (1.0D00 - UCFL)) / (UCFL + 9.99999999999
+     +999945153D-21)
+
+          call oad_s_MIN_d(PSIM,oad_ctmp7,oad_ctmp6)
+          call oad_s_MIN_d(oad_ctmp6,1.0D00,oad_ctmp5)
+          call oad_s_MAX_d(oad_ctmp5,0.0D00,oad_ctmp4)
+          PSIM = oad_ctmp4
+          UT(I,J) = ((UTRANS(I,J) + ABS(UTRANS(I,J))) * 5.0D-01 * (TRACE
+     +R(I + (-1),J) + PSIP * RJ) + (UTRANS(I,J) - ABS(UTRANS(I,J))) * 5.
+     +0D-01 * (TRACER(I,J) - PSIM * RJ))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst3fl_adv_y(BI, BJ, K, CALCCFL, DELTATLOC, VTRANS
+     > , VFLD, MASKLOCS, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) D0
+      REAL(w2f__8) D1
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) PSIM
+      REAL(w2f__8) PSIP
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) THETAM
+      REAL(w2f__8) THETAMAX
+      PARAMETER ( THETAMAX = 1.000000000000000d+20)
+      REAL(w2f__8) THETAP
+      REAL(w2f__8) VCFL
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+      double precision  oad_ctmp2
+      double precision  oad_ctmp3
+      double precision  oad_ctmp4
+      double precision  oad_ctmp5
+      double precision  oad_ctmp6
+      double precision  oad_ctmp7
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0D00
+        VT(I,(-1)) = 0.0D00
+        VT(I,43) = 0.0D00
+      END DO
+      DO J = 0, 42, 1
+        DO I = -2, 93, 1
+          RJP = MASKLOCS(I,J + 1) * (TRACER(I,J + 1) - TRACER(I,J))
+          RJ = MASKLOCS(I,J) * (TRACER(I,J) - TRACER(I,J + (-1)))
+          RJM = MASKLOCS(I,J + (-1)) * (TRACER(I,J + (-1)) - TRACER(I,J 
+     ++ (-2)))
+
+          VCFL = VFLD(I,J)
+          if ( CALCCFL ) then
+            VCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DYC(I,J,BI,BJ) * VFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          D0 = (1.0D00 - VCFL) * (2.0D00 - VCFL) * 1.6666666666666665741
+     +5D-01
+
+          D1 = (1.0D00 - VCFL * VCFL) * 1.66666666666666657415D-01
+          if ( ABS(RJM) .ge. (ABS(RJ) * 1.0D+20) ) then
+            THETAP = SIGN(1.0D+20,RJ * RJM)
+          ELSE
+            THETAP = RJM / RJ
+          ENDIF
+          if ( ABS(RJP) .ge. (ABS(RJ) * 1.0D+20) ) then
+            THETAM = SIGN(1.0D+20,RJ * RJP)
+          ELSE
+            THETAM = RJP / RJ
+          ENDIF
+          PSIP = D0 + D1 * THETAP
+          oad_ctmp3 = (THETAP * (1.0D00 - VCFL)) / (VCFL + 9.99999999999
+     +999945153D-21)
+
+          call oad_s_MIN_d(PSIP,oad_ctmp3,oad_ctmp2)
+          call oad_s_MIN_d(oad_ctmp2,1.0D00,oad_ctmp1)
+          call oad_s_MAX_d(oad_ctmp1,0.0D00,oad_ctmp0)
+          PSIP = oad_ctmp0
+          PSIM = D0 + D1 * THETAM
+          oad_ctmp7 = (THETAM * (1.0D00 - VCFL)) / (VCFL + 9.99999999999
+     +999945153D-21)
+
+          call oad_s_MIN_d(PSIM,oad_ctmp7,oad_ctmp6)
+          call oad_s_MIN_d(oad_ctmp6,1.0D00,oad_ctmp5)
+          call oad_s_MAX_d(oad_ctmp5,0.0D00,oad_ctmp4)
+          PSIM = oad_ctmp4
+          VT(I,J) = ((VTRANS(I,J) + ABS(VTRANS(I,J))) * 5.0D-01 * (TRACE
+     +R(I,J + (-1)) + PSIP * RJ) + (VTRANS(I,J) - ABS(VTRANS(I,J))) * 5.
+     +0D-01 * (TRACER(I,J) - PSIM * RJ))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_dst3fl_adv_r(BI, BJ, K, DTARG, RTRANS, WFLD,
+     >  TRACER, WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) DTARG
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) D0
+      REAL(w2f__8) D1
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KM2
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) PSIM
+      REAL(w2f__8) PSIP
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) THETAM
+      REAL(w2f__8) THETAMAX
+      PARAMETER ( THETAMAX = 1.000000000000000d+20)
+      REAL(w2f__8) THETAP
+      REAL(w2f__8) WCFL
+      REAL(w2f__8) WLOC
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      double precision  oad_ctmp6
+      double precision  oad_ctmp7
+      double precision  oad_ctmp8
+      double precision  oad_ctmp9
+      double precision  oad_ctmp10
+      double precision  oad_ctmp11
+      double precision  oad_ctmp12
+      double precision  oad_ctmp13
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-2)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM2 = oad_ctmp0
+      oad_ctmp3 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp3,1,oad_ctmp2)
+      KM1 = oad_ctmp2
+      oad_ctmp5 = K + 1
+      call oad_s_MIN_i(oad_ctmp5,1,oad_ctmp4)
+      KP1 = oad_ctmp4
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          RJP = MASKC(I,J,KP1,BI,BJ) * (TRACER(I,J,K) - TRACER(I,J,KP1))
+          RJ = MASKC(I,J,KM1,BI,BJ) * MASKC(I,J,K,BI,BJ) * (TRACER(I,J,K
+     +M1) - TRACER(I,J,K))
+
+          RJM = MASKC(I,J,KM1,BI,BJ) * (TRACER(I,J,KM2) - TRACER(I,J,KM1
+     +))
+
+          WLOC = WFLD(I,J)
+          WCFL = ABS(RECIP_DRC(K) * DTARG * WLOC)
+          D0 = (1.0D00 - WCFL) * (2.0D00 - WCFL) * 1.6666666666666665741
+     +5D-01
+
+          D1 = (1.0D00 - WCFL * WCFL) * 1.66666666666666657415D-01
+          if ( ABS(RJM) .ge. (ABS(RJ) * 1.0D+20) ) then
+            THETAP = SIGN(1.0D+20,RJ * RJM)
+          ELSE
+            THETAP = RJM / RJ
+          ENDIF
+          if ( ABS(RJP) .ge. (ABS(RJ) * 1.0D+20) ) then
+            THETAM = SIGN(1.0D+20,RJ * RJP)
+          ELSE
+            THETAM = RJP / RJ
+          ENDIF
+          PSIP = D0 + D1 * THETAP
+          oad_ctmp9 = (THETAP * (1.0D00 - WCFL)) / (WCFL + 9.99999999999
+     +999945153D-21)
+
+          call oad_s_MIN_d(PSIP,oad_ctmp9,oad_ctmp8)
+          call oad_s_MIN_d(oad_ctmp8,1.0D00,oad_ctmp7)
+          call oad_s_MAX_d(oad_ctmp7,0.0D00,oad_ctmp6)
+          PSIP = oad_ctmp6
+          PSIM = D0 + D1 * THETAM
+          oad_ctmp13 = (THETAM * (1.0D00 - WCFL)) / (WCFL + 9.9999999999
+     +9999945153D-21)
+
+          call oad_s_MIN_d(PSIM,oad_ctmp13,oad_ctmp12)
+          call oad_s_MIN_d(oad_ctmp12,1.0D00,oad_ctmp11)
+          call oad_s_MAX_d(oad_ctmp11,0.0D00,oad_ctmp10)
+          PSIM = oad_ctmp10
+          WT(I,J) = ((RTRANS(I,J) + ABS(RTRANS(I,J))) * 5.0D-01 * (TRACE
+     +R(I,J,K) + PSIM * RJ) + (RTRANS(I,J) - ABS(RTRANS(I,J))) * 5.0D-01
+     + * (TRACER(I,J,KM1) - PSIP * RJ))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_fluxlimit_adv_r(BI, BJ, K, DTARG, RTRANS, WFLD,
+     >  TRACER, WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) DTARG
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) CR
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KM2
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) WCFL
+      REAL(w2f__8) WLOC
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      double precision  oad_ctmp6
+      double precision  oad_ctmp7
+      double precision  oad_ctmp8
+      double precision  oad_ctmp9
+      double precision  oad_ctmp10
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-2)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM2 = oad_ctmp0
+      oad_ctmp3 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp3,1,oad_ctmp2)
+      KM1 = oad_ctmp2
+      oad_ctmp5 = K + 1
+      call oad_s_MIN_i(oad_ctmp5,1,oad_ctmp4)
+      KP1 = oad_ctmp4
+      if ( K .gt. 1 ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WT(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WLOC = WFLD(I,J)
+            WCFL = ABS(RECIP_DRC(K) * DTARG * WLOC)
+            RJP = MASKC(I,J,KP1,BI,BJ) * (TRACER(I,J,KP1) - TRACER(I,J,K
+     +))
+
+            RJ = (TRACER(I,J,K) - TRACER(I,J,KM1))
+            RJM = MASKC(I,J,KM2,BI,BJ) * (TRACER(I,J,KM1) - TRACER(I,J,K
+     +M2))
+
+            if ( RJ .ne. 0.0D00 ) then
+              if ( RTRANS(I,J) .lt. 0.0D00 ) then
+                CR = RJM / RJ
+              ELSE
+                CR = RJP / RJ
+              ENDIF
+            ELSE
+              if ( RTRANS(I,J) .lt. 0.0D00 ) then
+                CR = RJM * 1.00000002004087734272D+20
+              ELSE
+                CR = RJP * 1.00000002004087734272D+20
+              ENDIF
+            ENDIF
+            call oad_s_MIN_d(CR,2.0D00,oad_ctmp8)
+            oad_ctmp10 = CR * 2.0D00
+            call oad_s_MIN_d(oad_ctmp10,1.0D00,oad_ctmp9)
+            call oad_s_MAX_d(oad_ctmp8,oad_ctmp9,oad_ctmp7)
+            call oad_s_MAX_d(oad_ctmp7,0.0D00,oad_ctmp6)
+            CR = (oad_ctmp6)
+            WT(I,J) = (MASKC(I,J,KM1,BI,BJ) * (RTRANS(I,J) * (TRACER(I,J
+     +,K) + TRACER(I,J,KM1)) * 5.0D-01 + RJ * ABS(RTRANS(I,J)) * (CR * W
+     +CFL + (1.0D00 - CR)) * 5.0D-01))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_fluxlimit_adv_x(BI, BJ, K, CALCCFL, DELTATLOC,
+     >  UTRANS, UFLD, MASKLOCW, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCW(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) CR
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) UCFL
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+      double precision  oad_ctmp2
+      double precision  oad_ctmp3
+      double precision  oad_ctmp4
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0
+        UT((-1),J) = 0.0
+        UT(93,J) = 0.0
+        DO I = 0, 92, 1
+          UCFL = UFLD(I,J)
+          if ( CALCCFL ) then
+            UCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DXC(I,J,BI,BJ) * UFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          RJP = MASKLOCW(I + 1,J) * (TRACER(I + 1,J) - TRACER(I,J))
+          RJ = MASKLOCW(I,J) * (TRACER(I,J) - TRACER(I + (-1),J))
+          RJM = MASKLOCW(I + (-1),J) * (TRACER(I + (-1),J) - TRACER(I + 
+     +(-2),J))
+
+          if ( RJ .ne. 0.0D00 ) then
+            if ( UTRANS(I,J) .gt. 0.0D00 ) then
+              CR = RJM / RJ
+            ELSE
+              CR = RJP / RJ
+            ENDIF
+          ELSE
+            if ( UTRANS(I,J) .gt. 0.0D00 ) then
+              CR = RJM * 1.00000002004087734272D+20
+            ELSE
+              CR = RJP * 1.00000002004087734272D+20
+            ENDIF
+          ENDIF
+          call oad_s_MIN_d(CR,2.0D00,oad_ctmp2)
+          oad_ctmp4 = CR * 2.0D00
+          call oad_s_MIN_d(oad_ctmp4,1.0D00,oad_ctmp3)
+          call oad_s_MAX_d(oad_ctmp2,oad_ctmp3,oad_ctmp1)
+          call oad_s_MAX_d(oad_ctmp1,0.0D00,oad_ctmp0)
+          CR = (oad_ctmp0)
+          UT(I,J) = (UTRANS(I,J) * (TRACER(I,J) + TRACER(I + (-1),J)) * 
+     +5.0D-01 - RJ * ABS(UTRANS(I,J)) * (CR * UCFL + (1.0D00 - CR)) * 5.
+     +0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_fluxlimit_adv_y(BI, BJ, K, CALCCFL, DELTATLOC,
+     >  VTRANS, VFLD, MASKLOCS, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      LOGICAL(w2f__i4) CALCCFL
+      REAL(w2f__8) DELTATLOC
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKLOCS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) CR
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      REAL(w2f__8) VCFL
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+      double precision  oad_ctmp2
+      double precision  oad_ctmp3
+      double precision  oad_ctmp4
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0
+        VT(I,(-1)) = 0.0
+        VT(I,43) = 0.0
+      END DO
+      DO J = 0, 42, 1
+        DO I = -2, 93, 1
+          VCFL = VFLD(I,J)
+          if ( CALCCFL ) then
+            VCFL = ABS(RECIP_DEEPFACC(K) * RECIP_DYC(I,J,BI,BJ) * VFLD(I
+     +,J) * DELTATLOC)
+
+          ENDIF
+          RJP = MASKLOCS(I,J + 1) * (TRACER(I,J + 1) - TRACER(I,J))
+          RJ = MASKLOCS(I,J) * (TRACER(I,J) - TRACER(I,J + (-1)))
+          RJM = MASKLOCS(I,J + (-1)) * (TRACER(I,J + (-1)) - TRACER(I,J 
+     ++ (-2)))
+
+          if ( RJ .ne. 0.0D00 ) then
+            if ( VTRANS(I,J) .gt. 0.0D00 ) then
+              CR = RJM / RJ
+            ELSE
+              CR = RJP / RJ
+            ENDIF
+          ELSE
+            if ( VTRANS(I,J) .gt. 0.0D00 ) then
+              CR = RJM * 1.00000002004087734272D+20
+            ELSE
+              CR = RJP * 1.00000002004087734272D+20
+            ENDIF
+          ENDIF
+          call oad_s_MIN_d(CR,2.0D00,oad_ctmp2)
+          oad_ctmp4 = CR * 2.0D00
+          call oad_s_MIN_d(oad_ctmp4,1.0D00,oad_ctmp3)
+          call oad_s_MAX_d(oad_ctmp2,oad_ctmp3,oad_ctmp1)
+          call oad_s_MAX_d(oad_ctmp1,0.0D00,oad_ctmp0)
+          CR = (oad_ctmp0)
+          VT(I,J) = (VTRANS(I,J) * (TRACER(I,J) + TRACER(I,J + (-1))) * 
+     +5.0D-01 - RJ * ABS(VTRANS(I,J)) * (CR * VCFL + (1.0D00 - CR)) * 5.
+     +0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_grad_x(BI, BJ, K, XA, TRACER, DTDX, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) DTDX(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DTDX((-2),J) = 0.0
+        DO I = -1, 93, 1
+          DTDX(I,J) = (SQCOSFACU(J,BI,BJ) * RECIP_DEEPFACC(K) * XA(I,J) 
+     +* RECIP_DXC(I,J,BI,BJ) * (TRACER(I,J) - TRACER(I + (-1),J)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_grad_y(BI, BJ, K, YA, TRACER, DTDY, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) DTDY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        DTDY(I,(-2)) = 0.0
+      END DO
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          DTDY(I,J) = (RECIP_DEEPFACC(K) * YA(I,J) * RECIP_DYC(I,J,BI,BJ
+     +) * (TRACER(I,J) - TRACER(I,J + (-1))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_init_varia(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_u3_adv_r(BI, BJ, K, RTRANS, TRACER, WT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KM2
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJJM
+      REAL(w2f__8) RJJP
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + (-2)
+      call oad_s_MAX_i(oad_ctmp1,1,oad_ctmp0)
+      KM2 = oad_ctmp0
+      oad_ctmp3 = K + (-1)
+      call oad_s_MAX_i(oad_ctmp3,1,oad_ctmp2)
+      KM1 = oad_ctmp2
+      oad_ctmp5 = K + 1
+      call oad_s_MIN_i(oad_ctmp5,1,oad_ctmp4)
+      KP1 = oad_ctmp4
+      if ( (K .eq. 1) .or. (K .gt. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            WT(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            RJP = MASKC(I,J,KP1,BI,BJ) * (TRACER(I,J,KP1,BI,BJ) - TRACER
+     +(I,J,K,BI,BJ))
+
+            RJ = (TRACER(I,J,K,BI,BJ) - TRACER(I,J,KM1,BI,BJ))
+            RJM = MASKC(I,J,KM2,BI,BJ) * (TRACER(I,J,KM1,BI,BJ) - TRACER
+     +(I,J,KM2,BI,BJ))
+
+            RJJP = RJP - RJ
+            RJJM = RJ - RJM
+            WT(I,J) = (MASKC(I,J,KM1,BI,BJ) * (RTRANS(I,J) * ((TRACER(I,
+     +J,K,BI,BJ) + TRACER(I,J,KM1,BI,BJ)) * 5.0D-01 - (RJJM + RJJP) * 1.
+     +66666666666666657415D-01 * 5.0D-01) + ABS(RTRANS(I,J)) * 1.6666666
+     +6666666657415D-01 * (RJJM - RJJP) * 5.0D-01))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_u3_adv_x(BI, BJ, K, UTRANS, TRACER, UT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) UT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJJM
+      REAL(w2f__8) RJJP
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        UT((-2),J) = 0.0
+        UT((-1),J) = 0.0
+        UT(93,J) = 0.0
+        DO I = 0, 92, 1
+          RJP = MASKW(I + 1,J,K,BI,BJ) * (TRACER(I + 1,J) - TRACER(I,J))
+          RJ = MASKW(I,J,K,BI,BJ) * (TRACER(I,J) - TRACER(I + (-1),J))
+          RJM = MASKW(I + (-1),J,K,BI,BJ) * (TRACER(I + (-1),J) - TRACER
+     +(I + (-2),J))
+
+          RJJP = RJP - RJ
+          RJJM = RJ - RJM
+          UT(I,J) = (UTRANS(I,J) * (TRACER(I,J) + TRACER(I + (-1),J) - (
+     +RJJM + RJJP) * 1.66666666666666657415D-01) * 5.0D-01 + ABS(UTRANS(
+     +I,J)) * 5.0D-01 * 1.66666666666666657415D-01 * (RJJP - RJJM))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_u3_adv_y(BI, BJ, K, VTRANS, TRACER, VT, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43)
+      REAL(w2f__8) VT(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RJ
+      REAL(w2f__8) RJJM
+      REAL(w2f__8) RJJP
+      REAL(w2f__8) RJM
+      REAL(w2f__8) RJP
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        VT(I,(-2)) = 0.0
+        VT(I,(-1)) = 0.0
+        VT(I,43) = 0.0
+      END DO
+      DO J = 0, 42, 1
+        DO I = -2, 93, 1
+          RJP = MASKS(I,J + 1,K,BI,BJ) * (TRACER(I,J + 1) - TRACER(I,J))
+          RJ = MASKS(I,J,K,BI,BJ) * (TRACER(I,J) - TRACER(I,J + (-1)))
+          RJM = MASKS(I,J + (-1),K,BI,BJ) * (TRACER(I,J + (-1)) - TRACER
+     +(I,J + (-2)))
+
+          RJJP = RJP - RJ
+          RJJM = RJ - RJM
+          VT(I,J) = (VTRANS(I,J) * (TRACER(I,J) + TRACER(I,J + (-1)) - (
+     +RJJM + RJJP) * 1.66666666666666657415D-01) * 5.0D-01 + ABS(VTRANS(
+     +I,J)) * 5.0D-01 * 1.66666666666666657415D-01 * (RJJP - RJJM))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE gad_som_exchanges(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_rtrans(K, BI, BJ, RTRANSU, RTRANSV, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) RTRANSU(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSV(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( K .gt. 1 ) then
+        DO J = -1, 43, 1
+          DO I = -1, 93, 1
+            RTRANSU(I,J) = 0.0
+            RTRANSV(I,J) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -1, 43, 1
+          DO I = -1, 93, 1
+            RTRANSU(I,J) = (RHOFACF(K) * DEEPFAC2F(K) * (RA(I,J,BI,BJ) *
+     + WVEL(I,J,K,BI,BJ) + RA(I + (-1),J,BI,BJ) * WVEL(I + (-1),J,K,BI,B
+     +J)) * 5.0D-01)
+
+            RTRANSV(I,J) = (RHOFACF(K) * DEEPFAC2F(K) * (RA(I,J,BI,BJ) *
+     + WVEL(I,J,K,BI,BJ) + RA(I,J + (-1),BI,BJ) * WVEL(I,J + (-1),K,BI,B
+     +J)) * 5.0D-01)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_fluxform(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KUP,
+     >  KDOWN, KAPPARU, KAPPARV, FVERU, FVERV, GUDISS, GVDISS, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use ffields_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KUP
+      INTEGER(w2f__i4) KDOWN
+      REAL(w2f__8) KAPPARU(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) KAPPARV(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) FVERU(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) FVERV(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) GUDISS(-2 : 93, -2 : 43)
+      REAL(w2f__8) GVDISS(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) AHDUDXFAC
+      REAL(w2f__8) AHDUDYFAC
+      REAL(w2f__8) AHDVDXFAC
+      REAL(w2f__8) AHDVDYFAC
+      REAL(w2f__8) ARDUDRFAC
+      REAL(w2f__8) ARDVDRFAC
+      LOGICAL(w2f__i4) BIHARMONIC
+      LOGICAL(w2f__i4) BOTTOMDRAGTERMS
+      REAL(w2f__8) CF(-2 : 93, -2 : 43)
+      REAL(w2f__8) FMER(-2 : 93, -2 : 43)
+      REAL(w2f__8) FUFAC
+      REAL(w2f__8) FVFAC
+      REAL(w2f__8) FVRDW(-2 : 93, -2 : 43)
+      REAL(w2f__8) FVRUP(-2 : 93, -2 : 43)
+      REAL(w2f__8) FZON(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) HARMONIC
+      REAL(w2f__8) HDIV(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMOMKEY
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) KE(-2 : 93, -2 : 43)
+      EXTERNAL mom_calc_hdiv
+      EXTERNAL mom_calc_hfacz
+      EXTERNAL mom_calc_ke
+      EXTERNAL mom_calc_relvort3
+      EXTERNAL mom_calc_rtrans
+      EXTERNAL mom_calc_strain
+      EXTERNAL mom_calc_tension
+      EXTERNAL mom_calc_visc
+      EXTERNAL mom_u_adv_uu
+      EXTERNAL mom_u_adv_vu
+      EXTERNAL mom_u_adv_wu
+      EXTERNAL mom_u_bottomdrag
+      EXTERNAL mom_u_coriolis
+      EXTERNAL mom_u_coriolis_nh
+      EXTERNAL mom_u_del2u
+      EXTERNAL mom_u_metric_cylinder
+      EXTERNAL mom_u_metric_nh
+      EXTERNAL mom_u_metric_sphere
+      EXTERNAL mom_u_rviscflux
+      EXTERNAL mom_u_sidedrag
+      EXTERNAL mom_u_xviscflux
+      EXTERNAL mom_u_yviscflux
+      EXTERNAL mom_v_adv_uv
+      EXTERNAL mom_v_adv_vv
+      EXTERNAL mom_v_adv_wv
+      EXTERNAL mom_v_bottomdrag
+      EXTERNAL mom_v_coriolis
+      EXTERNAL mom_v_coriolis_nh
+      EXTERNAL mom_v_del2v
+      EXTERNAL mom_v_metric_cylinder
+      EXTERNAL mom_v_metric_nh
+      EXTERNAL mom_v_metric_sphere
+      EXTERNAL mom_v_rviscflux
+      EXTERNAL mom_v_sidedrag
+      EXTERNAL mom_v_xviscflux
+      EXTERNAL mom_v_yviscflux
+      REAL(w2f__8) MT(-2 : 93, -2 : 43)
+      REAL(w2f__8) MTFACU
+      REAL(w2f__8) MTFACV
+      REAL(w2f__8) MTNHFACU
+      REAL(w2f__8) MTNHFACV
+      REAL(w2f__8) RTRANSU(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSV(-2 : 93, -2 : 43)
+      REAL(w2f__8) RVELDUDRFAC
+      REAL(w2f__8) RVELDVDRFAC
+      REAL(w2f__8) R_HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) SIDEMASKFAC
+      REAL(w2f__8) STRAIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) TENSION(-2 : 93, -2 : 43)
+      REAL(w2f__8) UDUDXFAC
+      REAL(w2f__8) UDVDXFAC
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) USEVARIABLEVISCOSITY
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) V4F(-2 : 93, -2 : 43)
+      REAL(w2f__8) VDUDYFAC
+      REAL(w2f__8) VDVDYFAC
+      REAL(w2f__8) VF(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_D(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_D(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VORT3(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) t__431
+      INTEGER(w2f__i4) t__432
+      INTEGER(w2f__i4) t__433
+      INTEGER(w2f__i4) t__434
+      INTEGER(w2f__i4) t__435
+      INTEGER(w2f__i4) t__436
+      INTEGER(w2f__i4) t__437
+      INTEGER(w2f__i4) t__438
+      INTEGER(w2f__i4) t__439
+      INTEGER(w2f__i4) t__440
+      INTEGER(w2f__i4) t__441
+      INTEGER(w2f__i4) t__442
+      INTEGER(w2f__i4) t__443
+      INTEGER(w2f__i4) t__444
+      INTEGER(w2f__i4) t__445
+      INTEGER(w2f__i4) t__446
+      INTEGER(w2f__i4) t__447
+      INTEGER(w2f__i4) t__448
+      INTEGER(w2f__i4) t__449
+      INTEGER(w2f__i4) t__450
+      INTEGER(w2f__i4) t__451
+      INTEGER(w2f__i4) t__452
+      INTEGER(w2f__i4) t__453
+      INTEGER(w2f__i4) t__454
+      INTEGER(w2f__i4) t__455
+      INTEGER(w2f__i4) t__456
+      INTEGER(w2f__i4) t__457
+      INTEGER(w2f__i4) t__458
+      INTEGER(w2f__i4) t__459
+      INTEGER(w2f__i4) t__460
+      INTEGER(w2f__i4) t__461
+      INTEGER(w2f__i4) t__462
+      INTEGER(w2f__i4) t__463
+      INTEGER(w2f__i4) t__464
+      INTEGER(w2f__i4) t__465
+      INTEGER(w2f__i4) t__466
+      INTEGER(w2f__i4) t__467
+      INTEGER(w2f__i4) t__468
+      INTEGER(w2f__i4) t__469
+      INTEGER(w2f__i4) t__470
+      INTEGER(w2f__i4) t__471
+      INTEGER(w2f__i4) t__472
+      INTEGER(w2f__i4) t__473
+      INTEGER(w2f__i4) t__474
+      INTEGER(w2f__i4) t__475
+      INTEGER(w2f__i4) t__476
+      INTEGER(w2f__i4) t__477
+      INTEGER(w2f__i4) t__478
+      INTEGER(w2f__i4) t__479
+      INTEGER(w2f__i4) t__480
+      INTEGER(w2f__i4) t__481
+      INTEGER(w2f__i4) t__482
+      INTEGER(w2f__i4) t__483
+      INTEGER(w2f__i4) t__484
+      INTEGER(w2f__i4) t__485
+      INTEGER(w2f__i4) t__486
+      INTEGER(w2f__i4) t__487
+      INTEGER(w2f__i4) t__488
+      INTEGER(w2f__i4) t__489
+      INTEGER(w2f__i4) t__490
+      INTEGER(w2f__i4) t__491
+      INTEGER(w2f__i4) t__492
+      INTEGER(w2f__i4) t__493
+      INTEGER(w2f__i4) t__494
+      INTEGER(w2f__i4) t__495
+      INTEGER(w2f__i4) t__496
+      INTEGER(w2f__i4) t__497
+      INTEGER(w2f__i4) t__498
+      INTEGER(w2f__i4) t__499
+      INTEGER(w2f__i4) t__500
+      INTEGER(w2f__i4) t__501
+      INTEGER(w2f__i4) t__502
+      INTEGER(w2f__i4) t__503
+      INTEGER(w2f__i4) t__504
+      INTEGER(w2f__i4) t__505
+      INTEGER(w2f__i4) t__506
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+C
+C     **** Statements ****
+C
+      ACT0 = K + (-1)
+      MAX0 = 1
+      ACT1 = BI - MYBXLO(MYTHID)
+      MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+      ACT2 = BJ - MYBYLO(MYTHID)
+      MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+      ACT3 = MYTHID + (-1)
+      MAX3 = NTX * NTY
+      ACT4 = IKEY_DYNAMICS + (-1)
+      IMOMKEY = ACT0 + ACT1 * MAX0 + MAX1 * ACT2 * MAX0 + MAX2 * MAX1 * 
+     +ACT3 * MAX0 + MAX3 * MAX2 * MAX1 * ACT4 * MAX0 + 1
+
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          VF(I,J) = 0.0
+          V4F(I,J) = 0.0
+          CF(I,J) = 0.0
+          MT(I,J) = 0.0
+          FZON(I,J) = 0.0
+          FMER(I,J) = 0.0
+          FVRUP(I,J) = 0.0
+          FVRDW(I,J) = 0.0
+          RTRANSU(I,J) = 0.0
+          RTRANSV(I,J) = 0.0
+          VORT3(I,J) = 0.0
+          STRAIN(I,J) = 0.0
+          TENSION(I,J) = 0.0
+          GUDISS(I,J) = 0.0
+          GVDISS(I,J) = 0.0
+        END DO
+      END DO
+      UDUDXFAC = AFFACMOM
+      AHDUDXFAC = VFFACMOM
+      VDUDYFAC = AFFACMOM
+      AHDUDYFAC = VFFACMOM
+      RVELDUDRFAC = AFFACMOM
+      ARDUDRFAC = VFFACMOM
+      MTFACU = MTFACMOM
+      MTNHFACU = 1.0D00
+      FUFAC = CFFACMOM
+      UDVDXFAC = AFFACMOM
+      AHDVDXFAC = VFFACMOM
+      VDVDYFAC = AFFACMOM
+      AHDVDYFAC = VFFACMOM
+      RVELDVDRFAC = AFFACMOM
+      ARDVDRFAC = VFFACMOM
+      MTFACV = MTFACMOM
+      MTNHFACV = 1.0D00
+      FVFAC = CFFACMOM
+      if ( IMPLICITVISCOSITY ) then
+        ARDUDRFAC = 0.0D00
+        ARDVDRFAC = 0.0D00
+      ENDIF
+      if ( NO_SLIP_SIDES ) then
+        SIDEMASKFAC = SIDEDRAGFACTOR
+      ELSE
+        SIDEMASKFAC = 0.0D00
+      ENDIF
+      if ( (BOTTOMDRAGLINEAR .ne. 0.0D00) .or. (NO_SLIP_BOTTOM .or. (BOT
+     +TOMDRAGQUADRATIC .ne. 0.0D00)) ) then
+
+        BOTTOMDRAGTERMS = .true.
+      ELSE
+        BOTTOMDRAGTERMS = .false.
+      ENDIF
+      call mom_calc_hfacz(BI,BJ,K,HFACZ,R_HFACZ,MYTHID)
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          XA(I,J) = (HFACW(I,J,K,BI,BJ) * DRF(K) * DEEPFACC(K) * DYG(I,J
+     +,BI,BJ))
+
+          YA(I,J) = (HFACS(I,J,K,BI,BJ) * DRF(K) * DEEPFACC(K) * DXG(I,J
+     +,BI,BJ))
+
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          UFLD(I,J) = UVEL(I,J,K,BI,BJ)
+          VFLD(I,J) = VVEL(I,J,K,BI,BJ)
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          UTRANS(I,J) = (RHOFACC(K) * UFLD(I,J) * XA(I,J))
+          VTRANS(I,J) = (RHOFACC(K) * VFLD(I,J) * YA(I,J))
+        END DO
+      END DO
+      oad_ctmp0 = (2)
+      call mom_calc_ke(BI,BJ,K,oad_ctmp0,UFLD,VFLD,KE,MYTHID)
+      if ( MOMVISCOSITY ) then
+        oad_ctmp1 = (2)
+        call mom_calc_hdiv(BI,BJ,K,oad_ctmp1,UFLD,VFLD,HDIV,MYTHID)
+        call mom_calc_relvort3(BI,BJ,K,UFLD,VFLD,HFACZ,VORT3,MYTHID)
+        call mom_calc_tension(BI,BJ,K,UFLD,VFLD,TENSION,MYTHID)
+        call mom_calc_strain(BI,BJ,K,UFLD,VFLD,HFACZ,STRAIN,MYTHID)
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            if ( HFACZ(I,J) .eq. 0.0D00 ) then
+              VORT3(I,J) = (VORT3(I,J) * SIDEMASKFAC)
+              STRAIN(I,J) = (STRAIN(I,J) * SIDEMASKFAC)
+            ENDIF
+          END DO
+        END DO
+      ENDIF
+      if ( (K .eq. 1) .and. MOMADVECTION ) then
+        call mom_calc_rtrans(K,BI,BJ,RTRANSU,RTRANSV,MYTIME,MYITER,MYTHI
+     +D)
+
+        call mom_u_adv_wu(BI,BJ,K,UVEL,WVEL,RTRANSU,FVERU((-2),(-2),KUP)
+     +,MYTHID)
+
+        call mom_v_adv_wv(BI,BJ,K,VVEL,WVEL,RTRANSV,FVERV((-2),(-2),KUP)
+     +,MYTHID)
+
+      ENDIF
+      if ( MOMADVECTION ) then
+        oad_ctmp2 = (K + 1)
+        call mom_calc_rtrans(oad_ctmp2,BI,BJ,RTRANSU,RTRANSV,MYTIME,MYIT
+     +ER,MYTHID)
+
+      ENDIF
+      if ( MOMVISCOSITY ) then
+        call mom_calc_visc(BI,BJ,K,VISCAH_Z,VISCAH_D,VISCA4_Z,VISCA4_D,H
+     +ARMONIC,BIHARMONIC,USEVARIABLEVISCOSITY,HDIV,VORT3,TENSION,STRAIN,
+     +KE,HFACZ,MYTHID)
+
+      ENDIF
+      if ( MOMADVECTION ) then
+        call mom_u_adv_uu(BI,BJ,K,UTRANS,UFLD,FZON,MYTHID)
+        call mom_u_adv_vu(BI,BJ,K,VTRANS,UFLD,FMER,MYTHID)
+        oad_ctmp3 = (K + 1)
+        call mom_u_adv_wu(BI,BJ,oad_ctmp3,UVEL,WVEL,RTRANSU,FVERU((-2),(
+     +-2),KDOWN),MYTHID)
+
+        t__431 = JMIN
+        t__432 = JMAX
+        DO J = t__431, t__432, 1
+          t__433 = IMIN
+          t__434 = IMAX
+          DO I = t__433, t__434, 1
+            GU(I,J,K,BI,BJ) = (-(RECIP_RHOFACC(K) * RECIP_DEEPFAC2C(K) *
+     + RECIP_RAW(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACW(I,J,K,BI,BJ) * 
+     +(UDUDXFAC * (FZON(I,J) - FZON(I + (-1),J)) + VDUDYFAC * (FMER(I,J 
+     ++ 1) - FMER(I,J)) + RVELDUDRFAC * RKSIGN * (FVERU(I,J,KDOWN) - FVE
+     +RU(I,J,KUP)))))
+
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            GU(I,J,K,BI,BJ) = 0.0D00
+          END DO
+        END DO
+      ENDIF
+      if ( MOMVISCOSITY ) then
+        if ( BIHARMONIC ) then
+          call mom_u_del2u(BI,BJ,K,UFLD,HFACZ,V4F,MYTHID)
+        ENDIF
+        call mom_u_xviscflux(BI,BJ,K,UFLD,V4F,FZON,VISCAH_D,VISCA4_D,MYT
+     +HID)
+
+        call mom_u_yviscflux(BI,BJ,K,UFLD,V4F,HFACZ,FMER,VISCAH_Z,VISCA4
+     +_Z,MYTHID)
+
+        if ( .not. IMPLICITVISCOSITY ) then
+          call mom_u_rviscflux(BI,BJ,K,UVEL,KAPPARU,FVRUP,MYTHID)
+          oad_ctmp4 = (K + 1)
+          call mom_u_rviscflux(BI,BJ,oad_ctmp4,UVEL,KAPPARU,FVRDW,MYTHID
+     +)
+
+        ENDIF
+        t__435 = JMIN
+        t__436 = JMAX
+        DO J = t__435, t__436, 1
+          t__437 = IMIN
+          t__438 = IMAX
+          DO I = t__437, t__438, 1
+            GUDISS(I,J) = (-(RECIP_DEEPFAC2C(K) * RECIP_RAW(I,J,BI,BJ) *
+     + RECIP_DRF(K) * RECIP_HFACW(I,J,K,BI,BJ) * (AHDUDXFAC * (FZON(I,J)
+     + - FZON(I + (-1),J)) + AHDUDYFAC * (FMER(I,J + 1) - FMER(I,J)) + R
+     +ECIP_RHOFACC(K) * ARDUDRFAC * RKSIGN * (FVRDW(I,J) - FVRUP(I,J))))
+     +)
+
+          END DO
+        END DO
+        if ( NO_SLIP_SIDES ) then
+          call mom_u_sidedrag(BI,BJ,K,UFLD,V4F,HFACZ,VISCAH_Z,VISCA4_Z,H
+     +ARMONIC,BIHARMONIC,USEVARIABLEVISCOSITY,VF,MYTHID)
+
+          t__439 = JMIN
+          t__440 = JMAX
+          DO J = t__439, t__440, 1
+            t__441 = IMIN
+            t__442 = IMAX
+            DO I = t__441, t__442, 1
+              GUDISS(I,J) = (GUDISS(I,J) + VF(I,J))
+            END DO
+          END DO
+        ENDIF
+        if ( BOTTOMDRAGTERMS ) then
+          call mom_u_bottomdrag(BI,BJ,K,UFLD,KE,KAPPARU,VF,MYTHID)
+          t__443 = JMIN
+          t__444 = JMAX
+          DO J = t__443, t__444, 1
+            t__445 = IMIN
+            t__446 = IMAX
+            DO I = t__445, t__446, 1
+              GUDISS(I,J) = (GUDISS(I,J) + VF(I,J))
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      if ( USENHMTERMS ) then
+        call mom_u_metric_nh(BI,BJ,K,UFLD,WVEL,MT,MYTHID)
+        t__447 = JMIN
+        t__448 = JMAX
+        DO J = t__447, t__448, 1
+          t__449 = IMIN
+          t__450 = IMAX
+          DO I = t__449, t__450, 1
+            GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) + MT(I,J) * MTNHFACU)
+          END DO
+        END DO
+      ENDIF
+      if ( METRICTERMS .and. USINGSPHERICALPOLARGRID ) then
+        call mom_u_metric_sphere(BI,BJ,K,UFLD,VFLD,MT,MYTHID)
+        t__451 = JMIN
+        t__452 = JMAX
+        DO J = t__451, t__452, 1
+          t__453 = IMIN
+          t__454 = IMAX
+          DO I = t__453, t__454, 1
+            GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) + MT(I,J) * MTFACU)
+          END DO
+        END DO
+      ENDIF
+      if ( METRICTERMS .and. USINGCYLINDRICALGRID ) then
+        call mom_u_metric_cylinder(BI,BJ,K,UFLD,VFLD,MT,MYTHID)
+        t__455 = JMIN
+        t__456 = JMAX
+        DO J = t__455, t__456, 1
+          t__457 = IMIN
+          t__458 = IMAX
+          DO I = t__457, t__458, 1
+            GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) + MT(I,J) * MTFACU)
+          END DO
+        END DO
+      ENDIF
+      if ( MOMADVECTION ) then
+        call mom_v_adv_uv(BI,BJ,K,UTRANS,VFLD,FZON,MYTHID)
+        call mom_v_adv_vv(BI,BJ,K,VTRANS,VFLD,FMER,MYTHID)
+        oad_ctmp5 = (K + 1)
+        call mom_v_adv_wv(BI,BJ,oad_ctmp5,VVEL,WVEL,RTRANSV,FVERV((-2),(
+     +-2),KDOWN),MYTHID)
+
+        t__459 = JMIN
+        t__460 = JMAX
+        DO J = t__459, t__460, 1
+          t__461 = IMIN
+          t__462 = IMAX
+          DO I = t__461, t__462, 1
+            GV(I,J,K,BI,BJ) = (-(RECIP_RHOFACC(K) * RECIP_DEEPFAC2C(K) *
+     + RECIP_RAS(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACS(I,J,K,BI,BJ) * 
+     +(UDVDXFAC * (FZON(I + 1,J) - FZON(I,J)) + VDVDYFAC * (FMER(I,J) - 
+     +FMER(I,J + (-1))) + RVELDVDRFAC * RKSIGN * (FVERV(I,J,KDOWN) - FVE
+     +RV(I,J,KUP)))))
+
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            GV(I,J,K,BI,BJ) = 0.0D00
+          END DO
+        END DO
+      ENDIF
+      if ( MOMVISCOSITY ) then
+        if ( BIHARMONIC ) then
+          call mom_v_del2v(BI,BJ,K,VFLD,HFACZ,V4F,MYTHID)
+        ENDIF
+        call mom_v_xviscflux(BI,BJ,K,VFLD,V4F,HFACZ,FZON,VISCAH_Z,VISCA4
+     +_Z,MYTHID)
+
+        call mom_v_yviscflux(BI,BJ,K,VFLD,V4F,FMER,VISCAH_D,VISCA4_D,MYT
+     +HID)
+
+        if ( .not. IMPLICITVISCOSITY ) then
+          call mom_v_rviscflux(BI,BJ,K,VVEL,KAPPARV,FVRUP,MYTHID)
+          oad_ctmp6 = (K + 1)
+          call mom_v_rviscflux(BI,BJ,oad_ctmp6,VVEL,KAPPARV,FVRDW,MYTHID
+     +)
+
+        ENDIF
+        t__463 = JMIN
+        t__464 = JMAX
+        DO J = t__463, t__464, 1
+          t__465 = IMIN
+          t__466 = IMAX
+          DO I = t__465, t__466, 1
+            GVDISS(I,J) = (-(RECIP_DEEPFAC2C(K) * RECIP_RAS(I,J,BI,BJ) *
+     + RECIP_DRF(K) * RECIP_HFACS(I,J,K,BI,BJ) * (AHDVDXFAC * (FZON(I + 
+     +1,J) - FZON(I,J)) + AHDVDYFAC * (FMER(I,J) - FMER(I,J + (-1))) + R
+     +ECIP_RHOFACC(K) * ARDVDRFAC * RKSIGN * (FVRDW(I,J) - FVRUP(I,J))))
+     +)
+
+          END DO
+        END DO
+        if ( NO_SLIP_SIDES ) then
+          call mom_v_sidedrag(BI,BJ,K,VFLD,V4F,HFACZ,VISCAH_Z,VISCA4_Z,H
+     +ARMONIC,BIHARMONIC,USEVARIABLEVISCOSITY,VF,MYTHID)
+
+          t__467 = JMIN
+          t__468 = JMAX
+          DO J = t__467, t__468, 1
+            t__469 = IMIN
+            t__470 = IMAX
+            DO I = t__469, t__470, 1
+              GVDISS(I,J) = (GVDISS(I,J) + VF(I,J))
+            END DO
+          END DO
+        ENDIF
+        if ( BOTTOMDRAGTERMS ) then
+          call mom_v_bottomdrag(BI,BJ,K,VFLD,KE,KAPPARV,VF,MYTHID)
+          t__471 = JMIN
+          t__472 = JMAX
+          DO J = t__471, t__472, 1
+            t__473 = IMIN
+            t__474 = IMAX
+            DO I = t__473, t__474, 1
+              GVDISS(I,J) = (GVDISS(I,J) + VF(I,J))
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      if ( USENHMTERMS ) then
+        call mom_v_metric_nh(BI,BJ,K,VFLD,WVEL,MT,MYTHID)
+        t__475 = JMIN
+        t__476 = JMAX
+        DO J = t__475, t__476, 1
+          t__477 = IMIN
+          t__478 = IMAX
+          DO I = t__477, t__478, 1
+            GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) + MT(I,J) * MTNHFACV)
+          END DO
+        END DO
+      ENDIF
+      if ( METRICTERMS .and. USINGSPHERICALPOLARGRID ) then
+        call mom_v_metric_sphere(BI,BJ,K,UFLD,MT,MYTHID)
+        t__479 = JMIN
+        t__480 = JMAX
+        DO J = t__479, t__480, 1
+          t__481 = IMIN
+          t__482 = IMAX
+          DO I = t__481, t__482, 1
+            GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) + MT(I,J) * MTFACV)
+          END DO
+        END DO
+      ENDIF
+      if ( METRICTERMS .and. USINGCYLINDRICALGRID ) then
+        call mom_v_metric_cylinder(BI,BJ,K,UFLD,VFLD,MT,MYTHID)
+        t__483 = JMIN
+        t__484 = JMAX
+        DO J = t__483, t__484, 1
+          t__485 = IMIN
+          t__486 = IMAX
+          DO I = t__485, t__486, 1
+            GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) + MT(I,J) * MTFACV)
+          END DO
+        END DO
+      ENDIF
+      if ( .not. USECDSCHEME ) then
+        call mom_u_coriolis(BI,BJ,K,VFLD,CF,MYTHID)
+        t__487 = JMIN
+        t__488 = JMAX
+        DO J = t__487, t__488, 1
+          t__489 = IMIN
+          t__490 = IMAX
+          DO I = t__489, t__490, 1
+            GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) + CF(I,J) * FUFAC)
+          END DO
+        END DO
+        call mom_v_coriolis(BI,BJ,K,UFLD,CF,MYTHID)
+        t__491 = JMIN
+        t__492 = JMAX
+        DO J = t__491, t__492, 1
+          t__493 = IMIN
+          t__494 = IMAX
+          DO I = t__493, t__494, 1
+            GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) + CF(I,J) * FVFAC)
+          END DO
+        END DO
+      ENDIF
+      if ( USE3DCORIOLIS ) then
+        call mom_u_coriolis_nh(BI,BJ,K,WVEL,CF,MYTHID)
+        t__495 = JMIN
+        t__496 = JMAX
+        DO J = t__495, t__496, 1
+          t__497 = IMIN
+          t__498 = IMAX
+          DO I = t__497, t__498, 1
+            GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) + CF(I,J) * FUFAC)
+          END DO
+        END DO
+        if ( USINGCURVILINEARGRID ) then
+          call mom_v_coriolis_nh(BI,BJ,K,WVEL,CF,MYTHID)
+          t__499 = JMIN
+          t__500 = JMAX
+          DO J = t__499, t__500, 1
+            t__501 = IMIN
+            t__502 = IMAX
+            DO I = t__501, t__502, 1
+              GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) + CF(I,J) * FVFAC)
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      t__503 = JMIN
+      t__504 = JMAX
+      DO J = t__503, t__504, 1
+        t__505 = IMIN
+        t__506 = IMAX
+        DO I = t__505, t__506, 1
+          GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) * MASKW(I,J,K,BI,BJ))
+          GUDISS(I,J) = (GUDISS(I,J) * MASKW(I,J,K,BI,BJ))
+          GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) * MASKS(I,J,K,BI,BJ))
+          GVDISS(I,J) = (GVDISS(I,J) * MASKS(I,J,K,BI,BJ))
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_adv_uu(BI, BJ, K, UTRANS, UFLD, ADVECTFLUXUU,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) ADVECTFLUXUU(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          ADVECTFLUXUU(I,J) = ((UTRANS(I,J) + UTRANS(I + 1,J)) * 2.5D-01
+     + * (UFLD(I,J) + UFLD(I + 1,J)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_adv_vu(BI, BJ, K, VTRANS, UFLD, ADVECTFLUXVU,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) ADVECTFLUXVU(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -1, 93, 1
+          ADVECTFLUXVU(I,J) = ((VTRANS(I,J) + VTRANS(I + (-1),J)) * 2.5D
+     +-01 * (UFLD(I,J) + UFLD(I,J + (-1))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_adv_wu(BI, BJ, K, UFLD, WFLD, RTRANS,
+     >  ADVECTIVEFLUXWU, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) ADVECTIVEFLUXWU(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( USINGPCOORDS .and. ((K .eq. 2) .and. USEREALFRESHWATERFLUX) )
+     + then
+
+        DO J = -1, 43, 1
+          DO I = -1, 93, 1
+            ADVECTIVEFLUXWU(I,J) = (RTRANS(I,J) * UFLD(I,J,K + (-1),BI,B
+     +J))
+
+          END DO
+        END DO
+      ELSE
+        if ( (K .gt. 1) .or. ((K .eq. 1) .and. RIGIDLID) ) then
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              ADVECTIVEFLUXWU(I,J) = 0.0
+            END DO
+          END DO
+        ELSE
+          if ( K .eq. 1 ) then
+            DO J = -1, 43, 1
+              DO I = -1, 93, 1
+                ADVECTIVEFLUXWU(I,J) = (RTRANS(I,J) * UFLD(I,J,K,BI,BJ))
+              END DO
+            END DO
+          ELSE
+            DO J = -1, 43, 1
+              DO I = -1, 93, 1
+                ADVECTIVEFLUXWU(I,J) = (RTRANS(I,J) * 5.0D-01 * (UFLD(I,
+     +J,K,BI,BJ) + UFLD(I,J,K + (-1),BI,BJ)))
+
+              END DO
+            END DO
+            if ( (SELECT_RSTAR .eq. 0) .and. (.not. RIGIDLID) ) then
+              DO J = -1, 43, 1
+                DO I = -1, 93, 1
+                  ADVECTIVEFLUXWU(I,J) = (ADVECTIVEFLUXWU(I,J) + UFLD(I,
+     +J,K,BI,BJ) * RHOFACF(K) * DEEPFAC2F(K) * (RA(I,J,BI,BJ) * WFLD(I,J
+     +,K,BI,BJ) * (MASKC(I,J,K,BI,BJ) - MASKC(I,J,K + (-1),BI,BJ)) + RA(
+     +I + (-1),J,BI,BJ) * WFLD(I + (-1),J,K,BI,BJ) * (MASKC(I + (-1),J,K
+     +,BI,BJ) - MASKC(I + (-1),J,K + (-1),BI,BJ))) * 2.5D-01)
+
+                END DO
+              END DO
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_coriolis(BI, BJ, K, VFLD, UCORIOLISTERM, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UCORIOLISTERM(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) ONE
+      PARAMETER ( ONE =     1.000000000000000)
+      double precision  oad_ctmp0
+      real(w2f__8) oad_ctmp1
+C
+C     **** Statements ****
+C
+      if ( USEENERGYCONSERVINGCORIOLIS ) then
+        DO J = -2, 42, 1
+          DO I = -1, 93, 1
+            UCORIOLISTERM(I,J) = ((FCORI(I,J,BI,BJ) * 5.0D-01 * (VFLD(I,
+     +J) + VFLD(I,J + 1)) + FCORI(I + (-1),J,BI,BJ) * 5.0D-01 * (VFLD(I 
+     ++ (-1),J) + VFLD(I + (-1),J + 1))) * 5.0D-01)
+
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 42, 1
+          DO I = -1, 93, 1
+            UCORIOLISTERM(I,J) = ((FCORI(I,J,BI,BJ) + FCORI(I + (-1),J,B
+     +I,BJ)) * 5.0D-01 * 2.5D-01 * (VFLD(I + (-1),J + 1) + VFLD(I + (-1)
+     +,J) + VFLD(I,J) + VFLD(I,J + 1)))
+
+          END DO
+        END DO
+      ENDIF
+      if ( USEJAMARTWETPOINTS ) then
+        DO J = -2, 42, 1
+          DO I = -1, 93, 1
+            oad_ctmp1 = MASKS(I + (-1),J + 1,K,BI,BJ) + MASKS(I + (-1),J
+     +,K,BI,BJ) + MASKS(I,J,K,BI,BJ) + MASKS(I,J + 1,K,BI,BJ)
+
+            call oad_s_MAX_d(oad_ctmp1,1.0D00,oad_ctmp0)
+            UCORIOLISTERM(I,J) = ((UCORIOLISTERM(I,J) * 4.0D00) / oad_ct
+     +mp0)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_del2u(BI, BJ, K, UFLD, HFACZ, DEL2U, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2U(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) FMER(-2 : 93, -2 : 43)
+      REAL(w2f__8) FZON(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZCLOSEDN
+      REAL(w2f__8) HFACZCLOSEDS
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 42, 1
+        DO I = -2, 92, 1
+          FZON(I,J) = (RECIP_DXF(I,J,BI,BJ) * DYF(I,J,BI,BJ) * DRF(K) * 
+     +HFACC(I,J,K,BI,BJ) * (UFLD(I + 1,J) - UFLD(I,J)))
+
+        END DO
+      END DO
+      DO J = -1, 43, 1
+        DO I = -1, 92, 1
+          FMER(I,J) = (RECIP_DYU(I,J,BI,BJ) * DXV(I,J,BI,BJ) * DRF(K) * 
+     +HFACZ(I,J) * (UFLD(I,J) - UFLD(I,J + (-1))))
+
+        END DO
+      END DO
+      DO J = -1, 42, 1
+        DO I = -1, 92, 1
+          DEL2U(I,J) = (MASKW(I,J,K,BI,BJ) * RECIP_DEEPFAC2C(K) * RECIP_
+     +RAW(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACW(I,J,K,BI,BJ) * (FMER(I
+     +,J + 1) + FZON(I,J) - FZON(I + (-1),J) - FMER(I,J)))
+
+        END DO
+      END DO
+      if ( NO_SLIP_SIDES ) then
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            HFACZCLOSEDS = HFACW(I,J,K,BI,BJ) - HFACZ(I,J)
+            HFACZCLOSEDN = HFACW(I,J,K,BI,BJ) - HFACZ(I,J + 1)
+            DEL2U(I,J) = (DEL2U(I,J) - MASKW(I,J,K,BI,BJ) * UFLD(I,J) * 
+     +DRF(K) * RECIP_DEEPFAC2C(K) * RECIP_RAW(I,J,BI,BJ) * RECIP_DRF(K) 
+     +* RECIP_HFACW(I,J,K,BI,BJ) * (RECIP_DYU(I,J,BI,BJ) * DXV(I,J,BI,BJ
+     +) * HFACZCLOSEDS + RECIP_DYU(I,J + 1,BI,BJ) * DXV(I,J + 1,BI,BJ) *
+     + HFACZCLOSEDN) * 2.0D00)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_metric_cylinder(BI, BJ, K, UFLD, VFLD,
+     >  UMETRICTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UMETRICTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RADIUS
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -1, 93, 1
+          RADIUS = (YG(I,J,BI,BJ) + YG(I,J + 1,BI,BJ)) * 5.0D-01
+          if ( RADIUS .gt. 0.0D00 ) then
+            UMETRICTERMS(I,J) = ((UFLD(I,J) * 2.5D-01 * (VFLD(I + (-1),J
+     + + 1) + VFLD(I,J + 1) + VFLD(I,J) + VFLD(I + (-1),J))) / RADIUS)
+
+          ELSE
+            UMETRICTERMS(I,J) = 0.0
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_metric_sphere(BI, BJ, K, UFLD, VFLD,
+     >  UMETRICTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UMETRICTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -1, 93, 1
+          UMETRICTERMS(I,J) = (TANPHIATU(I,J,BI,BJ) * RECIP_DEEPFACC(K) 
+     +* UFLD(I,J) * RECIP_RSPHERE * 2.5D-01 * (VFLD(I + (-1),J + 1) + VF
+     +LD(I,J + 1) + VFLD(I,J) + VFLD(I + (-1),J)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_xviscflux(BI, BJ, K, UFLD, DEL2U, XVISCFLUXU,
+     >  VISCAH_D, VISCA4_D, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2U(-2 : 93, -2 : 43)
+      REAL(w2f__8) XVISCFLUXU(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_D(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_D(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          XVISCFLUXU(I,J) = (RECIP_DXF(I,J,BI,BJ) * HFACC(I,J,K,BI,BJ) *
+     + DRF(K) * DYF(I,J,BI,BJ) * (COSFACU(J,BI,BJ) * VISCA4_D(I,J) * (DE
+     +L2U(I + 1,J) - DEL2U(I,J)) - COSFACU(J,BI,BJ) * VISCAH_D(I,J) * (U
+     +FLD(I + 1,J) - UFLD(I,J))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_yviscflux(BI, BJ, K, UFLD, DEL2U, HFACZ,
+     >  YVISCFLUXU, VISCAH_Z, VISCA4_Z, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2U(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) YVISCFLUXU(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_Z(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          YVISCFLUXU(I,J) = (RECIP_DYU(I,J,BI,BJ) * HFACZ(I,J) * DRF(K) 
+     +* DXV(I,J,BI,BJ) * (VISCA4_Z(I,J) * (DEL2U(I,J) - DEL2U(I,J + (-1)
+     +)) - VISCAH_Z(I,J) * (UFLD(I,J) - UFLD(I,J + (-1)))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_adv_uv(BI, BJ, K, UTRANS, VFLD, ADVECTFLUXUV,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) ADVECTFLUXUV(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -1, 93, 1
+          ADVECTFLUXUV(I,J) = ((UTRANS(I,J) + UTRANS(I,J + (-1))) * 2.5D
+     +-01 * (VFLD(I,J) + VFLD(I + (-1),J)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_adv_vv(BI, BJ, K, VTRANS, VFLD, ADVECTFLUXVV,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) ADVECTFLUXVV(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          ADVECTFLUXVV(I,J) = ((VTRANS(I,J) + VTRANS(I,J + 1)) * 2.5D-01
+     + * (VFLD(I,J) + VFLD(I,J + 1)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_adv_wv(BI, BJ, K, VFLD, WFLD, RTRANS,
+     >  ADVECTIVEFLUXWV, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) ADVECTIVEFLUXWV(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( USINGPCOORDS .and. ((K .eq. 2) .and. USEREALFRESHWATERFLUX) )
+     + then
+
+        DO J = -1, 43, 1
+          DO I = -1, 93, 1
+            ADVECTIVEFLUXWV(I,J) = (RTRANS(I,J) * VFLD(I,J,K + (-1),BI,B
+     +J))
+
+          END DO
+        END DO
+      ELSE
+        if ( (K .gt. 1) .or. ((K .eq. 1) .and. RIGIDLID) ) then
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              ADVECTIVEFLUXWV(I,J) = 0.0
+            END DO
+          END DO
+        ELSE
+          if ( K .eq. 1 ) then
+            DO J = -1, 43, 1
+              DO I = -1, 93, 1
+                ADVECTIVEFLUXWV(I,J) = (RTRANS(I,J) * VFLD(I,J,K,BI,BJ))
+              END DO
+            END DO
+          ELSE
+            DO J = -1, 43, 1
+              DO I = -1, 93, 1
+                ADVECTIVEFLUXWV(I,J) = (RTRANS(I,J) * 5.0D-01 * (VFLD(I,
+     +J,K,BI,BJ) + VFLD(I,J,K + (-1),BI,BJ)))
+
+              END DO
+            END DO
+            if ( (SELECT_RSTAR .eq. 0) .and. (.not. RIGIDLID) ) then
+              DO J = -1, 43, 1
+                DO I = -1, 93, 1
+                  ADVECTIVEFLUXWV(I,J) = (ADVECTIVEFLUXWV(I,J) + VFLD(I,
+     +J,K,BI,BJ) * RHOFACF(K) * DEEPFAC2F(K) * (RA(I,J,BI,BJ) * WFLD(I,J
+     +,K,BI,BJ) * (MASKC(I,J,K,BI,BJ) - MASKC(I,J,K + (-1),BI,BJ)) + RA(
+     +I,J + (-1),BI,BJ) * WFLD(I,J + (-1),K,BI,BJ) * (MASKC(I,J + (-1),K
+     +,BI,BJ) - MASKC(I,J + (-1),K + (-1),BI,BJ))) * 2.5D-01)
+
+                END DO
+              END DO
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_coriolis(BI, BJ, K, UFLD, VCORIOLISTERM, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VCORIOLISTERM(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) ONE
+      PARAMETER ( ONE =     1.000000000000000)
+      double precision  oad_ctmp0
+      real(w2f__8) oad_ctmp1
+C
+C     **** Statements ****
+C
+      if ( USEENERGYCONSERVINGCORIOLIS ) then
+        DO J = -1, 43, 1
+          DO I = -2, 92, 1
+            VCORIOLISTERM(I,J) = ((FCORI(I,J,BI,BJ) * 5.0D-01 * (UFLD(I,
+     +J) + UFLD(I + 1,J)) + FCORI(I,J + (-1),BI,BJ) * 5.0D-01 * (UFLD(I,
+     +J + (-1)) + UFLD(I + 1,J + (-1)))) * (-5.0D-01))
+
+          END DO
+        END DO
+      ELSE
+        DO J = -1, 43, 1
+          DO I = -2, 92, 1
+            VCORIOLISTERM(I,J) = (-((FCORI(I,J,BI,BJ) + FCORI(I,J + (-1)
+     +,BI,BJ)) * 5.0D-01 * 2.5D-01 * (UFLD(I + 1,J + (-1)) + UFLD(I,J + 
+     +(-1)) + UFLD(I,J) + UFLD(I + 1,J))))
+
+          END DO
+        END DO
+      ENDIF
+      if ( USEJAMARTWETPOINTS ) then
+        DO J = -1, 43, 1
+          DO I = -2, 92, 1
+            oad_ctmp1 = MASKW(I + 1,J + (-1),K,BI,BJ) + MASKW(I,J + (-1)
+     +,K,BI,BJ) + MASKW(I,J,K,BI,BJ) + MASKW(I + 1,J,K,BI,BJ)
+
+            call oad_s_MAX_d(oad_ctmp1,1.0D00,oad_ctmp0)
+            VCORIOLISTERM(I,J) = ((VCORIOLISTERM(I,J) * 4.0D00) / oad_ct
+     +mp0)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_del2v(BI, BJ, K, VFLD, HFACZ, DEL2V, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2V(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) FMER(-2 : 93, -2 : 43)
+      REAL(w2f__8) FZON(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZCLOSEDE
+      REAL(w2f__8) HFACZCLOSEDW
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 42, 1
+        DO I = -1, 93, 1
+          FZON(I,J) = (RECIP_DXV(I,J,BI,BJ) * DYU(I,J,BI,BJ) * DRF(K) * 
+     +HFACZ(I,J) * (VFLD(I,J) - VFLD(I + (-1),J)))
+
+        END DO
+      END DO
+      DO J = -2, 42, 1
+        DO I = -1, 92, 1
+          FMER(I,J) = (RECIP_DYF(I,J,BI,BJ) * DXF(I,J,BI,BJ) * DRF(K) * 
+     +HFACC(I,J,K,BI,BJ) * (VFLD(I,J + 1) - VFLD(I,J)))
+
+        END DO
+      END DO
+      DO J = -1, 42, 1
+        DO I = -1, 92, 1
+          DEL2V(I,J) = (MASKS(I,J,K,BI,BJ) * RECIP_DEEPFAC2C(K) * RECIP_
+     +RAS(I,J,BI,BJ) * RECIP_DRF(K) * RECIP_HFACS(I,J,K,BI,BJ) * (FMER(I
+     +,J) + FZON(I + 1,J) - FZON(I,J) - FMER(I,J + (-1))))
+
+        END DO
+      END DO
+      if ( NO_SLIP_SIDES ) then
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            HFACZCLOSEDW = HFACS(I,J,K,BI,BJ) - HFACZ(I,J)
+            HFACZCLOSEDE = HFACS(I,J,K,BI,BJ) - HFACZ(I + 1,J)
+            DEL2V(I,J) = (DEL2V(I,J) - MASKS(I,J,K,BI,BJ) * VFLD(I,J) * 
+     +DRF(K) * RECIP_DEEPFAC2C(K) * RECIP_RAS(I,J,BI,BJ) * RECIP_DRF(K) 
+     +* RECIP_HFACS(I,J,K,BI,BJ) * (RECIP_DXV(I,J,BI,BJ) * DYU(I,J,BI,BJ
+     +) * HFACZCLOSEDW + RECIP_DXV(I + 1,J,BI,BJ) * DYU(I + 1,J,BI,BJ) *
+     + HFACZCLOSEDE) * 2.0D00)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_metric_cylinder(BI, BJ, K, UFLD, VFLD,
+     >  VMETRICTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VMETRICTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RADIUS
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -2, 92, 1
+          RADIUS = (YG(I,J,BI,BJ) + YG(I + 1,J,BI,BJ)) * 5.0D-01
+          if ( RADIUS .gt. 0.0D00 ) then
+            VMETRICTERMS(I,J) = (-(((UFLD(I + 1,J + (-1)) + UFLD(I,J + (
+     +-1)) + UFLD(I,J) + UFLD(I + 1,J)) * 2.5D-01 * 2.5D-01 * (UFLD(I + 
+     +1,J + (-1)) + UFLD(I,J + (-1)) + UFLD(I,J) + UFLD(I + 1,J))) / RAD
+     +IUS))
+
+          ELSE
+            VMETRICTERMS(I,J) = 0.0
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_metric_sphere(BI, BJ, K, UFLD, VMETRICTERMS,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VMETRICTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -2, 92, 1
+          VMETRICTERMS(I,J) = (-(TANPHIATV(I,J,BI,BJ) * RECIP_DEEPFACC(K
+     +) * RECIP_RSPHERE * 2.5D-01 * (UFLD(I + 1,J + (-1)) + UFLD(I,J + (
+     +-1)) + UFLD(I,J) + UFLD(I + 1,J)) * 2.5D-01 * (UFLD(I + 1,J + (-1)
+     +) + UFLD(I,J + (-1)) + UFLD(I,J) + UFLD(I + 1,J))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_xviscflux(BI, BJ, K, VFLD, DEL2V, HFACZ,
+     >  XVISCFLUXV, VISCAH_Z, VISCA4_Z, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2V(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) XVISCFLUXV(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_Z(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -1, 93, 1
+          XVISCFLUXV(I,J) = (RECIP_DXV(I,J,BI,BJ) * HFACZ(I,J) * DRF(K) 
+     +* DYU(I,J,BI,BJ) * (COSFACV(J,BI,BJ) * VISCA4_Z(I,J) * (DEL2V(I,J)
+     + - DEL2V(I + (-1),J)) - COSFACV(J,BI,BJ) * VISCAH_Z(I,J) * (VFLD(I
+     +,J) - VFLD(I + (-1),J))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_yviscflux(BI, BJ, K, VFLD, DEL2V, YVISCFLUXV,
+     >  VISCAH_D, VISCA4_D, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2V(-2 : 93, -2 : 43)
+      REAL(w2f__8) YVISCFLUXV(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_D(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_D(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          YVISCFLUXV(I,J) = (RECIP_DYF(I,J,BI,BJ) * HFACC(I,J,K,BI,BJ) *
+     + DRF(K) * DXF(I,J,BI,BJ) * (VISCA4_D(I,J) * (DEL2V(I,J + 1) - DEL2
+     +V(I,J)) - VISCAH_D(I,J) * (VFLD(I,J + 1) - VFLD(I,J))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_fld_xyz_rs(PREF, SUFF, FIELD, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) PREF
+      CHARACTER(*) SUFF
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__593
+      INTEGER(w2f__i8) t__594
+      CHARACTER(2) FTYPE
+      CHARACTER(512) FULLNAME
+      EXTERNAL ifnblnk
+      INTEGER(w2f__i4) ifnblnk
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) IREC
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      INTEGER(w2f__i4) S1HI
+      INTEGER(w2f__i4) S1LO
+      INTEGER(w2f__i4) S2HI
+      INTEGER(w2f__i4) S2LO
+      character(5) oad_slc0
+      integer(w2f__i4) oad_ctmp0
+      character(5) oad_slc1
+      integer(w2f__i4) oad_ctmp1
+      character(5) oad_slc2
+      character(5) oad_slc3
+      integer(w2f__i4) oad_ctmp2
+      character(5) oad_slc4
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      t__593 = LEN(PREF)
+      t__594 = LEN(SUFF)
+      call oad_s_ifnblnk(oad_slc0,oad_ctmp0)
+      S1LO = oad_ctmp0
+      call oad_s_ilnblnk(oad_slc1,oad_ctmp1)
+      S1HI = oad_ctmp1
+      if ( oad_slc2 .eq. ' ' ) then
+        WRITE(FULLNAME, '(A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI -
+     >  S1LO + 1))
+      ELSE
+        call oad_s_ifnblnk(oad_slc3,oad_ctmp2)
+        S2LO = oad_ctmp2
+        call oad_s_ilnblnk(oad_slc4,oad_ctmp3)
+        S2HI = oad_ctmp3
+        WRITE(FULLNAME, '(A,A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI
+     >  - S1LO + 1)), SUFF(S2LO : (S2LO - 1_w2f__i8) + (S2HI - S2LO + 1
+     > ))
+      ENDIF
+      FTYPE = 'RS'
+      NNZ = 1
+      IREC = 1
+      call mdsreadfield(FULLNAME,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MYT
+     +HID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_fld_xyz_rl(PREF, SUFF, FIELD, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) PREF
+      CHARACTER(*) SUFF
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__603
+      INTEGER(w2f__i8) t__604
+      CHARACTER(2) FTYPE
+      CHARACTER(512) FULLNAME
+      EXTERNAL ifnblnk
+      INTEGER(w2f__i4) ifnblnk
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) IREC
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      INTEGER(w2f__i4) S1HI
+      INTEGER(w2f__i4) S1LO
+      INTEGER(w2f__i4) S2HI
+      INTEGER(w2f__i4) S2LO
+      character(5) oad_slc5
+      integer(w2f__i4) oad_ctmp0
+      character(5) oad_slc6
+      integer(w2f__i4) oad_ctmp1
+      character(5) oad_slc7
+      character(5) oad_slc8
+      integer(w2f__i4) oad_ctmp2
+      character(5) oad_slc9
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      t__603 = LEN(PREF)
+      t__604 = LEN(SUFF)
+      call oad_s_ifnblnk(oad_slc5,oad_ctmp0)
+      S1LO = oad_ctmp0
+      call oad_s_ilnblnk(oad_slc6,oad_ctmp1)
+      S1HI = oad_ctmp1
+      if ( oad_slc7 .eq. ' ' ) then
+        WRITE(FULLNAME, '(A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI -
+     >  S1LO + 1))
+      ELSE
+        call oad_s_ifnblnk(oad_slc8,oad_ctmp2)
+        S2LO = oad_ctmp2
+        call oad_s_ilnblnk(oad_slc9,oad_ctmp3)
+        S2HI = oad_ctmp3
+        WRITE(FULLNAME, '(A,A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI
+     >  - S1LO + 1)), SUFF(S2LO : (S2LO - 1_w2f__i8) + (S2HI - S2LO + 1
+     > ))
+      ENDIF
+      FTYPE = 'RL'
+      NNZ = 1
+      IREC = 1
+      call mdsreadfield(FULLNAME,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MYT
+     +HID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_fld_xy_rs(PREF, SUFF, FIELD, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) PREF
+      CHARACTER(*) SUFF
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__612
+      INTEGER(w2f__i8) t__613
+      CHARACTER(2) FTYPE
+      CHARACTER(512) FULLNAME
+      EXTERNAL ifnblnk
+      INTEGER(w2f__i4) ifnblnk
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) IREC
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      INTEGER(w2f__i4) S1HI
+      INTEGER(w2f__i4) S1LO
+      INTEGER(w2f__i4) S2HI
+      INTEGER(w2f__i4) S2LO
+      character(5) oad_slc10
+      integer(w2f__i4) oad_ctmp0
+      character(5) oad_slc11
+      integer(w2f__i4) oad_ctmp1
+      character(5) oad_slc12
+      character(5) oad_slc13
+      integer(w2f__i4) oad_ctmp2
+      character(5) oad_slc14
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      t__612 = LEN(PREF)
+      t__613 = LEN(SUFF)
+      call oad_s_ifnblnk(oad_slc10,oad_ctmp0)
+      S1LO = oad_ctmp0
+      call oad_s_ilnblnk(oad_slc11,oad_ctmp1)
+      S1HI = oad_ctmp1
+      if ( oad_slc12 .eq. ' ' ) then
+        WRITE(FULLNAME, '(A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI -
+     >  S1LO + 1))
+      ELSE
+        call oad_s_ifnblnk(oad_slc13,oad_ctmp2)
+        S2LO = oad_ctmp2
+        call oad_s_ilnblnk(oad_slc14,oad_ctmp3)
+        S2HI = oad_ctmp3
+        WRITE(FULLNAME, '(A,A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI
+     >  - S1LO + 1)), SUFF(S2LO : (S2LO - 1_w2f__i8) + (S2HI - S2LO + 1
+     > ))
+      ENDIF
+      FTYPE = 'RS'
+      NNZ = 1
+      IREC = 1
+      call mdsreadfield(FULLNAME,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MYT
+     +HID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_fld_xy_rl(PREF, SUFF, FIELD, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) PREF
+      CHARACTER(*) SUFF
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__621
+      INTEGER(w2f__i8) t__622
+      CHARACTER(2) FTYPE
+      CHARACTER(512) FULLNAME
+      EXTERNAL ifnblnk
+      INTEGER(w2f__i4) ifnblnk
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) IREC
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      INTEGER(w2f__i4) S1HI
+      INTEGER(w2f__i4) S1LO
+      INTEGER(w2f__i4) S2HI
+      INTEGER(w2f__i4) S2LO
+      character(5) oad_slc15
+      integer(w2f__i4) oad_ctmp0
+      character(5) oad_slc16
+      integer(w2f__i4) oad_ctmp1
+      character(5) oad_slc17
+      character(5) oad_slc18
+      integer(w2f__i4) oad_ctmp2
+      character(5) oad_slc19
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      t__621 = LEN(PREF)
+      t__622 = LEN(SUFF)
+      call oad_s_ifnblnk(oad_slc15,oad_ctmp0)
+      S1LO = oad_ctmp0
+      call oad_s_ilnblnk(oad_slc16,oad_ctmp1)
+      S1HI = oad_ctmp1
+      if ( oad_slc17 .eq. ' ' ) then
+        WRITE(FULLNAME, '(A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI -
+     >  S1LO + 1))
+      ELSE
+        call oad_s_ifnblnk(oad_slc18,oad_ctmp2)
+        S2LO = oad_ctmp2
+        call oad_s_ilnblnk(oad_slc19,oad_ctmp3)
+        S2HI = oad_ctmp3
+        WRITE(FULLNAME, '(A,A)') PREF(S1LO : (S1LO - 1_w2f__i8) + (S1HI
+     >  - S1LO + 1)), SUFF(S2LO : (S2LO - 1_w2f__i8) + (S2HI - S2LO + 1
+     > ))
+      ENDIF
+      FTYPE = 'RL'
+      NNZ = 1
+      IREC = 1
+      call mdsreadfield(FULLNAME,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MYT
+     +HID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_xy_rs(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__629
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc20
+C
+C     **** Statements ****
+C
+      t__629 = LEN(FNAME)
+      FTYPE = 'RS'
+      NNZ = 1
+      call mdsreadfield(oad_slc20,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MY
+     +THID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_xy_rl(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__636
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc21
+C
+C     **** Statements ****
+C
+      t__636 = LEN(FNAME)
+      FTYPE = 'RL'
+      NNZ = 1
+      call mdsreadfield(oad_slc21,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MY
+     +THID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_xyz_rs(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__644
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc22
+C
+C     **** Statements ****
+C
+      t__644 = LEN(FNAME)
+      FTYPE = 'RS'
+      NNZ = 1
+      call mdsreadfield(oad_slc22,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MY
+     +THID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_xyz_rl(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__652
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc23
+C
+C     **** Statements ****
+C
+      t__652 = LEN(FNAME)
+      FTYPE = 'RL'
+      NNZ = 1
+      call mdsreadfield(oad_slc23,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,MY
+     +THID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_3d_rs(FNAME, FPREC, NNZ, FIELD, IREC, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      INTEGER(w2f__i4) FPREC
+      INTEGER(w2f__i4) NNZ
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : NNZ, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__660
+      INTEGER(w2f__i8) t__657
+      INTEGER(w2f__i8) t__661
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i8) t__662
+      INTEGER(w2f__i8) t__663
+      INTEGER(w2f__i8) t__664
+      integer(w2f__i8) oad_ctmp0
+      character(5) oad_slc24
+C
+C     **** Statements ****
+C
+      t__660 = LEN(FNAME)
+      t__657 = NNZ
+      call oad_s_MAX_i(t__657,0_w2f__i8,oad_ctmp0)
+      t__661 = oad_ctmp0
+      t__662 = t__661 * 8832_w2f__i8
+      t__663 = t__662
+      t__664 = t__661 * 4416_w2f__i8
+      FTYPE = 'RS'
+      call mdsreadfield(oad_slc24,FPREC,FTYPE,NNZ,FIELD,IREC,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_3d_rl(FNAME, FPREC, NNZ, FIELD, IREC, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      INTEGER(w2f__i4) FPREC
+      INTEGER(w2f__i4) NNZ
+      REAL(w2f__8) FIELD(-2 : 93, -2 : 43, 1 : NNZ, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__672
+      INTEGER(w2f__i8) t__669
+      INTEGER(w2f__i8) t__673
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfield
+      INTEGER(w2f__i8) t__674
+      INTEGER(w2f__i8) t__675
+      INTEGER(w2f__i8) t__676
+      integer(w2f__i8) oad_ctmp0
+      character(5) oad_slc25
+C
+C     **** Statements ****
+C
+      t__672 = LEN(FNAME)
+      t__669 = NNZ
+      call oad_s_MAX_i(t__669,0_w2f__i8,oad_ctmp0)
+      t__673 = oad_ctmp0
+      t__674 = t__673 * 8832_w2f__i8
+      t__675 = t__674
+      t__676 = t__673 * 4416_w2f__i8
+      FTYPE = 'RL'
+      call mdsreadfield(oad_slc25,FPREC,FTYPE,NNZ,FIELD,IREC,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_xz_rs(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 93, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__682
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfieldxz
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc26
+C
+C     **** Statements ****
+C
+      t__682 = LEN(FNAME)
+      FTYPE = 'RS'
+      NNZ = 1
+      call mdsreadfieldxz(oad_slc26,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,
+     +MYTHID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_xz_rl(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 93, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__688
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfieldxz
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc27
+C
+C     **** Statements ****
+C
+      t__688 = LEN(FNAME)
+      FTYPE = 'RL'
+      NNZ = 1
+      call mdsreadfieldxz(oad_slc27,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,
+     +MYTHID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_yz_rs(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__694
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfieldyz
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc28
+C
+C     **** Statements ****
+C
+      t__694 = LEN(FNAME)
+      FTYPE = 'RS'
+      NNZ = 1
+      call mdsreadfieldyz(oad_slc28,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,
+     +MYTHID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_rec_yz_rl(FNAME, FIELD, IREC, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      REAL(w2f__8) FIELD(-2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) IREC
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__700
+      CHARACTER(2) FTYPE
+      EXTERNAL mdsreadfieldyz
+      INTEGER(w2f__i4) NNZ
+      character(5) oad_slc29
+C
+C     **** Statements ****
+C
+      t__700 = LEN(FNAME)
+      FTYPE = 'RL'
+      NNZ = 1
+      call mdsreadfieldyz(oad_slc29,READBINARYPREC,FTYPE,NNZ,FIELD,IREC,
+     +MYTHID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_absvort3(BI, BJ, K, VORT3, OMEGA3, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VORT3(-2 : 93, -2 : 43)
+      REAL(w2f__8) OMEGA3(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) NONLINFAC
+      REAL(w2f__8) USECORIOLISFAC
+C
+C     **** Statements ****
+C
+      if ( MOMADVECTION ) then
+        NONLINFAC = 1.0D00
+      ELSE
+        NONLINFAC = 0.0D00
+      ENDIF
+      if ( USECORIOLIS ) then
+        USECORIOLISFAC = 1.0D00
+      ELSE
+        USECORIOLISFAC = 0.0D00
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          OMEGA3(I,J) = (VORT3(I,J) * NONLINFAC + FCORIG(I,J,BI,BJ) * US
+     +ECORIOLISFAC)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_hdiv(BI, BJ, K, HDIVSCHEME, UFLD, VFLD, HDIV,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) HDIVSCHEME
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) HDIV(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( HDIVSCHEME .eq. 1 ) then
+        DO J = -2, 42, 1
+          DO I = -2, 92, 1
+            HDIV(I,J) = (RECIP_RA(I,J,BI,BJ) * (VFLD(I,J + 1) * DXG(I,J 
+     ++ 1,BI,BJ) + UFLD(I + 1,J) * DYG(I + 1,J,BI,BJ) - UFLD(I,J) * DYG(
+     +I,J,BI,BJ) - VFLD(I,J) * DXG(I,J,BI,BJ)))
+
+          END DO
+        END DO
+      ELSE
+        if ( HDIVSCHEME .eq. 2 ) then
+          DO J = -2, 42, 1
+            DO I = -2, 92, 1
+              HDIV(I,J) = (RECIP_HFACC(I,J,K,BI,BJ) * RECIP_RA(I,J,BI,BJ
+     +) * ((HFACS(I,J + 1,K,BI,BJ) * VFLD(I,J + 1) * DXG(I,J + 1,BI,BJ) 
+     +- HFACS(I,J,K,BI,BJ) * VFLD(I,J) * DXG(I,J,BI,BJ)) + (HFACW(I + 1,
+     +J,K,BI,BJ) * UFLD(I + 1,J) * DYG(I + 1,J,BI,BJ) - HFACW(I,J,K,BI,B
+     +J) * UFLD(I,J) * DYG(I,J,BI,BJ))))
+
+            END DO
+          END DO
+        ELSE
+          WRITE(*, *)
+     >  'S/R MOM_CALC_HDIV: We should never reach this po' // 'int!'
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_hfacz(BI, BJ, K, HFACZ, R_HFACZ, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) R_HFACZ(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) HFACZOPEN
+      INTEGER(w2f__i4) HZOPTION
+      PARAMETER ( HZOPTION = 0)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) MYFACE
+      LOGICAL(w2f__i4) NORTHEASTCORNER
+      LOGICAL(w2f__i4) NORTHWESTCORNER
+      LOGICAL(w2f__i4) SOUTHEASTCORNER
+      LOGICAL(w2f__i4) SOUTHWESTCORNER
+      real(w2f__8) oad_ctmp0
+      real(w2f__8) oad_ctmp1
+      real(w2f__8) oad_ctmp2
+      real(w2f__8) oad_ctmp3
+      real(w2f__8) oad_ctmp4
+      real(w2f__8) oad_ctmp5
+      real(w2f__8) oad_ctmp6
+      real(w2f__8) oad_ctmp7
+      real(w2f__8) oad_ctmp8
+      real(w2f__8) oad_ctmp9
+      real(w2f__8) oad_ctmp10
+      real(w2f__8) oad_ctmp11
+      real(w2f__8) oad_ctmp12
+      real(w2f__8) oad_ctmp13
+C
+C     **** Statements ****
+C
+      DO I = -2, 93, 1
+        HFACZ(I,(-2)) = 0.0
+      END DO
+      DO J = -1, 43, 1
+        HFACZ((-2),J) = 0.0
+      END DO
+      if ( .false. ) then
+        DO J = -1, 43, 1
+          DO I = -1, 93, 1
+            HFACZOPEN = (HFACS(I,J,K,BI,BJ) + HFACS(I + (-1),J,K,BI,BJ))
+     + + (HFACW(I,J,K,BI,BJ) + HFACW(I,J + (-1),K,BI,BJ))
+
+            HFACZ(I,J) = (HFACZOPEN * 2.5D-01)
+          END DO
+        END DO
+      ELSE
+        if ( .false. ) then
+          DO J = -1, 43, 1
+            DO I = -1, 93, 1
+              oad_ctmp1 = HFACS(I,J,K,BI,BJ) + HFACS(I + (-1),J,K,BI,BJ)
+              oad_ctmp2 = HFACW(I,J,K,BI,BJ) + HFACW(I,J + (-1),K,BI,BJ)
+              call oad_s_MIN_r(oad_ctmp1,oad_ctmp2,oad_ctmp0)
+              HFACZOPEN = oad_ctmp0
+              HFACZ(I,J) = (HFACZOPEN * 5.0D-01)
+            END DO
+          END DO
+        ELSE
+          DO J = -1, 43, 1
+            DO I = -1, 93, 1
+              call oad_s_MIN_r(HFACW(I,J,K,BI,BJ),HFACW(I,J + (-1),K,BI,
+     +BJ),oad_ctmp3)
+
+              HFACZOPEN = oad_ctmp3
+              call oad_s_MIN_r(HFACS(I,J,K,BI,BJ),HFACZOPEN,oad_ctmp4)
+              HFACZOPEN = oad_ctmp4
+              call oad_s_MIN_r(HFACS(I + (-1),J,K,BI,BJ),HFACZOPEN,oad_c
+     +tmp5)
+
+              HFACZOPEN = oad_ctmp5
+              HFACZ(I,J) = HFACZOPEN
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      if ( .false. ) then
+        MYFACE = BI
+        SOUTHWESTCORNER = .true.
+        SOUTHEASTCORNER = .true.
+        NORTHWESTCORNER = .true.
+        NORTHEASTCORNER = .true.
+        if ( SOUTHWESTCORNER ) then
+          I = 1
+          J = 1
+          if ( .false. ) then
+            call oad_s_MIN_r(HFACW(I,J,K,BI,BJ),HFACW(I,J + (-1),K,BI,BJ
+     +),oad_ctmp6)
+
+            HFACZOPEN = oad_ctmp6
+            call oad_s_MIN_r(HFACS(I,J,K,BI,BJ),HFACZOPEN,oad_ctmp7)
+            HFACZOPEN = oad_ctmp7
+            HFACZ(I,J) = HFACZOPEN
+          ELSE
+            if ( MOD(MYFACE,2) .eq. 1 ) then
+              HFACZOPEN = HFACW(I,J,K,BI,BJ) + (HFACS(I,J,K,BI,BJ) + HFA
+     +CW(I,J + (-1),K,BI,BJ))
+
+            ELSE
+              HFACZOPEN = HFACS(I,J,K,BI,BJ) + (HFACW(I,J,K,BI,BJ) + HFA
+     +CW(I,J + (-1),K,BI,BJ))
+
+            ENDIF
+            HFACZ(I,J) = (HFACZOPEN / 3.0D00)
+          ENDIF
+        ENDIF
+        if ( SOUTHEASTCORNER ) then
+          I = 91
+          J = 1
+          if ( .false. ) then
+            call oad_s_MIN_r(HFACW(I,J,K,BI,BJ),HFACW(I,J + (-1),K,BI,BJ
+     +),oad_ctmp8)
+
+            HFACZOPEN = oad_ctmp8
+            call oad_s_MIN_r(HFACS(I + (-1),J,K,BI,BJ),HFACZOPEN,oad_ctm
+     +p9)
+
+            HFACZOPEN = oad_ctmp9
+            HFACZ(I,J) = HFACZOPEN
+          ELSE
+            if ( MYFACE .eq. 4 ) then
+              HFACZOPEN = HFACW(I,J,K,BI,BJ) + (HFACS(I + (-1),J,K,BI,BJ
+     +) + HFACW(I,J + (-1),K,BI,BJ))
+
+            ELSE
+              if ( MYFACE .eq. 6 ) then
+                HFACZOPEN = HFACS(I + (-1),J,K,BI,BJ) + (HFACW(I,J,K,BI,
+     +BJ) + HFACW(I,J + (-1),K,BI,BJ))
+
+              ELSE
+                HFACZOPEN = HFACW(I,J + (-1),K,BI,BJ) + (HFACS(I + (-1),
+     +J,K,BI,BJ) + HFACW(I,J,K,BI,BJ))
+
+              ENDIF
+            ENDIF
+            HFACZ(I,J) = (HFACZOPEN / 3.0D00)
+          ENDIF
+        ENDIF
+        if ( NORTHWESTCORNER ) then
+          I = 1
+          J = 41
+          if ( .false. ) then
+            call oad_s_MIN_r(HFACW(I,J,K,BI,BJ),HFACW(I,J + (-1),K,BI,BJ
+     +),oad_ctmp10)
+
+            HFACZOPEN = oad_ctmp10
+            call oad_s_MIN_r(HFACS(I,J,K,BI,BJ),HFACZOPEN,oad_ctmp11)
+            HFACZOPEN = oad_ctmp11
+            HFACZ(I,J) = HFACZOPEN
+          ELSE
+            if ( MYFACE .eq. 1 ) then
+              HFACZOPEN = HFACW(I,J + (-1),K,BI,BJ) + (HFACS(I,J,K,BI,BJ
+     +) + HFACW(I,J,K,BI,BJ))
+
+            ELSE
+              if ( MYFACE .eq. 5 ) then
+                HFACZOPEN = HFACS(I,J,K,BI,BJ) + (HFACW(I,J,K,BI,BJ) + H
+     +FACW(I,J + (-1),K,BI,BJ))
+
+              ELSE
+                HFACZOPEN = HFACW(I,J,K,BI,BJ) + (HFACS(I,J,K,BI,BJ) + H
+     +FACW(I,J + (-1),K,BI,BJ))
+
+              ENDIF
+            ENDIF
+            HFACZ(I,J) = (HFACZOPEN / 3.0D00)
+          ENDIF
+        ENDIF
+        if ( NORTHEASTCORNER ) then
+          I = 91
+          J = 41
+          if ( .false. ) then
+            call oad_s_MIN_r(HFACW(I,J,K,BI,BJ),HFACW(I,J + (-1),K,BI,BJ
+     +),oad_ctmp12)
+
+            HFACZOPEN = oad_ctmp12
+            call oad_s_MIN_r(HFACS(I + (-1),J,K,BI,BJ),HFACZOPEN,oad_ctm
+     +p13)
+
+            HFACZOPEN = oad_ctmp13
+            HFACZ(I,J) = HFACZOPEN
+          ELSE
+            if ( MOD(MYFACE,2) .eq. 1 ) then
+              HFACZOPEN = HFACS(I + (-1),J,K,BI,BJ) + (HFACW(I,J,K,BI,BJ
+     +) + HFACW(I,J + (-1),K,BI,BJ))
+
+            ELSE
+              HFACZOPEN = HFACW(I,J + (-1),K,BI,BJ) + (HFACS(I + (-1),J,
+     +K,BI,BJ) + HFACW(I,J,K,BI,BJ))
+
+            ENDIF
+            HFACZ(I,J) = (HFACZOPEN / 3.0D00)
+          ENDIF
+        ENDIF
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          if ( HFACZ(I,J) .eq. 0.0D00 ) then
+            R_HFACZ(I,J) = 0.0
+          ELSE
+            R_HFACZ(I,J) = 1D00 / (HFACZ(I,J))
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_ke(BI, BJ, K, KESCHEME, UFLD, VFLD, KE,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KESCHEME
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) KE(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( KESCHEME .eq. (-1) ) then
+        DO J = -2, 42, 1
+          DO I = -2, 92, 1
+            KE(I,J) = ((((UFLD(I,J) + UFLD(I + 1,J)) ** 2) + ((VFLD(I,J)
+     + + VFLD(I,J + 1)) ** 2)) * 1.25D-01)
+
+          END DO
+        END DO
+      ELSE
+        if ( KESCHEME .eq. 0 ) then
+          DO J = -2, 42, 1
+            DO I = -2, 92, 1
+              KE(I,J) = (((UFLD(I,J) * UFLD(I,J) + UFLD(I + 1,J) * UFLD(
+     +I + 1,J)) + (VFLD(I,J) * VFLD(I,J) + VFLD(I,J + 1) * VFLD(I,J + 1)
+     +)) * 2.5D-01)
+
+            END DO
+          END DO
+        ELSE
+          if ( KESCHEME .eq. 1 ) then
+            DO J = -2, 42, 1
+              DO I = -2, 92, 1
+                KE(I,J) = (RECIP_RA(I,J,BI,BJ) * ((RAS(I,J,BI,BJ) * VFLD
+     +(I,J) * VFLD(I,J) + RAS(I,J + 1,BI,BJ) * VFLD(I,J + 1) * VFLD(I,J 
+     ++ 1)) + (RAW(I,J,BI,BJ) * UFLD(I,J) * UFLD(I,J) + RAW(I + 1,J,BI,B
+     +J) * UFLD(I + 1,J) * UFLD(I + 1,J))) * 2.5D-01)
+
+              END DO
+            END DO
+          ELSE
+            if ( KESCHEME .eq. 2 ) then
+              DO J = -2, 42, 1
+                DO I = -2, 92, 1
+                  KE(I,J) = (RECIP_HFACC(I,J,K,BI,BJ) * ((HFACS(I,J,K,BI
+     +,BJ) * VFLD(I,J) * VFLD(I,J) + HFACS(I,J + 1,K,BI,BJ) * VFLD(I,J +
+     + 1) * VFLD(I,J + 1)) + (HFACW(I,J,K,BI,BJ) * UFLD(I,J) * UFLD(I,J)
+     + + HFACW(I + 1,J,K,BI,BJ) * UFLD(I + 1,J) * UFLD(I + 1,J))) * 2.5D
+     +-01)
+
+                END DO
+              END DO
+            ELSE
+              if ( KESCHEME .eq. 3 ) then
+                DO J = -2, 42, 1
+                  DO I = -2, 92, 1
+                    KE(I,J) = (RECIP_RA(I,J,BI,BJ) * RECIP_HFACC(I,J,K,B
+     +I,BJ) * ((RAS(I,J,BI,BJ) * HFACS(I,J,K,BI,BJ) * VFLD(I,J) * VFLD(I
+     +,J) + RAS(I,J + 1,BI,BJ) * HFACS(I,J + 1,K,BI,BJ) * VFLD(I,J + 1) 
+     +* VFLD(I,J + 1)) + (RAW(I,J,BI,BJ) * HFACW(I,J,K,BI,BJ) * UFLD(I,J
+     +) * UFLD(I,J) + RAW(I + 1,J,BI,BJ) * HFACW(I + 1,J,K,BI,BJ) * UFLD
+     +(I + 1,J) * UFLD(I + 1,J))) * 2.5D-01)
+
+                  END DO
+                END DO
+              ELSE
+                WRITE(*, *)
+     >  'S/R MOM_CALC_KE: We should never reach this poin' // 't!'
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_relvort3(BI, BJ, K, UFLD, VFLD, HFACZ, VORT3,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) VORT3(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) MYFACE
+      LOGICAL(w2f__i4) NORTHEASTCORNER
+      LOGICAL(w2f__i4) NORTHWESTCORNER
+      LOGICAL(w2f__i4) SOUTHEASTCORNER
+      LOGICAL(w2f__i4) SOUTHWESTCORNER
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          VORT3(I,J) = 0.0D00
+        END DO
+      END DO
+      DO J = -1, 43, 1
+        DO I = -1, 93, 1
+          VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * ((VFLD(I,J) * DYC(I,J,BI,
+     +BJ) - VFLD(I + (-1),J) * DYC(I + (-1),J,BI,BJ)) - (UFLD(I,J) * DXC
+     +(I,J,BI,BJ) - UFLD(I,J + (-1)) * DXC(I,J + (-1),BI,BJ))))
+
+        END DO
+      END DO
+      if ( USECUBEDSPHEREEXCHANGE ) then
+        MYFACE = BI
+        SOUTHWESTCORNER = .true.
+        SOUTHEASTCORNER = .true.
+        NORTHWESTCORNER = .true.
+        NORTHEASTCORNER = .true.
+        if ( SOUTHWESTCORNER ) then
+          I = 1
+          J = 1
+          VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * (UFLD(I,J + (-1)) * DXC(I
+     +,J + (-1),BI,BJ) + (VFLD(I,J) * DYC(I,J,BI,BJ) - UFLD(I,J) * DXC(I
+     +,J,BI,BJ))))
+
+        ENDIF
+        if ( SOUTHEASTCORNER ) then
+          I = 91
+          J = 1
+          if ( MYFACE .eq. 2 ) then
+            VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * (UFLD(I,J + (-1)) * DXC
+     +(I,J + (-1),BI,BJ) + (-(UFLD(I,J) * DXC(I,J,BI,BJ) + VFLD(I + (-1)
+     +,J) * DYC(I + (-1),J,BI,BJ)))))
+
+          ELSE
+            if ( MYFACE .eq. 4 ) then
+              VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * ((UFLD(I,J + (-1)) * 
+     +DXC(I,J + (-1),BI,BJ) - VFLD(I + (-1),J) * DYC(I + (-1),J,BI,BJ)) 
+     +- UFLD(I,J) * DXC(I,J,BI,BJ)))
+
+            ELSE
+              VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * ((UFLD(I,J + (-1)) * 
+     +DXC(I,J + (-1),BI,BJ) - UFLD(I,J) * DXC(I,J,BI,BJ)) - VFLD(I + (-1
+     +),J) * DYC(I + (-1),J,BI,BJ)))
+
+            ENDIF
+          ENDIF
+        ENDIF
+        if ( NORTHWESTCORNER ) then
+          I = 1
+          J = 41
+          if ( MYFACE .eq. 1 ) then
+            VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * ((UFLD(I,J + (-1)) * DX
+     +C(I,J + (-1),BI,BJ) + VFLD(I,J) * DYC(I,J,BI,BJ)) - UFLD(I,J) * DX
+     +C(I,J,BI,BJ)))
+
+          ELSE
+            if ( MYFACE .eq. 3 ) then
+              VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * (VFLD(I,J) * DYC(I,J,
+     +BI,BJ) + (UFLD(I,J + (-1)) * DXC(I,J + (-1),BI,BJ) - UFLD(I,J) * D
+     +XC(I,J,BI,BJ))))
+
+            ELSE
+              VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * (UFLD(I,J + (-1)) * D
+     +XC(I,J + (-1),BI,BJ) + (VFLD(I,J) * DYC(I,J,BI,BJ) - UFLD(I,J) * D
+     +XC(I,J,BI,BJ))))
+
+            ENDIF
+          ENDIF
+        ENDIF
+        if ( NORTHEASTCORNER ) then
+          I = 91
+          J = 41
+          if ( MOD(MYFACE,2) .eq. 1 ) then
+            VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * (UFLD(I,J + (-1)) * DXC
+     +(I,J + (-1),BI,BJ) + (-(UFLD(I,J) * DXC(I,J,BI,BJ) + VFLD(I + (-1)
+     +,J) * DYC(I + (-1),J,BI,BJ)))))
+
+          ELSE
+            VORT3(I,J) = (RECIP_RAZ(I,J,BI,BJ) * ((UFLD(I,J + (-1)) * DX
+     +C(I,J + (-1),BI,BJ) - UFLD(I,J) * DXC(I,J,BI,BJ)) - VFLD(I + (-1),
+     +J) * DYC(I + (-1),J,BI,BJ)))
+
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_strain(BI, BJ, K, UFLD, VFLD, HFACZ, STRAIN,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) STRAIN(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -1, 43, 1
+        DO I = -1, 93, 1
+          STRAIN(I,J) = (RECIP_RAZ(I,J,BI,BJ) * (UFLD(I,J) * DXC(I,J,BI,
+     +BJ) + VFLD(I,J) * DYC(I,J,BI,BJ) - VFLD(I + (-1),J) * DYC(I + (-1)
+     +,J,BI,BJ) - UFLD(I,J + (-1)) * DXC(I,J + (-1),BI,BJ)))
+
+        END DO
+      END DO
+      if ( USECUBEDSPHEREEXCHANGE ) then
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_tension(BI, BJ, K, UFLD, VFLD, TENSION,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) TENSION(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 42, 1
+        DO I = -2, 92, 1
+          TENSION(I,J) = (RECIP_RA(I,J,BI,BJ) * (VFLD(I,J) * DXG(I,J,BI,
+     +BJ) + UFLD(I + 1,J) * DYG(I + 1,J,BI,BJ) - UFLD(I,J) * DYG(I,J,BI,
+     +BJ) - VFLD(I,J + 1) * DXG(I,J + 1,BI,BJ)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_calc_visc(BI, BJ, K, VISCAH_Z, VISCAH_D, VISCA4_Z,
+     >  VISCA4_D, HARMONIC, BIHARMONIC, USEVARIABLEVISCOSITY, HDIV,
+     >  VORT3, TENSION, STRAIN, KE, HFACZ, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VISCAH_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_D(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_D(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) HARMONIC
+      LOGICAL(w2f__i4) BIHARMONIC
+      LOGICAL(w2f__i4) USEVARIABLEVISCOSITY
+      REAL(w2f__8) HDIV(-2 : 93, -2 : 43)
+      REAL(w2f__8) VORT3(-2 : 93, -2 : 43)
+      REAL(w2f__8) TENSION(-2 : 93, -2 : 43)
+      REAL(w2f__8) STRAIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) KE(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) ALIN
+      LOGICAL(w2f__i4) CALCLEITH
+      LOGICAL(w2f__i4) CALCSMAG
+      REAL(w2f__8) DIVDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) DIVDY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) KEZPT
+      REAL(w2f__8) L2
+      REAL(w2f__8) L2RDT
+      REAL(w2f__8) L3
+      REAL(w2f__8) L4
+      REAL(w2f__8) L4RDT
+      REAL(w2f__8) L5
+      REAL(w2f__8) LEITH2FAC
+      REAL(w2f__8) LEITH4FAC
+      REAL(w2f__8) LEITHD2FAC
+      REAL(w2f__8) LEITHD4FAC
+      REAL(w2f__8) RECIP_DT
+      REAL(w2f__8) SMAG2FAC
+      REAL(w2f__8) SMAG4FAC
+      REAL(w2f__8) U4SCL
+      REAL(w2f__8) USCL
+      REAL(w2f__8) VISCA4RE_MAX
+      REAL(w2f__8) VISCA4_DLTH(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_DLTHD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_DMAX(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_DMIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_DSMG(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_ZLTH(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_ZLTHD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_ZMAX(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_ZMIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_ZSMG(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAHRE_MAX
+      REAL(w2f__8) VISCAH_DLTH(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_DLTHD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_DMAX(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_DMIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_DSMG(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_ZLTH(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_ZLTHD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_ZMAX(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_ZMIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_ZSMG(-2 : 93, -2 : 43)
+      REAL(w2f__8) VRTDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) VRTDY(-2 : 93, -2 : 43)
+      real(w2f__8) oad_ctmp0
+      real(w2f__8) oad_ctmp1
+      real(w2f__8) oad_ctmp2
+      real(w2f__8) oad_ctmp3
+      real(w2f__8) oad_ctmp4
+      real(w2f__8) oad_ctmp5
+      real(w2f__8) oad_ctmp6
+      real(w2f__8) oad_ctmp7
+      real(w2f__8) oad_ctmp8
+      real(w2f__8) oad_ctmp9
+      real(w2f__8) oad_ctmp10
+      real(w2f__8) oad_ctmp11
+      real(w2f__8) oad_ctmp12
+      real(w2f__8) oad_ctmp13
+      real(w2f__8) oad_ctmp14
+      real(w2f__8) oad_ctmp15
+      real(w2f__8) oad_ctmp16
+      real(w2f__8) oad_ctmp17
+      real(w2f__8) oad_ctmp18
+      real(w2f__8) oad_ctmp19
+      real(w2f__8) oad_ctmp20
+      real(w2f__8) oad_ctmp21
+      real(w2f__8) oad_ctmp22
+      real(w2f__8) oad_ctmp23
+C
+C     **** Statements ****
+C
+      USEVARIABLEVISCOSITY = (VISCC4SMAG .ne. 0.0D00) .or. ((VISCC2SMAG 
+     +.ne. 0.0D00) .or. ((VISCC4LEITHD .ne. 0.0D00) .or. ((VISCC4LEITH .
+     +ne. 0.0D00) .or. ((VISCC2LEITHD .ne. 0.0D00) .or. ((VISCC2LEITH .n
+     +e. 0.0D00) .or. ((VISCA4GRID .ne. 0.0D00) .or. (VISCAHGRID .ne. 0.
+     +0D00)))))))
+
+      HARMONIC = (VISCC2SMAG .ne. 0.0D00) .or. ((VISCC2LEITHD .ne. 0.0D0
+     +0) .or. ((VISCC2LEITH .ne. 0.0D00) .or. ((VISCAHGRID .ne. 0.0D00) 
+     +.or. ((VISCAHZ .ne. 0.0D00) .or. ((VISCAH .ne. 0.0D00) .or. (VISCA
+     +HD .ne. 0.0D00))))))
+
+      if ( HARMONIC .and. (VISCAHREMAX .ne. 0.0D00) ) then
+        VISCAHRE_MAX = SQRT(2.0D00) / VISCAHREMAX
+      ELSE
+        VISCAHRE_MAX = 0.0D00
+      ENDIF
+      BIHARMONIC = (VISCC4SMAG .ne. 0.0D00) .or. ((VISCC4LEITHD .ne. 0.0
+     +D00) .or. ((VISCC4LEITH .ne. 0.0D00) .or. ((VISCA4GRID .ne. 0.0D00
+     +) .or. ((VISCA4Z .ne. 0.0D00) .or. ((VISCA4 .ne. 0.0D00) .or. (VIS
+     +CA4D .ne. 0.0D00))))))
+
+      if ( BIHARMONIC .and. (VISCA4REMAX .ne. 0.0D00) ) then
+        VISCA4RE_MAX = (SQRT(2.0D00) * 1.25D-01) / VISCA4REMAX
+      ELSE
+        VISCA4RE_MAX = 0.0D00
+      ENDIF
+      CALCLEITH = (VISCC4LEITHD .ne. 0.0D00) .or. ((VISCC4LEITH .ne. 0.0
+     +D00) .or. ((VISCC2LEITH .ne. 0.0D00) .or. (VISCC2LEITHD .ne. 0.0D0
+     +0)))
+
+      CALCSMAG = (VISCC2SMAG .ne. 0.0D00) .or. (VISCC4SMAG .ne. 0.0D00)
+      if ( DELTATMOM .ne. 0.0D00 ) then
+        RECIP_DT = 1D00 / DELTATMOM
+      ELSE
+        RECIP_DT = 0.0D00
+      ENDIF
+      if ( CALCSMAG ) then
+        SMAG2FAC = (VISCC2SMAG / 3.141592653589793116D00) ** 2
+        SMAG4FAC = ((VISCC4SMAG / 3.141592653589793116D00) ** 2) * 1.25D
+     +-01
+
+      ELSE
+        SMAG2FAC = 0.0D00
+        SMAG4FAC = 0.0D00
+      ENDIF
+      if ( CALCLEITH ) then
+        if ( USEFULLLEITH ) then
+          LEITH2FAC = (VISCC2LEITH / 3.141592653589793116D00) ** 6
+          LEITHD2FAC = (VISCC2LEITHD / 3.141592653589793116D00) ** 6
+          LEITH4FAC = ((VISCC4LEITH / 3.141592653589793116D00) ** 6) * 1
+     +.5625D-02
+
+          LEITHD4FAC = ((VISCC4LEITHD / 3.141592653589793116D00) ** 6) *
+     + 1.5625D-02
+
+        ELSE
+          LEITH2FAC = (VISCC2LEITH / 3.141592653589793116D00) ** 3
+          LEITHD2FAC = (VISCC2LEITHD / 3.141592653589793116D00) ** 3
+          LEITH4FAC = ((VISCC4LEITH / 3.141592653589793116D00) ** 3) * 1
+     +.25D-01
+
+          LEITHD4FAC = ((VISCC4LEITHD / 3.141592653589793116D00) ** 3) *
+     + 1.25D-01
+
+        ENDIF
+      ELSE
+        LEITH2FAC = 0.0D00
+        LEITH4FAC = 0.0D00
+        LEITHD2FAC = 0.0D00
+        LEITHD4FAC = 0.0D00
+      ENDIF
+      if ( CALCLEITH .or. CALCSMAG ) then
+        WRITE(*, *) 'calcLeith or calcSmag not implemented for ADJOIN'
+     >  // 'T'
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          VISCAH_D(I,J) = VISCAHD
+          VISCAH_Z(I,J) = VISCAHZ
+          VISCA4_D(I,J) = VISCA4D
+          VISCA4_Z(I,J) = VISCA4Z
+          VISCA4_ZSMG(I,J) = 0.0D00
+          VISCAH_ZSMG(I,J) = 0.0D00
+          VISCAH_DLTH(I,J) = 0.0D00
+          VISCA4_DLTH(I,J) = 0.0D00
+          VISCAH_DLTHD(I,J) = 0.0D00
+          VISCA4_DLTHD(I,J) = 0.0D00
+          VISCAH_DSMG(I,J) = 0.0D00
+          VISCA4_DSMG(I,J) = 0.0D00
+          VISCAH_ZLTH(I,J) = 0.0D00
+          VISCA4_ZLTH(I,J) = 0.0D00
+          VISCAH_ZLTHD(I,J) = 0.0D00
+          VISCA4_ZLTHD(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( USEVARIABLEVISCOSITY ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            DIVDX(I,J) = 0.0
+            DIVDY(I,J) = 0.0
+            VRTDX(I,J) = 0.0
+            VRTDY(I,J) = 0.0
+          END DO
+        END DO
+        if ( CALCLEITH ) then
+          DO J = -1, 42, 1
+            DO I = -1, 92, 1
+              DIVDX(I,J) = (RECIP_DXC(I,J,BI,BJ) * (HDIV(I,J) - HDIV(I +
+     + (-1),J)))
+
+            END DO
+          END DO
+          DO J = -1, 42, 1
+            DO I = -1, 92, 1
+              DIVDY(I,J) = (RECIP_DYC(I,J,BI,BJ) * (HDIV(I,J) - HDIV(I,J
+     + + (-1))))
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -1, 92, 1
+              VRTDX(I,J) = (MASKS(I,J,K,BI,BJ) * RECIP_DXG(I,J,BI,BJ) * 
+     +(VORT3(I + 1,J) - VORT3(I,J)))
+
+            END DO
+          END DO
+          DO J = -1, 42, 1
+            DO I = -1, 93, 1
+              VRTDY(I,J) = (MASKW(I,J,K,BI,BJ) * RECIP_DYG(I,J,BI,BJ) * 
+     +(VORT3(I,J + 1) - VORT3(I,J)))
+
+            END DO
+          END DO
+        ENDIF
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            if ( USEAREAVISCLENGTH ) then
+              L2 = RA(I,J,BI,BJ)
+            ELSE
+              L2 = 2.0D00 / ((RECIP_DXF(I,J,BI,BJ) ** 2) + (RECIP_DYF(I,
+     +J,BI,BJ) ** 2))
+
+            ENDIF
+            L3 = (L2 ** 1.5D00)
+            L4 = (L2 ** 2)
+            L5 = (L2 ** 2.5D00)
+            L2RDT = L2 * RECIP_DT * 2.5D-01
+            if ( USEAREAVISCLENGTH ) then
+              L4RDT = (RA(I,J,BI,BJ) ** 2) * RECIP_DT * 1.25D-01
+            ELSE
+              L4RDT = RECIP_DT / (((RECIP_DXF(I,J,BI,BJ) ** 4) + (RECIP_
+     +DYF(I,J,BI,BJ) ** 4)) * 6.0D00 + (((RECIP_DXF(I,J,BI,BJ) * RECIP_D
+     +YF(I,J,BI,BJ)) ** 2)) * 8.0D00)
+
+            ENDIF
+            if ( (KE(I,J) .gt. 0.0D00) .and. (VISCAHRE_MAX .gt. 0.0D00) 
+     +) then
+
+              USCL = VISCAHRE_MAX * SQRT(KE(I,J) * L2)
+            ELSE
+              USCL = 0.0D00
+            ENDIF
+            if ( (KE(I,J) .gt. 0.0D00) .and. (VISCA4RE_MAX .gt. 0.0D00) 
+     +) then
+
+              U4SCL = VISCA4RE_MAX * L3 * SQRT(KE(I,J))
+            ELSE
+              U4SCL = 0.0D00
+            ENDIF
+            ALIN = VISCAH_DSMG(I,J) + VISCAH_DLTH(I,J) + VISCAHD + L2RDT
+     + * VISCAHGRID
+
+            oad_ctmp1 = L2RDT * VISCAHGRIDMIN
+            call oad_s_MAX_r(USCL,oad_ctmp1,oad_ctmp0)
+            VISCAH_DMIN(I,J) = oad_ctmp0
+            call oad_s_MAX_r(VISCAH_DMIN(I,J),ALIN,oad_ctmp2)
+            VISCAH_D(I,J) = oad_ctmp2
+            oad_ctmp4 = L2RDT * VISCAHGRIDMAX
+            call oad_s_MIN_r(VISCAHMAX,oad_ctmp4,oad_ctmp3)
+            VISCAH_DMAX(I,J) = oad_ctmp3
+            call oad_s_MIN_r(VISCAH_D(I,J),VISCAH_DMAX(I,J),oad_ctmp5)
+            VISCAH_D(I,J) = oad_ctmp5
+            ALIN = VISCA4_DSMG(I,J) + VISCA4_DLTH(I,J) + VISCA4D + L4RDT
+     + * VISCA4GRID
+
+            oad_ctmp7 = L4RDT * VISCA4GRIDMIN
+            call oad_s_MAX_r(U4SCL,oad_ctmp7,oad_ctmp6)
+            VISCA4_DMIN(I,J) = oad_ctmp6
+            call oad_s_MAX_r(VISCA4_DMIN(I,J),ALIN,oad_ctmp8)
+            VISCA4_D(I,J) = oad_ctmp8
+            oad_ctmp10 = L4RDT * VISCA4GRIDMAX
+            call oad_s_MIN_r(VISCA4MAX,oad_ctmp10,oad_ctmp9)
+            VISCA4_DMAX(I,J) = oad_ctmp9
+            call oad_s_MIN_r(VISCA4_D(I,J),VISCA4_DMAX(I,J),oad_ctmp11)
+            VISCA4_D(I,J) = oad_ctmp11
+            if ( USEAREAVISCLENGTH ) then
+              L2 = RAZ(I,J,BI,BJ)
+            ELSE
+              L2 = 2.0D00 / ((RECIP_DXV(I,J,BI,BJ) ** 2) + (RECIP_DYU(I,
+     +J,BI,BJ) ** 2))
+
+            ENDIF
+            L3 = (L2 ** 1.5D00)
+            L4 = (L2 ** 2)
+            L5 = (L2 ** 2.5D00)
+            L2RDT = L2 * RECIP_DT * 2.5D-01
+            if ( USEAREAVISCLENGTH ) then
+              L4RDT = (RAZ(I,J,BI,BJ) ** 2) * RECIP_DT * 1.25D-01
+            ELSE
+              L4RDT = RECIP_DT / (((RECIP_DXV(I,J,BI,BJ) ** 4) + (RECIP_
+     +DYU(I,J,BI,BJ) ** 4)) * 6.0D00 + (((RECIP_DXV(I,J,BI,BJ) * RECIP_D
+     +YU(I,J,BI,BJ)) ** 2)) * 8.0D00)
+
+            ENDIF
+            if ( (VISCA4RE_MAX .gt. 0.0D00) .or. (VISCAHRE_MAX .gt. 0.0D
+     +00) ) then
+
+              KEZPT = ((KE(I,J) + KE(I + (-1),J + (-1))) + (KE(I + (-1),
+     +J) + KE(I,J + (-1)))) * 2.5D-01
+
+              if ( KEZPT .gt. 0.0D00 ) then
+                USCL = VISCAHRE_MAX * SQRT(KEZPT * L2)
+                U4SCL = VISCA4RE_MAX * L3 * SQRT(KEZPT)
+              ELSE
+                USCL = 0.0D00
+                U4SCL = 0.0D00
+              ENDIF
+            ELSE
+              USCL = 0.0D00
+              U4SCL = 0.0D00
+            ENDIF
+            ALIN = VISCAH_ZSMG(I,J) + VISCAH_ZLTH(I,J) + VISCAHZ + L2RDT
+     + * VISCAHGRID
+
+            oad_ctmp13 = L2RDT * VISCAHGRIDMIN
+            call oad_s_MAX_r(USCL,oad_ctmp13,oad_ctmp12)
+            VISCAH_ZMIN(I,J) = oad_ctmp12
+            call oad_s_MAX_r(VISCAH_ZMIN(I,J),ALIN,oad_ctmp14)
+            VISCAH_Z(I,J) = oad_ctmp14
+            oad_ctmp16 = L2RDT * VISCAHGRIDMAX
+            call oad_s_MIN_r(VISCAHMAX,oad_ctmp16,oad_ctmp15)
+            VISCAH_ZMAX(I,J) = oad_ctmp15
+            call oad_s_MIN_r(VISCAH_Z(I,J),VISCAH_ZMAX(I,J),oad_ctmp17)
+            VISCAH_Z(I,J) = oad_ctmp17
+            ALIN = VISCA4_ZSMG(I,J) + VISCA4_ZLTH(I,J) + VISCA4Z + L4RDT
+     + * VISCA4GRID
+
+            oad_ctmp19 = L4RDT * VISCA4GRIDMIN
+            call oad_s_MAX_r(U4SCL,oad_ctmp19,oad_ctmp18)
+            VISCA4_ZMIN(I,J) = oad_ctmp18
+            call oad_s_MAX_r(VISCA4_ZMIN(I,J),ALIN,oad_ctmp20)
+            VISCA4_Z(I,J) = oad_ctmp20
+            oad_ctmp22 = L4RDT * VISCA4GRIDMAX
+            call oad_s_MIN_r(VISCA4MAX,oad_ctmp22,oad_ctmp21)
+            VISCA4_ZMAX(I,J) = oad_ctmp21
+            call oad_s_MIN_r(VISCA4_Z(I,J),VISCA4_ZMAX(I,J),oad_ctmp23)
+            VISCA4_Z(I,J) = oad_ctmp23
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            VISCAH_D(I,J) = VISCAHD
+            VISCAH_Z(I,J) = VISCAHZ
+            VISCA4_D(I,J) = VISCA4D
+            VISCA4_Z(I,J) = VISCA4Z
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_hdissip(BI, BJ, K, HDIV, VORT3, TENSION, STRAIN,
+     >  KE, HFACZ, VISCAH_S, VISCAH_T, VISCA4_S, VISCA4_T, HARMONIC,
+     >  BIHARMONIC, USEVARIABLEVISCOSITY, UDISSIP, VDISSIP, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use grid_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) HDIV(-2 : 93, -2 : 43)
+      REAL(w2f__8) VORT3(-2 : 93, -2 : 43)
+      REAL(w2f__8) TENSION(-2 : 93, -2 : 43)
+      REAL(w2f__8) STRAIN(-2 : 93, -2 : 43)
+      REAL(w2f__8) KE(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_S(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_T(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_S(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_T(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) HARMONIC
+      LOGICAL(w2f__i4) BIHARMONIC
+      LOGICAL(w2f__i4) USEVARIABLEVISCOSITY
+      REAL(w2f__8) UDISSIP(-2 : 93, -2 : 43)
+      REAL(w2f__8) VDISSIP(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( HARMONIC ) then
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            UDISSIP(I,J) = (RECIP_DXC(I,J,BI,BJ) * RECIP_DYG(I,J,BI,BJ) 
+     +* RECIP_DYG(I,J,BI,BJ) * (TENSION(I,J) * VISCAH_T(I,J) * DYF(I,J,B
+     +I,BJ) * DYF(I,J,BI,BJ) - TENSION(I + (-1),J) * VISCAH_T(I + (-1),J
+     +) * DYF(I + (-1),J,BI,BJ) * DYF(I + (-1),J,BI,BJ)) + RECIP_DYG(I,J
+     +,BI,BJ) * RECIP_DXC(I,J,BI,BJ) * RECIP_DXC(I,J,BI,BJ) * (STRAIN(I,
+     +J + 1) * VISCAH_S(I,J + 1) * DXV(I,J + 1,BI,BJ) * DXV(I,J + 1,BI,B
+     +J) - STRAIN(I,J) * VISCAH_S(I,J) * DXV(I,J,BI,BJ) * DXV(I,J,BI,BJ)
+     +))
+
+            VDISSIP(I,J) = (RECIP_DXG(I,J,BI,BJ) * RECIP_DYC(I,J,BI,BJ) 
+     +* RECIP_DYC(I,J,BI,BJ) * (STRAIN(I + 1,J) * VISCAH_S(I + 1,J) * DY
+     +U(I + 1,J,BI,BJ) * DYU(I + 1,J,BI,BJ) - STRAIN(I,J) * VISCAH_S(I,J
+     +) * DYU(I,J,BI,BJ) * DYU(I,J,BI,BJ)) - RECIP_DYC(I,J,BI,BJ) * RECI
+     +P_DXG(I,J,BI,BJ) * RECIP_DXG(I,J,BI,BJ) * (TENSION(I,J) * VISCAH_T
+     +(I,J) * DXF(I,J,BI,BJ) * DXF(I,J,BI,BJ) - TENSION(I,J + (-1)) * VI
+     +SCAH_T(I,J + (-1)) * DXF(I,J + (-1),BI,BJ) * DXF(I,J + (-1),BI,BJ)
+     +))
+
+          END DO
+        END DO
+      ENDIF
+      if ( BIHARMONIC ) then
+        WRITE(*, *) 'MOM_HDISSIP: BIHARMONIC NOT ALLOWED WITH STRAIN-'
+     >  // 'TENSION'
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_quasihydrostatic(BI, BJ, K, UFLD, VFLD,
+     >  EFFECTIVEBUOY, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) EFFECTIVEBUOY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMAX
+      PARAMETER ( IMAX = 91)
+      INTEGER(w2f__i4) IMIN
+      PARAMETER ( IMIN = 0)
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      PARAMETER ( JMAX = 41)
+      INTEGER(w2f__i4) JMIN
+      PARAMETER ( JMIN = 0)
+      REAL(w2f__8) SCALINGFACTOR
+C
+C     **** Statements ****
+C
+      SCALINGFACTOR = RECIP_GRAVITY * RHOCONST * GRAVITYSIGN
+      if ( USE3DCORIOLIS ) then
+        DO J = 0, 41, 1
+          DO I = 0, 91, 1
+            EFFECTIVEBUOY(I,J) = (EFFECTIVEBUOY(I,J) + FCORICOS(I,J,BI,B
+     +J) * SCALINGFACTOR * (ANGLECOSC(I,J,BI,BJ) * 5.0D-01 * (UFLD(I,J,K
+     +,BI,BJ) + UFLD(I + 1,J,K,BI,BJ)) - ANGLESINC(I,J,BI,BJ) * 5.0D-01 
+     +* (VFLD(I,J,K,BI,BJ) + VFLD(I,J + 1,K,BI,BJ))))
+
+          END DO
+        END DO
+      ENDIF
+      if ( USENHMTERMS ) then
+        DO J = 0, 41, 1
+          DO I = 0, 91, 1
+            EFFECTIVEBUOY(I,J) = (EFFECTIVEBUOY(I,J) + RECIP_DEEPFACC(K)
+     + * RECIP_RSPHERE * SCALINGFACTOR * ((UFLD(I,J,K,BI,BJ) * UFLD(I,J,
+     +K,BI,BJ) + UFLD(I + 1,J,K,BI,BJ) * UFLD(I + 1,J,K,BI,BJ)) + (VFLD(
+     +I,J,K,BI,BJ) * VFLD(I,J,K,BI,BJ) + VFLD(I,J + 1,K,BI,BJ) * VFLD(I,
+     +J + 1,K,BI,BJ))) * 5.0D-01)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_coriolis_nh(BI, BJ, K, WFLD, UCORIOLISTERM,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) UCORIOLISTERM(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) WMSK
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + 1
+      call oad_s_MIN_i(oad_ctmp1,1,oad_ctmp0)
+      KP1 = oad_ctmp0
+      WMSK = 1.0D00
+      if ( K .eq. 1 ) then
+        WMSK = 0.0D00
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -1, 93, 1
+          UCORIOLISTERM(I,J) = (GRAVITYSIGN * (ANGLECOSC(I,J,BI,BJ) * FC
+     +ORICOS(I,J,BI,BJ) * 5.0D-01 * (RVEL2WUNIT(K) * WFLD(I,J,K,BI,BJ) +
+     + WMSK * RVEL2WUNIT(KP1) * WFLD(I,J,KP1,BI,BJ)) + ANGLECOSC(I + (-1
+     +),J,BI,BJ) * FCORICOS(I + (-1),J,BI,BJ) * 5.0D-01 * (RVEL2WUNIT(K)
+     + * WFLD(I + (-1),J,K,BI,BJ) + WMSK * RVEL2WUNIT(KP1) * WFLD(I + (-
+     +1),J,KP1,BI,BJ))) * 5.0D-01)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_metric_nh(BI, BJ, K, UFLD, WFLD, UMETRICTERMS,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) UMETRICTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) WVELBOTTOMOVERRIDE
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + 1
+      call oad_s_MIN_i(oad_ctmp1,1,oad_ctmp0)
+      KP1 = oad_ctmp0
+      WVELBOTTOMOVERRIDE = 1.0D00
+      if ( K .eq. 1 ) then
+        WVELBOTTOMOVERRIDE = 0.0D00
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -1, 93, 1
+          UMETRICTERMS(I,J) = (GRAVITYSIGN * RECIP_DEEPFACC(K) * UFLD(I,
+     +J) * RECIP_RSPHERE * 2.5D-01 * (RVEL2WUNIT(K) * (WFLD(I,J,K,BI,BJ)
+     + + WFLD(I + (-1),J,K,BI,BJ)) + WVELBOTTOMOVERRIDE * RVEL2WUNIT(KP1
+     +) * (WFLD(I,J,KP1,BI,BJ) + WFLD(I + (-1),J,KP1,BI,BJ))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_bottomdrag(BI, BJ, K, UFLD, KE, KAPPARU,
+     >  UDRAGTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) KE(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPARU(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) UDRAGTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KBOTTOM
+      INTEGER(w2f__i4) KDOWN
+      INTEGER(w2f__i4) KDOWNC
+      REAL(w2f__8) MASKDOWN
+      REAL(w2f__8) RDRCKP1
+      REAL(w2f__8) VISCFAC
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      if ( USINGZCOORDS ) then
+        KBOTTOM = 1
+        oad_ctmp1 = K + 1
+        call oad_s_MIN_i(KBOTTOM,oad_ctmp1,oad_ctmp0)
+        KDOWN = oad_ctmp0
+        KDOWNC = KDOWN
+      ELSE
+        KBOTTOM = 1
+        oad_ctmp3 = K + (-1)
+        call oad_s_MAX_i(KBOTTOM,oad_ctmp3,oad_ctmp2)
+        KDOWN = oad_ctmp2
+        KDOWNC = K
+      ENDIF
+      RDRCKP1 = RECIP_DRC(KDOWNC)
+      if ( K .eq. KBOTTOM ) then
+        RDRCKP1 = RECIP_DRF(K)
+      ENDIF
+      VISCFAC = 0.0D00
+      if ( NO_SLIP_BOTTOM ) then
+        VISCFAC = 1.0D00
+      ENDIF
+      DO J = -2, 42, 1
+        DO I = -1, 92, 1
+          MASKDOWN = MASKW(I,J,KDOWN,BI,BJ)
+          if ( K .eq. KBOTTOM ) then
+            MASKDOWN = 0.0D00
+          ENDIF
+          UDRAGTERMS(I,J) = (-(UFLD(I,J) * RECIP_DRF(K) * RECIP_HFACW(I,
+     +J,K,BI,BJ) * (BOTTOMDRAGLINEAR + VISCFAC * RDRCKP1 * KAPPARU(I,J,K
+     +DOWNC) * 2.0D00) * (1.0D00 - MASKDOWN)))
+
+          if ( (KE(I,J) + KE(I + (-1),J)) .ne. 0.0D00 ) then
+            UDRAGTERMS(I,J) = (UDRAGTERMS(I,J) - UFLD(I,J) * SQRT(KE(I,J
+     +) + KE(I + (-1),J)) * BOTTOMDRAGQUADRATIC * RECIP_DRF(K) * RECIP_H
+     +FACW(I,J,K,BI,BJ) * (1.0D00 - MASKDOWN))
+
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_rviscflux(BI, BJ, K, UFLD, KAPPARU, RVISCFLUXU,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) KAPPARU(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) RVISCFLUXU(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( (K .gt. 1) .or. (K .le. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            RVISCFLUXU(I,J) = 0.0D00
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 42, 1
+          DO I = -2, 92, 1
+            RVISCFLUXU(I,J) = (-(MASKW(I,J,K + (-1),BI,BJ) * MASKW(I,J,K
+     +,BI,BJ) * RECIP_DRC(K) * RKSIGN * RHOFACF(K) * DEEPFAC2F(K) * KAPP
+     +ARU(I,J,K) * RAW(I,J,BI,BJ) * (UFLD(I,J,K,BI,BJ) - UFLD(I,J,K + (-
+     +1),BI,BJ))))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_u_sidedrag(BI, BJ, K, UFLD, DEL2U, HFACZ, VISCAH_Z
+     > , VISCA4_Z, HARMONIC, BIHARMONIC, USEVARIABLEVISCOSITY,
+     >  UDRAGTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2U(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_Z(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) HARMONIC
+      LOGICAL(w2f__i4) BIHARMONIC
+      LOGICAL(w2f__i4) USEVARIABLEVISCOSITY
+      REAL(w2f__8) UDRAGTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) A4TMP
+      REAL(w2f__8) AHTMP
+      REAL(w2f__8) HFACZCLOSEDN
+      REAL(w2f__8) HFACZCLOSEDS
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      real(w2f__8) oad_ctmp0
+      real(w2f__8) oad_ctmp1
+      real(w2f__8) oad_ctmp2
+      real(w2f__8) oad_ctmp3
+      real(w2f__8) oad_ctmp4
+      real(w2f__8) oad_ctmp5
+      real(w2f__8) oad_ctmp6
+      real(w2f__8) oad_ctmp7
+      double precision  oad_ctmp8
+      double precision  oad_ctmp9
+C
+C     **** Statements ****
+C
+      if ( SIDEDRAGFACTOR .le. 0.0D00 ) then
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            HFACZCLOSEDS = HFACW(I,J,K,BI,BJ) - HFACZ(I,J)
+            HFACZCLOSEDN = HFACW(I,J,K,BI,BJ) - HFACZ(I,J + 1)
+            oad_ctmp1 = VISCAH + ((RAW(I,J,BI,BJ) * VISCAHGRID) / DELTAT
+     +MOM)
+
+            call oad_s_MIN_r(VISCAHMAX,oad_ctmp1,oad_ctmp0)
+            AHTMP = oad_ctmp0
+            oad_ctmp3 = VISCA4 + ((VISCA4GRID * ((RAW(I,J,BI,BJ) ** 2)))
+     + / DELTATMOM)
+
+            call oad_s_MIN_r(VISCA4MAX,oad_ctmp3,oad_ctmp2)
+            A4TMP = oad_ctmp2
+            oad_ctmp5 = (VISCA4GRIDMAX * ((RAW(I,J,BI,BJ) ** 2))) / DELT
+     +ATMOM
+
+            call oad_s_MIN_r(A4TMP,oad_ctmp5,oad_ctmp4)
+            A4TMP = oad_ctmp4
+            oad_ctmp7 = (VISCA4GRIDMIN * ((RAW(I,J,BI,BJ) ** 2))) / DELT
+     +ATMOM
+
+            call oad_s_MAX_r(A4TMP,oad_ctmp7,oad_ctmp6)
+            A4TMP = oad_ctmp6
+            UDRAGTERMS(I,J) = (-(DRF(K) * RECIP_RAW(I,J,BI,BJ) * RECIP_D
+     +RF(K) * RECIP_HFACW(I,J,K,BI,BJ) * (RECIP_DYU(I,J,BI,BJ) * DXV(I,J
+     +,BI,BJ) * HFACZCLOSEDS + RECIP_DYU(I,J + 1,BI,BJ) * DXV(I,J + 1,BI
+     +,BJ) * HFACZCLOSEDN) * 2.0D00 * (UFLD(I,J) * AHTMP - DEL2U(I,J) * 
+     +A4TMP)))
+
+          END DO
+        END DO
+      ELSE
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            HFACZCLOSEDS = HFACW(I,J,K,BI,BJ) - HFACW(I,J + (-1),K,BI,BJ
+     +)
+
+            HFACZCLOSEDN = HFACW(I,J,K,BI,BJ) - HFACW(I,J + 1,K,BI,BJ)
+            call oad_s_MAX_d(HFACZCLOSEDS,0.0D00,oad_ctmp8)
+            HFACZCLOSEDS = oad_ctmp8
+            call oad_s_MAX_d(HFACZCLOSEDN,0.0D00,oad_ctmp9)
+            HFACZCLOSEDN = oad_ctmp9
+            UDRAGTERMS(I,J) = (-(SIDEDRAGFACTOR * DRF(K) * RECIP_RAW(I,J
+     +,BI,BJ) * RECIP_DRF(K) * RECIP_HFACW(I,J,K,BI,BJ) * (RECIP_DYU(I,J
+     +,BI,BJ) * DXV(I,J,BI,BJ) * HFACZCLOSEDS * (UFLD(I,J) * VISCAH_Z(I,
+     +J) - DEL2U(I,J) * VISCA4_Z(I,J)) + RECIP_DYU(I,J + 1,BI,BJ) * DXV(
+     +I,J + 1,BI,BJ) * HFACZCLOSEDN * (UFLD(I,J) * VISCAH_Z(I,J + 1) - D
+     +EL2U(I,J) * VISCA4_Z(I,J + 1)))))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_coriolis_nh(BI, BJ, K, WFLD, VCORIOLISTERM,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VCORIOLISTERM(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) WMSK
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + 1
+      call oad_s_MIN_i(oad_ctmp1,1,oad_ctmp0)
+      KP1 = oad_ctmp0
+      WMSK = 1.0D00
+      if ( K .eq. 1 ) then
+        WMSK = 0.0D00
+      ENDIF
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          VCORIOLISTERM(I,J) = (-(GRAVITYSIGN * (ANGLESINC(I,J,BI,BJ) * 
+     +FCORICOS(I,J,BI,BJ) * 5.0D-01 * (RVEL2WUNIT(K) * WFLD(I,J,K,BI,BJ)
+     + + WMSK * RVEL2WUNIT(KP1) * WFLD(I,J,KP1,BI,BJ)) + ANGLESINC(I,J +
+     + (-1),BI,BJ) * FCORICOS(I,J + (-1),BI,BJ) * 5.0D-01 * (RVEL2WUNIT(
+     +K) * WFLD(I,J + (-1),K,BI,BJ) + WMSK * RVEL2WUNIT(KP1) * WFLD(I,J 
+     ++ (-1),KP1,BI,BJ))) * 5.0D-01))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_metric_nh(BI, BJ, K, VFLD, WFLD, VMETRICTERMS,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VMETRICTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KP1
+      REAL(w2f__8) WVELBOTTOMOVERRIDE
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      oad_ctmp1 = K + 1
+      call oad_s_MIN_i(oad_ctmp1,1,oad_ctmp0)
+      KP1 = oad_ctmp0
+      WVELBOTTOMOVERRIDE = 1.0D00
+      if ( K .eq. 1 ) then
+        WVELBOTTOMOVERRIDE = 0.0D00
+      ENDIF
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          VMETRICTERMS(I,J) = (GRAVITYSIGN * RECIP_DEEPFACC(K) * VFLD(I,
+     +J) * RECIP_RSPHERE * 2.5D-01 * (RVEL2WUNIT(K) * (WFLD(I,J,K,BI,BJ)
+     + + WFLD(I,J + (-1),K,BI,BJ)) + WVELBOTTOMOVERRIDE * RVEL2WUNIT(KP1
+     +) * (WFLD(I,J,KP1,BI,BJ) + WFLD(I,J + (-1),KP1,BI,BJ))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_bottomdrag(BI, BJ, K, VFLD, KE, KAPPARV,
+     >  VDRAGTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) KE(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPARV(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) VDRAGTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KBOTTOM
+      INTEGER(w2f__i4) KDOWN
+      INTEGER(w2f__i4) KDOWNC
+      REAL(w2f__8) MASKDOWN
+      REAL(w2f__8) RDRCKP1
+      REAL(w2f__8) VISCFAC
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      if ( USINGZCOORDS ) then
+        KBOTTOM = 1
+        oad_ctmp1 = K + 1
+        call oad_s_MIN_i(KBOTTOM,oad_ctmp1,oad_ctmp0)
+        KDOWN = oad_ctmp0
+        KDOWNC = KDOWN
+      ELSE
+        KBOTTOM = 1
+        oad_ctmp3 = K + (-1)
+        call oad_s_MAX_i(KBOTTOM,oad_ctmp3,oad_ctmp2)
+        KDOWN = oad_ctmp2
+        KDOWNC = K
+      ENDIF
+      RDRCKP1 = RECIP_DRC(KDOWNC)
+      VISCFAC = 0.0D00
+      if ( NO_SLIP_BOTTOM ) then
+        VISCFAC = 1.0D00
+      ENDIF
+      if ( K .eq. KBOTTOM ) then
+        RDRCKP1 = RECIP_DRF(K)
+      ENDIF
+      DO J = -1, 42, 1
+        DO I = -2, 92, 1
+          MASKDOWN = MASKS(I,J,KDOWN,BI,BJ)
+          if ( K .eq. KBOTTOM ) then
+            MASKDOWN = 0.0D00
+          ENDIF
+          VDRAGTERMS(I,J) = (-(VFLD(I,J) * RECIP_DRF(K) * RECIP_HFACS(I,
+     +J,K,BI,BJ) * (BOTTOMDRAGLINEAR + VISCFAC * RDRCKP1 * KAPPARV(I,J,K
+     +DOWNC) * 2.0D00) * (1.0D00 - MASKDOWN)))
+
+          if ( (KE(I,J) + KE(I,J + (-1))) .ne. 0.0D00 ) then
+            VDRAGTERMS(I,J) = (VDRAGTERMS(I,J) - VFLD(I,J) * SQRT(KE(I,J
+     +) + KE(I,J + (-1))) * BOTTOMDRAGQUADRATIC * RECIP_DRF(K) * RECIP_H
+     +FACS(I,J,K,BI,BJ) * (1.0D00 - MASKDOWN))
+
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_rviscflux(BI, BJ, K, VFLD, KAPPARV, RVISCFLUXV,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) KAPPARV(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) RVISCFLUXV(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( (K .gt. 1) .or. (K .le. 1) ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            RVISCFLUXV(I,J) = 0.0D00
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 42, 1
+          DO I = -2, 92, 1
+            RVISCFLUXV(I,J) = (-(MASKS(I,J,K + (-1),BI,BJ) * MASKS(I,J,K
+     +,BI,BJ) * RECIP_DRC(K) * RKSIGN * RHOFACF(K) * DEEPFAC2F(K) * KAPP
+     +ARV(I,J,K) * RAS(I,J,BI,BJ) * (VFLD(I,J,K,BI,BJ) - VFLD(I,J,K + (-
+     +1),BI,BJ))))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE mom_v_sidedrag(BI, BJ, K, VFLD, DEL2V, HFACZ, VISCAH_Z
+     > , VISCA4_Z, HARMONIC, BIHARMONIC, USEVARIABLEVISCOSITY,
+     >  VDRAGTERMS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DEL2V(-2 : 93, -2 : 43)
+      REAL(w2f__8) HFACZ(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCAH_Z(-2 : 93, -2 : 43)
+      REAL(w2f__8) VISCA4_Z(-2 : 93, -2 : 43)
+      LOGICAL(w2f__i4) HARMONIC
+      LOGICAL(w2f__i4) BIHARMONIC
+      LOGICAL(w2f__i4) USEVARIABLEVISCOSITY
+      REAL(w2f__8) VDRAGTERMS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) A4TMP
+      REAL(w2f__8) AHTMP
+      REAL(w2f__8) HFACZCLOSEDE
+      REAL(w2f__8) HFACZCLOSEDW
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      real(w2f__8) oad_ctmp0
+      real(w2f__8) oad_ctmp1
+      real(w2f__8) oad_ctmp2
+      real(w2f__8) oad_ctmp3
+      real(w2f__8) oad_ctmp4
+      real(w2f__8) oad_ctmp5
+      real(w2f__8) oad_ctmp6
+      real(w2f__8) oad_ctmp7
+      double precision  oad_ctmp8
+      double precision  oad_ctmp9
+C
+C     **** Statements ****
+C
+      if ( SIDEDRAGFACTOR .le. 0.0D00 ) then
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            HFACZCLOSEDW = HFACS(I,J,K,BI,BJ) - HFACZ(I,J)
+            HFACZCLOSEDE = HFACS(I,J,K,BI,BJ) - HFACZ(I + 1,J)
+            oad_ctmp1 = VISCAH + ((RAS(I,J,BI,BJ) * VISCAHGRID) / DELTAT
+     +MOM)
+
+            call oad_s_MIN_r(VISCAHMAX,oad_ctmp1,oad_ctmp0)
+            AHTMP = oad_ctmp0
+            oad_ctmp3 = VISCA4 + ((VISCA4GRID * ((RAS(I,J,BI,BJ) ** 2)))
+     + / DELTATMOM)
+
+            call oad_s_MIN_r(VISCA4MAX,oad_ctmp3,oad_ctmp2)
+            A4TMP = oad_ctmp2
+            if ( VISCA4GRIDMAX .gt. 0.0D00 ) then
+              oad_ctmp5 = (VISCA4GRIDMAX * ((RAS(I,J,BI,BJ) ** 2))) / DE
+     +LTATMOM
+
+              call oad_s_MIN_r(A4TMP,oad_ctmp5,oad_ctmp4)
+              A4TMP = oad_ctmp4
+            ENDIF
+            oad_ctmp7 = (VISCA4GRIDMIN * ((RAS(I,J,BI,BJ) ** 2))) / DELT
+     +ATMOM
+
+            call oad_s_MAX_r(A4TMP,oad_ctmp7,oad_ctmp6)
+            A4TMP = oad_ctmp6
+            VDRAGTERMS(I,J) = (-(DRF(K) * RECIP_RAS(I,J,BI,BJ) * RECIP_D
+     +RF(K) * RECIP_HFACS(I,J,K,BI,BJ) * (RECIP_DXV(I,J,BI,BJ) * DYU(I,J
+     +,BI,BJ) * HFACZCLOSEDW + RECIP_DXV(I + 1,J,BI,BJ) * DYU(I + 1,J,BI
+     +,BJ) * HFACZCLOSEDE) * 2.0D00 * (COSFACV(J,BI,BJ) * VFLD(I,J) * AH
+     +TMP - COSFACV(J,BI,BJ) * DEL2V(I,J) * A4TMP)))
+
+          END DO
+        END DO
+      ELSE
+        DO J = -1, 42, 1
+          DO I = -1, 92, 1
+            HFACZCLOSEDW = HFACS(I,J,K,BI,BJ) - HFACS(I + (-1),J,K,BI,BJ
+     +)
+
+            HFACZCLOSEDE = HFACS(I,J,K,BI,BJ) - HFACS(I + 1,J,K,BI,BJ)
+            call oad_s_MAX_d(HFACZCLOSEDW,0.0D00,oad_ctmp8)
+            HFACZCLOSEDW = oad_ctmp8
+            call oad_s_MAX_d(HFACZCLOSEDE,0.0D00,oad_ctmp9)
+            HFACZCLOSEDE = oad_ctmp9
+            VDRAGTERMS(I,J) = (-(SIDEDRAGFACTOR * DRF(K) * RECIP_RAS(I,J
+     +,BI,BJ) * RECIP_DRF(K) * RECIP_HFACS(I,J,K,BI,BJ) * (RECIP_DXV(I,J
+     +,BI,BJ) * DYU(I,J,BI,BJ) * HFACZCLOSEDW * (COSFACV(J,BI,BJ) * VFLD
+     +(I,J) * VISCAH_Z(I,J) - COSFACV(J,BI,BJ) * DEL2V(I,J) * VISCA4_Z(I
+     +,J)) + RECIP_DXV(I + 1,J,BI,BJ) * DYU(I + 1,J,BI,BJ) * HFACZCLOSED
+     +E * (COSFACV(J,BI,BJ) * VFLD(I,J) * VISCAH_Z(I + 1,J) - COSFACV(J,
+     +BI,BJ) * DEL2V(I,J) * VISCA4_Z(I + 1,J)))))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE lef_zero(ARR, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) ARR(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__810
+      INTEGER(w2f__i4) t__811
+      INTEGER(w2f__i4) t__812
+      INTEGER(w2f__i4) t__813
+C
+C     **** Statements ****
+C
+      t__810 = MYBYLO(MYTHID)
+      t__811 = MYBYHI(MYTHID)
+      DO BJ = t__810, t__811, 1
+        t__812 = MYBXLO(MYTHID)
+        t__813 = MYBXHI(MYTHID)
+        DO BI = t__812, t__813, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              ARR(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE adams_bashforth2(BI, BJ, K, GTRACER, GTRNM1, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) GTRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GTRNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) AB05
+      REAL(w2f__8) AB15
+      REAL(w2f__8) GTRTMP
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( MYITER .eq. 0 ) then
+        AB15 = 1.0D00
+        AB05 = 0.0D00
+      ELSE
+        AB15 = ABEPS + 1.5D00
+        AB05 = -(ABEPS + 5.0D-01)
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          GTRTMP = GTRACER(I,J,K,BI,BJ) * AB15 + GTRNM1(I,J,K,BI,BJ) * A
+     +B05
+
+          GTRNM1(I,J,K,BI,BJ) = GTRACER(I,J,K,BI,BJ)
+          GTRACER(I,J,K,BI,BJ) = GTRTMP
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_3d_diffusivity(BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  TRIDENTITY, TRUSEGMREDI, TRUSEKPP, KAPPARTR, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) TRIDENTITY
+      LOGICAL(w2f__i4) TRUSEGMREDI
+      LOGICAL(w2f__i4) TRUSEKPP
+      REAL(w2f__8) KAPPARTR(-2 : 93, -2 : 43, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) KBRYANLEWIS79
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_error
+C
+C     **** Statements ****
+C
+      if ( .not. TRUSEKPP ) then
+        DO K = 1, 1, 1
+          KBRYANLEWIS79 = DIFFKRBL79SURF + ((ATAN(-((RF(K) - DIFFKRBL79H
+     +O) / DIFFKRBL79SCL)) / 3.141592653589793116D00) + 5.0D-01) * (DIFF
+     +KRBL79DEEP - DIFFKRBL79SURF)
+
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              KAPPARTR(I,J,K) = (KBRYANLEWIS79 + IVDCONVCOUNT(I,J,K,BI,B
+     +J) * IVDC_KAPPA)
+
+            END DO
+          END DO
+        END DO
+        if ( TRIDENTITY .eq. 1 ) then
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                KAPPARTR(I,J,K) = (DIFFKRNRT(K) + KAPPARTR(I,J,K))
+              END DO
+            END DO
+          END DO
+        ELSE
+          if ( TRIDENTITY .eq. 2 ) then
+            DO K = 1, 1, 1
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  KAPPARTR(I,J,K) = (DIFFKRNRS(K) + KAPPARTR(I,J,K))
+                END DO
+              END DO
+            END DO
+          ELSE
+            WRITE(MSGBUF, '(A,I4)')
+     >  ' CALC_3D_DIFFUSIVITY: Invalid tracer Id: ', TRIDENTITY
+            call print_error(MSGBUF,MYTHID)
+            WRITE(*, *) 'ABNORMAL END: S/R CALC_3D_DIFFUSIVITY'
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_buoyancy(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  RHOLOC, BUOY, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RHOLOC(-2 : 93, -2 : 43)
+      REAL(w2f__8) BUOY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__831
+      INTEGER(w2f__i4) t__832
+      INTEGER(w2f__i4) t__833
+      INTEGER(w2f__i4) t__834
+      INTEGER(w2f__i4) t__835
+      INTEGER(w2f__i4) t__836
+      INTEGER(w2f__i4) t__837
+      INTEGER(w2f__i4) t__838
+      INTEGER(w2f__i4) t__839
+      INTEGER(w2f__i4) t__840
+      INTEGER(w2f__i4) t__841
+      INTEGER(w2f__i4) t__842
+C
+C     **** Statements ****
+C
+      if ( BUOYANCYRELATION .eq. 'ATMOSPHERIC' ) then
+        t__831 = JMIN
+        t__832 = JMAX
+        DO J = t__831, t__832, 1
+          t__833 = IMIN
+          t__834 = IMAX
+          DO I = t__833, t__834, 1
+            BUOY(I,J) = ((THETA(I,J,K,BI,BJ) - TREF(K)) / TREF(K))
+          END DO
+        END DO
+      ELSE
+        if ( BUOYANCYRELATION .eq. 'OCEANIC' ) then
+          t__835 = JMIN
+          t__836 = JMAX
+          DO J = t__835, t__836, 1
+            t__837 = IMIN
+            t__838 = IMAX
+            DO I = t__837, t__838, 1
+              BUOY(I,J) = (-(RHOLOC(I,J) * GRAVITY * RECIP_RHOCONST))
+            END DO
+          END DO
+        ELSE
+          if ( BUOYANCYRELATION .eq. 'OCEANICP' ) then
+            t__839 = JMIN
+            t__840 = JMAX
+            DO J = t__839, t__840, 1
+              t__841 = IMIN
+              t__842 = IMAX
+              DO I = t__841, t__842, 1
+                if ( RHOLOC(I,J) .ne. 0.0D00 ) then
+                  RHOLOC(I,J) = 1D00 / (RHOLOC(I,J))
+                  BUOY(I,J) = RHOLOC(I,J)
+                ENDIF
+              END DO
+            END DO
+          ELSE
+            WRITE(*, *)
+     >  'CALC_BUOANCY: variable "buoyancyRelation" has an' //
+     >  ' illegal value'
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_common_factors(UVEL, VVEL, UFLD, VFLD, UTRANS,
+     >  VTRANS, XA, YA, K, BI, BJ, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) UVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VVEL(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          XA(I,J) = (HFACW(I,J,K,BI,BJ) * DRF(K) * DEEPFACC(K) * DYG(I,J
+     +,BI,BJ))
+
+          YA(I,J) = (HFACS(I,J,K,BI,BJ) * DRF(K) * DEEPFACC(K) * DXG(I,J
+     +,BI,BJ))
+
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          UFLD(I,J) = UVEL(I,J,K,BI,BJ)
+          VFLD(I,J) = VVEL(I,J,K,BI,BJ)
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          UTRANS(I,J) = (RHOFACC(K) * UFLD(I,J) * XA(I,J))
+          VTRANS(I,J) = (RHOFACC(K) * VFLD(I,J) * YA(I,J))
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_diffusivity(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  MASKUP, KAPPART, KAPPARS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) MASKUP(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPART(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPARS(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) KBRYANLEWIS79
+C
+C     **** Statements ****
+C
+      if ( .not. USEKPP ) then
+        KBRYANLEWIS79 = DIFFKRBL79SURF + ((ATAN(-((RF(K) - DIFFKRBL79HO)
+     + / DIFFKRBL79SCL)) / 3.141592653589793116D00) + 5.0D-01) * (DIFFKR
+     +BL79DEEP - DIFFKRBL79SURF)
+
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            KAPPART(I,J) = (KBRYANLEWIS79 + DIFFKRNRT(K) + IVDCONVCOUNT(
+     +I,J,K,BI,BJ) * IVDC_KAPPA)
+
+          END DO
+        END DO
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            KAPPARS(I,J) = (KBRYANLEWIS79 + DIFFKRNRS(K) + IVDCONVCOUNT(
+     +I,J,K,BI,BJ) * IVDC_KAPPA)
+
+          END DO
+        END DO
+      ENDIF
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          KAPPART(I,J) = (MASKUP(I,J) * KAPPART(I,J))
+          KAPPARS(I,J) = (MASKUP(I,J) * KAPPARS(I,J))
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_div_ghat(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, XA,
+     >  YA, CG2D_B, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use solve_for_pressure3d_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) CG2D_B(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) PF(-2 : 93, -2 : 43)
+C
+C     **** Statements ****
+C
+      if ( IMPLICDIV2DFLOW .eq. 1.0D00 ) then
+        DO J = 1, 40, 1
+          DO I = 1, 91, 1
+            PF(I,J) = ((XA(I,J) * GU(I,J,K,BI,BJ)) / DELTATMOM)
+          END DO
+        END DO
+      ELSE
+        if ( EXACTCONSERV ) then
+          DO J = 1, 40, 1
+            DO I = 1, 91, 1
+              PF(I,J) = ((GU(I,J,K,BI,BJ) * XA(I,J) * IMPLICDIV2DFLOW) /
+     + DELTATMOM)
+
+            END DO
+          END DO
+        ELSE
+          DO J = 1, 40, 1
+            DO I = 1, 91, 1
+              PF(I,J) = ((XA(I,J) * (GU(I,J,K,BI,BJ) * IMPLICDIV2DFLOW +
+     + UVEL(I,J,K,BI,BJ) * (1.0D00 - IMPLICDIV2DFLOW))) / DELTATMOM)
+
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      DO J = 1, 40, 1
+        DO I = 1, 90, 1
+          CG2D_B(I,J,BI,BJ) = (PF(I + 1,J) + CG2D_B(I,J,BI,BJ) - PF(I,J)
+     +)
+
+        END DO
+      END DO
+      if ( IMPLICDIV2DFLOW .eq. 1.0D00 ) then
+        DO J = 1, 41, 1
+          DO I = 1, 90, 1
+            PF(I,J) = ((YA(I,J) * GV(I,J,K,BI,BJ)) / DELTATMOM)
+          END DO
+        END DO
+      ELSE
+        if ( EXACTCONSERV ) then
+          DO J = 1, 41, 1
+            DO I = 1, 90, 1
+              PF(I,J) = ((GV(I,J,K,BI,BJ) * YA(I,J) * IMPLICDIV2DFLOW) /
+     + DELTATMOM)
+
+            END DO
+          END DO
+        ELSE
+          DO J = 1, 41, 1
+            DO I = 1, 90, 1
+              PF(I,J) = ((YA(I,J) * (GV(I,J,K,BI,BJ) * IMPLICDIV2DFLOW +
+     + VVEL(I,J,K,BI,BJ) * (1.0D00 - IMPLICDIV2DFLOW))) / DELTATMOM)
+
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      DO J = 1, 40, 1
+        DO I = 1, 90, 1
+          CG2D_B(I,J,BI,BJ) = (PF(I,J + 1) + CG2D_B(I,J,BI,BJ) - PF(I,J)
+     +)
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_grad_phi_hyd(K, BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  PHIHYDC, ALPHRHO, TFLD, SFLD, DPHIHYDX, DPHIHYDY, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      REAL(w2f__8) PHIHYDC(-2 : 93, -2 : 43)
+      REAL(w2f__8) ALPHRHO(-2 : 93, -2 : 43)
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) DPHIHYDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) DPHIHYDY(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) VARLOC(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) t__867
+      INTEGER(w2f__i4) t__868
+      INTEGER(w2f__i4) t__869
+      INTEGER(w2f__i4) t__870
+      INTEGER(w2f__i4) t__871
+      INTEGER(w2f__i4) t__872
+      INTEGER(w2f__i4) t__873
+      INTEGER(w2f__i4) t__874
+      INTEGER(w2f__i4) t__875
+      INTEGER(w2f__i4) t__876
+      INTEGER(w2f__i4) t__877
+      INTEGER(w2f__i4) t__878
+C
+C     **** Statements ****
+C
+      if ( .true. ) then
+        t__867 = JMIN
+        t__868 = JMAX
+        DO J = t__867, t__868, 1
+          t__869 = IMIN
+          t__870 = IMAX
+          DO I = t__869, t__870, 1
+            VARLOC(I,J) = (PHIHYDC(I,J) + PHI0SURF(I,J,BI,BJ))
+          END DO
+        END DO
+      ENDIF
+      t__871 = JMIN
+      t__872 = JMAX
+      DO J = t__871, t__872, 1
+        t__873 = IMIN + 1
+        t__874 = IMAX
+        DO I = t__873, t__874, 1
+          DPHIHYDX(I,J) = (RECIP_RHOFACC(K) * RECIP_DEEPFACC(K) * RECIP_
+     +DXC(I,J,BI,BJ) * (VARLOC(I,J) - VARLOC(I + (-1),J)))
+
+        END DO
+      END DO
+      t__875 = JMIN + 1
+      t__876 = JMAX
+      DO J = t__875, t__876, 1
+        t__877 = IMIN
+        t__878 = IMAX
+        DO I = t__877, t__878, 1
+          DPHIHYDY(I,J) = (RECIP_RHOFACC(K) * RECIP_DEEPFACC(K) * RECIP_
+     +DYC(I,J,BI,BJ) * (VARLOC(I,J) - VARLOC(I,J + (-1))))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_grad_phi_surf(BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  ETAFLD, PHISURFX, PHISURFY, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      REAL(w2f__8) ETAFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PHISURFX(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__885
+      INTEGER(w2f__i4) t__886
+      INTEGER(w2f__i4) t__887
+      INTEGER(w2f__i4) t__888
+      INTEGER(w2f__i4) t__889
+      INTEGER(w2f__i4) t__890
+      INTEGER(w2f__i4) t__891
+      INTEGER(w2f__i4) t__892
+C
+C     **** Statements ****
+C
+      t__885 = JMIN
+      t__886 = JMAX
+      DO J = t__885, t__886, 1
+        t__887 = IMIN
+        t__888 = IMAX
+        DO I = t__887, t__888, 1
+          PHISURFX(I,J) = (RECIP_DXC(I,J,BI,BJ) * (ETAFLD(I,J,BI,BJ) * B
+     +O_SURF(I,J,BI,BJ) - ETAFLD(I + (-1),J,BI,BJ) * BO_SURF(I + (-1),J,
+     +BI,BJ)))
+
+        END DO
+      END DO
+      t__889 = JMIN
+      t__890 = JMAX
+      DO J = t__889, t__890, 1
+        t__891 = IMIN
+        t__892 = IMAX
+        DO I = t__891, t__892, 1
+          PHISURFY(I,J) = (RECIP_DYC(I,J,BI,BJ) * (ETAFLD(I,J,BI,BJ) * B
+     +O_SURF(I,J,BI,BJ) - ETAFLD(I,J + (-1),BI,BJ) * BO_SURF(I,J + (-1),
+     +BI,BJ)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_gs(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KM1, KUP,
+     >  KDOWN, XA, YA, MASKUP, UFLD, VFLD, WFLD, UTRANS, VTRANS, RTRANS
+     > , RTRANSKP1, KAPPARS, FVERS, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use gad_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KUP
+      INTEGER(w2f__i4) KDOWN
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKUP(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPARS(-2 : 93, -2 : 43)
+      REAL(w2f__8) FVERS(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL adams_bashforth2
+      LOGICAL(w2f__i4) CALCADVECTION
+      EXTERNAL external_forcing_s
+      EXTERNAL gad_calc_rhs
+      INTEGER(w2f__i4) ITERNB
+      integer oad_ctmp0
+C
+C     **** Statements ****
+C
+      ACT1 = BI - MYBXLO(MYTHID)
+      MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+      ACT2 = BJ - MYBYLO(MYTHID)
+      MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+      ACT3 = MYTHID + (-1)
+      MAX3 = NTX * NTY
+      ACT4 = IKEY_DYNAMICS + (-1)
+      ITDKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX2 * A
+     +CT4 * MAX1 + 1
+
+      KKEY = K + ITDKEY + (-1)
+      CALCADVECTION = SALTADVECTION .and. (.not. SALTMULTIDIMADVEC)
+      ITERNB = MYITER
+      if ( STAGGERTIMESTEP ) then
+        ITERNB = MYITER + (-1)
+      ENDIF
+      oad_ctmp0 = (2)
+      call gad_calc_rhs(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,KM1,KUP,KDOWN,XA,YA,
+     +MASKUP,UFLD,VFLD,WFLD,UTRANS,VTRANS,RTRANS,RTRANSKP1,DIFFKHS,DIFFK
+     +4S,KAPPARS,GSNM1,SALT,oad_ctmp0,SALTADVSCHEME,SALTVERTADVSCHEME,CA
+     +LCADVECTION,SALTIMPLVERTADV,ADAMSBASHFORTH_S,FVERS,GS,MYTIME,MYITE
+     +R,MYTHID)
+
+      if ( SALTFORCING .and. (TRACFORCINGOUTAB .ne. 1) ) then
+        call external_forcing_s(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+      ENDIF
+      if ( ADAMSBASHFORTHGS ) then
+        call adams_bashforth2(BI,BJ,K,GS,GSNM1,ITERNB,MYTHID)
+      ENDIF
+      if ( (TRACFORCINGOUTAB .eq. 1) .and. SALTFORCING ) then
+        call external_forcing_s(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_gt(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KM1, KUP,
+     >  KDOWN, XA, YA, MASKUP, UFLD, VFLD, WFLD, UTRANS, VTRANS, RTRANS
+     > , RTRANSKP1, KAPPART, FVERT, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use gad_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KUP
+      INTEGER(w2f__i4) KDOWN
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      REAL(w2f__8) MASKUP(-2 : 93, -2 : 43)
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43)
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPART(-2 : 93, -2 : 43)
+      REAL(w2f__8) FVERT(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL adams_bashforth2
+      LOGICAL(w2f__i4) CALCADVECTION
+      EXTERNAL external_forcing_t
+      EXTERNAL gad_calc_rhs
+      INTEGER(w2f__i4) ITERNB
+      integer oad_ctmp0
+C
+C     **** Statements ****
+C
+      ACT1 = BI - MYBXLO(MYTHID)
+      MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+      ACT2 = BJ - MYBYLO(MYTHID)
+      MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+      ACT3 = MYTHID + (-1)
+      MAX3 = NTX * NTY
+      ACT4 = IKEY_DYNAMICS + (-1)
+      ITDKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX2 * A
+     +CT4 * MAX1 + 1
+
+      KKEY = K + ITDKEY + (-1)
+      CALCADVECTION = TEMPADVECTION .and. (.not. TEMPMULTIDIMADVEC)
+      ITERNB = MYITER
+      if ( STAGGERTIMESTEP ) then
+        ITERNB = MYITER + (-1)
+      ENDIF
+      oad_ctmp0 = (1)
+      call gad_calc_rhs(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,KM1,KUP,KDOWN,XA,YA,
+     +MASKUP,UFLD,VFLD,WFLD,UTRANS,VTRANS,RTRANS,RTRANSKP1,DIFFKHT,DIFFK
+     +4T,KAPPART,GTNM1,THETA,oad_ctmp0,TEMPADVSCHEME,TEMPVERTADVSCHEME,C
+     +ALCADVECTION,TEMPIMPLVERTADV,ADAMSBASHFORTH_T,FVERT,GT,MYTIME,MYIT
+     +ER,MYTHID)
+
+      if ( TEMPFORCING .and. (TRACFORCINGOUTAB .ne. 1) ) then
+        call external_forcing_t(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+      ENDIF
+      if ( ADAMSBASHFORTHGT ) then
+        call adams_bashforth2(BI,BJ,K,GT,GTNM1,ITERNB,MYTHID)
+      ENDIF
+      if ( (TRACFORCINGOUTAB .eq. 1) .and. TEMPFORCING ) then
+        call external_forcing_t(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_ivdc(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, RHOKM1,
+     >  RHOKP1, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RHOKM1(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__905
+      INTEGER(w2f__i4) t__906
+      INTEGER(w2f__i4) t__907
+      INTEGER(w2f__i4) t__908
+C
+C     **** Statements ****
+C
+      t__905 = JMIN
+      t__906 = JMAX
+      DO J = t__905, t__906, 1
+        t__907 = IMIN
+        t__908 = IMAX
+        DO I = t__907, t__908, 1
+          if ( (HFACC(I,J,K,BI,BJ) .gt. 0.0D00) .and. ((GRAVITYSIGN * RK
+     +SIGN * (RHOKM1(I,J) - RHOKP1(I,J))) .gt. 0.0D00) ) then
+
+            IVDCONVCOUNT(I,J,K,BI,BJ) = 1.0D00
+          ELSE
+            IVDCONVCOUNT(I,J,K,BI,BJ) = 0.0D00
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_phi_hyd(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, TFLD,
+     >  SFLD, PHIHYDF, PHIHYDC, DPHIHYDX, DPHIHYDY, MYTIME, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      use tamc_mod
+      use tamc_keys_mod
+      use surface_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) PHIHYDF(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHIHYDC(-2 : 93, -2 : 43)
+      REAL(w2f__8) DPHIHYDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) DPHIHYDY(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      LOGICAL(w2f__i4) ADDSURFPHIANOM
+      REAL(w2f__8) ALPHARHO(-2 : 93, -2 : 43)
+      EXTERNAL calc_grad_phi_hyd
+      REAL(w2f__8) DDPIM
+      REAL(w2f__8) DDPIP
+      REAL(w2f__8) DDRLOC
+      EXTERNAL diags_phi_hyd
+      EXTERNAL diags_phi_rlow
+      REAL(w2f__8) DRLOCM
+      REAL(w2f__8) DRLOCP
+      EXTERNAL find_rho
+      REAL(w2f__8) HALF
+      PARAMETER ( HALF =    0.5000000000000000)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) LOCALPHA
+      EXTERNAL mom_quasihydrostatic
+      REAL(w2f__8) ONE
+      PARAMETER ( ONE =     1.000000000000000)
+      REAL(w2f__8) REC_DRM
+      REAL(w2f__8) REC_DRP
+      REAL(w2f__8) SURFPHIFAC
+      LOGICAL(w2f__i4) USEDIAGPHIRLOW
+      REAL(w2f__8) ZERO
+      PARAMETER ( ZERO =     0.000000000000000)
+      INTEGER(w2f__i4) t__916
+      INTEGER(w2f__i4) t__917
+      INTEGER(w2f__i4) t__918
+      INTEGER(w2f__i4) t__919
+      INTEGER(w2f__i4) t__920
+      INTEGER(w2f__i4) t__921
+      INTEGER(w2f__i4) t__922
+      INTEGER(w2f__i4) t__923
+      INTEGER(w2f__i4) t__924
+      INTEGER(w2f__i4) t__925
+      INTEGER(w2f__i4) t__926
+      INTEGER(w2f__i4) t__927
+      INTEGER(w2f__i4) t__928
+      INTEGER(w2f__i4) t__929
+      INTEGER(w2f__i4) t__930
+      INTEGER(w2f__i4) t__931
+      INTEGER(w2f__i4) t__932
+      INTEGER(w2f__i4) t__933
+      INTEGER(w2f__i4) t__934
+      INTEGER(w2f__i4) t__935
+      INTEGER(w2f__i4) t__936
+      INTEGER(w2f__i4) t__937
+      INTEGER(w2f__i4) t__938
+      INTEGER(w2f__i4) t__939
+      INTEGER(w2f__i4) t__940
+      INTEGER(w2f__i4) t__941
+      INTEGER(w2f__i4) t__942
+      INTEGER(w2f__i4) t__943
+      INTEGER(w2f__i4) t__944
+      INTEGER(w2f__i4) t__945
+      INTEGER(w2f__i4) t__946
+      INTEGER(w2f__i4) t__947
+      INTEGER(w2f__i4) t__948
+      INTEGER(w2f__i4) t__949
+      INTEGER(w2f__i4) t__950
+      INTEGER(w2f__i4) t__951
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+      double precision  oad_ctmp2
+      double precision  oad_ctmp3
+C
+C     **** Statements ****
+C
+      USEDIAGPHIRLOW = .true.
+      ADDSURFPHIANOM = (SELECT_RSTAR .eq. 0) .and. (NONLINFREESURF .gt. 
+     +3)
+
+      SURFPHIFAC = 0.0D00
+      if ( ADDSURFPHIANOM ) then
+        SURFPHIFAC = 1.0D00
+      ENDIF
+      ACT1 = BI - MYBXLO(MYTHID)
+      MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+      ACT2 = BJ - MYBYLO(MYTHID)
+      MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+      ACT3 = MYTHID + (-1)
+      MAX3 = NTX * NTY
+      ACT4 = IKEY_DYNAMICS + (-1)
+      IKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX2 * ACT
+     +4 * MAX1 + 1
+
+      if ( K .eq. 1 ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            PHIHYDF(I,J) = 0.0
+          END DO
+        END DO
+      ENDIF
+      if ( BUOYANCYRELATION .eq. 'OCEANIC' ) then
+        KKEY = K + IKEY + (-1)
+        call find_rho(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,K,TFLD,SFLD,ALPHARHO,M
+     +YTHID)
+
+        if ( QUASIHYDROSTATIC ) then
+          call mom_quasihydrostatic(BI,BJ,K,UVEL,VVEL,ALPHARHO,MYTHID)
+        ENDIF
+        if ( INTEGR_GEOPOT .eq. 1 ) then
+          t__916 = JMIN
+          t__917 = JMAX
+          DO J = t__916, t__917, 1
+            t__918 = IMIN
+            t__919 = IMAX
+            DO I = t__918, t__919, 1
+              PHIHYDC(I,J) = (PHIHYDF(I,J) + RECIP_RHOCONST * ALPHARHO(I
+     +,J) * GRAVITY * DRF(K) * 5.0D-01)
+
+              PHIHYDF(I,J) = (PHIHYDF(I,J) + RECIP_RHOCONST * ALPHARHO(I
+     +,J) * DRF(K) * GRAVITY)
+
+            END DO
+          END DO
+        ELSE
+          DRLOCM = DRC(K) * 5.0D-01
+          if ( K .eq. 1 ) then
+            DRLOCM = RF(K) - RC(K)
+          ENDIF
+          if ( K .eq. 1 ) then
+            DRLOCP = RC(K) - RF(K + 1)
+          ELSE
+            DRLOCP = DRC(K + 1) * 5.0D-01
+          ENDIF
+          t__920 = JMIN
+          t__921 = JMAX
+          DO J = t__920, t__921, 1
+            t__922 = IMIN
+            t__923 = IMAX
+            DO I = t__922, t__923, 1
+              PHIHYDC(I,J) = (PHIHYDF(I,J) + RECIP_RHOCONST * ALPHARHO(I
+     +,J) * DRLOCM * GRAVITY)
+
+              PHIHYDF(I,J) = (PHIHYDC(I,J) + RECIP_RHOCONST * ALPHARHO(I
+     +,J) * DRLOCP * GRAVITY)
+
+            END DO
+          END DO
+        ENDIF
+      ELSE
+        if ( BUOYANCYRELATION .eq. 'OCEANICP' ) then
+          KKEY = K + IKEY + (-1)
+          call find_rho(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,K,TFLD,SFLD,ALPHARHO
+     +,MYTHID)
+
+          t__924 = JMIN
+          t__925 = JMAX
+          DO J = t__924, t__925, 1
+            t__926 = IMIN
+            t__927 = IMAX
+            DO I = t__926, t__927, 1
+              LOCALPHA = ALPHARHO(I,J) + RHOCONST
+              ALPHARHO(I,J) = (MASKC(I,J,K,BI,BJ) * (1D00 / LOCALPHA - R
+     +ECIP_RHOCONST))
+
+            END DO
+          END DO
+          if ( INTEGR_GEOPOT .eq. 1 ) then
+            t__928 = JMIN
+            t__929 = JMAX
+            DO J = t__928, t__929, 1
+              t__930 = IMIN
+              t__931 = IMAX
+              DO I = t__930, t__931, 1
+                if ( KSURFC(I,J,BI,BJ) .eq. K ) then
+                  DDRLOC = RO_SURF(I,J,BI,BJ) - RC(K)
+                  PHIHYDC(I,J) = (ALPHARHO(I,J) * DDRLOC)
+                ELSE
+                  PHIHYDC(I,J) = (PHIHYDF(I,J) + ALPHARHO(I,J) * DRF(K) 
+     +* 5.0D-01)
+
+                ENDIF
+                PHIHYDF(I,J) = (PHIHYDC(I,J) + ALPHARHO(I,J) * DRF(K) * 
+     +5.0D-01)
+
+              END DO
+            END DO
+          ELSE
+            DRLOCM = DRC(K) * 5.0D-01
+            if ( K .eq. 1 ) then
+              DRLOCM = RF(K) - RC(K)
+            ENDIF
+            if ( K .eq. 1 ) then
+              DRLOCP = RC(K) - RF(K + 1)
+            ELSE
+              DRLOCP = DRC(K + 1) * 5.0D-01
+            ENDIF
+            REC_DRM = 1D00 / (RF(K) - RC(K))
+            REC_DRP = 1D00 / (RC(K) - RF(K + 1))
+            t__932 = JMIN
+            t__933 = JMAX
+            DO J = t__932, t__933, 1
+              t__934 = IMIN
+              t__935 = IMAX
+              DO I = t__934, t__935, 1
+                if ( KSURFC(I,J,BI,BJ) .eq. K ) then
+                  DDRLOC = RO_SURF(I,J,BI,BJ) - RC(K)
+                  call oad_s_MAX_d(DDRLOC,0.0D00,oad_ctmp0)
+                  call oad_s_MIN_d(DDRLOC,0.0D00,oad_ctmp1)
+                  PHIHYDC(I,J) = (ALPHARHO(I,J) * (DRLOCM * REC_DRM * oa
+     +d_ctmp0 + DRLOCP * REC_DRP * oad_ctmp1))
+
+                ELSE
+                  PHIHYDC(I,J) = (PHIHYDF(I,J) + ALPHARHO(I,J) * DRLOCM)
+                ENDIF
+                PHIHYDF(I,J) = (PHIHYDC(I,J) + ALPHARHO(I,J) * DRLOCP)
+              END DO
+            END DO
+          ENDIF
+        ELSE
+          if ( BUOYANCYRELATION .eq. 'ATMOSPHERIC' ) then
+            t__936 = JMIN
+            t__937 = JMAX
+            DO J = t__936, t__937, 1
+              t__938 = IMIN
+              t__939 = IMAX
+              DO I = t__938, t__939, 1
+                ALPHARHO(I,J) = (MASKC(I,J,K,BI,BJ) * (TFLD(I,J,K,BI,BJ)
+     + * (SFLD(I,J,K,BI,BJ) * ATM_RQ + 1.0D00) - TREF(K)))
+
+              END DO
+            END DO
+            if ( INTEGR_GEOPOT .eq. 0 ) then
+              if ( K .eq. 1 ) then
+                DDPIM = ATM_CP * ((((RF(K) / ATM_PO) ** ATM_KAPPA)) - ((
+     +(RC(K) / ATM_PO) ** ATM_KAPPA)))
+
+              ELSE
+                DDPIM = ATM_CP * ((((RC(K + (-1)) / ATM_PO) ** ATM_KAPPA
+     +)) - (((RC(K) / ATM_PO) ** ATM_KAPPA))) * 5.0D-01
+
+              ENDIF
+              if ( K .eq. 1 ) then
+                DDPIP = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) - ((
+     +(RF(K + 1) / ATM_PO) ** ATM_KAPPA)))
+
+              ELSE
+                DDPIP = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) - ((
+     +(RC(K + 1) / ATM_PO) ** ATM_KAPPA))) * 5.0D-01
+
+              ENDIF
+              t__940 = JMIN
+              t__941 = JMAX
+              DO J = t__940, t__941, 1
+                t__942 = IMIN
+                t__943 = IMAX
+                DO I = t__942, t__943, 1
+                  PHIHYDC(I,J) = (PHIHYDF(I,J) + ALPHARHO(I,J) * DDPIM)
+                  PHIHYDF(I,J) = (PHIHYDC(I,J) + ALPHARHO(I,J) * DDPIP)
+                END DO
+              END DO
+            ELSE
+              if ( INTEGR_GEOPOT .eq. 1 ) then
+                DDPIM = ATM_CP * ((((RF(K) / ATM_PO) ** ATM_KAPPA)) - ((
+     +(RC(K) / ATM_PO) ** ATM_KAPPA)))
+
+                DDPIP = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) - ((
+     +(RF(K + 1) / ATM_PO) ** ATM_KAPPA)))
+
+                t__944 = JMIN
+                t__945 = JMAX
+                DO J = t__944, t__945, 1
+                  t__946 = IMIN
+                  t__947 = IMAX
+                  DO I = t__946, t__947, 1
+                    if ( KSURFC(I,J,BI,BJ) .eq. K ) then
+                      DDRLOC = RO_SURF(I,J,BI,BJ) - RC(K)
+                      PHIHYDC(I,J) = (ALPHARHO(I,J) * DDPIM * RECIP_DRF(
+     +K) * DDRLOC * 2.0D00)
+
+                    ELSE
+                      PHIHYDC(I,J) = (PHIHYDF(I,J) + ALPHARHO(I,J) * DDP
+     +IM)
+
+                    ENDIF
+                    PHIHYDF(I,J) = (PHIHYDC(I,J) + ALPHARHO(I,J) * DDPIP
+     +)
+
+                  END DO
+                END DO
+              ELSE
+                if ( (INTEGR_GEOPOT .eq. 2) .or. (INTEGR_GEOPOT .eq. 3) 
+     +) then
+
+                  if ( K .eq. 1 ) then
+                    DDPIM = ATM_CP * ((((RF(K) / ATM_PO) ** ATM_KAPPA)) 
+     +- (((RC(K) / ATM_PO) ** ATM_KAPPA)))
+
+                  ELSE
+                    DDPIM = ATM_CP * ((((RC(K + (-1)) / ATM_PO) ** ATM_K
+     +APPA)) - (((RC(K) / ATM_PO) ** ATM_KAPPA))) * 5.0D-01
+
+                  ENDIF
+                  if ( K .eq. 1 ) then
+                    DDPIP = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) 
+     +- (((RF(K + 1) / ATM_PO) ** ATM_KAPPA)))
+
+                  ELSE
+                    DDPIP = ATM_CP * ((((RC(K) / ATM_PO) ** ATM_KAPPA)) 
+     +- (((RC(K + 1) / ATM_PO) ** ATM_KAPPA))) * 5.0D-01
+
+                  ENDIF
+                  REC_DRM = 1D00 / (RF(K) - RC(K))
+                  REC_DRP = 1D00 / (RC(K) - RF(K + 1))
+                  t__948 = JMIN
+                  t__949 = JMAX
+                  DO J = t__948, t__949, 1
+                    t__950 = IMIN
+                    t__951 = IMAX
+                    DO I = t__950, t__951, 1
+                      if ( KSURFC(I,J,BI,BJ) .eq. K ) then
+                        DDRLOC = RO_SURF(I,J,BI,BJ) - RC(K)
+                        call oad_s_MAX_d(DDRLOC,0.0D00,oad_ctmp2)
+                        call oad_s_MIN_d(DDRLOC,0.0D00,oad_ctmp3)
+                        PHIHYDC(I,J) = (ALPHARHO(I,J) * (DDPIM * REC_DRM
+     + * oad_ctmp2 + DDPIP * REC_DRP * oad_ctmp3))
+
+                      ELSE
+                        PHIHYDC(I,J) = (PHIHYDF(I,J) + ALPHARHO(I,J) * D
+     +DPIM)
+
+                      ENDIF
+                      PHIHYDF(I,J) = (PHIHYDC(I,J) + ALPHARHO(I,J) * DDP
+     +IP)
+
+                    END DO
+                  END DO
+                ELSE
+                  WRITE(*, *)
+     >  'CALC_PHI_HYD: Bad integr_GeoPot option !'
+                ENDIF
+              ENDIF
+            ENDIF
+          ELSE
+            WRITE(*, *) 'CALC_PHI_HYD: Bad value of buoyancyRelation !'
+          ENDIF
+        ENDIF
+      ENDIF
+      if ( USEDIAGPHIRLOW ) then
+        call diags_phi_rlow(K,BI,BJ,IMIN,IMAX,JMIN,JMAX,PHIHYDF,PHIHYDC,
+     +ALPHARHO,TFLD,SFLD,MYTIME,MYITER,MYTHID)
+
+      ENDIF
+      call diags_phi_hyd(K,BI,BJ,IMIN,IMAX,JMIN,JMAX,PHIHYDC,MYTIME,MYIT
+     +ER,MYTHID)
+
+      if ( MOMPRESSUREFORCING ) then
+        call calc_grad_phi_hyd(K,BI,BJ,IMIN,IMAX,JMIN,JMAX,PHIHYDC,ALPHA
+     +RHO,TFLD,SFLD,DPHIHYDX,DPHIHYDY,MYTIME,MYITER,MYTHID)
+
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_surf_dr(ETAFLD, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) ETAFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_viscosity(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  KAPPARU, KAPPARV, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) KAPPARU(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) KAPPARV(-2 : 93, -2 : 43, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          KAPPARU(I,J,K) = VISCAR
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          KAPPARV(I,J,K) = VISCAR
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_wsurf_tr(THETAFLD, SALTFLD, WVELFLD, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) THETAFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SALTFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WVELFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL global_sum_r8
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KS
+      REAL(w2f__8) WS_MEAN
+      REAL(w2f__8) WS_TILE
+      REAL(w2f__8) WT_MEAN
+      REAL(w2f__8) WT_TILE
+      INTEGER(w2f__i4) t__970
+      INTEGER(w2f__i4) t__971
+      INTEGER(w2f__i4) t__972
+      INTEGER(w2f__i4) t__973
+C
+C     **** Statements ****
+C
+      TSURFCOR = 0.0D00
+      SSURFCOR = 0.0D00
+      WT_MEAN = 0.0D00
+      WS_MEAN = 0.0D00
+      t__970 = MYBYLO(MYTHID)
+      t__971 = MYBYHI(MYTHID)
+      DO BJ = t__970, t__971, 1
+        t__972 = MYBXLO(MYTHID)
+        t__973 = MYBXHI(MYTHID)
+        DO BI = t__972, t__973, 1
+          WT_TILE = 0.0D00
+          WS_TILE = 0.0D00
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              KS = KSURFC(I,J,BI,BJ)
+              if ( KS .le. 1 ) then
+                WT_TILE = WT_TILE + THETAFLD(I,J,KS,BI,BJ) * RA(I,J,BI,B
+     +J) * WVELFLD(I,J,KS,BI,BJ)
+
+                WS_TILE = WS_TILE + SALTFLD(I,J,KS,BI,BJ) * RA(I,J,BI,BJ
+     +) * WVELFLD(I,J,KS,BI,BJ)
+
+              ENDIF
+            END DO
+          END DO
+          WT_MEAN = WT_MEAN + WT_TILE
+          WS_MEAN = WS_MEAN + WS_TILE
+        END DO
+      END DO
+      call global_sum_r8(WT_MEAN,MYTHID)
+      call global_sum_r8(WS_MEAN,MYTHID)
+      if ( GLOBALAREA .gt. 0.0D00 ) then
+        if ( MYTHID .eq. 1 ) then
+          TSURFCOR = WT_MEAN / GLOBALAREA
+          SSURFCOR = WS_MEAN / GLOBALAREA
+        ENDIF
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cg2d_nsa(CG2D_B, CG2D_X, FIRSTRESIDUAL, LASTRESIDUAL,
+     >  NUMITERS, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use cg2d_mod
+      use surface_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) CG2D_B(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) CG2D_X(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) FIRSTRESIDUAL
+      REAL(w2f__8) LASTRESIDUAL
+      INTEGER(w2f__i4) NUMITERS
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE convective_adjustment(BI, BJ, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE convective_adjustment_ini(BI, BJ, MYTIME, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE convective_weights(BI, BJ, K, RHOKM1, RHOK, WEIGHTA,
+     >  WEIGHTB, CONVECTCOUNT, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RHOKM1(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOK(-2 : 93, -2 : 43)
+      REAL(w2f__8) WEIGHTA(-2 : 93, -2 : 43)
+      REAL(w2f__8) WEIGHTB(-2 : 93, -2 : 43)
+      REAL(w2f__8) CONVECTCOUNT(-2 : 93, -2 : 43, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE convectively_mixtracer(BI, BJ, K, WEIGHTA, WEIGHTB,
+     >  TRACER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) WEIGHTA(-2 : 93, -2 : 43)
+      REAL(w2f__8) WEIGHTB(-2 : 93, -2 : 43)
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE correction_step(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  PHISURFX, PHISURFY, MYTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) PHISURFX(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFY(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) HX3DFAC
+      REAL(w2f__8) HXFAC
+      REAL(w2f__8) HY3DFAC
+      REAL(w2f__8) HYFAC
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__996
+      INTEGER(w2f__i4) t__997
+      INTEGER(w2f__i4) t__998
+      INTEGER(w2f__i4) t__999
+      INTEGER(w2f__i4) t__1000
+      INTEGER(w2f__i4) t__1001
+      INTEGER(w2f__i4) t__1002
+      INTEGER(w2f__i4) t__1003
+C
+C     **** Statements ****
+C
+      HXFAC = RECIP_RHOFACC(K) * RECIP_DEEPFACC(K) * PFFACMOM
+      HYFAC = RECIP_RHOFACC(K) * RECIP_DEEPFACC(K) * PFFACMOM
+      if ( USE3DSOLVER ) then
+        HX3DFAC = RECIP_RHOFACC(K) * RECIP_DEEPFACC(K) * PFFACMOM
+        HY3DFAC = RECIP_RHOFACC(K) * RECIP_DEEPFACC(K) * PFFACMOM
+      ELSE
+        HX3DFAC = 0.0D00
+        HY3DFAC = 0.0D00
+      ENDIF
+      t__996 = JMIN
+      t__997 = JMAX
+      DO J = t__996, t__997, 1
+        t__998 = IMIN
+        t__999 = IMAX
+        DO I = t__998, t__999, 1
+          UVEL(I,J,K,BI,BJ) = (MASKW(I,J,K,BI,BJ) * (GU(I,J,K,BI,BJ) - P
+     +HISURFX(I,J) * IMPLICSURFPRESS * HXFAC * DELTATMOM))
+
+        END DO
+      END DO
+      t__1000 = JMIN
+      t__1001 = JMAX
+      DO J = t__1000, t__1001, 1
+        t__1002 = IMIN
+        t__1003 = IMAX
+        DO I = t__1002, t__1003, 1
+          VVEL(I,J,K,BI,BJ) = (MASKS(I,J,K,BI,BJ) * (GV(I,J,K,BI,BJ) - P
+     +HISURFY(I,J) * IMPLICSURFPRESS * HYFAC * DELTATMOM))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE cycle_tracer(BI, BJ, TRACER, GTRACER, MYTIME, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GTRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+C
+C     **** Statements ****
+C
+      DO K = 1, 1, 1
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            TRACER(I,J,K,BI,BJ) = GTRACER(I,J,K,BI,BJ)
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE diags_phi_hyd(K, BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  PHIHYDC, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      REAL(w2f__8) PHIHYDC(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__1015
+      INTEGER(w2f__i4) t__1016
+      INTEGER(w2f__i4) t__1017
+      INTEGER(w2f__i4) t__1018
+C
+C     **** Statements ****
+C
+      t__1015 = JMIN
+      t__1016 = JMAX
+      DO J = t__1015, t__1016, 1
+        t__1017 = IMIN
+        t__1018 = IMAX
+        DO I = t__1017, t__1018, 1
+          TOTPHIHYD(I,J,K,BI,BJ) = (PHI0SURF(I,J,BI,BJ) + PHIHYDC(I,J) +
+     + ETAN(I,J,BI,BJ) * BO_SURF(I,J,BI,BJ))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE diags_phi_rlow(K, BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  PHIHYDF, PHIHYDC, ALPHRHO, TFLD, SFLD, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      REAL(w2f__8) PHIHYDF(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHIHYDC(-2 : 93, -2 : 43)
+      REAL(w2f__8) ALPHRHO(-2 : 93, -2 : 43)
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) DDRLOC
+      REAL(w2f__8) HALF
+      PARAMETER ( HALF =    0.5000000000000000)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) ONE
+      PARAMETER ( ONE =     1.000000000000000)
+      REAL(w2f__8) RATIORM
+      REAL(w2f__8) RATIORP
+      REAL(w2f__8) ZERO
+      PARAMETER ( ZERO =     0.000000000000000)
+      INTEGER(w2f__i4) t__1026
+      INTEGER(w2f__i4) t__1027
+      INTEGER(w2f__i4) t__1028
+      INTEGER(w2f__i4) t__1029
+      INTEGER(w2f__i4) t__1030
+      INTEGER(w2f__i4) t__1031
+      INTEGER(w2f__i4) t__1032
+      INTEGER(w2f__i4) t__1033
+      INTEGER(w2f__i4) t__1034
+      INTEGER(w2f__i4) t__1035
+      INTEGER(w2f__i4) t__1036
+      INTEGER(w2f__i4) t__1037
+      INTEGER(w2f__i4) t__1038
+      INTEGER(w2f__i4) t__1039
+      INTEGER(w2f__i4) t__1040
+      INTEGER(w2f__i4) t__1041
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+C
+C     **** Statements ****
+C
+      if ( BUOYANCYRELATION .eq. 'OCEANIC' ) then
+        if ( INTEGR_GEOPOT .eq. 1 ) then
+          t__1026 = JMIN
+          t__1027 = JMAX
+          DO J = t__1026, t__1027, 1
+            t__1028 = IMIN
+            t__1029 = IMAX
+            DO I = t__1028, t__1029, 1
+              if ( KLOWC(I,J,BI,BJ) .eq. K ) then
+                DDRLOC = RC(K) - R_LOW(I,J,BI,BJ)
+                PHIHYDLOW(I,J,BI,BJ) = (PHIHYDC(I,J) + RECIP_RHOCONST * 
+     +ALPHRHO(I,J) * DDRLOC * GRAVITY)
+
+              ENDIF
+            END DO
+          END DO
+        ELSE
+          RATIORM = 1.0D00
+          RATIORP = 1.0D00
+          if ( K .gt. 1 ) then
+            RATIORM = (DRC(K) * 5.0D-01) / (RF(K) - RC(K))
+          ENDIF
+          if ( K .lt. 1 ) then
+            RATIORP = (DRC(K + 1) * 5.0D-01) / (RC(K) - RF(K + 1))
+          ENDIF
+          t__1030 = JMIN
+          t__1031 = JMAX
+          DO J = t__1030, t__1031, 1
+            t__1032 = IMIN
+            t__1033 = IMAX
+            DO I = t__1032, t__1033, 1
+              if ( KLOWC(I,J,BI,BJ) .eq. K ) then
+                DDRLOC = RC(K) - R_LOW(I,J,BI,BJ)
+                call oad_s_MIN_d(DDRLOC,0.0D00,oad_ctmp0)
+                call oad_s_MAX_d(DDRLOC,0.0D00,oad_ctmp1)
+                PHIHYDLOW(I,J,BI,BJ) = (PHIHYDC(I,J) + RECIP_RHOCONST * 
+     +ALPHRHO(I,J) * GRAVITY * (RATIORM * oad_ctmp0 + RATIORP * oad_ctmp
+     +1))
+
+              ENDIF
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      if ( K .eq. 1 ) then
+        if ( (BUOYANCYRELATION .eq. 'OCEANICP') .or. (BUOYANCYRELATION .
+     +eq. 'ATMOSPHERIC') ) then
+
+          t__1034 = JMIN
+          t__1035 = JMAX
+          DO J = t__1034, t__1035, 1
+            t__1036 = IMIN
+            t__1037 = IMAX
+            DO I = t__1036, t__1037, 1
+              PHIHYDLOW(I,J,BI,BJ) = PHIHYDF(I,J)
+            END DO
+          END DO
+        ENDIF
+        t__1038 = JMIN
+        t__1039 = JMAX
+        DO J = t__1038, t__1039, 1
+          t__1040 = IMIN
+          t__1041 = IMAX
+          DO I = t__1040, t__1041, 1
+            PHIHYDLOW(I,J,BI,BJ) = (PHI0SURF(I,J,BI,BJ) + PHIHYDLOW(I,J,
+     +BI,BJ) + ETAN(I,J,BI,BJ) * BO_SURF(I,J,BI,BJ))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE do_atmospheric_phys(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+C
+C     **** Statements ****
+C
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_enter('DO_ATMOSPHERIC_PHYS',MYTHID)
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_leave('DO_ATMOSPHERIC_PHYS',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE do_fields_blocking_exchanges(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use gad_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL exch_uv_xyz_rl
+      EXTERNAL exch_xyz_rl
+      EXTERNAL gad_som_exchanges
+      logical oad_ctmp0
+C
+C     **** Statements ****
+C
+      if ( .not. USEOFFLINE ) then
+        if ( .not. (STAGGERTIMESTEP .and. USEMULTIDIMADVEC) ) then
+          oad_ctmp0 = (.true.)
+          call exch_uv_xyz_rl(UVEL,VVEL,oad_ctmp0,MYTHID)
+          if ( .not. IMPLICITINTGRAVWAVE ) then
+            call exch_xyz_rl(WVEL,MYTHID)
+          ENDIF
+        ENDIF
+        if ( .not. IMPLICITINTGRAVWAVE ) then
+          call exch_xyz_rl(THETA,MYTHID)
+          call exch_xyz_rl(SALT,MYTHID)
+        ENDIF
+        if ( SALTSOM_ADVECTION .or. TEMPSOM_ADVECTION ) then
+          call gad_som_exchanges(MYTHID)
+        ENDIF
+        if ( USEDYNP_INEOS_ZC ) then
+          call exch_xyz_rl(TOTPHIHYD,MYTHID)
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE do_oceanic_phys(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use tamc_mod
+      use tamc_keys_mod
+      use ffields_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL calc_ivdc
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL debug_msg
+      INTEGER(w2f__i4) DODIAGSRHO
+      EXTERNAL external_forcing_surf
+      EXTERNAL find_rho
+      EXTERNAL freeze_surface
+      EXTERNAL grad_sigma
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RHOK(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOKM1(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) SIGMAR(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) SIGMAX(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) SIGMAY(-2 : 93, -2 : 43, 1 : 1)
+      INTEGER(w2f__i4) t__1047
+      INTEGER(w2f__i4) t__1048
+      INTEGER(w2f__i4) t__1049
+      INTEGER(w2f__i4) t__1050
+      INTEGER(w2f__i4) t__1051
+      INTEGER(w2f__i4) t__1052
+      INTEGER(w2f__i4) t__1053
+      INTEGER(w2f__i4) t__1054
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+      integer(w2f__i4) oad_ctmp7
+      integer(w2f__i4) oad_ctmp8
+      integer(w2f__i4) oad_ctmp9
+      integer(w2f__i4) oad_ctmp10
+      integer(w2f__i4) oad_ctmp11
+      integer(w2f__i4) oad_ctmp12
+      integer(w2f__i4) oad_ctmp13
+      integer(w2f__i4) oad_ctmp14
+      integer(w2f__i4) oad_ctmp15
+C
+C     **** Statements ****
+C
+      ITDKEY = 1
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_enter('DO_OCEANIC_PHYS',MYTHID)
+      ENDIF
+      DODIAGSRHO = 0
+      if ( (ALLOWFREEZING .and. (.not. USESEAICE)) .and. (.not. USETHSIC
+     +E) ) then
+
+        call freeze_surface(MYTIME,MYITER,MYTHID)
+      ENDIF
+      t__1047 = MYBYLO(MYTHID)
+      t__1048 = MYBYHI(MYTHID)
+      DO BJ = t__1047, t__1048, 1
+        t__1049 = MYBXLO(MYTHID)
+        t__1050 = MYBXHI(MYTHID)
+        DO BI = t__1049, t__1050, 1
+          ACT1 = BI - MYBXLO(MYTHID)
+          MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+          ACT2 = BJ - MYBYLO(MYTHID)
+          MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+          ACT3 = MYTHID + (-1)
+          MAX3 = NTX * NTY
+          ACT4 = IKEY_DYNAMICS + (-1)
+          ITDKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX2
+     + * ACT4 * MAX1 + 1
+
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              RHOK(I,J) = 0.0D00
+              RHOKM1(I,J) = 0.0D00
+              RHOKP1(I,J) = 0.0D00
+            END DO
+          END DO
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                SIGMAX(I,J,K) = 0.0D00
+                SIGMAY(I,J,K) = 0.0D00
+                SIGMAR(I,J,K) = 0.0D00
+                IVDCONVCOUNT(I,J,K,BI,BJ) = 0.0
+              END DO
+            END DO
+          END DO
+          IMIN = -2
+          IMAX = 93
+          JMIN = -2
+          JMAX = 43
+          if ( DEBUGLEVEL .ge. 2 ) then
+            call debug_msg('ENTERING UPWARD K LOOP',MYTHID)
+          ENDIF
+          DO K = 1, 1, (-1)
+            KKEY = K + ITDKEY + (-1)
+            if ( (DODIAGSRHO .ge. 1) .or. (USEGMREDI .or. ((K .gt. 1) .a
+     +nd. (IVDC_KAPPA .ne. 0.0D00))) ) then
+
+              if ( DEBUGLEVEL .ge. 2 ) then
+                call debug_call('FIND_RHO',MYTHID)
+              ENDIF
+              oad_ctmp0 = (BI)
+              oad_ctmp1 = (BJ)
+              oad_ctmp2 = (K)
+              oad_ctmp3 = (K)
+              call find_rho(oad_ctmp0,oad_ctmp1,IMIN,IMAX,JMIN,JMAX,oad_
+     +ctmp2,oad_ctmp3,THETA,SALT,RHOK,MYTHID)
+
+              if ( K .gt. 1 ) then
+                oad_ctmp4 = (BI)
+                oad_ctmp5 = (BJ)
+                oad_ctmp6 = (K + (-1))
+                oad_ctmp7 = (K)
+                call find_rho(oad_ctmp4,oad_ctmp5,IMIN,IMAX,JMIN,JMAX,oa
+     +d_ctmp6,oad_ctmp7,THETA,SALT,RHOKM1,MYTHID)
+
+              ENDIF
+              if ( DEBUGLEVEL .ge. 2 ) then
+                call debug_call('GRAD_SIGMA',MYTHID)
+              ENDIF
+              t__1051 = JMIN
+              t__1052 = JMAX
+              DO J = t__1051, t__1052, 1
+                t__1053 = IMIN
+                t__1054 = IMAX
+                DO I = t__1053, t__1054, 1
+                  RHOKP1(I,J) = RHOK(I,J)
+                END DO
+              END DO
+              oad_ctmp8 = (BI)
+              oad_ctmp9 = (BJ)
+              oad_ctmp10 = (K)
+              call grad_sigma(oad_ctmp8,oad_ctmp9,IMIN,IMAX,JMIN,JMAX,oa
+     +d_ctmp10,RHOK,RHOKM1,RHOKP1,SIGMAX,SIGMAY,SIGMAR,MYTHID)
+
+            ENDIF
+            if ( (K .gt. 1) .and. (IVDC_KAPPA .ne. 0.0D00) ) then
+              if ( DEBUGLEVEL .ge. 2 ) then
+                call debug_call('CALC_IVDC',MYTHID)
+              ENDIF
+              oad_ctmp11 = (BI)
+              oad_ctmp12 = (BJ)
+              oad_ctmp13 = (K)
+              call calc_ivdc(oad_ctmp11,oad_ctmp12,IMIN,IMAX,JMIN,JMAX,o
+     +ad_ctmp13,RHOKM1,RHOK,MYTIME,MYITER,MYTHID)
+
+            ENDIF
+          END DO
+          if ( DEBUGLEVEL .ge. 2 ) then
+            call debug_call('EXTERNAL_FORCING_SURF',MYTHID)
+          ENDIF
+          oad_ctmp14 = (BI)
+          oad_ctmp15 = (BJ)
+          call external_forcing_surf(oad_ctmp14,oad_ctmp15,IMIN,IMAX,JMI
+     +N,JMAX,MYTIME,MYITER,MYTHID)
+
+        END DO
+      END DO
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_leave('DO_OCEANIC_PHYS',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE do_stagger_fields_exchanges(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL exch_uv_xyz_rl
+      EXTERNAL exch_xyz_rl
+      logical oad_ctmp0
+C
+C     **** Statements ****
+C
+      if ( STAGGERTIMESTEP .and. USEMULTIDIMADVEC ) then
+        oad_ctmp0 = (.true.)
+        call exch_uv_xyz_rl(UVEL,VVEL,oad_ctmp0,MYTHID)
+        if ( .not. IMPLICITINTGRAVWAVE ) then
+          call exch_xyz_rl(WVEL,MYTHID)
+        ENDIF
+      ENDIF
+      if ( IMPLICITINTGRAVWAVE ) then
+        call exch_xyz_rl(GT,MYTHID)
+        call exch_xyz_rl(GS,MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE dynamics(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use tamc_mod
+      use tamc_keys_mod
+      use ffields_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL calc_grad_phi_surf
+      EXTERNAL calc_phi_hyd
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL debug_stats_rl
+      REAL(w2f__8) DPHIHYDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) DPHIHYDY(-2 : 93, -2 : 43)
+      REAL(w2f__8) FVERU(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) FVERV(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) GUDISSIP(-2 : 93, -2 : 43)
+      REAL(w2f__8) GVDISSIP(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      EXTERNAL impldiff
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) KAPPARU(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) KAPPARV(-2 : 93, -2 : 43, 1 : 1)
+      INTEGER(w2f__i4) KDOWN
+      INTEGER(w2f__i4) KM1
+      INTEGER(w2f__i4) KP1
+      INTEGER(w2f__i4) KUP
+      EXTERNAL mom_fluxform
+      REAL(w2f__8) PHIHYDC(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHIHYDF(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFX(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFY(-2 : 93, -2 : 43)
+      EXTERNAL timestep
+      INTEGER(w2f__i4) t__1060
+      INTEGER(w2f__i4) t__1061
+      INTEGER(w2f__i4) t__1062
+      INTEGER(w2f__i4) t__1063
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+      integer(w2f__i4) oad_ctmp7
+      integer(w2f__i4) oad_ctmp8
+      integer(w2f__i4) oad_ctmp9
+      integer(w2f__i4) oad_ctmp10
+      integer(w2f__i4) oad_ctmp11
+      integer(w2f__i4) oad_ctmp12
+      integer(w2f__i4) oad_ctmp13
+      integer(w2f__i4) oad_ctmp14
+      integer(w2f__i4) oad_ctmp15
+      integer(w2f__i4) oad_ctmp16
+      integer(w2f__i4) oad_ctmp17
+      integer(w2f__i4) oad_ctmp18
+      integer(w2f__i4) oad_ctmp19
+      integer oad_ctmp20
+      integer(w2f__i4) oad_ctmp21
+      integer(w2f__i4) oad_ctmp22
+      integer oad_ctmp23
+      integer oad_ctmp24
+      integer oad_ctmp25
+      integer oad_ctmp26
+      integer oad_ctmp27
+      integer oad_ctmp28
+      integer oad_ctmp29
+      integer oad_ctmp30
+      integer oad_ctmp31
+      integer oad_ctmp32
+      integer oad_ctmp33
+      integer oad_ctmp34
+      integer oad_ctmp35
+      integer oad_ctmp36
+      integer oad_ctmp37
+C
+C     **** Statements ****
+C
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_enter('DYNAMICS',MYTHID)
+      ENDIF
+      t__1060 = MYBYLO(MYTHID)
+      t__1061 = MYBYHI(MYTHID)
+      DO BJ = t__1060, t__1061, 1
+        t__1062 = MYBXLO(MYTHID)
+        t__1063 = MYBXHI(MYTHID)
+        DO BI = t__1062, t__1063, 1
+          ACT1 = BI - MYBXLO(MYTHID)
+          MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+          ACT2 = BJ - MYBYLO(MYTHID)
+          MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+          ACT3 = MYTHID + (-1)
+          MAX3 = NTX * NTY
+          ACT4 = IKEY_DYNAMICS + (-1)
+          IDYNKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX
+     +2 * ACT4 * MAX1 + 1
+
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                KAPPARU(I,J,K) = 0.0D00
+                KAPPARV(I,J,K) = 0.0D00
+                GU(I,J,K,BI,BJ) = 0.0D00
+                GV(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              FVERU(I,J,1) = 0.0D00
+              FVERU(I,J,2) = 0.0D00
+              FVERV(I,J,1) = 0.0D00
+              FVERV(I,J,2) = 0.0D00
+              PHIHYDF(I,J) = 0.0D00
+              PHIHYDC(I,J) = 0.0D00
+              DPHIHYDX(I,J) = 0.0D00
+              DPHIHYDY(I,J) = 0.0D00
+              PHISURFX(I,J) = 0.0D00
+              PHISURFY(I,J) = 0.0D00
+              GUDISSIP(I,J) = 0.0D00
+              GVDISSIP(I,J) = 0.0D00
+            END DO
+          END DO
+          IMIN = 0
+          IMAX = 91
+          JMIN = 0
+          JMAX = 41
+          if ( IMPLICSURFPRESS .ne. 1.0D00 ) then
+            oad_ctmp0 = (BI)
+            oad_ctmp1 = (BJ)
+            call calc_grad_phi_surf(oad_ctmp0,oad_ctmp1,IMIN,IMAX,JMIN,J
+     +MAX,ETAN,PHISURFX,PHISURFY,MYTHID)
+
+          ENDIF
+          DO K = 1, 1, 1
+            oad_ctmp3 = K + (-1)
+            call oad_s_MAX_i(oad_ctmp3,1,oad_ctmp2)
+            KM1 = oad_ctmp2
+            oad_ctmp5 = K + 1
+            call oad_s_MIN_i(oad_ctmp5,1,oad_ctmp4)
+            KP1 = oad_ctmp4
+            KUP = MOD(K + 1,2) + 1
+            KDOWN = MOD(K,2) + 1
+            KKEY = K + IDYNKEY + (-1)
+            if ( IMPLICITINTGRAVWAVE ) then
+              oad_ctmp6 = (BI)
+              oad_ctmp7 = (BJ)
+              oad_ctmp8 = (K)
+              call calc_phi_hyd(oad_ctmp6,oad_ctmp7,IMIN,IMAX,JMIN,JMAX,
+     +oad_ctmp8,GT,GS,PHIHYDF,PHIHYDC,DPHIHYDX,DPHIHYDY,MYTIME,MYITER,MY
+     +THID)
+
+            ELSE
+              oad_ctmp9 = (BI)
+              oad_ctmp10 = (BJ)
+              oad_ctmp11 = (K)
+              call calc_phi_hyd(oad_ctmp9,oad_ctmp10,IMIN,IMAX,JMIN,JMAX
+     +,oad_ctmp11,THETA,SALT,PHIHYDF,PHIHYDC,DPHIHYDX,DPHIHYDY,MYTIME,MY
+     +ITER,MYTHID)
+
+            ENDIF
+            if ( MOMSTEPPING ) then
+              if ( .not. VECTORINVARIANTMOMENTUM ) then
+                oad_ctmp12 = (BI)
+                oad_ctmp13 = (BJ)
+                oad_ctmp14 = (K)
+                call mom_fluxform(oad_ctmp12,oad_ctmp13,IMIN,IMAX,JMIN,J
+     +MAX,oad_ctmp14,KUP,KDOWN,KAPPARU,KAPPARV,FVERU,FVERV,GUDISSIP,GVDI
+     +SSIP,MYTIME,MYITER,MYTHID)
+
+              ENDIF
+              oad_ctmp15 = (BI)
+              oad_ctmp16 = (BJ)
+              oad_ctmp17 = (K)
+              call timestep(oad_ctmp15,oad_ctmp16,IMIN,IMAX,JMIN,JMAX,oa
+     +d_ctmp17,DPHIHYDX,DPHIHYDY,PHISURFX,PHISURFY,GUDISSIP,GVDISSIP,MYT
+     +IME,MYITER,MYTHID)
+
+            ENDIF
+          END DO
+          if ( IMPLICITVISCOSITY ) then
+            oad_ctmp18 = (BI)
+            oad_ctmp19 = (BJ)
+            oad_ctmp20 = (-1)
+            call impldiff(oad_ctmp18,oad_ctmp19,IMIN,IMAX,JMIN,JMAX,oad_
+     +ctmp20,KAPPARU,RECIP_HFACW,GU,MYTHID)
+
+            oad_ctmp21 = (BI)
+            oad_ctmp22 = (BJ)
+            oad_ctmp23 = (-2)
+            call impldiff(oad_ctmp21,oad_ctmp22,IMIN,IMAX,JMIN,JMAX,oad_
+     +ctmp23,KAPPARV,RECIP_HFACS,GV,MYTHID)
+
+          ENDIF
+        END DO
+      END DO
+      if ( DEBUGLEVEL .ge. 2 ) then
+        oad_ctmp24 = (1)
+        call debug_stats_rl(oad_ctmp24,ETAN,'EtaN (DYNAMICS)',MYTHID)
+        oad_ctmp25 = (1)
+        call debug_stats_rl(oad_ctmp25,UVEL,'Uvel (DYNAMICS)',MYTHID)
+        oad_ctmp26 = (1)
+        call debug_stats_rl(oad_ctmp26,VVEL,'Vvel (DYNAMICS)',MYTHID)
+        oad_ctmp27 = (1)
+        call debug_stats_rl(oad_ctmp27,WVEL,'Wvel (DYNAMICS)',MYTHID)
+        oad_ctmp28 = (1)
+        call debug_stats_rl(oad_ctmp28,THETA,'Theta (DYNAMICS)',MYTHID)
+        oad_ctmp29 = (1)
+        call debug_stats_rl(oad_ctmp29,SALT,'Salt (DYNAMICS)',MYTHID)
+        oad_ctmp30 = (1)
+        call debug_stats_rl(oad_ctmp30,GU,'Gu (DYNAMICS)',MYTHID)
+        oad_ctmp31 = (1)
+        call debug_stats_rl(oad_ctmp31,GV,'Gv (DYNAMICS)',MYTHID)
+        oad_ctmp32 = (1)
+        call debug_stats_rl(oad_ctmp32,GT,'Gt (DYNAMICS)',MYTHID)
+        oad_ctmp33 = (1)
+        call debug_stats_rl(oad_ctmp33,GS,'Gs (DYNAMICS)',MYTHID)
+        oad_ctmp34 = (1)
+        call debug_stats_rl(oad_ctmp34,GUNM1,'GuNm1 (DYNAMICS)',MYTHID)
+        oad_ctmp35 = (1)
+        call debug_stats_rl(oad_ctmp35,GVNM1,'GvNm1 (DYNAMICS)',MYTHID)
+        oad_ctmp36 = (1)
+        call debug_stats_rl(oad_ctmp36,GTNM1,'GtNm1 (DYNAMICS)',MYTHID)
+        oad_ctmp37 = (1)
+        call debug_stats_rl(oad_ctmp37,GSNM1,'GsNm1 (DYNAMICS)',MYTHID)
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_leave('DYNAMICS',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE external_fields_load(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use ffields_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) AWGHT
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) BWGHT
+      EXTERNAL exch_uv_xy_rs
+      EXTERNAL exch_xy_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IFCYC
+      INTEGER(w2f__i4) IFPRD
+      INTEGER(w2f__i4) IFTM
+      INTEGER(w2f__i4) IMYTM
+      INTEGER(w2f__i4) INTIME0
+      INTEGER(w2f__i4) INTIME1
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) NFORCINGPERIODS
+      REAL(w2f__8) RDT
+      EXTERNAL read_rec_xy_rs
+      REAL(w2f__8) TMP1WGHT
+      REAL(w2f__8) TMP2WGHT
+      INTEGER(w2f__i4) t__1064
+      INTEGER(w2f__i4) t__1065
+      INTEGER(w2f__i4) t__1066
+      INTEGER(w2f__i4) t__1067
+      logical oad_ctmp0
+      logical oad_ctmp1
+C
+C     **** Statements ****
+C
+      if ( PERIODICEXTERNALFORCING ) then
+        RDT = 1D00 / DELTATCLOCK
+        NFORCINGPERIODS = NINT(EXTERNFORCINGCYCLE / EXTERNFORCINGPERIOD)
+        IMYTM = NINT(MYTIME * RDT)
+        IFPRD = NINT(RDT * EXTERNFORCINGPERIOD)
+        IFCYC = NINT(RDT * EXTERNFORCINGCYCLE)
+        IMYTM = IMYTM + IFCYC * (1 - NINT(MYTIME / EXTERNFORCINGCYCLE))
+        IFTM = MOD(IFCYC + IMYTM - (IFPRD / 2),IFCYC)
+        INTIME0 = INT(IFTM / IFPRD) + 1
+        INTIME1 = MOD(INTIME0,NFORCINGPERIODS) + 1
+        TMP1WGHT = FLOAT(IFTM - IFPRD * (INTIME0 + (-1)))
+        TMP2WGHT = FLOAT(IFPRD)
+        AWGHT = TMP1WGHT / TMP2WGHT
+        BWGHT = 1.0D00 - AWGHT
+        if ( (MYITER .eq. NITER0) .or. ((IFTM - IFPRD * (INTIME0 + (-1))
+     +) .eq. 0) ) then
+
+          call barrier(MYTHID)
+          if ( MYTHID .eq. 1 ) then
+            WRITE(STANDARDMESSAGEUNIT, '(A,2I5,I10,1P1E20.12)')
+     >  'S/R EXTERNAL_FIELDS_LOAD: Reading new data:', INTIME0, INTIME1
+     > , MYITER, MYTIME
+          ENDIF
+          if ( ZONALWINDFILE .ne. ' ' ) then
+            call read_rec_xy_rs(ZONALWINDFILE,TAUX0,INTIME0,MYITER,MYTHI
+     +D)
+
+            call read_rec_xy_rs(ZONALWINDFILE,TAUX1,INTIME1,MYITER,MYTHI
+     +D)
+
+          ENDIF
+          if ( MERIDWINDFILE .ne. ' ' ) then
+            call read_rec_xy_rs(MERIDWINDFILE,TAUY0,INTIME0,MYITER,MYTHI
+     +D)
+
+            call read_rec_xy_rs(MERIDWINDFILE,TAUY1,INTIME1,MYITER,MYTHI
+     +D)
+
+          ENDIF
+          if ( SURFQFILE .ne. ' ' ) then
+            call read_rec_xy_rs(SURFQFILE,QNET0,INTIME0,MYITER,MYTHID)
+            call read_rec_xy_rs(SURFQFILE,QNET1,INTIME1,MYITER,MYTHID)
+          ELSE
+            if ( SURFQNETFILE .ne. ' ' ) then
+              call read_rec_xy_rs(SURFQNETFILE,QNET0,INTIME0,MYITER,MYTH
+     +ID)
+
+              call read_rec_xy_rs(SURFQNETFILE,QNET1,INTIME1,MYITER,MYTH
+     +ID)
+
+            ENDIF
+          ENDIF
+          if ( EMPMRFILE .ne. ' ' ) then
+            call read_rec_xy_rs(EMPMRFILE,EMPMR0,INTIME0,MYITER,MYTHID)
+            call read_rec_xy_rs(EMPMRFILE,EMPMR1,INTIME1,MYITER,MYTHID)
+          ENDIF
+          if ( SALTFLUXFILE .ne. ' ' ) then
+            call read_rec_xy_rs(SALTFLUXFILE,SALTFLUX0,INTIME0,MYITER,MY
+     +THID)
+
+            call read_rec_xy_rs(SALTFLUXFILE,SALTFLUX1,INTIME1,MYITER,MY
+     +THID)
+
+          ENDIF
+          if ( THETACLIMFILE .ne. ' ' ) then
+            call read_rec_xy_rs(THETACLIMFILE,SST0,INTIME0,MYITER,MYTHID
+     +)
+
+            call read_rec_xy_rs(THETACLIMFILE,SST1,INTIME1,MYITER,MYTHID
+     +)
+
+          ENDIF
+          if ( SALTCLIMFILE .ne. ' ' ) then
+            call read_rec_xy_rs(SALTCLIMFILE,SSS0,INTIME0,MYITER,MYTHID)
+            call read_rec_xy_rs(SALTCLIMFILE,SSS1,INTIME1,MYITER,MYTHID)
+          ENDIF
+          call exch_xy_rl(SST0,MYTHID)
+          call exch_xy_rl(SST1,MYTHID)
+          call exch_xy_rl(SSS0,MYTHID)
+          call exch_xy_rl(SSS1,MYTHID)
+          oad_ctmp0 = (.true.)
+          call exch_uv_xy_rs(TAUX0,TAUY0,oad_ctmp0,MYTHID)
+          oad_ctmp1 = (.true.)
+          call exch_uv_xy_rs(TAUX1,TAUY1,oad_ctmp1,MYTHID)
+          call exch_xy_rl(QNET0,MYTHID)
+          call exch_xy_rl(QNET1,MYTHID)
+          call exch_xy_rl(EMPMR0,MYTHID)
+          call exch_xy_rl(EMPMR1,MYTHID)
+          call exch_xy_rl(SALTFLUX0,MYTHID)
+          call exch_xy_rl(SALTFLUX1,MYTHID)
+        ENDIF
+        t__1064 = MYBYLO(MYTHID)
+        t__1065 = MYBYHI(MYTHID)
+        DO BJ = t__1064, t__1065, 1
+          t__1066 = MYBXLO(MYTHID)
+          t__1067 = MYBXHI(MYTHID)
+          DO BI = t__1066, t__1067, 1
+            if ( THETACLIMFILE .ne. ' ' ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  SST(I,J,BI,BJ) = (SST0(I,J,BI,BJ) * BWGHT + SST1(I,J,B
+     +I,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+            if ( SALTCLIMFILE .ne. ' ' ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  SSS(I,J,BI,BJ) = (SSS0(I,J,BI,BJ) * BWGHT + SSS1(I,J,B
+     +I,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+            if ( ZONALWINDFILE .ne. ' ' ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  FU(I,J,BI,BJ) = (TAUX0(I,J,BI,BJ) * BWGHT + TAUX1(I,J,
+     +BI,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+            if ( MERIDWINDFILE .ne. ' ' ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  FV(I,J,BI,BJ) = (TAUY0(I,J,BI,BJ) * BWGHT + TAUY1(I,J,
+     +BI,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+            if ( (SURFQFILE .ne. ' ') .or. (SURFQNETFILE .ne. ' ') ) the
+     +n
+
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  QNET(I,J,BI,BJ) = (QNET0(I,J,BI,BJ) * BWGHT + QNET1(I,
+     +J,BI,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+            if ( EMPMRFILE .ne. ' ' ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  EMPMR(I,J,BI,BJ) = (EMPMR0(I,J,BI,BJ) * BWGHT + EMPMR1
+     +(I,J,BI,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+            if ( SALTFLUXFILE .ne. ' ' ) then
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  SALTFLUX(I,J,BI,BJ) = (SALTFLUX0(I,J,BI,BJ) * BWGHT + 
+     +SALTFLUX1(I,J,BI,BJ) * AWGHT)
+
+                END DO
+              END DO
+            ENDIF
+          END DO
+        END DO
+        if ( (DEBUGLEVEL .ge. 1) .and. (MYTIME .lt. 6.2208D+07) ) then
+          if ( MYTHID .eq. 1 ) then
+            WRITE(STANDARDMESSAGEUNIT, '(a,1p7e12.4,2i6,2e12.4)')
+     >  'time,SST,SSS,fu,fv,Q,E-P,i0,i1,a,b = ', MYTIME, SST(1, 40, 1,
+     >  1), SSS(1, 40, 1, 1), FU(1, 40, 1, 1), FV(1, 40, 1, 1), QNET(1,
+     >  40, 1, 1), EMPMR(1, 40, 1, 1), INTIME0, INTIME1, AWGHT, BWGHT
+            WRITE(STANDARDMESSAGEUNIT, '(a,1p4e12.4,2E23.15)')
+     >  'time,fu0,fu1,fu = ', MYTIME, TAUX0(1, 40, 1, 1), TAUX1(1, 40,
+     >  1, 1), FU(1, 40, 1, 1), AWGHT, BWGHT
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE external_forcing_u(IMIN, IMAX, JMIN, JMAX, BI, BJ,
+     >  KLEV, MYTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) KLEV
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KSURFACE
+C
+C     **** Statements ****
+C
+      if ( FLUIDISAIR ) then
+        KSURFACE = 0
+      ELSE
+        if ( USINGPCOORDS ) then
+          KSURFACE = 1
+        ELSE
+          KSURFACE = 1
+        ENDIF
+      ENDIF
+      if ( KLEV .eq. KSURFACE ) then
+        DO J = 0, 41, 1
+          DO I = 1, 91, 1
+            GU(I,J,KLEV,BI,BJ) = (GU(I,J,KLEV,BI,BJ) + RECIP_HFACW(I,J,K
+     +LEV,BI,BJ) * RECIP_DRF(KLEV) * SURFACEFORCINGU(I,J,BI,BJ) * FOFACM
+     +OM)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE external_forcing_v(IMIN, IMAX, JMIN, JMAX, BI, BJ,
+     >  KLEV, MYTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) KLEV
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KSURFACE
+C
+C     **** Statements ****
+C
+      if ( FLUIDISAIR ) then
+        KSURFACE = 0
+      ELSE
+        if ( USINGPCOORDS ) then
+          KSURFACE = 1
+        ELSE
+          KSURFACE = 1
+        ENDIF
+      ENDIF
+      if ( KLEV .eq. KSURFACE ) then
+        DO J = 1, 41, 1
+          DO I = 0, 91, 1
+            GV(I,J,KLEV,BI,BJ) = (GV(I,J,KLEV,BI,BJ) + RECIP_HFACS(I,J,K
+     +LEV,BI,BJ) * RECIP_DRF(KLEV) * SURFACEFORCINGV(I,J,BI,BJ) * FOFACM
+     +OM)
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE external_forcing_t(IMIN, IMAX, JMIN, JMAX, BI, BJ,
+     >  KLEV, MYTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) KLEV
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KSURFACE
+C
+C     **** Statements ****
+C
+      if ( FLUIDISAIR ) then
+        KSURFACE = 0
+      ELSE
+        if ( USINGPCOORDS ) then
+          KSURFACE = 1
+        ELSE
+          KSURFACE = 1
+        ENDIF
+      ENDIF
+      if ( KLEV .eq. KSURFACE ) then
+        DO J = 1, 40, 1
+          DO I = 1, 90, 1
+            GT(I,J,KLEV,BI,BJ) = (GT(I,J,KLEV,BI,BJ) + RECIP_HFACC(I,J,K
+     +LEV,BI,BJ) * RECIP_DRF(KLEV) * SURFACEFORCINGT(I,J,BI,BJ))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE external_forcing_s(IMIN, IMAX, JMIN, JMAX, BI, BJ,
+     >  KLEV, MYTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) KLEV
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KSURFACE
+C
+C     **** Statements ****
+C
+      if ( FLUIDISAIR ) then
+        KSURFACE = 0
+      ELSE
+        if ( USINGPCOORDS ) then
+          KSURFACE = 1
+        ELSE
+          KSURFACE = 1
+        ENDIF
+      ENDIF
+      if ( KLEV .eq. KSURFACE ) then
+        DO J = 1, 40, 1
+          DO I = 1, 90, 1
+            GS(I,J,KLEV,BI,BJ) = (GS(I,J,KLEV,BI,BJ) + RECIP_HFACC(I,J,K
+     +LEV,BI,BJ) * RECIP_DRF(KLEV) * SURFACEFORCINGS(I,J,BI,BJ))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE external_forcing_surf(BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use ffields_mod
+      use dynvars_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) KS
+      INTEGER(w2f__i4) t__1068
+      INTEGER(w2f__i4) t__1069
+      INTEGER(w2f__i4) t__1070
+      INTEGER(w2f__i4) t__1071
+      INTEGER(w2f__i4) t__1072
+      INTEGER(w2f__i4) t__1073
+      INTEGER(w2f__i4) t__1074
+      INTEGER(w2f__i4) t__1075
+      INTEGER(w2f__i4) t__1076
+      INTEGER(w2f__i4) t__1077
+      INTEGER(w2f__i4) t__1078
+      INTEGER(w2f__i4) t__1079
+      INTEGER(w2f__i4) t__1080
+      INTEGER(w2f__i4) t__1081
+      INTEGER(w2f__i4) t__1082
+      INTEGER(w2f__i4) t__1083
+      INTEGER(w2f__i4) t__1084
+      INTEGER(w2f__i4) t__1085
+      INTEGER(w2f__i4) t__1086
+      INTEGER(w2f__i4) t__1087
+C
+C     **** Statements ****
+C
+      if ( USINGPCOORDS ) then
+        KS = 1
+      ELSE
+        KS = 1
+      ENDIF
+      if ( DOSALTCLIMRELAX .or. DOTHETACLIMRELAX ) then
+        t__1068 = JMIN
+        t__1069 = JMAX
+        DO J = t__1068, t__1069, 1
+          t__1070 = IMIN
+          t__1071 = IMAX
+          DO I = t__1070, t__1071, 1
+            SURFACEFORCINGT(I,J,BI,BJ) = (-(HFACC(I,J,KS,BI,BJ) * DRF(KS
+     +) * LAMBDATHETACLIMRELAX(I,J,BI,BJ) * (THETA(I,J,KS,BI,BJ) - SST(I
+     +,J,BI,BJ))))
+
+            SURFACEFORCINGS(I,J,BI,BJ) = (-(HFACC(I,J,KS,BI,BJ) * DRF(KS
+     +) * LAMBDASALTCLIMRELAX(I,J,BI,BJ) * (SALT(I,J,KS,BI,BJ) - SSS(I,J
+     +,BI,BJ))))
+
+          END DO
+        END DO
+      ELSE
+        t__1072 = JMIN
+        t__1073 = JMAX
+        DO J = t__1072, t__1073, 1
+          t__1074 = IMIN
+          t__1075 = IMAX
+          DO I = t__1074, t__1075, 1
+            SURFACEFORCINGT(I,J,BI,BJ) = 0.0D00
+            SURFACEFORCINGS(I,J,BI,BJ) = 0.0D00
+          END DO
+        END DO
+      ENDIF
+      t__1076 = JMIN
+      t__1077 = JMAX
+      DO J = t__1076, t__1077, 1
+        t__1078 = IMIN
+        t__1079 = IMAX
+        DO I = t__1078, t__1079, 1
+          SURFACEFORCINGU(I,J,BI,BJ) = (RECIP_RHOCONST * FU(I,J,BI,BJ) *
+     + HORIVERTRATIO)
+
+          SURFACEFORCINGV(I,J,BI,BJ) = (RECIP_RHOCONST * FV(I,J,BI,BJ) *
+     + HORIVERTRATIO)
+
+          SURFACEFORCINGT(I,J,BI,BJ) = (SURFACEFORCINGT(I,J,BI,BJ) - REC
+     +IP_RHOCONST * HORIVERTRATIO * RECIP_CP * (QNET(I,J,BI,BJ)))
+
+          SURFACEFORCINGS(I,J,BI,BJ) = (SURFACEFORCINGS(I,J,BI,BJ) - REC
+     +IP_RHOCONST * SALTFLUX(I,J,BI,BJ) * HORIVERTRATIO)
+
+        END DO
+      END DO
+      if ( USEREALFRESHWATERFLUX ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            EMPMR(I,J,BI,BJ) = (EMPMR(I,J,BI,BJ) * MASKH(I,J,BI,BJ))
+          END DO
+        END DO
+      ENDIF
+      if ( .true. ) then
+        if ( CONVERTFW2SALT .eq. (-1.0D00) ) then
+          t__1080 = JMIN
+          t__1081 = JMAX
+          DO J = t__1080, t__1081, 1
+            t__1082 = IMIN
+            t__1083 = IMAX
+            DO I = t__1082, t__1083, 1
+              SURFACEFORCINGS(I,J,BI,BJ) = (SURFACEFORCINGS(I,J,BI,BJ) +
+     + CONVERTEMP2RUNIT * EMPMR(I,J,BI,BJ) * SALT(I,J,KS,BI,BJ))
+
+            END DO
+          END DO
+        ELSE
+          t__1084 = JMIN
+          t__1085 = JMAX
+          DO J = t__1084, t__1085, 1
+            t__1086 = IMIN
+            t__1087 = IMAX
+            DO I = t__1086, t__1087, 1
+              SURFACEFORCINGS(I,J,BI,BJ) = (SURFACEFORCINGS(I,J,BI,BJ) +
+     + CONVERTEMP2RUNIT * EMPMR(I,J,BI,BJ) * CONVERTFW2SALT)
+
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_alpha(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KREF,
+     >  ALPHALOC, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KREF
+      REAL(w2f__8) ALPHALOC(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) BULKMOD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DDEN_DTHETA
+      REAL(w2f__8) DKDTHETA
+      REAL(w2f__8) DKDTHETAFRESH
+      REAL(w2f__8) DKDTHETAPRES
+      REAL(w2f__8) DKDTHETASALT
+      REAL(w2f__8) DNUM_DTHETA
+      REAL(w2f__8) DRHOP0DTHETA
+      REAL(w2f__8) DRHOP0DTHETAFRESH
+      REAL(w2f__8) DRHOP0DTHETASALT
+      EXTERNAL find_bulkmod
+      EXTERNAL find_rhoden
+      EXTERNAL find_rhonum
+      EXTERNAL find_rhop0
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      REAL(w2f__8) P1
+      REAL(w2f__8) P1T1
+      REAL(w2f__8) P2
+      EXTERNAL pressure_for_eos
+      REAL(w2f__8) REFSALT
+      REAL(w2f__8) REFTEMP
+      REAL(w2f__8) RHODEN(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOLOC(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOP0(-2 : 93, -2 : 43)
+      REAL(w2f__8) S1
+      REAL(w2f__8) S3O2
+      REAL(w2f__8) SP
+      REAL(w2f__8) SP5
+      REAL(w2f__8) T1
+      REAL(w2f__8) T2
+      REAL(w2f__8) T3
+      REAL(w2f__8) TP
+      INTEGER(w2f__i4) t__1092
+      INTEGER(w2f__i4) t__1093
+      INTEGER(w2f__i4) t__1094
+      INTEGER(w2f__i4) t__1095
+      INTEGER(w2f__i4) t__1096
+      INTEGER(w2f__i4) t__1097
+      INTEGER(w2f__i4) t__1098
+      INTEGER(w2f__i4) t__1099
+      INTEGER(w2f__i4) t__1100
+      INTEGER(w2f__i4) t__1101
+      INTEGER(w2f__i4) t__1102
+      INTEGER(w2f__i4) t__1103
+      INTEGER(w2f__i4) t__1104
+      INTEGER(w2f__i4) t__1105
+      INTEGER(w2f__i4) t__1106
+      INTEGER(w2f__i4) t__1107
+      character(5) oad_slc30
+C
+C     **** Statements ****
+C
+      if ( EQUATIONOFSTATE .eq. 'LINEAR' ) then
+        t__1092 = JMIN
+        t__1093 = JMAX
+        DO J = t__1092, t__1093, 1
+          t__1094 = IMIN
+          t__1095 = IMAX
+          DO I = t__1094, t__1095, 1
+            ALPHALOC(I,J) = (-(RHONIL * TALPHA))
+          END DO
+        END DO
+      ELSE
+        if ( EQUATIONOFSTATE .eq. 'POLY3' ) then
+          REFTEMP = EOSREFT(KREF)
+          REFSALT = EOSREFS(KREF)
+          t__1096 = JMIN
+          t__1097 = JMAX
+          DO J = t__1096, t__1097, 1
+            t__1098 = IMIN
+            t__1099 = IMAX
+            DO I = t__1098, t__1099, 1
+              TP = THETA(I,J,K,BI,BJ) - REFTEMP
+              SP = SALT(I,J,K,BI,BJ) - REFSALT
+              ALPHALOC(I,J) = (EOSC(1,KREF) + SP * (EOSC(4,KREF) + EOSC(
+     +8,KREF) * SP) + TP * (EOSC(6,KREF) * TP * 3.0D00 + (EOSC(3,KREF) +
+     + EOSC(7,KREF) * SP) * 2.0D00))
+
+            END DO
+          END DO
+        ELSE
+          if ( (oad_slc30 .eq. 'JMD95') .or. (EQUATIONOFSTATE .eq. 'UNES
+     +CO') ) then
+
+            call pressure_for_eos(BI,BJ,IMIN,IMAX,JMIN,JMAX,KREF,LOCPRES
+     +,MYTHID)
+
+            call find_rhop0(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,THETA,SALT,RHOP0
+     +,MYTHID)
+
+            call find_bulkmod(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,THETA,
+     +SALT,BULKMOD,MYTHID)
+
+            t__1100 = JMIN
+            t__1101 = JMAX
+            DO J = t__1100, t__1101, 1
+              t__1102 = IMIN
+              t__1103 = IMAX
+              DO I = t__1102, t__1103, 1
+                T1 = THETA(I,J,K,BI,BJ)
+                T2 = T1 * T1
+                T3 = T1 * T2
+                S1 = SALT(I,J,K,BI,BJ)
+                if ( S1 .gt. 0.0D00 ) then
+                  S3O2 = SQRT(S1 * S1 * S1)
+                ELSE
+                  S1 = 0.0D00
+                  S3O2 = 0.0D00
+                ENDIF
+                P1 = LOCPRES(I,J) * 1.0000000000000000818D-05
+                P2 = P1 * P1
+                DRHOP0DTHETAFRESH = EOSJMDCFW(2) + T1 * EOSJMDCFW(3) * 2
+     +.0D00 + T2 * EOSJMDCFW(4) * 3.0D00 + T3 * EOSJMDCFW(5) * 4.0D00 + 
+     +T1 * T3 * EOSJMDCFW(6) * 5.0D00
+
+                DRHOP0DTHETASALT = S1 * (EOSJMDCSW(2) + T1 * EOSJMDCSW(3
+     +) * 2.0D00 + T2 * EOSJMDCSW(4) * 3.0D00 + T3 * EOSJMDCSW(5) * 4.0D
+     +00) + S3O2 * (EOSJMDCSW(7) + T1 * EOSJMDCSW(8) * 2.0D00)
+
+                DKDTHETAFRESH = EOSJMDCKFW(2) + T1 * EOSJMDCKFW(3) * 2.0
+     +D00 + T2 * EOSJMDCKFW(4) * 3.0D00 + T3 * EOSJMDCKFW(5) * 4.0D00
+
+                DKDTHETASALT = S1 * (EOSJMDCKSW(2) + T1 * EOSJMDCKSW(3) 
+     +* 2.0D00 + T2 * EOSJMDCKSW(4) * 3.0D00) + S3O2 * (EOSJMDCKSW(6) + 
+     +T1 * EOSJMDCKSW(7) * 2.0D00)
+
+                DKDTHETAPRES = P1 * (EOSJMDCKP(2) + T1 * EOSJMDCKP(3) * 
+     +2.0D00 + T2 * EOSJMDCKP(4) * 3.0D00) + P1 * S1 * (EOSJMDCKP(6) + T
+     +1 * EOSJMDCKP(7) * 2.0D00) + P2 * (EOSJMDCKP(10) + T1 * EOSJMDCKP(
+     +11) * 2.0D00) + P2 * S1 * (EOSJMDCKP(13) + T1 * EOSJMDCKP(14) * 2.
+     +0D00)
+
+                DRHOP0DTHETA = DRHOP0DTHETAFRESH + DRHOP0DTHETASALT
+                DKDTHETA = DKDTHETAPRES + DKDTHETAFRESH + DKDTHETASALT
+                ALPHALOC(I,J) = ((DRHOP0DTHETA * (BULKMOD(I,J) ** 2) - D
+     +RHOP0DTHETA * BULKMOD(I,J) * P1 - DKDTHETA * RHOP0(I,J) * P1) / ((
+     +BULKMOD(I,J) - P1) ** 2))
+
+              END DO
+            END DO
+          ELSE
+            if ( EQUATIONOFSTATE .eq. 'MDJWF' ) then
+              call pressure_for_eos(BI,BJ,IMIN,IMAX,JMIN,JMAX,KREF,LOCPR
+     +ES,MYTHID)
+
+              call find_rhonum(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,THETA
+     +,SALT,RHOLOC,MYTHID)
+
+              call find_rhoden(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,THETA
+     +,SALT,RHODEN,MYTHID)
+
+              t__1104 = JMIN
+              t__1105 = JMAX
+              DO J = t__1104, t__1105, 1
+                t__1106 = IMIN
+                t__1107 = IMAX
+                DO I = t__1106, t__1107, 1
+                  T1 = THETA(I,J,K,BI,BJ)
+                  T2 = T1 * T1
+                  S1 = SALT(I,J,K,BI,BJ)
+                  if ( S1 .gt. 0.0D00 ) then
+                    SP5 = SQRT(S1)
+                  ELSE
+                    S1 = 0.0D00
+                    SP5 = 0.0D00
+                  ENDIF
+                  P1 = LOCPRES(I,J) * 1.00000000000000004792D-04
+                  P1T1 = P1 * T1
+                  DNUM_DTHETA = EOSMDJWFNUM(1) + T1 * (EOSMDJWFNUM(2) * 
+     +2.0D00 + T1 * EOSMDJWFNUM(3) * 3.0D00) + EOSMDJWFNUM(5) * S1 + P1T
+     +1 * (EOSMDJWFNUM(8) * 2.0D00 + P1 * EOSMDJWFNUM(11) * 2.0D00)
+
+                  DDEN_DTHETA = EOSMDJWFDEN(1) + T1 * (EOSMDJWFDEN(2) * 
+     +2.0D00 + T1 * (EOSMDJWFDEN(3) * 3.0D00 + T1 * EOSMDJWFDEN(4) * 4.0
+     +D00)) + S1 * (EOSMDJWFDEN(6) + T1 * (SP5 * EOSMDJWFDEN(9) * 2.0D00
+     + + T1 * EOSMDJWFDEN(7) * 3.0D00)) + P1 * P1 * (EOSMDJWFDEN(12) * P
+     +1 + T2 * EOSMDJWFDEN(11) * 3.0D00)
+
+                  ALPHALOC(I,J) = (RHODEN(I,J) * (DNUM_DTHETA - DDEN_DTH
+     +ETA * (RHODEN(I,J) * RHOLOC(I,J))))
+
+                END DO
+              END DO
+            ELSE
+              WRITE(*, *) 'FIND_ALPHA: equationOfState = ',
+     >  EQUATIONOFSTATE
+              WRITE(*, *)
+     >  'FIND_ALPHA: "equationOfState" has illegal value'
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_beta(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KREF,
+     >  BETALOC, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KREF
+      REAL(w2f__8) BETALOC(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) BULKMOD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DDEN_DSALT
+      REAL(w2f__8) DKDS
+      REAL(w2f__8) DKDSPRES
+      REAL(w2f__8) DKDSSALT
+      REAL(w2f__8) DNUM_DSALT
+      REAL(w2f__8) DRHOP0DS
+      EXTERNAL find_bulkmod
+      EXTERNAL find_rhoden
+      EXTERNAL find_rhonum
+      EXTERNAL find_rhop0
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      REAL(w2f__8) P1
+      REAL(w2f__8) P1T1
+      EXTERNAL pressure_for_eos
+      REAL(w2f__8) REFSALT
+      REAL(w2f__8) REFTEMP
+      REAL(w2f__8) RHODEN(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOLOC(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOP0(-2 : 93, -2 : 43)
+      REAL(w2f__8) S1
+      REAL(w2f__8) S3O2
+      REAL(w2f__8) SP
+      REAL(w2f__8) SP5
+      REAL(w2f__8) T1
+      REAL(w2f__8) T2
+      REAL(w2f__8) T3
+      REAL(w2f__8) TP
+      INTEGER(w2f__i4) t__1112
+      INTEGER(w2f__i4) t__1113
+      INTEGER(w2f__i4) t__1114
+      INTEGER(w2f__i4) t__1115
+      INTEGER(w2f__i4) t__1116
+      INTEGER(w2f__i4) t__1117
+      INTEGER(w2f__i4) t__1118
+      INTEGER(w2f__i4) t__1119
+      INTEGER(w2f__i4) t__1120
+      INTEGER(w2f__i4) t__1121
+      INTEGER(w2f__i4) t__1122
+      INTEGER(w2f__i4) t__1123
+      INTEGER(w2f__i4) t__1124
+      INTEGER(w2f__i4) t__1125
+      INTEGER(w2f__i4) t__1126
+      INTEGER(w2f__i4) t__1127
+      character(5) oad_slc31
+C
+C     **** Statements ****
+C
+      if ( EQUATIONOFSTATE .eq. 'LINEAR' ) then
+        t__1112 = JMIN
+        t__1113 = JMAX
+        DO J = t__1112, t__1113, 1
+          t__1114 = IMIN
+          t__1115 = IMAX
+          DO I = t__1114, t__1115, 1
+            BETALOC(I,J) = (RHONIL * SBETA)
+          END DO
+        END DO
+      ELSE
+        if ( EQUATIONOFSTATE .eq. 'POLY3' ) then
+          REFTEMP = EOSREFT(KREF)
+          REFSALT = EOSREFS(KREF)
+          t__1116 = JMIN
+          t__1117 = JMAX
+          DO J = t__1116, t__1117, 1
+            t__1118 = IMIN
+            t__1119 = IMAX
+            DO I = t__1118, t__1119, 1
+              TP = THETA(I,J,K,BI,BJ) - REFTEMP
+              SP = SALT(I,J,K,BI,BJ) - REFSALT
+              BETALOC(I,J) = (EOSC(2,KREF) + SP * (EOSC(5,KREF) * 2.0D00
+     + + EOSC(9,KREF) * SP * 3.0D00) + TP * (EOSC(4,KREF) + EOSC(7,KREF)
+     + * TP + EOSC(8,KREF) * SP * 2.0D00))
+
+            END DO
+          END DO
+        ELSE
+          if ( (oad_slc31 .eq. 'JMD95') .or. (EQUATIONOFSTATE .eq. 'UNES
+     +CO') ) then
+
+            call pressure_for_eos(BI,BJ,IMIN,IMAX,JMIN,JMAX,KREF,LOCPRES
+     +,MYTHID)
+
+            call find_rhop0(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,THETA,SALT,RHOP0
+     +,MYTHID)
+
+            call find_bulkmod(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,THETA,
+     +SALT,BULKMOD,MYTHID)
+
+            t__1120 = JMIN
+            t__1121 = JMAX
+            DO J = t__1120, t__1121, 1
+              t__1122 = IMIN
+              t__1123 = IMAX
+              DO I = t__1122, t__1123, 1
+                T1 = THETA(I,J,K,BI,BJ)
+                T2 = T1 * T1
+                T3 = T1 * T2
+                S1 = SALT(I,J,K,BI,BJ)
+                if ( S1 .gt. 0.0D00 ) then
+                  S3O2 = SQRT(S1) * 1.5D00
+                ELSE
+                  S1 = 0.0D00
+                  S3O2 = 0.0D00
+                ENDIF
+                P1 = LOCPRES(I,J) * 1.0000000000000000818D-05
+                DRHOP0DS = 0.0D00
+                DRHOP0DS = EOSJMDCSW(1) + DRHOP0DS + EOSJMDCSW(2) * T1 +
+     + EOSJMDCSW(3) * T2 + EOSJMDCSW(4) * T3 + T1 * EOSJMDCSW(5) * T3 + 
+     +S3O2 * (EOSJMDCSW(6) + EOSJMDCSW(7) * T1 + EOSJMDCSW(8) * T2) + S1
+     + * EOSJMDCSW(9) * 2.0D00
+
+                DKDS = 0.0D00
+                DKDSSALT = EOSJMDCKSW(1) + EOSJMDCKSW(2) * T1 + EOSJMDCK
+     +SW(3) * T2 + EOSJMDCKSW(4) * T3 + S3O2 * (EOSJMDCKSW(5) + EOSJMDCK
+     +SW(6) * T1 + EOSJMDCKSW(7) * T2)
+
+                DKDSPRES = EOSJMDCKP(8) * P1 * S3O2 + P1 * (EOSJMDCKP(5)
+     + + EOSJMDCKP(6) * T1 + EOSJMDCKP(7) * T2) + P1 * P1 * (EOSJMDCKP(1
+     +2) + EOSJMDCKP(13) * T1 + EOSJMDCKP(14) * T2)
+
+                DKDS = DKDSPRES + DKDSSALT
+                BETALOC(I,J) = ((DRHOP0DS * (BULKMOD(I,J) ** 2) - DRHOP0
+     +DS * BULKMOD(I,J) * P1 - DKDS * RHOP0(I,J) * P1) / ((BULKMOD(I,J) 
+     +- P1) ** 2))
+
+              END DO
+            END DO
+          ELSE
+            if ( EQUATIONOFSTATE .eq. 'MDJWF' ) then
+              call pressure_for_eos(BI,BJ,IMIN,IMAX,JMIN,JMAX,KREF,LOCPR
+     +ES,MYTHID)
+
+              call find_rhonum(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,THETA
+     +,SALT,RHOLOC,MYTHID)
+
+              call find_rhoden(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,THETA
+     +,SALT,RHODEN,MYTHID)
+
+              t__1124 = JMIN
+              t__1125 = JMAX
+              DO J = t__1124, t__1125, 1
+                t__1126 = IMIN
+                t__1127 = IMAX
+                DO I = t__1126, t__1127, 1
+                  T1 = THETA(I,J,K,BI,BJ)
+                  T2 = T1 * T1
+                  S1 = SALT(I,J,K,BI,BJ)
+                  if ( S1 .gt. 0.0D00 ) then
+                    SP5 = SQRT(S1)
+                  ELSE
+                    S1 = 0.0D00
+                    SP5 = 0.0D00
+                  ENDIF
+                  P1 = LOCPRES(I,J) * 1.00000000000000004792D-04
+                  P1T1 = P1 * T1
+                  DNUM_DSALT = EOSMDJWFNUM(4) + EOSMDJWFNUM(5) * T1 + S1
+     + * EOSMDJWFNUM(6) * 2.0D00 + EOSMDJWFNUM(9) * P1
+
+                  DDEN_DSALT = EOSMDJWFDEN(5) + T1 * (EOSMDJWFDEN(6) + E
+     +OSMDJWFDEN(7) * T2) + SP5 * 1.5D00 * (EOSMDJWFDEN(8) + EOSMDJWFDEN
+     +(9) * T2)
+
+                  BETALOC(I,J) = (RHODEN(I,J) * (DNUM_DSALT - DDEN_DSALT
+     + * (RHODEN(I,J) * RHOLOC(I,J))))
+
+                END DO
+              END DO
+            ELSE
+              WRITE(*, *) 'FIND_BETA: equationOfState = ',
+     >  EQUATIONOFSTATE
+              WRITE(*, *)
+     >  'FIND_BETA: "equationOfState" has illegal value'
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_rho(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, KREF, TFLD
+     > , SFLD, RHOLOC, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KREF
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RHOLOC(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) BULKMOD(-2 : 93, -2 : 43)
+      REAL(w2f__8) DELTASIG
+      REAL(w2f__8) DRHO
+      EXTERNAL find_bulkmod
+      EXTERNAL find_rhoden
+      EXTERNAL find_rhonum
+      EXTERNAL find_rhop0
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      CHARACTER(512) MSGBUF
+      EXTERNAL pressure_for_eos
+      EXTERNAL print_error
+      REAL(w2f__8) REFSALT
+      REAL(w2f__8) REFTEMP
+      REAL(w2f__8) RHODEN(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHONUM(-2 : 93, -2 : 43)
+      REAL(w2f__8) RHOP0(-2 : 93, -2 : 43)
+      REAL(w2f__8) SIGREF
+      REAL(w2f__8) SP
+      REAL(w2f__8) TP
+      INTEGER(w2f__i4) t__1136
+      INTEGER(w2f__i4) t__1137
+      INTEGER(w2f__i4) t__1138
+      INTEGER(w2f__i4) t__1139
+      INTEGER(w2f__i4) t__1140
+      INTEGER(w2f__i4) t__1141
+      INTEGER(w2f__i4) t__1142
+      INTEGER(w2f__i4) t__1143
+      INTEGER(w2f__i4) t__1144
+      INTEGER(w2f__i4) t__1145
+      INTEGER(w2f__i4) t__1146
+      INTEGER(w2f__i4) t__1147
+      INTEGER(w2f__i4) t__1148
+      INTEGER(w2f__i4) t__1149
+      INTEGER(w2f__i4) t__1150
+      INTEGER(w2f__i4) t__1151
+      character(5) oad_slc32
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          RHOLOC(I,J) = 0.0D00
+          RHOP0(I,J) = 0.0D00
+          BULKMOD(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( EQUATIONOFSTATE .eq. 'LINEAR' ) then
+        REFTEMP = TREF(KREF)
+        REFSALT = SREF(KREF)
+        DRHO = RHONIL - RHOCONST
+        t__1136 = JMIN
+        t__1137 = JMAX
+        DO J = t__1136, t__1137, 1
+          t__1138 = IMIN
+          t__1139 = IMAX
+          DO I = t__1138, t__1139, 1
+            RHOLOC(I,J) = (DRHO + RHONIL * (SBETA * (SFLD(I,J,K,BI,BJ) -
+     + REFSALT) - TALPHA * (TFLD(I,J,K,BI,BJ) - REFTEMP)))
+
+          END DO
+        END DO
+      ELSE
+        if ( EQUATIONOFSTATE .eq. 'POLY3' ) then
+          REFTEMP = EOSREFT(KREF)
+          REFSALT = EOSREFS(KREF)
+          SIGREF = EOSSIG0(KREF) + (1.0D+03 - RHOCONST)
+          t__1140 = JMIN
+          t__1141 = JMAX
+          DO J = t__1140, t__1141, 1
+            t__1142 = IMIN
+            t__1143 = IMAX
+            DO I = t__1142, t__1143, 1
+              TP = TFLD(I,J,K,BI,BJ) - REFTEMP
+              SP = SFLD(I,J,K,BI,BJ) - REFSALT
+              DELTASIG = SP * (EOSC(2,KREF) + SP * (EOSC(5,KREF) + EOSC(
+     +9,KREF) * SP)) + TP * (EOSC(1,KREF) + SP * (EOSC(4,KREF) + EOSC(8,
+     +KREF) * SP) + TP * (EOSC(3,KREF) + EOSC(6,KREF) * TP + EOSC(7,KREF
+     +) * SP))
+
+              RHOLOC(I,J) = (DELTASIG + SIGREF)
+            END DO
+          END DO
+        ELSE
+          if ( (oad_slc32 .eq. 'JMD95') .or. (EQUATIONOFSTATE .eq. 'UNES
+     +CO') ) then
+
+            call pressure_for_eos(BI,BJ,IMIN,IMAX,JMIN,JMAX,KREF,LOCPRES
+     +,MYTHID)
+
+            call find_rhop0(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,TFLD,SFLD,RHOP0,
+     +MYTHID)
+
+            call find_bulkmod(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,TFLD,S
+     +FLD,BULKMOD,MYTHID)
+
+            t__1144 = JMIN
+            t__1145 = JMAX
+            DO J = t__1144, t__1145, 1
+              t__1146 = IMIN
+              t__1147 = IMAX
+              DO I = t__1146, t__1147, 1
+                RHOLOC(I,J) = ((RHOP0(I,J) / (1.0D00 - ((LOCPRES(I,J) * 
+     +1.0000000000000000818D-05) / BULKMOD(I,J)))) - RHOCONST)
+
+              END DO
+            END DO
+          ELSE
+            if ( EQUATIONOFSTATE .eq. 'MDJWF' ) then
+              call pressure_for_eos(BI,BJ,IMIN,IMAX,JMIN,JMAX,KREF,LOCPR
+     +ES,MYTHID)
+
+              call find_rhonum(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,TFLD,
+     +SFLD,RHONUM,MYTHID)
+
+              call find_rhoden(BI,BJ,IMIN,IMAX,JMIN,JMAX,K,LOCPRES,TFLD,
+     +SFLD,RHODEN,MYTHID)
+
+              t__1148 = JMIN
+              t__1149 = JMAX
+              DO J = t__1148, t__1149, 1
+                t__1150 = IMIN
+                t__1151 = IMAX
+                DO I = t__1150, t__1151, 1
+                  RHOLOC(I,J) = (RHODEN(I,J) * RHONUM(I,J) - RHOCONST)
+                END DO
+              END DO
+            ELSE
+              if ( EQUATIONOFSTATE .eq. 'IDEALG' ) then
+              ELSE
+                WRITE(MSGBUF, '(3a)') ' FIND_RHO: equationOfState = "',
+     >  EQUATIONOFSTATE, '"'
+                call print_error(MSGBUF,MYTHID)
+                WRITE(*, *) 'ABNORMAL END: S/R FIND_RHO'
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_rhop0(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, TFLD,
+     >  SFLD, RHOP0, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RHOP0(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RFRESH
+      REAL(w2f__8) RSALT
+      REAL(w2f__8) S
+      REAL(w2f__8) S3O2
+      REAL(w2f__8) T
+      REAL(w2f__8) T2
+      REAL(w2f__8) T3
+      REAL(w2f__8) T4
+      INTEGER(w2f__i4) t__1159
+      INTEGER(w2f__i4) t__1160
+      INTEGER(w2f__i4) t__1161
+      INTEGER(w2f__i4) t__1162
+C
+C     **** Statements ****
+C
+      t__1159 = JMIN
+      t__1160 = JMAX
+      DO J = t__1159, t__1160, 1
+        t__1161 = IMIN
+        t__1162 = IMAX
+        DO I = t__1161, t__1162, 1
+          T = TFLD(I,J,K,BI,BJ)
+          T2 = T * T
+          T3 = T * T2
+          T4 = T * T3
+          S = SFLD(I,J,K,BI,BJ)
+          if ( S .gt. 0.0D00 ) then
+            S3O2 = S * SQRT(S)
+          ELSE
+            S = 0.0D00
+            S3O2 = 0.0D00
+          ENDIF
+          RFRESH = EOSJMDCFW(1) + EOSJMDCFW(2) * T + EOSJMDCFW(3) * T2 +
+     + EOSJMDCFW(4) * T3 + EOSJMDCFW(5) * T4 + T * EOSJMDCFW(6) * T4
+
+          RSALT = S * (EOSJMDCSW(1) + EOSJMDCSW(2) * T + EOSJMDCSW(3) * 
+     +T2 + EOSJMDCSW(4) * T3 + EOSJMDCSW(5) * T4) + S3O2 * (EOSJMDCSW(6)
+     + + EOSJMDCSW(7) * T + EOSJMDCSW(8) * T2) + S * EOSJMDCSW(9) * S
+
+          RHOP0(I,J) = (RFRESH + RSALT)
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_bulkmod(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  LOCPRES, TFLD, SFLD, BULKMOD, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) BULKMOD(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) BMFRESH
+      REAL(w2f__8) BMPRES
+      REAL(w2f__8) BMSALT
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) P
+      REAL(w2f__8) P2
+      REAL(w2f__8) S
+      REAL(w2f__8) S3O2
+      REAL(w2f__8) T
+      REAL(w2f__8) T2
+      REAL(w2f__8) T3
+      REAL(w2f__8) T4
+      INTEGER(w2f__i4) t__1170
+      INTEGER(w2f__i4) t__1171
+      INTEGER(w2f__i4) t__1172
+      INTEGER(w2f__i4) t__1173
+C
+C     **** Statements ****
+C
+      t__1170 = JMIN
+      t__1171 = JMAX
+      DO J = t__1170, t__1171, 1
+        t__1172 = IMIN
+        t__1173 = IMAX
+        DO I = t__1172, t__1173, 1
+          T = TFLD(I,J,K,BI,BJ)
+          T2 = T * T
+          T3 = T * T2
+          T4 = T * T3
+          S = SFLD(I,J,K,BI,BJ)
+          if ( S .gt. 0.0D00 ) then
+            S3O2 = S * SQRT(S)
+          ELSE
+            S = 0.0D00
+            S3O2 = 0.0D00
+          ENDIF
+          P = LOCPRES(I,J) * 1.0000000000000000818D-05
+          P2 = P * P
+          BMFRESH = EOSJMDCKFW(1) + EOSJMDCKFW(2) * T + EOSJMDCKFW(3) * 
+     +T2 + EOSJMDCKFW(4) * T3 + EOSJMDCKFW(5) * T4
+
+          BMSALT = S * (EOSJMDCKSW(1) + EOSJMDCKSW(2) * T + EOSJMDCKSW(3
+     +) * T2 + EOSJMDCKSW(4) * T3) + S3O2 * (EOSJMDCKSW(5) + EOSJMDCKSW(
+     +6) * T + EOSJMDCKSW(7) * T2)
+
+          BMPRES = P * (EOSJMDCKP(1) + EOSJMDCKP(2) * T + EOSJMDCKP(3) *
+     + T2 + EOSJMDCKP(4) * T3) + P * S * (EOSJMDCKP(5) + EOSJMDCKP(6) * 
+     +T + EOSJMDCKP(7) * T2) + EOSJMDCKP(8) * P * S3O2 + P2 * (EOSJMDCKP
+     +(9) + EOSJMDCKP(10) * T + EOSJMDCKP(11) * T2) + P2 * S * (EOSJMDCK
+     +P(12) + EOSJMDCKP(13) * T + EOSJMDCKP(14) * T2)
+
+          BULKMOD(I,J) = (BMPRES + BMFRESH + BMSALT)
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_rhonum(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, LOCPRES
+     > , TFLD, SFLD, RHONUM, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RHONUM(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) P1
+      REAL(w2f__8) S1
+      REAL(w2f__8) T1
+      REAL(w2f__8) T2
+      INTEGER(w2f__i4) t__1181
+      INTEGER(w2f__i4) t__1182
+      INTEGER(w2f__i4) t__1183
+      INTEGER(w2f__i4) t__1184
+C
+C     **** Statements ****
+C
+      t__1181 = JMIN
+      t__1182 = JMAX
+      DO J = t__1181, t__1182, 1
+        t__1183 = IMIN
+        t__1184 = IMAX
+        DO I = t__1183, t__1184, 1
+          T1 = TFLD(I,J,K,BI,BJ)
+          T2 = T1 * T1
+          S1 = SFLD(I,J,K,BI,BJ)
+          P1 = LOCPRES(I,J) * 1.00000000000000004792D-04
+          RHONUM(I,J) = (EOSMDJWFNUM(0) + T1 * (EOSMDJWFNUM(1) + T1 * (E
+     +OSMDJWFNUM(2) + EOSMDJWFNUM(3) * T1)) + S1 * (EOSMDJWFNUM(4) + EOS
+     +MDJWFNUM(5) * T1 + EOSMDJWFNUM(6) * S1) + P1 * (EOSMDJWFNUM(7) + E
+     +OSMDJWFNUM(8) * T2 + EOSMDJWFNUM(9) * S1 + P1 * (EOSMDJWFNUM(10) +
+     + EOSMDJWFNUM(11) * T2)))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_rhoden(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, LOCPRES
+     > , TFLD, SFLD, RHODEN, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      REAL(w2f__8) TFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) RHODEN(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) DEN
+      REAL(w2f__8) EPSLN
+      PARAMETER ( EPSLN =     0.000000000000000)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) P1
+      REAL(w2f__8) P1T1
+      REAL(w2f__8) S1
+      REAL(w2f__8) SP5
+      REAL(w2f__8) T1
+      REAL(w2f__8) T2
+      INTEGER(w2f__i4) t__1192
+      INTEGER(w2f__i4) t__1193
+      INTEGER(w2f__i4) t__1194
+      INTEGER(w2f__i4) t__1195
+C
+C     **** Statements ****
+C
+      t__1192 = JMIN
+      t__1193 = JMAX
+      DO J = t__1192, t__1193, 1
+        t__1194 = IMIN
+        t__1195 = IMAX
+        DO I = t__1194, t__1195, 1
+          T1 = TFLD(I,J,K,BI,BJ)
+          T2 = T1 * T1
+          S1 = SFLD(I,J,K,BI,BJ)
+          if ( S1 .gt. 0.0D00 ) then
+            SP5 = SQRT(S1)
+          ELSE
+            S1 = 0.0D00
+            SP5 = 0.0D00
+          ENDIF
+          P1 = LOCPRES(I,J) * 1.00000000000000004792D-04
+          P1T1 = P1 * T1
+          DEN = EOSMDJWFDEN(0) + T1 * (EOSMDJWFDEN(1) + T1 * (EOSMDJWFDE
+     +N(2) + T1 * (EOSMDJWFDEN(3) + EOSMDJWFDEN(4) * T1))) + S1 * (EOSMD
+     +JWFDEN(5) + T1 * (EOSMDJWFDEN(6) + EOSMDJWFDEN(7) * T2) + SP5 * (E
+     +OSMDJWFDEN(8) + EOSMDJWFDEN(9) * T2)) + P1 * (EOSMDJWFDEN(10) + P1
+     +T1 * (EOSMDJWFDEN(11) * T2 + EOSMDJWFDEN(12) * P1))
+
+          RHODEN(I,J) = 1D00 / (DEN)
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE find_rho_scalar(TLOC, SLOC, PLOC, RHOLOC, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) TLOC
+      REAL(w2f__8) SLOC
+      REAL(w2f__8) PLOC
+      REAL(w2f__8) RHOLOC
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) BMFRESH
+      REAL(w2f__8) BMPRES
+      REAL(w2f__8) BMSALT
+      REAL(w2f__8) BULKMOD
+      REAL(w2f__8) DEN
+      REAL(w2f__8) EPSLN
+      PARAMETER ( EPSLN =     0.000000000000000)
+      CHARACTER(512) MSGBUF
+      REAL(w2f__8) P1
+      REAL(w2f__8) P1T1
+      REAL(w2f__8) P2
+      EXTERNAL print_error
+      EXTERNAL print_message
+      REAL(w2f__8) RFRESH
+      REAL(w2f__8) RHODEN
+      REAL(w2f__8) RHONUM
+      REAL(w2f__8) RHOP0
+      REAL(w2f__8) RSALT
+      REAL(w2f__8) S1
+      REAL(w2f__8) S3O2
+      REAL(w2f__8) SP5
+      REAL(w2f__8) T1
+      REAL(w2f__8) T2
+      REAL(w2f__8) T3
+      REAL(w2f__8) T4
+      character(5) oad_slc33
+C
+C     **** Statements ****
+C
+      RHOLOC = 0.0D00
+      RHOP0 = 0.0D00
+      BULKMOD = 0.0D00
+      RFRESH = 0.0D00
+      RSALT = 0.0D00
+      BMFRESH = 0.0D00
+      BMSALT = 0.0D00
+      BMPRES = 0.0D00
+      RHONUM = 0.0D00
+      RHODEN = 0.0D00
+      DEN = 0.0D00
+      T1 = TLOC
+      T2 = T1 * T1
+      T3 = T1 * T2
+      T4 = T1 * T3
+      S1 = SLOC
+      if ( S1 .lt. 0.0D00 ) then
+        WRITE(MSGBUF, '(A,E13.5)')
+     >  ' FIND_RHO_SCALAR:   WARNING, salinity = ', S1
+        call print_message(MSGBUF,ERRORMESSAGEUNIT,'R',MYTHID)
+        S1 = 0.0D00
+      ENDIF
+      if ( EQUATIONOFSTATE .eq. 'LINEAR' ) then
+        RHOLOC = RHONIL * (SBETA * (SLOC - SREF(1)) - TALPHA * (TLOC - T
+     +REF(1))) + (RHONIL - RHOCONST)
+
+      ELSE
+        if ( EQUATIONOFSTATE .eq. 'POLY3' ) then
+          WRITE(MSGBUF, '(A)')
+     >  ' FIND_RHO_SCALAR: for POLY3, the density is not'
+          call print_message(MSGBUF,ERRORMESSAGEUNIT,'R',MYTHID)
+          WRITE(MSGBUF, '(A)')
+     >  '                 computed correctly in this rout' // 'ine'
+          call print_message(MSGBUF,ERRORMESSAGEUNIT,'R',MYTHID)
+          RHOLOC = 0.0D00
+        ELSE
+          if ( (oad_slc33 .eq. 'JMD95') .or. (EQUATIONOFSTATE .eq. 'UNES
+     +CO') ) then
+
+            S3O2 = S1 * SQRT(S1)
+            P1 = PLOC * 1.0000000000000000818D-05
+            P2 = P1 * P1
+            RFRESH = EOSJMDCFW(1) + EOSJMDCFW(2) * T1 + EOSJMDCFW(3) * T
+     +2 + EOSJMDCFW(4) * T3 + EOSJMDCFW(5) * T4 + T1 * EOSJMDCFW(6) * T4
+
+            RSALT = S1 * (EOSJMDCSW(1) + EOSJMDCSW(2) * T1 + EOSJMDCSW(3
+     +) * T2 + EOSJMDCSW(4) * T3 + EOSJMDCSW(5) * T4) + S3O2 * (EOSJMDCS
+     +W(6) + EOSJMDCSW(7) * T1 + EOSJMDCSW(8) * T2) + S1 * EOSJMDCSW(9) 
+     +* S1
+
+            RHOP0 = RFRESH + RSALT
+            BMFRESH = EOSJMDCKFW(1) + EOSJMDCKFW(2) * T1 + EOSJMDCKFW(3)
+     + * T2 + EOSJMDCKFW(4) * T3 + EOSJMDCKFW(5) * T4
+
+            BMSALT = S1 * (EOSJMDCKSW(1) + EOSJMDCKSW(2) * T1 + EOSJMDCK
+     +SW(3) * T2 + EOSJMDCKSW(4) * T3) + S3O2 * (EOSJMDCKSW(5) + EOSJMDC
+     +KSW(6) * T1 + EOSJMDCKSW(7) * T2)
+
+            BMPRES = P1 * (EOSJMDCKP(1) + EOSJMDCKP(2) * T1 + EOSJMDCKP(
+     +3) * T2 + EOSJMDCKP(4) * T3) + P1 * S1 * (EOSJMDCKP(5) + EOSJMDCKP
+     +(6) * T1 + EOSJMDCKP(7) * T2) + EOSJMDCKP(8) * P1 * S3O2 + P2 * (E
+     +OSJMDCKP(9) + EOSJMDCKP(10) * T1 + EOSJMDCKP(11) * T2) + P2 * S1 *
+     + (EOSJMDCKP(12) + EOSJMDCKP(13) * T1 + EOSJMDCKP(14) * T2)
+
+            BULKMOD = BMPRES + BMFRESH + BMSALT
+            RHOLOC = (RHOP0 / (1.0D00 - (P1 / BULKMOD))) - RHOCONST
+          ELSE
+            if ( EQUATIONOFSTATE .eq. 'MDJWF' ) then
+              SP5 = SQRT(S1)
+              P1 = PLOC * 1.00000000000000004792D-04
+              P1T1 = P1 * T1
+              RHONUM = EOSMDJWFNUM(0) + T1 * (EOSMDJWFNUM(1) + T1 * (EOS
+     +MDJWFNUM(2) + EOSMDJWFNUM(3) * T1)) + S1 * (EOSMDJWFNUM(4) + EOSMD
+     +JWFNUM(5) * T1 + EOSMDJWFNUM(6) * S1) + P1 * (EOSMDJWFNUM(7) + EOS
+     +MDJWFNUM(8) * T2 + EOSMDJWFNUM(9) * S1 + P1 * (EOSMDJWFNUM(10) + E
+     +OSMDJWFNUM(11) * T2))
+
+              DEN = EOSMDJWFDEN(0) + T1 * (EOSMDJWFDEN(1) + T1 * (EOSMDJ
+     +WFDEN(2) + T1 * (EOSMDJWFDEN(3) + EOSMDJWFDEN(4) * T1))) + S1 * (E
+     +OSMDJWFDEN(5) + T1 * (EOSMDJWFDEN(6) + EOSMDJWFDEN(7) * T2) + SP5 
+     +* (EOSMDJWFDEN(8) + EOSMDJWFDEN(9) * T2)) + P1 * (EOSMDJWFDEN(10) 
+     ++ P1T1 * (EOSMDJWFDEN(11) * T2 + EOSMDJWFDEN(12) * P1))
+
+              RHODEN = 1D00 / (DEN)
+              RHOLOC = RHODEN * RHONUM - RHOCONST
+            ELSE
+              if ( EQUATIONOFSTATE .eq. 'IDEALG' ) then
+              ELSE
+                WRITE(MSGBUF, '(3A)')
+     >  ' FIND_RHO_SCALAR : equationOfState = "', EQUATIONOFSTATE, '"'
+                call print_error(MSGBUF,MYTHID)
+                WRITE(*, *) 'ABNORMAL END: S/R FIND_RHO_SCALAR'
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE look_for_neg_salinity(BI, BJ, IMIN, IMAX, JMIN, JMAX,
+     >  K, SFLD, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) SFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) LOCALWARNING
+      INTEGER(w2f__i4) t__1204
+      INTEGER(w2f__i4) t__1205
+      INTEGER(w2f__i4) t__1206
+      INTEGER(w2f__i4) t__1207
+C
+C     **** Statements ****
+C
+      LOCALWARNING = 0
+      t__1204 = JMIN
+      t__1205 = JMAX
+      DO J = t__1204, t__1205, 1
+        t__1206 = IMIN
+        t__1207 = IMAX
+        DO I = t__1206, t__1207, 1
+          if ( SFLD(I,J,K,BI,BJ) .lt. 0.0D00 ) then
+            LOCALWARNING = LOCALWARNING + 1
+            SFLD(I,J,K,BI,BJ) = 0.0D00
+          ENDIF
+        END DO
+      END DO
+      if ( LOCALWARNING .gt. 0 ) then
+        WRITE(STANDARDMESSAGEUNIT, '(A,A)')
+     >  'S/R LOOK_FOR_NEG_SALINITY: found negative salini' // 'ty',
+     >  'values and reset them to zero.'
+        WRITE(STANDARDMESSAGEUNIT, '(A,I3)')
+     >  'S/R LOOK_FOR_NEG_SALINITY: current level is k = ', K
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE forward_step(ILOOP, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use ffields_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) ILOOP
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL cost_tile
+      EXTERNAL ctrl_map_forcing
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL do_atmospheric_phys
+      EXTERNAL do_fields_blocking_exchanges
+      EXTERNAL do_oceanic_phys
+      EXTERNAL do_stagger_fields_exchanges
+      EXTERNAL do_the_model_io
+      EXTERNAL do_write_pickup
+      EXTERNAL dynamics
+      EXTERNAL load_fields_driver
+      EXTERNAL momentum_correction_step
+      EXTERNAL solve_for_pressure
+      EXTERNAL thermodynamics
+      EXTERNAL timer_start
+      EXTERNAL timer_stop
+      EXTERNAL tracers_correction_step
+      logical oad_ctmp0
+C
+C     **** Statements ****
+C
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_enter('FORWARD_STEP',MYTHID)
+      ENDIF
+      MYITER = ILOOP + NITER0 + (-1)
+      MYTIME = STARTTIME + FLOAT(ILOOP + (-1)) * DELTATCLOCK
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_call('LOAD_FIELDS_DRIVER',MYTHID)
+      ENDIF
+      call timer_start('LOAD_FIELDS_DRIVER  [FORWARD_STEP]',MYTHID)
+      call load_fields_driver(MYTIME,MYITER,MYTHID)
+      call timer_stop('LOAD_FIELDS_DRIVER  [FORWARD_STEP]',MYTHID)
+      if ( MYITER .eq. NITER0 ) then
+        call ctrl_map_forcing(MYTHID)
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_call('DO_ATMOSPHERIC_PHYS',MYTHID)
+      ENDIF
+      call timer_start('DO_ATMOSPHERIC_PHYS [FORWARD_STEP]',MYTHID)
+      call do_atmospheric_phys(MYTIME,MYITER,MYTHID)
+      call timer_stop('DO_ATMOSPHERIC_PHYS [FORWARD_STEP]',MYTHID)
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_call('DO_OCEANIC_PHYS',MYTHID)
+      ENDIF
+      call timer_start('DO_OCEANIC_PHYS     [FORWARD_STEP]',MYTHID)
+      call do_oceanic_phys(MYTIME,MYITER,MYTHID)
+      call timer_stop('DO_OCEANIC_PHYS     [FORWARD_STEP]',MYTHID)
+      if ( .not. STAGGERTIMESTEP ) then
+        if ( DEBUGLEVEL .ge. 2 ) then
+          call debug_call('THERMODYNAMICS',MYTHID)
+        ENDIF
+        call timer_start('THERMODYNAMICS      [FORWARD_STEP]',MYTHID)
+        call thermodynamics(MYTIME,MYITER,MYTHID)
+        call timer_stop('THERMODYNAMICS      [FORWARD_STEP]',MYTHID)
+      ENDIF
+      if ( IMPLICITINTGRAVWAVE ) then
+        call timer_start('BLOCKING_EXCHANGES  [FORWARD_STEP]',MYTHID)
+        call do_stagger_fields_exchanges(MYTIME,MYITER,MYTHID)
+        call timer_stop('BLOCKING_EXCHANGES  [FORWARD_STEP]',MYTHID)
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_call('DYNAMICS',MYTHID)
+      ENDIF
+      call timer_start('DYNAMICS            [FORWARD_STEP]',MYTHID)
+      call dynamics(MYTIME,MYITER,MYTHID)
+      call timer_stop('DYNAMICS            [FORWARD_STEP]',MYTHID)
+      MYITER = ILOOP + NITER0
+      MYTIME = STARTTIME + FLOAT(ILOOP) * DELTATCLOCK
+      if ( MOMSTEPPING ) then
+        call timer_start('SOLVE_FOR_PRESSURE  [FORWARD_STEP]',MYTHID)
+        call solve_for_pressure(MYTIME,MYITER,MYTHID)
+        call timer_stop('SOLVE_FOR_PRESSURE  [FORWARD_STEP]',MYTHID)
+      ENDIF
+      call timer_start('MOM_CORRECTION_STEP [FORWARD_STEP]',MYTHID)
+      call momentum_correction_step(MYTIME,MYITER,MYTHID)
+      call timer_stop('MOM_CORRECTION_STEP [FORWARD_STEP]',MYTHID)
+      if ( STAGGERTIMESTEP ) then
+        if ( DEBUGLEVEL .ge. 2 ) then
+          call debug_call('DO_STAGGER_FIELDS_EXCH.',MYTHID)
+        ENDIF
+        call timer_start('BLOCKING_EXCHANGES  [FORWARD_STEP]',MYTHID)
+        call do_stagger_fields_exchanges(MYTIME,MYITER,MYTHID)
+        call timer_stop('BLOCKING_EXCHANGES  [FORWARD_STEP]',MYTHID)
+        if ( DEBUGLEVEL .ge. 2 ) then
+          call debug_call('THERMODYNAMICS',MYTHID)
+        ENDIF
+        call timer_start('THERMODYNAMICS      [FORWARD_STEP]',MYTHID)
+        call thermodynamics(MYTIME,MYITER,MYTHID)
+        call timer_stop('THERMODYNAMICS      [FORWARD_STEP]',MYTHID)
+      ENDIF
+      call timer_start('TRC_CORRECTION_STEP [FORWARD_STEP]',MYTHID)
+      call tracers_correction_step(MYTIME,MYITER,MYTHID)
+      call timer_stop('TRC_CORRECTION_STEP [FORWARD_STEP]',MYTHID)
+      call timer_start('BLOCKING_EXCHANGES  [FORWARD_STEP]',MYTHID)
+      call do_fields_blocking_exchanges(MYTHID)
+      call timer_stop('BLOCKING_EXCHANGES  [FORWARD_STEP]',MYTHID)
+      call timer_start('COST_TILE           [FORWARD_STEP]',MYTHID)
+      call cost_tile(MYTIME,MYITER,MYTHID)
+      call timer_stop('COST_TILE           [FORWARD_STEP]',MYTHID)
+      call timer_start('DO_THE_MODEL_IO     [FORWARD_STEP]',MYTHID)
+      call do_the_model_io(MYTIME,MYITER,MYTHID)
+      call timer_stop('DO_THE_MODEL_IO     [FORWARD_STEP]',MYTHID)
+      call timer_start('DO_WRITE_PICKUP     [FORWARD_STEP]',MYTHID)
+      oad_ctmp0 = (.false.)
+      call do_write_pickup(oad_ctmp0,MYTIME,MYITER,MYTHID)
+      call timer_stop('DO_WRITE_PICKUP     [FORWARD_STEP]',MYTHID)
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_leave('FORWARD_STEP',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE freesurf_rescale_g(BI, BJ, K, GTRACER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) GTRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE freeze(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) TFREEZING
+      INTEGER(w2f__i4) t__1215
+      INTEGER(w2f__i4) t__1216
+      INTEGER(w2f__i4) t__1217
+      INTEGER(w2f__i4) t__1218
+C
+C     **** Statements ****
+C
+      TFREEZING = -1.89999999999999991118D00
+      t__1215 = JMIN
+      t__1216 = JMAX
+      DO J = t__1215, t__1216, 1
+        t__1217 = IMIN
+        t__1218 = IMAX
+        DO I = t__1217, t__1218, 1
+          if ( GT(I,J,K,BI,BJ) .lt. TFREEZING ) then
+            GT(I,J,K,BI,BJ) = TFREEZING
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE freeze_surface(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) TFREEZING
+      INTEGER(w2f__i4) t__1219
+      INTEGER(w2f__i4) t__1220
+      INTEGER(w2f__i4) t__1221
+      INTEGER(w2f__i4) t__1222
+C
+C     **** Statements ****
+C
+      if ( USINGPCOORDS ) then
+        K = 1
+      ELSE
+        K = 1
+      ENDIF
+      TFREEZING = -1.89999999999999991118D00
+      t__1219 = MYBYLO(MYTHID)
+      t__1220 = MYBYHI(MYTHID)
+      DO BJ = t__1219, t__1220, 1
+        t__1221 = MYBXLO(MYTHID)
+        t__1222 = MYBXHI(MYTHID)
+        DO BI = t__1221, t__1222, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              if ( THETA(I,J,K,BI,BJ) .lt. TFREEZING ) then
+                SURFACEFORCINGTICE(I,J,BI,BJ) = ((HFACC(I,J,K,BI,BJ) * D
+     +RF(K) * (TFREEZING - THETA(I,J,K,BI,BJ))) / DTTRACERLEV(K))
+
+                THETA(I,J,K,BI,BJ) = TFREEZING
+              ELSE
+                SURFACEFORCINGTICE(I,J,BI,BJ) = 0.0D00
+              ENDIF
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE grad_sigma(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, RHOK,
+     >  SIGKM1, SIGKP1, SIGMAX, SIGMAY, SIGMAR, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) RHOK(-2 : 93, -2 : 43)
+      REAL(w2f__8) SIGKM1(-2 : 93, -2 : 43)
+      REAL(w2f__8) SIGKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) SIGMAX(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) SIGMAY(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) SIGMAR(-2 : 93, -2 : 43, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) RHOLOC(-2 : 93, -2 : 43)
+C
+C     **** Statements ****
+C
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          RHOLOC(I,J) = RHOK(I,J)
+        END DO
+      END DO
+      DO J = -2, 43, 1
+        DO I = -1, 93, 1
+          SIGMAX(I,J,K) = (RECIP_DXC(I,J,BI,BJ) * MASKW(I,J,K,BI,BJ) * (
+     +RHOLOC(I,J) - RHOLOC(I + (-1),J)))
+
+        END DO
+      END DO
+      DO J = -1, 43, 1
+        DO I = -2, 93, 1
+          SIGMAY(I,J,K) = (RECIP_DYC(I,J,BI,BJ) * MASKS(I,J,K,BI,BJ) * (
+     +RHOLOC(I,J) - RHOLOC(I,J + (-1))))
+
+        END DO
+      END DO
+      if ( K .eq. 1 ) then
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            SIGMAR(I,J,K) = 0.0
+          END DO
+        END DO
+      ELSE
+        DO J = -2, 43, 1
+          DO I = -2, 93, 1
+            SIGMAR(I,J,K) = (RKSIGN * RECIP_DRC(K) * MASKC(I,J,K,BI,BJ) 
+     +* (SIGKP1(I,J) - SIGKM1(I,J)))
+
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE impldiff(BI, BJ, IMIN, IMAX, JMIN, JMAX, TRACERID,
+     >  KAPPARX, RECIP_HFAC, GXNM1, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) TRACERID
+      REAL(w2f__8) KAPPARX(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) RECIP_HFAC(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GXNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) A(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) B(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) BET(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) C(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) DELTATX(1 : 1)
+      REAL(w2f__8) GAM(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) GYNM1(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__1235
+      INTEGER(w2f__i4) t__1236
+      INTEGER(w2f__i4) t__1237
+      INTEGER(w2f__i4) t__1238
+      INTEGER(w2f__i4) t__1239
+      INTEGER(w2f__i4) t__1240
+      INTEGER(w2f__i4) t__1241
+      INTEGER(w2f__i4) t__1242
+      INTEGER(w2f__i4) t__1243
+      INTEGER(w2f__i4) t__1244
+      INTEGER(w2f__i4) t__1245
+      INTEGER(w2f__i4) t__1246
+      INTEGER(w2f__i4) t__1247
+      INTEGER(w2f__i4) t__1248
+      INTEGER(w2f__i4) t__1249
+      INTEGER(w2f__i4) t__1250
+      INTEGER(w2f__i4) t__1251
+      INTEGER(w2f__i4) t__1252
+      INTEGER(w2f__i4) t__1253
+      INTEGER(w2f__i4) t__1254
+      INTEGER(w2f__i4) t__1255
+      INTEGER(w2f__i4) t__1256
+      INTEGER(w2f__i4) t__1257
+      INTEGER(w2f__i4) t__1258
+      INTEGER(w2f__i4) t__1259
+      INTEGER(w2f__i4) t__1260
+      INTEGER(w2f__i4) t__1261
+      INTEGER(w2f__i4) t__1262
+      INTEGER(w2f__i4) t__1263
+      INTEGER(w2f__i4) t__1264
+      INTEGER(w2f__i4) t__1265
+      INTEGER(w2f__i4) t__1266
+      INTEGER(w2f__i4) t__1267
+      INTEGER(w2f__i4) t__1268
+      INTEGER(w2f__i4) t__1269
+      INTEGER(w2f__i4) t__1270
+      INTEGER(w2f__i4) t__1271
+      INTEGER(w2f__i4) t__1272
+      INTEGER(w2f__i4) t__1273
+      INTEGER(w2f__i4) t__1274
+      INTEGER(w2f__i4) t__1275
+      INTEGER(w2f__i4) t__1276
+      INTEGER(w2f__i4) t__1277
+      INTEGER(w2f__i4) t__1278
+      INTEGER(w2f__i4) t__1279
+      INTEGER(w2f__i4) t__1280
+      INTEGER(w2f__i4) t__1281
+      INTEGER(w2f__i4) t__1282
+      INTEGER(w2f__i4) t__1283
+      INTEGER(w2f__i4) t__1284
+      INTEGER(w2f__i4) t__1285
+      INTEGER(w2f__i4) t__1286
+C
+C     **** Statements ****
+C
+      if ( TRACERID .ge. 1 ) then
+        DO K = 1, 1, 1
+          DELTATX(K) = DTTRACERLEV(K)
+        END DO
+      ELSE
+        DO K = 1, 1, 1
+          DELTATX(K) = DELTATMOM
+        END DO
+      ENDIF
+      DO K = 1, 1, 1
+        t__1235 = JMIN
+        t__1236 = JMAX
+        DO J = t__1235, t__1236, 1
+          t__1237 = IMIN
+          t__1238 = IMAX
+          DO I = t__1237, t__1238, 1
+            GYNM1(I,J,K,BI,BJ) = 0.0D00
+          END DO
+        END DO
+      END DO
+      t__1239 = JMIN
+      t__1240 = JMAX
+      DO J = t__1239, t__1240, 1
+        t__1241 = IMIN
+        t__1242 = IMAX
+        DO I = t__1241, t__1242, 1
+          A(I,J,1) = 0.0D00
+        END DO
+      END DO
+      DO K = 2, 1, 1
+        t__1243 = JMIN
+        t__1244 = JMAX
+        DO J = t__1243, t__1244, 1
+          t__1245 = IMIN
+          t__1246 = IMAX
+          DO I = t__1245, t__1246, 1
+            A(I,J,K) = (-(RHOFACF(K) * DEEPFAC2F(K) * RECIP_DRC(K) * KAP
+     +PARX(I,J,K) * RECIP_RHOFACC(K) * RECIP_DEEPFAC2C(K) * RECIP_DRF(K)
+     + * DELTATX(K) * RECIP_HFAC(I,J,K,BI,BJ)))
+
+            if ( RECIP_HFAC(I,J,K + (-1),BI,BJ) .eq. 0.0D00 ) then
+              A(I,J,K) = 0.0
+            ENDIF
+          END DO
+        END DO
+      END DO
+      DO K = 1, 0, 1
+        t__1247 = JMIN
+        t__1248 = JMAX
+        DO J = t__1247, t__1248, 1
+          t__1249 = IMIN
+          t__1250 = IMAX
+          DO I = t__1249, t__1250, 1
+            C(I,J,K) = (-(RHOFACF(K + 1) * DEEPFAC2F(K + 1) * RECIP_DRC(
+     +K + 1) * KAPPARX(I,J,K + 1) * RECIP_RHOFACC(K) * RECIP_DEEPFAC2C(K
+     +) * RECIP_DRF(K) * DELTATX(K) * RECIP_HFAC(I,J,K,BI,BJ)))
+
+            if ( RECIP_HFAC(I,J,K + 1,BI,BJ) .eq. 0.0D00 ) then
+              C(I,J,K) = 0.0
+            ENDIF
+          END DO
+        END DO
+      END DO
+      t__1251 = JMIN
+      t__1252 = JMAX
+      DO J = t__1251, t__1252, 1
+        t__1253 = IMIN
+        t__1254 = IMAX
+        DO I = t__1253, t__1254, 1
+          C(I,J,1) = 0.0D00
+        END DO
+      END DO
+      DO K = 1, 1, 1
+        t__1255 = JMIN
+        t__1256 = JMAX
+        DO J = t__1255, t__1256, 1
+          t__1257 = IMIN
+          t__1258 = IMAX
+          DO I = t__1257, t__1258, 1
+            B(I,J,K) = (1.0D00 - C(I,J,K) - A(I,J,K))
+          END DO
+        END DO
+      END DO
+      DO K = 1, 1, 1
+        t__1259 = JMIN
+        t__1260 = JMAX
+        DO J = t__1259, t__1260, 1
+          t__1261 = IMIN
+          t__1262 = IMAX
+          DO I = t__1261, t__1262, 1
+            BET(I,J,K) = 1.0D00
+            GAM(I,J,K) = 0.0D00
+          END DO
+        END DO
+      END DO
+      if ( .false. ) then
+        K = 1
+        t__1263 = JMIN
+        t__1264 = JMAX
+        DO J = t__1263, t__1264, 1
+          t__1265 = IMIN
+          t__1266 = IMAX
+          DO I = t__1265, t__1266, 1
+            if ( B(I,J,1) .ne. 0.0D00 ) then
+              BET(I,J,1) = 1D00 / (B(I,J,1))
+            ENDIF
+          END DO
+        END DO
+      ENDIF
+      if ( .false. ) then
+        DO K = 2, 1, 1
+          t__1267 = JMIN
+          t__1268 = JMAX
+          DO J = t__1267, t__1268, 1
+            t__1269 = IMIN
+            t__1270 = IMAX
+            DO I = t__1269, t__1270, 1
+              GAM(I,J,K) = (BET(I,J,K + (-1)) * C(I,J,K + (-1)))
+              if ( (B(I,J,K) - A(I,J,K) * GAM(I,J,K)) .ne. 0.0D00 ) then
+                BET(I,J,K) = 1D00 / (B(I,J,K) - A(I,J,K) * GAM(I,J,K))
+              ENDIF
+            END DO
+          END DO
+        END DO
+      ENDIF
+      t__1271 = JMIN
+      t__1272 = JMAX
+      DO J = t__1271, t__1272, 1
+        t__1273 = IMIN
+        t__1274 = IMAX
+        DO I = t__1273, t__1274, 1
+          GYNM1(I,J,1,BI,BJ) = (BET(I,J,1) * GXNM1(I,J,1,BI,BJ))
+        END DO
+      END DO
+      DO K = 2, 1, 1
+        t__1275 = JMIN
+        t__1276 = JMAX
+        DO J = t__1275, t__1276, 1
+          t__1277 = IMIN
+          t__1278 = IMAX
+          DO I = t__1277, t__1278, 1
+            GYNM1(I,J,K,BI,BJ) = (BET(I,J,K) * (GXNM1(I,J,K,BI,BJ) - A(I
+     +,J,K) * GYNM1(I,J,K + (-1),BI,BJ)))
+
+          END DO
+        END DO
+      END DO
+      DO K = 0, 1, (-1)
+        t__1279 = JMIN
+        t__1280 = JMAX
+        DO J = t__1279, t__1280, 1
+          t__1281 = IMIN
+          t__1282 = IMAX
+          DO I = t__1281, t__1282, 1
+            GYNM1(I,J,K,BI,BJ) = (GYNM1(I,J,K,BI,BJ) - GAM(I,J,K + 1) * 
+     +GYNM1(I,J,K + 1,BI,BJ))
+
+          END DO
+        END DO
+      END DO
+      DO K = 1, 1, 1
+        t__1283 = JMIN
+        t__1284 = JMAX
+        DO J = t__1283, t__1284, 1
+          t__1285 = IMIN
+          t__1286 = IMAX
+          DO I = t__1285, t__1286, 1
+            GXNM1(I,J,K,BI,BJ) = GYNM1(I,J,K,BI,BJ)
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_autodiff(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__1287
+      INTEGER(w2f__i4) t__1288
+      INTEGER(w2f__i4) t__1289
+      INTEGER(w2f__i4) t__1290
+C
+C     **** Statements ****
+C
+      t__1287 = MYBYLO(MYTHID)
+      t__1288 = MYBYHI(MYTHID)
+      DO BJ = t__1287, t__1288, 1
+        t__1289 = MYBXLO(MYTHID)
+        t__1290 = MYBXHI(MYTHID)
+        DO BI = t__1289, t__1290, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+              END DO
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_cartesian_grid(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IG
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JG
+      REAL(w2f__8) XG0
+      REAL(w2f__8) XGLOC(-2 : 94, -2 : 44)
+      REAL(w2f__8) YG0
+      REAL(w2f__8) YGLOC(-2 : 94, -2 : 44)
+      INTEGER(w2f__i4) t__1295
+      INTEGER(w2f__i4) t__1296
+      INTEGER(w2f__i4) t__1297
+      INTEGER(w2f__i4) t__1298
+      INTEGER(w2f__i4) t__1299
+      INTEGER(w2f__i4) t__1300
+C
+C     **** Statements ****
+C
+      t__1295 = MYBYLO(MYTHID)
+      t__1296 = MYBYHI(MYTHID)
+      DO BJ = t__1295, t__1296, 1
+        t__1297 = MYBXLO(MYTHID)
+        t__1298 = MYBXHI(MYTHID)
+        DO BI = t__1297, t__1298, 1
+          JG = MYYGLOBALLO + BJ * 40 + (-40)
+          IG = MYXGLOBALLO + BI * 90 + (-90)
+          XG0 = 0.0D00
+          t__1299 = IG + (-1)
+          DO I = 1, t__1299, 1
+            XG0 = DELX(I) + XG0
+          END DO
+          DO I = 1, 3, 1
+            XG0 = XG0 - DELX(MOD(IG - I + 269,90) + 1)
+          END DO
+          YG0 = 0.0D00
+          t__1300 = JG + (-1)
+          DO J = 1, t__1300, 1
+            YG0 = DELY(J) + YG0
+          END DO
+          DO J = 1, 3, 1
+            YG0 = YG0 - DELY(MOD(JG - J + 119,40) + 1)
+          END DO
+          DO J = -2, 44, 1
+            XGLOC((-2),J) = XG0
+            DO I = -2, 93, 1
+              XGLOC(I + 1,J) = (DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) *
+     + 90 + 268,90) + 1) + XGLOC(I,J))
+
+            END DO
+          END DO
+          DO I = -2, 94, 1
+            YGLOC(I,(-2)) = YG0
+            DO J = -2, 43, 1
+              YGLOC(I,J + 1) = (DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) *
+     + 40 + 118,40) + 1) + YGLOC(I,J))
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XG(I,J,BI,BJ) = XGLOC(I,J)
+              YG(I,J,BI,BJ) = YGLOC(I,J)
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XC(I,J,BI,BJ) = ((XGLOC(I + 1,J + 1) + XGLOC(I,J + 1) + XG
+     +LOC(I,J) + XGLOC(I + 1,J)) * 2.5D-01)
+
+              YC(I,J,BI,BJ) = ((YGLOC(I + 1,J + 1) + YGLOC(I,J + 1) + YG
+     +LOC(I,J) + YGLOC(I + 1,J)) * 2.5D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              DXF(I,J,BI,BJ) = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 
+     +90 + 268,90) + 1)
+
+              DYF(I,J,BI,BJ) = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 
+     +40 + 118,40) + 1)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              DXG(I,J,BI,BJ) = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 
+     +90 + 268,90) + 1)
+
+              DYG(I,J,BI,BJ) = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 
+     +40 + 118,40) + 1)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              DXC(I,J,BI,BJ) = 0.0
+              DYC(I,J,BI,BJ) = 0.0
+              DXV(I,J,BI,BJ) = 0.0
+              DYU(I,J,BI,BJ) = 0.0
+              RAW(I,J,BI,BJ) = 0.0
+              RAS(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -1, 93, 1
+              DXC(I,J,BI,BJ) = ((DXF(I,J,BI,BJ) + DXF(I + (-1),J,BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -2, 93, 1
+              DYC(I,J,BI,BJ) = ((DYF(I,J,BI,BJ) + DYF(I,J + (-1),BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -1, 93, 1
+              DXV(I,J,BI,BJ) = ((DXG(I,J,BI,BJ) + DXG(I + (-1),J,BI,BJ))
+     + * 5.0D-01)
+
+              DYU(I,J,BI,BJ) = ((DYG(I,J,BI,BJ) + DYG(I,J + (-1),BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              RA(I,J,BI,BJ) = (DXF(I,J,BI,BJ) * DYF(I,J,BI,BJ))
+              RAW(I,J,BI,BJ) = (DXC(I,J,BI,BJ) * DYG(I,J,BI,BJ))
+              RAS(I,J,BI,BJ) = (DXG(I,J,BI,BJ) * DYC(I,J,BI,BJ))
+              RAZ(I,J,BI,BJ) = (DXV(I,J,BI,BJ) * DYU(I,J,BI,BJ))
+              TANPHIATU(I,J,BI,BJ) = 0.0
+              TANPHIATV(I,J,BI,BJ) = 0.0
+              ANGLECOSC(I,J,BI,BJ) = 1.0
+              ANGLESINC(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            COSFACU(J,BI,BJ) = 1.0
+            COSFACV(J,BI,BJ) = 1.0
+            SQCOSFACU(J,BI,BJ) = 1.0
+            SQCOSFACV(J,BI,BJ) = 1.0
+          END DO
+        END DO
+      END DO
+      if ( MYTHID .eq. 1 ) then
+        if ( LATBANDCLIMRELAX .eq. 1.2345669999999999709D+05 ) then
+          LATBANDCLIMRELAX = 0.0D00
+          DO J = 1, 40, 1
+            LATBANDCLIMRELAX = DELY(J) + LATBANDCLIMRELAX
+          END DO
+          LATBANDCLIMRELAX = LATBANDCLIMRELAX * 3.0D00
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_cg2d(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use cg2d_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) AC
+      REAL(w2f__8) ACS
+      REAL(w2f__8) ACW
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_uv_xy_rs
+      EXTERNAL exch_xy_rl
+      REAL(w2f__8) FACEAREA
+      EXTERNAL global_max_r8
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KS
+      CHARACTER(512) MSGBUF
+      REAL(w2f__8) MYNORM
+      EXTERNAL print_message
+      INTEGER(w2f__i4) t__1302
+      INTEGER(w2f__i4) t__1303
+      INTEGER(w2f__i4) t__1304
+      INTEGER(w2f__i4) t__1305
+      INTEGER(w2f__i4) t__1306
+      INTEGER(w2f__i4) t__1307
+      INTEGER(w2f__i4) t__1308
+      INTEGER(w2f__i4) t__1309
+      INTEGER(w2f__i4) t__1310
+      INTEGER(w2f__i4) t__1311
+      INTEGER(w2f__i4) t__1312
+      INTEGER(w2f__i4) t__1313
+      INTEGER(w2f__i4) t__1314
+      INTEGER(w2f__i4) t__1315
+      INTEGER(w2f__i4) t__1316
+      INTEGER(w2f__i4) t__1317
+      real(w2f__8) oad_ctmp0
+      real oad_ctmp1
+      real(w2f__8) oad_ctmp2
+      real oad_ctmp3
+      logical oad_ctmp4
+      integer oad_ctmp5
+      integer oad_ctmp6
+      integer oad_ctmp7
+      logical oad_ctmp8
+C
+C     **** Statements ****
+C
+      t__1302 = MYBYLO(MYTHID)
+      t__1303 = MYBYHI(MYTHID)
+      DO BJ = t__1302, t__1303, 1
+        t__1304 = MYBXLO(MYTHID)
+        t__1305 = MYBXHI(MYTHID)
+        DO BI = t__1304, t__1305, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              AW2D(I,J,BI,BJ) = 0.0D00
+              AS2D(I,J,BI,BJ) = 0.0D00
+              AC2D(I,J,BI,BJ) = 0.0D00
+              PW(I,J,BI,BJ) = 0.0D00
+              PS(I,J,BI,BJ) = 0.0D00
+              PC(I,J,BI,BJ) = 0.0D00
+              CG2D_Q(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+          DO J = 0, 41, 1
+            DO I = 0, 91, 1
+              CG2D_R(I,J,BI,BJ) = 0.0D00
+              CG2D_S(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+        END DO
+      END DO
+      MYNORM = 0.0D00
+      t__1306 = MYBYLO(MYTHID)
+      t__1307 = MYBYHI(MYTHID)
+      DO BJ = t__1306, t__1307, 1
+        t__1308 = MYBXLO(MYTHID)
+        t__1309 = MYBXHI(MYTHID)
+        DO BI = t__1308, t__1309, 1
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              AW2D(I,J,BI,BJ) = 0.0D00
+              AS2D(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+          DO K = 1, 1, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                FACEAREA = HFACW(I,J,K,BI,BJ) * DRF(K) * DYG(I,J,BI,BJ)
+                AW2D(I,J,BI,BJ) = (AW2D(I,J,BI,BJ) + RECIP_DXC(I,J,BI,BJ
+     +) * FACEAREA * IMPLICDIV2DFLOW * IMPLICSURFPRESS)
+
+                FACEAREA = HFACS(I,J,K,BI,BJ) * DRF(K) * DXG(I,J,BI,BJ)
+                AS2D(I,J,BI,BJ) = (AS2D(I,J,BI,BJ) + RECIP_DYC(I,J,BI,BJ
+     +) * FACEAREA * IMPLICDIV2DFLOW * IMPLICSURFPRESS)
+
+              END DO
+            END DO
+          END DO
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              oad_ctmp1 = ABS(AW2D(I,J,BI,BJ))
+              call oad_s_MAX_r(MYNORM,oad_ctmp1,oad_ctmp0)
+              MYNORM = oad_ctmp0
+              oad_ctmp3 = ABS(AS2D(I,J,BI,BJ))
+              call oad_s_MAX_r(MYNORM,oad_ctmp3,oad_ctmp2)
+              MYNORM = oad_ctmp2
+            END DO
+          END DO
+        END DO
+      END DO
+      call global_max_r8(MYNORM,MYTHID)
+      if ( MYNORM .ne. 0.0D00 ) then
+        MYNORM = 1D00 / MYNORM
+      ELSE
+        MYNORM = 1.0D00
+      ENDIF
+      t__1310 = MYBYLO(MYTHID)
+      t__1311 = MYBYHI(MYTHID)
+      DO BJ = t__1310, t__1311, 1
+        t__1312 = MYBXLO(MYTHID)
+        t__1313 = MYBXHI(MYTHID)
+        DO BI = t__1312, t__1313, 1
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              AW2D(I,J,BI,BJ) = (AW2D(I,J,BI,BJ) * MYNORM)
+              AS2D(I,J,BI,BJ) = (AS2D(I,J,BI,BJ) * MYNORM)
+            END DO
+          END DO
+        END DO
+      END DO
+      oad_ctmp4 = (.false.)
+      call exch_uv_xy_rs(AW2D,AS2D,oad_ctmp4,MYTHID)
+      if ( MYTHID .eq. 1 ) then
+        CG2DNORM = MYNORM
+        CG2DNORMALISERHS = CG2DTARGETRESWUNIT .le. 0.0D00
+        if ( CG2DNORMALISERHS ) then
+          CG2DTOLERANCE = CG2DTARGETRESIDUAL
+        ELSE
+          CG2DTOLERANCE = (GLOBALAREA * CG2DTARGETRESWUNIT * CG2DNORM) /
+     + DELTATMOM
+
+        ENDIF
+      ENDIF
+      if ( MYTHID .eq. 1 ) then
+        WRITE(MSGBUF, '(2A,1PE23.16)') 'INI_CG2D: ',
+     >  'CG2D normalisation factor = ', CG2DNORM
+        oad_ctmp5 = (1)
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp5)
+        if ( .not. CG2DNORMALISERHS ) then
+          WRITE(MSGBUF, '(2A,1PE22.15,A,1PE16.10,A)') 'INI_CG2D: ',
+     >  'cg2dTolerance =', CG2DTOLERANCE, ' (Area=', GLOBALAREA, ')'
+          oad_ctmp6 = (1)
+          call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp6)
+        ENDIF
+        WRITE(MSGBUF, *) ' '
+        oad_ctmp7 = (1)
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp7)
+      ENDIF
+      t__1314 = MYBYLO(MYTHID)
+      t__1315 = MYBYHI(MYTHID)
+      DO BJ = t__1314, t__1315, 1
+        t__1316 = MYBXLO(MYTHID)
+        t__1317 = MYBXHI(MYTHID)
+        DO BI = t__1316, t__1317, 1
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              KS = KSURFC(I,J,BI,BJ)
+              PC(I,J,BI,BJ) = 1.0D00
+              AC = -(AS2D(I,J + 1,BI,BJ) + AS2D(I,J,BI,BJ) + AW2D(I,J,BI
+     +,BJ) + AW2D(I + 1,J,BI,BJ) + (((RA(I,J,BI,BJ) * DEEPFAC2F(KS) * RE
+     +CIP_BO(I,J,BI,BJ) * MYNORM * FREESURFFAC) / DELTATMOM) / DELTATFRE
+     +ESURF))
+
+              ACS = -(AS2D(I,J,BI,BJ) + AS2D(I,J + (-1),BI,BJ) + AW2D(I,
+     +J + (-1),BI,BJ) + AW2D(I + 1,J + (-1),BI,BJ) + (((RA(I,J + (-1),BI
+     +,BJ) * DEEPFAC2F(KS) * RECIP_BO(I,J + (-1),BI,BJ) * MYNORM * FREES
+     +URFFAC) / DELTATMOM) / DELTATFREESURF))
+
+              ACW = -(AS2D(I + (-1),J + 1,BI,BJ) + AS2D(I + (-1),J,BI,BJ
+     +) + AW2D(I,J,BI,BJ) + AW2D(I + (-1),J,BI,BJ) + (((RA(I + (-1),J,BI
+     +,BJ) * DEEPFAC2F(KS) * RECIP_BO(I + (-1),J,BI,BJ) * MYNORM * FREES
+     +URFFAC) / DELTATMOM) / DELTATFREESURF))
+
+              if ( AC .eq. 0.0D00 ) then
+                PC(I,J,BI,BJ) = 1.0D00
+              ELSE
+                PC(I,J,BI,BJ) = 1D00 / AC
+              ENDIF
+              if ( (AC + ACW) .eq. 0.0D00 ) then
+                PW(I,J,BI,BJ) = 0.0
+              ELSE
+                PW(I,J,BI,BJ) = (-(AW2D(I,J,BI,BJ) / (((CG2DPCOFFDFAC * 
+     +(AC + ACW)) ** 2))))
+
+              ENDIF
+              if ( (AC + ACS) .eq. 0.0D00 ) then
+                PS(I,J,BI,BJ) = 0.0
+              ELSE
+                PS(I,J,BI,BJ) = (-(AS2D(I,J,BI,BJ) / (((CG2DPCOFFDFAC * 
+     +(AC + ACS)) ** 2))))
+
+              ENDIF
+              AC2D(I,J,BI,BJ) = AC
+            END DO
+          END DO
+        END DO
+      END DO
+      call exch_xy_rl(PC,MYTHID)
+      oad_ctmp8 = (.false.)
+      call exch_uv_xy_rs(PW,PS,oad_ctmp8,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_cori(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_xy_rs
+      EXTERNAL exch_z_3d_rs
+      REAL(w2f__8) FACGRID
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      EXTERNAL read_rec_xy_rs
+      INTEGER(w2f__i4) t__1318
+      INTEGER(w2f__i4) t__1319
+      INTEGER(w2f__i4) t__1320
+      INTEGER(w2f__i4) t__1321
+      INTEGER(w2f__i4) t__1322
+      INTEGER(w2f__i4) t__1323
+      INTEGER(w2f__i4) t__1324
+      INTEGER(w2f__i4) t__1325
+      INTEGER(w2f__i4) t__1326
+      INTEGER(w2f__i4) t__1327
+      INTEGER(w2f__i4) t__1328
+      INTEGER(w2f__i4) t__1329
+      INTEGER(w2f__i4) t__1330
+      INTEGER(w2f__i4) t__1331
+      INTEGER(w2f__i4) t__1332
+      INTEGER(w2f__i4) t__1333
+      INTEGER(w2f__i4) t__1334
+      INTEGER(w2f__i4) t__1335
+      INTEGER(w2f__i4) t__1336
+      INTEGER(w2f__i4) t__1337
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+      integer oad_ctmp4
+      integer oad_ctmp5
+      integer oad_ctmp6
+C
+C     **** Statements ****
+C
+      if ( USECONSTANTF ) then
+        t__1318 = MYBYLO(MYTHID)
+        t__1319 = MYBYHI(MYTHID)
+        DO BJ = t__1318, t__1319, 1
+          t__1320 = MYBXLO(MYTHID)
+          t__1321 = MYBXHI(MYTHID)
+          DO BI = t__1320, t__1321, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                FCORI(I,J,BI,BJ) = F0
+                FCORIG(I,J,BI,BJ) = F0
+                FCORICOS(I,J,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+        END DO
+      ELSE
+        if ( USEBETAPLANEF ) then
+          FACGRID = 1.0D00
+          if ( USINGCURVILINEARGRID .or. USINGSPHERICALPOLARGRID ) then
+            FACGRID = RSPHERE * 1.74532925199432954744D-02
+          ENDIF
+          t__1322 = MYBYLO(MYTHID)
+          t__1323 = MYBYHI(MYTHID)
+          DO BJ = t__1322, t__1323, 1
+            t__1324 = MYBXLO(MYTHID)
+            t__1325 = MYBXHI(MYTHID)
+            DO BI = t__1324, t__1325, 1
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  FCORI(I,J,BI,BJ) = (F0 + FACGRID * YC(I,J,BI,BJ) * BET
+     +A)
+
+                  FCORIG(I,J,BI,BJ) = (F0 + FACGRID * YG(I,J,BI,BJ) * BE
+     +TA)
+
+                  FCORICOS(I,J,BI,BJ) = 0.0D00
+                END DO
+              END DO
+            END DO
+          END DO
+        ELSE
+          if ( USESPHEREF ) then
+            t__1326 = MYBYLO(MYTHID)
+            t__1327 = MYBYHI(MYTHID)
+            DO BJ = t__1326, t__1327, 1
+              t__1328 = MYBXLO(MYTHID)
+              t__1329 = MYBXHI(MYTHID)
+              DO BI = t__1328, t__1329, 1
+                DO J = -2, 43, 1
+                  DO I = -2, 93, 1
+                    FCORI(I,J,BI,BJ) = (SIN(YC(I,J,BI,BJ) * 1.7453292519
+     +9432954744D-02) * OMEGA * 2.0D00)
+
+                    FCORIG(I,J,BI,BJ) = (SIN(YG(I,J,BI,BJ) * 1.745329251
+     +99432954744D-02) * OMEGA * 2.0D00)
+
+                    FCORICOS(I,J,BI,BJ) = (COS(YC(I,J,BI,BJ) * 1.7453292
+     +5199432954744D-02) * OMEGA * 2.0D00)
+
+                  END DO
+                END DO
+              END DO
+            END DO
+          ELSE
+            t__1330 = MYBYLO(MYTHID)
+            t__1331 = MYBYHI(MYTHID)
+            DO BJ = t__1330, t__1331, 1
+              t__1332 = MYBXLO(MYTHID)
+              t__1333 = MYBXHI(MYTHID)
+              DO BI = t__1332, t__1333, 1
+                DO J = -2, 43, 1
+                  DO I = -2, 93, 1
+                    FCORI(I,J,BI,BJ) = 0.0D00
+                    FCORIG(I,J,BI,BJ) = 0.0D00
+                    FCORICOS(I,J,BI,BJ) = 0.0D00
+                  END DO
+                END DO
+              END DO
+            END DO
+            call barrier(MYTHID)
+            oad_ctmp0 = (1)
+            oad_ctmp1 = (0)
+            call read_rec_xy_rs('fCoriC.bin',FCORI,oad_ctmp0,oad_ctmp1,M
+     +YTHID)
+
+            oad_ctmp2 = (1)
+            oad_ctmp3 = (0)
+            call read_rec_xy_rs('fCoriG.bin',FCORIG,oad_ctmp2,oad_ctmp3,
+     +MYTHID)
+
+            oad_ctmp4 = (1)
+            oad_ctmp5 = (0)
+            call read_rec_xy_rs('fCorCs.bin',FCORICOS,oad_ctmp4,oad_ctmp
+     +5,MYTHID)
+
+            if ( USECUBEDSPHEREEXCHANGE ) then
+              call barrier(MYTHID)
+              t__1334 = MYBYLO(MYTHID)
+              t__1335 = MYBYHI(MYTHID)
+              DO BJ = t__1334, t__1335, 1
+                t__1336 = MYBXLO(MYTHID)
+                t__1337 = MYBXHI(MYTHID)
+                DO BI = t__1336, t__1337, 1
+                  if ( (BI .ge. 5) .or. (BI .le. 3) ) then
+                    FCORIG(91,1,BI,BJ) = FCORIG(1,1,BI,BJ)
+                  ELSE
+                    FCORIG(91,1,BI,BJ) = (-FCORIG(1,1,BI,BJ))
+                  ENDIF
+                  if ( BI .ge. 3 ) then
+                    FCORIG(1,41,BI,BJ) = FCORIG(1,1,BI,BJ)
+                    FCORIG(91,41,BI,BJ) = FCORIG(91,1,BI,BJ)
+                  ELSE
+                    FCORIG(1,41,BI,BJ) = (-FCORIG(1,1,BI,BJ))
+                    FCORIG(91,41,BI,BJ) = (-FCORIG(91,1,BI,BJ))
+                  ENDIF
+                END DO
+              END DO
+            ENDIF
+            call exch_xy_rs(FCORI,MYTHID)
+            call exch_xy_rs(FCORICOS,MYTHID)
+            oad_ctmp6 = (1)
+            call exch_z_3d_rs(FCORIG,oad_ctmp6,MYTHID)
+          ENDIF
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_curvilinear_grid(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      LOGICAL(w2f__i4) ANGLESARESET
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) BUF(1 : 91, 1 : 41)
+      EXTERNAL exch_uv_agrid_3d_rs
+      EXTERNAL exch_uv_xy_rs
+      EXTERNAL exch_xy_rs
+      EXTERNAL exch_z_3d_rs
+      CHARACTER(512) FNAME
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IG
+      INTEGER(w2f__i4) IL
+      INTEGER(w2f__i4) ILEN
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) J
+      CHARACTER(512) MSGBUF
+      EXTERNAL plot_field_xyrs
+      EXTERNAL print_error
+      EXTERNAL print_message
+      EXTERNAL readsymtile_rs
+      CHARACTER(512) TMPBUF
+      INTEGER(w2f__i4) t__1342
+      INTEGER(w2f__i4) t__1343
+      INTEGER(w2f__i4) t__1344
+      INTEGER(w2f__i4) t__1345
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+      integer oad_ctmp7
+      integer(w2f__i4) oad_ctmp8
+      integer(w2f__i4) oad_ctmp9
+      integer(w2f__i4) oad_ctmp10
+      integer oad_ctmp11
+      integer(w2f__i4) oad_ctmp12
+      integer(w2f__i4) oad_ctmp13
+      integer(w2f__i4) oad_ctmp14
+      integer oad_ctmp15
+      integer(w2f__i4) oad_ctmp16
+      integer(w2f__i4) oad_ctmp17
+      integer(w2f__i4) oad_ctmp18
+      integer oad_ctmp19
+      integer(w2f__i4) oad_ctmp20
+      integer(w2f__i4) oad_ctmp21
+      integer(w2f__i4) oad_ctmp22
+      integer oad_ctmp23
+      integer(w2f__i4) oad_ctmp24
+      integer(w2f__i4) oad_ctmp25
+      integer(w2f__i4) oad_ctmp26
+      integer oad_ctmp27
+      integer(w2f__i4) oad_ctmp28
+      integer(w2f__i4) oad_ctmp29
+      integer(w2f__i4) oad_ctmp30
+      integer oad_ctmp31
+      integer(w2f__i4) oad_ctmp32
+      integer(w2f__i4) oad_ctmp33
+      integer(w2f__i4) oad_ctmp34
+      integer oad_ctmp35
+      integer(w2f__i4) oad_ctmp36
+      integer(w2f__i4) oad_ctmp37
+      integer(w2f__i4) oad_ctmp38
+      integer oad_ctmp39
+      integer(w2f__i4) oad_ctmp40
+      integer(w2f__i4) oad_ctmp41
+      integer(w2f__i4) oad_ctmp42
+      integer oad_ctmp43
+      integer(w2f__i4) oad_ctmp44
+      integer(w2f__i4) oad_ctmp45
+      integer(w2f__i4) oad_ctmp46
+      integer oad_ctmp47
+      integer(w2f__i4) oad_ctmp48
+      integer(w2f__i4) oad_ctmp49
+      integer(w2f__i4) oad_ctmp50
+      integer oad_ctmp51
+      integer(w2f__i4) oad_ctmp52
+      integer(w2f__i4) oad_ctmp53
+      integer(w2f__i4) oad_ctmp54
+      integer oad_ctmp55
+      integer(w2f__i4) oad_ctmp56
+      integer(w2f__i4) oad_ctmp57
+      integer(w2f__i4) oad_ctmp58
+      integer oad_ctmp59
+      integer(w2f__i4) oad_ctmp60
+      integer(w2f__i4) oad_ctmp61
+      integer(w2f__i4) oad_ctmp62
+      integer oad_ctmp63
+      integer(w2f__i4) oad_ctmp64
+      integer(w2f__i4) oad_ctmp65
+      integer(w2f__i4) oad_ctmp66
+      integer(w2f__i4) oad_ctmp67
+      integer oad_ctmp68
+      integer(w2f__i4) oad_ctmp69
+      integer(w2f__i4) oad_ctmp70
+      integer(w2f__i4) oad_ctmp71
+      integer oad_ctmp72
+      integer(w2f__i4) oad_ctmp73
+      integer(w2f__i4) oad_ctmp74
+      integer(w2f__i4) oad_ctmp75
+      logical oad_ctmp76
+      integer oad_ctmp77
+      integer oad_ctmp78
+      integer oad_ctmp79
+      integer oad_ctmp80
+      logical oad_ctmp81
+      logical oad_ctmp82
+      logical oad_ctmp83
+      logical oad_ctmp84
+      integer oad_ctmp85
+      integer oad_ctmp86
+      integer oad_ctmp87
+      integer oad_ctmp88
+      integer oad_ctmp89
+      integer oad_ctmp90
+      integer oad_ctmp91
+      integer oad_ctmp92
+      integer oad_ctmp93
+      integer oad_ctmp94
+      integer oad_ctmp95
+      integer oad_ctmp96
+      integer oad_ctmp97
+      integer oad_ctmp98
+      integer oad_ctmp99
+      integer oad_ctmp100
+      integer oad_ctmp101
+      integer oad_ctmp102
+      integer oad_ctmp103
+C
+C     **** Statements ****
+C
+      t__1342 = MYBYLO(MYTHID)
+      t__1343 = MYBYHI(MYTHID)
+      DO BJ = t__1342, t__1343, 1
+        t__1344 = MYBXLO(MYTHID)
+        t__1345 = MYBXHI(MYTHID)
+        DO BI = t__1344, t__1345, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XC(I,J,BI,BJ) = 0.0
+              YC(I,J,BI,BJ) = 0.0
+              XG(I,J,BI,BJ) = 0.0
+              YG(I,J,BI,BJ) = 0.0
+              DXC(I,J,BI,BJ) = 0.0
+              DYC(I,J,BI,BJ) = 0.0
+              DXG(I,J,BI,BJ) = 0.0
+              DYG(I,J,BI,BJ) = 0.0
+              DXF(I,J,BI,BJ) = 0.0
+              DYF(I,J,BI,BJ) = 0.0
+              DXV(I,J,BI,BJ) = 0.0
+              DYU(I,J,BI,BJ) = 0.0
+              RA(I,J,BI,BJ) = 0.0
+              RAZ(I,J,BI,BJ) = 0.0
+              RAW(I,J,BI,BJ) = 0.0
+              RAS(I,J,BI,BJ) = 0.0
+              TANPHIATU(I,J,BI,BJ) = 0.0
+              TANPHIATV(I,J,BI,BJ) = 0.0
+              ANGLECOSC(I,J,BI,BJ) = 1.0
+              ANGLESINC(I,J,BI,BJ) = 0.0
+              COSFACU(J,BI,BJ) = 1.0
+              COSFACV(J,BI,BJ) = 1.0
+              SQCOSFACU(J,BI,BJ) = 1.0
+              SQCOSFACV(J,BI,BJ) = 1.0
+            END DO
+          END DO
+        END DO
+      END DO
+      call barrier(MYTHID)
+      if ( MYTHID .eq. 1 ) then
+        DO BJ = 1, 1, 1
+          DO BI = 1, 1, 1
+            IG = BI + ((MYXGLOBALLO + (-1)) / 90)
+            WRITE(TMPBUF, '(A,I4)') 'tile:', IG
+            call oad_s_ilnblnk(HORIZGRIDFILE,oad_ctmp0)
+            ILEN = oad_ctmp0
+            if ( ILEN .eq. 0 ) then
+              WRITE(FNAME, '("tile",I3.3,".mitgrid")') IG
+            ELSE
+              WRITE(FNAME, '(2A,I3.3,A)') HORIZGRIDFILE(1_w2f__i8 :
+     >  ILEN), '.face', IG, '.bin'
+            ENDIF
+            call oad_s_ilnblnk(FNAME,oad_ctmp1)
+            ILEN = oad_ctmp1
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp2)
+            IL = oad_ctmp2
+            WRITE(MSGBUF, '(3A)') TMPBUF(1_w2f__i8 : IL),
+     >  ' ; Read from file ', FNAME(1_w2f__i8 : ILEN)
+            call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+            WRITE(MSGBUF, '(A)') '  =>'
+            oad_ctmp3 = (1)
+            oad_ctmp4 = (BI)
+            oad_ctmp5 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp3,XC,BUF,oad_ctmp4,oad_ctm
+     +p5,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp6)
+            IL = oad_ctmp6
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'xC'
+            oad_ctmp7 = (2)
+            oad_ctmp8 = (BI)
+            oad_ctmp9 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp7,YC,BUF,oad_ctmp8,oad_ctm
+     +p9,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp10)
+            IL = oad_ctmp10
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'yC'
+            oad_ctmp11 = (3)
+            oad_ctmp12 = (BI)
+            oad_ctmp13 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp11,DXF,BUF,oad_ctmp12,oad_
+     +ctmp13,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp14)
+            IL = oad_ctmp14
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'dxF'
+            oad_ctmp15 = (4)
+            oad_ctmp16 = (BI)
+            oad_ctmp17 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp15,DYF,BUF,oad_ctmp16,oad_
+     +ctmp17,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp18)
+            IL = oad_ctmp18
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'dyF'
+            oad_ctmp19 = (5)
+            oad_ctmp20 = (BI)
+            oad_ctmp21 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp19,RA,BUF,oad_ctmp20,oad_c
+     +tmp21,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp22)
+            IL = oad_ctmp22
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'rA'
+            oad_ctmp23 = (6)
+            oad_ctmp24 = (BI)
+            oad_ctmp25 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp23,XG,BUF,oad_ctmp24,oad_c
+     +tmp25,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp26)
+            IL = oad_ctmp26
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'xG'
+            oad_ctmp27 = (7)
+            oad_ctmp28 = (BI)
+            oad_ctmp29 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp27,YG,BUF,oad_ctmp28,oad_c
+     +tmp29,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp30)
+            IL = oad_ctmp30
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'yG'
+            oad_ctmp31 = (8)
+            oad_ctmp32 = (BI)
+            oad_ctmp33 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp31,DXV,BUF,oad_ctmp32,oad_
+     +ctmp33,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp34)
+            IL = oad_ctmp34
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'dxV'
+            oad_ctmp35 = (9)
+            oad_ctmp36 = (BI)
+            oad_ctmp37 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp35,DYU,BUF,oad_ctmp36,oad_
+     +ctmp37,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp38)
+            IL = oad_ctmp38
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'dyU'
+            oad_ctmp39 = (10)
+            oad_ctmp40 = (BI)
+            oad_ctmp41 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp39,RAZ,BUF,oad_ctmp40,oad_
+     +ctmp41,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp42)
+            IL = oad_ctmp42
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'rAz'
+            oad_ctmp43 = (11)
+            oad_ctmp44 = (BI)
+            oad_ctmp45 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp43,DXC,BUF,oad_ctmp44,oad_
+     +ctmp45,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp46)
+            IL = oad_ctmp46
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'dxC'
+            oad_ctmp47 = (12)
+            oad_ctmp48 = (BI)
+            oad_ctmp49 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp47,DYC,BUF,oad_ctmp48,oad_
+     +ctmp49,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp50)
+            IL = oad_ctmp50
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'dyC'
+            oad_ctmp51 = (13)
+            oad_ctmp52 = (BI)
+            oad_ctmp53 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp51,RAW,BUF,oad_ctmp52,oad_
+     +ctmp53,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp54)
+            IL = oad_ctmp54
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'rAw'
+            oad_ctmp55 = (14)
+            oad_ctmp56 = (BI)
+            oad_ctmp57 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp55,RAS,BUF,oad_ctmp56,oad_
+     +ctmp57,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp58)
+            IL = oad_ctmp58
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'rAs'
+            oad_ctmp59 = (15)
+            oad_ctmp60 = (BI)
+            oad_ctmp61 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp59,DXG,BUF,oad_ctmp60,oad_
+     +ctmp61,MYTHID)
+
+            call oad_s_ilnblnk(MSGBUF,oad_ctmp62)
+            IL = oad_ctmp62
+            WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL), 'dxG'
+            oad_ctmp63 = (16)
+            oad_ctmp64 = (BI)
+            oad_ctmp65 = (BJ)
+            call readsymtile_rs(FNAME,oad_ctmp63,DYG,BUF,oad_ctmp64,oad_
+     +ctmp65,MYTHID)
+
+            call oad_s_ilnblnk(TMPBUF,oad_ctmp66)
+            IL = oad_ctmp66
+            WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL), 'dyG'
+            call oad_s_ilnblnk(HORIZGRIDFILE,oad_ctmp67)
+            ILEN = oad_ctmp67
+            if ( ILEN .gt. 0 ) then
+              oad_ctmp68 = (17)
+              oad_ctmp69 = (BI)
+              oad_ctmp70 = (BJ)
+              call readsymtile_rs(FNAME,oad_ctmp68,ANGLECOSC,BUF,oad_ctm
+     +p69,oad_ctmp70,MYTHID)
+
+              call oad_s_ilnblnk(MSGBUF,oad_ctmp71)
+              IL = oad_ctmp71
+              WRITE(TMPBUF, '(A,1X,A)') MSGBUF(1_w2f__i8 : IL),
+     >  'AngleCS'
+              oad_ctmp72 = (18)
+              oad_ctmp73 = (BI)
+              oad_ctmp74 = (BJ)
+              call readsymtile_rs(FNAME,oad_ctmp72,ANGLESINC,BUF,oad_ctm
+     +p73,oad_ctmp74,MYTHID)
+
+              call oad_s_ilnblnk(TMPBUF,oad_ctmp75)
+              IL = oad_ctmp75
+              WRITE(MSGBUF, '(A,1X,A)') TMPBUF(1_w2f__i8 : IL),
+     >  'AngleSN'
+              ANGLESARESET = .true.
+            ELSE
+              ANGLESARESET = .false.
+            ENDIF
+            call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+          END DO
+        END DO
+      ENDIF
+      call exch_xy_rs(XC,MYTHID)
+      call exch_xy_rs(YC,MYTHID)
+      oad_ctmp76 = (.false.)
+      oad_ctmp77 = (1)
+      call exch_uv_agrid_3d_rs(DXF,DYF,oad_ctmp76,oad_ctmp77,MYTHID)
+      call exch_xy_rs(RA,MYTHID)
+      oad_ctmp78 = (1)
+      call exch_z_3d_rs(XG,oad_ctmp78,MYTHID)
+      oad_ctmp79 = (1)
+      call exch_z_3d_rs(YG,oad_ctmp79,MYTHID)
+      oad_ctmp80 = (1)
+      call exch_z_3d_rs(RAZ,oad_ctmp80,MYTHID)
+      oad_ctmp81 = (.false.)
+      call exch_uv_xy_rs(DXC,DYC,oad_ctmp81,MYTHID)
+      oad_ctmp82 = (.false.)
+      call exch_uv_xy_rs(RAW,RAS,oad_ctmp82,MYTHID)
+      oad_ctmp83 = (.false.)
+      call exch_uv_xy_rs(DYG,DXG,oad_ctmp83,MYTHID)
+      oad_ctmp84 = (.true.)
+      oad_ctmp85 = (1)
+      call exch_uv_agrid_3d_rs(ANGLESINC,ANGLECOSC,oad_ctmp84,oad_ctmp85
+     +,MYTHID)
+
+      if ( MYTHID .eq. 1 ) then
+        if ( USE3DCORIOLIS .and. (.not. ANGLESARESET) ) then
+          WRITE(MSGBUF, '(2A)')
+     >  'INI_CURVILINEAR_GRID: Angle of CurvilinearGrid n' // 'ot set',
+     >  ' but needed for 3-D Coriolis'
+          call print_error(MSGBUF,MYTHID)
+          WRITE(*, *) 'ABNORMAL END: S/R INI_CURVILINEAR_GRID'
+        ENDIF
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        oad_ctmp86 = (0)
+        call plot_field_xyrs(XC,'Current xC      ',oad_ctmp86,MYTHID)
+        oad_ctmp87 = (0)
+        call plot_field_xyrs(YC,'Current yC      ',oad_ctmp87,MYTHID)
+        oad_ctmp88 = (0)
+        call plot_field_xyrs(DXF,'Current dxF     ',oad_ctmp88,MYTHID)
+        oad_ctmp89 = (0)
+        call plot_field_xyrs(DYF,'Current dyF     ',oad_ctmp89,MYTHID)
+        oad_ctmp90 = (0)
+        call plot_field_xyrs(RA,'Current rA      ',oad_ctmp90,MYTHID)
+        oad_ctmp91 = (0)
+        call plot_field_xyrs(XG,'Current xG      ',oad_ctmp91,MYTHID)
+        oad_ctmp92 = (0)
+        call plot_field_xyrs(YG,'Current yG      ',oad_ctmp92,MYTHID)
+        oad_ctmp93 = (0)
+        call plot_field_xyrs(DXV,'Current dxV     ',oad_ctmp93,MYTHID)
+        oad_ctmp94 = (0)
+        call plot_field_xyrs(DYU,'Current dyU     ',oad_ctmp94,MYTHID)
+        oad_ctmp95 = (0)
+        call plot_field_xyrs(RAZ,'Current rAz     ',oad_ctmp95,MYTHID)
+        oad_ctmp96 = (0)
+        call plot_field_xyrs(DXC,'Current dxC     ',oad_ctmp96,MYTHID)
+        oad_ctmp97 = (0)
+        call plot_field_xyrs(DYC,'Current dyC     ',oad_ctmp97,MYTHID)
+        oad_ctmp98 = (0)
+        call plot_field_xyrs(RAW,'Current rAw     ',oad_ctmp98,MYTHID)
+        oad_ctmp99 = (0)
+        call plot_field_xyrs(RAS,'Current rAs     ',oad_ctmp99,MYTHID)
+        oad_ctmp100 = (0)
+        call plot_field_xyrs(DXG,'Current dxG     ',oad_ctmp100,MYTHID)
+        oad_ctmp101 = (0)
+        call plot_field_xyrs(DYG,'Current dyG     ',oad_ctmp101,MYTHID)
+        oad_ctmp102 = (0)
+        call plot_field_xyrs(ANGLECOSC,'Current AngleCS ',oad_ctmp102,MY
+     +THID)
+
+        oad_ctmp103 = (0)
+        call plot_field_xyrs(ANGLESINC,'Current AngleSN ',oad_ctmp103,MY
+     +THID)
+
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE readsymtile_rs(FNAME, IREC, ARRAY, BUF, BI, BJ, MYTHID
+     > )
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      CHARACTER(*) FNAME
+      INTEGER(w2f__i4) IREC
+      REAL(w2f__8) ARRAY(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) BUF(1 : 91, 1 : 41)
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__1354
+      INTEGER(w2f__i4) DUNIT
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) ILEN
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) LENGTH_OF_REC
+      EXTERNAL mdsfindunit
+      EXTERNAL mds_reclen
+      INTEGER(w2f__i4) mds_reclen
+      CHARACTER(4) t__1355
+      character(5) oad_slc34
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+C
+C     **** Statements ****
+C
+      t__1354 = LEN(FNAME)
+      call oad_s_ilnblnk(oad_slc34,oad_ctmp0)
+      ILEN = oad_ctmp0
+      call mdsfindunit(DUNIT,MYTHID)
+      oad_ctmp2 = (64)
+      oad_ctmp3 = (3731)
+      call oad_s_mds_reclen(oad_ctmp2,oad_ctmp3,MYTHID,oad_ctmp1)
+      LENGTH_OF_REC = oad_ctmp1
+C     OPEN( dUnit, file=fName(1:iLen), status='old',             access='direct', recl=length_of_rec )
+      t__1355 = 'OLD '
+      OPEN(UNIT = DUNIT, RECL = LENGTH_OF_REC, ACCESS = 'DIRECT',
+     >  STATUS = t__1355(1_w2f__i8 : 3), FILE = FNAME(1_w2f__i8 : ILEN)
+     > )
+      READ(DUNIT, REC = IREC) BUF
+C     CLOSE( dUnit )
+      CLOSE(UNIT = DUNIT)
+      DO J = 1, 41, 1
+        DO I = 1, 91, 1
+          ARRAY(I,J,BI,BJ) = BUF(I,J)
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_cylinder_grid(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) DTHETA
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IG
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JG
+      REAL(w2f__8) THISRAD
+      REAL(w2f__8) XG0
+      REAL(w2f__8) XGLOC(-2 : 94, -2 : 44)
+      REAL(w2f__8) YG0
+      REAL(w2f__8) YGLOC(-2 : 94, -2 : 44)
+      INTEGER(w2f__i4) t__1360
+      INTEGER(w2f__i4) t__1361
+      INTEGER(w2f__i4) t__1362
+      INTEGER(w2f__i4) t__1363
+      INTEGER(w2f__i4) t__1364
+      INTEGER(w2f__i4) t__1365
+C
+C     **** Statements ****
+C
+      t__1360 = MYBYLO(MYTHID)
+      t__1361 = MYBYHI(MYTHID)
+      DO BJ = t__1360, t__1361, 1
+        t__1362 = MYBXLO(MYTHID)
+        t__1363 = MYBXHI(MYTHID)
+        DO BI = t__1362, t__1363, 1
+          JG = MYYGLOBALLO + BJ * 40 + (-40)
+          IG = MYXGLOBALLO + BI * 90 + (-90)
+          XG0 = THETAMIN
+          t__1364 = IG + (-1)
+          DO I = 1, t__1364, 1
+            XG0 = DELX(I) + XG0
+          END DO
+          DO I = 1, 3, 1
+            XG0 = XG0 - DELX(MOD(IG - I + 269,90) + 1)
+          END DO
+          YG0 = PHIMIN
+          t__1365 = JG + (-1)
+          DO J = 1, t__1365, 1
+            YG0 = DELY(J) + YG0
+          END DO
+          DO J = 1, 3, 1
+            YG0 = YG0 - DELY(MOD(JG - J + 119,40) + 1)
+          END DO
+          DO J = -2, 44, 1
+            XGLOC((-2),J) = XG0
+            DO I = -2, 93, 1
+              XGLOC(I + 1,J) = (DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) *
+     + 90 + 268,90) + 1) + XGLOC(I,J))
+
+            END DO
+          END DO
+          DO I = -2, 94, 1
+            YGLOC(I,(-2)) = YG0
+            DO J = -2, 43, 1
+              YGLOC(I,J + 1) = (DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) *
+     + 40 + 118,40) + 1) + YGLOC(I,J))
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XG(I,J,BI,BJ) = XGLOC(I,J)
+              YG(I,J,BI,BJ) = YGLOC(I,J)
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XC(I,J,BI,BJ) = ((XGLOC(I + 1,J + 1) + XGLOC(I,J + 1) + XG
+     +LOC(I,J) + XGLOC(I + 1,J)) * 2.5D-01)
+
+              YC(I,J,BI,BJ) = ((YGLOC(I + 1,J + 1) + YGLOC(I,J + 1) + YG
+     +LOC(I,J) + YGLOC(I + 1,J)) * 2.5D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              THISRAD = YC(I,J,BI,BJ)
+              DTHETA = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268
+     +,90) + 1)
+
+              DXF(I,J,BI,BJ) = (DTHETA * THISRAD * 1.7453292519943295474
+     +4D-02)
+
+              DYF(I,J,BI,BJ) = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 
+     +40 + 118,40) + 1)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              THISRAD = (YGLOC(I,J) + YGLOC(I + 1,J)) * 5.0D-01
+              DTHETA = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268
+     +,90) + 1)
+
+              DXG(I,J,BI,BJ) = (DTHETA * THISRAD * 1.7453292519943295474
+     +4D-02)
+
+              DYG(I,J,BI,BJ) = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 
+     +40 + 118,40) + 1)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              DXC(I,J,BI,BJ) = 0.0
+              DYC(I,J,BI,BJ) = 0.0
+              DXV(I,J,BI,BJ) = 0.0
+              DYU(I,J,BI,BJ) = 0.0
+              RAW(I,J,BI,BJ) = 0.0
+              RAS(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -1, 93, 1
+              DXC(I,J,BI,BJ) = ((DXF(I,J,BI,BJ) + DXF(I + (-1),J,BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -2, 93, 1
+              DYC(I,J,BI,BJ) = ((DYF(I,J,BI,BJ) + DYF(I,J + (-1),BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -1, 93, 1
+              DXV(I,J,BI,BJ) = ((DXG(I,J,BI,BJ) + DXG(I + (-1),J,BI,BJ))
+     + * 5.0D-01)
+
+              DYU(I,J,BI,BJ) = ((DYG(I,J,BI,BJ) + DYG(I,J + (-1),BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              RA(I,J,BI,BJ) = (DXF(I,J,BI,BJ) * DYF(I,J,BI,BJ))
+              RAW(I,J,BI,BJ) = (DXC(I,J,BI,BJ) * DYG(I,J,BI,BJ))
+              RAS(I,J,BI,BJ) = (DXG(I,J,BI,BJ) * DYC(I,J,BI,BJ))
+              RAZ(I,J,BI,BJ) = (DXV(I,J,BI,BJ) * DYU(I,J,BI,BJ))
+              TANPHIATU(I,J,BI,BJ) = 0.0
+              TANPHIATV(I,J,BI,BJ) = 0.0
+              ANGLECOSC(I,J,BI,BJ) = 1.0
+              ANGLESINC(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            COSFACU(J,BI,BJ) = 1.0
+            COSFACV(J,BI,BJ) = 1.0
+            SQCOSFACU(J,BI,BJ) = 1.0
+            SQCOSFACV(J,BI,BJ) = 1.0
+          END DO
+        END DO
+      END DO
+      if ( LATBANDCLIMRELAX .eq. 1.2345669999999999709D+05 ) then
+        if ( MYTHID .eq. 1 ) then
+          LATBANDCLIMRELAX = 0.0D00
+          DO J = 1, 40, 1
+            LATBANDCLIMRELAX = DELY(J) + LATBANDCLIMRELAX
+          END DO
+          LATBANDCLIMRELAX = LATBANDCLIMRELAX * 3.0D00
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_depths(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_xy_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IG
+      EXTERNAL ini_p_ground
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JG
+      CHARACTER(512) MSGBUF
+      EXTERNAL plot_field_xyrs
+      EXTERNAL print_error
+      EXTERNAL read_rec_xy_rs
+      INTEGER(w2f__i4) t__1367
+      INTEGER(w2f__i4) t__1368
+      INTEGER(w2f__i4) t__1369
+      INTEGER(w2f__i4) t__1370
+      INTEGER(w2f__i4) t__1371
+      INTEGER(w2f__i4) t__1372
+      INTEGER(w2f__i4) t__1373
+      INTEGER(w2f__i4) t__1374
+      INTEGER(w2f__i4) t__1375
+      INTEGER(w2f__i4) t__1376
+      INTEGER(w2f__i4) t__1377
+      INTEGER(w2f__i4) t__1378
+      INTEGER(w2f__i4) t__1379
+      INTEGER(w2f__i4) t__1380
+      INTEGER(w2f__i4) t__1381
+      INTEGER(w2f__i4) t__1382
+      INTEGER(w2f__i4) t__1383
+      INTEGER(w2f__i4) t__1384
+      INTEGER(w2f__i4) t__1385
+      INTEGER(w2f__i4) t__1386
+      INTEGER(w2f__i4) t__1387
+      INTEGER(w2f__i4) t__1388
+      INTEGER(w2f__i4) t__1389
+      INTEGER(w2f__i4) t__1390
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+      integer oad_ctmp4
+      integer oad_ctmp5
+      integer oad_ctmp6
+      integer oad_ctmp7
+      integer oad_ctmp8
+C
+C     **** Statements ****
+C
+      if ( (TOPOFILE .ne. ' ') .and. (USINGPCOORDS .and. (BATHYFILE .ne.
+     + ' ')) ) then
+
+        WRITE(MSGBUF, '(A,A)')
+     >  'S/R INI_DEPTHS: both bathyFile & topoFile are sp' //
+     >  'ecified:', ' select the right one !'
+        call print_error(MSGBUF,MYTHID)
+        WRITE(*, *) 'ABNORMAL END: S/R INI_DEPTHS'
+      ENDIF
+      t__1367 = MYBYLO(MYTHID)
+      t__1368 = MYBYHI(MYTHID)
+      DO BJ = t__1367, t__1368, 1
+        t__1369 = MYBXLO(MYTHID)
+        t__1370 = MYBXHI(MYTHID)
+        DO BI = t__1369, t__1370, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              R_LOW(I,J,BI,BJ) = 0.0D00
+              RO_SURF(I,J,BI,BJ) = 0.0D00
+              TOPOZ(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+        END DO
+      END DO
+      call barrier(MYTHID)
+      if ( USINGPCOORDS .or. (BATHYFILE .eq. ' ') ) then
+        t__1371 = MYBYLO(MYTHID)
+        t__1372 = MYBYHI(MYTHID)
+        DO BJ = t__1371, t__1372, 1
+          t__1373 = MYBXLO(MYTHID)
+          t__1374 = MYBXHI(MYTHID)
+          DO BI = t__1373, t__1374, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                R_LOW(I,J,BI,BJ) = RF(2)
+              END DO
+            END DO
+          END DO
+        END DO
+      ELSE
+        oad_ctmp0 = (1)
+        oad_ctmp1 = (0)
+        call read_rec_xy_rs(BATHYFILE,R_LOW,oad_ctmp0,oad_ctmp1,MYTHID)
+      ENDIF
+      call exch_xy_rl(R_LOW,MYTHID)
+      if ( DEBUGLEVEL .ge. 2 ) then
+        oad_ctmp2 = (-1)
+        call plot_field_xyrs(R_LOW,'Bottom depths (ini_depths)',oad_ctmp
+     +2,MYTHID)
+
+      ENDIF
+      if ( USINGPCOORDS .and. (BATHYFILE .ne. ' ') ) then
+        oad_ctmp3 = (1)
+        oad_ctmp4 = (0)
+        call read_rec_xy_rs(BATHYFILE,RO_SURF,oad_ctmp3,oad_ctmp4,MYTHID
+     +)
+
+      ELSE
+        if ( TOPOFILE .eq. ' ' ) then
+          t__1375 = MYBYLO(MYTHID)
+          t__1376 = MYBYHI(MYTHID)
+          DO BJ = t__1375, t__1376, 1
+            t__1377 = MYBXLO(MYTHID)
+            t__1378 = MYBXHI(MYTHID)
+            DO BI = t__1377, t__1378, 1
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  RO_SURF(I,J,BI,BJ) = RO_SEALEVEL
+                END DO
+              END DO
+            END DO
+          END DO
+        ELSE
+          oad_ctmp5 = (1)
+          oad_ctmp6 = (0)
+          call read_rec_xy_rs(TOPOFILE,TOPOZ,oad_ctmp5,oad_ctmp6,MYTHID)
+          call barrier(MYTHID)
+          if ( BUOYANCYRELATION .eq. 'ATMOSPHERIC' ) then
+            oad_ctmp7 = (2)
+            call ini_p_ground(oad_ctmp7,TOPOZ,RO_SURF,MYTHID)
+          ELSE
+            t__1379 = MYBYLO(MYTHID)
+            t__1380 = MYBYHI(MYTHID)
+            DO BJ = t__1379, t__1380, 1
+              t__1381 = MYBXLO(MYTHID)
+              t__1382 = MYBXHI(MYTHID)
+              DO BI = t__1381, t__1382, 1
+                DO J = 1, 40, 1
+                  DO I = 1, 90, 1
+                    RO_SURF(I,J,BI,BJ) = TOPOZ(I,J,BI,BJ)
+                  END DO
+                END DO
+              END DO
+            END DO
+          ENDIF
+        ENDIF
+      ENDIF
+      call exch_xy_rl(RO_SURF,MYTHID)
+      if ( USINGPCOORDS ) then
+        t__1383 = MYBYLO(MYTHID)
+        t__1384 = MYBYHI(MYTHID)
+        DO BJ = t__1383, t__1384, 1
+          t__1385 = MYBXLO(MYTHID)
+          t__1386 = MYBXHI(MYTHID)
+          DO BI = t__1385, t__1386, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                IG = I + MYXGLOBALLO + BI * 90 + (-91)
+                JG = J + MYYGLOBALLO + BJ * 40 + (-41)
+                if ( USINGSPHERICALPOLARGRID .and. (ABS(YC(I,J,BI,BJ)) .
+     +ge. 9.0D+01) ) then
+
+                  RO_SURF(I,J,BI,BJ) = RF(2)
+                ENDIF
+              END DO
+            END DO
+          END DO
+        END DO
+      ELSE
+        t__1387 = MYBYLO(MYTHID)
+        t__1388 = MYBYHI(MYTHID)
+        DO BJ = t__1387, t__1388, 1
+          t__1389 = MYBXLO(MYTHID)
+          t__1390 = MYBXHI(MYTHID)
+          DO BI = t__1389, t__1390, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                IG = I + MYXGLOBALLO + BI * 90 + (-91)
+                JG = J + MYYGLOBALLO + BJ * 40 + (-41)
+                if ( USINGSPHERICALPOLARGRID .and. (ABS(YC(I,J,BI,BJ)) .
+     +ge. 9.0D+01) ) then
+
+                  R_LOW(I,J,BI,BJ) = RO_SEALEVEL
+                ENDIF
+              END DO
+            END DO
+          END DO
+        END DO
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        oad_ctmp8 = (-1)
+        call plot_field_xyrs(RO_SURF,'Surface reference r-position (ini_
+     +depths)',oad_ctmp8,MYTHID)
+
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_fields(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL ini_pnh
+      EXTERNAL ini_pressure
+      EXTERNAL ini_psurf
+      EXTERNAL ini_salt
+      EXTERNAL ini_theta
+      EXTERNAL ini_vel
+      EXTERNAL read_pickup
+C
+C     **** Statements ****
+C
+      if ( (PICKUPSUFF .eq. ' ') .and. ((NITER0 .eq. 0) .and. (BASETIME 
+     +.eq. STARTTIME)) ) then
+
+        call ini_vel(MYTHID)
+        call ini_theta(MYTHID)
+        call ini_salt(MYTHID)
+        call ini_psurf(MYTHID)
+        call ini_pressure(MYTHID)
+        if ( NONHYDROSTATIC ) then
+          call ini_pnh(MYTHID)
+        ENDIF
+      ELSE
+        if ( .not. USEOFFLINE ) then
+          call read_pickup(NITER0,MYTHID)
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_forcing(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_uv_xy_rs
+      EXTERNAL exch_xy_rs
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      EXTERNAL read_fld_xy_rs
+      INTEGER(w2f__i4) t__1391
+      INTEGER(w2f__i4) t__1392
+      INTEGER(w2f__i4) t__1393
+      INTEGER(w2f__i4) t__1394
+      INTEGER(w2f__i4) t__1395
+      INTEGER(w2f__i4) t__1396
+      INTEGER(w2f__i4) t__1397
+      INTEGER(w2f__i4) t__1398
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+      integer oad_ctmp4
+      integer oad_ctmp5
+      integer oad_ctmp6
+      integer oad_ctmp7
+      integer oad_ctmp8
+      integer oad_ctmp9
+      logical oad_ctmp10
+C
+C     **** Statements ****
+C
+      t__1391 = MYBYLO(MYTHID)
+      t__1392 = MYBYHI(MYTHID)
+      DO BJ = t__1391, t__1392, 1
+        t__1393 = MYBXLO(MYTHID)
+        t__1394 = MYBXHI(MYTHID)
+        DO BI = t__1393, t__1394, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              FU(I,J,BI,BJ) = 0.0D00
+              FV(I,J,BI,BJ) = 0.0D00
+              QNET(I,J,BI,BJ) = 0.0D00
+              EMPMR(I,J,BI,BJ) = 0.0D00
+              SALTFLUX(I,J,BI,BJ) = 0.0D00
+              SST(I,J,BI,BJ) = 0.0D00
+              SSS(I,J,BI,BJ) = 0.0D00
+              QSW(I,J,BI,BJ) = 0.0D00
+              PLOAD(I,J,BI,BJ) = 0.0D00
+              SICELOAD(I,J,BI,BJ) = 0.0D00
+              SURFACEFORCINGU(I,J,BI,BJ) = 0.0D00
+              SURFACEFORCINGV(I,J,BI,BJ) = 0.0D00
+              SURFACEFORCINGT(I,J,BI,BJ) = 0.0D00
+              SURFACEFORCINGS(I,J,BI,BJ) = 0.0D00
+              SURFACEFORCINGTICE(I,J,BI,BJ) = 0.0D00
+              TAUX0(I,J,BI,BJ) = 0.0D00
+              TAUX1(I,J,BI,BJ) = 0.0D00
+              TAUY0(I,J,BI,BJ) = 0.0D00
+              TAUY1(I,J,BI,BJ) = 0.0D00
+              QNET0(I,J,BI,BJ) = 0.0D00
+              QNET1(I,J,BI,BJ) = 0.0D00
+              EMPMR0(I,J,BI,BJ) = 0.0D00
+              EMPMR1(I,J,BI,BJ) = 0.0D00
+              SALTFLUX0(I,J,BI,BJ) = 0.0D00
+              SALTFLUX1(I,J,BI,BJ) = 0.0D00
+              SST0(I,J,BI,BJ) = 0.0D00
+              SST1(I,J,BI,BJ) = 0.0D00
+              SSS0(I,J,BI,BJ) = 0.0D00
+              SSS1(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+        END DO
+      END DO
+      t__1395 = MYBYLO(MYTHID)
+      t__1396 = MYBYHI(MYTHID)
+      DO BJ = t__1395, t__1396, 1
+        t__1397 = MYBXLO(MYTHID)
+        t__1398 = MYBXHI(MYTHID)
+        DO BI = t__1397, t__1398, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              if ( DOTHETACLIMRELAX .and. (LATBANDCLIMRELAX .ge. ABS(YC(
+     +I,J,BI,BJ))) ) then
+
+                LAMBDATHETACLIMRELAX(I,J,BI,BJ) = 1D00 / TAUTHETACLIMREL
+     +AX
+
+              ELSE
+                LAMBDATHETACLIMRELAX(I,J,BI,BJ) = 0.0D00
+              ENDIF
+              if ( DOSALTCLIMRELAX .and. (LATBANDCLIMRELAX .ge. ABS(YC(I
+     +,J,BI,BJ))) ) then
+
+                LAMBDASALTCLIMRELAX(I,J,BI,BJ) = 1D00 / TAUSALTCLIMRELAX
+              ELSE
+                LAMBDASALTCLIMRELAX(I,J,BI,BJ) = 0.0D00
+              ENDIF
+            END DO
+          END DO
+        END DO
+      END DO
+      call barrier(MYTHID)
+      if ( ZONALWINDFILE .ne. ' ' ) then
+        oad_ctmp0 = (0)
+        call read_fld_xy_rs(ZONALWINDFILE,' ',FU,oad_ctmp0,MYTHID)
+      ENDIF
+      if ( MERIDWINDFILE .ne. ' ' ) then
+        oad_ctmp1 = (0)
+        call read_fld_xy_rs(MERIDWINDFILE,' ',FV,oad_ctmp1,MYTHID)
+      ENDIF
+      if ( SURFQFILE .ne. ' ' ) then
+        oad_ctmp2 = (0)
+        call read_fld_xy_rs(SURFQFILE,' ',QNET,oad_ctmp2,MYTHID)
+      ELSE
+        if ( SURFQNETFILE .ne. ' ' ) then
+          oad_ctmp3 = (0)
+          call read_fld_xy_rs(SURFQNETFILE,' ',QNET,oad_ctmp3,MYTHID)
+        ENDIF
+      ENDIF
+      if ( EMPMRFILE .ne. ' ' ) then
+        oad_ctmp4 = (0)
+        call read_fld_xy_rs(EMPMRFILE,' ',EMPMR,oad_ctmp4,MYTHID)
+      ENDIF
+      if ( SALTFLUXFILE .ne. ' ' ) then
+        oad_ctmp5 = (0)
+        call read_fld_xy_rs(SALTFLUXFILE,' ',SALTFLUX,oad_ctmp5,MYTHID)
+      ENDIF
+      if ( THETACLIMFILE .ne. ' ' ) then
+        oad_ctmp6 = (0)
+        call read_fld_xy_rs(THETACLIMFILE,' ',SST,oad_ctmp6,MYTHID)
+      ENDIF
+      if ( SALTCLIMFILE .ne. ' ' ) then
+        oad_ctmp7 = (0)
+        call read_fld_xy_rs(SALTCLIMFILE,' ',SSS,oad_ctmp7,MYTHID)
+      ENDIF
+      if ( LAMBDATHETAFILE .ne. ' ' ) then
+        oad_ctmp8 = (0)
+        call read_fld_xy_rs(LAMBDATHETAFILE,' ',LAMBDATHETACLIMRELAX,oad
+     +_ctmp8,MYTHID)
+
+      ENDIF
+      if ( LAMBDASALTFILE .ne. ' ' ) then
+        oad_ctmp9 = (0)
+        call read_fld_xy_rs(LAMBDASALTFILE,' ',LAMBDASALTCLIMRELAX,oad_c
+     +tmp9,MYTHID)
+
+      ENDIF
+      oad_ctmp10 = (.true.)
+      call exch_uv_xy_rs(FU,FV,oad_ctmp10,MYTHID)
+      call exch_xy_rs(QNET,MYTHID)
+      call exch_xy_rs(EMPMR,MYTHID)
+      call exch_xy_rs(SALTFLUX,MYTHID)
+      call exch_xy_rs(SST,MYTHID)
+      call exch_xy_rs(SSS,MYTHID)
+      call exch_xy_rs(LAMBDATHETACLIMRELAX,MYTHID)
+      call exch_xy_rs(LAMBDASALTCLIMRELAX,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_grid(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      EXTERNAL ini_cartesian_grid
+      EXTERNAL ini_curvilinear_grid
+      EXTERNAL ini_cylinder_grid
+      EXTERNAL ini_reference_state
+      EXTERNAL ini_spherical_polar_grid
+      EXTERNAL ini_vertical_grid
+      EXTERNAL load_grid_spacing
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_error
+C
+C     **** Statements ****
+C
+      call load_grid_spacing(MYTHID)
+      call ini_reference_state(MYTHID)
+      call ini_vertical_grid(MYTHID)
+      if ( USINGCARTESIANGRID ) then
+        call ini_cartesian_grid(MYTHID)
+      ELSE
+        if ( USINGSPHERICALPOLARGRID ) then
+          call ini_spherical_polar_grid(MYTHID)
+        ELSE
+          if ( USINGCURVILINEARGRID ) then
+            call ini_curvilinear_grid(MYTHID)
+          ELSE
+            if ( USINGCYLINDRICALGRID ) then
+              call ini_cylinder_grid(MYTHID)
+            ELSE
+              if ( MYTHID .eq. 1 ) then
+                WRITE(MSGBUF, '(2A)') 'S/R INI_GRID: ',
+     >  'No grid coordinate system has been selected'
+                call print_error(MSGBUF,MYTHID)
+                WRITE(*, *) 'ABNORMAL END: S/R INI_GRID'
+              ENDIF
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_hfac(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__1400
+      INTEGER(w2f__i4) t__1401
+      INTEGER(w2f__i4) t__1402
+      INTEGER(w2f__i4) t__1403
+C
+C     **** Statements ****
+C
+      t__1400 = MYBYLO(MYTHID)
+      t__1401 = MYBYHI(MYTHID)
+      DO BJ = t__1400, t__1401, 1
+        t__1402 = MYBXLO(MYTHID)
+        t__1403 = MYBXHI(MYTHID)
+        DO BI = t__1402, t__1403, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                HFACC(I,J,K,BI,BJ) = 0.0D00
+                HFACS(I,J,K,BI,BJ) = 0.0D00
+                HFACW(I,J,K,BI,BJ) = 0.0D00
+                MASKC(I,J,K,BI,BJ) = 0.0D00
+                MASKS(I,J,K,BI,BJ) = 0.0D00
+                MASKW(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_linear_phisurf(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) DPIDP
+      EXTERNAL exch_xy_rl
+      EXTERNAL find_rho_scalar
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) PLOC
+      REAL(w2f__8) RHOLOC
+      EXTERNAL write_fld_xy_rl
+      INTEGER(w2f__i4) t__1410
+      INTEGER(w2f__i4) t__1411
+      INTEGER(w2f__i4) t__1412
+      INTEGER(w2f__i4) t__1413
+      INTEGER(w2f__i4) t__1414
+      INTEGER(w2f__i4) t__1415
+      INTEGER(w2f__i4) t__1416
+      INTEGER(w2f__i4) t__1417
+      INTEGER(w2f__i4) t__1418
+      INTEGER(w2f__i4) t__1419
+      INTEGER(w2f__i4) t__1420
+      INTEGER(w2f__i4) t__1421
+      INTEGER(w2f__i4) t__1422
+      INTEGER(w2f__i4) t__1423
+      INTEGER(w2f__i4) t__1424
+      INTEGER(w2f__i4) t__1425
+      INTEGER(w2f__i4) t__1426
+      INTEGER(w2f__i4) t__1427
+      INTEGER(w2f__i4) t__1428
+      INTEGER(w2f__i4) t__1429
+      INTEGER(w2f__i4) t__1430
+      INTEGER(w2f__i4) t__1431
+      INTEGER(w2f__i4) t__1432
+      INTEGER(w2f__i4) t__1433
+      integer oad_ctmp0
+C
+C     **** Statements ****
+C
+      t__1410 = MYBYLO(MYTHID)
+      t__1411 = MYBYHI(MYTHID)
+      DO BJ = t__1410, t__1411, 1
+        t__1412 = MYBXLO(MYTHID)
+        t__1413 = MYBXHI(MYTHID)
+        DO BI = t__1412, t__1413, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              BO_SURF(I,J,BI,BJ) = 0.0D00
+              RECIP_BO(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( BUOYANCYRELATION .eq. 'OCEANIC' ) then
+        t__1414 = MYBYLO(MYTHID)
+        t__1415 = MYBYHI(MYTHID)
+        DO BJ = t__1414, t__1415, 1
+          t__1416 = MYBXLO(MYTHID)
+          t__1417 = MYBXHI(MYTHID)
+          DO BI = t__1416, t__1417, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                BO_SURF(I,J,BI,BJ) = GBARO
+                RECIP_BO(I,J,BI,BJ) = 1D00 / GBARO
+              END DO
+            END DO
+          END DO
+        END DO
+      ELSE
+        if ( UNIFORMLIN_PHISURF ) then
+          t__1418 = MYBYLO(MYTHID)
+          t__1419 = MYBYHI(MYTHID)
+          DO BJ = t__1418, t__1419, 1
+            t__1420 = MYBXLO(MYTHID)
+            t__1421 = MYBXHI(MYTHID)
+            DO BI = t__1420, t__1421, 1
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  BO_SURF(I,J,BI,BJ) = RECIP_RHOCONST
+                  RECIP_BO(I,J,BI,BJ) = RHOCONST
+                END DO
+              END DO
+            END DO
+          END DO
+        ELSE
+          if ( BUOYANCYRELATION .eq. 'OCEANICP' ) then
+            t__1422 = MYBYLO(MYTHID)
+            t__1423 = MYBYHI(MYTHID)
+            DO BJ = t__1422, t__1423, 1
+              t__1424 = MYBXLO(MYTHID)
+              t__1425 = MYBXHI(MYTHID)
+              DO BI = t__1424, t__1425, 1
+                DO J = -2, 43, 1
+                  DO I = -2, 93, 1
+                    if ( (KSURFC(I,J,BI,BJ) .le. 1) .and. (RO_SURF(I,J,B
+     +I,BJ) .gt. 0.0D00) ) then
+
+                      K = KSURFC(I,J,BI,BJ)
+                      PLOC = RO_SURF(I,J,BI,BJ)
+                      call find_rho_scalar(TREF(K),SREF(K),PLOC,RHOLOC,M
+     +YTHID)
+
+                      RHOLOC = RHOLOC + RHOCONST
+                      if ( RHOLOC .eq. 0.0D00 ) then
+                        BO_SURF(I,J,BI,BJ) = 0.0D00
+                      ELSE
+                        BO_SURF(I,J,BI,BJ) = 1D00 / RHOLOC
+                      ENDIF
+                      RECIP_BO(I,J,BI,BJ) = RHOLOC
+                    ELSE
+                      BO_SURF(I,J,BI,BJ) = 0.0D00
+                      RECIP_BO(I,J,BI,BJ) = 0.0D00
+                    ENDIF
+                  END DO
+                END DO
+              END DO
+            END DO
+          ELSE
+            if ( BUOYANCYRELATION .eq. 'ATMOSPHERIC' ) then
+              t__1426 = MYBYLO(MYTHID)
+              t__1427 = MYBYHI(MYTHID)
+              DO BJ = t__1426, t__1427, 1
+                t__1428 = MYBXLO(MYTHID)
+                t__1429 = MYBXHI(MYTHID)
+                DO BI = t__1428, t__1429, 1
+                  DO J = -2, 43, 1
+                    DO I = -2, 93, 1
+                      if ( (KSURFC(I,J,BI,BJ) .le. 1) .and. (RO_SURF(I,J
+     +,BI,BJ) .gt. 0.0D00) ) then
+
+                        DPIDP = ((RO_SURF(I,J,BI,BJ) / ATM_PO) ** (ATM_K
+     +APPA + (-1.0D00))) * ((ATM_CP * ATM_KAPPA) / ATM_PO)
+
+                        BO_SURF(I,J,BI,BJ) = (TREF(KSURFC(I,J,BI,BJ)) * 
+     +DPIDP)
+
+                        RECIP_BO(I,J,BI,BJ) = 1D00 / (BO_SURF(I,J,BI,BJ)
+     +)
+
+                      ELSE
+                        BO_SURF(I,J,BI,BJ) = 0.0
+                        RECIP_BO(I,J,BI,BJ) = 0.0
+                      ENDIF
+                    END DO
+                  END DO
+                END DO
+              END DO
+            ELSE
+              WRITE(*, *)
+     >  'INI_LINEAR_PHISURF: We should never reach this p' // 'oint!'
+            ENDIF
+          ENDIF
+        ENDIF
+      ENDIF
+      call exch_xy_rl(BO_SURF,MYTHID)
+      call exch_xy_rl(RECIP_BO,MYTHID)
+      if ( ((BUOYANCYRELATION .eq. 'OCEANICP') .or. (BUOYANCYRELATION .e
+     +q. 'ATMOSPHERIC')) .and. (.not. UNIFORMLIN_PHISURF) ) then
+
+        oad_ctmp0 = (0)
+        call write_fld_xy_rl('Bo_surf',' ',BO_SURF,oad_ctmp0,MYTHID)
+      ENDIF
+      t__1430 = MYBYLO(MYTHID)
+      t__1431 = MYBYHI(MYTHID)
+      DO BJ = t__1430, t__1431, 1
+        t__1432 = MYBXLO(MYTHID)
+        t__1433 = MYBXHI(MYTHID)
+        DO BI = t__1432, t__1433, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              PHI0SURF(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( (BUOYANCYRELATION .eq. 'ATMOSPHERIC') .and. (TOPOFILE .ne. ' 
+     +') ) then
+
+        WRITE(*, *) 'CANNOT PRESENTLY USE THIS OPTION WITH ADJOINT'
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_masks_etc(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_uv_xyz_rs
+      EXTERNAL global_sum_r8
+      REAL(w2f__8) HFACCTMP
+      REAL(w2f__8) HFACMNSZ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      EXTERNAL plot_field_xyrs
+      EXTERNAL plot_field_xyzrs
+      REAL(w2f__8) THREADAREA
+      REAL(w2f__8) TILEAREA
+      REAL(w2f__8) TMPFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) t__1440
+      INTEGER(w2f__i4) t__1441
+      INTEGER(w2f__i4) t__1442
+      INTEGER(w2f__i4) t__1443
+      INTEGER(w2f__i4) t__1444
+      INTEGER(w2f__i4) t__1445
+      INTEGER(w2f__i4) t__1446
+      INTEGER(w2f__i4) t__1447
+      INTEGER(w2f__i4) t__1448
+      INTEGER(w2f__i4) t__1449
+      INTEGER(w2f__i4) t__1450
+      INTEGER(w2f__i4) t__1451
+      INTEGER(w2f__i4) t__1452
+      INTEGER(w2f__i4) t__1453
+      INTEGER(w2f__i4) t__1454
+      INTEGER(w2f__i4) t__1455
+      INTEGER(w2f__i4) t__1456
+      INTEGER(w2f__i4) t__1457
+      INTEGER(w2f__i4) t__1458
+      INTEGER(w2f__i4) t__1459
+      INTEGER(w2f__i4) t__1460
+      INTEGER(w2f__i4) t__1461
+      INTEGER(w2f__i4) t__1462
+      INTEGER(w2f__i4) t__1463
+      INTEGER(w2f__i4) t__1464
+      INTEGER(w2f__i4) t__1465
+      INTEGER(w2f__i4) t__1466
+      INTEGER(w2f__i4) t__1467
+      double precision  oad_ctmp0
+      double precision  oad_ctmp1
+      real(w2f__8) oad_ctmp2
+      double precision  oad_ctmp3
+      double precision  oad_ctmp4
+      double precision  oad_ctmp5
+      double precision  oad_ctmp6
+      real(w2f__8) oad_ctmp7
+      double precision  oad_ctmp8
+      double precision  oad_ctmp9
+      integer oad_ctmp10
+      integer oad_ctmp11
+      real(w2f__8) oad_ctmp12
+      real(w2f__8) oad_ctmp13
+      logical oad_ctmp14
+      integer oad_ctmp15
+      integer oad_ctmp16
+      integer oad_ctmp17
+      integer oad_ctmp18
+      integer oad_ctmp19
+      integer oad_ctmp20
+C
+C     **** Statements ****
+C
+      t__1440 = MYBYLO(MYTHID)
+      t__1441 = MYBYHI(MYTHID)
+      DO BJ = t__1440, t__1441, 1
+        t__1442 = MYBXLO(MYTHID)
+        t__1443 = MYBXHI(MYTHID)
+        DO BI = t__1442, t__1443, 1
+          DO K = 1, 1, 1
+            oad_ctmp2 = RECIP_DRF(K) * HFACMINDR
+            call oad_s_MIN_d(oad_ctmp2,1.0D00,oad_ctmp1)
+            call oad_s_MAX_d(HFACMIN,oad_ctmp1,oad_ctmp0)
+            HFACMNSZ = oad_ctmp0
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                HFACCTMP = RECIP_DRF(K) * (RF(K) - R_LOW(I,J,BI,BJ))
+                call oad_s_MAX_d(HFACCTMP,0.0D00,oad_ctmp4)
+                call oad_s_MIN_d(oad_ctmp4,1.0D00,oad_ctmp3)
+                HFACCTMP = oad_ctmp3
+                if ( HFACCTMP .lt. HFACMNSZ ) then
+                  if ( HFACCTMP .lt. (HFACMNSZ * 5.0D-01) ) then
+                    HFACC(I,J,K,BI,BJ) = 0.0
+                  ELSE
+                    HFACC(I,J,K,BI,BJ) = HFACMNSZ
+                  ENDIF
+                ELSE
+                  HFACC(I,J,K,BI,BJ) = HFACCTMP
+                ENDIF
+              END DO
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              R_LOW(I,J,BI,BJ) = RF(1)
+              DO K = 1, 1, (-1)
+                R_LOW(I,J,BI,BJ) = (R_LOW(I,J,BI,BJ) - DRF(K) * HFACC(I,
+     +J,K,BI,BJ))
+
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      t__1444 = MYBYLO(MYTHID)
+      t__1445 = MYBYHI(MYTHID)
+      DO BJ = t__1444, t__1445, 1
+        t__1446 = MYBXLO(MYTHID)
+        t__1447 = MYBXHI(MYTHID)
+        DO BI = t__1446, t__1447, 1
+          DO K = 1, 1, 1
+            oad_ctmp7 = RECIP_DRF(K) * HFACMINDR
+            call oad_s_MIN_d(oad_ctmp7,1.0D00,oad_ctmp6)
+            call oad_s_MAX_d(HFACMIN,oad_ctmp6,oad_ctmp5)
+            HFACMNSZ = oad_ctmp5
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                HFACCTMP = RECIP_DRF(K) * (RF(K) - RO_SURF(I,J,BI,BJ))
+                call oad_s_MAX_d(HFACCTMP,0.0D00,oad_ctmp8)
+                HFACCTMP = HFACC(I,J,K,BI,BJ) - oad_ctmp8
+                call oad_s_MAX_d(HFACCTMP,0.0D00,oad_ctmp9)
+                HFACCTMP = oad_ctmp9
+                if ( HFACCTMP .lt. HFACMNSZ ) then
+                  if ( HFACCTMP .lt. (HFACMNSZ * 5.0D-01) ) then
+                    HFACC(I,J,K,BI,BJ) = 0.0
+                  ELSE
+                    HFACC(I,J,K,BI,BJ) = HFACMNSZ
+                  ENDIF
+                ELSE
+                  HFACC(I,J,K,BI,BJ) = HFACCTMP
+                ENDIF
+              END DO
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              TMPFLD(I,J,BI,BJ) = 0.0
+              KSURFC(I,J,BI,BJ) = 2
+              MASKH(I,J,BI,BJ) = 0.0
+              RO_SURF(I,J,BI,BJ) = R_LOW(I,J,BI,BJ)
+              DO K = 1, 1, (-1)
+                RO_SURF(I,J,BI,BJ) = (RO_SURF(I,J,BI,BJ) + DRF(K) * HFAC
+     +C(I,J,K,BI,BJ))
+
+                if ( HFACC(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  KSURFC(I,J,BI,BJ) = K
+                  MASKH(I,J,BI,BJ) = 1.0
+                  TMPFLD(I,J,BI,BJ) = (TMPFLD(I,J,BI,BJ) + 1.0D00)
+                ENDIF
+              END DO
+              KLOWC(I,J,BI,BJ) = 0
+              DO K = 1, 1, 1
+                if ( HFACC(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  KLOWC(I,J,BI,BJ) = K
+                ENDIF
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      oad_ctmp10 = (1)
+      call plot_field_xyrs(R_LOW,'Model R_low (ini_masks_etc)',oad_ctmp1
+     +0,MYTHID)
+
+      oad_ctmp11 = (1)
+      call plot_field_xyrs(RO_SURF,'Model Ro_surf (ini_masks_etc)',oad_c
+     +tmp11,MYTHID)
+
+      THREADAREA = 0.0D00
+      t__1448 = MYBYLO(MYTHID)
+      t__1449 = MYBYHI(MYTHID)
+      DO BJ = t__1448, t__1449, 1
+        t__1450 = MYBXLO(MYTHID)
+        t__1451 = MYBXHI(MYTHID)
+        DO BI = t__1450, t__1451, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              TMPFLD(I,J,BI,BJ) = (RO_SURF(I,J,BI,BJ) - R_LOW(I,J,BI,BJ)
+     +)
+
+              if ( TMPFLD(I,J,BI,BJ) .le. 0.0D00 ) then
+                RECIP_RCOL(I,J,BI,BJ) = 0.0
+              ELSE
+                RECIP_RCOL(I,J,BI,BJ) = 1D00 / (TMPFLD(I,J,BI,BJ))
+              ENDIF
+            END DO
+          END DO
+          TILEAREA = 0.0D00
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              TILEAREA = TILEAREA + MASKH(I,J,BI,BJ) * RA(I,J,BI,BJ)
+            END DO
+          END DO
+          THREADAREA = THREADAREA + TILEAREA
+        END DO
+      END DO
+      call global_sum_r8(THREADAREA,MYTHID)
+      if ( MYTHID .eq. 1 ) then
+        GLOBALAREA = THREADAREA
+      ENDIF
+      t__1452 = MYBYLO(MYTHID)
+      t__1453 = MYBYHI(MYTHID)
+      DO BJ = t__1452, t__1453, 1
+        t__1454 = MYBXLO(MYTHID)
+        t__1455 = MYBXHI(MYTHID)
+        DO BI = t__1454, t__1455, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              HFACW((-2),J,K,BI,BJ) = 0.0
+              DO I = -1, 93, 1
+                call oad_s_MIN_r(HFACC(I,J,K,BI,BJ),HFACC(I + (-1),J,K,B
+     +I,BJ),oad_ctmp12)
+
+                HFACW(I,J,K,BI,BJ) = oad_ctmp12
+              END DO
+            END DO
+            DO I = -2, 93, 1
+              HFACS(I,(-2),K,BI,BJ) = 0.0
+            END DO
+            DO J = -1, 43, 1
+              DO I = -2, 93, 1
+                call oad_s_MIN_r(HFACC(I,J,K,BI,BJ),HFACC(I,J + (-1),K,B
+     +I,BJ),oad_ctmp13)
+
+                HFACS(I,J,K,BI,BJ) = oad_ctmp13
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      oad_ctmp14 = (.false.)
+      call exch_uv_xyz_rs(HFACW,HFACS,oad_ctmp14,MYTHID)
+      t__1456 = MYBYLO(MYTHID)
+      t__1457 = MYBYHI(MYTHID)
+      DO BJ = t__1456, t__1457, 1
+        t__1458 = MYBXLO(MYTHID)
+        t__1459 = MYBXHI(MYTHID)
+        DO BI = t__1458, t__1459, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                if ( DYG(I,J,BI,BJ) .eq. 0.0D00 ) then
+                  HFACW(I,J,K,BI,BJ) = 0.0
+                ENDIF
+                if ( DXG(I,J,BI,BJ) .eq. 0.0D00 ) then
+                  HFACS(I,J,K,BI,BJ) = 0.0
+                ENDIF
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call barrier(MYTHID)
+      oad_ctmp15 = (1)
+      oad_ctmp16 = (1)
+      call plot_field_xyzrs(HFACC,'hFacC',oad_ctmp15,oad_ctmp16,MYTHID)
+      oad_ctmp17 = (1)
+      oad_ctmp18 = (1)
+      call plot_field_xyzrs(HFACW,'hFacW',oad_ctmp17,oad_ctmp18,MYTHID)
+      oad_ctmp19 = (1)
+      oad_ctmp20 = (1)
+      call plot_field_xyzrs(HFACS,'hFacS',oad_ctmp19,oad_ctmp20,MYTHID)
+      t__1460 = MYBYLO(MYTHID)
+      t__1461 = MYBYHI(MYTHID)
+      DO BJ = t__1460, t__1461, 1
+        t__1462 = MYBXLO(MYTHID)
+        t__1463 = MYBXHI(MYTHID)
+        DO BI = t__1462, t__1463, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                if ( HFACC(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  RECIP_HFACC(I,J,K,BI,BJ) = 1D00 / (HFACC(I,J,K,BI,BJ))
+                  MASKC(I,J,K,BI,BJ) = 1.0
+                ELSE
+                  RECIP_HFACC(I,J,K,BI,BJ) = 0.0
+                  MASKC(I,J,K,BI,BJ) = 0.0
+                ENDIF
+                if ( HFACW(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  RECIP_HFACW(I,J,K,BI,BJ) = 1D00 / (HFACW(I,J,K,BI,BJ))
+                  MASKW(I,J,K,BI,BJ) = 1.0
+                ELSE
+                  RECIP_HFACW(I,J,K,BI,BJ) = 0.0
+                  MASKW(I,J,K,BI,BJ) = 0.0
+                ENDIF
+                if ( HFACS(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  RECIP_HFACS(I,J,K,BI,BJ) = 1D00 / (HFACS(I,J,K,BI,BJ))
+                  MASKS(I,J,K,BI,BJ) = 1.0
+                ELSE
+                  RECIP_HFACS(I,J,K,BI,BJ) = 0.0
+                  MASKS(I,J,K,BI,BJ) = 0.0
+                ENDIF
+              END DO
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              KSURFW(I,J,BI,BJ) = 2
+              KSURFS(I,J,BI,BJ) = 2
+              DO K = 1, 1, (-1)
+                if ( HFACW(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  KSURFW(I,J,BI,BJ) = K
+                ENDIF
+                if ( HFACS(I,J,K,BI,BJ) .ne. 0.0D00 ) then
+                  KSURFS(I,J,BI,BJ) = K
+                ENDIF
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      t__1464 = MYBYLO(MYTHID)
+      t__1465 = MYBYHI(MYTHID)
+      DO BJ = t__1464, t__1465, 1
+        t__1466 = MYBXLO(MYTHID)
+        t__1467 = MYBXHI(MYTHID)
+        DO BI = t__1466, t__1467, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              if ( DXG(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DXG(I,J,BI,BJ) = 1D00 / (DXG(I,J,BI,BJ))
+              ENDIF
+              if ( DYG(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DYG(I,J,BI,BJ) = 1D00 / (DYG(I,J,BI,BJ))
+              ENDIF
+              if ( DXC(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DXC(I,J,BI,BJ) = 1D00 / (DXC(I,J,BI,BJ))
+              ENDIF
+              if ( DYC(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DYC(I,J,BI,BJ) = 1D00 / (DYC(I,J,BI,BJ))
+              ENDIF
+              if ( DXF(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DXF(I,J,BI,BJ) = 1D00 / (DXF(I,J,BI,BJ))
+              ENDIF
+              if ( DYF(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DYF(I,J,BI,BJ) = 1D00 / (DYF(I,J,BI,BJ))
+              ENDIF
+              if ( DXV(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DXV(I,J,BI,BJ) = 1D00 / (DXV(I,J,BI,BJ))
+              ENDIF
+              if ( DYU(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_DYU(I,J,BI,BJ) = 1D00 / (DYU(I,J,BI,BJ))
+              ENDIF
+              if ( RA(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_RA(I,J,BI,BJ) = 1D00 / (RA(I,J,BI,BJ))
+              ENDIF
+              if ( RAS(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_RAS(I,J,BI,BJ) = 1D00 / (RAS(I,J,BI,BJ))
+              ENDIF
+              if ( RAW(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_RAW(I,J,BI,BJ) = 1D00 / (RAW(I,J,BI,BJ))
+              ENDIF
+              if ( RAZ(I,J,BI,BJ) .ne. 0.0D00 ) then
+                RECIP_RAZ(I,J,BI,BJ) = 1D00 / (RAZ(I,J,BI,BJ))
+              ENDIF
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_mixing(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__1468
+      INTEGER(w2f__i4) t__1469
+      INTEGER(w2f__i4) t__1470
+      INTEGER(w2f__i4) t__1471
+C
+C     **** Statements ****
+C
+      t__1468 = MYBYLO(MYTHID)
+      t__1469 = MYBYHI(MYTHID)
+      DO BJ = t__1468, t__1469, 1
+        t__1470 = MYBXLO(MYTHID)
+        t__1471 = MYBXHI(MYTHID)
+        DO BI = t__1470, t__1471, 1
+          DO K = 1, 1, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_p_ground(SELECTMODE, HFLD, PFLD, MYTHID)
+      use w2f__types
+      use size_mod
+      use grid_mod
+      use eeparams_mod
+      use params_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) SELECTMODE
+      REAL(w2f__8) HFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) PFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL analylic_theta
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) DPHVR
+      REAL(w2f__8) DPIHVR(1 : 60)
+      REAL(w2f__8) DZLOC
+      LOGICAL(w2f__i4) FINDPOSURF
+      REAL(w2f__8) HREF(1 : 3)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KLEV
+      INTEGER(w2f__i4) KS
+      CHARACTER(512) MSGBUF
+      INTEGER(w2f__i4) NLEVHVR
+      PARAMETER ( NLEVHVR = 60)
+      REAL(w2f__8) PHILOC
+      REAL(w2f__8) PIHVR(1 : 61)
+      REAL(w2f__8) PILOC
+      REAL(w2f__8) PLEVHVR(1 : 61)
+      REAL(w2f__8) PLOWHVR
+      REAL(w2f__8) PMIDHVR(1 : 60)
+      REAL(w2f__8) PO_SURF
+      EXTERNAL print_error
+      REAL(w2f__8) PSNORM
+      REAL(w2f__8) RATIORM(1 : 1)
+      REAL(w2f__8) RATIORP(1 : 1)
+      REAL(w2f__8) RECIP_KAPPA
+      REAL(w2f__8) RHALF(1 : 3)
+      REAL(w2f__8) RMIDKP1
+      REAL(w2f__8) THETAHVR(1 : 60)
+      REAL(w2f__8) YLATLOC
+      REAL(w2f__8) ZLOC
+      INTEGER(w2f__i4) t__1483
+      INTEGER(w2f__i4) t__1484
+      INTEGER(w2f__i4) t__1485
+      INTEGER(w2f__i4) t__1486
+      INTEGER(w2f__i4) t__1487
+      INTEGER(w2f__i4) t__1488
+      INTEGER(w2f__i4) t__1489
+      INTEGER(w2f__i4) t__1490
+      INTEGER(w2f__i4) t__1491
+      INTEGER(w2f__i4) t__1492
+      INTEGER(w2f__i4) t__1493
+      INTEGER(w2f__i4) t__1494
+      INTEGER(w2f__i4) t__1495
+      integer oad_ctmp0
+C
+C     **** Statements ****
+C
+      if ( (SELECTFINDROSURF .gt. 1) .or. (SELECTFINDROSURF .lt. 0) ) th
+     +en
+
+        WRITE(MSGBUF, '(A,I2,A)') 'INI_P_GROUND: selectFindRoSurf =',
+     >  SELECTFINDROSURF, ' <== bad value !'
+        call print_error(MSGBUF,MYTHID)
+        WRITE(*, *) 'INI_P_GROUND'
+      ENDIF
+      DO K = 1, 1, 1
+        RHALF(K * 2 + (-1)) = RF(K)
+        RHALF(K * 2) = RC(K)
+      END DO
+      RHALF(3) = RF(2)
+      DO K = 1, 3, 1
+        HREF(K) = (PHIREF(K) * RECIP_GRAVITY)
+      END DO
+      if ( (SELECTFINDROSURF .eq. 0) .and. (SELECTMODE .gt. 0) ) then
+        t__1483 = MYBYLO(MYTHID)
+        t__1484 = MYBYHI(MYTHID)
+        DO BJ = t__1483, t__1484, 1
+          t__1485 = MYBXLO(MYTHID)
+          t__1486 = MYBXHI(MYTHID)
+          DO BI = t__1485, t__1486, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                KS = 1
+                DO K = 1, 2, 1
+                  if ( HREF(K) .le. HFLD(I,J,BI,BJ) ) then
+                    KS = K
+                  ENDIF
+                END DO
+                PO_SURF = RHALF(KS) + (((RHALF(KS + 1) - RHALF(KS)) * (H
+     +FLD(I,J,BI,BJ) - HREF(KS))) / (HREF(KS + 1) - HREF(KS)))
+
+                PFLD(I,J,BI,BJ) = PO_SURF
+              END DO
+            END DO
+          END DO
+        END DO
+      ENDIF
+      if ( SELECTFINDROSURF .eq. 1 ) then
+        RECIP_KAPPA = 1D00 / ATM_KAPPA
+        PLOWHVR = 4.00000000000000022204D-01
+        DPHVR = 6.0D+01
+        DPHVR = (1.0D00 - PLOWHVR) / DPHVR
+        PLEVHVR(1) = (RO_SEALEVEL / ATM_PO)
+        PIHVR(1) = (ATM_CP * ((PLEVHVR(1) ** ATM_KAPPA)))
+        DO K = 1, 60, 1
+          PLEVHVR(K + 1) = (PLEVHVR(1) - FLOAT(K) * DPHVR)
+          PIHVR(K + 1) = (ATM_CP * ((PLEVHVR(K + 1) ** ATM_KAPPA)))
+          PMIDHVR(K) = ((PLEVHVR(K) + PLEVHVR(K + 1)) * 5.0D-01)
+          DPIHVR(K) = (PIHVR(K) - PIHVR(K + 1))
+        END DO
+        DO K = 1, 1, 1
+          RATIORM(K) = 1.0D00
+          RATIORP(K) = 1.0D00
+          if ( K .gt. 1 ) then
+            RATIORM(K) = ((DRC(K) * 5.0D-01) / (RF(K) - RC(K)))
+          ENDIF
+          if ( K .lt. 1 ) then
+            RATIORP(K) = ((DRC(K + 1) * 5.0D-01) / (RC(K) - RF(K + 1)))
+          ENDIF
+        END DO
+      ENDIF
+      if ( (SELECTMODE * SELECTFINDROSURF) .gt. 0 ) then
+        t__1487 = MYBYLO(MYTHID)
+        t__1488 = MYBYHI(MYTHID)
+        DO BJ = t__1487, t__1488, 1
+          t__1489 = MYBXLO(MYTHID)
+          t__1490 = MYBXHI(MYTHID)
+          DO BI = t__1489, t__1490, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                if ( HFLD(I,J,BI,BJ) .le. 0.0D00 ) then
+                  PFLD(I,J,BI,BJ) = RO_SEALEVEL
+                ELSE
+                  YLATLOC = YC(I,J,BI,BJ)
+                  oad_ctmp0 = (60)
+                  call analylic_theta(YLATLOC,PMIDHVR,THETAHVR,oad_ctmp0
+     +,MYTHID)
+
+                  ZLOC = 0.0D00
+                  DO K = 1, 60, 1
+                    if ( ZLOC .ge. 0.0D00 ) then
+                      DZLOC = RECIP_GRAVITY * DPIHVR(K) * THETAHVR(K)
+                      if ( HFLD(I,J,BI,BJ) .le. (DZLOC + ZLOC) ) then
+                        PILOC = PIHVR(K) - ((GRAVITY * (HFLD(I,J,BI,BJ) 
+     +- ZLOC)) / THETAHVR(K))
+
+                        PSNORM = (PILOC / ATM_CP) ** RECIP_KAPPA
+                        ZLOC = -1.0D00
+                      ELSE
+                        ZLOC = DZLOC + ZLOC
+                      ENDIF
+                    ENDIF
+                  END DO
+                  if ( ZLOC .ge. 0.0D00 ) then
+                    WRITE(MSGBUF, '(2A)')
+     >  'INI_P_GROUND: FAIL in trying to find Pfld:',
+     >  ' selectMode,i,j,bi,bj=', SELECTMODE, I, J, BI, BJ
+                    call print_error(MSGBUF,MYTHID)
+                    WRITE(MSGBUF, '(A,F7.1,2A,F6.4,A,F8.0)')
+     >  'INI_P_GROUND: Hfld=', HFLD(I, J, BI, BJ), ' exceeds',
+     >  ' Zloc(lowest P=', PLEVHVR(61), ' )=', ZLOC
+                    call print_error(MSGBUF,MYTHID)
+                    WRITE(*, *) 'ABNORMAL END: S/R INI_P_GROUND'
+                  ELSE
+                    PFLD(I,J,BI,BJ) = (PSNORM * ATM_PO)
+                  ENDIF
+                ENDIF
+              END DO
+            END DO
+            if ( (SELECTMODE .eq. 2) .and. (INTEGR_GEOPOT .ne. 1) ) then
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  PO_SURF = PFLD(I,J,BI,BJ)
+                  if ( (RC(1) .gt. PO_SURF) .and. (RC(1) .lt. PO_SURF) )
+     + then
+
+                    FINDPOSURF = .true.
+                    DO K = 1, 1, 1
+                      if ( FINDPOSURF .and. (RC(K) .le. PO_SURF) ) then
+                        PO_SURF = RC(K) + ((PO_SURF - RC(K)) / RATIORM(K
+     +))
+
+                        FINDPOSURF = .false.
+                      ENDIF
+                      RMIDKP1 = RF(K + 1)
+                      if ( K .lt. 1 ) then
+                        RMIDKP1 = (RC(K) + RC(K + 1)) * 5.0D-01
+                      ENDIF
+                      if ( FINDPOSURF .and. (PO_SURF .ge. RMIDKP1) ) the
+     +n
+
+                        PO_SURF = RC(K) + ((PO_SURF - RC(K)) / RATIORP(K
+     +))
+
+                        FINDPOSURF = .false.
+                      ENDIF
+                    END DO
+                    if ( FINDPOSURF ) then
+C                     IF ( findPoSurf )                PRINT *,'S/R INI_P_GROUND: Pb with selectMode=2'
+                      WRITE(*, *)
+     >  'S/R INI_P_GROUND: Pb with selectMode=2'
+                    ENDIF
+                  ENDIF
+                  PFLD(I,J,BI,BJ) = PO_SURF
+                END DO
+              END DO
+            ENDIF
+          END DO
+        END DO
+      ENDIF
+      if ( SELECTMODE .lt. 0 ) then
+        t__1491 = MYBYLO(MYTHID)
+        t__1492 = MYBYHI(MYTHID)
+        DO BJ = t__1491, t__1492, 1
+          t__1493 = MYBXLO(MYTHID)
+          t__1494 = MYBXHI(MYTHID)
+          DO BI = t__1493, t__1494, 1
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                KS = KSURFC(I,J,BI,BJ)
+                if ( KS .le. 1 ) then
+                  if ( RC(KS) .le. PFLD(I,J,BI,BJ) ) then
+                    PHILOC = HREF(KS * 2) + (((HREF(KS * 2 + (-1)) - HRE
+     +F(KS * 2)) * (PFLD(I,J,BI,BJ) - RC(KS))) / (RHALF(KS * 2 + (-1)) -
+     + RHALF(KS * 2)))
+
+                  ELSE
+                    PHILOC = HREF(KS * 2) + (((HREF(KS * 2 + 1) - HREF(K
+     +S * 2)) * (PFLD(I,J,BI,BJ) - RC(KS))) / (RHALF(KS * 2 + 1) - RHALF
+     +(KS * 2)))
+
+                  ENDIF
+                  HFLD(I,J,BI,BJ) = PHILOC
+                ELSE
+                  HFLD(I,J,BI,BJ) = 0.0
+                ENDIF
+              END DO
+            END DO
+            if ( SELECTFINDROSURF .eq. 1 ) then
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  ZLOC = 0.0D00
+                  if ( PFLD(I,J,BI,BJ) .lt. RO_SEALEVEL ) then
+                    PO_SURF = PFLD(I,J,BI,BJ)
+                    if ( (SELECTMODE .eq. (-2)) .and. (INTEGR_GEOPOT .ne
+     +. 1) ) then
+
+                      if ( (RC(1) .gt. PO_SURF) .and. (RC(1) .lt. PO_SUR
+     +F) ) then
+
+                        FINDPOSURF = .true.
+                        DO K = 1, 1, 1
+                          if ( FINDPOSURF .and. (RC(K) .le. PO_SURF) ) t
+     +hen
+
+                            PO_SURF = RC(K) + RATIORM(K) * (PO_SURF - RC
+     +(K))
+
+                            FINDPOSURF = .false.
+                          ENDIF
+                          if ( FINDPOSURF .and. (RF(K + 1) .le. PO_SURF)
+     + ) then
+
+                            PO_SURF = RC(K) + RATIORP(K) * (PO_SURF - RC
+     +(K))
+
+                            FINDPOSURF = .false.
+                          ENDIF
+                        END DO
+                      ENDIF
+                    ENDIF
+                    PSNORM = PO_SURF / ATM_PO
+                    KLEV = INT((PLEVHVR(1) - PSNORM) / DPHVR) + 1
+                    YLATLOC = YC(I,J,BI,BJ)
+                    call analylic_theta(YLATLOC,PMIDHVR,THETAHVR,KLEV,MY
+     +THID)
+
+                    t__1495 = KLEV + (-1)
+                    DO K = 1, t__1495, 1
+                      DZLOC = RECIP_GRAVITY * DPIHVR(K) * THETAHVR(K)
+                      ZLOC = DZLOC + ZLOC
+                    END DO
+                    DZLOC = RECIP_GRAVITY * THETAHVR(KLEV) * (PIHVR(KLEV
+     +) - ATM_CP * ((PSNORM ** ATM_KAPPA)))
+
+                    ZLOC = DZLOC + ZLOC
+                  ENDIF
+                  PHI0SURF(I,J,BI,BJ) = (GRAVITY * (ZLOC - HFLD(I,J,BI,B
+     +J)))
+
+                  HFLD(I,J,BI,BJ) = ZLOC
+                END DO
+              END DO
+            ENDIF
+          END DO
+        END DO
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE analylic_theta(YLAT, PNLEV, THETALEV, KSIZE, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) YLAT
+      INTEGER(w2f__i4) KSIZE
+      INTEGER(w2f__i4) MYTHID
+      REAL(w2f__8) PNLEV(1 : KSIZE)
+      REAL(w2f__8) THETALEV(1 : KSIZE)
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__1496
+      INTEGER(w2f__i8) t__1497
+      REAL(w2f__8) A1TMP
+      REAL(w2f__8) CATMP
+      SAVE CATMP
+      REAL(w2f__8) CBTMP
+      SAVE CBTMP
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) PPH
+      REAL(w2f__8) PPL
+      REAL(w2f__8) PPM
+      REAL(w2f__8) PPN0
+      SAVE PPN0
+      REAL(w2f__8) PPN1
+      SAVE PPN1
+      REAL(w2f__8) PPN2
+      SAVE PPN2
+      REAL(w2f__8) PPN3A
+      SAVE PPN3A
+      REAL(w2f__8) PPN3B
+      SAVE PPN3B
+      REAL(w2f__8) PPN4
+      SAVE PPN4
+      REAL(w2f__8) PPR
+      REAL(w2f__8) TTDC
+      SAVE TTDC
+      REAL(w2f__8) TTP1
+      SAVE TTP1
+      REAL(w2f__8) TTP2
+      SAVE TTP2
+      REAL(w2f__8) TTP2Y
+      REAL(w2f__8) TTP3
+      SAVE TTP3
+      REAL(w2f__8) TTP4
+      SAVE TTP4
+      REAL(w2f__8) TTP4Y
+      REAL(w2f__8) TTP5
+      SAVE TTP5
+      REAL(w2f__8) YATMP
+      REAL(w2f__8) YBTMP
+      REAL(w2f__8) YCTMP
+      REAL(w2f__8) YDTMP
+      REAL(w2f__8) YYA
+      SAVE YYA
+      REAL(w2f__8) YYAD
+      SAVE YYAD
+      REAL(w2f__8) YYB
+      SAVE YYB
+      REAL(w2f__8) YYBD
+      SAVE YYBD
+      REAL(w2f__8) YYC
+      SAVE YYC
+      REAL(w2f__8) YYCD
+      SAVE YYCD
+      INTEGER(w2f__i4) t__1498
+C
+C     **** Initializers ****
+C
+      DATA CATMP / 2.60000000000000008882D00 /
+      DATA CBTMP / 1.5D00 /
+      DATA PPN0 / 1.00000000000000005551D-01 /
+      DATA PPN1 / 1.9000000000000000222D-01 /
+      DATA PPN2 / 2.99999999999999988898D-01 /
+      DATA PPN3A / 9.00000000000000022204D-01 /
+      DATA PPN3B / 6.99999999999999955591D-01 /
+      DATA PPN4 / 9.25000000000000044409D-01 /
+      DATA TTDC / 3.29999999999999982236D00 /
+      DATA TTP1 / 3.5D+02 /
+      DATA TTP2 / 3.42D+02 /
+      DATA TTP3 / 3.07D+02 /
+      DATA TTP4 / 3.01D+02 /
+      DATA TTP5 / 2.57D+02 /
+      DATA YYA / 4.5D+01 /
+      DATA YYAD / 9.00000000000000022204D-01 /
+      DATA YYB / 6.5D+01 /
+      DATA YYBD / 9.00000000000000022204D-01 /
+      DATA YYC / 6.5D+01 /
+      DATA YYCD / 1.0D+01 /
+      integer(w2f__i8) oad_ctmp0
+      double precision  oad_ctmp1
+      double precision  oad_ctmp2
+      real(w2f__8) oad_ctmp3
+      double precision  oad_ctmp4
+      double precision  oad_ctmp5
+      double precision  oad_ctmp6
+      double precision  oad_ctmp7
+      double precision  oad_ctmp8
+      real(w2f__8) oad_ctmp9
+      real(w2f__8) oad_ctmp10
+      real(w2f__8) oad_ctmp11
+      real(w2f__8) oad_ctmp12
+      double precision  oad_ctmp13
+      real(w2f__8) oad_ctmp14
+C
+C     **** Statements ****
+C
+      t__1496 = KSIZE
+      call oad_s_MAX_i(t__1496,0_w2f__i8,oad_ctmp0)
+      t__1497 = oad_ctmp0
+      YATMP = ABS(YLAT) - YYA
+      oad_ctmp3 = YATMP / YYAD
+      call oad_s_MIN_d(oad_ctmp3,0.0D00,oad_ctmp1)
+      call oad_s_MAX_d(YATMP,0.0D00,oad_ctmp2)
+      YATMP = YYA + oad_ctmp1 + oad_ctmp2
+      call oad_s_MAX_d(YATMP,0.0D00,oad_ctmp4)
+      YATMP = COS(oad_ctmp4 * 1.74532925199432954744D-02)
+      YBTMP = ABS(YLAT) - YYB
+      YBTMP = YYB + (YBTMP / YYBD)
+      call oad_s_MIN_d(YBTMP,9.0D+01,oad_ctmp6)
+      call oad_s_MAX_d(oad_ctmp6,0.0D00,oad_ctmp5)
+      YBTMP = COS(oad_ctmp5 * 1.74532925199432954744D-02)
+      YCTMP = ABS(YLAT) - YYC
+      oad_ctmp8 = 1.0D00 - ((YCTMP / YYCD) ** 2)
+      call oad_s_MAX_d(oad_ctmp8,0.0D00,oad_ctmp7)
+      YCTMP = oad_ctmp7
+      YDTMP = PPN3A + YCTMP * (PPN3B - PPN3A)
+      TTP2Y = TTP3 + (YATMP ** CATMP) * (TTP2 - TTP3)
+      TTP4Y = TTP5 + (YBTMP ** CBTMP) * (TTP4 - TTP5)
+      A1TMP = (PPN2 * PPN1 * (TTP1 - TTP2Y)) / (PPN2 - PPN1)
+      t__1498 = KSIZE
+      DO K = 1, t__1498, 1
+        call oad_s_MIN_r(PNLEV(K),PPN1,oad_ctmp9)
+        PPL = oad_ctmp9
+        call oad_s_MAX_r(PNLEV(K),PPN1,oad_ctmp11)
+        call oad_s_MIN_r(PPN2,oad_ctmp11,oad_ctmp10)
+        PPM = oad_ctmp10
+        call oad_s_MAX_r(PNLEV(K),PPN2,oad_ctmp12)
+        PPH = oad_ctmp12
+        PPR = (PPN0 + ABS(PPL - PPN0) - PPN1) / (PPN2 - PPN1)
+        oad_ctmp14 = PNLEV(K) - YDTMP
+        call oad_s_MAX_d(oad_ctmp14,0.0D00,oad_ctmp13)
+        THETALEV(K) = (A1TMP * (1D00 / PPM - 1D00 / PPN1) + (PPL ** (-AT
+     +M_KAPPA)) * ((PPN1 ** ATM_KAPPA) * TTP1 * (1.0D00 - PPR) + (PPN2 *
+     +* ATM_KAPPA) * PPR * TTP2Y) + (((PPH - PPN2) * (TTP4Y - TTP2Y)) / 
+     +(PPN4 - PPN2)) + ((oad_ctmp13 * (TTDC + YCTMP)) / (1.0D00 - YDTMP)
+     +))
+
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_pressure(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use eos_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) K
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_message
+      INTEGER(w2f__i4) t__1504
+      INTEGER(w2f__i4) t__1505
+      INTEGER(w2f__i4) t__1506
+      INTEGER(w2f__i4) t__1507
+C
+C     **** Statements ****
+C
+      IMIN = -2
+      IMAX = 93
+      JMIN = -2
+      JMAX = 43
+      if ( MYTHID .eq. 1 ) then
+        WRITE(MSGBUF, '(a)')
+     >  'Start initial hydrostatic pressure computation'
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+      ENDIF
+      t__1504 = MYBYLO(MYTHID)
+      t__1505 = MYBYHI(MYTHID)
+      DO BJ = t__1504, t__1505, 1
+        t__1506 = MYBXLO(MYTHID)
+        t__1507 = MYBXHI(MYTHID)
+        DO BI = t__1506, t__1507, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                TOTPHIHYD(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( USEDYNP_INEOS_ZC ) then
+      ELSE
+        if ( MYTHID .eq. 1 ) then
+          WRITE(MSGBUF, '(A,A)')
+     >  'Pressure is predetermined for buoyancyRelation ',
+     >  BUOYANCYRELATION(1_w2f__i8 : 11)
+          call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+        ENDIF
+      ENDIF
+      if ( MYTHID .eq. 1 ) then
+        WRITE(MSGBUF, '(A)') ' '
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_pnh(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_psurf(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_xy_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      EXTERNAL read_fld_xy_rl
+      INTEGER(w2f__i4) t__1508
+      INTEGER(w2f__i4) t__1509
+      INTEGER(w2f__i4) t__1510
+      INTEGER(w2f__i4) t__1511
+      integer oad_ctmp0
+C
+C     **** Statements ****
+C
+      t__1508 = MYBYLO(MYTHID)
+      t__1509 = MYBYHI(MYTHID)
+      DO BJ = t__1508, t__1509, 1
+        t__1510 = MYBXLO(MYTHID)
+        t__1511 = MYBXHI(MYTHID)
+        DO BI = t__1510, t__1511, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              ETAN(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( PSURFINITFILE .ne. ' ' ) then
+        call barrier(MYTHID)
+        oad_ctmp0 = (0)
+        call read_fld_xy_rl(PSURFINITFILE,' ',ETAN,oad_ctmp0,MYTHID)
+        call exch_xy_rl(ETAN,MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_r_star(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_salt(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_xyz_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) LOCALWARNINGS
+      CHARACTER(512) MSGBUF
+      EXTERNAL plot_field_xyzrl
+      EXTERNAL print_error
+      EXTERNAL read_fld_xyz_rl
+      INTEGER(w2f__i4) t__1513
+      INTEGER(w2f__i4) t__1514
+      INTEGER(w2f__i4) t__1515
+      INTEGER(w2f__i4) t__1516
+      INTEGER(w2f__i4) t__1517
+      INTEGER(w2f__i4) t__1518
+      INTEGER(w2f__i4) t__1519
+      INTEGER(w2f__i4) t__1520
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+C
+C     **** Statements ****
+C
+      t__1513 = MYBYLO(MYTHID)
+      t__1514 = MYBYHI(MYTHID)
+      DO BJ = t__1513, t__1514, 1
+        t__1515 = MYBXLO(MYTHID)
+        t__1516 = MYBXHI(MYTHID)
+        DO BI = t__1515, t__1516, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                SALT(I,J,K,BI,BJ) = SREF(K)
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call barrier(MYTHID)
+      if ( HYDROGSALTFILE .ne. ' ' ) then
+        oad_ctmp0 = (0)
+        call read_fld_xyz_rl(HYDROGSALTFILE,' ',SALT,oad_ctmp0,MYTHID)
+        call exch_xyz_rl(SALT,MYTHID)
+      ENDIF
+      LOCALWARNINGS = 0
+      t__1517 = MYBYLO(MYTHID)
+      t__1518 = MYBYHI(MYTHID)
+      DO BJ = t__1517, t__1518, 1
+        t__1519 = MYBXLO(MYTHID)
+        t__1520 = MYBXHI(MYTHID)
+        DO BI = t__1519, t__1520, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                if ( MASKC(I,J,K,BI,BJ) .eq. 0.0D00 ) then
+                  SALT(I,J,K,BI,BJ) = 0.0
+                ENDIF
+              END DO
+            END DO
+            if ( SREF(K) .ne. 0.0D00 ) then
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  if ( (SALT(I,J,K,BI,BJ) .eq. 0.0D00) .and. (MASKC(I,J,
+     +K,BI,BJ) .ne. 0.0D00) ) then
+
+                    LOCALWARNINGS = LOCALWARNINGS + 1
+                  ENDIF
+                END DO
+              END DO
+            ENDIF
+          END DO
+        END DO
+      END DO
+      if ( LOCALWARNINGS .ne. 0 ) then
+        WRITE(MSGBUF, '(A,A)')
+     >  'S/R INI_SALT: salt = 0 identically. If this is i' //
+     >  'ntentional',
+     >  'you will need to edit ini_salt.F to avoid this s' //
+     >  'afety check'
+        call print_error(MSGBUF,MYTHID)
+        WRITE(*, *) 'ABNORMAL END: S/R INI_SALT'
+      ENDIF
+      oad_ctmp1 = (1)
+      oad_ctmp2 = (1)
+      call plot_field_xyzrl(SALT,'Initial Salinity',oad_ctmp1,oad_ctmp2,
+     +MYTHID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_spherical_polar_grid(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) DLAT
+      REAL(w2f__8) DLON
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IG
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JG
+      REAL(w2f__8) LAT
+      REAL(w2f__8) XG0
+      REAL(w2f__8) XGLOC(-2 : 94, -2 : 44)
+      REAL(w2f__8) YG0
+      REAL(w2f__8) YGLOC(-2 : 94, -2 : 44)
+      INTEGER(w2f__i4) t__1525
+      INTEGER(w2f__i4) t__1526
+      INTEGER(w2f__i4) t__1527
+      INTEGER(w2f__i4) t__1528
+      INTEGER(w2f__i4) t__1529
+      INTEGER(w2f__i4) t__1530
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+C
+C     **** Statements ****
+C
+      t__1525 = MYBYLO(MYTHID)
+      t__1526 = MYBYHI(MYTHID)
+      DO BJ = t__1525, t__1526, 1
+        t__1527 = MYBXLO(MYTHID)
+        t__1528 = MYBXHI(MYTHID)
+        DO BI = t__1527, t__1528, 1
+          JG = MYYGLOBALLO + BJ * 40 + (-40)
+          IG = MYXGLOBALLO + BI * 90 + (-90)
+          XG0 = THETAMIN
+          t__1529 = IG + (-1)
+          DO I = 1, t__1529, 1
+            XG0 = DELX(I) + XG0
+          END DO
+          DO I = 1, 3, 1
+            XG0 = XG0 - DELX(MOD(IG - I + 269,90) + 1)
+          END DO
+          YG0 = PHIMIN
+          t__1530 = JG + (-1)
+          DO J = 1, t__1530, 1
+            YG0 = DELY(J) + YG0
+          END DO
+          DO J = 1, 3, 1
+            YG0 = YG0 - DELY(MOD(JG - J + 119,40) + 1)
+          END DO
+          DO J = -2, 44, 1
+            XGLOC((-2),J) = XG0
+            DO I = -2, 93, 1
+              XGLOC(I + 1,J) = (DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) *
+     + 90 + 268,90) + 1) + XGLOC(I,J))
+
+            END DO
+          END DO
+          DO I = -2, 94, 1
+            YGLOC(I,(-2)) = YG0
+            DO J = -2, 43, 1
+              YGLOC(I,J + 1) = (DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) *
+     + 40 + 118,40) + 1) + YGLOC(I,J))
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XG(I,J,BI,BJ) = XGLOC(I,J)
+              YG(I,J,BI,BJ) = YGLOC(I,J)
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XC(I,J,BI,BJ) = ((XGLOC(I + 1,J + 1) + XGLOC(I,J + 1) + XG
+     +LOC(I,J) + XGLOC(I + 1,J)) * 2.5D-01)
+
+              YC(I,J,BI,BJ) = ((YGLOC(I + 1,J + 1) + YGLOC(I,J + 1) + YG
+     +LOC(I,J) + YGLOC(I + 1,J)) * 2.5D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LAT = YC(I,J,BI,BJ)
+              DLON = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268,9
+     +0) + 1)
+
+              DLAT = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 40 + 118,4
+     +0) + 1)
+
+              DXF(I,J,BI,BJ) = (DLON * RSPHERE * COS(LAT * 1.74532925199
+     +432954744D-02) * 1.74532925199432954744D-02)
+
+              DYF(I,J,BI,BJ) = (DLAT * RSPHERE * 1.74532925199432954744D
+     +-02)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LAT = (YGLOC(I,J) + YGLOC(I + 1,J)) * 5.0D-01
+              DLON = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268,9
+     +0) + 1)
+
+              DLAT = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 40 + 118,4
+     +0) + 1)
+
+              DXG(I,J,BI,BJ) = (DLON * RSPHERE * COS(LAT * 1.74532925199
+     +432954744D-02) * 1.74532925199432954744D-02)
+
+              if ( DXG(I,J,BI,BJ) .lt. 1.0D00 ) then
+                DXG(I,J,BI,BJ) = 0.0
+              ENDIF
+              DYG(I,J,BI,BJ) = (DLAT * RSPHERE * 1.74532925199432954744D
+     +-02)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              DXC(I,J,BI,BJ) = 0.0
+              DYC(I,J,BI,BJ) = 0.0
+              DXV(I,J,BI,BJ) = 0.0
+              DYU(I,J,BI,BJ) = 0.0
+              RAW(I,J,BI,BJ) = 0.0
+              RAS(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -1, 93, 1
+              DXC(I,J,BI,BJ) = ((DXF(I,J,BI,BJ) + DXF(I + (-1),J,BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -2, 93, 1
+              DYC(I,J,BI,BJ) = ((DYF(I,J,BI,BJ) + DYF(I,J + (-1),BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -1, 43, 1
+            DO I = -1, 93, 1
+              DXV(I,J,BI,BJ) = ((DXG(I,J,BI,BJ) + DXG(I + (-1),J,BI,BJ))
+     + * 5.0D-01)
+
+              DYU(I,J,BI,BJ) = ((DYG(I,J,BI,BJ) + DYG(I,J + (-1),BI,BJ))
+     + * 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LAT = (YGLOC(I,J) + YGLOC(I + 1,J)) * 5.0D-01
+              DLON = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268,9
+     +0) + 1)
+
+              DLAT = DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 40 + 118,4
+     +0) + 1)
+
+              RA(I,J,BI,BJ) = (ABS(SIN((DLAT + LAT) * 1.7453292519943295
+     +4744D-02) - SIN(LAT * 1.74532925199432954744D-02)) * DLON * RSPHER
+     +E * RSPHERE * 1.74532925199432954744D-02)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -1, 93, 1
+              RAW(I,J,BI,BJ) = ((RA(I,J,BI,BJ) + RA(I + (-1),J,BI,BJ)) *
+     + 5.0D-01)
+
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LAT = YC(I,J,BI,BJ)
+              DLON = DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268,9
+     +0) + 1)
+
+              DLAT = (DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 40 + 118,
+     +40) + 1) + DELY(MOD(MYYGLOBALLO + (BJ + (-1)) * 40 + (J + (-1)) + 
+     +118,40) + 1)) * 5.0D-01
+
+              RAS(I,J,BI,BJ) = (ABS(SIN(LAT * 1.74532925199432954744D-02
+     +) - SIN((LAT - DLAT) * 1.74532925199432954744D-02)) * DLON * RSPHE
+     +RE * RSPHERE * 1.74532925199432954744D-02)
+
+              if ( (ABS(LAT) .gt. 9.0D+01) .or. (ABS(LAT - DLAT) .gt. 9.
+     +0D+01) ) then
+
+                RAS(I,J,BI,BJ) = 0.0
+              ENDIF
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LAT = (YGLOC(I,J) + YGLOC(I,J + 1)) * 5.0D-01
+              DLON = (DELX(MOD(I + MYXGLOBALLO + (BI + (-1)) * 90 + 268,
+     +90) + 1) + DELX(MOD(MYXGLOBALLO + (BI + (-1)) * 90 + (I + (-1)) + 
+     +268,90) + 1)) * 5.0D-01
+
+              DLAT = (DELY(MOD(J + MYYGLOBALLO + (BJ + (-1)) * 40 + 118,
+     +40) + 1) + DELY(MOD(MYYGLOBALLO + (BJ + (-1)) * 40 + (J + (-1)) + 
+     +118,40) + 1)) * 5.0D-01
+
+              RAZ(I,J,BI,BJ) = (ABS(SIN(LAT * 1.74532925199432954744D-02
+     +) - SIN((LAT - DLAT) * 1.74532925199432954744D-02)) * DLON * RSPHE
+     +RE * RSPHERE * 1.74532925199432954744D-02)
+
+              if ( (ABS(LAT) .gt. 9.0D+01) .or. (ABS(LAT - DLAT) .gt. 9.
+     +0D+01) ) then
+
+                RAZ(I,J,BI,BJ) = 0.0
+              ENDIF
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LAT = (YGLOC(I,J) + YGLOC(I,J + 1)) * 5.0D-01
+              TANPHIATU(I,J,BI,BJ) = TAN(LAT * 1.74532925199432954744D-0
+     +2)
+
+              LAT = (YGLOC(I,J) + YGLOC(I + 1,J)) * 5.0D-01
+              TANPHIATV(I,J,BI,BJ) = TAN(LAT * 1.74532925199432954744D-0
+     +2)
+
+              ANGLECOSC(I,J,BI,BJ) = 1.0
+              ANGLESINC(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            JG = J + MYYGLOBALLO + BJ * 40 + (-41)
+            call oad_s_MAX_i(JG,1,oad_ctmp1)
+            call oad_s_MIN_i(oad_ctmp1,40,oad_ctmp0)
+            JG = oad_ctmp0
+            if ( COSPOWER .ne. 0.0D00 ) then
+              COSFACU(J,BI,BJ) = (COS(YC(1,J,BI,BJ) * 1.7453292519943295
+     +4744D-02) ** COSPOWER)
+
+              COSFACV(J,BI,BJ) = (COS((YC(1,J,BI,BJ) - DELY(JG) * 5.0D-0
+     +1) * 1.74532925199432954744D-02) ** COSPOWER)
+
+              COSFACU(J,BI,BJ) = ABS(COSFACU(J,BI,BJ))
+              COSFACV(J,BI,BJ) = ABS(COSFACV(J,BI,BJ))
+              SQCOSFACU(J,BI,BJ) = SQRT(COSFACU(J,BI,BJ))
+              SQCOSFACV(J,BI,BJ) = SQRT(COSFACV(J,BI,BJ))
+            ELSE
+              COSFACU(J,BI,BJ) = 1.0
+              COSFACV(J,BI,BJ) = 1.0
+              SQCOSFACU(J,BI,BJ) = 1.0
+              SQCOSFACV(J,BI,BJ) = 1.0
+            ENDIF
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_surf_dr(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_theta(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_xyz_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) LOCALWARNINGS
+      CHARACTER(512) MSGBUF
+      EXTERNAL plot_field_xyzrl
+      EXTERNAL print_error
+      EXTERNAL read_fld_xyz_rl
+      REAL(w2f__8) TFREEZING
+      INTEGER(w2f__i4) t__1532
+      INTEGER(w2f__i4) t__1533
+      INTEGER(w2f__i4) t__1534
+      INTEGER(w2f__i4) t__1535
+      INTEGER(w2f__i4) t__1536
+      INTEGER(w2f__i4) t__1537
+      INTEGER(w2f__i4) t__1538
+      INTEGER(w2f__i4) t__1539
+      INTEGER(w2f__i4) t__1540
+      INTEGER(w2f__i4) t__1541
+      INTEGER(w2f__i4) t__1542
+      INTEGER(w2f__i4) t__1543
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+C
+C     **** Statements ****
+C
+      t__1532 = MYBYLO(MYTHID)
+      t__1533 = MYBYHI(MYTHID)
+      DO BJ = t__1532, t__1533, 1
+        t__1534 = MYBXLO(MYTHID)
+        t__1535 = MYBXHI(MYTHID)
+        DO BI = t__1534, t__1535, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                THETA(I,J,K,BI,BJ) = TREF(K)
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      call barrier(MYTHID)
+      if ( HYDROGTHETAFILE .ne. ' ' ) then
+        oad_ctmp0 = (0)
+        call read_fld_xyz_rl(HYDROGTHETAFILE,' ',THETA,oad_ctmp0,MYTHID)
+        call exch_xyz_rl(THETA,MYTHID)
+      ENDIF
+      LOCALWARNINGS = 0
+      t__1536 = MYBYLO(MYTHID)
+      t__1537 = MYBYHI(MYTHID)
+      DO BJ = t__1536, t__1537, 1
+        t__1538 = MYBXLO(MYTHID)
+        t__1539 = MYBXHI(MYTHID)
+        DO BI = t__1538, t__1539, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                if ( MASKC(I,J,K,BI,BJ) .eq. 0.0D00 ) then
+                  THETA(I,J,K,BI,BJ) = 0.0
+                ENDIF
+              END DO
+            END DO
+            if ( TREF(K) .ne. 0.0D00 ) then
+              DO J = 1, 40, 1
+                DO I = 1, 90, 1
+                  if ( (THETA(I,J,K,BI,BJ) .eq. 0.0D00) .and. (MASKC(I,J
+     +,K,BI,BJ) .ne. 0.0D00) ) then
+
+                    LOCALWARNINGS = LOCALWARNINGS + 1
+                  ENDIF
+                END DO
+              END DO
+            ENDIF
+          END DO
+        END DO
+      END DO
+      if ( LOCALWARNINGS .ne. 0 ) then
+        WRITE(MSGBUF, '(A,A)')
+     >  'S/R INI_THETA: theta = 0 identically. If this is' //
+     >  ' intentional',
+     >  'you will need to edit ini_theta.F to avoid this ' //
+     >  'safety check'
+        call print_error(MSGBUF,MYTHID)
+        WRITE(*, *) 'ABNORMAL END: S/R INI_THETA'
+      ENDIF
+      TFREEZING = -1.89999999999999991118D00
+      if ( ALLOWFREEZING ) then
+        t__1540 = MYBYLO(MYTHID)
+        t__1541 = MYBYHI(MYTHID)
+        DO BJ = t__1540, t__1541, 1
+          t__1542 = MYBXLO(MYTHID)
+          t__1543 = MYBXHI(MYTHID)
+          DO BI = t__1542, t__1543, 1
+            DO K = 1, 1, 1
+              DO J = -2, 43, 1
+                DO I = -2, 93, 1
+                  if ( THETA(I,J,K,BI,BJ) .lt. TFREEZING ) then
+                    THETA(I,J,K,BI,BJ) = TFREEZING
+                  ENDIF
+                END DO
+              END DO
+            END DO
+          END DO
+        END DO
+      ENDIF
+      oad_ctmp1 = (1)
+      oad_ctmp2 = (1)
+      call plot_field_xyzrl(THETA,'Initial Temperature',oad_ctmp1,oad_ct
+     +mp2,MYTHID)
+
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_dynvars(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) t__1544
+      INTEGER(w2f__i4) t__1545
+      INTEGER(w2f__i4) t__1546
+      INTEGER(w2f__i4) t__1547
+C
+C     **** Statements ****
+C
+      t__1544 = MYBYLO(MYTHID)
+      t__1545 = MYBYHI(MYTHID)
+      DO BJ = t__1544, t__1545, 1
+        t__1546 = MYBXLO(MYTHID)
+        t__1547 = MYBXHI(MYTHID)
+        DO BI = t__1546, t__1547, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                UVEL(I,J,K,BI,BJ) = 0.0D00
+                VVEL(I,J,K,BI,BJ) = 0.0D00
+                WVEL(I,J,K,BI,BJ) = 0.0D00
+                THETA(I,J,K,BI,BJ) = 0.0D00
+                SALT(I,J,K,BI,BJ) = 0.0D00
+                GU(I,J,K,BI,BJ) = 0.0D00
+                GV(I,J,K,BI,BJ) = 0.0D00
+                GT(I,J,K,BI,BJ) = 0.0D00
+                GS(I,J,K,BI,BJ) = 0.0D00
+                GUNM1(I,J,K,BI,BJ) = 0.0D00
+                GVNM1(I,J,K,BI,BJ) = 0.0D00
+                GTNM1(I,J,K,BI,BJ) = 0.0D00
+                GSNM1(I,J,K,BI,BJ) = 0.0D00
+                TOTPHIHYD(I,J,K,BI,BJ) = 0.0D00
+                IVDCONVCOUNT(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              ETAN(I,J,BI,BJ) = 0.0D00
+              ETAH(I,J,BI,BJ) = 0.0D00
+              PHIHYDLOW(I,J,BI,BJ) = 0.0D00
+              HMIXLAYER(I,J,BI,BJ) = 0.0D00
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_vel(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL exch_uv_xyz_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      EXTERNAL read_fld_xyz_rl
+      INTEGER(w2f__i4) t__1548
+      INTEGER(w2f__i4) t__1549
+      INTEGER(w2f__i4) t__1550
+      INTEGER(w2f__i4) t__1551
+      INTEGER(w2f__i4) t__1552
+      INTEGER(w2f__i4) t__1553
+      INTEGER(w2f__i4) t__1554
+      INTEGER(w2f__i4) t__1555
+      integer oad_ctmp0
+      integer oad_ctmp1
+      logical oad_ctmp2
+C
+C     **** Statements ****
+C
+      t__1548 = MYBYLO(MYTHID)
+      t__1549 = MYBYHI(MYTHID)
+      DO BJ = t__1548, t__1549, 1
+        t__1550 = MYBXLO(MYTHID)
+        t__1551 = MYBXHI(MYTHID)
+        DO BI = t__1550, t__1551, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                UVEL(I,J,K,BI,BJ) = 0.0D00
+                VVEL(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( (UVELINITFILE .ne. ' ') .or. (VVELINITFILE .ne. ' ') ) then
+        call barrier(MYTHID)
+        if ( UVELINITFILE .ne. ' ' ) then
+          oad_ctmp0 = (0)
+          call read_fld_xyz_rl(UVELINITFILE,' ',UVEL,oad_ctmp0,MYTHID)
+        ENDIF
+        if ( VVELINITFILE .ne. ' ' ) then
+          oad_ctmp1 = (0)
+          call read_fld_xyz_rl(VVELINITFILE,' ',VVEL,oad_ctmp1,MYTHID)
+        ENDIF
+        oad_ctmp2 = (.true.)
+        call exch_uv_xyz_rl(UVEL,VVEL,oad_ctmp2,MYTHID)
+      ENDIF
+      t__1552 = MYBYLO(MYTHID)
+      t__1553 = MYBYHI(MYTHID)
+      DO BJ = t__1552, t__1553, 1
+        t__1554 = MYBXLO(MYTHID)
+        t__1555 = MYBXHI(MYTHID)
+        DO BI = t__1554, t__1555, 1
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                UVEL(I,J,K,BI,BJ) = (UVEL(I,J,K,BI,BJ) * MASKW(I,J,K,BI,
+     +BJ))
+
+                VVEL(I,J,K,BI,BJ) = (VVEL(I,J,K,BI,BJ) * MASKS(I,J,K,BI,
+     +BJ))
+
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE ini_vertical_grid(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      REAL(w2f__8) CHECKRATIO1
+      REAL(w2f__8) CHECKRATIO2
+      INTEGER(w2f__i4) K
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_error
+      EXTERNAL print_message
+      REAL(w2f__8) TMPRATIO
+C
+C     **** Statements ****
+C
+      if ( MYTHID .eq. 1 ) then
+        WRITE(MSGBUF, '(A,2(A,L5))') 'Enter INI_VERTICAL_GRID:',
+     >  ' setInterFDr=', SETINTERFDR, ' ; setCenterDr=', SETCENTERDR
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+        RKSIGN = -1.0D00
+        GRAVITYSIGN = -1.0D00
+        if ( USINGPCOORDS ) then
+          GRAVITYSIGN = 1.0D00
+        ENDIF
+        if ( .not. (SETCENTERDR .or. SETINTERFDR) ) then
+          WRITE(MSGBUF, '(A)')
+     >  'S/R INI_VERTICAL_GRID: neither delR nor delRc ar' //
+     >  'e defined'
+          call print_error(MSGBUF,MYTHID)
+          WRITE(MSGBUF, '(A)')
+     >  'S/R INI_VERTICAL_GRID: Need at least 1 of the 2 ' //
+     >  '(delR,delRc)'
+          call print_error(MSGBUF,MYTHID)
+          WRITE(*, *) 'ABNORMAL END: S/R INI_VERTICAL_GRID'
+        ENDIF
+        if ( SETINTERFDR ) then
+          DO K = 1, 1, 1
+            DRF(K) = DELR(K)
+          END DO
+          DO K = 1, 1, 1
+            if ( DELR(K) .le. 0.0D00 ) then
+              WRITE(MSGBUF, '(A,I4,A,E16.8)')
+     >  'S/R INI_VERTICAL_GRID: delR(k=', K, ' )=', DELR(K)
+              call print_error(MSGBUF,MYTHID)
+              WRITE(MSGBUF, '(A)')
+     >  'S/R INI_VERTICAL_GRID: Vert. grid spacing MUST B' // 'E > 0'
+              call print_error(MSGBUF,MYTHID)
+              WRITE(*, *) 'ABNORMAL END: S/R INI_VERTICAL_GRID'
+            ENDIF
+          END DO
+        ELSE
+          DRF(1) = DELRC(1)
+          DO K = 2, 1, 1
+            DRF(K + (-1)) = (DRF(K + (-1)) + DELRC(K) * 5.0D-01)
+            DRF(K) = (DELRC(K) * 5.0D-01)
+          END DO
+          DRF(1) = (DELRC(2) + DRF(1))
+        ENDIF
+        if ( SETCENTERDR ) then
+          DO K = 1, 1, 1
+            DRC(K) = DELRC(K)
+          END DO
+          DO K = 1, 2, 1
+            if ( DELRC(K) .le. 0.0D00 ) then
+              WRITE(MSGBUF, '(A,I4,A,E16.8)')
+     >  'S/R INI_VERTICAL_GRID: delRc(k=', K, ' )=', DELRC(K)
+              call print_error(MSGBUF,MYTHID)
+              WRITE(MSGBUF, '(A)')
+     >  'S/R INI_VERTICAL_GRID: Vert. grid spacing MUST B' // 'E > 0'
+              call print_error(MSGBUF,MYTHID)
+              WRITE(*, *) 'ABNORMAL END: S/R INI_VERTICAL_GRID'
+            ENDIF
+          END DO
+        ELSE
+          DRC(1) = (DELR(1) * 5.0D-01)
+          DO K = 2, 1, 1
+            DRC(K) = ((DELR(K) + DELR(K + (-1))) * 5.0D-01)
+          END DO
+        ENDIF
+        RF(1) = RO_SEALEVEL
+        DO K = 1, 1, 1
+          RF(K + 1) = (RF(K) + DRF(K) * RKSIGN)
+        END DO
+        RC(1) = (RF(1) + DRC(1) * RKSIGN)
+        DO K = 2, 1, 1
+          RC(K) = (RC(K + (-1)) + DRC(K) * RKSIGN)
+        END DO
+        CHECKRATIO2 = 1.0D+02
+        CHECKRATIO1 = 1D00 / CHECKRATIO2
+        DO K = 1, 1, 1
+          TMPRATIO = 0.0D00
+          if ( (RC(K) - RF(K + 1)) .ne. 0.0D00 ) then
+            TMPRATIO = (RF(K) - RC(K)) / (RC(K) - RF(K + 1))
+          ENDIF
+          if ( (CHECKRATIO1 .gt. TMPRATIO) .or. (CHECKRATIO2 .lt. TMPRAT
+     +IO) ) then
+
+            WRITE(MSGBUF, '(A,I4,A,E16.8)')
+     >  'S/R INI_VERTICAL_GRID: Invalid relative position' //
+     >  ', level k=', K, ' :', TMPRATIO
+            call print_error(MSGBUF,MYTHID)
+            WRITE(MSGBUF, '(A,1PE14.6,A,2E14.6)')
+     >  'S/R INI_VERTICAL_GRID: rC=', RC(K), ' , rF(k,k+1)=', RF(K), RF
+     > (K + 1)
+            call print_error(MSGBUF,MYTHID)
+            WRITE(*, *) 'ABNORMAL END: S/R INI_VERTICAL_GRID'
+          ENDIF
+        END DO
+        DO K = 1, 1, 1
+          RECIP_DRC(K) = 1D00 / (DRC(K))
+          RECIP_DRF(K) = 1D00 / (DRF(K))
+        END DO
+        DO K = 1, 1, 1
+          DEEPFACC(K) = 1.0D00
+          DEEPFAC2C(K) = 1.0D00
+          RECIP_DEEPFACC(K) = 1.0D00
+          RECIP_DEEPFAC2C(K) = 1.0D00
+        END DO
+        DO K = 1, 2, 1
+          DEEPFACF(K) = 1.0D00
+          DEEPFAC2F(K) = 1.0D00
+          RECIP_DEEPFACF(K) = 1.0D00
+          RECIP_DEEPFAC2F(K) = 1.0D00
+        END DO
+        if ( DEEPATMOSPHERE ) then
+          if ( USINGZCOORDS ) then
+            DO K = 1, 1, 1
+              DEEPFACC(K) = (RECIP_RSPHERE * (RC(K) + RSPHERE))
+              DEEPFAC2C(K) = (DEEPFACC(K) * DEEPFACC(K))
+            END DO
+            DO K = 1, 2, 1
+              DEEPFACF(K) = (RECIP_RSPHERE * (RF(K) + RSPHERE))
+              DEEPFAC2F(K) = (DEEPFACF(K) * DEEPFACF(K))
+            END DO
+          ELSE
+            WRITE(*, *)
+     >  'INI_VERTICAL_GRID: setting deepFac is not coded'
+          ENDIF
+          DO K = 1, 1, 1
+            RECIP_DEEPFACC(K) = 1D00 / (DEEPFACC(K))
+            RECIP_DEEPFAC2C(K) = 1D00 / (DEEPFAC2C(K))
+          END DO
+          DO K = 1, 2, 1
+            RECIP_DEEPFACF(K) = 1D00 / (DEEPFACF(K))
+            RECIP_DEEPFAC2F(K) = 1D00 / (DEEPFAC2F(K))
+          END DO
+        ENDIF
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE initialise_varia(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      EXTERNAL bar_check
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL convective_adjustment_ini
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL do_the_model_io
+      EXTERNAL exch_xyz_rl
+      EXTERNAL ini_autodiff
+      EXTERNAL ini_cg2d
+      EXTERNAL ini_cori
+      EXTERNAL ini_depths
+      EXTERNAL ini_dynvars
+      EXTERNAL ini_fields
+      EXTERNAL ini_forcing
+      EXTERNAL ini_hfac
+      EXTERNAL ini_linear_phisurf
+      EXTERNAL ini_masks_etc
+      EXTERNAL ini_mixing
+      EXTERNAL integr_continuity
+      EXTERNAL packages_init_variables
+      EXTERNAL state_summary
+      INTEGER(w2f__i4) t__1557
+      INTEGER(w2f__i4) t__1558
+      INTEGER(w2f__i4) t__1559
+      INTEGER(w2f__i4) t__1560
+      INTEGER(w2f__i4) t__1561
+      INTEGER(w2f__i4) t__1562
+      INTEGER(w2f__i4) t__1563
+      INTEGER(w2f__i4) t__1564
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer oad_ctmp4
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('INITIALISE_VARIA',MYTHID)
+      ENDIF
+      NITER0 = NINT((STARTTIME - BASETIME) / DELTATCLOCK)
+      call ini_hfac(MYTHID)
+      call ini_depths(MYTHID)
+      call ini_masks_etc(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_LINEAR_PHISURF',MYTHID)
+      ENDIF
+      call ini_linear_phisurf(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_CORI',MYTHID)
+      ENDIF
+      call ini_cori(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_CG2D',MYTHID)
+      ENDIF
+      call ini_cg2d(MYTHID)
+      call barrier(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_MIXING',MYTHID)
+      ENDIF
+      call ini_mixing(MYTHID)
+      call barrier(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_DYNVARS',MYTHID)
+      ENDIF
+      call ini_dynvars(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_FIELDS',MYTHID)
+      ENDIF
+      call ini_fields(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INI_FORCING',MYTHID)
+      ENDIF
+      call ini_forcing(MYTHID)
+      call barrier(MYTHID)
+      call ini_autodiff(MYTHID)
+      call barrier(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('PACKAGES_INIT_VARIABLES',MYTHID)
+      ENDIF
+      call packages_init_variables(MYTHID)
+      if ( (BASETIME .eq. STARTTIME) .and. (CADJFREQ .ne. 0.0D00) ) then
+        if ( DEBUGMODE ) then
+          call debug_call('CONVECTIVE_ADJUSTMENT_INI',MYTHID)
+        ENDIF
+        t__1557 = MYBYLO(MYTHID)
+        t__1558 = MYBYHI(MYTHID)
+        DO BJ = t__1557, t__1558, 1
+          t__1559 = MYBXLO(MYTHID)
+          t__1560 = MYBXHI(MYTHID)
+          DO BI = t__1559, t__1560, 1
+            oad_ctmp0 = (BI)
+            oad_ctmp1 = (BJ)
+            call convective_adjustment_ini(oad_ctmp0,oad_ctmp1,STARTTIME
+     +,NITER0,MYTHID)
+
+          END DO
+        END DO
+      ENDIF
+      if ( DEBUGMODE ) then
+        call debug_call('INTEGR_CONTINUITY',MYTHID)
+      ENDIF
+      t__1561 = MYBYLO(MYTHID)
+      t__1562 = MYBYHI(MYTHID)
+      DO BJ = t__1561, t__1562, 1
+        t__1563 = MYBXLO(MYTHID)
+        t__1564 = MYBXHI(MYTHID)
+        DO BI = t__1563, t__1564, 1
+          oad_ctmp2 = (BI)
+          oad_ctmp3 = (BJ)
+          call integr_continuity(oad_ctmp2,oad_ctmp3,UVEL,VVEL,STARTTIME
+     +,NITER0,MYTHID)
+
+        END DO
+      END DO
+      call exch_xyz_rl(WVEL,MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('STATE_SUMMARY',MYTHID)
+      ENDIF
+      call state_summary(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('DO_THE_MODEL_IO',MYTHID)
+      ENDIF
+      call do_the_model_io(STARTTIME,NITER0,MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_leave('INITIALISE_VARIA',MYTHID)
+      ENDIF
+      oad_ctmp4 = (4)
+      call bar_check(oad_ctmp4,MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE integrate_for_w(BI, BJ, K, UFLD, VFLD, WFLD, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) WFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+C
+C     **** Statements ****
+C
+      DO J = 1, 41, 1
+        DO I = 1, 91, 1
+          UTRANS(I,J) = (HFACW(I,J,K,BI,BJ) * DRF(K) * RHOFACC(K) * DEEP
+     +FACC(K) * DYG(I,J,BI,BJ) * UFLD(I,J,K,BI,BJ))
+
+          VTRANS(I,J) = (HFACS(I,J,K,BI,BJ) * DRF(K) * RHOFACC(K) * DEEP
+     +FACC(K) * DXG(I,J,BI,BJ) * VFLD(I,J,K,BI,BJ))
+
+        END DO
+      END DO
+      if ( RIGIDLID ) then
+        if ( K .eq. 1 ) then
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              WFLD(I,J,K,BI,BJ) = 0.0
+            END DO
+          END DO
+        ELSE
+          if ( K .eq. 1 ) then
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                WFLD(I,J,K,BI,BJ) = (-(RECIP_RHOFACF(K) * RECIP_DEEPFAC2
+     +F(K) * MASKC(I,J,K + (-1),BI,BJ) * MASKC(I,J,K,BI,BJ) * RECIP_RA(I
+     +,J,BI,BJ) * (VTRANS(I,J + 1) + UTRANS(I + 1,J) - UTRANS(I,J) - VTR
+     +ANS(I,J))))
+
+              END DO
+            END DO
+          ELSE
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                WFLD(I,J,K,BI,BJ) = (RECIP_RHOFACF(K) * RECIP_DEEPFAC2F(
+     +K) * MASKC(I,J,K + (-1),BI,BJ) * MASKC(I,J,K,BI,BJ) * (RHOFACF(K +
+     + 1) * DEEPFAC2F(K + 1) * WFLD(I,J,K + 1,BI,BJ) - RECIP_RA(I,J,BI,B
+     +J) * (VTRANS(I,J + 1) + UTRANS(I + 1,J) - UTRANS(I,J) - VTRANS(I,J
+     +))))
+
+              END DO
+            END DO
+          ENDIF
+        ENDIF
+      ELSE
+        if ( K .eq. 1 ) then
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              WFLD(I,J,K,BI,BJ) = (-(RECIP_RHOFACF(K) * RECIP_DEEPFAC2F(
+     +K) * MASKC(I,J,K,BI,BJ) * RECIP_RA(I,J,BI,BJ) * (VTRANS(I,J + 1) +
+     + UTRANS(I + 1,J) - UTRANS(I,J) - VTRANS(I,J))))
+
+            END DO
+          END DO
+        ELSE
+          DO J = 1, 40, 1
+            DO I = 1, 90, 1
+              WFLD(I,J,K,BI,BJ) = (RECIP_RHOFACF(K) * RECIP_DEEPFAC2F(K)
+     + * MASKC(I,J,K,BI,BJ) * (RHOFACF(K + 1) * DEEPFAC2F(K + 1) * WFLD(
+     +I,J,K + 1,BI,BJ) - RECIP_RA(I,J,BI,BJ) * (VTRANS(I,J + 1) + UTRANS
+     +(I + 1,J) - UTRANS(I,J) - VTRANS(I,J))))
+
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE integr_continuity(BI, BJ, UFLD, VFLD, MYTIME, MYITER,
+     >  MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use surface_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      REAL(w2f__8) UFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) VFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL integrate_for_w
+      INTEGER(w2f__i4) K
+      integer(w2f__i4) oad_ctmp0
+C
+C     **** Statements ****
+C
+      DO K = 1, 1, (-1)
+        oad_ctmp0 = (K)
+        call integrate_for_w(BI,BJ,oad_ctmp0,UFLD,VFLD,WVEL,MYTHID)
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE load_fields_driver(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      use ffields_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL external_fields_load
+      EXTERNAL timer_start
+      EXTERNAL timer_stop
+C
+C     **** Statements ****
+C
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_enter('LOAD_FIELDS_DRIVER',MYTHID)
+      ENDIF
+      if ( .not. (USEEBM .or. USEEXF) ) then
+        if ( DEBUGLEVEL .ge. 2 ) then
+          call debug_call('EXTERNAL_FIELDS_LOAD',MYTHID)
+        ENDIF
+        call timer_start('EXTERNAL_FLDS_LOAD [LOAD_FLDS_DRIVER]',MYTHID)
+        call external_fields_load(MYTIME,MYITER,MYTHID)
+        call timer_stop('EXTERNAL_FLDS_LOAD [LOAD_FLDS_DRIVER]',MYTHID)
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_leave('LOAD_FIELDS_DRIVER',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE load_grid_spacing(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) ILEN
+      EXTERNAL ilnblnk
+      INTEGER(w2f__i4) ilnblnk
+      INTEGER(w2f__i4) IUNIT
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      EXTERNAL mdsfindunit
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_message
+      INTEGER(w2f__i4) RCLEN1
+      REAL(w2f__4) TMP4DELR(1 : 1)
+      REAL(w2f__4) TMP4DELRC(1 : 2)
+      REAL(w2f__4) TMP4DELX(1 : 90)
+      REAL(w2f__4) TMP4DELY(1 : 40)
+      REAL(w2f__8) TMP8DELR(1 : 1)
+      REAL(w2f__8) TMP8DELRC(1 : 2)
+      REAL(w2f__8) TMP8DELX(1 : 90)
+      REAL(w2f__8) TMP8DELY(1 : 40)
+      CHARACTER(4) t__1584
+      CHARACTER(4) t__1585
+      CHARACTER(4) t__1586
+      CHARACTER(4) t__1587
+      CHARACTER(4) t__1588
+      CHARACTER(4) t__1589
+      CHARACTER(4) t__1590
+      CHARACTER(4) t__1591
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+C
+C     **** Statements ****
+C
+      if ( MYTHID .eq. 1 ) then
+        RCLEN1 = 4
+        if ( READBINARYPREC .eq. 64 ) then
+          RCLEN1 = 8
+        ENDIF
+        if ( DELXFILE .ne. ' ' ) then
+          call mdsfindunit(IUNIT,MYTHID)
+          call oad_s_ilnblnk(DELXFILE,oad_ctmp0)
+          ILEN = oad_ctmp0
+          if ( READBINARYPREC .eq. 32 ) then
+C           OPEN(iUnit, FILE=delXFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*Nx)
+            t__1584 = 'OLD '
+            OPEN(UNIT = IUNIT, RECL = (RCLEN1 * 90), FORM =
+     >  'UNFORMATTED', ACCESS = 'DIRECT', STATUS = t__1584(1_w2f__i8 :
+     >  3), FILE = DELXFILE(1_w2f__i8 : ILEN))
+            READ(IUNIT, REC = 1) TMP4DELX
+C           CLOSE(iUnit)
+            CLOSE(UNIT = IUNIT)
+            DO I = 1, 90, 1
+              DELX(I) = TMP4DELX(I)
+            END DO
+          ELSE
+            if ( READBINARYPREC .eq. 64 ) then
+C             OPEN(iUnit, FILE=delXFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*Nx)
+              t__1585 = 'OLD '
+              OPEN(UNIT = IUNIT, RECL = (RCLEN1 * 90), FORM =
+     >  'UNFORMATTED', ACCESS = 'DIRECT', STATUS = t__1585(1_w2f__i8 :
+     >  3), FILE = DELXFILE(1_w2f__i8 : ILEN))
+              READ(IUNIT, REC = 1) TMP8DELX
+C             CLOSE(iUnit)
+              CLOSE(UNIT = IUNIT)
+              DO I = 1, 90, 1
+                DELX(I) = TMP8DELX(I)
+              END DO
+            ENDIF
+          ENDIF
+          WRITE(MSGBUF, '(3A)') 'S/R LOAD_GRID_SPACING:',
+     >  ' delX loaded from file: ', DELXFILE(1_w2f__i8 : ILEN)
+          call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+        ENDIF
+        if ( DELYFILE .ne. ' ' ) then
+          call mdsfindunit(IUNIT,MYTHID)
+          call oad_s_ilnblnk(DELYFILE,oad_ctmp1)
+          ILEN = oad_ctmp1
+          if ( READBINARYPREC .eq. 32 ) then
+C           OPEN(iUnit, FILE=delYFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*Ny)
+            t__1586 = 'OLD '
+            OPEN(UNIT = IUNIT, RECL = (RCLEN1 * 40), FORM =
+     >  'UNFORMATTED', ACCESS = 'DIRECT', STATUS = t__1586(1_w2f__i8 :
+     >  3), FILE = DELYFILE(1_w2f__i8 : ILEN))
+            READ(IUNIT, REC = 1) TMP4DELY
+C           CLOSE(iUnit)
+            CLOSE(UNIT = IUNIT)
+            DO J = 1, 40, 1
+              DELY(J) = TMP4DELY(J)
+            END DO
+          ELSE
+            if ( READBINARYPREC .eq. 64 ) then
+C             OPEN(iUnit, FILE=delYFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*Ny)
+              t__1587 = 'OLD '
+              OPEN(UNIT = IUNIT, RECL = (RCLEN1 * 40), FORM =
+     >  'UNFORMATTED', ACCESS = 'DIRECT', STATUS = t__1587(1_w2f__i8 :
+     >  3), FILE = DELYFILE(1_w2f__i8 : ILEN))
+              READ(IUNIT, REC = 1) TMP8DELY
+C             CLOSE(iUnit)
+              CLOSE(UNIT = IUNIT)
+              DO J = 1, 40, 1
+                DELY(J) = TMP8DELY(J)
+              END DO
+            ENDIF
+          ENDIF
+          WRITE(MSGBUF, '(3A)') 'S/R LOAD_GRID_SPACING:',
+     >  ' delY loaded from file: ', DELYFILE(1_w2f__i8 : ILEN)
+          call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+        ENDIF
+        if ( DELRFILE .ne. ' ' ) then
+          call mdsfindunit(IUNIT,MYTHID)
+          call oad_s_ilnblnk(DELRFILE,oad_ctmp2)
+          ILEN = oad_ctmp2
+          if ( READBINARYPREC .eq. 32 ) then
+C           OPEN(iUnit, FILE=delRFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*Nr)
+            t__1588 = 'OLD '
+            OPEN(UNIT = IUNIT, RECL = RCLEN1, FORM = 'UNFORMATTED',
+     >  ACCESS = 'DIRECT', STATUS = t__1588(1_w2f__i8 : 3), FILE =
+     >  DELRFILE(1_w2f__i8 : ILEN))
+            READ(IUNIT, REC = 1) TMP4DELR
+C           CLOSE(iUnit)
+            CLOSE(UNIT = IUNIT)
+            DO K = 1, 1, 1
+              DELR(K) = TMP4DELR(K)
+            END DO
+          ELSE
+            if ( READBINARYPREC .eq. 64 ) then
+C             OPEN(iUnit, FILE=delRFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*Nr)
+              t__1589 = 'OLD '
+              OPEN(UNIT = IUNIT, RECL = RCLEN1, FORM = 'UNFORMATTED',
+     >  ACCESS = 'DIRECT', STATUS = t__1589(1_w2f__i8 : 3), FILE =
+     >  DELRFILE(1_w2f__i8 : ILEN))
+              READ(IUNIT, REC = 1) TMP8DELR
+C             CLOSE(iUnit)
+              CLOSE(UNIT = IUNIT)
+              DO K = 1, 1, 1
+                DELR(K) = TMP8DELR(K)
+              END DO
+            ENDIF
+          ENDIF
+          WRITE(MSGBUF, '(3A)') 'S/R LOAD_GRID_SPACING:',
+     >  ' delR loaded from file: ', DELRFILE(1_w2f__i8 : ILEN)
+          call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+        ENDIF
+        if ( DELRCFILE .ne. ' ' ) then
+          call mdsfindunit(IUNIT,MYTHID)
+          call oad_s_ilnblnk(DELRCFILE,oad_ctmp3)
+          ILEN = oad_ctmp3
+          if ( READBINARYPREC .eq. 32 ) then
+C           OPEN(iUnit, FILE=delRcFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*(Nr+1))
+            t__1590 = 'OLD '
+            OPEN(UNIT = IUNIT, RECL = (RCLEN1 * 2), FORM =
+     >  'UNFORMATTED', ACCESS = 'DIRECT', STATUS = t__1590(1_w2f__i8 :
+     >  3), FILE = DELRCFILE(1_w2f__i8 : ILEN))
+            READ(IUNIT, REC = 1) TMP4DELRC
+C           CLOSE(iUnit)
+            CLOSE(UNIT = IUNIT)
+            DO K = 1, 2, 1
+              DELRC(K) = TMP4DELRC(K)
+            END DO
+          ELSE
+            if ( READBINARYPREC .eq. 64 ) then
+C             OPEN(iUnit, FILE=delRcFile(1:iLen), STATUS='OLD',        FORM='UNFORMATTED',ACCESS='DIRECT',RECL=rcLen1*(Nr+1))
+              t__1591 = 'OLD '
+              OPEN(UNIT = IUNIT, RECL = (RCLEN1 * 2), FORM =
+     >  'UNFORMATTED', ACCESS = 'DIRECT', STATUS = t__1591(1_w2f__i8 :
+     >  3), FILE = DELRCFILE(1_w2f__i8 : ILEN))
+              READ(IUNIT, REC = 1) TMP8DELRC
+C             CLOSE(iUnit)
+              CLOSE(UNIT = IUNIT)
+              DO K = 1, 2, 1
+                DELRC(K) = TMP8DELRC(K)
+              END DO
+            ENDIF
+          ENDIF
+          WRITE(MSGBUF, '(3A)') 'S/R LOAD_GRID_SPACING:',
+     >  ' delRc loaded from file: ', DELRCFILE(1_w2f__i8 : ILEN)
+          call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',MYTHID)
+        ENDIF
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE momentum_correction_step(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL calc_grad_phi_surf
+      EXTERNAL correction_step
+      EXTERNAL exch_xyz_rl
+      EXTERNAL exch_xy_rl
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      EXTERNAL integr_continuity
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) PHISURFX(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFY(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) t__1596
+      INTEGER(w2f__i4) t__1597
+      INTEGER(w2f__i4) t__1598
+      INTEGER(w2f__i4) t__1599
+      INTEGER(w2f__i4) t__1600
+      INTEGER(w2f__i4) t__1601
+      INTEGER(w2f__i4) t__1602
+      INTEGER(w2f__i4) t__1603
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+C
+C     **** Statements ****
+C
+      t__1596 = MYBYLO(MYTHID)
+      t__1597 = MYBYHI(MYTHID)
+      DO BJ = t__1596, t__1597, 1
+        t__1598 = MYBXLO(MYTHID)
+        t__1599 = MYBXHI(MYTHID)
+        DO BI = t__1598, t__1599, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              PHISURFX(I,J) = 0.0
+              PHISURFY(I,J) = 0.0
+            END DO
+          END DO
+          IMIN = -1
+          IMAX = 93
+          JMIN = -1
+          JMAX = 43
+          oad_ctmp0 = (BI)
+          oad_ctmp1 = (BJ)
+          call calc_grad_phi_surf(oad_ctmp0,oad_ctmp1,IMIN,IMAX,JMIN,JMA
+     +X,ETAN,PHISURFX,PHISURFY,MYTHID)
+
+          DO K = 1, 1, 1
+            if ( MOMSTEPPING ) then
+              oad_ctmp2 = (BI)
+              oad_ctmp3 = (BJ)
+              oad_ctmp4 = (K)
+              call correction_step(oad_ctmp2,oad_ctmp3,IMIN,IMAX,JMIN,JM
+     +AX,oad_ctmp4,PHISURFX,PHISURFY,MYTIME,MYTHID)
+
+            ENDIF
+          END DO
+        END DO
+      END DO
+      t__1600 = MYBYLO(MYTHID)
+      t__1601 = MYBYHI(MYTHID)
+      DO BJ = t__1600, t__1601, 1
+        t__1602 = MYBXLO(MYTHID)
+        t__1603 = MYBXHI(MYTHID)
+        DO BI = t__1602, t__1603, 1
+          ACT1 = BI - MYBXLO(MYTHID)
+          MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+          ACT2 = BJ - MYBYLO(MYTHID)
+          MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+          ACT3 = MYTHID + (-1)
+          MAX3 = NTX * NTY
+          ACT4 = IKEY_DYNAMICS + (-1)
+          IDYNKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX
+     +2 * ACT4 * MAX1 + 1
+
+          oad_ctmp5 = (BI)
+          oad_ctmp6 = (BJ)
+          call integr_continuity(oad_ctmp5,oad_ctmp6,UVEL,VVEL,MYTIME,MY
+     +ITER,MYTHID)
+
+        END DO
+      END DO
+      if ( EXACTCONSERV .and. (IMPLICDIV2DFLOW .ne. 0.0D00) ) then
+        call exch_xy_rl(ETAN,MYTHID)
+      ENDIF
+      if ( IMPLICITINTGRAVWAVE ) then
+        call exch_xyz_rl(WVEL,MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE packages_init_variables(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      EXTERNAL cost_init_varia
+      EXTERNAL ctrl_init_variables
+      EXTERNAL ctrl_map_ini
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL gad_init_varia
+C
+C     **** Statements ****
+C
+      if ( DEBUGMODE ) then
+        call debug_enter('PACKAGES_INIT_VARIABLES',MYTHID)
+      ENDIF
+      if ( DEBUGMODE ) then
+        call debug_call('GAD_INIT_VARIA',MYTHID)
+      ENDIF
+      if ( USEGAD ) then
+        call gad_init_varia(MYTHID)
+      ENDIF
+      call ctrl_init_variables(MYTHID)
+      call ctrl_map_ini(MYTHID)
+      call barrier(MYTHID)
+      call cost_init_varia(MYTHID)
+      call barrier(MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_leave('PACKAGES_INIT_VARIABLES',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE pressure_for_eos(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  LOCPRES, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) LOCPRES(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+C
+C     **** Statements ****
+C
+      if ( USINGZCOORDS ) then
+        if ( USEDYNP_INEOS_ZC ) then
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LOCPRES(I,J) = (MASKC(I,J,K,BI,BJ) * RHOCONST * (TOTPHIHYD
+     +(I,J,K,BI,BJ) - RC(K) * GRAVITY))
+
+            END DO
+          END DO
+        ELSE
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LOCPRES(I,J) = (-(MASKC(I,J,K,BI,BJ) * GRAVITY * RC(K) * R
+     +HOCONST))
+
+            END DO
+          END DO
+        ENDIF
+      ELSE
+        if ( USINGPCOORDS ) then
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              LOCPRES(I,J) = (RC(K) * MASKC(I,J,K,BI,BJ))
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE read_pickup(MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      EXTERNAL exch_3d_rl
+      EXTERNAL exch_uv_3d_rl
+      EXTERNAL exch_xy_rl
+      CHARACTER(512) FN
+      INTEGER(w2f__i4) FP
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) NJ
+      EXTERNAL read_rec_3d_rl
+      CHARACTER(10) SUFF
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+      integer oad_ctmp4
+      integer oad_ctmp5
+      integer oad_ctmp6
+      integer oad_ctmp7
+      integer oad_ctmp8
+      integer oad_ctmp9
+      integer oad_ctmp10
+      integer oad_ctmp11
+      integer oad_ctmp12
+      integer oad_ctmp13
+      integer oad_ctmp14
+      integer oad_ctmp15
+      integer oad_ctmp16
+      integer oad_ctmp17
+      integer oad_ctmp18
+      integer oad_ctmp19
+      integer oad_ctmp20
+      integer oad_ctmp21
+      integer oad_ctmp22
+      integer oad_ctmp23
+      integer oad_ctmp24
+      integer oad_ctmp25
+      integer oad_ctmp26
+      integer oad_ctmp27
+      integer oad_ctmp28
+      integer oad_ctmp29
+      integer oad_ctmp30
+      integer oad_ctmp31
+      integer oad_ctmp32
+      integer oad_ctmp33
+      integer oad_ctmp34
+      integer oad_ctmp35
+      integer oad_ctmp36
+      integer oad_ctmp37
+      integer oad_ctmp38
+      integer oad_ctmp39
+      integer oad_ctmp40
+      integer oad_ctmp41
+      integer oad_ctmp42
+      integer(w2f__i4) oad_ctmp43
+      integer oad_ctmp44
+      integer oad_ctmp45
+      logical oad_ctmp46
+      integer oad_ctmp47
+      integer oad_ctmp48
+      integer oad_ctmp49
+      logical oad_ctmp50
+      integer oad_ctmp51
+      integer oad_ctmp52
+      integer oad_ctmp53
+      integer oad_ctmp54
+C
+C     **** Statements ****
+C
+      DO I = 1, 512, 1
+        FN(I : (I - 1_w2f__i8) + 1) = ' '
+      END DO
+      if ( PICKUPSUFF .eq. ' ' ) then
+        WRITE(SUFF, '(I10.10)') MYITER
+      ELSE
+        WRITE(SUFF, '(A10)') PICKUPSUFF
+      ENDIF
+      WRITE(FN, '(A,A10)') 'pickup.', SUFF
+      call barrier(MYTHID)
+      if ( PICKUP_READ_MDSIO ) then
+        FP = 64
+        if ( USEPICKUPBEFOREC54 ) then
+          oad_ctmp0 = (1)
+          oad_ctmp1 = (1)
+          call read_rec_3d_rl(FN,FP,oad_ctmp0,UVEL,oad_ctmp1,MYITER,MYTH
+     +ID)
+
+          oad_ctmp2 = (1)
+          oad_ctmp3 = (2)
+          call read_rec_3d_rl(FN,FP,oad_ctmp2,GU,oad_ctmp3,MYITER,MYTHID
+     +)
+
+          oad_ctmp4 = (1)
+          oad_ctmp5 = (3)
+          call read_rec_3d_rl(FN,FP,oad_ctmp4,GUNM1,oad_ctmp5,MYITER,MYT
+     +HID)
+
+          oad_ctmp6 = (1)
+          oad_ctmp7 = (4)
+          call read_rec_3d_rl(FN,FP,oad_ctmp6,VVEL,oad_ctmp7,MYITER,MYTH
+     +ID)
+
+          oad_ctmp8 = (1)
+          oad_ctmp9 = (5)
+          call read_rec_3d_rl(FN,FP,oad_ctmp8,GV,oad_ctmp9,MYITER,MYTHID
+     +)
+
+          oad_ctmp10 = (1)
+          oad_ctmp11 = (6)
+          call read_rec_3d_rl(FN,FP,oad_ctmp10,GVNM1,oad_ctmp11,MYITER,M
+     +YTHID)
+
+          oad_ctmp12 = (1)
+          oad_ctmp13 = (7)
+          call read_rec_3d_rl(FN,FP,oad_ctmp12,THETA,oad_ctmp13,MYITER,M
+     +YTHID)
+
+          oad_ctmp14 = (1)
+          oad_ctmp15 = (8)
+          call read_rec_3d_rl(FN,FP,oad_ctmp14,GT,oad_ctmp15,MYITER,MYTH
+     +ID)
+
+          oad_ctmp16 = (1)
+          oad_ctmp17 = (9)
+          call read_rec_3d_rl(FN,FP,oad_ctmp16,GTNM1,oad_ctmp17,MYITER,M
+     +YTHID)
+
+          oad_ctmp18 = (1)
+          oad_ctmp19 = (10)
+          call read_rec_3d_rl(FN,FP,oad_ctmp18,SALT,oad_ctmp19,MYITER,MY
+     +THID)
+
+          oad_ctmp20 = (1)
+          oad_ctmp21 = (11)
+          call read_rec_3d_rl(FN,FP,oad_ctmp20,GS,oad_ctmp21,MYITER,MYTH
+     +ID)
+
+          oad_ctmp22 = (1)
+          oad_ctmp23 = (12)
+          call read_rec_3d_rl(FN,FP,oad_ctmp22,GSNM1,oad_ctmp23,MYITER,M
+     +YTHID)
+
+          oad_ctmp24 = (1)
+          oad_ctmp25 = (13)
+          call read_rec_3d_rl(FN,FP,oad_ctmp24,ETAN,oad_ctmp25,MYITER,MY
+     +THID)
+
+        ELSE
+          oad_ctmp26 = (1)
+          oad_ctmp27 = (1)
+          call read_rec_3d_rl(FN,FP,oad_ctmp26,UVEL,oad_ctmp27,MYITER,MY
+     +THID)
+
+          oad_ctmp28 = (1)
+          oad_ctmp29 = (2)
+          call read_rec_3d_rl(FN,FP,oad_ctmp28,GUNM1,oad_ctmp29,MYITER,M
+     +YTHID)
+
+          oad_ctmp30 = (1)
+          oad_ctmp31 = (3)
+          call read_rec_3d_rl(FN,FP,oad_ctmp30,VVEL,oad_ctmp31,MYITER,MY
+     +THID)
+
+          oad_ctmp32 = (1)
+          oad_ctmp33 = (4)
+          call read_rec_3d_rl(FN,FP,oad_ctmp32,GVNM1,oad_ctmp33,MYITER,M
+     +YTHID)
+
+          oad_ctmp34 = (1)
+          oad_ctmp35 = (5)
+          call read_rec_3d_rl(FN,FP,oad_ctmp34,THETA,oad_ctmp35,MYITER,M
+     +YTHID)
+
+          oad_ctmp36 = (1)
+          oad_ctmp37 = (6)
+          call read_rec_3d_rl(FN,FP,oad_ctmp36,GTNM1,oad_ctmp37,MYITER,M
+     +YTHID)
+
+          oad_ctmp38 = (1)
+          oad_ctmp39 = (7)
+          call read_rec_3d_rl(FN,FP,oad_ctmp38,SALT,oad_ctmp39,MYITER,MY
+     +THID)
+
+          oad_ctmp40 = (1)
+          oad_ctmp41 = (8)
+          call read_rec_3d_rl(FN,FP,oad_ctmp40,GSNM1,oad_ctmp41,MYITER,M
+     +YTHID)
+
+          NJ = 8
+          oad_ctmp42 = (1)
+          oad_ctmp43 = (NJ + 1)
+          call read_rec_3d_rl(FN,FP,oad_ctmp42,ETAN,oad_ctmp43,MYITER,MY
+     +THID)
+
+        ENDIF
+        if ( USEDYNP_INEOS_ZC ) then
+          WRITE(FN, '(A,A10)') 'pickup_ph.', SUFF
+          oad_ctmp44 = (1)
+          oad_ctmp45 = (1)
+          call read_rec_3d_rl(FN,FP,oad_ctmp44,TOTPHIHYD,oad_ctmp45,MYIT
+     +ER,MYTHID)
+
+        ENDIF
+      ENDIF
+      call barrier(MYTHID)
+      oad_ctmp46 = (.true.)
+      oad_ctmp47 = (1)
+      call exch_uv_3d_rl(UVEL,VVEL,oad_ctmp46,oad_ctmp47,MYTHID)
+      oad_ctmp48 = (1)
+      call exch_3d_rl(THETA,oad_ctmp48,MYTHID)
+      oad_ctmp49 = (1)
+      call exch_3d_rl(SALT,oad_ctmp49,MYTHID)
+      oad_ctmp50 = (.true.)
+      oad_ctmp51 = (1)
+      call exch_uv_3d_rl(GUNM1,GVNM1,oad_ctmp50,oad_ctmp51,MYTHID)
+      oad_ctmp52 = (1)
+      call exch_3d_rl(GTNM1,oad_ctmp52,MYTHID)
+      oad_ctmp53 = (1)
+      call exch_3d_rl(GSNM1,oad_ctmp53,MYTHID)
+      call exch_xy_rl(ETAN,MYTHID)
+      call exch_xy_rl(ETAH,MYTHID)
+      if ( USEDYNP_INEOS_ZC ) then
+        oad_ctmp54 = (1)
+        call exch_3d_rl(TOTPHIHYD,oad_ctmp54,MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE solve_for_pressure(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use ffields_mod
+      use dynvars_mod
+      use solve_for_pressure_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL calc_div_ghat
+      EXTERNAL cg2d
+      EXTERNAL debug_stats_rl
+      EXTERNAL different_multiple
+      LOGICAL(w2f__i4) different_multiple
+      EXTERNAL exch_xy_rl
+      REAL(w2f__8) FIRSTRESIDUAL
+      EXTERNAL global_sum_r8
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) KS
+      REAL(w2f__8) LASTRESIDUAL
+      CHARACTER(512) MSGBUF
+      INTEGER(w2f__i4) NUMITERS
+      EXTERNAL print_message
+      LOGICAL(w2f__i4) PUTPMEINXVECTOR
+      REAL(w2f__8) SUMEMP
+      REAL(w2f__8) TILEEMP
+      REAL(w2f__8) TMPFAC
+      REAL(w2f__8) UF(-2 : 93, -2 : 43)
+      REAL(w2f__8) VF(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) t__1614
+      INTEGER(w2f__i4) t__1615
+      INTEGER(w2f__i4) t__1616
+      INTEGER(w2f__i4) t__1617
+      INTEGER(w2f__i4) t__1618
+      INTEGER(w2f__i4) t__1619
+      INTEGER(w2f__i4) t__1620
+      INTEGER(w2f__i4) t__1621
+      INTEGER(w2f__i4) t__1622
+      INTEGER(w2f__i4) t__1623
+      INTEGER(w2f__i4) t__1624
+      INTEGER(w2f__i4) t__1625
+      INTEGER(w2f__i4) t__1626
+      INTEGER(w2f__i4) t__1627
+      INTEGER(w2f__i4) t__1628
+      INTEGER(w2f__i4) t__1629
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+      integer oad_ctmp4
+      integer oad_ctmp5
+      integer(w2f__i4) oad_ctmp6
+      integer oad_ctmp7
+      integer oad_ctmp8
+      logical(w2f__i4) oad_ctmp9
+      integer oad_ctmp10
+      integer oad_ctmp11
+      integer oad_ctmp12
+C
+C     **** Statements ****
+C
+      PUTPMEINXVECTOR = .false.
+      SUMEMP = 0.0D00
+      t__1614 = MYBYLO(MYTHID)
+      t__1615 = MYBYHI(MYTHID)
+      DO BJ = t__1614, t__1615, 1
+        t__1616 = MYBXLO(MYTHID)
+        t__1617 = MYBXHI(MYTHID)
+        DO BI = t__1616, t__1617, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              CG2D_X(I,J,BI,BJ) = (ETAN(I,J,BI,BJ) * BO_SURF(I,J,BI,BJ))
+              CG2D_B(I,J,BI,BJ) = 0.0
+            END DO
+          END DO
+          if ( USEREALFRESHWATERFLUX ) then
+            TMPFAC = CONVERTEMP2RUNIT * FREESURFFAC
+            if ( EXACTCONSERV ) then
+              TMPFAC = IMPLICDIV2DFLOW * CONVERTEMP2RUNIT * FREESURFFAC
+            ENDIF
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                CG2D_B(I,J,BI,BJ) = ((EMPMR(I,J,BI,BJ) * RA(I,J,BI,BJ) *
+     + TMPFAC) / DELTATMOM)
+
+              END DO
+            END DO
+          ENDIF
+          if ( PUTPMEINXVECTOR ) then
+            TILEEMP = 0.0D00
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                TILEEMP = TILEEMP + MASKH(I,J,BI,BJ) * EMPMR(I,J,BI,BJ) 
+     +* RA(I,J,BI,BJ)
+
+              END DO
+            END DO
+            SUMEMP = SUMEMP + TILEEMP
+          ENDIF
+        END DO
+      END DO
+      if ( PUTPMEINXVECTOR ) then
+        call global_sum_r8(SUMEMP,MYTHID)
+      ENDIF
+      t__1618 = MYBYLO(MYTHID)
+      t__1619 = MYBYHI(MYTHID)
+      DO BJ = t__1618, t__1619, 1
+        t__1620 = MYBXLO(MYTHID)
+        t__1621 = MYBXHI(MYTHID)
+        DO BI = t__1620, t__1621, 1
+          if ( PUTPMEINXVECTOR ) then
+            TMPFAC = 0.0D00
+            if ( GLOBALAREA .gt. 0.0D00 ) then
+              TMPFAC = (SUMEMP * CONVERTEMP2RUNIT * DELTATFREESURF * FRE
+     +ESURFFAC) / GLOBALAREA
+
+            ENDIF
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                CG2D_X(I,J,BI,BJ) = (CG2D_X(I,J,BI,BJ) - BO_SURF(I,J,BI,
+     +BJ) * TMPFAC)
+
+              END DO
+            END DO
+          ENDIF
+          DO K = 1, 1, (-1)
+            DO J = 1, 41, 1
+              DO I = 1, 91, 1
+                UF(I,J) = (RHOFACC(K) * HFACW(I,J,K,BI,BJ) * DRF(K) * DE
+     +EPFACC(K) * DYG(I,J,BI,BJ))
+
+                VF(I,J) = (RHOFACC(K) * HFACS(I,J,K,BI,BJ) * DRF(K) * DE
+     +EPFACC(K) * DXG(I,J,BI,BJ))
+
+              END DO
+            END DO
+            oad_ctmp0 = (BI)
+            oad_ctmp1 = (BJ)
+            oad_ctmp2 = (1)
+            oad_ctmp3 = (90)
+            oad_ctmp4 = (1)
+            oad_ctmp5 = (40)
+            oad_ctmp6 = (K)
+            call calc_div_ghat(oad_ctmp0,oad_ctmp1,oad_ctmp2,oad_ctmp3,o
+     +ad_ctmp4,oad_ctmp5,oad_ctmp6,UF,VF,CG2D_B,MYTHID)
+
+          END DO
+        END DO
+      END DO
+      t__1622 = MYBYLO(MYTHID)
+      t__1623 = MYBYHI(MYTHID)
+      DO BJ = t__1622, t__1623, 1
+        t__1624 = MYBXLO(MYTHID)
+        t__1625 = MYBXHI(MYTHID)
+        DO BI = t__1624, t__1625, 1
+          if ( EXACTCONSERV ) then
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                KS = KSURFC(I,J,BI,BJ)
+                CG2D_B(I,J,BI,BJ) = (CG2D_B(I,J,BI,BJ) - ETAH(I,J,BI,BJ)
+     + * (((DEEPFAC2F(KS) * RA(I,J,BI,BJ) * FREESURFFAC) / DELTATMOM) / 
+     +DELTATFREESURF))
+
+              END DO
+            END DO
+          ELSE
+            DO J = 1, 40, 1
+              DO I = 1, 90, 1
+                KS = KSURFC(I,J,BI,BJ)
+                CG2D_B(I,J,BI,BJ) = (CG2D_B(I,J,BI,BJ) - ETAN(I,J,BI,BJ)
+     + * (((DEEPFAC2F(KS) * RA(I,J,BI,BJ) * FREESURFFAC) / DELTATMOM) / 
+     +DELTATFREESURF))
+
+              END DO
+            END DO
+          ENDIF
+        END DO
+      END DO
+      if ( DEBUGLEVEL .ge. 2 ) then
+        oad_ctmp7 = (1)
+        call debug_stats_rl(oad_ctmp7,CG2D_B,'cg2d_b (SOLVE_FOR_PRESSURE
+     +)',MYTHID)
+
+      ENDIF
+      FIRSTRESIDUAL = 0.0D00
+      LASTRESIDUAL = 0.0D00
+      NUMITERS = CG2DMAXITERS
+      call cg2d(CG2D_B,CG2D_X,FIRSTRESIDUAL,LASTRESIDUAL,NUMITERS,MYTHID
+     +)
+
+      call exch_xy_rl(CG2D_X,MYTHID)
+      if ( DEBUGLEVEL .ge. 2 ) then
+        oad_ctmp8 = (1)
+        call debug_stats_rl(oad_ctmp8,CG2D_X,'cg2d_x (SOLVE_FOR_PRESSURE
+     +)',MYTHID)
+
+      ENDIF
+      call oad_s_different_multiple(MONITORFREQ,MYTIME,DELTATCLOCK,oad_c
+     +tmp9)
+
+      if ( oad_ctmp9 ) then
+        if ( DEBUGLEVEL .ge. 1 ) then
+          if ( MYTHID .eq. 1 ) then
+            WRITE(MSGBUF, '(A34,1PE24.14)') 'cg2d_init_res =',
+     >  FIRSTRESIDUAL
+            oad_ctmp10 = (1)
+            call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp10
+     +)
+
+            WRITE(MSGBUF, '(A34,I6)') 'cg2d_iters =', NUMITERS
+            oad_ctmp11 = (1)
+            call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp11
+     +)
+
+            WRITE(MSGBUF, '(A34,1PE24.14)') 'cg2d_res =', LASTRESIDUAL
+            oad_ctmp12 = (1)
+            call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp12
+     +)
+
+          ENDIF
+        ENDIF
+      ENDIF
+      t__1626 = MYBYLO(MYTHID)
+      t__1627 = MYBYHI(MYTHID)
+      DO BJ = t__1626, t__1627, 1
+        t__1628 = MYBXLO(MYTHID)
+        t__1629 = MYBXHI(MYTHID)
+        DO BI = t__1628, t__1629, 1
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              ETAN(I,J,BI,BJ) = (CG2D_X(I,J,BI,BJ) * RECIP_BO(I,J,BI,BJ)
+     +)
+
+            END DO
+          END DO
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE state_summary(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL barrier
+      CHARACTER(512) MSGBUF
+      EXTERNAL print_message
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+C
+C     **** Statements ****
+C
+      call barrier(MYTHID)
+      if ( MYTHID .eq. 1 ) then
+        WRITE(MSGBUF, '(A)')
+     >  '// =============================================' //
+     >  '=========='
+        oad_ctmp0 = (1)
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp0)
+        WRITE(MSGBUF, '(A)') '// Model current state'
+        oad_ctmp1 = (1)
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp1)
+        WRITE(MSGBUF, '(A)')
+     >  '// =============================================' //
+     >  '=========='
+        oad_ctmp2 = (1)
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp2)
+        WRITE(MSGBUF, '(A)') ' '
+        oad_ctmp3 = (1)
+        call print_message(MSGBUF,STANDARDMESSAGEUNIT,'R',oad_ctmp3)
+      ENDIF
+      call barrier(MYTHID)
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE taueddy_external_forcing_u(IMIN, IMAX, JMIN, JMAX, BI,
+     >  BJ, KLEV, MYCURRENTTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) KLEV
+      REAL(w2f__8) MYCURRENTTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE taueddy_external_forcing_v(IMIN, IMAX, JMIN, JMAX, BI,
+     >  BJ, KLEV, MYCURRENTTIME, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) KLEV
+      REAL(w2f__8) MYCURRENTTIME
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE taueddy_init_varia(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE timestep(BI, BJ, IMIN, IMAX, JMIN, JMAX, K, DPHIHYDX,
+     >  DPHIHYDY, PHISURFX, PHISURFY, GUDISSIP, GVDISSIP, MYTIME,
+     >  MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use dynvars_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) DPHIHYDX(-2 : 93, -2 : 43)
+      REAL(w2f__8) DPHIHYDY(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFX(-2 : 93, -2 : 43)
+      REAL(w2f__8) PHISURFY(-2 : 93, -2 : 43)
+      REAL(w2f__8) GUDISSIP(-2 : 93, -2 : 43)
+      REAL(w2f__8) GVDISSIP(-2 : 93, -2 : 43)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL adams_bashforth2
+      EXTERNAL external_forcing_u
+      EXTERNAL external_forcing_v
+      REAL(w2f__8) GUTMP(-2 : 93, -2 : 43)
+      REAL(w2f__8) GVTMP(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      LOGICAL(w2f__i4) MOMSTARTAB
+      REAL(w2f__8) PHXFAC
+      REAL(w2f__8) PHYFAC
+      REAL(w2f__8) PSFAC
+      INTEGER(w2f__i4) t__1635
+      INTEGER(w2f__i4) t__1636
+      INTEGER(w2f__i4) t__1637
+      INTEGER(w2f__i4) t__1638
+      INTEGER(w2f__i4) t__1639
+      INTEGER(w2f__i4) t__1640
+      INTEGER(w2f__i4) t__1641
+      INTEGER(w2f__i4) t__1642
+      INTEGER(w2f__i4) t__1643
+      INTEGER(w2f__i4) t__1644
+      INTEGER(w2f__i4) t__1645
+      INTEGER(w2f__i4) t__1646
+      INTEGER(w2f__i4) t__1647
+      INTEGER(w2f__i4) t__1648
+      INTEGER(w2f__i4) t__1649
+      INTEGER(w2f__i4) t__1650
+      INTEGER(w2f__i4) t__1651
+      INTEGER(w2f__i4) t__1652
+      INTEGER(w2f__i4) t__1653
+      INTEGER(w2f__i4) t__1654
+      INTEGER(w2f__i4) t__1655
+      INTEGER(w2f__i4) t__1656
+      INTEGER(w2f__i4) t__1657
+      INTEGER(w2f__i4) t__1658
+      INTEGER(w2f__i4) t__1659
+      INTEGER(w2f__i4) t__1660
+      INTEGER(w2f__i4) t__1661
+      INTEGER(w2f__i4) t__1662
+      INTEGER(w2f__i4) t__1663
+      INTEGER(w2f__i4) t__1664
+      INTEGER(w2f__i4) t__1665
+      INTEGER(w2f__i4) t__1666
+      INTEGER(w2f__i4) t__1667
+      INTEGER(w2f__i4) t__1668
+      INTEGER(w2f__i4) t__1669
+      INTEGER(w2f__i4) t__1670
+      INTEGER(w2f__i4) t__1671
+      INTEGER(w2f__i4) t__1672
+      INTEGER(w2f__i4) t__1673
+      INTEGER(w2f__i4) t__1674
+C
+C     **** Statements ****
+C
+      MOMSTARTAB = NITER0 .eq. 0
+      PSFAC = PFFACMOM * (1.0D00 - IMPLICSURFPRESS)
+      PHXFAC = PFFACMOM
+      PHYFAC = PFFACMOM
+      DO J = -2, 43, 1
+        DO I = -2, 93, 1
+          GUTMP(I,J) = 0.0D00
+          GVTMP(I,J) = 0.0D00
+        END DO
+      END DO
+      if ( .not. (IMPLICITINTGRAVWAVE .or. STAGGERTIMESTEP) ) then
+        t__1635 = JMIN
+        t__1636 = JMAX
+        DO J = t__1635, t__1636, 1
+          t__1637 = IMIN
+          t__1638 = IMAX
+          DO I = t__1637, t__1638, 1
+            GU(I,J,K,BI,BJ) = (GU(I,J,K,BI,BJ) - DPHIHYDX(I,J) * PHXFAC)
+            GV(I,J,K,BI,BJ) = (GV(I,J,K,BI,BJ) - DPHIHYDY(I,J) * PHYFAC)
+          END DO
+        END DO
+        PHXFAC = 0.0D00
+        PHYFAC = 0.0D00
+      ENDIF
+      if ( MOMDISSIP_IN_AB .and. MOMVISCOSITY ) then
+        t__1639 = JMIN
+        t__1640 = JMAX
+        DO J = t__1639, t__1640, 1
+          t__1641 = IMIN
+          t__1642 = IMAX
+          DO I = t__1641, t__1642, 1
+            GU(I,J,K,BI,BJ) = (GUDISSIP(I,J) + GU(I,J,K,BI,BJ))
+            GV(I,J,K,BI,BJ) = (GVDISSIP(I,J) + GV(I,J,K,BI,BJ))
+          END DO
+        END DO
+      ENDIF
+      if ( MOMFORCING .and. (MOMFORCINGOUTAB .ne. 1) ) then
+        call external_forcing_u(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+        call external_forcing_v(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+      ENDIF
+      if ( USECDSCHEME ) then
+        if ( MOMVISCOSITY .and. (.not. MOMDISSIP_IN_AB) ) then
+          t__1643 = JMIN
+          t__1644 = JMAX
+          DO J = t__1643, t__1644, 1
+            t__1645 = IMIN
+            t__1646 = IMAX
+            DO I = t__1645, t__1646, 1
+              GUTMP(I,J) = (GUDISSIP(I,J) + GU(I,J,K,BI,BJ))
+              GVTMP(I,J) = (GVDISSIP(I,J) + GV(I,J,K,BI,BJ))
+            END DO
+          END DO
+        ELSE
+          t__1647 = JMIN
+          t__1648 = JMAX
+          DO J = t__1647, t__1648, 1
+            t__1649 = IMIN
+            t__1650 = IMAX
+            DO I = t__1649, t__1650, 1
+              GUTMP(I,J) = GU(I,J,K,BI,BJ)
+              GVTMP(I,J) = GV(I,J,K,BI,BJ)
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      call adams_bashforth2(BI,BJ,K,GU,GUNM1,MYITER,MYTHID)
+      call adams_bashforth2(BI,BJ,K,GV,GVNM1,MYITER,MYTHID)
+      if ( (MOMFORCINGOUTAB .eq. 1) .and. MOMFORCING ) then
+        if ( USECDSCHEME ) then
+          t__1651 = JMIN
+          t__1652 = JMAX
+          DO J = t__1651, t__1652, 1
+            t__1653 = IMIN
+            t__1654 = IMAX
+            DO I = t__1653, t__1654, 1
+              GUTMP(I,J) = (GUTMP(I,J) - GU(I,J,K,BI,BJ))
+              GVTMP(I,J) = (GVTMP(I,J) - GV(I,J,K,BI,BJ))
+            END DO
+          END DO
+        ENDIF
+        call external_forcing_u(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+        call external_forcing_v(IMIN,IMAX,JMIN,JMAX,BI,BJ,K,MYTIME,MYTHI
+     +D)
+
+        if ( USECDSCHEME ) then
+          t__1655 = JMIN
+          t__1656 = JMAX
+          DO J = t__1655, t__1656, 1
+            t__1657 = IMIN
+            t__1658 = IMAX
+            DO I = t__1657, t__1658, 1
+              GUTMP(I,J) = (GUTMP(I,J) + GU(I,J,K,BI,BJ))
+              GVTMP(I,J) = (GVTMP(I,J) + GV(I,J,K,BI,BJ))
+            END DO
+          END DO
+        ENDIF
+      ENDIF
+      t__1659 = JMIN
+      t__1660 = JMAX
+      DO J = t__1659, t__1660, 1
+        t__1661 = IMIN
+        t__1662 = IMAX
+        DO I = t__1661, t__1662, 1
+          GUTMP(I,J) = GU(I,J,K,BI,BJ)
+          GVTMP(I,J) = GV(I,J,K,BI,BJ)
+        END DO
+      END DO
+      if ( MOMVISCOSITY .and. (.not. MOMDISSIP_IN_AB) ) then
+        t__1663 = JMIN
+        t__1664 = JMAX
+        DO J = t__1663, t__1664, 1
+          t__1665 = IMIN
+          t__1666 = IMAX
+          DO I = t__1665, t__1666, 1
+            GUTMP(I,J) = (GUDISSIP(I,J) + GUTMP(I,J))
+            GVTMP(I,J) = (GVDISSIP(I,J) + GVTMP(I,J))
+          END DO
+        END DO
+      ENDIF
+      t__1667 = JMIN
+      t__1668 = JMAX
+      DO J = t__1667, t__1668, 1
+        t__1669 = IMIN
+        t__1670 = IMAX
+        DO I = t__1669, t__1670, 1
+          GU(I,J,K,BI,BJ) = (UVEL(I,J,K,BI,BJ) + MASKW(I,J,K,BI,BJ) * DE
+     +LTATMOM * (GUTMP(I,J) - PHISURFX(I,J) * PSFAC - DPHIHYDX(I,J) * PH
+     +XFAC))
+
+        END DO
+      END DO
+      t__1671 = JMIN
+      t__1672 = JMAX
+      DO J = t__1671, t__1672, 1
+        t__1673 = IMIN
+        t__1674 = IMAX
+        DO I = t__1673, t__1674, 1
+          GV(I,J,K,BI,BJ) = (VVEL(I,J,K,BI,BJ) + MASKS(I,J,K,BI,BJ) * DE
+     +LTATMOM * (GVTMP(I,J) - PHISURFY(I,J) * PSFAC - DPHIHYDY(I,J) * PH
+     +YFAC))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE the_main_loop(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use dynvars_mod
+      use ffields_mod
+      use eos_mod
+      use gad_mod
+      use tamc_mod
+      use ctrl_mod
+      use ctrl_dummy_mod
+      use cost_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      LOGICAL(w2f__i4) ALLSTEPSCOVERED
+      EXTERNAL barrier
+      EXTERNAL cost_final
+      EXTERNAL debug_call
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL do_the_model_io
+      INTEGER(w2f__i4) ILEV_4
+      EXTERNAL initialise_varia
+      INTEGER(w2f__i4) THECURRENTSTEP
+      EXTERNAL the_fourth_level_loop
+      EXTERNAL the_fourth_level_plain
+      EXTERNAL timer_start
+      EXTERNAL timer_stop
+      INTEGER(w2f__i4) UCHECKLEV1
+      INTEGER(w2f__i4) UCHECKLEV2
+      INTEGER(w2f__i4) UCHECKLEV3
+      INTEGER(w2f__i4) UCHECKLEV4
+      INTEGER(w2f__i4) t__1675
+      integer(w2f__i4) oad_ctmp0
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(XX_THETA)
+C$OPENAD INDEPENDENT(XX_SALT)
+C$OPENAD DEPENDENT(FC)
+C
+C     **** Statements ****
+C
+      UCHECKLEV1 = 0
+      UCHECKLEV2 = 0
+      UCHECKLEV3 = 0
+      UCHECKLEV4 = 0
+      THECURRENTSTEP = 0
+      if ( DEBUGMODE ) then
+        call debug_enter('THE_MAIN_LOOP',MYTHID)
+      ENDIF
+      NITER0 = NINT((STARTTIME - BASETIME) / DELTATCLOCK)
+      IKEY_DYNAMICS = 1
+      call timer_start('ADJOINT SPIN-UP',MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('INITIALISE_VARIA',MYTHID)
+      ENDIF
+      call timer_start('INITIALISE_VARIA    [THE_MAIN_LOOP]',MYTHID)
+      call initialise_varia(MYTHID)
+      call timer_stop('INITIALISE_VARIA    [THE_MAIN_LOOP]',MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_call('DO_THE_MODEL_IO',MYTHID)
+      ENDIF
+      call timer_start('DO_THE_MODEL_IO     [THE_MAIN_LOOP]',MYTHID)
+      call do_the_model_io(MYTIME,MYITER,MYTHID)
+      call timer_stop('DO_THE_MODEL_IO     [THE_MAIN_LOOP]',MYTHID)
+      call timer_stop('ADJOINT SPIN-UP',MYTHID)
+      call barrier(MYTHID)
+      call timer_start('MAIN LOOP           [THE_MAIN_LOOP]',MYTHID)
+      WRITE(*, '(A,I4,A,I4,A,I4,A,I8)')
+     >  'JU: main_loop checkpoints allowed 1st:', 4, ', 2nd:', 3,
+     >  ', 3rd:', 2, ', 4th:', 0
+      if ( .false. ) then
+        UCHECKLEV4 = 0
+        WRITE(*, '(A)') 'JU: NOTE: resetting level 4 to 0'
+      ELSE
+        UCHECKLEV4 = 0
+      ENDIF
+      if ( .false. ) then
+        UCHECKLEV3 = 0
+        WRITE(*, '(A)') 'JU: NOTE: resetting level 3 to 0'
+      ELSE
+        UCHECKLEV3 = 2
+      ENDIF
+      if ( .false. ) then
+        UCHECKLEV2 = 0
+        WRITE(*, '(A)') 'JU: NOTE: resetting level 2 to 0'
+      ELSE
+        UCHECKLEV2 = 3
+      ENDIF
+      if ( .false. ) then
+        UCHECKLEV1 = 0
+        WRITE(*, '(A)') 'JU: NOTE: resetting level 1 to 0'
+      ELSE
+        UCHECKLEV1 = 4
+      ENDIF
+      if ( UCHECKLEV4 .gt. 0 ) then
+        if ( (UCHECKLEV1 * UCHECKLEV2 * UCHECKLEV3) .eq. 0 ) then
+          WRITE(*, *) 'JU: ERROR: uCheckLev4 > 0 implies ',
+     >  'all lower levels must be nonzero too.'
+        ENDIF
+      ENDIF
+      if ( UCHECKLEV3 .gt. 0 ) then
+        if ( (UCHECKLEV1 * UCHECKLEV2) .eq. 0 ) then
+          WRITE(*, *) 'JU: ERROR: uCheckLev3 > 0 implies ',
+     >  'all lower levels must be nonzero too.'
+        ENDIF
+      ENDIF
+      if ( UCHECKLEV2 .gt. 0 ) then
+        if ( UCHECKLEV1 .eq. 0 ) then
+          WRITE(*, *) 'JU: ERROR: uCheckLev2 > 0 implies ',
+     >  'all lower levels must be nonzero too.'
+        ENDIF
+      ENDIF
+      if ( UCHECKLEV1 .eq. 0 ) then
+        WRITE(*, *) 'JU: ERROR: uCheckLev1 must be nonzero '
+      ENDIF
+      ALLSTEPSCOVERED = .false.
+      if ( UCHECKLEV1 .gt. NTIMESTEPS ) then
+        UCHECKLEV1 = NTIMESTEPS
+        ALLSTEPSCOVERED = .true.
+      ENDIF
+      if ( .not. ALLSTEPSCOVERED ) then
+        if ( MOD(NTIMESTEPS,UCHECKLEV1) .gt. 0 ) then
+          if ( UCHECKLEV2 .ge. ((NTIMESTEPS / UCHECKLEV1) + 1) ) then
+            UCHECKLEV2 = (NTIMESTEPS / UCHECKLEV1) + 1
+            ALLSTEPSCOVERED = .true.
+          ENDIF
+        ELSE
+          if ( UCHECKLEV2 .ge. (NTIMESTEPS / UCHECKLEV1) ) then
+            UCHECKLEV2 = NTIMESTEPS / UCHECKLEV1
+            ALLSTEPSCOVERED = .true.
+          ENDIF
+        ENDIF
+      ELSE
+        UCHECKLEV2 = 0
+      ENDIF
+      if ( .not. ALLSTEPSCOVERED ) then
+        if ( MOD(NTIMESTEPS,UCHECKLEV1 * UCHECKLEV2) .gt. 0 ) then
+          if ( UCHECKLEV3 .ge. ((NTIMESTEPS / (UCHECKLEV1 * UCHECKLEV2))
+     + + 1) ) then
+
+            UCHECKLEV3 = (NTIMESTEPS / (UCHECKLEV1 * UCHECKLEV2)) + 1
+            ALLSTEPSCOVERED = .true.
+          ENDIF
+        ELSE
+          if ( UCHECKLEV3 .ge. (NTIMESTEPS / (UCHECKLEV1 * UCHECKLEV2)) 
+     +) then
+
+            UCHECKLEV3 = NTIMESTEPS / (UCHECKLEV1 * UCHECKLEV2)
+            ALLSTEPSCOVERED = .true.
+          ENDIF
+        ENDIF
+      ELSE
+        UCHECKLEV3 = 0
+      ENDIF
+      if ( .not. ALLSTEPSCOVERED ) then
+        if ( MOD(NTIMESTEPS,UCHECKLEV3 * UCHECKLEV1 * UCHECKLEV2) .gt. 0
+     + ) then
+
+          if ( UCHECKLEV4 .ge. ((NTIMESTEPS / (UCHECKLEV3 * UCHECKLEV1 *
+     + UCHECKLEV2)) + 1) ) then
+
+            UCHECKLEV4 = (NTIMESTEPS / (UCHECKLEV3 * UCHECKLEV1 * UCHECK
+     +LEV2)) + 1
+
+            ALLSTEPSCOVERED = .true.
+          ENDIF
+        ELSE
+          if ( UCHECKLEV4 .ge. (NTIMESTEPS / (UCHECKLEV3 * UCHECKLEV1 * 
+     +UCHECKLEV2)) ) then
+
+            UCHECKLEV4 = NTIMESTEPS / (UCHECKLEV3 * UCHECKLEV1 * UCHECKL
+     +EV2)
+
+            ALLSTEPSCOVERED = .true.
+          ENDIF
+        ENDIF
+      ELSE
+        UCHECKLEV4 = 0
+      ENDIF
+      if ( .not. ALLSTEPSCOVERED ) then
+        WRITE(*, *) 'JU: ERROR: not enough checkpoints allowed'
+      ENDIF
+      WRITE(*, '(A,I6)') 'JU: main_loop timesteps required:',
+     >  NTIMESTEPS
+      WRITE(*, '(A,I4,A,I4,A,I4,A,I4)')
+     >  'JU: main_loop checkpoints used    1st:', UCHECKLEV1, ', 2nd:',
+     >  UCHECKLEV2, ', 3rd:', UCHECKLEV3, ', 4th:', UCHECKLEV4
+      if ( UCHECKLEV4 .gt. 0 ) then
+        t__1675 = UCHECKLEV4
+        DO ILEV_4 = 1, t__1675, 1
+          NITER0 = NINT((STARTTIME - BASETIME) / DELTATCLOCK)
+          if ( DEBUGMODE ) then
+            call debug_call('THE_FOURTH_LEVEL_LOOP',MYTHID)
+          ENDIF
+          oad_ctmp0 = (ILEV_4)
+          call the_fourth_level_loop(oad_ctmp0,UCHECKLEV1,UCHECKLEV2,UCH
+     +ECKLEV3,UCHECKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+
+        END DO
+      ELSE
+        NITER0 = NINT((STARTTIME - BASETIME) / DELTATCLOCK)
+        if ( DEBUGMODE ) then
+          call debug_call('THE_FOURTH_LEVEL_PLAIN',MYTHID)
+        ENDIF
+        call the_fourth_level_plain(UCHECKLEV1,UCHECKLEV2,UCHECKLEV3,UCH
+     +ECKLEV4,THECURRENTSTEP,MYTIME,MYITER,MYTHID)
+
+      ENDIF
+      call timer_start('COST_FINAL         [ADJOINT SPIN-DOWN]',MYTHID)
+      call cost_final(MYTHID)
+      call timer_stop('COST_FINAL         [ADJOINT SPIN-DOWN]',MYTHID)
+      call barrier(MYTHID)
+      call timer_stop('MAIN LOOP           [THE_MAIN_LOOP]',MYTHID)
+      if ( DEBUGMODE ) then
+        call debug_leave('THE_MAIN_LOOP',MYTHID)
+      ENDIF
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE thermodynamics(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use gad_mod
+      use tamc_mod
+      use tamc_keys_mod
+      use ffields_mod
+      use eos_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL calc_wsurf_tr
+      EXTERNAL debug_enter
+      EXTERNAL debug_leave
+      EXTERNAL debug_stats_rl
+      REAL(w2f__8) FVERS(-2 : 93, -2 : 43, 1 : 2)
+      REAL(w2f__8) FVERT(-2 : 93, -2 : 43, 1 : 2)
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) K
+      REAL(w2f__8) KAPPARK(-2 : 93, -2 : 43, 1 : 1)
+      REAL(w2f__8) KAPPARS(-2 : 93, -2 : 43)
+      REAL(w2f__8) KAPPART(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) RTRANSKP1(-2 : 93, -2 : 43)
+      REAL(w2f__8) UTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) VTRANS(-2 : 93, -2 : 43)
+      REAL(w2f__8) XA(-2 : 93, -2 : 43)
+      REAL(w2f__8) YA(-2 : 93, -2 : 43)
+      INTEGER(w2f__i4) t__1681
+      INTEGER(w2f__i4) t__1682
+      INTEGER(w2f__i4) t__1683
+      INTEGER(w2f__i4) t__1684
+      integer oad_ctmp0
+      integer oad_ctmp1
+      integer oad_ctmp2
+      integer oad_ctmp3
+      integer oad_ctmp4
+      integer oad_ctmp5
+      integer oad_ctmp6
+      integer oad_ctmp7
+      integer oad_ctmp8
+C
+C     **** Statements ****
+C
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_enter('THERMODYNAMICS',MYTHID)
+      ENDIF
+      IKEY = 1
+      ITDKEY = 1
+      if ( LINFSCONSERVETR ) then
+        call calc_wsurf_tr(THETA,SALT,WVEL,MYTIME,MYITER,MYTHID)
+      ENDIF
+      t__1681 = MYBYLO(MYTHID)
+      t__1682 = MYBYHI(MYTHID)
+      DO BJ = t__1681, t__1682, 1
+        t__1683 = MYBXLO(MYTHID)
+        t__1684 = MYBXHI(MYTHID)
+        DO BI = t__1683, t__1684, 1
+          ACT1 = BI - MYBXLO(MYTHID)
+          MAX1 = MYBXHI(MYTHID) - MYBXLO(MYTHID) + 1
+          ACT2 = BJ - MYBYLO(MYTHID)
+          MAX2 = MYBYHI(MYTHID) - MYBYLO(MYTHID) + 1
+          ACT3 = MYTHID + (-1)
+          MAX3 = NTX * NTY
+          ACT4 = IKEY_DYNAMICS + (-1)
+          ITDKEY = ACT1 + ACT2 * MAX1 + MAX2 * ACT3 * MAX1 + MAX3 * MAX2
+     + * ACT4 * MAX1 + 1
+
+          DO J = -2, 43, 1
+            DO I = -2, 93, 1
+              XA(I,J) = 0.0D00
+              YA(I,J) = 0.0D00
+              UTRANS(I,J) = 0.0D00
+              VTRANS(I,J) = 0.0D00
+              RTRANS(I,J) = 0.0D00
+              RTRANSKP1(I,J) = 0.0D00
+              FVERT(I,J,1) = 0.0D00
+              FVERT(I,J,2) = 0.0D00
+              FVERS(I,J,1) = 0.0D00
+              FVERS(I,J,2) = 0.0D00
+              KAPPART(I,J) = 0.0D00
+              KAPPARS(I,J) = 0.0D00
+            END DO
+          END DO
+          DO K = 1, 1, 1
+            DO J = -2, 43, 1
+              DO I = -2, 93, 1
+                KAPPARK(I,J,K) = 0.0D00
+                GT(I,J,K,BI,BJ) = 0.0D00
+                GS(I,J,K,BI,BJ) = 0.0D00
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
+      if ( DEBUGMODE ) then
+        oad_ctmp0 = (1)
+        call debug_stats_rl(oad_ctmp0,UVEL,'Uvel (THERMODYNAMICS)',MYTHI
+     +D)
+
+        oad_ctmp1 = (1)
+        call debug_stats_rl(oad_ctmp1,VVEL,'Vvel (THERMODYNAMICS)',MYTHI
+     +D)
+
+        oad_ctmp2 = (1)
+        call debug_stats_rl(oad_ctmp2,WVEL,'Wvel (THERMODYNAMICS)',MYTHI
+     +D)
+
+        oad_ctmp3 = (1)
+        call debug_stats_rl(oad_ctmp3,THETA,'Theta (THERMODYNAMICS)',MYT
+     +HID)
+
+        oad_ctmp4 = (1)
+        call debug_stats_rl(oad_ctmp4,SALT,'Salt (THERMODYNAMICS)',MYTHI
+     +D)
+
+        oad_ctmp5 = (1)
+        call debug_stats_rl(oad_ctmp5,GT,'Gt (THERMODYNAMICS)',MYTHID)
+        oad_ctmp6 = (1)
+        call debug_stats_rl(oad_ctmp6,GS,'Gs (THERMODYNAMICS)',MYTHID)
+        oad_ctmp7 = (1)
+        call debug_stats_rl(oad_ctmp7,GTNM1,'GtNm1 (THERMODYNAMICS)',MYT
+     +HID)
+
+        oad_ctmp8 = (1)
+        call debug_stats_rl(oad_ctmp8,GSNM1,'GsNm1 (THERMODYNAMICS)',MYT
+     +HID)
+
+      ENDIF
+      if ( DEBUGLEVEL .ge. 2 ) then
+        call debug_leave('THERMODYNAMICS',MYTHID)
+      ENDIF
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE timestep_tracer(BI, BJ, IMIN, IMAX, JMIN, JMAX, K,
+     >  ADVECTION_SCHEME, TRACER, GTRACER, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) ADVECTION_SCHEME
+      REAL(w2f__8) TRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      REAL(w2f__8) GTRACER(-2 : 93, -2 : 43, 1 : 1, 1 : 1, 1 : 1)
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) t__1692
+      INTEGER(w2f__i4) t__1693
+      INTEGER(w2f__i4) t__1694
+      INTEGER(w2f__i4) t__1695
+C
+C     **** Statements ****
+C
+      t__1692 = JMIN
+      t__1693 = JMAX
+      DO J = t__1692, t__1693, 1
+        t__1694 = IMIN
+        t__1695 = IMAX
+        DO I = t__1694, t__1695, 1
+          GTRACER(I,J,K,BI,BJ) = (TRACER(I,J,K,BI,BJ) + DTTRACERLEV(K) *
+     + GTRACER(I,J,K,BI,BJ))
+
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE tracers_correction_step(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i4) BI
+      INTEGER(w2f__i4) BJ
+      EXTERNAL convective_adjustment
+      EXTERNAL cycle_tracer
+      INTEGER(w2f__i4) IMAX
+      INTEGER(w2f__i4) IMIN
+      INTEGER(w2f__i4) JMAX
+      INTEGER(w2f__i4) JMIN
+      INTEGER(w2f__i4) t__1696
+      INTEGER(w2f__i4) t__1697
+      INTEGER(w2f__i4) t__1698
+      INTEGER(w2f__i4) t__1699
+      INTEGER(w2f__i4) t__1700
+      INTEGER(w2f__i4) t__1701
+      INTEGER(w2f__i4) t__1702
+      INTEGER(w2f__i4) t__1703
+      integer(w2f__i4) oad_ctmp0
+      integer(w2f__i4) oad_ctmp1
+      integer(w2f__i4) oad_ctmp2
+      integer(w2f__i4) oad_ctmp3
+      integer(w2f__i4) oad_ctmp4
+      integer(w2f__i4) oad_ctmp5
+C
+C     **** Statements ****
+C
+      t__1696 = MYBYLO(MYTHID)
+      t__1697 = MYBYHI(MYTHID)
+      DO BJ = t__1696, t__1697, 1
+        t__1698 = MYBXLO(MYTHID)
+        t__1699 = MYBXHI(MYTHID)
+        DO BI = t__1698, t__1699, 1
+          if ( TEMPSTEPPING ) then
+            oad_ctmp0 = (BI)
+            oad_ctmp1 = (BJ)
+            call cycle_tracer(oad_ctmp0,oad_ctmp1,THETA,GT,MYTIME,MYITER
+     +,MYTHID)
+
+          ENDIF
+          if ( SALTSTEPPING ) then
+            oad_ctmp2 = (BI)
+            oad_ctmp3 = (BJ)
+            call cycle_tracer(oad_ctmp2,oad_ctmp3,SALT,GS,MYTIME,MYITER,
+     +MYTHID)
+
+          ENDIF
+        END DO
+      END DO
+      t__1700 = MYBYLO(MYTHID)
+      t__1701 = MYBYHI(MYTHID)
+      DO BJ = t__1700, t__1701, 1
+        t__1702 = MYBXLO(MYTHID)
+        t__1703 = MYBXHI(MYTHID)
+        DO BI = t__1702, t__1703, 1
+          IMIN = 1
+          IMAX = 90
+          JMIN = 1
+          JMAX = 40
+          if ( CADJFREQ .ne. 0.0D00 ) then
+            oad_ctmp4 = (BI)
+            oad_ctmp5 = (BJ)
+            call convective_adjustment(oad_ctmp4,oad_ctmp5,MYTIME,MYITER
+     +,MYTHID)
+
+          ENDIF
+        END DO
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE update_cg2d(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use cg2d_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE update_etah(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use dynvars_mod
+      use grid_mod
+      use surface_mod
+      use ffields_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE update_masks_etc(MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use optim_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE update_surf_dr(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE swfrac(IMAX, FACT, SWDK, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      INTEGER(w2f__i4) IMAX
+      REAL(w2f__8) FACT
+      REAL(w2f__8) SWDK(1 : IMAX)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Local Variables and Functions ****
+C
+      INTEGER(w2f__i8) t__1704
+      INTEGER(w2f__i8) t__1706
+      REAL(w2f__8) A1(1 : 5)
+      SAVE A1
+      REAL(w2f__8) A2(1 : 5)
+      SAVE A2
+      REAL(w2f__8) FACZ
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) JWTYPE
+      INTEGER(w2f__i4) NWTYPE
+      PARAMETER ( NWTYPE = 5)
+      REAL(w2f__8) RFAC(1 : 5)
+      SAVE RFAC
+      INTEGER(w2f__i4) t__1707
+C
+C     **** Temporary Variables ****
+C
+      INTEGER(w2f__i8) tmp0
+C
+C     **** Initializers ****
+C
+      DATA(A1(tmp0), tmp0 = 1, 5, 1) / 3.49999994039535522461D-01,
+     >  6.00000023841857910156D-01, 1.0D00, 1.5D00,
+     >  1.39999997615814208984D00 /
+      DATA(A2(tmp0), tmp0 = 1, 5, 1) / 2.3D+01, 2.0D+01, 1.7D+01,
+     >  1.4D+01, 7.90000009536743164062D00 /
+      DATA(RFAC(tmp0), tmp0 = 1, 5, 1) / 5.79999983310699462891D-01,
+     >  6.20000004768371582031D-01, 6.70000016689300537109D-01,
+     >  7.69999980926513671875D-01, 7.79999971389770507812D-01 /
+      integer(w2f__i8) oad_ctmp0
+C
+C     **** Statements ****
+C
+      t__1704 = IMAX
+      call oad_s_MAX_i(t__1704,0_w2f__i8,oad_ctmp0)
+      t__1706 = oad_ctmp0
+      JWTYPE = 2
+      t__1707 = IMAX
+      DO I = 1, t__1707, 1
+        FACZ = SWDK(I) * FACT
+        if ( FACZ .lt. (-2.0D+02) ) then
+          SWDK(I) = 0.0
+        ELSE
+          SWDK(I) = (RFAC(JWTYPE) * EXP(FACZ / A1(JWTYPE)) + EXP(FACZ / 
+     +A2(JWTYPE)) * (1.0D00 - RFAC(JWTYPE)))
+
+        ENDIF
+      END DO
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE calc_r_star(ETAFLD, MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) ETAFLD(-2 : 93, -2 : 43, 1 : 1, 1 : 1)
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE
+
+      SUBROUTINE update_r_star(MYTIME, MYITER, MYTHID)
+      use w2f__types
+      use size_mod
+      use eeparams_mod
+      use params_mod
+      use grid_mod
+      use surface_mod
+      use tamc_mod
+      use tamc_keys_mod
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) MYTIME
+      INTEGER(w2f__i4) MYITER
+      INTEGER(w2f__i4) MYTHID
+C
+C     **** Statements ****
+C
+      RETURN
+      RETURN
+      END SUBROUTINE

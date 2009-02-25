@@ -1,0 +1,34 @@
+
+PROCEDURE = { < ProcHandle("mymodule_::mymodule_"), SymHandle("mymodule_::mymodule_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/Alias/local_structvar_pointer_element_double_deref.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("mymodule_::mymodule_"), not local > }
+
+PROCEDURE = { < ProcHandle("mymodule_::foo_"), SymHandle("mymodule_::foo_") > }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("VUSE <1,20,mymodule_>
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("U8U8STRCTFLD T<10,.predef_F4,4> T<30,REPAIR_BILL,8> <field_id:3>
+X:0:.predef_F4 = OPC_F4U8CVT(0:)") =>
+        [
+            MemRefHandle("X:0:.predef_F4") => 
+                NamedRef( DEF, SymHandle("foo_::X"))
+            MemRefHandle("U8U8STRCTFLD T<10,.predef_F4,4> T<30,REPAIR_BILL,8> <field_id:3>
+0:") => 
+                Deref( USE, FieldAccess( USE, FieldAccess( USE, NamedRef( USE, SymHandle("foo_::RED_FERRARI")), COST), INSURANCE), 1)
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("mymodule_::mymodule_"), not local > }
+    LOCATION = { < SymHandle("mymodule_::foo_"), not local > }
+    LOCATION = { < SymHandle("foo_::RED_FERRARI"), local > }
+    LOCATION = { < SymHandle("foo_::X"), local > }

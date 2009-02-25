@@ -1,0 +1,6 @@
+echo "Generating TestResults/SideEffect/test.B.out"
+./test-open64 --oa-InterSideEffect TestCases/SideEffect/test.B > TestResults/SideEffect/test.B.out
+echo "Generating TestResults/SideEffect/Loop_simple_3.B.out"
+./test-open64 --oa-InterSideEffect TestCases/SideEffect/Loop_simple_3.B > TestResults/SideEffect/Loop_simple_3.B.out
+echo "Generating TestResults/SideEffect/Jean2.B.out"
+./test-open64 --oa-InterSideEffect TestCases/SideEffect/Jean2.B > TestResults/SideEffect/Jean2.B.out

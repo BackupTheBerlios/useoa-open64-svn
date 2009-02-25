@@ -1,0 +1,26 @@
+
+InterActiveFortran(
+    Procedure( bar_::bar_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(Y:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4)) ] 
+    )
+    Procedure( bar_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(bar_(&0:X:0:anon_ptr., &0:Y:0:anon_ptr., &2)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(&0:X:0:anon_ptr.)
+                MemRefHandle(&0:Y:0:anon_ptr.) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(bar_::X)
+            SymHandle(bar_::Y)
+            SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

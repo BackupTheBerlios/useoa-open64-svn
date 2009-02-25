@@ -1,0 +1,72 @@
+
+InterActive(
+    Procedure( head_::head_ ): 
+    ActiveLocSet([ 
+            NamedLoc(
+                mSymHandle: SymHandle(head_::X)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            NamedLoc(
+                mSymHandle: SymHandle(head_::Y)
+                mLocal: 1
+                mFullOverlap: [  ] 
+                mPartOverlap: [  ] 
+            )    
+            LocSubSet(
+                mLoc: 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::X)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+                mFull: 0
+            )    
+            LocSubSet(
+                mLoc: 
+                NamedLoc(
+                    mSymHandle: SymHandle(head_::Y)
+                    mLocal: 1
+                    mFullOverlap: [  ] 
+                    mPartOverlap: [  ] 
+                )
+                mFull: 0
+            ) ] 
+    )
+    ActiveStmtSet([ 
+            StmtHandle(X:0:anon_ptr.(1) = 5)
+                StmtHandle(X:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1)+    6.000000000000000)
+                StmtHandle(X:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1)+    7.000000000000000)
+                StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(1))
+                StmtHandle(Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(I:0:.predef_I4))
+                StmtHandle(Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(2))
+                StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(I:0:.predef_I4+1))
+                StmtHandle(Y:0:anon_ptr.(I:0:.predef_I4) = 0:X:0:anon_ptr.(I:0:.predef_I4)+0:Y:0:anon_ptr.(I:0:.predef_I4)) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(X:0:anon_ptr.(1))
+                MemRefHandle(X:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(X:0:anon_ptr.(2))
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(1))
+                MemRefHandle(Y:0:anon_ptr.(2))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(Y:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(2))
+                MemRefHandle(Y:0:anon_ptr.(1))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4+1))
+                MemRefHandle(Y:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:X:0:anon_ptr.(I:0:.predef_I4))
+                MemRefHandle(0:Y:0:anon_ptr.(I:0:.predef_I4)) ] 
+    )
+    mNumIterUseful: 2
+    mNumIterVary: 2
+    mNumIterActive: 1
+)
+
+
+Total Iters: 6
