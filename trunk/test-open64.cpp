@@ -63,10 +63,12 @@
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 #include <OpenAnalysis/ReachDefsOverwrite/ManagerReachDefsOverwriteStandard.hpp>
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
+/*
 #include <OpenAnalysis/XAIF/ManagerAliasMapXAIF.hpp>
 #include <OpenAnalysis/XAIF/ManagerUDDUChainsXAIF.hpp>
 #include <OpenAnalysis/CSFIActivity/ManagerDUGStandard.hpp>
 #include <OpenAnalysis/CSFIActivity/ManagerDUActive.hpp>
+*/
 #include <OpenAnalysis/Alias/ManagerCSFIAliasAliasTag.hpp>
 
 
@@ -634,7 +636,7 @@ TestIR_OAParamBindings(std::ostream& os, PU_Info* pu_forest,
   OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
       cgraphman->performAnalysis(procIter, alias);
 
-  //! AliasMap
+  //! ParamBindings
   OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
   pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
   OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
@@ -1304,6 +1306,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> reachDefMgr;
     reachDefMgr = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
 
+/*
     OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains;
     OA::OA_ptr<OA::UDDUChains::ManagerUDDUChainsStandard> udman;
     udman = new OA::UDDUChains::ManagerUDDUChainsStandard(irInterface);
@@ -1327,6 +1330,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
 
         udduchains->output(*irInterface);
      }
+*/
 
     return 0;
 }
@@ -1343,6 +1347,7 @@ TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
 {
     std::cout << "Test AliasMapXAIF analysis\n";
 
+/*
     OA::OA_ptr<Open64IRProcIterator> procIter;
     procIter = new Open64IRProcIterator(pu_forest);
 
@@ -1369,6 +1374,7 @@ TestIR_OAAliasMapXAIF(std::ostream& os, PU_Info* pu_forest,
         aliasMapXAIF->output(*irInterface);
     }
 
+*/
     return 0;
 }
 
@@ -1384,6 +1390,7 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu_forest,
 {
     std::cout << "Test UDDUChains analysis\n";
 
+/*
     // CFG
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
     OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
@@ -1477,6 +1484,7 @@ TestIR_OAUDDUChainsXAIF(std::ostream& os, PU_Info* pu_forest,
         udduchainsXAIF->output(*irInterface);
      }
 
+*/
     return 0;
 }
 
@@ -1494,7 +1502,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
 {
 
     Diag_Set_Phase("WHIRL tester: TestIR_OACSFIActivity (Context-Sensitive and Flow-Insensitive)");
-
+/*
 
     //! CFG
     OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
@@ -1548,6 +1556,7 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
     //duactive->dump(cout, irInterface);
     duactive->output(*irInterface, *alias);
 
+*/
     return 0;
 
 }
@@ -1603,4 +1612,5 @@ TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
     
     csfialias->output(*irInterface);
 
+    return 0;
 }

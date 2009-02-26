@@ -17,8 +17,9 @@ echo "########################### running regressParamBindigns.script"
 source scripts/regressParamBindings.script
 
 
-echo "########################### running regressAliasMapXAIF.script"
-source scripts/regressAliasMapXAIF.script
+## removing until XAIF is re-instated in OpenAnalysis (2/26/09)
+#echo "########################### running regressAliasMapXAIF.script"
+#source scripts/regressAliasMapXAIF.script
 
 
 echo "########################### running regressICFGctive.script"
@@ -33,16 +34,19 @@ echo "########################### running regressReachDefs.script"
 source scripts/regressReachDefs.script
 
 
-echo "########################### running regressUDDUChains.script"
-source scripts/regressUDDUChains.script
+## removing until OA_ptr() problem in test-open64.cpp:1311 is fixed (2/26/09)
+#echo "########################### running regressUDDUChains.script"
+#source scripts/regressUDDUChains.script
 
 
-echo "########################### running regressUDDUChainsXAIF.script"
-source scripts/regressUDDUChainsXAIF.script 
+## removing until XAIF is re-instated in OpenAnalysis (2/26/09)
+#echo "########################### running regressUDDUChainsXAIF.script"
+#source scripts/regressUDDUChainsXAIF.script 
 
 
-echo "########################### running regressCSFIActive.script"
-source scripts/regressCSFIActive.script
+## removing until XAIF/DUG is re-instated in OpenAnalysis (2/26/09)
+#echo "########################### running regressCSFIActive.script"
+#source scripts/regressCSFIActive.script
 
 
 echo "########################### running regressICFGReachConsts.script"
