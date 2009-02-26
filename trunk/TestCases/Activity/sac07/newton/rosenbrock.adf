@@ -1,6 +1,0 @@
-AD_PROG  = rosenbrock.cmp
-AD_TOP   = func
-AD_IVARS = x   
-AD_OVARS = y
-AD_PMAX  = 2    # x has 2 elements
-AD_OUTPUT_DIR = GeneratedFiles

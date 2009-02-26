@@ -1,7 +1,0 @@
-#!/bin/csh -f
-set cd = /Net/alcaid/alcaid5/hovland/fortran/bessel
-rm -f rbes.cat
-cat $cd/bessel.f >> rbes.cat
-fsplit2 rbes.cat rbes.dir
-adifor rbes.adf rbes.cat.comp
-rm -r rbes.dir
