@@ -1,0 +1,56 @@
+0.000009 CFG seconds elapsed
+0.031225 FIAliasAliasTag seconds elapsed
+0.001185 CallGraph seconds elapsed
+0.000199 ParamBindings seconds elapsed
+0.004459 ICFG seconds elapsed
+0.059912 ICFGActivity seconds elapsed
+
+InterActiveFortran(
+    Procedure( main_::main_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( main_::dsfdfj_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 111
+                # UnnamedRef()
+                # Deref(NamedRef(dsfdfj_::N))
+            )    
+            Tag(
+                mTagID: 138
+                # NamedRef(dsfdfj_::WF)
+                # SubSetRef(NamedRef(dsfdfj_::WF))
+            )    
+            Tag(
+                mTagID: 139
+                # NamedRef(dsfdfj_::WG)
+                # SubSetRef(NamedRef(dsfdfj_::WG))
+            )    
+            Tag(
+                mTagID: 140
+                # NamedRef(main_::X)
+                # Deref(NamedRef(dsfdfj_::X))
+                # SubSetRef(Deref(NamedRef(dsfdfj_::X)))
+            )    
+            Tag(
+                mTagID: 141
+                # NamedRef(main_::FVEC)
+                # Deref(NamedRef(dsfdfj_::FVEC))
+                # SubSetRef(Deref(NamedRef(dsfdfj_::FVEC)))
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(main_::FVEC)
+            SymHandle(main_::X)
+            SymHandle(dsfdfj_::N)
+            SymHandle(dsfdfj_::X)
+            SymHandle(dsfdfj_::FVEC)
+            SymHandle(dsfdfj_::WF)
+            SymHandle(dsfdfj_::WG) ] 
+    mNumIterUseful: 9
+    mNumIterVary: 7
+)

@@ -1,40 +1,42 @@
-echo "Testing TestCases/UDDUChainsTests/reachdef_if1.B, TestResults/UDDUChainsTests/reachdef_if1.B.out Checked by PLM 10/20/06"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_if1.B > t
-diff t TestResults/UDDUChainsTests/reachdef_if1.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainConditional.f
+mv UDDUChainConditional.B TestCases/UDDUChains/UDDUChainConditional.B
+echo "Testing TestCases/UDDUChains/UDDUChainConditional.B, TestResults/UDDUChains/UDDUChainConditional.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainConditional.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainConditional.B.out
 
-echo "Testing TestCases/UDDUChainsTests/reachdef_if2.B, TestResults/UDDUChainsTests/reachdef_if2.B.out Checked by PLM 10/20/06"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_if2.B > t
-diff t TestResults/UDDUChainsTests/reachdef_if2.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainInterProcedural1.f
+mv UDDUChainInterProcedural1.B TestCases/UDDUChains/UDDUChainInterProcedural1.B
+echo "Testing TestCases/UDDUChains/UDDUChainInterProcedural1.B, TestResults/UDDUChains/UDDUChainInterProcedural1.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainInterProcedural1.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainInterProcedural1.B.out
 
-echo "Testing TestCases/UDDUChainsTests/reachdef_loopif1.B, TestResults/UDDUChainsTests/reachdef_loopif1.B.out Checked by PLM 10/20/06"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/reachdef_loopif1.B > t
-diff t TestResults/UDDUChainsTests/reachdef_loopif1.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainNestedGlobals.f
+mv UDDUChainNestedGlobals.B TestCases/UDDUChains/UDDUChainNestedGlobals.B
+echo "Testing TestCases/UDDUChains/UDDUChainNestedGlobals.B, TestResults/UDDUChains/UDDUChainNestedGlobals.B.out Checked by PLM 05/05/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainNestedGlobals.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainNestedGlobals.B.out
 
-echo "Testing TestCases/UDDUChainsTests/Loop_simple_10.B, TestResults/UDDUChainsTests/Loop_simple_10.B.out Checked by PLM 04/18/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Loop_simple_10.B > t
-diff t TestResults/UDDUChainsTests/Loop_simple_10.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainIndirect1.f
+mv UDDUChainIndirect1.B TestCases/UDDUChains/UDDUChainIndirect1.B
+echo "Testing TestCases/UDDUChains/UDDUChainIndirect1.B, TestResults/UDDUChains/UDDUChainIndirect1.B.out Checked by PLM 05/05/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainIndirect1.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainIndirect1.B.out
 
-echo "Testing TestCases/UDDUChainsTests/logicalAND.B, TestResults/UDDUChainsTests/logicalAND.B.out Checked by PLM 08/14/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalAND.B > t
-diff t TestResults/UDDUChainsTests/logicalAND.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainInterProcedural2.f
+mv UDDUChainInterProcedural2.B TestCases/UDDUChains/UDDUChainInterProcedural2.B
+echo "Testing TestCases/UDDUChains/UDDUChainInterProcedural2.B, TestResults/UDDUChains/UDDUChainInterProcedural2.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainInterProcedural2.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainInterProcedural2.B.out
 
-echo "Testing TestCases/UDDUChainsTests/logicalOR.B, TestResults/UDDUChainsTests/logicalOR.B.out Checked by PLM 08/14/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalOR.B > t
-diff t TestResults/UDDUChainsTests/logicalOR.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainIndirect2.f
+mv UDDUChainIndirect2.B TestCases/UDDUChains/UDDUChainIndirect2.B
+echo "Testing TestCases/UDDUChains/UDDUChainIndirect2.B, TestResults/UDDUChains/UDDUChainIndirect2.B.out Checked by PLM 05/05/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainIndirect2.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainIndirect2.B.out
 
-echo "Testing TestCases/UDDUChainsTests/logicalNOT.B, TestResults/UDDUChainsTests/logicalNOT.B.out Checked by PLM 08/14/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/logicalNOT.B > t
-diff t TestResults/UDDUChainsTests/logicalNOT.B.out
-
-echo "Testing TestCases/UDDUChainsTests/Intrinsic_min.B, TestResults/UDDUChainsTests/Intrinsic_min.B.out Cheked by PLM 08/21/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_min.B > t
-diff t TestResults/UDDUChainsTests/Intrinsic_min.B.out
-
-echo "Testing TestCases/UDDUChainsTests/Intrinsic_max.B, TestResults/UDDUChainsTests/Intrinsic_max.B.out Checked by PLM 08/21/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/Intrinsic_max.B > t
-diff t TestResults/UDDUChainsTests/Intrinsic_max.B.out
-
-echo "Testing TestCases/UDDUChainsTests/StringEQ.B, TestResults/UDDUChainsTests/StringEQ.B.out Checked by PLM 08/22/07"
-./test-open64 --oa-UDDUChains TestCases/UDDUChainsTests/StringEQ.B > t
-diff t TestResults/UDDUChainsTests/StringEQ.B.out
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/UDDUChains/UDDUChainLoop.f
+mv UDDUChainLoop.B TestCases/UDDUChains/UDDUChainLoop.B
+echo "Testing TestCases/UDDUChains/UDDUChainLoop.B, TestResults/UDDUChains/UDDUChainLoop.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-UDDUChains TestCases/UDDUChains/UDDUChainLoop.B > t
+diff -I "LOC 0 0 source files:" t TestResults/UDDUChains/UDDUChainLoop.B.out
 

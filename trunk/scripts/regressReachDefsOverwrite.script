@@ -1,0 +1,6 @@
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefsOverwrite/multiple_definitions.f
+mv multiple_definitions.B TestCases/ReachDefsOverwrite/multiple_definitions.B
+echo "Testing TestCases/ReachDefsOverwrite/multiple_definitions.B, TestResults/ReachDefsOverwrite/multiple_definitions.B.out "
+./test-open64 --oa-ReachDefsOverwrite TestCases/ReachDefsOverwrite/multiple_definitions.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefsOverwrite/multiple_definitions.B.out
+

@@ -1,387 +1,287 @@
+ Dep Analysis 
 
 MustDefMap: StmtHandle	 => LocSet
         I:0:.predef_I4 = 1	 => [ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::I)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+            Tag(
+                mTagID: 2
+                # NamedRef(head_::I)
             )
  ] 
         t__1:0:.log.4 = I:0:.predef_I4<3	 => [ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::t__1)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+            Tag(
+                mTagID: 8
+                # NamedRef(head_::t__1)
             )
  ] 
         I:0:.predef_I4 = I:0:.predef_I4+1	 => [ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::I)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+            Tag(
+                mTagID: 2
+                # NamedRef(head_::I)
             )
  ] 
         t__1:0:.log.4 = I:0:.predef_I4<3	 => [ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::t__1)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+            Tag(
+                mTagID: 8
+                # NamedRef(head_::t__1)
             )
  ] 
 
 mDepDFSet: StmtHandle	 => DepDFSet
-         LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ICFGDep/activity_int5.f"
+         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/activity_int5.f"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-stmt: 	 => 
+stmt: 	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: X:0:anon_ptr.(1) = 5	 => 
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: I:0:.predef_I4 = 1	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: X:0:anon_ptr.(2) = 7	 => 
-            mUseToDefsMap: UseLoc	 => DefLocSet
+            ImplicitRemoves:
+            Tag(
+                mTagID: 2
+                # NamedRef(head_::I)
+            )
 
-            mDefToUsesMap: DefLoc	 => UseLocSet
+            Uses:
+            Defs:
+        stmt: t__1:0:.log.4 = I:0:.predef_I4<3	 => Inside DepDFSet output
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: I:0:.predef_I4 = 1	 => 
-            mUseToDefsMap: UseLoc	 => DefLocSet
-
-            mDefToUsesMap: DefLoc	 => UseLocSet
-
-            ImplicitRemoves:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::I)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: t__1:0:.log.4 = I:0:.predef_I4<3	 => 
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::I)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
+                    Tag(
+                        mTagID: 2
+                        # NamedRef(head_::I)
                     )
-	 => [ 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::t__1)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 8
+                        # NamedRef(head_::t__1)
+                    )
+
 
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::t__1)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
+                    Tag(
+                        mTagID: 8
+                        # NamedRef(head_::t__1)
                     )
-	 => [ 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::I)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 2
+                        # NamedRef(head_::I)
+                    )
 
-            ImplicitRemoves:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::t__1)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-            Uses:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::I)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-            Defs:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::t__1)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-        stmt: while_do (I:0:.predef_I4<3)	 => 
+
+            ImplicitRemoves:
+            Tag(
+                mTagID: 8
+                # NamedRef(head_::t__1)
+            )
+
+            Uses:
+            Tag(
+                mTagID: 2
+                # NamedRef(head_::I)
+            )
+
+            Defs:
+            Tag(
+                mTagID: 8
+                # NamedRef(head_::t__1)
+            )
+
+        stmt: while_do (t__1:0:.log.4)	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: if (I:0:.predef_I4<2)	 => 
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: if (I:0:.predef_I4<2)	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1)	 => 
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1)	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::X)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
-                        mFull: 0
+                    Tag(
+                        mTagID: 9
+                        # NamedRef(head_::X)
+                        # SubSetRef(NamedRef(head_::X))
                     )
-	 => [ 
-                        LocSubSet(
-                            mLoc: 
-                            NamedLoc(
-                                mSymHandle: SymHandle(head_::Y)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )
-                            mFull: 0
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 10
+                        # NamedRef(head_::Y)
+                        # SubSetRef(NamedRef(head_::Y))
+                    )
+
 
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::Y)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
-                        mFull: 0
+                    Tag(
+                        mTagID: 10
+                        # NamedRef(head_::Y)
+                        # SubSetRef(NamedRef(head_::Y))
                     )
-	 => [ 
-                        LocSubSet(
-                            mLoc: 
-                            NamedLoc(
-                                mSymHandle: SymHandle(head_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )
-                            mFull: 0
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 9
+                        # NamedRef(head_::X)
+                        # SubSetRef(NamedRef(head_::X))
+                    )
 
-            ImplicitRemoves:[  ] 
-            Uses:[ 
-                LocSubSet(
-                    mLoc: 
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::X)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )
-                    mFull: 0
-                )
- ] 
-            Defs:[ 
-                LocSubSet(
-                    mLoc: 
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::Y)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )
-                    mFull: 0
-                )
- ] 
-        stmt: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(2)	 => 
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 9
+                # NamedRef(head_::X)
+                # SubSetRef(NamedRef(head_::X))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 10
+                # NamedRef(head_::Y)
+                # SubSetRef(NamedRef(head_::Y))
+            )
+
+        stmt: Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(2)	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::X)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
-                        mFull: 0
+                    Tag(
+                        mTagID: 9
+                        # NamedRef(head_::X)
+                        # SubSetRef(NamedRef(head_::X))
                     )
-	 => [ 
-                        LocSubSet(
-                            mLoc: 
-                            NamedLoc(
-                                mSymHandle: SymHandle(head_::Y)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )
-                            mFull: 0
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 10
+                        # NamedRef(head_::Y)
+                        # SubSetRef(NamedRef(head_::Y))
+                    )
+
 
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
-                    LocSubSet(
-                        mLoc: 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::Y)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
-                        mFull: 0
+                    Tag(
+                        mTagID: 10
+                        # NamedRef(head_::Y)
+                        # SubSetRef(NamedRef(head_::Y))
                     )
-	 => [ 
-                        LocSubSet(
-                            mLoc: 
-                            NamedLoc(
-                                mSymHandle: SymHandle(head_::X)
-                                mLocal: 1
-                                mFullOverlap: [  ] 
-                                mPartOverlap: [  ] 
-                            )
-                            mFull: 0
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 9
+                        # NamedRef(head_::X)
+                        # SubSetRef(NamedRef(head_::X))
+                    )
 
-            ImplicitRemoves:[  ] 
-            Uses:[ 
-                LocSubSet(
-                    mLoc: 
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::X)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )
-                    mFull: 0
-                )
- ] 
-            Defs:[ 
-                LocSubSet(
-                    mLoc: 
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::Y)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
-                    )
-                    mFull: 0
-                )
- ] 
-        stmt: I:0:.predef_I4 = I:0:.predef_I4+1	 => 
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 9
+                # NamedRef(head_::X)
+                # SubSetRef(NamedRef(head_::X))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 10
+                # NamedRef(head_::Y)
+                # SubSetRef(NamedRef(head_::Y))
+            )
+
+        stmt: I:0:.predef_I4 = I:0:.predef_I4+1	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: t__1:0:.log.4 = I:0:.predef_I4<3	 => 
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: t__1:0:.log.4 = I:0:.predef_I4<3	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
                     
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::I)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
+                    Tag(
+                        mTagID: 2
+                        # NamedRef(head_::I)
                     )
-	 => [ 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::t__1)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 8
+                        # NamedRef(head_::t__1)
+                    )
+
 
             mDefToUsesMap: DefLoc	 => UseLocSet
                     
-                    NamedLoc(
-                        mSymHandle: SymHandle(head_::t__1)
-                        mLocal: 1
-                        mFullOverlap: [  ] 
-                        mPartOverlap: [  ] 
+                    Tag(
+                        mTagID: 8
+                        # NamedRef(head_::t__1)
                     )
-	 => [ 
-                        NamedLoc(
-                            mSymHandle: SymHandle(head_::I)
-                            mLocal: 1
-                            mFullOverlap: [  ] 
-                            mPartOverlap: [  ] 
-                        )
- ] 
+	 => 
+                    Tag(
+                        mTagID: 2
+                        # NamedRef(head_::I)
+                    )
 
-            ImplicitRemoves:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::t__1)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-            Uses:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::I)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-            Defs:[ 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::t__1)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
- ] 
-        stmt: Y:0:anon_ptr.(2) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(2)	 => 
+
+            ImplicitRemoves:
+            Tag(
+                mTagID: 8
+                # NamedRef(head_::t__1)
+            )
+
+            Uses:
+            Tag(
+                mTagID: 2
+                # NamedRef(head_::I)
+            )
+
+            Defs:
+            Tag(
+                mTagID: 8
+                # NamedRef(head_::t__1)
+            )
+
+        stmt: Y:0:anon_ptr.(2) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(2)	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
-        stmt: return	 => 
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: return	 => Inside DepDFSet output
+
             mUseToDefsMap: UseLoc	 => DefLocSet
 
             mDefToUsesMap: DefLoc	 => UseLocSet
 
-            ImplicitRemoves:[  ] 
-            Uses:[  ] 
-            Defs:[  ] 
+            ImplicitRemoves:
+            Uses:
+            Defs:
+
+mDepDFSet: CallHandle	 => DepDFSet

@@ -1,21 +1,19 @@
+
 # comment in file.test
-# Regression tests for ReachDef generation
+# Regression tests for UDDUChains Analysis
 testname::UDDUChains
-inputdir::TestCases/UDDUChainsTests
-outputdir::TestResults/UDDUChainsTests
+inputdir::TestCases/UDDUChains
+outputdir::TestResults/UDDUChains
 driverexec::./test-open64 --oa-UDDUChains
 
 # list of tests
-#       input file,                 status
-test::reachdef_if1.B,             Checked by PLM 10/20/06  
-test::reachdef_if2.B,             Checked by PLM 10/20/06    
-test::reachdef_loopif1.B,         Checked by PLM 10/20/06 
-test::Loop_simple_10.B,           Checked by PLM 04/18/07
-test::logicalAND.B,               Checked by PLM 08/14/07
-test::logicalOR.B,                Checked by PLM 08/14/07
-test::logicalNOT.B,               Checked by PLM 08/14/07
-test::Intrinsic_min.B,            Cheked by PLM 08/21/07
-test::Intrinsic_max.B,            Checked by PLM 08/21/07
-test::StringEQ.B,                 Checked by PLM 08/22/07
-#test::interalias_proc_call3_rd.B, Not Checked Yet
+#       input file,                  status
+
+test::UDDUChainConditional.B,        Checked by PLM 05/04/08
+test::UDDUChainInterProcedural1.B,   Checked by PLM 05/04/08 
+test::UDDUChainNestedGlobals.B,      Checked by PLM 05/05/08
+test::UDDUChainIndirect1.B,          Checked by PLM 05/05/08, overestimation
+test::UDDUChainInterProcedural2.B,   Checked by PLM 05/04/08
+test::UDDUChainIndirect2.B,          Checked by PLM 05/05/08 
+test::UDDUChainLoop.B,               Checked by PLM 05/04/08
 

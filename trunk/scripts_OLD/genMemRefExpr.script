@@ -1,0 +1,302 @@
+echo "Generating TestResults/MemRefExpr/arrays1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/arrays1.B > TestResults/MemRefExpr/arrays1.B.out
+echo "Generating TestResults/MemRefExpr/arrays5.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/arrays5.B > TestResults/MemRefExpr/arrays5.B.out
+echo "Generating TestResults/MemRefExpr/functions1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/functions1.B > TestResults/MemRefExpr/functions1.B.out
+echo "Generating TestResults/MemRefExpr/globalActive_2.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalActive_2.B > TestResults/MemRefExpr/globalActive_2.B.out
+echo "Generating TestResults/MemRefExpr/interalias_proc_call1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call1.B > TestResults/MemRefExpr/interalias_proc_call1.B.out
+echo "Generating TestResults/MemRefExpr/interalias_proc_call2.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call2.B > TestResults/MemRefExpr/interalias_proc_call2.B.out
+echo "Generating TestResults/MemRefExpr/interalias_proc_call3.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/interalias_proc_call3.B > TestResults/MemRefExpr/interalias_proc_call3.B.out
+echo "Generating TestResults/MemRefExpr/formal_actual_expression.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > TestResults/MemRefExpr/formal_actual_expression.B.out
+echo "Generating TestResults/MemRefExpr/local_actual_expression.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression.B > TestResults/MemRefExpr/local_actual_expression.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual.B > TestResults/MemRefExpr/formal_array_subscript_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_array_subscript_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_subscript_actual.B > TestResults/MemRefExpr/local_array_subscript_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual.B > TestResults/MemRefExpr/formal_scalar_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_scalar_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_scalar_actual.B > TestResults/MemRefExpr/local_scalar_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual.B > TestResults/MemRefExpr/formal_array_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_array_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_actual.B > TestResults/MemRefExpr/local_array_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_in.B > TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_out.B > TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_inout.B > TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_in.B > TestResults/MemRefExpr/formal_array_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_out.B > TestResults/MemRefExpr/formal_array_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_inout.B > TestResults/MemRefExpr/formal_array_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/local_actual_expression_assignment.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression_assignment.B > TestResults/MemRefExpr/local_actual_expression_assignment.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_in.B > TestResults/MemRefExpr/formal_scalar_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_out.B > TestResults/MemRefExpr/formal_scalar_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/If_Loop4.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/If_Loop4.B > TestResults/MemRefExpr/If_Loop4.B.out
+echo "Generating TestResults/MemRefExpr/passiveStatement.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/passiveStatement.B > TestResults/MemRefExpr/passiveStatement.B.out
+echo "Generating TestResults/MemRefExpr/simple1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple1.B > TestResults/MemRefExpr/simple1.B.out
+echo "Generating TestResults/MemRefExpr/If_Loop5.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/If_Loop5.B > TestResults/MemRefExpr/If_Loop5.B.out
+echo "Generating TestResults/MemRefExpr/simple2.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple2.B > TestResults/MemRefExpr/simple2.B.out
+echo "Generating TestResults/MemRefExpr/simple3.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/simple3.B > TestResults/MemRefExpr/simple3.B.out
+echo "Generating TestResults/MemRefExpr/float_intrinsic.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/float_intrinsic.B > TestResults/MemRefExpr/float_intrinsic.B.out
+echo "Generating TestResults/MemRefExpr/lion.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/lion.B > TestResults/MemRefExpr/lion.B.out
+echo "Generating TestResults/MemRefExpr/tanh_f_arg.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/tanh_f_arg.B > TestResults/MemRefExpr/tanh_f_arg.B.out
+echo "Generating TestResults/MemRefExpr/nested_calls_1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_1.B > TestResults/MemRefExpr/nested_calls_1.B.out
+echo "Generating TestResults/MemRefExpr/bat.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/bat.B > TestResults/MemRefExpr/bat.B.out
+echo "Generating TestResults/MemRefExpr/nested_calls_3.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_3.B > TestResults/MemRefExpr/nested_calls_3.B.out
+echo "Generating TestResults/MemRefExpr/cast1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/cast1.B > TestResults/MemRefExpr/cast1.B.out
+echo "Generating TestResults/MemRefExpr/nested_calls_4.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested_calls_4.B > TestResults/MemRefExpr/nested_calls_4.B.out
+echo "Generating TestResults/MemRefExpr/constPrec.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/constPrec.B > TestResults/MemRefExpr/constPrec.B.out
+echo "Generating TestResults/MemRefExpr/readWrite1.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/readWrite1.B > TestResults/MemRefExpr/readWrite1.B.out
+echo "Generating TestResults/MemRefExpr/rung_kutta.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/rung_kutta.B > TestResults/MemRefExpr/rung_kutta.B.out
+echo "Generating TestResults/MemRefExpr/scalar_local.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/scalar_local.B > TestResults/MemRefExpr/scalar_local.B.out
+echo "Generating TestResults/MemRefExpr/struct_simple.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple.B > TestResults/MemRefExpr/struct_simple.B.out
+echo "Generating TestResults/MemRefExpr/struct_simple_local.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/struct_simple_local.B > TestResults/MemRefExpr/struct_simple_local.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactual.B > TestResults/MemRefExpr/formalarrayactual.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualin.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualin.B > TestResults/MemRefExpr/formalarrayactualin.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualout.B > TestResults/MemRefExpr/formalarrayactualout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualinout.B > TestResults/MemRefExpr/formalarrayactualinout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualsubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscript.B > TestResults/MemRefExpr/formalarrayactualsubscript.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualsubscriptin.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptin.B > TestResults/MemRefExpr/formalarrayactualsubscriptin.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualsubscriptout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptout.B > TestResults/MemRefExpr/formalarrayactualsubscriptout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualsubscriptinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptinout.B > TestResults/MemRefExpr/formalarrayactualsubscriptinout.B.out
+echo "Generating TestResults/MemRefExpr/localarrayactual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactual.B > TestResults/MemRefExpr/localarrayactual.B.out
+echo "Generating TestResults/MemRefExpr/localscalaractual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaractual.B > TestResults/MemRefExpr/localscalaractual.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayofarrayuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayofarrayuse.B > TestResults/MemRefExpr/formalarrayofarrayuse.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayofarrayusesubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayofarrayusesubscript.B > TestResults/MemRefExpr/formalarrayofarrayusesubscript.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayofarraydef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayofarraydef.B > TestResults/MemRefExpr/formalarrayofarraydef.B.out
+echo "Generating TestResults/MemRefExpr/localarrayofarrayuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayofarrayuse.B > TestResults/MemRefExpr/localarrayofarrayuse.B.out
+echo "Generating TestResults/MemRefExpr/localarrayofarrayusesubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayofarrayusesubscript.B > TestResults/MemRefExpr/localarrayofarrayusesubscript.B.out
+echo "Generating TestResults/MemRefExpr/localarrayofarraydef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayofarraydef.B > TestResults/MemRefExpr/localarrayofarraydef.B.out
+echo "Generating TestResults/MemRefExpr/modulearrayusewholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearrayusewholearray.B > TestResults/MemRefExpr/modulearrayusewholearray.B.out
+echo "Generating TestResults/MemRefExpr/modulearrayuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearrayuse.B > TestResults/MemRefExpr/modulearrayuse.B.out
+echo "Generating TestResults/MemRefExpr/modulearraysubscriptuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraysubscriptuse.B > TestResults/MemRefExpr/modulearraysubscriptuse.B.out
+echo "Generating TestResults/MemRefExpr/modulearraydefwholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraydefwholearray.B > TestResults/MemRefExpr/modulearraydefwholearray.B.out
+echo "Generating TestResults/MemRefExpr/modulearraydef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraydef.B > TestResults/MemRefExpr/modulearraydef.B.out
+echo "Generating TestResults/MemRefExpr/modulearraysubscriptdef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraysubscriptdef.B > TestResults/MemRefExpr/modulearraysubscriptdef.B.out
+echo "Generating TestResults/MemRefExpr/modulearraysectiondef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulearraysectiondef.B > TestResults/MemRefExpr/modulearraysectiondef.B.out
+echo "Generating TestResults/MemRefExpr/modulescalaruse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulescalaruse.B > TestResults/MemRefExpr/modulescalaruse.B.out
+echo "Generating TestResults/MemRefExpr/modulescalardef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/modulescalardef.B > TestResults/MemRefExpr/modulescalardef.B.out
+echo "Generating TestResults/MemRefExpr/globalarrayusewholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarrayusewholearray.B > TestResults/MemRefExpr/globalarrayusewholearray.B.out
+echo "Generating TestResults/MemRefExpr/globalarrayuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarrayuse.B > TestResults/MemRefExpr/globalarrayuse.B.out
+echo "Generating TestResults/MemRefExpr/globalarrayusesubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarrayusesubscript.B > TestResults/MemRefExpr/globalarrayusesubscript.B.out
+echo "Generating TestResults/MemRefExpr/globalarraydefwholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraydefwholearray.B > TestResults/MemRefExpr/globalarraydefwholearray.B.out
+echo "Generating TestResults/MemRefExpr/globalarraydef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraydef.B > TestResults/MemRefExpr/globalarraydef.B.out
+echo "Generating TestResults/MemRefExpr/globalarraydefsubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraydefsubscript.B > TestResults/MemRefExpr/globalarraydefsubscript.B.out
+echo "Generating TestResults/MemRefExpr/globalarraysectiondef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalarraysectiondef.B > TestResults/MemRefExpr/globalarraysectiondef.B.out
+echo "Generating TestResults/MemRefExpr/globalscalaruse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalscalaruse.B > TestResults/MemRefExpr/globalscalaruse.B.out
+echo "Generating TestResults/MemRefExpr/globalscalardef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/globalscalardef.B > TestResults/MemRefExpr/globalscalardef.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayusewholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayusewholearray.B > TestResults/MemRefExpr/formalarrayusewholearray.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayuse.B > TestResults/MemRefExpr/formalarrayuse.B.out
+echo "Generating TestResults/MemRefExpr/formalarraysubscriptuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraysubscriptuse.B > TestResults/MemRefExpr/formalarraysubscriptuse.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayusein.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayusein.B > TestResults/MemRefExpr/formalarrayusein.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayuseout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayuseout.B > TestResults/MemRefExpr/formalarrayuseout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayuseinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayuseinout.B > TestResults/MemRefExpr/formalarrayuseinout.B.out
+echo "Generating TestResults/MemRefExpr/formalarraydefwholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydefwholearray.B > TestResults/MemRefExpr/formalarraydefwholearray.B.out
+echo "Generating TestResults/MemRefExpr/formalarraydef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydef.B > TestResults/MemRefExpr/formalarraydef.B.out
+echo "Generating TestResults/MemRefExpr/formalarraysubscriptdef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraysubscriptdef.B > TestResults/MemRefExpr/formalarraysubscriptdef.B.out
+echo "Generating TestResults/MemRefExpr/formalarraysectiondef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraysectiondef.B > TestResults/MemRefExpr/formalarraysectiondef.B.out
+echo "Generating TestResults/MemRefExpr/formalarraydefout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydefout.B > TestResults/MemRefExpr/formalarraydefout.B.out
+echo "Generating TestResults/MemRefExpr/formalarraydefinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarraydefinout.B > TestResults/MemRefExpr/formalarraydefinout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaruse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaruse.B > TestResults/MemRefExpr/formalscalaruse.B.out
+echo "Generating TestResults/MemRefExpr/formalscalarusein.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalarusein.B > TestResults/MemRefExpr/formalscalarusein.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaruseout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaruseout.B > TestResults/MemRefExpr/formalscalaruseout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaruseinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaruseinout.B > TestResults/MemRefExpr/formalscalaruseinout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalardef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalardef.B > TestResults/MemRefExpr/formalscalardef.B.out
+echo "Generating TestResults/MemRefExpr/formalscalardefout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalardefout.B > TestResults/MemRefExpr/formalscalardefout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalardefinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalardefinout.B > TestResults/MemRefExpr/formalscalardefinout.B.out
+echo "Generating TestResults/MemRefExpr/localarrayuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayuse.B > TestResults/MemRefExpr/localarrayuse.B.out
+echo "Generating TestResults/MemRefExpr/localarraysubscriptuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysubscriptuse.B > TestResults/MemRefExpr/localarraysubscriptuse.B.out
+echo "Generating TestResults/MemRefExpr/localarraydef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraydef.B > TestResults/MemRefExpr/localarraydef.B.out
+echo "Generating TestResults/MemRefExpr/localarraysubscriptdef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysubscriptdef.B > TestResults/MemRefExpr/localarraysubscriptdef.B.out
+echo "Generating TestResults/MemRefExpr/localscalaruse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaruse.B > TestResults/MemRefExpr/localscalaruse.B.out
+echo "Generating TestResults/MemRefExpr/localscalardef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalardef.B > TestResults/MemRefExpr/localscalardef.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeusewholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusewholearray.B > TestResults/MemRefExpr/formalarrayactualcalleeusewholearray.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeusesubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusesubscript.B > TestResults/MemRefExpr/formalarrayactualcalleeusesubscript.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualsubscriptcalleeuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptcalleeuse.B > TestResults/MemRefExpr/formalarrayactualsubscriptcalleeuse.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeusein.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeusein.B > TestResults/MemRefExpr/formalarrayactualcalleeusein.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeuseout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeuseout.B > TestResults/MemRefExpr/formalarrayactualcalleeuseout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleeuseinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleeuseinout.B > TestResults/MemRefExpr/formalarrayactualcalleeuseinout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleedefwholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefwholearray.B > TestResults/MemRefExpr/formalarrayactualcalleedefwholearray.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedef.B > TestResults/MemRefExpr/formalarrayactualcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleedefsubscript.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefsubscript.B > TestResults/MemRefExpr/formalarrayactualcalleedefsubscript.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleesectiondef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleesectiondef.B > TestResults/MemRefExpr/formalarrayactualcalleesectiondef.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualsubscriptcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualsubscriptcalleedef.B > TestResults/MemRefExpr/formalarrayactualsubscriptcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleedefout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefout.B > TestResults/MemRefExpr/formalarrayactualcalleedefout.B.out
+echo "Generating TestResults/MemRefExpr/formalarrayactualcalleedefinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalarrayactualcalleedefinout.B > TestResults/MemRefExpr/formalarrayactualcalleedefinout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleeuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeuse.B > TestResults/MemRefExpr/formalscalaractualcalleeuse.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleeusein.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeusein.B > TestResults/MemRefExpr/formalscalaractualcalleeusein.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleeuseout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeuseout.B > TestResults/MemRefExpr/formalscalaractualcalleeuseout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleeuseinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleeuseinout.B > TestResults/MemRefExpr/formalscalaractualcalleeuseinout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleedef.B > TestResults/MemRefExpr/formalscalaractualcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleedefout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleedefout.B > TestResults/MemRefExpr/formalscalaractualcalleedefout.B.out
+echo "Generating TestResults/MemRefExpr/formalscalaractualcalleedefinout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formalscalaractualcalleedefinout.B > TestResults/MemRefExpr/formalscalaractualcalleedefinout.B.out
+echo "Generating TestResults/MemRefExpr/localarrayactualcalleeuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactualcalleeuse.B > TestResults/MemRefExpr/localarrayactualcalleeuse.B.out
+echo "Generating TestResults/MemRefExpr/localarrayactualcalleedefwholearray.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactualcalleedefwholearray.B > TestResults/MemRefExpr/localarrayactualcalleedefwholearray.B.out
+echo "Generating TestResults/MemRefExpr/localarrayactualcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarrayactualcalleedef.B > TestResults/MemRefExpr/localarrayactualcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/localarraysubscriptactualcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysubscriptactualcalleedef.B > TestResults/MemRefExpr/localarraysubscriptactualcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/localarraysectionactualcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localarraysectionactualcalleedef.B > TestResults/MemRefExpr/localarraysectionactualcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/localscalaractualcalleeuse.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaractualcalleeuse.B > TestResults/MemRefExpr/localscalaractualcalleeuse.B.out
+echo "Generating TestResults/MemRefExpr/localscalaractualcalleedef.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/localscalaractualcalleedef.B > TestResults/MemRefExpr/localscalaractualcalleedef.B.out
+echo "Generating TestResults/MemRefExpr/formal_actual_expression.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_actual_expression.B > TestResults/MemRefExpr/formal_actual_expression.B.out
+echo "Generating TestResults/MemRefExpr/local_actual_expression.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression.B > TestResults/MemRefExpr/local_actual_expression.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual.B > TestResults/MemRefExpr/formal_array_subscript_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_array_subscript_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_subscript_actual.B > TestResults/MemRefExpr/local_array_subscript_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual.B > TestResults/MemRefExpr/formal_scalar_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_scalar_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_scalar_actual.B > TestResults/MemRefExpr/local_scalar_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual.B > TestResults/MemRefExpr/formal_array_actual.B.out
+echo "Generating TestResults/MemRefExpr/local_array_actual.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_array_actual.B > TestResults/MemRefExpr/local_array_actual.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_in.B > TestResults/MemRefExpr/formal_array_subscript_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_out.B > TestResults/MemRefExpr/formal_array_subscript_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_subscript_actual_inout.B > TestResults/MemRefExpr/formal_array_subscript_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_in.B > TestResults/MemRefExpr/formal_array_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_out.B > TestResults/MemRefExpr/formal_array_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_array_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_array_actual_inout.B > TestResults/MemRefExpr/formal_array_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/local_actual_expression_assignment.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local_actual_expression_assignment.B > TestResults/MemRefExpr/local_actual_expression_assignment.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_in.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_in.B > TestResults/MemRefExpr/formal_scalar_actual_in.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_out.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_out.B > TestResults/MemRefExpr/formal_scalar_actual_out.B.out
+echo "Generating TestResults/MemRefExpr/formal_scalar_actual_inout.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/formal_scalar_actual_inout.B > TestResults/MemRefExpr/formal_scalar_actual_inout.B.out
+echo "Generating TestResults/MemRefExpr/Intrinsic_min.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_min.B > TestResults/MemRefExpr/Intrinsic_min.B.out
+echo "Generating TestResults/MemRefExpr/Intrinsic_max.B.out"
+./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/Intrinsic_max.B > TestResults/MemRefExpr/Intrinsic_max.B.out

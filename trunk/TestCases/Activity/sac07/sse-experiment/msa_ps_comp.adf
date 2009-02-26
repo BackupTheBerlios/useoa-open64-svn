@@ -1,0 +1,7 @@
+AD_PROG       = msa_ps.cmp
+AD_TOP        = dmsasep
+AD_IVARS      = x
+AD_OVARS      = fvec
+AD_OUTPUT_DIR = ps_comp
+AD_PMAX       = 3
+AD_EXCEPTION_FLAVOR = performance

@@ -5,13 +5,42 @@
         integer :: res
         integer :: i
         i = 0
+
+!          MOD()  = (),       LMOD() = (i)
+!          REF()  = (),       LREF() = ()
+!          USE()  = (),       LUSE() = ()
+!          DEF()  = (),       LDEF() = ()
+        
         do while (s(i) .eq. t(i))
-          if (s(i) .ne. '\0') then
+
+!          MOD()  = (),       LMOD() = ()
+!          REF()  = (),       LREF() = (s,t)
+!          USE()  = (),       LUSE() = (s(),t())
+!          DEF()  = (),       LDEF() = ()
+
+!          if (s(i) .ne. '\0') then
+
+!          MOD()  = (),       LMOD() = ()
+!          REF()  = (),       LREF() = (s)
+!          USE()  = (),       LUSE() = (s())
+!          DEF()  = (),       LDEF() = ()
+
             res = 0
-            stop
-          endif
+
+!          MOD()  = (),       LMOD() = (res)
+!          REF()  = (),       LREF() = ()
+!          USE()  = (),       LUSE() = ()
+!          DEF()  = (),       LDEF() = ()
+
+!          endif
           i = i + 1
-        enddo
+
+!          MOD()  = (),       LMOD() = (i)
+!          REF()  = (),       LREF() = ()
+!          USE()  = (),       LUSE() = (i)
+!          DEF()  = (),       LDEF() = ()
+
+        end do
         res = 1
 
       end function stringcmp
@@ -23,4 +52,10 @@
         retVal = 0
 
         retVal = stringcmp(a,b)
+
+!          MOD()  = (),          LMOD() = ()
+!          REF()  = (a,b),       LREF() = (a,b)
+!          USE()  = (*a,*b),     LUSE() = (*a,*b)
+!          DEF()  = (),          LDEF() = ()
+
       end program main

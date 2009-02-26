@@ -1,94 +1,40 @@
 
-InterActive(
+InterActiveFortran(
     Procedure( head_::head_ ): 
-    ActiveLocSet([ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::T1)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 7
             )    
-            NamedLoc(
-                mSymHandle: SymHandle(head_::T2)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+            Tag(
+                mTagID: 9
             )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::X)
-                    )
-                    mNumDeref: 1
-                )
+            Tag(
+                mTagID: 16
             )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::F)
-                    )
-                    mNumDeref: 1
-                )
+            Tag(
+                mTagID: 17
             ) ] 
-    )
-    ActiveStmtSet([ 
-            StmtHandle(T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8)
-                StmtHandle(F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8) ] 
-    )
-    ActiveMemRefSet([ 
-            MemRefHandle(T1:0:.predef_F8)
-                MemRefHandle(X:0:.predef_F8)
-                MemRefHandle(F:0:.predef_F8)
-                MemRefHandle(F:0:.predef_F8)
-                MemRefHandle(T1:0:.predef_F8)
-                MemRefHandle(T2:0:.predef_F8) ] 
     )
     Procedure( head_::bar_ ): 
-    ActiveLocSet([ 
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::A)
-                    )
-                    mNumDeref: 1
-                )
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 7
             )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: DEF
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::B)
-                    )
-                    mNumDeref: 1
-                )
+            Tag(
+                mTagID: 9
             ) ] 
     )
-    ActiveStmtSet([ 
-            StmtHandle(B:0:.predef_F8 = A:0:.predef_F8) ] 
-    )
-    ActiveMemRefSet([ 
-            MemRefHandle(B:0:.predef_F8)
-                MemRefHandle(A:0:.predef_F8) ] 
-    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::F)
+            SymHandle(head_::T1)
+            SymHandle(head_::T2)
+            SymHandle(bar_::A)
+            SymHandle(bar_::B) ] 
     mNumIterUseful: 2
     mNumIterVary: 2
-    mNumIterActive: 1
 )
-
-
-Total Iters: 6

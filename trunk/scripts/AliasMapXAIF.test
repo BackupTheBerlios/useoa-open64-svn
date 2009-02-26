@@ -1,22 +1,21 @@
-# Regression tests for generation of AliasMapXAIF, it uses
-# FIAliasAliasMap in test-open64 as input but could take
-# any InterAliasInterface results
+
+# comment in file.test
+# Regression tests for AliasMapXAIF generation
 testname::AliasMapXAIF
-inputdir::TestCases/Alias
+inputdir::TestCases/AliasMapXAIF
 outputdir::TestResults/AliasMapXAIF
-driverexec::./test-open64 --oa-AliasMapXAIFFIAlias
+driverexec::./test-open64 --oa-AliasMapXAIF
 
 # list of tests
 #       input file,                 status
-test::  interalias_proc_call1.B,    checked by PLM 04/15/07
-test::  interalias_proc_call2.B,    checked by PLM 04/15/07
-test::  interalias_proc_call3.B,    checked by PLM 04/15/07
-test::  interalias_proc_call5.B,    checked by PLM 04/15/07
-test::  arrays5.B,                  checked by PLM 04/15/07
-test::  globalActive_2.B,           checked by PLm 04/15/07
-test::  Unnamed_alias.B,            checked by PLM 04/15/07
-test::  Unnamed_alias_callsite.B,   checked by PLM 04/15/07
 
-
-
+test::Alias_Pointer.B,              Checked by PLM 05/04/08
+test::NoAlias_StructVar.B,          Checked by PLM 05/04/08
+test::NoAlias_Named.B,              Checked by PLM 05/04/08
+test::NoAlias_Unnamed.B,            Checked by PLM 05/04/08
+test::NoAlias_FieldAccess.B,        Checked by PLM 05/04/08
+test::NoAlias_SubSet.B,             Checked by PLM 05/04/08
+test::Param_Alias.B,                Checked by PLM 05/04/08
+test::multiple_calls.B,             Checked by PLM 05/04/08
+test::pointer_to_local.B,           Checked by PLM 05/04/08
 

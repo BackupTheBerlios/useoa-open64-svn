@@ -3,163 +3,131 @@ mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ProcHandle(constprop_if1b_::constprop_if1b_)	 => 
         ReachConstStandard: 
         ReachConstsStandard(
-            mReachConsts: StmtHandle	 => OA::OA_ptr<ConstDefSet> 
+            mReachConsts: StmtHandle	 => OA::OA_ptr<RCPairSet> 
                     
-                    Statement:  LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/ReachConsts/constprop_if1b.f90"
+                    Statement:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ReachConsts/constprop_if1b.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()	 => 
-                    ConstDefSet([  ] 
+                    RCPairSet([  ] 
                     )
                     
                     Statement: StmtHandle(X:0:.predef_I4 = 2)	 => 
-                    ConstDefSet([  ] 
+                    RCPairSet([  ] 
                     )
                     
                     Statement: StmtHandle(if (X:0:.predef_I4>=0))	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(Y:0:.predef_I4 = 5)	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             )    
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::Y)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
                                 )
-                                mCDType: ,VALUE=5>
+                                mConstPtr: ,VALUE=5>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(Y:0:.predef_I4 = 3)	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(X:0:.predef_I4 = 10)	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=2>
+                                mConstPtr: ,VALUE=2>
                             )    
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::Y)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
                                 )
-                                mCDType: ,VALUE=3>
+                                mConstPtr: ,VALUE=3>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(Z:0:.predef_I4 = Y:0:.predef_I4)	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=10>
+                                mConstPtr: ,VALUE=10>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(_END())	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=10>
+                                mConstPtr: ,VALUE=10>
                             ) ] 
                     )
                     
                     Statement: StmtHandle(return)	 => 
-                    ConstDefSet([ 
-                            ConstDef: 
-                            ConstDef(
-                                Location: 
-                                NamedLoc(
-                                    mSymHandle: SymHandle(constprop_if1b_::X)
-                                    mLocal: 1
-                                    mFullOverlap: [  ] 
-                                    mPartOverlap: [  ] 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
                                 )
-                                mCDType: ,VALUE=10>
+                                mConstPtr: ,VALUE=10>
                             ) ] 
                     )
-                    
-                    Statement: StmtHandle(return)	 => 
-                    ConstDefSet([  ] 
-                    )
+
+            mReachConstsForCallStmt: CallHandle	 => OA::OA_ptr<RCPairSet> 
 
         )
 

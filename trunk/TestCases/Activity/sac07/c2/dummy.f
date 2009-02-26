@@ -1,0 +1,5 @@
+      PROGRAM MAIN
+      INTEGER M
+      DOUBLE PRECISION X, Y(20), YP(20)
+      CALL FCN2(M, X, Y, YP)
+      END

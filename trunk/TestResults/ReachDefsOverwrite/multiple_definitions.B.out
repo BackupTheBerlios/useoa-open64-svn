@@ -1,0 +1,18 @@
+file nameTestCases/ReachDefsOverwrite/multiple_definitions.B
+Test reaching defs analysis
+
+ReachDefsStandard(
+    mReachDefs: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
+            StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)	 => [ StmtHandle(A:0:.predef_F8 =     3.000000000000000) ] 
+            StmtHandle(A:0:.predef_F8 =     5.000000000000000)	 => [ StmtHandle(A:0:.predef_F8 =     3.000000000000000)    StmtHandle(B:0:.predef_F8 = A:0:.predef_F8) ] 
+            StmtHandle(return)	 => [ StmtHandle(A:0:.predef_F8 =     3.000000000000000)    StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)    StmtHandle(A:0:.predef_F8 =     5.000000000000000) ] 
+
+    mExitReachDefs: [ StmtHandle(A:0:.predef_F8 =     3.000000000000000)    StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)    StmtHandle(A:0:.predef_F8 =     5.000000000000000) ] 
+)
+
+ReachDefsOverwriteStandard(
+    mOverwrittenBy: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
+            StmtHandle(A:0:.predef_F8 =     3.000000000000000)	 => [ StmtHandle(A:0:.predef_F8 =     5.000000000000000) ] 
+
+)
+

@@ -1,138 +1,45 @@
 
-InterActive(
+InterActiveFortran(
     Procedure( bar_::bar_ ): 
-    ActiveLocSet([ 
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::C)
-                    )
-                    mNumDeref: 1
-                )
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 15
             )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: DEF
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::D)
-                    )
-                    mNumDeref: 1
-                )
+            Tag(
+                mTagID: 16
             ) ] 
-    )
-    ActiveStmtSet([ 
-            StmtHandle(D:0:.predef_F8 = C:0:.predef_F8*C:0:.predef_F8) ] 
-    )
-    ActiveMemRefSet([ 
-            MemRefHandle(D:0:.predef_F8)
-                MemRefHandle(C:0:.predef_F8)
-                MemRefHandle(C:0:.predef_F8) ] 
     )
     Procedure( bar_::foo_ ): 
-    ActiveLocSet([ 
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::A)
-                    )
-                    mNumDeref: 1
-                )
-            )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::B)
-                    )
-                    mNumDeref: 1
-                )
-            ) ] 
-    )
     ActiveStmtSet([  ] 
     )
-    ActiveMemRefSet([  ] 
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 15
+            )    
+            Tag(
+                mTagID: 16
+            ) ] 
     )
     Procedure( bar_::head_ ): 
-    ActiveLocSet([ 
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::X)
-                    )
-                    mNumDeref: 1
-                )
-            )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::Y)
-                    )
-                    mNumDeref: 1
-                )
-            )    
-            LocSubSet(
-                mLoc: 
-                InvisibleLoc(
-                    mMRE: 
-                    Deref(
-                        mMemRefType: USE
-                        mMRE: 
-                        NamedRef(
-                            mMemRefType: USE
-                            mSymHandle: SymHandle(head_::X)
-                        )
-                        mNumDeref: 1
-                    )
-                )
-                mFull: 0
-            )    
-            LocSubSet(
-                mLoc: 
-                InvisibleLoc(
-                    mMRE: 
-                    Deref(
-                        mMemRefType: USE
-                        mMRE: 
-                        NamedRef(
-                            mMemRefType: USE
-                            mSymHandle: SymHandle(head_::Y)
-                        )
-                        mNumDeref: 1
-                    )
-                )
-                mFull: 0
-            ) ] 
-    )
     ActiveStmtSet([  ] 
     )
-    ActiveMemRefSet([  ] 
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 15
+            )    
+            Tag(
+                mTagID: 16
+            ) ] 
     )
+    ActiveSymSet: [ 
+        SymHandle(bar_::C)
+            SymHandle(bar_::D)
+            SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
     mNumIterUseful: 2
     mNumIterVary: 2
-    mNumIterActive: 1
 )
-
-
-Total Iters: 6

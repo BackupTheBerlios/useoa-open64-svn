@@ -1,0 +1,150 @@
+0.000008 CFG seconds elapsed
+0.030626 FIAliasAliasTag seconds elapsed
+0.001083 CallGraph seconds elapsed
+0.000531 ParamBindings seconds elapsed
+0.003441 ICFG seconds elapsed
+0.045871 ICFGActivity seconds elapsed
+
+InterActiveFortran(
+    Procedure( dmsamain_::dmsamain_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 166
+                # Deref(NamedRef(dmsamain_::F))
+                # Deref(NamedRef(dmsafg_::F))
+            )    
+            Tag(
+                mTagID: 167
+                # NamedRef(nps_msa_dummy_driver_::F)
+                # Deref(NamedRef(dmsamain_::F))
+                # Deref(NamedRef(dmsafg_::F))
+            )    
+            Tag(
+                mTagID: 218
+                # NamedRef(nps_msa_dummy_driver_::X)
+                # Deref(NamedRef(dmsamain_::X))
+                # Deref(NamedRef(dmsafg_::X))
+                # SubSetRef(Deref(NamedRef(dmsafg_::X)))
+            ) ] 
+    )
+    Procedure( dmsamain_::dmsafg_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 67
+                # NamedRef(dmsafg_::DVDX)
+            )    
+            Tag(
+                mTagID: 69
+                # NamedRef(dmsafg_::DVDY)
+            )    
+            Tag(
+                mTagID: 73
+                # NamedRef(dmsafg_::FL)
+            )    
+            Tag(
+                mTagID: 75
+                # NamedRef(dmsafg_::FU)
+            )    
+            Tag(
+                mTagID: 89
+                # NamedRef(dmsafg_::V)
+            )    
+            Tag(
+                mTagID: 91
+                # NamedRef(dmsafg_::VB)
+            )    
+            Tag(
+                mTagID: 93
+                # NamedRef(dmsafg_::VL)
+            )    
+            Tag(
+                mTagID: 95
+                # NamedRef(dmsafg_::VR)
+            )    
+            Tag(
+                mTagID: 97
+                # NamedRef(dmsafg_::VT)
+            )    
+            Tag(
+                mTagID: 166
+                # Deref(NamedRef(dmsamain_::F))
+                # Deref(NamedRef(dmsafg_::F))
+            )    
+            Tag(
+                mTagID: 167
+                # NamedRef(nps_msa_dummy_driver_::F)
+                # Deref(NamedRef(dmsamain_::F))
+                # Deref(NamedRef(dmsafg_::F))
+            )    
+            Tag(
+                mTagID: 192
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 193
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 194
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 195
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 196
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 197
+                # UnnamedRef()
+            )    
+            Tag(
+                mTagID: 218
+                # NamedRef(nps_msa_dummy_driver_::X)
+                # Deref(NamedRef(dmsamain_::X))
+                # Deref(NamedRef(dmsafg_::X))
+                # SubSetRef(Deref(NamedRef(dmsafg_::X)))
+            ) ] 
+    )
+    Procedure( dmsamain_::dmsabc_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 218
+                # NamedRef(nps_msa_dummy_driver_::X)
+                # Deref(NamedRef(dmsamain_::X))
+                # Deref(NamedRef(dmsafg_::X))
+                # SubSetRef(Deref(NamedRef(dmsafg_::X)))
+            ) ] 
+    )
+    Procedure( dmsamain_::nps_msa_dummy_driver_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(dmsamain_::X)
+            SymHandle(dmsamain_::F)
+            SymHandle(dmsafg_::X)
+            SymHandle(dmsafg_::F)
+            SymHandle(dmsafg_::DVDX)
+            SymHandle(dmsafg_::DVDY)
+            SymHandle(dmsafg_::FL)
+            SymHandle(dmsafg_::FU)
+            SymHandle(dmsafg_::V)
+            SymHandle(dmsafg_::VB)
+            SymHandle(dmsafg_::VL)
+            SymHandle(dmsafg_::VR)
+            SymHandle(dmsafg_::VT)
+            SymHandle(nps_msa_dummy_driver_::F)
+            SymHandle(nps_msa_dummy_driver_::X) ] 
+    mNumIterUseful: 7
+    mNumIterVary: 4
+)

@@ -1,0 +1,58 @@
+Test UDDUChains analysis
+
+UDDUChainsXAIF(
+    ChainsXAIF(
+        mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                0	 => 
+                1	 => 
+                2	 => StmtHandle(StmtHandle(0))
+
+        mMemRefToIdMap: MemRefHandle	 => int
+
+    )
+    UDDUChainsXAIF(
+        ChainsXAIF(
+            mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                    0	 => 
+                    1	 => 
+                    2	 => StmtHandle(StmtHandle(0))
+                    3	 => StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)
+                    4	 => StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8)
+
+            mMemRefToIdMap: MemRefHandle	 => int
+                    MemRefHandle(T:0:.predef_F8)	 => 4
+                    MemRefHandle(BARX:0:.predef_F8)	 => 2
+                    MemRefHandle(BARX:0:.predef_F8)	 => 2
+                    MemRefHandle(BARY:0:.predef_F8)	 => 2
+                    MemRefHandle(BARY:0:.predef_F8)	 => 2
+                    MemRefHandle(T:0:.predef_F8)	 => 3
+
+        )
+        UDDUChainsXAIF(
+            ChainsXAIF(
+                mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                        0	 => 
+                        1	 => 
+                        2	 => StmtHandle(StmtHandle(0))
+
+                mMemRefToIdMap: MemRefHandle	 => int
+
+            )
+            UDDUChainsXAIF(
+                ChainsXAIF(
+                    mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                            0	 => 
+                            1	 => 
+                            2	 => StmtHandle(StmtHandle(0))
+                            5	 => StmtHandle(StmtHandle(0))StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1))
+                            6	 => StmtHandle(StmtHandle(0))StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8)
+
+                    mMemRefToIdMap: MemRefHandle	 => int
+                            MemRefHandle(GX:0:.predef_F8)	 => 6
+                            MemRefHandle(0:X:0:anon_ptr.(1))	 => 2
+                            MemRefHandle(Y:0:anon_ptr.(1))	 => 2
+                            MemRefHandle(GX:0:.predef_F8)	 => 5
+                            MemRefHandle(Y:0:anon_ptr.(2))	 => 2
+                            MemRefHandle(GY:0:.predef_F8)	 => 2
+
+                )

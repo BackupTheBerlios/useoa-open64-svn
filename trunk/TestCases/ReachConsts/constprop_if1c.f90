@@ -12,31 +12,33 @@ program constprop_if1
 !
   integer :: x, y, z
 
-  !Reaching Consts x=TOP, y=TOP, z=TOP
+  ! All BOTTOM
   x = 2
 
-  !Reaching Consts x=2, y=TOP, z=TOP
+  ! All BOTTOM, x=2
   if ( x .ge. 0 ) then
 
-    !Reaching Consts x=2, y=TOP, z=TOP  
+    ! All BOTTOM, x=2
     y = 5
 
-    !Reaching Consts x=2, y=5, z=TOP
+    ! All BOTTOM, x=2, y=5
     x = y + y
 
-    !Reaching Consts x=10, y=5, z=TOP
+    ! All BOTTOM, x=10, y=5
     z = 7
   else
 
-    !Reaching Consts x=2, y=TOP, z=TOP  
+    ! All BOTTOM, x=2
     y = 3
 
-    !Reaching Consts x=2, y=3, z=TOP
+    ! All BOTTOM, x=2, y=3
     x = 10
   endif
 
-  !Reaching Consts x=10, y=BOTTOM, z=BOTTOM
+  ! All BOTTOM, x=10
   z = y
+
+  ! All BOTTOM, x=10
 
 end program
 

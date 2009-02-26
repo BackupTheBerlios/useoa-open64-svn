@@ -8,6 +8,7 @@
 ! d is only being used                                      !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+      
         program test
           integer :: x
           integer :: a, b, c, d
@@ -21,3 +22,34 @@
           o = p + q + 1
           q = r + 1
         end subroutine
+
+
+! ============================================
+! Interprocedural SideEffect Results
+! ============================================
+
+! test()
+! ======
+! LMOD : x
+! MOD  : a,c,x
+! LDEF : x
+! DEF  : x
+! LUSE : 
+! USE  : b,c,d,x
+! LREF : x
+! REF  : a,b,c,d,x
+
+
+
+! f()
+! =====
+! LMOD : *o, *q, *n
+! MOD  : *o, *q, *n
+! LDEF :
+! DEF  :
+! LUSE : *p, *q, *r, *n
+! USE  : *p, *q, *r, *n
+! LREF : *o, *p, *q, *r, *n
+! REF  : *o, *p, *q, *r, *n
+
+

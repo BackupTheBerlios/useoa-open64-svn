@@ -18,7 +18,7 @@ program constprop_loop2
     x = 2
 
     !Reaching Consts x=2, y=BOTTOM, z=BOTTOM, i=BOTTOM
-    if ( x .ge. 0. ) then
+    if ( x .ge. 0 ) then
 
       !Reaching Consts x=2, y=BOTTOM, z=BOTTOM, i=BOTTOM
       y = 5
@@ -29,6 +29,7 @@ program constprop_loop2
 
       !Reaching Consts x=2, y=BOTTOM, z=BOTTOM, i=BOTTOM  
       y = 3
+
     endif
 
     !Reaching Consts x=BOTTOM, y=BOTTOM, z=BOTTOM, i=BOTTOM

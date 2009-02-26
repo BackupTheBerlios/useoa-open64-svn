@@ -1,0 +1,845 @@
+
+AliasTagResults(
+    mMREToTags: OA::OA_ptr<MemRefExpr> 	 => OA::OA_ptr<AliasTagSet> 
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(testing_::G)
+                mStrictlyLocal: 0
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(testing_::G1)
+                mStrictlyLocal: 0
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::head_)
+                mStrictlyLocal: 0
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 3
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::bar_)
+                mStrictlyLocal: 0
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 4
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::T1)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 6
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::T2)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 8
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(head_::X)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 10
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(head_::F)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 12
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(head_::T1)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 14
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(head_::T2)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 16
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(head_::T3)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 18
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(bar_::A)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 20
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(bar_::B)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 22
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(bar_::C)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 24
+                        ) ] 
+                )
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::X)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 5
+                        )    
+                        Tag(
+                            mTagID: 6
+                        ) ] 
+                )
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::F)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        )    
+                        Tag(
+                            mTagID: 8
+                        ) ] 
+                )
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::A)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 13
+                        )    
+                        Tag(
+                            mTagID: 14
+                        ) ] 
+                )
+            )
+            
+            Deref(
+                mMemRefType: DEF
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::B)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::C)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+
+    mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
+            
+            Tag(
+                mTagID: 1
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(testing_::G)
+                    mStrictlyLocal: 0
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_::C)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 2
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(testing_::G1)
+                    mStrictlyLocal: 0
+                )    
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_::B)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 3
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(testing_::head_)
+                    mStrictlyLocal: 0
+                ) ] 
+            
+            Tag(
+                mTagID: 4
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(testing_::bar_)
+                    mStrictlyLocal: 0
+                ) ] 
+            
+            Tag(
+                mTagID: 5
+            )	 => [ 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 6
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(testing_::T1)
+                    mStrictlyLocal: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::X)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 7
+            )	 => [ 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::F)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 8
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(testing_::T2)
+                    mStrictlyLocal: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(head_::F)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 10
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::X)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 12
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::F)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 13
+            )	 => [ 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_::A)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 14
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(head_::T1)
+                    mStrictlyLocal: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(bar_::A)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 16
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::T2)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 18
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(head_::T3)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 20
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::A)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 22
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::B)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 24
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::C)
+                    mStrictlyLocal: 1
+                ) ] 
+
+    mMemRefToTags: MemRefHandle	 => OA::OA_ptr<AliasTagSet> 
+            MemRefHandle(T1:0:.predef_F8)	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 14
+                        ) ] 
+                )
+            )
+            MemRefHandle(X:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 5
+                        )    
+                        Tag(
+                            mTagID: 6
+                        ) ] 
+                )
+            )
+            MemRefHandle(F:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        )    
+                        Tag(
+                            mTagID: 8
+                        ) ] 
+                )
+            )
+            MemRefHandle(G:0:.predef_F4)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            MemRefHandle(G1:0:.predef_F4)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            MemRefHandle(T3:0:.predef_F8)	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 18
+                        ) ] 
+                )
+            )
+            MemRefHandle(G:0:.predef_F4)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            MemRefHandle(F:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        )    
+                        Tag(
+                            mTagID: 8
+                        ) ] 
+                )
+            )
+            MemRefHandle(F:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        )    
+                        Tag(
+                            mTagID: 8
+                        ) ] 
+                )
+            )
+            MemRefHandle(T1:0:.predef_F8)	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 14
+                        ) ] 
+                )
+            )
+            MemRefHandle(T2:0:.predef_F8)	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 16
+                        ) ] 
+                )
+            )
+            MemRefHandle(B:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            MemRefHandle(C:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            MemRefHandle(G1:0:.predef_F4)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            MemRefHandle(G:0:.predef_F4)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            MemRefHandle(A:0:.predef_F8)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 13
+                        )    
+                        Tag(
+                            mTagID: 14
+                        ) ] 
+                )
+            )
+
+    mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(testing_::G)
+                mStrictlyLocal: 0
+            )	 => 0
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(testing_::G1)
+                mStrictlyLocal: 0
+            )	 => 0
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::head_)
+                mStrictlyLocal: 0
+            )	 => 0
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::bar_)
+                mStrictlyLocal: 0
+            )	 => 0
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::T1)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(testing_::T2)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(head_::X)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(head_::F)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(head_::T1)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(head_::T2)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(head_::T3)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(bar_::A)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(bar_::B)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(bar_::C)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::X)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(head_::F)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::A)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: DEF
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::B)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(bar_::C)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 0
+
+    mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(T1:0:.predef_F8)	 => 1
+            MemRefHandle(X:0:.predef_F8)	 => 0
+            MemRefHandle(F:0:.predef_F8)	 => 0
+            MemRefHandle(G:0:.predef_F4)	 => 0
+            MemRefHandle(G1:0:.predef_F4)	 => 0
+            MemRefHandle(T3:0:.predef_F8)	 => 1
+            MemRefHandle(G:0:.predef_F4)	 => 0
+            MemRefHandle(F:0:.predef_F8)	 => 0
+            MemRefHandle(F:0:.predef_F8)	 => 0
+            MemRefHandle(T1:0:.predef_F8)	 => 1
+            MemRefHandle(T2:0:.predef_F8)	 => 1
+            MemRefHandle(B:0:.predef_F8)	 => 0
+            MemRefHandle(C:0:.predef_F8)	 => 0
+            MemRefHandle(G1:0:.predef_F4)	 => 0
+            MemRefHandle(G:0:.predef_F4)	 => 0
+            MemRefHandle(A:0:.predef_F8)	 => 0
+
+)

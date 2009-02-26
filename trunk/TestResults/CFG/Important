@@ -1,0 +1,8 @@
+
+- 'dot' and 'ps' files are added to make the output readable.
+- 'dot' and 'ps' files are generated manually and it is 
+  responsibility of the person who check regression tests
+  to maintain synchronization between .dot and ps files
+  with the actual file.
+
+

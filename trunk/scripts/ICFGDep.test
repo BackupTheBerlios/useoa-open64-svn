@@ -9,12 +9,13 @@ driverexec::./test-open64 --oa-ICFGDep
 # list of tests
 #       input file,                 status
 
-###: (params) not handled yet
-#test::  activity_int1.B,          Checked By BK 7/20/2006 (intrinsics, params)
-#test::  activity_int2.B,          Checked By BK 7/20/2006 (intrinsics, params)
-
-test::  activity_int4.B,          Checked By BK 7/20/2006 (instrinsics)
-test::  activity_int5.B,          Checked By BK 7/20/2006 
-test::  activity_int6.B,          Checked By BK 7/20/2006
-test::  activity_int7.B,          Checked By BK 7/20/2006
+test::expressions.B,                checked by PLM 05/16/08
+test::activity_int5.B,              checked by PLM 05/16/08
+test::globalActive_7.B,             checked by PLM 05/16/08
+test::multiple_calls2.B,            checked by PLM 05/16/08
+test::simple_if2.B,                 checked by PLM 05/16/08
+test::activity_proc_call1.B,        checked by PLM 05/16/08
+test::multiple_calls1.B,            checked by PLM 05/16/08
+test::sideEffect_3.B,               checked by PLM 05/16/08
+test::actualAsExpression.B,         checked by PLM 05/19/08
 

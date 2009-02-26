@@ -27,7 +27,7 @@ program constprop_loop3
     y = 3
 
     !Reaching Consts x=2, y=3, z=BOTTOM
-    if ( x .ge. 0. ) then
+    if ( x .ge. 0 ) then
 
       !Reaching Consts x=2, y=3, z=BOTTOM  
       y = 5

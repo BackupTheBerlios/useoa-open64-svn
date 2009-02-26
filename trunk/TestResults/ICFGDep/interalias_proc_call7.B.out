@@ -1,0 +1,135 @@
+file nameTestCases/ICFGDep/interalias_proc_call7.B
+ Dep Analysis 
+
+MustDefMap: StmtHandle	 => LocSet
+
+mDepDFSet: StmtHandle	 => DepDFSet
+         LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ICFGDep/interalias_proc_call7.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+                    
+                    Tag(
+                        mTagID: 10
+                        # NamedRef(head_::P)
+                        # Deref(NamedRef(foo_::A))
+                        # Deref(NamedRef(head_::X))
+                        # SubSetRef(NamedRef(head_::P))
+                        # SubSetRef(Deref(NamedRef(head_::X)))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 11
+                        # NamedRef(head_::Q)
+                        # Deref(NamedRef(foo_::B))
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(NamedRef(head_::Q))
+                    )
+
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+                    
+                    Tag(
+                        mTagID: 11
+                        # NamedRef(head_::Q)
+                        # Deref(NamedRef(foo_::B))
+                        # Deref(NamedRef(head_::Y))
+                        # SubSetRef(NamedRef(head_::Q))
+                    )
+	 => 
+                    Tag(
+                        mTagID: 10
+                        # NamedRef(head_::P)
+                        # Deref(NamedRef(foo_::A))
+                        # Deref(NamedRef(head_::X))
+                        # SubSetRef(NamedRef(head_::P))
+                        # SubSetRef(Deref(NamedRef(head_::X)))
+                    )
+
+
+            ImplicitRemoves:
+            Uses:
+            Tag(
+                mTagID: 10
+                # NamedRef(head_::P)
+                # Deref(NamedRef(foo_::A))
+                # Deref(NamedRef(head_::X))
+                # SubSetRef(NamedRef(head_::P))
+                # SubSetRef(Deref(NamedRef(head_::X)))
+            )
+
+            Defs:
+            Tag(
+                mTagID: 11
+                # NamedRef(head_::Q)
+                # Deref(NamedRef(foo_::B))
+                # Deref(NamedRef(head_::Y))
+                # SubSetRef(NamedRef(head_::Q))
+            )
+
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        PRAGMA 0 188 <1,23,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+stmt: 	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8)	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4))	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:
+        stmt: return	 => Inside DepDFSet output
+
+            mUseToDefsMap: UseLoc	 => DefLocSet
+
+            mDefToUsesMap: DefLoc	 => UseLocSet
+
+            ImplicitRemoves:
+            Uses:
+            Defs:

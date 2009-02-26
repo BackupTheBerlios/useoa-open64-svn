@@ -741,3 +741,46 @@
   - Added TestCases for ExprTree and AssignPairs after adding
     ExprHandles for the index Expressions of ALLOCATE call.
 
+01/28/08  UseOA-Open64 svn trunk 249 Priyadarshini Malusare
+  - AliasTagBranch got compiled with the new FIAliasAliasMap
+    using AliasTags.
+  - Compiled with the OpenAnalysis revision 636.
+
+04/23/08  UseOA-Open64 svn trunk 307 Priyadarshini Malusare
+  - Fixed AliasTagFIAlias regression tests after StriclyLocal
+    Modifications to ManagerAliasTagFIAlias.
+  - Compiled with OpenAnalysis revision 779.
+
+04/23/08  UseOA-Open64 svn trunk 308 Priyadarshini Malusare
+  - Added Reaching Definition Test suit
+  - Trying to Tests Pointer assignment as Reaching definition
+    to the program point where pointer is derefernced.
+
+
+07/17/08  UseOA-Open64 svn AliasTagBranch 341 Barbara Kreaseck
+  - reGen'd ICFGReachConsts
+  - added regressICFGReachConsts to regressAll
+  - Complied with OpenAnalysis branch AliasTagBranch r845
+
+09/17/08  UseOA-Open64 svn AliasTagBranch 349 Barbara Kreaseck
+  - removed TestCases/*/*.B files from repository
+  - changed scripts/genScript.py to generate *.B files during gen and regress
+  - regress diffs now ignores lines with "LOC 0 0 source files:" that specifies 
+    the location of the source file that generated the *.B file.
+  - re-generated all scripts/gen*.script and scripts/regress*.script accordingly
+  - needed for differences between targ_ia32 and targ_ia64 *.B files
+  - Compiled with OpenAnalysis branch AliasTagBranch r880
+
+02/11/09  UseOA-Open64 svn AliasTagBranch 350 Barbara Kreaseck
+  - added --oa-AliasTagCSFIAlias routine to test-open64
+  - added regression test and associated structures
+  - TestCases/AliasTagCSFIAlias/*
+  - TestResults/AliasTagCSFIAlias/*
+  - Compiled with OpenAnalysis branch AliasTagBranch r890
+
+02/25/09  UseOA-Open64 svn trunk 352   Barbara Kreaseck
+  - after merge with AliasTagBranch 248:351
+  - has issues with temporarily suspended analyses in OpenAnalysis (r889?)
+  - does not compile
+  - committing to facilitate resurrection of suspended analyses
+

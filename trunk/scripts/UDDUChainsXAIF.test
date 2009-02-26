@@ -1,14 +1,22 @@
+
 # comment in file.test
-# Regression tests for UDDUChainsXAIF generation
+# Regression tests for UDDUChainsXAIF Analysis
 testname::UDDUChainsXAIF
-inputdir::TestCases/UDDUChainsTestsXAIF
-outputdir::TestResults/UDDUChainsTestsXAIF
+inputdir::TestCases/UDDUChainsXAIF
+outputdir::TestResults/UDDUChainsXAIF
 driverexec::./test-open64 --oa-UDDUChainsXAIF
 
 # list of tests
 #       input file,                 status
-test::  reachdef_if1.B,             
-test::  reachdef_if2.B,                
-test::  reachdef_loopif1.B,         
-test::  interalias_proc_call1.B,
+
+test::UDDUChainConditional.B,        Checked by PLM 05/07/08
+test::UDDUChainInterProcedural1.B,   Checked by PLM 05/07/08
+test::UDDUChainNestedGlobals.B,      Checked by PLM 05/07/08
+test::UDDUChainIndirect1.B,          Checked by PLM 05/07/08
+test::UDDUChainInterProcedural2.B,   Checked by PLM 05/07/08
+test::UDDUChainIndirect2.B,          Checked by PLM 05/07/08
+test::UDDUChainLoop.B,               Checked by PLM 05/07/08
+
+
+
 

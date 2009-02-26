@@ -1,0 +1,40 @@
+echo "Generating TestResults/AliasTagFIAlias/pointer.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/pointer.f
+mv pointer.B TestCases/AliasTagFIAlias/pointer.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/pointer.B > TestResults/AliasTagFIAlias/pointer.B.out
+echo "Generating TestResults/AliasTagFIAlias/conditional.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/conditional.f
+mv conditional.B TestCases/AliasTagFIAlias/conditional.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/conditional.B > TestResults/AliasTagFIAlias/conditional.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/interalias_proc_call1.f
+mv interalias_proc_call1.B TestCases/AliasTagFIAlias/interalias_proc_call1.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call1.B > TestResults/AliasTagFIAlias/interalias_proc_call1.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call6.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/interalias_proc_call6.f
+mv interalias_proc_call6.B TestCases/AliasTagFIAlias/interalias_proc_call6.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call6.B > TestResults/AliasTagFIAlias/interalias_proc_call6.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call5.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/interalias_proc_call5.f
+mv interalias_proc_call5.B TestCases/AliasTagFIAlias/interalias_proc_call5.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call5.B > TestResults/AliasTagFIAlias/interalias_proc_call5.B.out
+echo "Generating TestResults/AliasTagFIAlias/Unnamed_alias.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/Unnamed_alias.f
+mv Unnamed_alias.B TestCases/AliasTagFIAlias/Unnamed_alias.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Unnamed_alias.B > TestResults/AliasTagFIAlias/Unnamed_alias.B.out
+echo "Generating TestResults/AliasTagFIAlias/Jean.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/Jean.f90
+mv Jean.B TestCases/AliasTagFIAlias/Jean.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/Jean.B > TestResults/AliasTagFIAlias/Jean.B.out
+echo "Generating TestResults/AliasTagFIAlias/interalias_proc_call7.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/interalias_proc_call7.f
+mv interalias_proc_call7.B TestCases/AliasTagFIAlias/interalias_proc_call7.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/interalias_proc_call7.B > TestResults/AliasTagFIAlias/interalias_proc_call7.B.out
+echo "Generating TestResults/AliasTagFIAlias/struct_pointer1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/struct_pointer1.f
+mv struct_pointer1.B TestCases/AliasTagFIAlias/struct_pointer1.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/struct_pointer1.B > TestResults/AliasTagFIAlias/struct_pointer1.B.out
+echo "Generating TestResults/AliasTagFIAlias/struct_pointer2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagFIAlias/struct_pointer2.f
+mv struct_pointer2.B TestCases/AliasTagFIAlias/struct_pointer2.B
+./test-open64 --oa-AliasTagFIAlias TestCases/AliasTagFIAlias/struct_pointer2.B > TestResults/AliasTagFIAlias/struct_pointer2.B.out

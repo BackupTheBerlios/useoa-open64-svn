@@ -1,70 +1,12 @@
-echo "Generating TestResults/ExprTree/SimpleBalanced.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleBalanced.B > TestResults/ExprTree/SimpleBalanced.B.out
-echo "Generating TestResults/ExprTree/SimpleUnbalanced.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleUnbalanced.B > TestResults/ExprTree/SimpleUnbalanced.B.out
-echo "Generating TestResults/ExprTree/SimpleCall.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleCall.B > TestResults/ExprTree/SimpleCall.B.out
-echo "Generating TestResults/ExprTree/SimpleSin.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleSin.B > TestResults/ExprTree/SimpleSin.B.out
-echo "Generating TestResults/ExprTree/ExprCall.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCall.B > TestResults/ExprTree/ExprCall.B.out
-echo "Generating TestResults/ExprTree/ExprCallf.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallf.B > TestResults/ExprTree/ExprCallf.B.out
-echo "Generating TestResults/ExprTree/ExprCallIntent.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallIntent.B > TestResults/ExprTree/ExprCallIntent.B.out
-echo "Generating TestResults/ExprTree/SinExpr.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/SinExpr.B > TestResults/ExprTree/SinExpr.B.out
-echo "Generating TestResults/ExprTree/SinFuncExpr.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/SinFuncExpr.B > TestResults/ExprTree/SinFuncExpr.B.out
-echo "Generating TestResults/ExprTree/CosDeg2Rad.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/CosDeg2Rad.B > TestResults/ExprTree/CosDeg2Rad.B.out
-echo "Generating TestResults/ExprTree/integer_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/integer_assignment.B > TestResults/ExprTree/integer_assignment.B.out
-echo "Generating TestResults/ExprTree/array_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/array_assignment.B > TestResults/ExprTree/array_assignment.B.out
-echo "Generating TestResults/ExprTree/arraysection_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/arraysection_assignment.B > TestResults/ExprTree/arraysection_assignment.B.out
-echo "Generating TestResults/ExprTree/complex_statement.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/complex_statement.B > TestResults/ExprTree/complex_statement.B.out
-echo "Generating TestResults/ExprTree/constant_variable_expression.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/constant_variable_expression.B > TestResults/ExprTree/constant_variable_expression.B.out
-echo "Generating TestResults/ExprTree/do_loop.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/do_loop.B > TestResults/ExprTree/do_loop.B.out
-echo "Generating TestResults/ExprTree/double_dimension_array_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/double_dimension_array_assignment.B > TestResults/ExprTree/double_dimension_array_assignment.B.out
-echo "Generating TestResults/ExprTree/formalscalardef.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/formalscalardef.B > TestResults/ExprTree/formalscalardef.B.out
-echo "Generating TestResults/ExprTree/formalscalaruse.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/formalscalaruse.B > TestResults/ExprTree/formalscalaruse.B.out
-echo "Generating TestResults/ExprTree/function_call.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/function_call.B > TestResults/ExprTree/function_call.B.out
-echo "Generating TestResults/ExprTree/function_return.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/function_return.B > TestResults/ExprTree/function_return.B.out
-echo "Generating TestResults/ExprTree/integer_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/integer_assignment.B > TestResults/ExprTree/integer_assignment.B.out
-echo "Generating TestResults/ExprTree/integer_expression.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/integer_expression.B > TestResults/ExprTree/integer_expression.B.out
-echo "Generating TestResults/ExprTree/intrinsic.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic.B > TestResults/ExprTree/intrinsic.B.out
-echo "Generating TestResults/ExprTree/intrinsic_complex.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic_complex.B > TestResults/ExprTree/intrinsic_complex.B.out
-echo "Generating TestResults/ExprTree/intrinsic_expression.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic_expression.B > TestResults/ExprTree/intrinsic_expression.B.out
-echo "Generating TestResults/ExprTree/logical_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/logical_assignment.B > TestResults/ExprTree/logical_assignment.B.out
-echo "Generating TestResults/ExprTree/real_assignment.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/real_assignment.B > TestResults/ExprTree/real_assignment.B.out
-echo "Generating TestResults/ExprTree/index_expression.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/index_expression.B > TestResults/ExprTree/index_expression.B.out
-echo "Generating TestResults/ExprTree/allocate_localarraysectionAsactual.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
-echo "Generating TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsection.B > TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out
-echo "Generating TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B > TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out
-echo "Generating TestResults/ExprTree/allocate_localarraysectionAsactual.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
-echo "Generating TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsection.B > TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out
-echo "Generating TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out"
-./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsubscript.B > TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out
+echo "Generating TestResults/ExprTree/call.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/call.f
+mv call.B TestCases/ExprTree/call.B
+./test-open64 --oa-ExprTree TestCases/ExprTree/call.B > TestResults/ExprTree/call.B.out
+echo "Generating TestResults/ExprTree/conditional.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/conditional.f
+mv conditional.B TestCases/ExprTree/conditional.B
+./test-open64 --oa-ExprTree TestCases/ExprTree/conditional.B > TestResults/ExprTree/conditional.B.out
+echo "Generating TestResults/ExprTree/expressions.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/expressions.f
+mv expressions.B TestCases/ExprTree/expressions.B
+./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > TestResults/ExprTree/expressions.B.out

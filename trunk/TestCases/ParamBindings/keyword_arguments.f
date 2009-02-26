@@ -1,4 +1,7 @@
 
+! Example:
+! ========
+      
        IMPLICIT NONE 
        INTERFACE 
           SUBROUTINE SOLVE (A, B, N) 
@@ -9,10 +12,8 @@
        END INTERFACE 
  
        REAL X 
-!      Note that A, B and N are not specified as REAL 
-!      or INTEGER in this unit. 
  
-       CALL SOLVE(N=100,A=X) 
+       CALL SOLVE(N=100,A=X)           
  
        END 
  
@@ -26,3 +27,15 @@
        A = TEMP_B + N 
        RETURN 
        END 
+
+
+
+! ParamBindings (Formal => Actual) :
+! ==================================
+!
+! - CallHandle = CALL SOLVE(N=100,A=X)
+!
+!       1. A   => MemRefNode(&X)
+!       2. N   => MemRefNode(&UnnamedRef(100))
+!
+

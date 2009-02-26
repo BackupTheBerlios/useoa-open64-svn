@@ -11,7 +11,7 @@ WD := $(shell pwd)
 
 #CXXFLAGS += -g -O0 -DOA_IRHANDLETYPE_UL \
 
-CXXFLAGS += -O2 -DOA_IRHANDLETYPE_UL \
+CXXFLAGS += -DOA_IRHANDLETYPE_UL \
             -I. -I$(WHIRL2OA) $(OA_INC) \
 			$(USER_CXXFLAGS) $(OPEN64_IFLAGS)
 
@@ -22,7 +22,7 @@ EXES = $(EXE1) $(EXE2) extractDOT
 
 # The Open64 test drivers
 EXE1 = test-open64
-EXE2 = FORTRANtoOA
+#EXE2 = FORTRANtoOA
 
 
 LIBS1 = $(OPEN64TARG)/be/be.so $(WHIRL2OA)/lib/Whirl2OA.a $(OA_LIB)
@@ -33,10 +33,13 @@ dep = $(WHIRL2OA)/lib/Whirl2OA.a
 EXE1_OBJS = \
 	test-open64.o \
 	CmdLineParser.o \
-	Args.o
+	timer.o \
+	Args.o 
+
+
 
 EXE2_OBJS = \
-	FORTRANtoOA.o \
+#	FORTRANtoOA.o \
 	CmdLineParser.o \
 	Args.o
 

@@ -1,130 +1,34 @@
 
-InterActive(
+InterActiveFortran(
     Procedure( foo_::foo_ ): 
-    ActiveLocSet([ 
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::X)
-                    )
-                    mNumDeref: 1
-                )
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 18
             )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: DEF
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::Y)
-                    )
-                    mNumDeref: 1
-                )
+            Tag(
+                mTagID: 19
             ) ] 
-    )
-    ActiveStmtSet([ 
-            StmtHandle(Y:0:.predef_F8 = X:0:.predef_F8*    2.000000000000000) ] 
-    )
-    ActiveMemRefSet([ 
-            MemRefHandle(Y:0:.predef_F8)
-                MemRefHandle(X:0:.predef_F8) ] 
     )
     Procedure( foo_::head_ ): 
-    ActiveLocSet([ 
-            NamedLoc(
-                mSymHandle: SymHandle(head_::P)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 18
             )    
-            NamedLoc(
-                mSymHandle: SymHandle(head_::Q)
-                mLocal: 1
-                mFullOverlap: [  ] 
-                mPartOverlap: [  ] 
-            )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::X)
-                    )
-                    mNumDeref: 1
-                )
-            )    
-            InvisibleLoc(
-                mMRE: 
-                Deref(
-                    mMemRefType: USE
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::Y)
-                    )
-                    mNumDeref: 1
-                )
-            )    
-            LocSubSet(
-                mLoc: 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::P)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
-                mFull: 0
-            )    
-            LocSubSet(
-                mLoc: 
-                NamedLoc(
-                    mSymHandle: SymHandle(head_::Q)
-                    mLocal: 1
-                    mFullOverlap: [  ] 
-                    mPartOverlap: [  ] 
-                )
-                mFull: 0
-            )    
-            LocSubSet(
-                mLoc: 
-                InvisibleLoc(
-                    mMRE: 
-                    Deref(
-                        mMemRefType: USE
-                        mMRE: 
-                        NamedRef(
-                            mMemRefType: USE
-                            mSymHandle: SymHandle(head_::X)
-                        )
-                        mNumDeref: 1
-                    )
-                )
-                mFull: 0
+            Tag(
+                mTagID: 19
             ) ] 
     )
-    ActiveStmtSet([ 
-            StmtHandle(Q:0:anon_ptr.(1) = Y:0:.predef_F8)
-                StmtHandle(Y:0:.predef_F8 = 0:Q:0:anon_ptr.(1))
-                StmtHandle(P:0:anon_ptr.(1) =     1.000000) ] 
-    )
-    ActiveMemRefSet([ 
-            MemRefHandle(Q:0:anon_ptr.(1))
-                MemRefHandle(Y:0:.predef_F8)
-                MemRefHandle(Y:0:.predef_F8)
-                MemRefHandle(0:Q:0:anon_ptr.(1))
-                MemRefHandle(P:0:anon_ptr.(1)) ] 
-    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::P)
+            SymHandle(head_::Q) ] 
     mNumIterUseful: 3
     mNumIterVary: 3
-    mNumIterActive: 1
 )
-
-
-Total Iters: 8

@@ -1,0 +1,97 @@
+
+AliasTagResults(
+    mMREToTags: OA::OA_ptr<MemRefExpr> 	 => std::set<int> 
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(arraypointer_::P)
+            )	 => [ 1 ] 
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(arraypointer_::X)
+            )	 => [ 2    3 ] 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(arraypointer_::P)
+                )
+                mNumDeref: 1
+            )	 => [ 3 ] 
+            
+            AddressOf(
+                mMemRefType: USE
+                mMRE: 
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(arraypointer_::X)
+                    )
+                )
+            )	 => [ 4 ] 
+            
+            SubSetRef(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(arraypointer_::X)
+                )
+            )	 => [ 3 ] 
+
+    mMemRefToTags: MemRefHandle	 => std::set<int> 
+
+    mTagToMREs: int	 => std::set<OA::OA_ptr<MemRefExpr> > 
+
+    mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(arraypointer_::P)
+            )	 => 
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(arraypointer_::X)
+            )	 => 
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(arraypointer_::P)
+                )
+                mNumDeref: 1
+            )	 => 
+            
+            AddressOf(
+                mMemRefType: USE
+                mMRE: 
+                SubSetRef(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(arraypointer_::X)
+                    )
+                )
+            )	 => 
+            
+            SubSetRef(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(arraypointer_::X)
+                )
+            )	 => 
+
+    mMemRefToMustFlag: MemRefHandle	 => bool
+
+)

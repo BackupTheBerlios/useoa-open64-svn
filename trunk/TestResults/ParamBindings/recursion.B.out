@@ -1,0 +1,47 @@
+file nameTestCases/ParamBindings/recursion.B
+
+ParamBindings(
+        CallHandle(factorial_(&N:0:.predef_I4+-1))	 => 
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(factorial_::N)
+                mStrictlyLocal: 0
+            )	 => 
+            graph EXPRESSION TREE:
+
+                AddressOf(
+                    mMemRefType: USE
+                    mMRE: 
+                    UnnamedRef(
+                        mMemRefType: USE
+                        mExprHandle: ExprHandle(N:0:.predef_I4+-1)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(factorial_::factorial_)
+                    )
+                )
+                Node 0: ET MemRefNode (  )
+
+
+    CallHandle(factorial_(&N:0:.predef_I4))	 => 
+        
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(factorial_::N)
+            mStrictlyLocal: 0
+        )	 => 
+        graph EXPRESSION TREE:
+
+            AddressOf(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(recfunc_::N)
+                    mStrictlyLocal: 1
+                )
+            )
+            Node 0: ET MemRefNode (  )
+
+
+)

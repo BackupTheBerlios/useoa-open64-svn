@@ -1,0 +1,29 @@
+Test UDDUChains analysis
+
+UDDUChainsXAIF(
+    ChainsXAIF(
+        mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                0	 => 
+                1	 => 
+                2	 => StmtHandle(StmtHandle(0))
+                3	 => StmtHandle(X:0:.predef_I4 = 2)
+                4	 => StmtHandle(Y:0:.predef_I4 = 5)
+                5	 => StmtHandle(X:0:.predef_I4 = 2)StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)
+                6	 => StmtHandle(Y:0:.predef_I4 = 5)StmtHandle(Y:0:.predef_I4 = 3)
+                7	 => StmtHandle(if (X:0:.predef_I4>=0))StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)
+                8	 => StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)
+                9	 => StmtHandle(Z:0:.predef_I4 = X:0:.predef_I4+Y:0:.predef_I4)
+
+        mMemRefToIdMap: MemRefHandle	 => int
+                MemRefHandle(X:0:.predef_I4)	 => 7
+                MemRefHandle(X:0:.predef_I4)	 => 3
+                MemRefHandle(Y:0:.predef_I4)	 => 8
+                MemRefHandle(X:0:.predef_I4)	 => 9
+                MemRefHandle(Y:0:.predef_I4)	 => 4
+                MemRefHandle(Y:0:.predef_I4)	 => 4
+                MemRefHandle(Y:0:.predef_I4)	 => 9
+                MemRefHandle(Z:0:.predef_I4)	 => 1
+                MemRefHandle(X:0:.predef_I4)	 => 5
+                MemRefHandle(Y:0:.predef_I4)	 => 6
+
+    )

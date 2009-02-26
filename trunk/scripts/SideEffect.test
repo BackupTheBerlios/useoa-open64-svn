@@ -3,14 +3,13 @@
 testname::SideEffect
 inputdir::TestCases/SideEffect
 outputdir::TestResults/SideEffect
-driverexec::./test-open64 --oa-InterSideEffect
+driverexec::./test-open64 --oa-SideEffect
 
 # list of tests
 #       input file,                 status
-#test::swap.B,            Not Checked (Not Working with Arrays)
-test::test.B,             Checked by BK 7/27/2006
-test::Loop_simple_3.B,    Checked by PLM 4/18/07
-#test::Jean.B,            Not Checked
-test::Jean2.B,            Checked by BK 7/27/2007
-#test::stringcmp.B,       core dump PLM 10/20/06, Please see wiki for error details
+test::Jean2.B,           checked by PLM 05/05/08
+test::Jean.B,            checked by PLM 05/05/08
+test::swap.B,            checked by PLM 05/05/08
+test::test.B,            checked by PLM 05/05/08
+#test::stringcmp.B,      missing do-while loop in whirl representation
 

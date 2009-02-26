@@ -12,26 +12,27 @@ program constprop_if1
 !
   integer :: x, y, z
 
-  !Reaching Constant x=TOP, y=TOP, z=TOP
+  ! All BOTTOM
   x = 2
 
-  !Reaching Constant x=2, y=TOP, z=TOP
+  ! All BOTTOM, x=2
   if ( x .ge. 0 ) then
 
-    !Reaching Constant x=2, y=TOP, z=TOP  
+    ! All BOTTOM, x=2
     y = 5
 
-    !Reaching Constant x=2, y=5, z=TOP
+    ! All BOTTOM, x=2, y=5
     x = y + y
   else
      
-    !Reaching Constant x=2, y=TOP, z=TOP  
+    ! All BOTTOM, x=2
     y = 3
   endif
 
-  !Reaching Constant x=BOTTOM, y=BOTTOM, z=TOP
+  ! All BOTTOM
   z = y
 
-  !Reaching Constant x=BOTTOM, y=BOTTOM, z=BOTTOM
+  ! All BOTTOM
+
 end program
 
