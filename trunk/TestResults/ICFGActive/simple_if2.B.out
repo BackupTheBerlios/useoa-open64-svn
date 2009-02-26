@@ -1,0 +1,31 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 6
+            )    
+            Tag(
+                mTagID: 8
+            )    
+            Tag(
+                mTagID: 10
+            )    
+            Tag(
+                mTagID: 11
+            )    
+            Tag(
+                mTagID: 12
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::A)
+            SymHandle(head_::B)
+            SymHandle(head_::C) ] 
+    mNumIterUseful: 2
+    mNumIterVary: 2
+)

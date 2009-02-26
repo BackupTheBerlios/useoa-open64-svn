@@ -1,0 +1,133 @@
+Test UDDUChains analysis
+
+UDDUChainsStandard(
+    mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+
+    mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+
+    mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+
+    mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+
+    UDDUChainsStandard(
+        mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+                
+                Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                Define Statements: [ StmtHandle(BARX:0:.predef_F8 = BARY:0:.predef_F8)    StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8) ] 
+                
+                Use StatementHandle : StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)	 => 
+                Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+                
+                Use StatementHandle : StmtHandle(BARX:0:.predef_F8 = BARY:0:.predef_F8)	 => 
+                Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+                
+                Use StatementHandle : StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8)	 => 
+                Define Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8) ] 
+
+        mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+                
+                Def StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                Use Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)    StmtHandle(BARX:0:.predef_F8 = BARY:0:.predef_F8) ] 
+                
+                Def StatementHandle : StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8)	 => 
+                Use Statements: [ StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8) ] 
+                
+                Def StatementHandle : StmtHandle(BARX:0:.predef_F8 = BARY:0:.predef_F8)	 => 
+                Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+                
+                Def StatementHandle : StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8)	 => 
+                Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+        mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+                
+                Use MemRefHandle: MemRefHandle(BARX:0:.predef_F8)	 => 
+                Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+                
+                Use MemRefHandle: MemRefHandle(BARY:0:.predef_F8)	 => 
+                Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+                
+                Use MemRefHandle: MemRefHandle(T:0:.predef_F8)	 => 
+                Def Statements: [ StmtHandle(T:0:.predef_F8 = BARX:0:.predef_F8) ] 
+
+        mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+                
+                Def MemRefHandle: MemRefHandle(T:0:.predef_F8)	 => 
+                Use Statements: [ StmtHandle(BARY:0:.predef_F8 = T:0:.predef_F8) ] 
+                
+                Def MemRefHandle: MemRefHandle(BARX:0:.predef_F8)	 => 
+                Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+                
+                Def MemRefHandle: MemRefHandle(BARY:0:.predef_F8)	 => 
+                Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+        UDDUChainsStandard(
+            mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+                    
+                    Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                    Define Statements: [ StmtHandle(bar_(&GX:0:.predef_F8, &GY:0:.predef_F8)) ] 
+                    
+                    Use StatementHandle : StmtHandle(bar_(&GX:0:.predef_F8, &GY:0:.predef_F8))	 => 
+                    Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+            mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+                    
+                    Def StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                    Use Statements: [ StmtHandle(bar_(&GX:0:.predef_F8, &GY:0:.predef_F8)) ] 
+                    
+                    Def StatementHandle : StmtHandle(bar_(&GX:0:.predef_F8, &GY:0:.predef_F8))	 => 
+                    Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+            mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+
+            mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+
+            UDDUChainsStandard(
+                mUDChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+                        
+                        Use StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                        Define Statements: [ StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1))    StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8)    StmtHandle(Y:0:anon_ptr.(2) = GY:0:.predef_F8) ] 
+                        
+                        Use StatementHandle : StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1))	 => 
+                        Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+                        
+                        Use StatementHandle : StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8)	 => 
+                        Define Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1)) ] 
+                        
+                        Use StatementHandle : StmtHandle(Y:0:anon_ptr.(2) = GY:0:.predef_F8)	 => 
+                        Define Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+                mDUChainForStmt: StmtHandle	 => OA::OA_ptr<StmtSet> 
+                        
+                        Def StatementHandle : StmtHandle(StmtHandle(0))	 => 
+                        Use Statements: [ StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1))    StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8)    StmtHandle(Y:0:anon_ptr.(2) = GY:0:.predef_F8) ] 
+                        
+                        Def StatementHandle : StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1))	 => 
+                        Use Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8) ] 
+                        
+                        Def StatementHandle : StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8)	 => 
+                        Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+                        
+                        Def StatementHandle : StmtHandle(Y:0:anon_ptr.(2) = GY:0:.predef_F8)	 => 
+                        Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+                mUDChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+                        
+                        Use MemRefHandle: MemRefHandle(0:X:0:anon_ptr.(1))	 => 
+                        Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+                        
+                        Use MemRefHandle: MemRefHandle(GX:0:.predef_F8)	 => 
+                        Def Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(GX:0:.predef_F8 = 0:X:0:anon_ptr.(1)) ] 
+                        
+                        Use MemRefHandle: MemRefHandle(GY:0:.predef_F8)	 => 
+                        Def Statements: [ StmtHandle(StmtHandle(0)) ] 
+
+                mDUChainForMemRef: MemRefHandle	 => OA::OA_ptr<StmtSet> 
+                        
+                        Def MemRefHandle: MemRefHandle(GX:0:.predef_F8)	 => 
+                        Use Statements: [ StmtHandle(StmtHandle(0))    StmtHandle(Y:0:anon_ptr.(1) = GX:0:.predef_F8) ] 
+                        
+                        Def MemRefHandle: MemRefHandle(Y:0:anon_ptr.(1))	 => 
+                        Use Statements: [ StmtHandle(StmtHandle(0)) ] 
+                        
+                        Def MemRefHandle: MemRefHandle(Y:0:anon_ptr.(2))	 => 
+                        Use Statements: [ StmtHandle(StmtHandle(0)) ] 

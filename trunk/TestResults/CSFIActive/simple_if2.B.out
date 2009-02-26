@@ -1,0 +1,22 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(A:0:.predef_F8 = X:0:.predef_F8*    5.000000000000000)
+                StmtHandle(B:0:.predef_F8 = A:0:.predef_F8)
+                StmtHandle(if (A:0:.predef_F8>    10.00000000000000))
+                StmtHandle(C:0:.predef_F8 =     3.000000000000000)
+                StmtHandle(C:0:.predef_F8 = -A:0:.predef_F8)
+                StmtHandle(Y:0:.predef_F8 = C:0:.predef_F8+B:0:.predef_F8*    3.000000000000000) ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::A)
+            SymHandle(head_::B)
+            SymHandle(head_::C) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

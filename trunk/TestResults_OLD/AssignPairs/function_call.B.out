@@ -1,0 +1,151 @@
+========================================================
+
+stmt :  LOC 0 0 source files:	1	"/home/malusare/AssignPair/UseOA-Open64/TestCases/AssignPair/function_call.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : bar_(&A:0:.predef_I4+B:0:.predef_I4)
+
+==> AssignPairs : 
+
+1. mref = A:0:.predef_I4+B:0:.predef_I4, 	expr = A:0:.predef_I4+B:0:.predef_I4
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: &A:0:.predef_I4+B:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET MemRefNode ( &A:0:.predef_I4+B:0:.predef_I4 )
+
+
+2. ExprHandle: A:0:.predef_I4+B:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( + )
+    Edge: 
+        0 => 
+        Node 1: ET MemRefNode ( A:0:.predef_I4 )
+    Edge: 
+        0 => 
+        Node 2: ET MemRefNode ( B:0:.predef_I4 )
+
+
+==> MemRefHandle:&A:0:.predef_I4+B:0:.predef_I4
+	mre: 
+
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    UnnamedRef(
+        mMemRefType: USE
+        mExprHandle: ExprHandle(A:0:.predef_I4+B:0:.predef_I4)
+        mLocal: 1
+        mProcHandle: ProcHandle(foo_::foo_)
+    )
+)
+
+==> MemRefHandle:A:0:.predef_I4+B:0:.predef_I4
+	mre: 
+
+UnnamedRef(
+    mMemRefType: DEF
+    mExprHandle: ExprHandle(A:0:.predef_I4+B:0:.predef_I4)
+    mLocal: 1
+    mProcHandle: ProcHandle(foo_::foo_)
+)
+
+==> MemRefHandle:A:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::A)
+)
+
+==> MemRefHandle:B:0:.predef_I4
+	mre: 
+
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::B)
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+
+========================================================
+
+stmt : C:0:.predef_I4 = 10
+
+==> AssignPairs : 
+
+1. mref = C:0:.predef_I4, 	expr = 10
+
+
+
+==> Expression Tree(s) : 
+
+1. ExprHandle: 10
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 10 )
+
+
+==> MemRefHandle:C:0:.predef_I4
+	mre: 
+
+Deref(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(bar_::C)
+    )
+    mNumDeref: 1
+)
+
+========================================================
+
+stmt : return
+
+==> AssignPairs : 
+
+
+
+
+==> Expression Tree(s) : 
+

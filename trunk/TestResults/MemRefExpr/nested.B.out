@@ -1,0 +1,78 @@
+======================================
+ProcHandle : main_::main_
+
+
+
+OA::StmtHandle:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/MemRefExpr/nested.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+
+
+OA::StmtHandle: B:0:.predef_F8 = A:0:.predef_F8
+MemRefHandleB:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(SUB1::B)
+    mStrictlyLocal: 0
+)
+
+MemRefHandleA:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(SUB1::A)
+    mStrictlyLocal: 0
+)
+
+
+
+
+OA::StmtHandle: _END()
+
+
+
+OA::StmtHandle: return
+
+
+
+OA::StmtHandle: return
+======================================
+======================================
+ProcHandle : main_::SUB1
+
+
+
+OA::StmtHandle: PRAGMA 0 30 <2,1,A> 4294967296 (0x100000000) # ACCESSED_ID, 0, 1
+
+
+
+
+OA::StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+
+
+OA::StmtHandle: C:0:.predef_F8 = A:0:.predef_F8
+MemRefHandleC:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(SUB1::C)
+    mStrictlyLocal: 1
+)
+
+MemRefHandleA:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(SUB1::A)
+    mStrictlyLocal: 0
+)
+
+
+
+
+OA::StmtHandle: return
+======================================

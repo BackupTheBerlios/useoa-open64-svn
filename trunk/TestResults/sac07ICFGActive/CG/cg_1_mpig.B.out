@@ -1,0 +1,2383 @@
+0.000012 CFG seconds elapsed
+0.144160 FIAliasAliasTag seconds elapsed
+0.003594 CallGraph seconds elapsed
+0.006991 ParamBindings seconds elapsed
+0.011507 ICFG seconds elapsed
+0.277089 ICFGActivity seconds elapsed
+
+InterActiveFortran(
+    Procedure( cg_::cg_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::initialize_mpi_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::setup_proc_info_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::setup_submatrix_info_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::conj_grad_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 644
+                # NamedRef(conj_grad_::ALPHA)
+            )    
+            Tag(
+                mTagID: 646
+                # NamedRef(conj_grad_::BETA)
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::makea_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::sparse_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::sprnvc_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::icnvrt_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::vecset_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::print_results_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::timer_clear_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::timer_start_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::timer_stop_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::timer_read_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_send_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_isend_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_recv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_irecv_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_bcast_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_reduce_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_allreduce_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_init_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_rank_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_size_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_dup_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_comm_split_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_barrier_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_wait_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_waitall_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    Procedure( cg_::mpi_finalize_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 19
+                # NamedRef(cg_::MPI_GLOBAL_VAR)
+            )    
+            Tag(
+                mTagID: 26
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # NamedRef(cg_::W)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # Deref(NamedRef(conj_grad_::W))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 27
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 28
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 29
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 83
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 85
+                # NamedRef(conj_grad_::RHO0)
+            )    
+            Tag(
+                mTagID: 87
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 651
+                # NamedRef(cg_::NORM_TEMP2)
+                # NamedRef(conj_grad_::RHO)
+                # NamedRef(conj_grad_::D)
+                # NamedRef(cg_::Q)
+                # NamedRef(cg_::R)
+                # Deref(NamedRef(mpi_irecv_::BUF))
+                # Deref(NamedRef(conj_grad_::Q))
+                # Deref(NamedRef(conj_grad_::R))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP2))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Q)))
+                # SubSetRef(Deref(NamedRef(conj_grad_::R)))
+            )    
+            Tag(
+                mTagID: 757
+                # NamedRef(cg_::CLASS)
+                # Deref(NamedRef(print_results_::A2))
+                # SubSetRef(NamedRef(cg_::CLASS))
+            )    
+            Tag(
+                mTagID: 802
+                # NamedRef(cg_::NORM_TEMP1)
+                # NamedRef(conj_grad_::SUM)
+                # Deref(NamedRef(mpi_send_::BUF))
+                # SubSetRef(NamedRef(cg_::NORM_TEMP1))
+                # SubSetRef(Deref(NamedRef(conj_grad_::W)))
+            )    
+            Tag(
+                mTagID: 805
+                # NamedRef(cg_::X)
+                # Deref(NamedRef(conj_grad_::X))
+                # SubSetRef(NamedRef(cg_::X))
+                # SubSetRef(Deref(NamedRef(conj_grad_::X)))
+            )    
+            Tag(
+                mTagID: 806
+                # NamedRef(cg_::Z)
+                # Deref(NamedRef(conj_grad_::Z))
+                # SubSetRef(NamedRef(cg_::Z))
+                # SubSetRef(Deref(NamedRef(conj_grad_::Z)))
+            )    
+            Tag(
+                mTagID: 818
+                # NamedRef(cg_::P)
+                # Deref(NamedRef(conj_grad_::P))
+                # SubSetRef(Deref(NamedRef(conj_grad_::P)))
+            ) ] 
+    )
+    Procedure( cg_::mpi_abort_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(cg_::MPI_GLOBAL_VAR)
+            SymHandle(cg_::NORM_TEMP1)
+            SymHandle(cg_::NORM_TEMP2)
+            SymHandle(conj_grad_::RHO)
+            SymHandle(conj_grad_::RHO0)
+            SymHandle(conj_grad_::SUM)
+            SymHandle(print_results_::A2)
+            SymHandle(mpi_send_::BUF)
+            SymHandle(mpi_irecv_::BUF)
+            SymHandle(cg_::CLASS)
+            SymHandle(conj_grad_::X)
+            SymHandle(conj_grad_::Z)
+            SymHandle(conj_grad_::P)
+            SymHandle(conj_grad_::Q)
+            SymHandle(conj_grad_::R)
+            SymHandle(conj_grad_::W)
+            SymHandle(conj_grad_::ALPHA)
+            SymHandle(conj_grad_::BETA)
+            SymHandle(conj_grad_::D)
+            SymHandle(cg_::P)
+            SymHandle(cg_::Q)
+            SymHandle(cg_::R)
+            SymHandle(cg_::W)
+            SymHandle(cg_::X)
+            SymHandle(cg_::Z) ] 
+    mNumIterUseful: 16
+    mNumIterVary: 8
+)

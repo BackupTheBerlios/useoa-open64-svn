@@ -1,0 +1,42 @@
+
+PROCEDURE = { < ProcHandle("arraypointer_::arraypointer_"), SymHandle("arraypointer_::arraypointer_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("arraypointer_::P") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/home/malusare/MemRefExpr/UseOA-Open64/TestCases/Alias/DerefFormalPointerToArraySubscriptUse.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("F8PSTORE 0 T<36,.anon_f90pointer.1,8>
+") =>
+        [
+            MemRefHandle("P:0:anon_ptr.(:1:)") => 
+                Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
+            MemRefHandle("0:X:0:anon_ptr.(1:1:3)") => 
+                AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X"))))
+        ] }
+    PTRASSIGNPAIRS = { StmtHandle("F8PSTORE 0 T<36,.anon_f90pointer.1,8>
+") =>
+        [
+            < Deref( DEF, NamedRef( USE, SymHandle("arraypointer_::P")), 1)
+            , AddressOf( USE, SubSetRef( USE, NamedRef( USE, SymHandle("arraypointer_::X")))) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("T:0:.predef_F8 = 0:P:0:anon_ptr.(J:0:.predef_I4)") =>
+        [
+            MemRefHandle("T:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("arraypointer_::T"))
+            MemRefHandle("0:P:0:anon_ptr.(J:0:.predef_I4)") => 
+                SubSetRef( USE, Deref( USE, Deref( USE, NamedRef( USE, SymHandle("arraypointer_::P")), 1), 1))
+            MemRefHandle("J:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("arraypointer_::J"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("arraypointer_::arraypointer_"), not local > }
+    LOCATION = { < SymHandle("arraypointer_::P"), local > }
+    LOCATION = { < SymHandle("arraypointer_::J"), local > }
+    LOCATION = { < SymHandle("arraypointer_::T"), local > }
+    LOCATION = { < SymHandle("arraypointer_::X"), local > }

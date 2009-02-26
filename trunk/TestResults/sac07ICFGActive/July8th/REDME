@@ -1,0 +1,25 @@
+- In ManagerICFGUseful::meet(set1,set2), I am always doing the following:
+     a. retval = clone of remapSet1
+     b. *retval = retval->unionEqu(remapSet2)
+
+
+Here I tried Two possibilities:
+
+1) above, I removed the use of an assignment statement.  That is making
+   an extra copy into *retval when it already has the union result.
+   Now, I just try:
+     a. retval->unionEqu(remapSet2);
+
+
+2) Try to find out if it make a difference in the time of the unionEqu()
+   routine if I call it using the small set on the big set
+
+  Change the code to be:
+  if (remapSet1->size() > remapSet2->size()) {
+      retval = clone of remapSet1
+      retval->unionEqu(remapSet2)
+  } else {
+      retval = clone of remapSet2
+      retval->unionEqu(remapSet1)
+  {
+

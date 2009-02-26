@@ -1,0 +1,32 @@
+
+InterActiveFortran(
+    Procedure( head_::head_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(foo_(&X:0:anon_ptr.(1), &Y:0:anon_ptr.(1))) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(&X:0:anon_ptr.(1))
+                MemRefHandle(&Y:0:anon_ptr.(1)) ] 
+    )
+    Procedure( head_::foo_ ): 
+    ActiveStmtSet([ 
+            StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*A:0:.predef_F8) ] 
+    )
+    ActiveMemRefSet([ 
+            MemRefHandle(B:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8)
+                MemRefHandle(A:0:.predef_F8) ] 
+    )
+    Procedure( head_::bar_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveMemRefSet([  ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(foo_::A)
+            SymHandle(foo_::B) ] 
+    mNumIterUseful: 0
+    mNumIterVary: 0
+)

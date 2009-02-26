@@ -1,0 +1,140 @@
+echo "Testing TestCases/ExprTree/SimpleBalanced.B, TestResults/ExprTree/SimpleBalanced.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleBalanced.B > t
+diff t TestResults/ExprTree/SimpleBalanced.B.out
+
+echo "Testing TestCases/ExprTree/SimpleUnbalanced.B, TestResults/ExprTree/SimpleUnbalanced.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleUnbalanced.B > t
+diff t TestResults/ExprTree/SimpleUnbalanced.B.out
+
+echo "Testing TestCases/ExprTree/SimpleCall.B, TestResults/ExprTree/SimpleCall.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleCall.B > t
+diff t TestResults/ExprTree/SimpleCall.B.out
+
+echo "Testing TestCases/ExprTree/SimpleSin.B, TestResults/ExprTree/SimpleSin.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SimpleSin.B > t
+diff t TestResults/ExprTree/SimpleSin.B.out
+
+echo "Testing TestCases/ExprTree/ExprCall.B, TestResults/ExprTree/ExprCall.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCall.B > t
+diff t TestResults/ExprTree/ExprCall.B.out
+
+echo "Testing TestCases/ExprTree/ExprCallf.B, TestResults/ExprTree/ExprCallf.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallf.B > t
+diff t TestResults/ExprTree/ExprCallf.B.out
+
+echo "Testing TestCases/ExprTree/ExprCallIntent.B, TestResults/ExprTree/ExprCallIntent.B.out Checked by LMR 10/24/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/ExprCallIntent.B > t
+diff t TestResults/ExprTree/ExprCallIntent.B.out
+
+echo "Testing TestCases/ExprTree/SinExpr.B, TestResults/ExprTree/SinExpr.B.out Checked by LMR 11/09/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SinExpr.B > t
+diff t TestResults/ExprTree/SinExpr.B.out
+
+echo "Testing TestCases/ExprTree/SinFuncExpr.B, TestResults/ExprTree/SinFuncExpr.B.out Checked by LMR 11/09/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/SinFuncExpr.B > t
+diff t TestResults/ExprTree/SinFuncExpr.B.out
+
+echo "Testing TestCases/ExprTree/CosDeg2Rad.B, TestResults/ExprTree/CosDeg2Rad.B.out Checked by LMR 12/07/06"
+./test-open64 --oa-ExprTree TestCases/ExprTree/CosDeg2Rad.B > t
+diff t TestResults/ExprTree/CosDeg2Rad.B.out
+
+echo "Testing TestCases/ExprTree/integer_assignment.B, TestResults/ExprTree/integer_assignment.B.out Checked by PLM 08/15/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/integer_assignment.B > t
+diff t TestResults/ExprTree/integer_assignment.B.out
+
+echo "Testing TestCases/ExprTree/array_assignment.B, TestResults/ExprTree/array_assignment.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/array_assignment.B > t
+diff t TestResults/ExprTree/array_assignment.B.out
+
+echo "Testing TestCases/ExprTree/arraysection_assignment.B, TestResults/ExprTree/arraysection_assignment.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/arraysection_assignment.B > t
+diff t TestResults/ExprTree/arraysection_assignment.B.out
+
+echo "Testing TestCases/ExprTree/complex_statement.B, TestResults/ExprTree/complex_statement.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/complex_statement.B > t
+diff t TestResults/ExprTree/complex_statement.B.out
+
+echo "Testing TestCases/ExprTree/constant_variable_expression.B, TestResults/ExprTree/constant_variable_expression.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/constant_variable_expression.B > t
+diff t TestResults/ExprTree/constant_variable_expression.B.out
+
+echo "Testing TestCases/ExprTree/do_loop.B, TestResults/ExprTree/do_loop.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/do_loop.B > t
+diff t TestResults/ExprTree/do_loop.B.out
+
+echo "Testing TestCases/ExprTree/double_dimension_array_assignment.B, TestResults/ExprTree/double_dimension_array_assignment.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/double_dimension_array_assignment.B > t
+diff t TestResults/ExprTree/double_dimension_array_assignment.B.out
+
+echo "Testing TestCases/ExprTree/formalscalardef.B, TestResults/ExprTree/formalscalardef.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/formalscalardef.B > t
+diff t TestResults/ExprTree/formalscalardef.B.out
+
+echo "Testing TestCases/ExprTree/formalscalaruse.B, TestResults/ExprTree/formalscalaruse.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/formalscalaruse.B > t
+diff t TestResults/ExprTree/formalscalaruse.B.out
+
+echo "Testing TestCases/ExprTree/function_call.B, TestResults/ExprTree/function_call.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/function_call.B > t
+diff t TestResults/ExprTree/function_call.B.out
+
+echo "Testing TestCases/ExprTree/function_return.B, TestResults/ExprTree/function_return.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/function_return.B > t
+diff t TestResults/ExprTree/function_return.B.out
+
+echo "Testing TestCases/ExprTree/integer_assignment.B, TestResults/ExprTree/integer_assignment.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/integer_assignment.B > t
+diff t TestResults/ExprTree/integer_assignment.B.out
+
+echo "Testing TestCases/ExprTree/integer_expression.B, TestResults/ExprTree/integer_expression.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/integer_expression.B > t
+diff t TestResults/ExprTree/integer_expression.B.out
+
+echo "Testing TestCases/ExprTree/intrinsic.B, TestResults/ExprTree/intrinsic.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic.B > t
+diff t TestResults/ExprTree/intrinsic.B.out
+
+echo "Testing TestCases/ExprTree/intrinsic_complex.B, TestResults/ExprTree/intrinsic_complex.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic_complex.B > t
+diff t TestResults/ExprTree/intrinsic_complex.B.out
+
+echo "Testing TestCases/ExprTree/intrinsic_expression.B, TestResults/ExprTree/intrinsic_expression.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/intrinsic_expression.B > t
+diff t TestResults/ExprTree/intrinsic_expression.B.out
+
+echo "Testing TestCases/ExprTree/logical_assignment.B, TestResults/ExprTree/logical_assignment.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/logical_assignment.B > t
+diff t TestResults/ExprTree/logical_assignment.B.out
+
+echo "Testing TestCases/ExprTree/real_assignment.B, TestResults/ExprTree/real_assignment.B.out Checked by PLM 08/30/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/real_assignment.B > t
+diff t TestResults/ExprTree/real_assignment.B.out
+
+echo "Testing TestCases/ExprTree/index_expression.B, TestResults/ExprTree/index_expression.B.out Checked by PLM 10/23/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/index_expression.B > t
+diff t TestResults/ExprTree/index_expression.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localarraysectionAsactual.B, TestResults/ExprTree/allocate_localarraysectionAsactual.B.out Checked by PLM 10/23/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > t
+diff t TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
+
+echo "Testing TestCases/ExprTree/allocate_formalpointertoarrayAsactualsection.B, TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsection.B > t
+diff t TestResults/ExprTree/allocate_formalpointertoarrayAsactualsection.B.out
+
+echo "Testing TestCases/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B, TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B > t
+diff t TestResults/ExprTree/allocate_formalpointertoarrayAsactualsubscript.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localarraysectionAsactual.B, TestResults/ExprTree/allocate_localarraysectionAsactual.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localarraysectionAsactual.B > t
+diff t TestResults/ExprTree/allocate_localarraysectionAsactual.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localpointertoarrayAsactualsection.B, TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsection.B > t
+diff t TestResults/ExprTree/allocate_localpointertoarrayAsactualsection.B.out
+
+echo "Testing TestCases/ExprTree/allocate_localpointertoarrayAsactualsubscript.B, TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out Checked by PLM 10/24/07"
+./test-open64 --oa-ExprTree TestCases/ExprTree/allocate_localpointertoarrayAsactualsubscript.B > t
+diff t TestResults/ExprTree/allocate_localpointertoarrayAsactualsubscript.B.out
+

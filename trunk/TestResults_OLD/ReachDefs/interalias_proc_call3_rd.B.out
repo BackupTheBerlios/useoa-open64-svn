@@ -1,0 +1,27 @@
+
+ReachDefsStandard(
+    mReachDefs: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
+            StmtHandle(_END())	 => [ StmtHandle(head_(&T1:0:.predef_F8, &T2:0:.predef_F8)) ] 
+            StmtHandle(return)	 => [ StmtHandle(head_(&T1:0:.predef_F8, &T2:0:.predef_F8)) ] 
+
+    mExitReachDefs: [ StmtHandle(head_(&T1:0:.predef_F8, &T2:0:.predef_F8)) ] 
+)
+
+ReachDefsStandard(
+    mReachDefs: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
+            StmtHandle(bar_(&T1:0:.predef_F8, &G:0:.predef_F4))	 => [ StmtHandle(T1:0:.predef_F8 = X:0:.predef_F8*F:0:.predef_F8) ] 
+            StmtHandle(T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000)	 => [ StmtHandle(bar_(&T1:0:.predef_F8, &G:0:.predef_F4)) ] 
+            StmtHandle(F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8)	 => [ StmtHandle(bar_(&T1:0:.predef_F8, &G:0:.predef_F4))    StmtHandle(T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000) ] 
+            StmtHandle(return)	 => [ StmtHandle(bar_(&T1:0:.predef_F8, &G:0:.predef_F4))    StmtHandle(T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000)    StmtHandle(F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8) ] 
+
+    mExitReachDefs: [ StmtHandle(bar_(&T1:0:.predef_F8, &G:0:.predef_F4))    StmtHandle(T3:0:.predef_F8 = F:0:.predef_F8*    30.00000000000000)    StmtHandle(F:0:.predef_F8 = T1:0:.predef_F8+T2:0:.predef_F8) ] 
+)
+
+ReachDefsStandard(
+    mReachDefs: StmtHandle	 => OA_ptr<std::set<StmtHandle> >
+            StmtHandle(G:0:.predef_F4 =     1.000000)	 => [ StmtHandle(B:0:.predef_F8 = OPC_F8F4CVT(G:0:.predef_F4)+A:0:.predef_F8) ] 
+            StmtHandle(A:0:.predef_F8 = B:0:.predef_F8)	 => [ StmtHandle(B:0:.predef_F8 = OPC_F8F4CVT(G:0:.predef_F4)+A:0:.predef_F8)    StmtHandle(G:0:.predef_F4 =     1.000000) ] 
+            StmtHandle(return)	 => [ StmtHandle(B:0:.predef_F8 = OPC_F8F4CVT(G:0:.predef_F4)+A:0:.predef_F8)    StmtHandle(G:0:.predef_F4 =     1.000000)    StmtHandle(A:0:.predef_F8 = B:0:.predef_F8) ] 
+
+    mExitReachDefs: [ StmtHandle(B:0:.predef_F8 = OPC_F8F4CVT(G:0:.predef_F4)+A:0:.predef_F8)    StmtHandle(G:0:.predef_F4 =     1.000000)    StmtHandle(A:0:.predef_F8 = B:0:.predef_F8) ] 
+)

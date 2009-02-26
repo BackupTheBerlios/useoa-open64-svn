@@ -1,0 +1,42 @@
+Test UDDUChains analysis
+
+UDDUChainsXAIF(
+    ChainsXAIF(
+        mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                0	 => 
+                1	 => 
+                2	 => StmtHandle(StmtHandle(0))
+                3	 => StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))
+                4	 => StmtHandle(M:0:.predef_I4 = 2)
+                5	 => StmtHandle(P:0:.predef_I4 = 5)StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))
+                6	 => StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)
+
+        mMemRefToIdMap: MemRefHandle	 => int
+                MemRefHandle(M:0:.predef_I4)	 => 6
+                MemRefHandle(P:0:.predef_I4)	 => 6
+                MemRefHandle(&X:0:.predef_I4)	 => 2
+                MemRefHandle(F:0:.predef_I4)	 => 2
+                MemRefHandle(X:0:.predef_I4)	 => 2
+                MemRefHandle(V:0:.predef_I4)	 => 3
+                MemRefHandle(M:0:.predef_I4)	 => 4
+                MemRefHandle(P:0:.predef_I4)	 => 5
+
+    )
+    UDDUChainsXAIF(
+        ChainsXAIF(
+            mIdToStmtSetMap: int	 => OA_ptr<StmtSet>
+                    0	 => 
+                    1	 => 
+                    2	 => StmtHandle(StmtHandle(0))
+                    7	 => StmtHandle(StmtHandle(0))StmtHandle(C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4)
+                    8	 => StmtHandle(StmtHandle(0))StmtHandle(B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4)
+
+            mMemRefToIdMap: MemRefHandle	 => int
+                    MemRefHandle(C:0:.predef_I4)	 => 8
+                    MemRefHandle(A:0:.predef_I4)	 => 2
+                    MemRefHandle(B:0:.predef_I4)	 => 2
+                    MemRefHandle(B:0:.predef_I4)	 => 2
+                    MemRefHandle(C:0:.predef_I4)	 => 7
+                    MemRefHandle(D:0:.predef_I4)	 => 2
+
+        )

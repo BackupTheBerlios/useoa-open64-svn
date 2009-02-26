@@ -1,0 +1,63 @@
+
+PROCEDURE = { < ProcHandle("globals_::globals_"), SymHandle("globals_::globals_") > }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/globalActive_2.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("globals_::globals_"), not local > }
+
+PROCEDURE = { < ProcHandle("globals_::head_"), SymHandle("globals_::head_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("head_::X") >
+            < 1, SymHandle("head_::Y") >
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 190 <2,1,X> 0 (0x0) # OPENAD_INDEPENDENT
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 189 <2,2,Y> 0 (0x0) # OPENAD_DEPENDENT
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("VUSE <1,20,globals_>
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("APASSIVEGLOBAL:0:.predef_F8 =     2.000000000000000") =>
+        [
+            MemRefHandle("APASSIVEGLOBAL:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("globals_::APASSIVEGLOBAL"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("AGLOBAL:0:.predef_F8 = 0:X:0:anon_ptr.(1)*0:X:0:anon_ptr.(2)") =>
+        [
+            MemRefHandle("AGLOBAL:0:.predef_F8") => 
+                NamedRef( DEF, SymHandle("globals_::AGLOBAL"))
+            MemRefHandle("0:X:0:anon_ptr.(1)") => 
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
+            MemRefHandle("0:X:0:anon_ptr.(2)") => 
+                SubSetRef( USE, Deref( USE, NamedRef( USE, SymHandle("head_::X")), 1))
+        ] }
+    MEMREFEXPRS = { StmtHandle("Y:0:anon_ptr.(1) = AGLOBAL:0:.predef_F8*APASSIVEGLOBAL:0:.predef_F8") =>
+        [
+            MemRefHandle("Y:0:anon_ptr.(1)") => 
+                SubSetRef( DEF, Deref( USE, NamedRef( USE, SymHandle("head_::Y")), 1))
+            MemRefHandle("AGLOBAL:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("globals_::AGLOBAL"))
+            MemRefHandle("APASSIVEGLOBAL:0:.predef_F8") => 
+                NamedRef( USE, SymHandle("globals_::APASSIVEGLOBAL"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("globals_::globals_"), not local > }
+    LOCATION = { < SymHandle("globals_::AGLOBAL"), not local > }
+    LOCATION = { < SymHandle("globals_::APASSIVEGLOBAL"), not local > }
+    LOCATION = { < SymHandle("globals_::head_"), not local > }
+    LOCATION = { < SymHandle("head_::X"), local > }
+    LOCATION = { < SymHandle("head_::Y"), local > }

@@ -1,0 +1,49 @@
+
+ParamBindings(
+    mCallerToCalleeMap: CallHandle	 => std::map<ProcHandle, std::map<MemRefHandle, SymHandle> > 
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => 
+            second: ProcHandle	 => std::map<MemRefHandle, SymHandle> 
+                    ProcHandle(head_::bar_)	 => 
+                    second: MemRefHandle	 => SymHandle
+                            MemRefHandle(&T1:0:.predef_F8)	 => SymHandle(bar_::A)
+                            MemRefHandle(&T1:0:.predef_F8)	 => SymHandle(bar_::B)
+
+
+
+    mCalleeToCallerMap: CallHandle	 => std::map<SymHandle, MemRefHandle> 
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => 
+            second: SymHandle	 => MemRefHandle
+                    SymHandle(bar_::A)	 => MemRefHandle(&T1:0:.predef_F8)
+                    SymHandle(bar_::B)	 => MemRefHandle(&T1:0:.predef_F8)
+
+
+    mProcToFormalSetMap: ProcHandle	 => OA_ptr<std::set<SymHandle> >
+            ProcHandle(head_::head_)	 => [ SymHandle(head_::X)    SymHandle(head_::F) ] 
+            ProcHandle(head_::bar_)	 => [ SymHandle(bar_::A)    SymHandle(bar_::B) ] 
+
+    mCallToActualSetMap: CallHandle	 => OA_ptr<std::set<MemRefHandle> >
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => [ MemRefHandle(&T1:0:.predef_F8)    MemRefHandle(&T1:0:.predef_F8) ] 
+
+    mCallToExprListMap: CallHandle	 => OA_ptr<std::list<ExprHandle>
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => [ ExprHandle(&T1:0:.predef_F8)    ExprHandle(&T1:0:.predef_F8) ] 
+
+    mExprToTreeMap: ExprHandle	 => OA_ptr<ExprTree>
+            ExprHandle(&T1:0:.predef_F8)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &T1:0:.predef_F8 )
+
+            ExprHandle(&T1:0:.predef_F8)	 => 
+            graph EXPRESSION TREE:
+
+                Node 0: ET MemRefNode ( &T1:0:.predef_F8 )
+
+
+    mCallToFormalToActualMap: CallHandle	 => SymToExprHandleMap
+            CallHandle(bar_(&T1:0:.predef_F8, &T1:0:.predef_F8))	 => 
+            symToExprMap: SymHandle	 => ExprHandle
+                    SymHandle(bar_::A)	 => ExprHandle(&T1:0:.predef_F8)
+                    SymHandle(bar_::B)	 => ExprHandle(&T1:0:.predef_F8)
+
+
+)

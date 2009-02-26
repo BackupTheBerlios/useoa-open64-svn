@@ -1,0 +1,76 @@
+C
+C
+      SUBROUTINE HMX (JW,FLAG)
+C     ************************
+C
+C         SETS PTPEN(JW,3) = MIXTURE ENTHALPY (BTU/LB MOL) AND
+C         PTPEN(JW,4) = MOL FR VAPZD, AT PROCESS POINT JW (IN UNIT LIST)
+C         ASSUMES TEMP IN PTPEN(JW,2), FLOWS IN WEN(JW,I) AND --
+C           IF FLAG = -1.0 - VAPOR-LIQUID MIX AT PRESSURE IN PTPEN(JW,1)
+C              FLAG =  0.0 - SATURATED LIQUID
+C              FLAG =  1.0 - VAPOR, AT LOW PRESSURES
+C
+C         WRITTEN BY R.R. HUGHES                  EES IDENT  SP/HMX
+C              LAST REVISION AUGUST 25, 1973
+C
+      COMMON/QP/ CSXX(12,28),ANAMC(12,6)
+      COMMON /UNPT/ JOUT,KNTRL,KFLAG,NCPS,NPTP,NCST,NREC,NEN,WTEN(5),
+     1  WEN(5,12),PTPEN(5,6),COST(5),EN(100),KTLN(15)
+      COMMON /FLOS/ FV(12),FL(12),FW(12)
+      COMMON/SKIPER/KIP1,KIP2
+c     COMMON /ACT/ WTEN(5),WEN(5,12),PTPEN(5,6),COST(5),EN(100)
+c     COMMON /UNACT/ JOUT,KNTRL,KFLAG,NPTP,NCST,NREC,NEN,NCPS,KTLN(15)
+      DIMENSION X(12)
+      DATA WTOL/1.E-10/,VZLO/1.E-6/,VZHI/0.999999/
+C+@++@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+
+      REAL HDRES,HVRES
+C
+C         CHECK FLOWS,- IF ALL = 0, SET ENTH AND VPZN = 0, AND RETURN
+      IF (WTEN(JW).GT.WTOL) GO TO 10
+      CALL WTMOL(JW)
+      IF (WTEN(JW).GT.WTOL)  GO TO 10
+        PTPEN(JW,3) = 0.
+        PTPEN(JW,4) = 0.
+      GO TO 900
+C
+C         SET UP PHASE CONTROL AND FIND VAPORIZATION
+   10   KLAG = IFIX (FLAG + 2.1)
+        KLAG = MIN0(3,MAX0(1,KLAG))
+        T = PTPEN(JW,2)
+      GO TO (100,200,300), KLAG
+C           VAPOR-LIQUID MIX, DETERMINE THE PROPER OPTION
+ 100  CALL IFLASH(JW)
+      IF (PTPEN(JW,4).LT.VZLO) KLAG = 2
+      IF (PTPEN(JW,4).GT.VZHI) KLAG = 3
+       GO TO 400
+C            SATURATED LIQUID
+  200   PTPEN(JW,4) = 0.
+        DO 201 I=1,NCPS
+        FL(I)=WEN(JW,I)
+201	CONTINUE
+	GO TO 400
+C              VAPOR, AT LOW PRESSURES
+  300   PTPEN(JW,4) = 1.
+	do 301 i=1,ncps
+	fv(i)=wen(jw,i)
+301	continue
+C         ENTHALPY CALCULATION
+  400   H = 0.
+      DO 450 I = 1,NCPS
+C+@+@+@+@+@+@+@+@+@++@@+@+@+@@+@+@+@+@+
+       CALL HVAP(I,T,HVRES)
+	HV = HVRES      
+        CALL HDEL(I,T,HDRES)
+	HL = HV - HDRES      
+        GO TO (410,420,430), KLAG
+  410   H = H + FL(I)*HL + FV(I)*HV
+      GO TO 450
+  420   H = H + HL*WEN(JW,I)
+      GO TO 450
+  430   H = H + HV*WEN(JW,I)
+  450 CONTINUE
+C
+C         STORE RESULT
+        PTPEN(JW,3) = H/WTEN(JW)
+  900 RETURN
+      END

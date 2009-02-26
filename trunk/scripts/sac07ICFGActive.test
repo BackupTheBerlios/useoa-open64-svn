@@ -1,0 +1,17 @@
+
+# comment in file.test
+# Regression tests for ICFGActive generation
+testname::sac07ICFGActive
+inputdir::TestCases/Activity/sac07/
+outputdir::TestResults/sac07ICFGActive
+driverexec::./test-open64 --oa-sac07ICFGActivity
+
+# list of tests
+#       input file,                 status
+
+test::CG/cg_1_mpig.B,
+test::adiabatic/adiabatic2.B,
+test::msa/msa.B,
+test::swirl/swirl.B,
+test::c2/c2.B,
+

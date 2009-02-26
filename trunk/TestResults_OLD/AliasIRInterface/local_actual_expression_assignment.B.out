@@ -1,0 +1,92 @@
+
+PROCEDURE = { < ProcHandle("factorial_::factorial_"), SymHandle("factorial_::factorial_") > }
+    FORMALS = {
+        [
+            < 0, SymHandle("factorial_::N") >
+        ] }
+    MEMREFEXPRS = { StmtHandle(" LOC 0 0 source files:	1	"/m_home/m_utkej/Argonne/svn/UseOA-Open64/trunk/TestCases/Alias/local_actual_expression_assignment.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("if (N:0:.predef_I4==1)") =>
+        [
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( USE, NamedRef( USE, SymHandle("factorial_::N")), 1)
+        ] }
+    MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = 1") =>
+        [
+            MemRefHandle("RES:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("factorial_::RES"))
+        ] }
+    MEMREFEXPRS = { StmtHandle("N:0:.predef_I4 = N:0:.predef_I4+-1") =>
+        [
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( DEF, NamedRef( USE, SymHandle("factorial_::N")), 1)
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( USE, NamedRef( USE, SymHandle("factorial_::N")), 1)
+        ] }
+    MEMREFEXPRS = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4)") =>
+        [
+            MemRefHandle("RES:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("factorial_::RES"))
+            MemRefHandle("N:0:.predef_I4") => 
+                Deref( USE, NamedRef( USE, SymHandle("factorial_::N")), 1)
+            MemRefHandle("&N:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("factorial_::N"))
+        ] }
+    CALLSITES = { StmtHandle("RES:0:.predef_I4 = N:0:.predef_I4*factorial_(&N:0:.predef_I4)") =>
+        [
+            CallHandle("factorial_(&N:0:.predef_I4)") => 
+                NamedRef( USE, SymHandle("factorial_::factorial_"))
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4)") =>
+        [
+            < 0, NamedRef( USE, SymHandle("factorial_::N")) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("return (RES:0:.predef_I4)") =>
+        [
+            MemRefHandle("RES:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("factorial_::RES"))
+        ] }
+    LOCATION = { < SymHandle("factorial_::factorial_"), not local > }
+    LOCATION = { < SymHandle("factorial_::RES"), local > }
+    LOCATION = { < SymHandle("factorial_::N"), local > }
+
+PROCEDURE = { < ProcHandle("factorial_::recfunc_"), SymHandle("factorial_::recfunc_") > }
+    MEMREFEXPRS = { StmtHandle("PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))") =>
+        [
+            MemRefHandle("N:0:.predef_I4") => 
+                NamedRef( DEF, SymHandle("recfunc_::N"))
+            MemRefHandle("&N:0:.predef_I4+-1") => 
+                AddressOf( USE, UnnamedRef( USE, ExprHandle("N:0:.predef_I4+-1"), 1, ProcHandle("factorial_::recfunc_")))
+            MemRefHandle("N:0:.predef_I4+-1") => 
+                UnnamedRef( DEF, ExprHandle("N:0:.predef_I4+-1"), 1, ProcHandle("factorial_::recfunc_"))
+            MemRefHandle("N:0:.predef_I4") => 
+                NamedRef( USE, SymHandle("recfunc_::N"))
+        ] }
+    CALLSITES = { StmtHandle("N:0:.predef_I4 = TRUNC(factorial_(&N:0:.predef_I4+-1))") =>
+        [
+            CallHandle("factorial_(&N:0:.predef_I4+-1)") => 
+                NamedRef( USE, SymHandle("factorial_::factorial_"))
+        ] }
+    PARAMBINDPTRASSIGNPAIRS = { CallHandle("factorial_(&N:0:.predef_I4+-1)") =>
+        [
+            < 0, AddressOf( USE, UnnamedRef( USE, ExprHandle("N:0:.predef_I4+-1"), 1, ProcHandle("factorial_::recfunc_"))) >
+        ] }
+    MEMREFEXPRS = { StmtHandle("_END()") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    MEMREFEXPRS = { StmtHandle("return") =>
+        [
+        ] }
+    LOCATION = { < SymHandle("factorial_::factorial_"), not local > }
+    LOCATION = { < SymHandle("factorial_::recfunc_"), not local > }
+    LOCATION = { < SymHandle("recfunc_::N"), local > }

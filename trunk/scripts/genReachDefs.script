@@ -1,0 +1,32 @@
+echo "Generating TestResults/ReachDefs/ReachDefsConditional.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsConditional.f
+mv ReachDefsConditional.B TestCases/ReachDefs/ReachDefsConditional.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsConditional.B > TestResults/ReachDefs/ReachDefsConditional.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsInterProcedural1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsInterProcedural1.f
+mv ReachDefsInterProcedural1.B TestCases/ReachDefs/ReachDefsInterProcedural1.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsInterProcedural1.B > TestResults/ReachDefs/ReachDefsInterProcedural1.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsNestedGlobals.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsNestedGlobals.f
+mv ReachDefsNestedGlobals.B TestCases/ReachDefs/ReachDefsNestedGlobals.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsNestedGlobals.B > TestResults/ReachDefs/ReachDefsNestedGlobals.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsIndirect1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsIndirect1.f
+mv ReachDefsIndirect1.B TestCases/ReachDefs/ReachDefsIndirect1.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsIndirect1.B > TestResults/ReachDefs/ReachDefsIndirect1.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsInterProcedural2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsInterProcedural2.f
+mv ReachDefsInterProcedural2.B TestCases/ReachDefs/ReachDefsInterProcedural2.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsInterProcedural2.B > TestResults/ReachDefs/ReachDefsInterProcedural2.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsIndirect2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsIndirect2.f
+mv ReachDefsIndirect2.B TestCases/ReachDefs/ReachDefsIndirect2.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsIndirect2.B > TestResults/ReachDefs/ReachDefsIndirect2.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsPointer.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsPointer.f
+mv ReachDefsPointer.B TestCases/ReachDefs/ReachDefsPointer.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsPointer.B > TestResults/ReachDefs/ReachDefsPointer.B.out
+echo "Generating TestResults/ReachDefs/ReachDefsLoop.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsLoop.f
+mv ReachDefsLoop.B TestCases/ReachDefs/ReachDefsLoop.B
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsLoop.B > TestResults/ReachDefs/ReachDefsLoop.B.out

@@ -1,0 +1,36 @@
+echo "Generating TestResults/ICFGDep/expressions.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/expressions.f
+mv expressions.B TestCases/ICFGDep/expressions.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/expressions.B > TestResults/ICFGDep/expressions.B.out
+echo "Generating TestResults/ICFGDep/activity_int5.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/activity_int5.f
+mv activity_int5.B TestCases/ICFGDep/activity_int5.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_int5.B > TestResults/ICFGDep/activity_int5.B.out
+echo "Generating TestResults/ICFGDep/globalActive_7.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/globalActive_7.f
+mv globalActive_7.B TestCases/ICFGDep/globalActive_7.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/globalActive_7.B > TestResults/ICFGDep/globalActive_7.B.out
+echo "Generating TestResults/ICFGDep/multiple_calls2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/multiple_calls2.f
+mv multiple_calls2.B TestCases/ICFGDep/multiple_calls2.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/multiple_calls2.B > TestResults/ICFGDep/multiple_calls2.B.out
+echo "Generating TestResults/ICFGDep/simple_if2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/simple_if2.f
+mv simple_if2.B TestCases/ICFGDep/simple_if2.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/simple_if2.B > TestResults/ICFGDep/simple_if2.B.out
+echo "Generating TestResults/ICFGDep/activity_proc_call1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/activity_proc_call1.f
+mv activity_proc_call1.B TestCases/ICFGDep/activity_proc_call1.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/activity_proc_call1.B > TestResults/ICFGDep/activity_proc_call1.B.out
+echo "Generating TestResults/ICFGDep/multiple_calls1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/multiple_calls1.f
+mv multiple_calls1.B TestCases/ICFGDep/multiple_calls1.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/multiple_calls1.B > TestResults/ICFGDep/multiple_calls1.B.out
+echo "Generating TestResults/ICFGDep/sideEffect_3.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/sideEffect_3.f
+mv sideEffect_3.B TestCases/ICFGDep/sideEffect_3.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/sideEffect_3.B > TestResults/ICFGDep/sideEffect_3.B.out
+echo "Generating TestResults/ICFGDep/actualAsExpression.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ICFGDep/actualAsExpression.f
+mv actualAsExpression.B TestCases/ICFGDep/actualAsExpression.B
+./test-open64 --oa-ICFGDep TestCases/ICFGDep/actualAsExpression.B > TestResults/ICFGDep/actualAsExpression.B.out

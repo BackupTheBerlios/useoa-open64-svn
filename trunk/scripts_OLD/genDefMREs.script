@@ -1,0 +1,24 @@
+echo "Generating TestResults/DefMREs/formalarray.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalarray.B > TestResults/DefMREs/formalarray.B.out
+echo "Generating TestResults/DefMREs/formalstructpointer.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalstructpointer.B > TestResults/DefMREs/formalstructpointer.B.out
+echo "Generating TestResults/DefMREs/localpointerToscalar.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localpointerToscalar.B > TestResults/DefMREs/localpointerToscalar.B.out
+echo "Generating TestResults/DefMREs/formalpointerToArray.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalpointerToArray.B > TestResults/DefMREs/formalpointerToArray.B.out
+echo "Generating TestResults/DefMREs/formalstructvar.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalstructvar.B > TestResults/DefMREs/formalstructvar.B.out
+echo "Generating TestResults/DefMREs/localscalar.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localscalar.B > TestResults/DefMREs/localscalar.B.out
+echo "Generating TestResults/DefMREs/formalpointerToscalar.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalpointerToscalar.B > TestResults/DefMREs/formalpointerToscalar.B.out
+echo "Generating TestResults/DefMREs/localarray.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localarray.B > TestResults/DefMREs/localarray.B.out
+echo "Generating TestResults/DefMREs/localstructpointer.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localstructpointer.B > TestResults/DefMREs/localstructpointer.B.out
+echo "Generating TestResults/DefMREs/formalscalar.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/formalscalar.B > TestResults/DefMREs/formalscalar.B.out
+echo "Generating TestResults/DefMREs/localpointerToArray.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localpointerToArray.B > TestResults/DefMREs/localpointerToArray.B.out
+echo "Generating TestResults/DefMREs/localstructvar.B.out"
+./test-open64 --oa-DefMREs TestCases/DefMREs/localstructvar.B > TestResults/DefMREs/localstructvar.B.out

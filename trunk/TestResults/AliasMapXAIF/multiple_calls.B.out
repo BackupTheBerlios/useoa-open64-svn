@@ -1,0 +1,77 @@
+Test AliasMapXAIF analysis
+
+AliasMapXAIF(ProcHandle(foo_::foo_)
+    mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
+            1	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 14
+                        mEnd: 14
+                    )
+                    mFullOverlap: 0
+                )    
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 15
+                        mEnd: 15
+                    )
+                    mFullOverlap: 0
+                ) ] 
+            2	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 16
+                        mEnd: 16
+                    )
+                    mFullOverlap: 0
+                ) ] 
+            3	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 7
+                        mEnd: 7
+                    )
+                    mFullOverlap: 1
+                ) ] 
+
+    mMemRefToIdMap: MemRefHandle	 => int
+            MemRefHandle(N:0:.predef_F8)	 => 1
+            MemRefHandle(0:M:0:anon_ptr.(I:0:.predef_I4))	 => 2
+            MemRefHandle(I:0:.predef_I4)	 => 3
+            MemRefHandle(0:M:0:anon_ptr.(2))	 => 2
+
+)
+
+AliasMapXAIF(ProcHandle(foo_::head_)
+    mIdToLocTupleSetMap: int	 => OA_ptr<std::set<LocTuple> >
+            0	 => [  ] 
+            4	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 9
+                        mEnd: 9
+                    )
+                    mFullOverlap: 1
+                ) ] 
+            5	 => [ 
+                LocTuple(
+                    mRange: 
+                    LocRange(
+                        mStart: 11
+                        mEnd: 11
+                    )
+                    mFullOverlap: 1
+                ) ] 
+
+    mMemRefToIdMap: MemRefHandle	 => int
+            MemRefHandle(&0:X:0:anon_ptr.)	 => 4
+            MemRefHandle(&Y:0:.predef_F8)	 => 5
+            MemRefHandle(&0:PX:0:anon_ptr.)	 => 0
+            MemRefHandle(&PY:0:.predef_F8)	 => 0
+
+)

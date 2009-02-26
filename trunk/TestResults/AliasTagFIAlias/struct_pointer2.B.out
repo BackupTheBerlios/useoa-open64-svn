@@ -1,0 +1,278 @@
+
+AliasTagResults(
+    mMREToTags: OA::OA_ptr<MemRefExpr> 	 => OA::OA_ptr<AliasTagSet> 
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(foo_::CARPTR)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::FIRST)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 3
+                        )    
+                        Tag(
+                            mTagID: 4
+                        )    
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(foo_::Y)
+                mStrictlyLocal: 1
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 6
+                        ) ] 
+                )
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::CARPTR)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 3
+                        )    
+                        Tag(
+                            mTagID: 4
+                        )    
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+            
+            FieldAccess(
+                mMemRefType: USE
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::CARPTR)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )
+                mFieldName: LABOR
+            )	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+
+    mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
+            
+            Tag(
+                mTagID: 2
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(foo_::CARPTR)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 3
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                    mStrictlyLocal: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::CARPTR)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 4
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                    mStrictlyLocal: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::CARPTR)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 6
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(foo_::Y)
+                    mStrictlyLocal: 1
+                ) ] 
+            
+            Tag(
+                mTagID: 7
+            )	 => [ 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::FIRST)
+                    mStrictlyLocal: 1
+                )    
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::CARPTR)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )    
+                FieldAccess(
+                    mMemRefType: USE
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(foo_::CARPTR)
+                            mStrictlyLocal: 1
+                        )
+                        mNumDeref: 1
+                    )
+                    mFieldName: LABOR
+                ) ] 
+
+    mMemRefToTags: MemRefHandle	 => OA::OA_ptr<AliasTagSet> 
+            MemRefHandle(CARPTR:0:anon_ptr.)	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            MemRefHandle(Y:0:.predef_F4)	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 6
+                        ) ] 
+                )
+            )
+             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/slocal/UseOA-Open64/TestCases/AliasTagFIAlias/struct_pointer2.f"
+U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,8> <field_id:2>
+MemRefHandle(0:)	 => 
+            mIsMust: false
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+
+    mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(foo_::CARPTR)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::FIRST)
+                mStrictlyLocal: 1
+            )	 => 0
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(foo_::Y)
+                mStrictlyLocal: 1
+            )	 => 1
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(foo_::CARPTR)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 0
+            
+            FieldAccess(
+                mMemRefType: USE
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::CARPTR)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )
+                mFieldName: LABOR
+            )	 => 0
+
+    mMemRefToMustFlag: MemRefHandle	 => bool
+            MemRefHandle(CARPTR:0:anon_ptr.)	 => 1
+            MemRefHandle(Y:0:.predef_F4)	 => 1
+            U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,8> <field_id:2>
+MemRefHandle(0:)	 => 0
+
+)

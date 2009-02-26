@@ -1,0 +1,21 @@
+
+# comment in file.test
+# Regression tests for ICFGDep generation
+testname::ICFGDep
+inputdir::TestCases/ICFGDep
+outputdir::TestResults/ICFGDep
+driverexec::./test-open64 --oa-ICFGDep
+
+# list of tests
+#       input file,                 status
+
+test::expressions.B,                checked by PLM 05/16/08
+test::activity_int5.B,              checked by PLM 05/16/08
+test::globalActive_7.B,             checked by PLM 05/16/08
+test::multiple_calls2.B,            checked by PLM 05/16/08
+test::simple_if2.B,                 checked by PLM 05/16/08
+test::activity_proc_call1.B,        checked by PLM 05/16/08
+test::multiple_calls1.B,            checked by PLM 05/16/08
+test::sideEffect_3.B,               checked by PLM 05/16/08
+test::actualAsExpression.B,         checked by PLM 05/19/08
+

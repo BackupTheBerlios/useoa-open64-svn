@@ -1,0 +1,21 @@
+
+# comment in file.test
+# Regression tests for AliasMapXAIF generation
+testname::AliasMapXAIF
+inputdir::TestCases/AliasMapXAIF
+outputdir::TestResults/AliasMapXAIF
+driverexec::./test-open64 --oa-AliasMapXAIF
+
+# list of tests
+#       input file,                 status
+
+test::Alias_Pointer.B,              Checked by PLM 05/04/08
+test::NoAlias_StructVar.B,          Checked by PLM 05/04/08
+test::NoAlias_Named.B,              Checked by PLM 05/04/08
+test::NoAlias_Unnamed.B,            Checked by PLM 05/04/08
+test::NoAlias_FieldAccess.B,        Checked by PLM 05/04/08
+test::NoAlias_SubSet.B,             Checked by PLM 05/04/08
+test::Param_Alias.B,                Checked by PLM 05/04/08
+test::multiple_calls.B,             Checked by PLM 05/04/08
+test::pointer_to_local.B,           Checked by PLM 05/04/08
+

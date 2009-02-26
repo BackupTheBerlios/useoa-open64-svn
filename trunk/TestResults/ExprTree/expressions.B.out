@@ -1,0 +1,300 @@
+============================================
+StmtHandle:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/Tag/UseOA-Open64/TestCases/ExprTree/expressions.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+============================================
+StmtHandle: VUSE <1,20,mytypemodule_>
+
+
+============================================
+StmtHandle: A:0:.predef_I4 = B:0:.predef_I4+C:0:.predef_I4
+
+==> ExprHandle: B:0:.predef_I4+C:0:.predef_I4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_ADD )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::B)
+            mStrictlyLocal: 1
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::C)
+            mStrictlyLocal: 1
+        )
+
+        Node 2: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: A:0:.predef_I4 = C:0:.predef_I4*B:0:.predef_I4+10
+
+==> ExprHandle: C:0:.predef_I4*B:0:.predef_I4+10
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_MPY )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::C)
+            mStrictlyLocal: 1
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        Node 2: ET OpNode ( OPR_ADD )
+        Edge: 
+            2 => 
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::B)
+                mStrictlyLocal: 1
+            )
+
+            Node 3: ET MemRefNode (  )
+        Edge: 
+            2 => 
+            Node 4: ET ConstValNode ( 10 )
+
+
+============================================
+StmtHandle: T:0:.log.4 = F:0:.log.4
+
+==> ExprHandle: F:0:.log.4
+
+graph EXPRESSION TREE:
+
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::F)
+        mStrictlyLocal: 1
+    )
+
+    Node 0: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: F:0:.log.4 = !F:0:.log.4
+
+==> ExprHandle: !F:0:.log.4
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_LNOT )
+    Edge: 
+        0 => 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::F)
+            mStrictlyLocal: 1
+        )
+
+        Node 1: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: U8PSTID 0 <2,8,P> T<30,anon_ptr.,8>
+
+
+==> ExprHandle: M:0:.predef_F8
+
+graph EXPRESSION TREE:
+
+    AddressOf(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::M)
+            mStrictlyLocal: 1
+        )
+    )
+
+    Node 0: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+X:0:.predef_F8 = 0:
+
+==> ExprHandle: U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+0:
+U8U8STRCTFLD T<11,.predef_F8,8> T<29,MYTYPE,8> <field_id:1>
+
+graph EXPRESSION TREE:
+
+    FieldAccess(
+        mMemRefType: USE
+        mMRE: 
+        NamedRef(
+            mMemRefType: USE
+            mSymHandle: SymHandle(foo_::TYPED_Y)
+            mStrictlyLocal: 1
+        )
+        mFieldName: FIELD1
+    )
+
+    Node 0: ET MemRefNode (  )
+
+
+============================================
+StmtHandle: CASSIGNSTMT(&STRING4:0:anon_ptr.(0), &CONCATEXPR(60, &STRING1:0:anon_ptr.(0), &STRING2:0:anon_ptr.(0), &STRING3:0:anon_ptr.(0), 20, 20), 20, 60)
+
+==> ExprHandle: 0
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 0 )
+
+
+==> ExprHandle: CONCATEXPR(60, &STRING1:0:anon_ptr.(0), &STRING2:0:anon_ptr.(0), &STRING3:0:anon_ptr.(0), 20, 20)
+
+graph EXPRESSION TREE:
+
+    Node 0: ET OpNode ( OPR_INTRINSIC_CALL )
+    Edge: 
+        0 => 
+        UnnamedRef(
+            mMemRefType: USE
+            mExprHandle: ExprHandle(60)
+            mLocal: 1
+            mProcHandle: ProcHandle(mytypemodule_::foo_)
+        )
+
+        Node 1: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        SubSetRef(
+            mMemRefType: USE
+            mMRE: 
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::STRING1)
+                mStrictlyLocal: 1
+            )
+        )
+
+        Node 2: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        SubSetRef(
+            mMemRefType: USE
+            mMRE: 
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::STRING2)
+                mStrictlyLocal: 1
+            )
+        )
+
+        Node 3: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        SubSetRef(
+            mMemRefType: USE
+            mMRE: 
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(foo_::STRING3)
+                mStrictlyLocal: 1
+            )
+        )
+
+        Node 4: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        UnnamedRef(
+            mMemRefType: USE
+            mExprHandle: ExprHandle(20)
+            mLocal: 1
+            mProcHandle: ProcHandle(mytypemodule_::foo_)
+        )
+
+        Node 5: ET MemRefNode (  )
+    Edge: 
+        0 => 
+        UnnamedRef(
+            mMemRefType: USE
+            mExprHandle: ExprHandle(20)
+            mLocal: 1
+            mProcHandle: ProcHandle(mytypemodule_::foo_)
+        )
+
+        Node 6: ET MemRefNode (  )
+
+
+==> ExprHandle: 60
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 60 )
+
+
+==> ExprHandle: 0
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 0 )
+
+
+==> ExprHandle: 0
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 0 )
+
+
+==> ExprHandle: 0
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 0 )
+
+
+==> ExprHandle: 20
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 20 )
+
+
+==> ExprHandle: 20
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 20 )
+
+
+==> ExprHandle: 20
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 20 )
+
+
+==> ExprHandle: 60
+
+graph EXPRESSION TREE:
+
+    Node 0: ET ConstValNode ( 60 )
+
+
+============================================
+StmtHandle: return
+

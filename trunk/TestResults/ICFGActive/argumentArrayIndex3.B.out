@@ -1,0 +1,34 @@
+
+InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 18
+            )    
+            Tag(
+                mTagID: 19
+            ) ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 18
+            )    
+            Tag(
+                mTagID: 19
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(head_::X)
+            SymHandle(head_::Y)
+            SymHandle(head_::P)
+            SymHandle(head_::Q) ] 
+    mNumIterUseful: 3
+    mNumIterVary: 3
+)

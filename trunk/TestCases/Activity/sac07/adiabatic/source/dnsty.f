@@ -1,0 +1,66 @@
+
+      SUBROUTINE DNSTY(JW,FLAG)
+C     *************************
+C
+C         SETS PTPEN(JW,5) = STREAM DENSITY (LB/CU FT) FOR PROCESS
+C         POINT JW (IN UNIT LIST). ASSUMES TEMP IN PTPEN(JW,2), FLOWS
+C         IN WEN(JW,I) AND --
+C           IF FLAG = -1.0 - VAPOR-LIQUID MIX AT PRESSURE IN PTPEN(JW,1)
+C              FLAG =  0.0 - SATURATED LIQUID
+C              FLAG =  1.0 - VAPOR, AT PRESSURE IN PTPEN(JW,1)
+C
+C         WRITTEN BY R.R. HUGHES             EES IDENT  SP/DNS
+C              LAST REVISION APRIL 26, 1974
+C
+      COMMON /UNPT/ JOUT,KNTRL,KFLAG,NCPS,NPTP,NCST,NREC,NEN,WTEN(5),
+     1  WEN(5,12),PTPEN(5,6),COST(5),EN(100),KTLN(15)
+c     COMMON /ACT/ WTEN(5),WEN(5,12),PTPEN(5,6),COST(5),EN(100)
+c     COMMON /UNACT/ JOUT,KNTRL,KFLAG,NPTP,NCST,NREC,NEN,NCPS,KTLN(15)
+      COMMON /FLOS/ FV(12),FL(12),FW(12)
+      COMMON/QP/ CSXX(12,28),ANAMC(12,6)
+      DATA WTOL/1.E-10/,VTOL/1.E-6/
+C+@+@+@+@@@@@@@+@+@+@+@+@@+@+@@+@@@@@@@@@@@@@@@@@@@@@@@@
+	REAL GASRES,LIQRES
+C
+C         CHECK FLOWS,- IF ALL ARE ZERO, SET DENSITY AT ZERO AND RETURN
+      IF (WTEN(JW).GT.WTOL.AND.PTPEN(JW,6).GT.WTOL) GO TO 10
+      CALL WTMOL(JW)
+      IF (WTEN(JW).GT.WTOL) GO TO 10
+        PTPEN(JW,5) = 0.
+      GO TO 900
+C
+C         SET UP PHASE CONTROL
+   10   KLAG = IFIX(FLAG+2.1)
+        KLAG = MIN0(3,MAX0(1,KLAG))
+C              DETERMINE THE STATE OF THE STREAM
+20    GO TO (100,200,300), KLAG
+C
+C         GENERAL CASE:  VAPOR + LIQUID
+100   CALL IFLASH(JW)
+      IF (PTPEN(JW,4).LT.VTOL) GO TO 200
+      IF (PTPEN(JW,4).GT.(1.-VTOL)) GO TO 300
+C+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@
+      CALL VMGAS(FV,PTPEN(JW,2),PTPEN(JW,1),GASRES)
+      CALL VMLIQ(FL,PTPEN(JW,2),LIQRES)
+      VM = GASRES * PTPEN(JW,4) +
+     1       LIQRES * (1.-PTPEN(JW,4))
+       PTPEN(JW,5) = PTPEN(JW,6)/VM
+      GO TO 900
+C
+C         ALL LIQUID
+200    DO 260 I = 1,NCPS
+  260   FL(I) = WEN(JW,I)
+C+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@@+@@+@+@+@
+       CALL VMLIQ(FL,PTPEN(JW,2),LIQRES)
+       PTPEN(JW,5) = PTPEN(JW,6)/ LIQRES               
+      GO TO 900
+C
+C         ALL VAPOR
+300     DO 360 I = 1,NCPS
+  360   FV(I) = WEN(JW,I)
+C+@+@+@+@+@+@++@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@+@
+	CALL VMGAS(FV,PTPEN(JW,2),PTPEN(JW,1),GASRES)
+	 PTPEN(JW,5) = PTPEN(JW,6)/ GASRES                            
+C
+  900 RETURN
+      END

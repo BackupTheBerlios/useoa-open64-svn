@@ -1,0 +1,19 @@
+
+# comment in file.test
+# Regression tests for UDDUChains Analysis
+testname::UDDUChains
+inputdir::TestCases/UDDUChains
+outputdir::TestResults/UDDUChains
+driverexec::./test-open64 --oa-UDDUChains
+
+# list of tests
+#       input file,                  status
+
+test::UDDUChainConditional.B,        Checked by PLM 05/04/08
+test::UDDUChainInterProcedural1.B,   Checked by PLM 05/04/08 
+test::UDDUChainNestedGlobals.B,      Checked by PLM 05/05/08
+test::UDDUChainIndirect1.B,          Checked by PLM 05/05/08, overestimation
+test::UDDUChainInterProcedural2.B,   Checked by PLM 05/04/08
+test::UDDUChainIndirect2.B,          Checked by PLM 05/05/08 
+test::UDDUChainLoop.B,               Checked by PLM 05/04/08
+

@@ -1,0 +1,48 @@
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsConditional.f
+mv ReachDefsConditional.B TestCases/ReachDefs/ReachDefsConditional.B
+echo "Testing TestCases/ReachDefs/ReachDefsConditional.B, TestResults/ReachDefs/ReachDefsConditional.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsConditional.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsConditional.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsInterProcedural1.f
+mv ReachDefsInterProcedural1.B TestCases/ReachDefs/ReachDefsInterProcedural1.B
+echo "Testing TestCases/ReachDefs/ReachDefsInterProcedural1.B, TestResults/ReachDefs/ReachDefsInterProcedural1.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsInterProcedural1.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsInterProcedural1.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsNestedGlobals.f
+mv ReachDefsNestedGlobals.B TestCases/ReachDefs/ReachDefsNestedGlobals.B
+echo "Testing TestCases/ReachDefs/ReachDefsNestedGlobals.B, TestResults/ReachDefs/ReachDefsNestedGlobals.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsNestedGlobals.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsNestedGlobals.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsIndirect1.f
+mv ReachDefsIndirect1.B TestCases/ReachDefs/ReachDefsIndirect1.B
+echo "Testing TestCases/ReachDefs/ReachDefsIndirect1.B, TestResults/ReachDefs/ReachDefsIndirect1.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsIndirect1.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsIndirect1.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsInterProcedural2.f
+mv ReachDefsInterProcedural2.B TestCases/ReachDefs/ReachDefsInterProcedural2.B
+echo "Testing TestCases/ReachDefs/ReachDefsInterProcedural2.B, TestResults/ReachDefs/ReachDefsInterProcedural2.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsInterProcedural2.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsInterProcedural2.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsIndirect2.f
+mv ReachDefsIndirect2.B TestCases/ReachDefs/ReachDefsIndirect2.B
+echo "Testing TestCases/ReachDefs/ReachDefsIndirect2.B, TestResults/ReachDefs/ReachDefsIndirect2.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsIndirect2.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsIndirect2.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsPointer.f
+mv ReachDefsPointer.B TestCases/ReachDefs/ReachDefsPointer.B
+echo "Testing TestCases/ReachDefs/ReachDefsPointer.B, TestResults/ReachDefs/ReachDefsPointer.B.out Checked by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsPointer.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsPointer.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ReachDefs/ReachDefsLoop.f
+mv ReachDefsLoop.B TestCases/ReachDefs/ReachDefsLoop.B
+echo "Testing TestCases/ReachDefs/ReachDefsLoop.B, TestResults/ReachDefs/ReachDefsLoop.B.out Chekced by PLM 05/04/08"
+./test-open64 --oa-ReachDefs TestCases/ReachDefs/ReachDefsLoop.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ReachDefs/ReachDefsLoop.B.out
+

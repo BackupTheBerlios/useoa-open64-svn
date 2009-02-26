@@ -1,0 +1,164 @@
+======================================
+ProcHandle : foo_::foo_
+
+
+
+OA::StmtHandle:  LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/reg/UseOA-Open64/TestCases/MemRefExpr/local.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+
+
+
+OA::StmtHandle: A:0:.predef_F8 =     10.00000000000000
+MemRefHandleA:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::A)
+    mStrictlyLocal: 1
+)
+
+
+
+
+OA::StmtHandle: B:0:anon_ptr.(1) = 1
+MemRefHandleB:0:anon_ptr.(1)
+	mre = 
+SubSetRef(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::B)
+        mStrictlyLocal: 1
+    )
+)
+
+
+
+
+OA::StmtHandle: U8PSTID 0 <2,5,P> T<33,anon_ptr.,8>
+
+MemRefHandleP:0:anon_ptr.
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::P)
+    mStrictlyLocal: 1
+)
+
+MemRefHandleA:0:.predef_F8
+	mre = 
+AddressOf(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::A)
+        mStrictlyLocal: 1
+    )
+)
+
+
+
+
+OA::StmtHandle: A:0:.predef_F8 = OPC_F8U8CVT(P:0:anon_ptr.)
+MemRefHandleA:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::A)
+    mStrictlyLocal: 1
+)
+
+MemRefHandleP:0:anon_ptr.
+	mre = 
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::P)
+        mStrictlyLocal: 1
+    )
+    mNumDeref: 1
+)
+
+
+
+
+OA::StmtHandle: U8PSTID 0 <2,5,P> T<33,anon_ptr.,8>
+
+MemRefHandleP:0:anon_ptr.
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::P)
+    mStrictlyLocal: 1
+)
+
+MemRefHandleF:0:.predef_F8
+	mre = 
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::F)
+    mStrictlyLocal: 1
+)
+
+
+
+
+OA::StmtHandle: F:0:.predef_F8 = OPC_F8U8CVT(P:0:anon_ptr.)
+MemRefHandleF:0:.predef_F8
+	mre = 
+Deref(
+    mMemRefType: DEF
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::F)
+        mStrictlyLocal: 1
+    )
+    mNumDeref: 1
+)
+
+MemRefHandleP:0:anon_ptr.
+	mre = 
+Deref(
+    mMemRefType: USE
+    mMRE: 
+    NamedRef(
+        mMemRefType: USE
+        mSymHandle: SymHandle(foo_::P)
+        mStrictlyLocal: 1
+    )
+    mNumDeref: 1
+)
+
+
+
+
+OA::StmtHandle: MSTORE 0 T<35,anon_ptr.,8>
+
+MemRefHandleFIRST:0:anon_ptr.
+	mre = 
+NamedRef(
+    mMemRefType: DEF
+    mSymHandle: SymHandle(foo_::FIRST)
+    mStrictlyLocal: 1
+)
+
+MLOAD 0 T<35,anon_ptr.,8>
+MemRefHandle
+	mre = 
+NamedRef(
+    mMemRefType: USE
+    mSymHandle: SymHandle(foo_::SECOND)
+    mStrictlyLocal: 1
+)
+
+
+
+
+OA::StmtHandle: return
+======================================
