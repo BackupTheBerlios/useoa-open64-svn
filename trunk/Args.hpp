@@ -23,6 +23,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 //*************************** User Include Files ****************************
 

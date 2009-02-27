@@ -33,13 +33,13 @@ main(int argc, char* argv[])
     cout << "Usage:\n\textractDot outputFileName\n\tor\n\t"
          << "extractDot outputFileName > outputFileName.dot\n\n"
          << "outputFileName is required.\n\n";
-    exit(0);
+    return(0);
   }
   
   ifstream inFile(argv[1]);
   if (inFile.fail()) {
-    cout << "Unable to open '" << argv[1] << "' for input. Exitting ...\n\n";
-    exit(0);
+    cout << "Unable to open '" << argv[1] << "' for input. Exiting ...\n\n";
+    return(0);
   }
   
   bool graphStarted = false;

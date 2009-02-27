@@ -224,7 +224,7 @@ Args::Parse(int argc, const char* const argv[])
     }
     if (parser.IsOpt("help")) { 
       PrintUsage(std::cerr); 
-      exit(1);
+      std::exit(1);
     }
     if (parser.IsOpt("version")) { 
       PrintVersion(std::cerr);
