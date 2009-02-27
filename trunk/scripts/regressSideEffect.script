@@ -1,23 +1,23 @@
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/SideEffect/Jean2.f90
-mv Jean2.B TestCases/SideEffect/Jean2.B
+mv -f Jean2.B TestCases/SideEffect/Jean2.B
 echo "Testing TestCases/SideEffect/Jean2.B, TestResults/SideEffect/Jean2.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/Jean2.B > t
 diff -I "LOC 0 0 source files:" t TestResults/SideEffect/Jean2.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/SideEffect/Jean.f90
-mv Jean.B TestCases/SideEffect/Jean.B
+mv -f Jean.B TestCases/SideEffect/Jean.B
 echo "Testing TestCases/SideEffect/Jean.B, TestResults/SideEffect/Jean.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/Jean.B > t
 diff -I "LOC 0 0 source files:" t TestResults/SideEffect/Jean.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/SideEffect/swap.f90
-mv swap.B TestCases/SideEffect/swap.B
+mv -f swap.B TestCases/SideEffect/swap.B
 echo "Testing TestCases/SideEffect/swap.B, TestResults/SideEffect/swap.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/swap.B > t
 diff -I "LOC 0 0 source files:" t TestResults/SideEffect/swap.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/SideEffect/test.f90
-mv test.B TestCases/SideEffect/test.B
+mv -f test.B TestCases/SideEffect/test.B
 echo "Testing TestCases/SideEffect/test.B, TestResults/SideEffect/test.B.out checked by PLM 05/05/08"
 ./test-open64 --oa-SideEffect TestCases/SideEffect/test.B > t
 diff -I "LOC 0 0 source files:" t TestResults/SideEffect/test.B.out

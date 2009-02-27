@@ -1306,7 +1306,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ReachDefs::ManagerReachDefsStandard> reachDefMgr;
     reachDefMgr = new OA::ReachDefs::ManagerReachDefsStandard(irInterface);
 
-/*
+
     OA::OA_ptr<OA::UDDUChains::UDDUChainsStandard> udduchains;
     OA::OA_ptr<OA::UDDUChains::ManagerUDDUChainsStandard> udman;
     udman = new OA::UDDUChains::ManagerUDDUChainsStandard(irInterface);
@@ -1330,7 +1330,7 @@ TestIR_OAUDDUChains(std::ostream& os, PU_Info* pu_forest,
 
         udduchains->output(*irInterface);
      }
-*/
+
 
     return 0;
 }

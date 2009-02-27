@@ -1,17 +1,17 @@
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/call.f
-mv call.B TestCases/ExprTree/call.B
+mv -f call.B TestCases/ExprTree/call.B
 echo "Testing TestCases/ExprTree/call.B, TestResults/ExprTree/call.B.out Checked by PLM 02/13/08"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/call.B > t
 diff -I "LOC 0 0 source files:" t TestResults/ExprTree/call.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/conditional.f
-mv conditional.B TestCases/ExprTree/conditional.B
+mv -f conditional.B TestCases/ExprTree/conditional.B
 echo "Testing TestCases/ExprTree/conditional.B, TestResults/ExprTree/conditional.B.out Checked by PLM 02/13/08"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/conditional.B > t
 diff -I "LOC 0 0 source files:" t TestResults/ExprTree/conditional.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/expressions.f
-mv expressions.B TestCases/ExprTree/expressions.B
+mv -f expressions.B TestCases/ExprTree/expressions.B
 echo "Testing TestCases/ExprTree/expressions.B, TestResults/ExprTree/expressions.B.out Checked by PLM 02/13/08"
 ./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > t
 diff -I "LOC 0 0 source files:" t TestResults/ExprTree/expressions.B.out

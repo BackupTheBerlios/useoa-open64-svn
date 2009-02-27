@@ -1,16 +1,16 @@
 echo "Generating TestResults/MemRefExpr/nested.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/nested.f
-mv nested.B TestCases/MemRefExpr/nested.B
+mv -f nested.B TestCases/MemRefExpr/nested.B
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/nested.B > TestResults/MemRefExpr/nested.B.out
 echo "Generating TestResults/MemRefExpr/local.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/local.f
-mv local.B TestCases/MemRefExpr/local.B
+mv -f local.B TestCases/MemRefExpr/local.B
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/local.B > TestResults/MemRefExpr/local.B.out
 echo "Generating TestResults/MemRefExpr/global.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/global.f
-mv global.B TestCases/MemRefExpr/global.B
+mv -f global.B TestCases/MemRefExpr/global.B
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/global.B > TestResults/MemRefExpr/global.B.out
 echo "Generating TestResults/MemRefExpr/module.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/MemRefExpr/module.f
-mv module.B TestCases/MemRefExpr/module.B
+mv -f module.B TestCases/MemRefExpr/module.B
 ./test-open64 --oa-MemRefExpr TestCases/MemRefExpr/module.B > TestResults/MemRefExpr/module.B.out

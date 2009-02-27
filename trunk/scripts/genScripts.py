@@ -117,9 +117,9 @@ for line in filelines:
           print fFiles
           sys.exit(-1)
 	genfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
-	genfile.write("mv %s %s/%s\n" % (inputfile, inputdir,inputfile))
+	genfile.write("mv -f %s %s/%s\n" % (inputfile, inputdir,inputfile))
 	regfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
-	regfile.write("mv %s %s/%s\n" % (inputfile, inputdir,inputfile))
+	regfile.write("mv -f %s %s/%s\n" % (inputfile, inputdir,inputfile))
         ### until here ##########################################
         genfile.write("%s %s/%s > %s/%s\n"  \
             % (driverexec,inputdir,inputfile,outputdir,inputfile+".out"))
