@@ -10,3 +10,11 @@ echo "Generating TestResults/ExprTree/expressions.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/expressions.f
 mv -f expressions.B TestCases/ExprTree/expressions.B
 ./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > TestResults/ExprTree/expressions.B.out
+echo "Generating TestResults/ExprTree/aa.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/aa.f90
+mv -f aa.B TestCases/ExprTree/aa.B
+./test-open64 --oa-ExprTree TestCases/ExprTree/aa.B > TestResults/ExprTree/aa.B.out
+echo "Generating TestResults/ExprTree/aa-nopragma.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/aa-nopragma.f90
+mv -f aa-nopragma.B TestCases/ExprTree/aa-nopragma.B
+./test-open64 --oa-ExprTree TestCases/ExprTree/aa-nopragma.B > TestResults/ExprTree/aa-nopragma.B.out

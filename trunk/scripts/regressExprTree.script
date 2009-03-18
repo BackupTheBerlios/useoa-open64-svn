@@ -16,3 +16,15 @@ echo "Testing TestCases/ExprTree/expressions.B, TestResults/ExprTree/expressions
 ./test-open64 --oa-ExprTree TestCases/ExprTree/expressions.B > t
 diff -I "LOC 0 0 source files:" t TestResults/ExprTree/expressions.B.out
 
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/aa.f90
+mv -f aa.B TestCases/ExprTree/aa.B
+echo "Testing TestCases/ExprTree/aa.B, TestResults/ExprTree/aa.B.out Checked by MMS 3/18/09"
+./test-open64 --oa-ExprTree TestCases/ExprTree/aa.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ExprTree/aa.B.out
+
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/ExprTree/aa-nopragma.f90
+mv -f aa-nopragma.B TestCases/ExprTree/aa-nopragma.B
+echo "Testing TestCases/ExprTree/aa-nopragma.B, TestResults/ExprTree/aa-nopragma.B.out Checked by MMS 3/18/09"
+./test-open64 --oa-ExprTree TestCases/ExprTree/aa-nopragma.B > t
+diff -I "LOC 0 0 source files:" t TestResults/ExprTree/aa-nopragma.B.out
+
