@@ -17,6 +17,9 @@
 //  LABELs and LOCs lines interrupt in the same way that PRAGMA does.
 //  Also, sometimes the digraph is not at the end of the file.
 //-----------
+// Modified: 6/19/07
+//  now handles I8SRCTRIPLET and GOTOs
+//-----------
 //--------------------------------------------------------------------------
 
 #include <string>
@@ -28,18 +31,19 @@ using std::string;
 
 main(int argc, char* argv[])
 {
+  bool debug = false;
   
   if (argc != 2) {
     cout << "Usage:\n\textractDot outputFileName\n\tor\n\t"
          << "extractDot outputFileName > outputFileName.dot\n\n"
          << "outputFileName is required.\n\n";
-    return(0);
+    exit(0);
   }
   
   ifstream inFile(argv[1]);
   if (inFile.fail()) {
-    cout << "Unable to open '" << argv[1] << "' for input. Exiting ...\n\n";
-    return(0);
+    cout << "Unable to open '" << argv[1] << "' for input. Exitting ...\n\n";
+    exit(0);
   }
   
   bool graphStarted = false;
@@ -55,15 +59,24 @@ main(int argc, char* argv[])
 
   bool graphFinished = false;
   while (!inFile.eof() && !graphFinished) {
+    if (debug) {
+      cout << "' " << line << " '\n";
+    }
     // look for Pragma, LOC, LABEL, etc.
     int posP  = line.find("PRAGMA",0);
     int posL  = line.find(" LOC 0 0 source files:",0);
     int posLL = line.find("LABEL L",0);
     int posI  = line.find("I8SRCTRIPLET",0);
+    int posG  = line.find("GOTO L",0);
+    int posC  = line.find("COMMENT",0);
+    int posIO  = line.find("IO",0);
     while(posL  != string::npos || 
           posP  != string::npos ||
           posLL != string::npos ||
-          posI  != string::npos) {
+          posI  != string::npos ||
+          posG  != string::npos ||
+          posC  != string::npos ||
+          posIO  != string::npos) {
       if (posL != string::npos) {  // then we found a LOC
         // strip off from the LOC position to the end
         line.erase(posL);
@@ -108,10 +121,46 @@ main(int argc, char* argv[])
         // concatenate
         line = line+line2;
       } 
+      else if (posG != string::npos) {  // then we found a GOTO
+        // strip off from the GOTO position to the end
+        line.erase(posG);
+        string line2;
+        // get next line if possible
+        if (!inFile.eof()) {
+          getline(inFile,line2);
+        }
+        // concatenate
+        line = line+line2;
+      } 
+      else if (posC != string::npos) {  // then we found a COMMENT
+        // strip off from the COMMENT position to the end
+        line.erase(posC);
+        string line2;
+        // get next line if possible
+        if (!inFile.eof()) {
+          getline(inFile,line2);
+        }
+        // concatenate
+        line = line+line2;
+      } 
+      else if (posIO != string::npos) {  // then we found a IO
+        // strip off from the COMMENT position to the end
+        line.erase(posIO);
+        string line2;
+        // get next line if possible
+        if (!inFile.eof()) {
+          getline(inFile,line2);
+        }
+        // concatenate
+        line = line+line2;
+      } 
       posP  = line.find("PRAGMA",0);
       posL  = line.find(" LOC 0 0 source files:",0);
       posLL = line.find("LABEL L",0);
       posI  = line.find("I8SRCTRIPLET",0);
+      posG  = line.find("GOTO L",0);
+      posC  = line.find("COMMENT",0);
+      posIO  = line.find("IO",0);
     }
     // send line to stdout
     cout << line.c_str() << endl;
@@ -124,6 +173,14 @@ main(int argc, char* argv[])
         if (line.compare(0,1," ") != 0) {
           graphFinished = true;  // time to stop
         }
+      }
+    }
+    if (debug) {
+      if (inFile.eof()) {
+        cout << "hit eof() on inFile\n";
+      }
+      if (graphFinished) {
+        cout << "graphFinished is true\n";
       }
     }
   }
