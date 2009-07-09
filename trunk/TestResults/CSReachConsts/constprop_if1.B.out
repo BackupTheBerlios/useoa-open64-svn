@@ -1,0 +1,143 @@
+
+mProcToReachConstsMap: ProcHandle	 => ReachConsts
+        ProcHandle(constprop_if1_::constprop_if1_)	 => 
+        ReachConstStandard: 
+        CSReachConsts(
+            mReachConsts: StmtHwContext	 => OA::OA_ptr<RCPairSet> 
+                    
+                    StmtHwContext(
+                        mStmtH:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/CSReachConsts/constprop_if1.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(X:0:.predef_I4 = 2)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(if (X:0:.predef_I4>=0))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 1
+                                )
+                                mConstPtr: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(Y:0:.predef_I4 = 5)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 1
+                                )
+                                mConstPtr: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 1
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 2
+                                )
+                                mConstPtr: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(Y:0:.predef_I4 = 3)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 1
+                                )
+                                mConstPtr: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(Z:0:.predef_I4 = Y:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(_END())
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+
+            mReachConstsForCallStmt: CallHandle	 => OA::OA_ptr<RCPairSet> 
+
+        )
+

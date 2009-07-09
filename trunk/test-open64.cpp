@@ -60,6 +60,7 @@
 #include <OpenAnalysis/Activity/ManagerICFGUseful.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGVaryActive.hpp>
 #include <OpenAnalysis/ReachConsts/ManagerICFGReachConsts.hpp>
+#include <OpenAnalysis/ReachConsts/ManagerICFGCSReachConsts.hpp>
 #include <OpenAnalysis/ReachDefs/ManagerReachDefsStandard.hpp>
 #include <OpenAnalysis/ReachDefsOverwrite/ManagerReachDefsOverwriteStandard.hpp>
 #include <OpenAnalysis/UDDUChains/ManagerUDDUChainsStandard.hpp>
@@ -125,6 +126,10 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
                          OA::OA_ptr<Open64IRInterface> irInterface);
+
+static int
+TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
+                           OA::OA_ptr<Open64IRInterface> irInterface);
 
 
 static int
@@ -369,6 +374,11 @@ main(int argc, char* argv[])
         break;
      }
 
+     case 40:
+     {
+        TestIR_OAICFGCSReachConsts(std::cout, pu_forest, irInterface);
+        break;
+     }
   }
 
   FreeIR(pu_forest); // N.B. cannot use with WriteIR
@@ -1046,6 +1056,8 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
+    /* // **************************************************************
+      // BK:  doesn't seem as though the interSideEffects are used here
 
     // intra side effects
     OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
@@ -1064,7 +1076,7 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
         intraSideEffectMgr,
         OA::DataFlow::ITERATIVE);
 
-
+    */ // ***************************************************************
 
     // ICFGReachConsts
     OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
@@ -1635,6 +1647,105 @@ TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
 
     return 0;
 }
+
+//! ===============================================================
+//! ICFGReachConst
+//! ===============================================================
+
+ 
+static int
+TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
+                         OA::OA_ptr<Open64IRInterface> irInterface)
+{
+
+  Diag_Set_Phase("WHIRL tester: TestIR_OAICFGCSReachConsts");
+
+    // eachCFG
+    OA::OA_ptr<OA::CFG::EachCFGInterface> eachCFG;
+    OA::OA_ptr<OA::CFG::ManagerCFGStandard> cfgman;
+    cfgman = new OA::CFG::ManagerCFGStandard(irInterface);
+    eachCFG = new OA::CFG::EachCFGStandard(cfgman);
+
+    OA::OA_ptr<Open64IRProcIterator> procIter;
+    procIter = new Open64IRProcIterator(pu_forest);
+
+    //! FIAliasAliasMap
+    OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+    fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> alias;
+    alias = fialiasman->performAnalysis(procIter);
+    OA::OA_ptr<OA::Alias::InterAliasResults> interAlias;
+    //interAlias = new OA::Alias::InterAliasResults(alias);
+
+    // call graph
+    OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+    cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+    OA::OA_ptr<OA::CallGraph::CallGraph> cgraph =
+      cgraphman->performAnalysis(procIter, alias);
+
+    //cgraph->dump(std::cout, irInterface);
+
+
+    //! CSFIAliasAliasTag
+
+    // set context level (default is 1)
+    //CallContext::setMaxDegree(1);
+
+    OA::OA_ptr<OA::Alias::ManagerCSFIAliasAliasTag> csfialiasman;
+    csfialiasman = new OA::Alias::ManagerCSFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> csfialias;
+    csfialias = csfialiasman->performAnalysis(cgraph);
+    //interAlias = new OA::Alias::InterAliasResults(csfialias);
+    
+    // csfialias->output(*irInterface);
+
+    //ParamBindings
+    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
+    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
+    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
+    parambind = pbman->performAnalysis(cgraph);
+
+
+    // ICFG
+    OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
+    icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
+    OA::OA_ptr<OA::ICFG::ICFG> icfg;
+    icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
+
+
+    /* // **************************************************
+    // BK: doesn't look like we use the interSideEffects here
+
+    // intra side effects
+    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
+    intraSideEffectMgr
+        = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
+
+    // inter side effects
+    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSideEffects;
+    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
+    interSideEffectMgr =
+        new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
+    interSideEffects = interSideEffectMgr->performAnalysis(
+        cgraph,
+        parambind,
+        interAlias,
+        intraSideEffectMgr,
+        OA::DataFlow::ITERATIVE);
+    */ // ****************************************************
+
+
+    // ICFGCSReachConsts
+    OA::OA_ptr<OA::ReachConsts::ManagerICFGCSReachConsts> iCSrcsman;
+    iCSrcsman = new OA::ReachConsts::ManagerICFGCSReachConsts(irInterface);
+    OA::OA_ptr<OA::ReachConsts::InterReachConsts> iCSrcs
+        = iCSrcsman->performAnalysis(icfg, csfialias, OA::DataFlow::ITERATIVE);
+ 
+    iCSrcs->output(*irInterface,*csfialias);
+
+    return 0;
+}
+
 
 //! ==============================================================
 //! CSFSActivity

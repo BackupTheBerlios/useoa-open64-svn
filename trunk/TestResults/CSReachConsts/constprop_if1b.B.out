@@ -2,50 +2,80 @@
 mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ProcHandle(constprop_if1b_::constprop_if1b_)	 => 
         ReachConstStandard: 
-        ReachConstsStandard(
-            mReachConsts: StmtHandle	 => OA::OA_ptr<RCPairSet> 
+        CSReachConsts(
+            mReachConsts: StmtHwContext	 => OA::OA_ptr<RCPairSet> 
                     
-                    Statement:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/ReachConsts/constprop_if1b.f90"
+                    StmtHwContext(
+                        mStmtH:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/CSReachConsts/constprop_if1b.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()	 => 
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([  ] 
                     )
                     
-                    Statement: StmtHandle(X:0:.predef_I4 = 2)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(X:0:.predef_I4 = 2)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([  ] 
                     )
                     
-                    Statement: StmtHandle(if (X:0:.predef_I4>=0))	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(if (X:0:.predef_I4>=0))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(Y:0:.predef_I4 = 5)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(Y:0:.predef_I4 = 5)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(X:0:.predef_I4 = Y:0:.predef_I4+Y:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=2>
                             )    
@@ -53,31 +83,43 @@ StmtHandle()	 =>
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 2
                                 )
                                 mConstPtr: ,VALUE=5>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(Y:0:.predef_I4 = 3)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(Y:0:.predef_I4 = 3)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=2>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(X:0:.predef_I4 = 10)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(X:0:.predef_I4 = 10)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=2>
                             )    
@@ -85,43 +127,61 @@ StmtHandle()	 =>
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 4
+                                    mTagID: 2
                                 )
                                 mConstPtr: ,VALUE=3>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(Z:0:.predef_I4 = Y:0:.predef_I4)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(Z:0:.predef_I4 = Y:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=10>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(_END())	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(_END())
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=10>
                             ) ] 
                     )
                     
-                    Statement: StmtHandle(return)	 => 
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
                     RCPairSet([ 
                             RCPair: 
                             RCpair(
                                 mTag: 
                                 Tag(
-                                    mTagID: 2
+                                    mTagID: 1
                                 )
                                 mConstPtr: ,VALUE=10>
                             ) ] 

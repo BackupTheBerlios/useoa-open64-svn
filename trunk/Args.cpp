@@ -52,6 +52,7 @@ static const char* usage_details =
 "      --oa-ICFGDep             test ICFGDep analysis\n"
 "      --oa-ICFGActivity        test interprocedural Activity analysis\n"
 "      --oa-ICFGReachConsts     test OA ICFGReachConsts\n"
+"      --oa-ICFGCSReachConsts   test OA ICFGCSReachConsts\n"
 "      --oa-ReachDefs           test OA ReachDefs analysis\n"
 "      --oa-UDDUChains          test OA UDDUChains analysis\n"
 "      --oa-AliasMapXAIF        test OA AliasMapXAIF analysis\n"
@@ -105,6 +106,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-ICFGDep",               CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ICFGActivity",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ICFGReachConsts",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-ICFGCSReachConsts",     CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ReachDefs",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-UDDUChains",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-AliasMapXAIF",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -275,6 +277,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-sac07ICFGActivity")) { runMode = 37; } 
     if (parser.IsOpt("oa-AliasTagCSFIAlias")) { runMode = 38; }
     if (parser.IsOpt("oa-CSFSActivity")) { runMode = 39; }
+    if (parser.IsOpt("oa-ICFGCSReachConsts")) { runMode = 40; }
 
 
     // Check for other options

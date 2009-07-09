@@ -1,0 +1,518 @@
+
+mProcToReachConstsMap: ProcHandle	 => ReachConsts
+        ProcHandle(head_::head_)	 => 
+        ReachConstStandard: 
+        CSReachConsts(
+            mReachConsts: StmtHwContext	 => OA::OA_ptr<RCPairSet> 
+                    
+                    StmtHwContext(
+                        mStmtH:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/CSReachConsts/constprop_proc2.f90"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(M:0:.predef_I4 = 2)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([  ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(P:0:.predef_I4 = 5)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(M:0:.predef_I4 = 5)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(P:0:.predef_I4 = 2)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(F:0:.predef_I4 = X:0:.predef_I4+V:0:.predef_I4+M:0:.predef_I4+P:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+
+            mReachConstsForCallStmt: CallHandle	 => OA::OA_ptr<RCPairSet> 
+                    
+                    CallHwContext(
+                        mCallH: CallHandle(bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    CallHwContext(
+                        mCallH: CallHandle(bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+
+        )
+
+        ProcHandle(head_::bar_)	 => 
+        ReachConstStandard: 
+        CSReachConsts(
+            mReachConsts: StmtHwContext	 => OA::OA_ptr<RCPairSet> 
+                    
+                    StmtHwContext(
+                        mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=5>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(C:0:.predef_I4 = A:0:.predef_I4*B:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(B:0:.predef_I4 = C:0:.predef_I4-D:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=5>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&M:0:.predef_I4, &P:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 4
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ bar_(&P:0:.predef_I4, &M:0:.predef_I4, &V:0:.predef_I4, &X:0:.predef_I4) ] 
+                        )
+                    )	 => 
+                    RCPairSet([ 
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 5
+                                )
+                                mConstPtr: ,VALUE=2>
+                            )    
+                            RCPair: 
+                            RCpair(
+                                mTag: 
+                                Tag(
+                                    mTagID: 6
+                                )
+                                mConstPtr: ,VALUE=10>
+                            ) ] 
+                    )
+
+            mReachConstsForCallStmt: CallHandle	 => OA::OA_ptr<RCPairSet> 
+
+        )
+

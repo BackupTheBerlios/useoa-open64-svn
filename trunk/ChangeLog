@@ -799,3 +799,9 @@
   - minor update to extractDot.cpp
   - compiles/regresses with Whirl2OA/trunk r912 and OpenAnalysis/trunk r915
 
+07/09/09  UseOA-Open64 svn trunk r363 Barbara Kreaseck
+  - added --oa-ICFGCSReachConsts ability into test-open64
+  - added appropriate TestCases/CSReachConsts and TestResults/CSReachConsts
+  - added ICFGCSReachConsts regression test to scripts/regressAll.script
+  - compiles/regresses with Whirl2OA/trunk r916 and OpenAnalysis/trunk r916
+

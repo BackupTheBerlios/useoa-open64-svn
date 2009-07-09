@@ -52,3 +52,5 @@ source scripts/regressUDDUChains.script
 echo "########################### running regressICFGReachConsts.script"
 source scripts/regressICFGReachConsts.script
 
+echo "########################### running regressICFGCSReachConsts.script"
+source scripts/regressICFGCSReachConsts.script

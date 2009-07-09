@@ -1,0 +1,36 @@
+echo "Generating TestResults/CSReachConsts/constprop_if1a.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_if1a.f90
+mv -f constprop_if1a.B TestCases/CSReachConsts/constprop_if1a.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_if1a.B > TestResults/CSReachConsts/constprop_if1a.B.out
+echo "Generating TestResults/CSReachConsts/constprop_if1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_if1.f90
+mv -f constprop_if1.B TestCases/CSReachConsts/constprop_if1.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_if1.B > TestResults/CSReachConsts/constprop_if1.B.out
+echo "Generating TestResults/CSReachConsts/constprop_if1b.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_if1b.f90
+mv -f constprop_if1b.B TestCases/CSReachConsts/constprop_if1b.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_if1b.B > TestResults/CSReachConsts/constprop_if1b.B.out
+echo "Generating TestResults/CSReachConsts/constprop_if1c.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_if1c.f90
+mv -f constprop_if1c.B TestCases/CSReachConsts/constprop_if1c.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_if1c.B > TestResults/CSReachConsts/constprop_if1c.B.out
+echo "Generating TestResults/CSReachConsts/constprop_loop1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_loop1.f90
+mv -f constprop_loop1.B TestCases/CSReachConsts/constprop_loop1.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_loop1.B > TestResults/CSReachConsts/constprop_loop1.B.out
+echo "Generating TestResults/CSReachConsts/constprop_loop2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_loop2.f90
+mv -f constprop_loop2.B TestCases/CSReachConsts/constprop_loop2.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_loop2.B > TestResults/CSReachConsts/constprop_loop2.B.out
+echo "Generating TestResults/CSReachConsts/constprop_proc1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_proc1.f90
+mv -f constprop_proc1.B TestCases/CSReachConsts/constprop_proc1.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_proc1.B > TestResults/CSReachConsts/constprop_proc1.B.out
+echo "Generating TestResults/CSReachConsts/constprop_proc2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_proc2.f90
+mv -f constprop_proc2.B TestCases/CSReachConsts/constprop_proc2.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_proc2.B > TestResults/CSReachConsts/constprop_proc2.B.out
+echo "Generating TestResults/CSReachConsts/constprop_proc3.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_proc3.f90
+mv -f constprop_proc3.B TestCases/CSReachConsts/constprop_proc3.B
+./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_proc3.B > TestResults/CSReachConsts/constprop_proc3.B.out
