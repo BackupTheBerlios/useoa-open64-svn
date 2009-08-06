@@ -18,7 +18,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 2
+                            mTagID: 1
                         ) ] 
                 )
             )
@@ -81,7 +81,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 7
+                            mTagID: 3
                         ) ] 
                 )
             )
@@ -107,7 +107,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 3
+                            mTagID: 2
                         )    
                         Tag(
                             mTagID: 4
@@ -121,7 +121,7 @@ CSFIAliasTagResults(
     mTagToMREwCs: AliasTag	 => OA::OA_ptr<std::set<MREwContext> > 
             
             Tag(
-                mTagID: 2
+                mTagID: 1
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -137,7 +137,7 @@ CSFIAliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 3
+                mTagID: 2
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -150,6 +150,22 @@ CSFIAliasTagResults(
                             mStrictlyLocal: 1
                         )
                         mNumDeref: 1
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 3
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(main_::T)
+                        mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
@@ -222,22 +238,6 @@ CSFIAliasTagResults(
                         mMaxDegree: 1[ CallHandle(0) ] 
                     )
                 ) ] 
-            
-            Tag(
-                mTagID: 7
-            )	 => [ 
-                MREwContext(
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(main_::T)
-                        mStrictlyLocal: 1
-                    )
-                    mCallContext: 
-                    CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
-                    )
-                ) ] 
 
     mMemRefwCToTags: MRHwContext	 => OA::OA_ptr<AliasTagSet> 
             
@@ -252,7 +252,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 7
+                            mTagID: 3
                         ) ] 
                 )
             )
@@ -268,7 +268,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 2
+                            mTagID: 1
                         ) ] 
                 )
             )
@@ -300,7 +300,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 2
+                            mTagID: 1
                         ) ] 
                 )
             )
@@ -332,7 +332,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 7
+                            mTagID: 3
                         ) ] 
                 )
             )
@@ -348,7 +348,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 3
+                            mTagID: 2
                         )    
                         Tag(
                             mTagID: 4
@@ -488,5 +488,67 @@ CSFIAliasTagResults(
                     mMaxDegree: 1[ CallHandle(0) ] 
                 )
             )	 => 0
+
+    mMREToCCSet: MemRefExpr	 => CallContextSet
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(main_::Q)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(main_::R)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(main_::S)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(main_::T)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::Q)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
 
 )

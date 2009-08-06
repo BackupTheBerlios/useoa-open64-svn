@@ -1,0 +1,97 @@
+
+graph DGraph:
+
+    Node 1: 
+        cat_::cat_ [defined]
+
+    Node 2: 
+        cat_::foo_ [defined]
+
+    Node 3: 
+        cat_::dog_ [defined]
+
+    Node 4: 
+        cat_::bar_ [defined]
+
+    Edge: 1 => 2
+        foo_(&I:0:.predef_I4, &J:0:.predef_I4)
+
+    Edge: 1 => 2
+        foo_(&J:0:.predef_I4, &I:0:.predef_I4)
+
+    Edge: 3 => 2
+        foo_(&P:0:.predef_I4, &Q:0:.predef_I4)
+
+    Edge: 2 => 4
+        bar_(&A:0:.predef_I4, &D:0:.predef_I4)
+
+    Edge: 2 => 4
+        bar_(&E:0:.predef_I4, &C:0:.predef_I4)
+
+
+mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
+        foo_(&I:0:.predef_I4, &J:0:.predef_I4)	 => [ cat_::foo_ ] 
+        foo_(&J:0:.predef_I4, &I:0:.predef_I4)	 => [ cat_::foo_ ] 
+        foo_(&P:0:.predef_I4, &Q:0:.predef_I4)	 => [ cat_::foo_ ] 
+        bar_(&A:0:.predef_I4, &D:0:.predef_I4)	 => [ cat_::bar_ ] 
+        bar_(&E:0:.predef_I4, &C:0:.predef_I4)	 => [ cat_::bar_ ] 
+
+mProcToCCSets: ProcHandle	 => CallContextSet
+        ProcHandle(cat_::cat_)	 => 
+        CCSet(
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0) ] 
+                    ) ] 
+            )
+        )
+
+        ProcHandle(cat_::dog_)	 => 
+        CCSet(
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0) ] 
+                    ) ] 
+            )
+        )
+
+        ProcHandle(cat_::foo_)	 => 
+        CCSet(
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0)    foo_(&I:0:.predef_I4, &J:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0)    foo_(&J:0:.predef_I4, &I:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0)    foo_(&P:0:.predef_I4, &Q:0:.predef_I4) ] 
+                    ) ] 
+            )
+        )
+
+        ProcHandle(cat_::bar_)	 => 
+        CCSet(
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 2[ foo_(&I:0:.predef_I4, &J:0:.predef_I4)    bar_(&A:0:.predef_I4, &D:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ foo_(&I:0:.predef_I4, &J:0:.predef_I4)    bar_(&E:0:.predef_I4, &C:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ foo_(&J:0:.predef_I4, &I:0:.predef_I4)    bar_(&A:0:.predef_I4, &D:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ foo_(&J:0:.predef_I4, &I:0:.predef_I4)    bar_(&E:0:.predef_I4, &C:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ foo_(&P:0:.predef_I4, &Q:0:.predef_I4)    bar_(&A:0:.predef_I4, &D:0:.predef_I4) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ foo_(&P:0:.predef_I4, &Q:0:.predef_I4)    bar_(&E:0:.predef_I4, &C:0:.predef_I4) ] 
+                    ) ] 
+            )
+        )
+
+    mNumCCs: 11

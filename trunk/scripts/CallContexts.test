@@ -1,0 +1,26 @@
+# Regression tests for CCSetPerProc (CallContexts) generation
+testname::CallContexts
+inputdir::TestCases/AliasTagCSFIAlias
+outputdir::TestResults/CallContexts
+driverexec::./test-open64 --oa-CallContexts
+
+#
+# OA::Alias::CallContext::setMaxDegree((unsigned int)2) 
+#   === done in UseOA-Open64/test-open64.cpp ===
+#
+#
+#
+# list of tests
+#       input file,                 status
+#test::pointer.B,                    Checked by MMS 04/22/08
+#test::conditional.B,                Checked by  BK 08/06/09
+#test::interalias_proc_call1.B,      Checked by MMS 04/22/08
+#test::interalias_proc_call6.B,      Checked by MMS 04/22/08
+#test::interalias_proc_call5.B,      Checked by PLM 02/23/08
+#test::Unnamed_alias.B,              Checked by PLM 02/22/08
+#test::Jean.B,                       Checked by PLM 02/23/08
+#test::interalias_proc_call7.B,      Checked by PLM 02/23/08
+#test::struct_pointer1.B,            Checked by PLM 02/22/08, 
+#test::struct_pointer2.B,            Checked by PLM 02/22/08,
+test::multiple_calls3.B,            Checked by  BK 08/06/09,
+test::multiple_calls7.B,            Checked by  BK 08/06/09,

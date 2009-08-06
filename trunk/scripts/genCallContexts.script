@@ -1,0 +1,8 @@
+echo "Generating TestResults/CallContexts/multiple_calls3.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagCSFIAlias/multiple_calls3.f
+mv -f multiple_calls3.B TestCases/AliasTagCSFIAlias/multiple_calls3.B
+./test-open64 --oa-CallContexts TestCases/AliasTagCSFIAlias/multiple_calls3.B > TestResults/CallContexts/multiple_calls3.B.out
+echo "Generating TestResults/CallContexts/multiple_calls7.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/AliasTagCSFIAlias/multiple_calls7.f
+mv -f multiple_calls7.B TestCases/AliasTagCSFIAlias/multiple_calls7.B
+./test-open64 --oa-CallContexts TestCases/AliasTagCSFIAlias/multiple_calls7.B > TestResults/CallContexts/multiple_calls7.B.out

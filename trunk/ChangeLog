@@ -805,3 +805,9 @@
   - added ICFGCSReachConsts regression test to scripts/regressAll.script
   - compiles/regresses with Whirl2OA/trunk r916 and OpenAnalysis/trunk r916
 
+08/06/09  UseOA-Open64 svn trunk r364 Barbara Kreaseck
+  - added --oa-CallContexts ability into test-open64
+  - added appropriate TestResults/CallContexts
+  - added CallContexts regression test to scripts/regressAll.script
+  - compiles/regresses with Whirl2OA/trunk r921 and OpenAnalysis/trunk r920
+

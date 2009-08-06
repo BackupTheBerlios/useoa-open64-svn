@@ -44,6 +44,7 @@ static const char* usage_details =
 "      --oa-MemRefExpr          test OA MemRefExpr analysis\n"
 "      --oa-AliasTagFIAlias     test OA ManagerFIAliasAliasMap analysis\n"
 "      --oa-AliasTagCSFIAlias   test OA ManagerCSFIAliasAliasMap analysis\n"
+"      --oa-CallContexts        test OA ManagerCallContexts analysis\n"
 "      --oa-ExprTree            test source IR ExprTree creation\n"
 "      --oa-CallGraph           test OA CallGraph analysis\n"
 "      --oa-ICFG                test ICFG analysis\n"
@@ -100,6 +101,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   {  0 , "oa-AliasTagFIAlias",       CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ExprTree",              CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-CallGraph",             CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
+  {  0 , "oa-CallContexts",          CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ICFG",                  CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-ParamBindings",         CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
   {  0 , "oa-SideEffect",            CLP::ARG_NONE, CLP::DUPOPT_ERR,  NULL },
@@ -278,6 +280,7 @@ Args::Parse(int argc, const char* const argv[])
     if (parser.IsOpt("oa-AliasTagCSFIAlias")) { runMode = 38; }
     if (parser.IsOpt("oa-CSFSActivity")) { runMode = 39; }
     if (parser.IsOpt("oa-ICFGCSReachConsts")) { runMode = 40; }
+    if (parser.IsOpt("oa-CallContexts")) { runMode = 41; }
 
 
     // Check for other options

@@ -70,6 +70,7 @@
 #include <OpenAnalysis/CSFIActivity/ManagerDUGStandard.hpp>
 #include <OpenAnalysis/CSFIActivity/ManagerDUActive.hpp>
 */
+#include <OpenAnalysis/Alias/ManagerCallContexts.hpp>
 #include <OpenAnalysis/Alias/ManagerCSFIAliasAliasTag.hpp>
 #include <OpenAnalysis/Activity/ManagerCSFSUseful.hpp>
 
@@ -176,6 +177,12 @@ TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
 static int
 TestIR_OACSFSActivity(std::ostream& os, PU_Info* pu_forest,
                        OA::OA_ptr<Open64IRInterface> irInterface);
+
+
+static int
+TestIR_OACallContexts(std::ostream& os, PU_Info* pu_forest,
+                      OA::OA_ptr<Open64IRInterface> irInterface);
+
 
 
 
@@ -379,6 +386,13 @@ main(int argc, char* argv[])
         TestIR_OAICFGCSReachConsts(std::cout, pu_forest, irInterface);
         break;
      }
+     case 41:
+     {
+        //! CallContexts
+        TestIR_OACallContexts(std::cout, pu_forest, irInterface);
+        break; 
+     }
+
   }
 
   FreeIR(pu_forest); // N.B. cannot use with WriteIR
@@ -574,6 +588,52 @@ TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
   outBuild = new OA::OutputBuilderDOT;
   cgraph->configOutput(outBuild);
   cgraph->output(*irInterface);
+
+  return 0;
+}
+
+
+
+//! =================================================================
+//! CallContexts
+//! ================================================================
+
+static int
+TestIR_OACallContexts(std::ostream& os, PU_Info* pu_forest,
+                         OA::OA_ptr<Open64IRInterface> irInterface)
+{
+  Diag_Set_Phase("WHIRL tester: TestIR_OACallContexts");
+
+  //! Get the ProcIter
+  OA::OA_ptr<Open64IRProcIterator> procIter;
+  procIter = new Open64IRProcIterator(pu_forest);
+
+  //! FIAliasAliasMap
+  OA::OA_ptr<OA::Alias::ManagerFIAliasAliasTag> fialiasman;
+  fialiasman= new OA::Alias::ManagerFIAliasAliasTag(irInterface);
+  OA::OA_ptr<OA::Alias::Interface> alias;
+  alias = fialiasman->performAnalysis(procIter);
+  //alias->output(*irInterface);
+
+  //! CallGraph
+  OA::OA_ptr<OA::CallGraph::ManagerCallGraphStandard> cgraphman;
+  cgraphman = new OA::CallGraph::ManagerCallGraphStandard(irInterface);
+  OA::OA_ptr<OA::CallGraph::CallGraph> cgraph;
+  cgraph =  cgraphman->performAnalysis(procIter,alias);
+  cgraph->output(*irInterface);
+
+  //! CallContexts
+
+  // set CallContext k-level to 2
+  OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+
+  OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
+  ccman = new OA::Alias::ManagerCallContexts(irInterface);
+  OA::OA_ptr<OA::Alias::CCSetPerProc> ccResults;
+  ccResults = ccman->performAnalysis(cgraph);
+
+  //! CallContexts text output
+  ccResults->output(*irInterface);
 
   return 0;
 }

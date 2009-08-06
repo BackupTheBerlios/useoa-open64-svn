@@ -1,0 +1,43 @@
+
+graph DGraph:
+
+    Node 1: 
+        foo_::foo_ [defined]
+
+    Node 2: 
+        foo_::bar_ [defined]
+
+    Edge: 1 => 2
+        bar_(&B:0:.predef_F8)
+
+    Edge: 1 => 2
+        bar_(&C:0:.predef_F8)
+
+
+mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
+        bar_(&B:0:.predef_F8)	 => [ foo_::bar_ ] 
+        bar_(&C:0:.predef_F8)	 => [ foo_::bar_ ] 
+
+mProcToCCSets: ProcHandle	 => CallContextSet
+        ProcHandle(foo_::foo_)	 => 
+        CCSet(
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0) ] 
+                    ) ] 
+            )
+        )
+
+        ProcHandle(foo_::bar_)	 => 
+        CCSet(
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0)    bar_(&B:0:.predef_F8) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 2[ CallHandle(0)    bar_(&C:0:.predef_F8) ] 
+                    ) ] 
+            )
+        )
+
+    mNumCCs: 3
