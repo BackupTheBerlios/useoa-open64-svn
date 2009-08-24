@@ -1693,15 +1693,23 @@ TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
     parambind = pbman->performAnalysis(cgraph);
     */
 
-    //! CSFIAliasAliasTag
 
-    // set context level (default is 1)
-    //CallContext::setMaxDegree(1);
+    //! CallContexts
+    
+    // set CallContext k-level to 2
+    //OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+    
+    OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
+    ccman = new OA::Alias::ManagerCallContexts(irInterface);
+    OA::OA_ptr<OA::Alias::CCSetPerProc> ccResults;
+    ccResults = ccman->performAnalysis(cgraph);
+
+    //! CSFIAliasAliasTag
 
     OA::OA_ptr<OA::Alias::ManagerCSFIAliasAliasTag> csfialiasman;
     csfialiasman = new OA::Alias::ManagerCSFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> csfialias;
-    csfialias = csfialiasman->performAnalysis(cgraph);
+    csfialias = csfialiasman->performAnalysis(cgraph,ccResults);
     
     csfialias->output(*irInterface);
 
@@ -1746,25 +1754,32 @@ TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
     //cgraph->dump(std::cout, irInterface);
 
 
-    //! CSFIAliasAliasTag
-
-    // set context level (default is 1)
-    //CallContext::setMaxDegree(1);
-
-    OA::OA_ptr<OA::Alias::ManagerCSFIAliasAliasTag> csfialiasman;
-    csfialiasman = new OA::Alias::ManagerCSFIAliasAliasTag(irInterface);
-    OA::OA_ptr<OA::Alias::Interface> csfialias;
-    csfialias = csfialiasman->performAnalysis(cgraph);
-    //interAlias = new OA::Alias::InterAliasResults(csfialias);
-    
-    // csfialias->output(*irInterface);
-
     //ParamBindings
     OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
     pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
     OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
     parambind = pbman->performAnalysis(cgraph);
 
+
+    //! CallContexts
+    
+    // set CallContext k-level to 2
+    //OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+    
+    OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
+    ccman = new OA::Alias::ManagerCallContexts(irInterface);
+    OA::OA_ptr<OA::Alias::CCSetPerProc> ccResults;
+    ccResults = ccman->performAnalysis(cgraph);
+
+    //! CSFIAliasAliasTag
+
+    OA::OA_ptr<OA::Alias::ManagerCSFIAliasAliasTag> csfialiasman;
+    csfialiasman = new OA::Alias::ManagerCSFIAliasAliasTag(irInterface);
+    OA::OA_ptr<OA::Alias::Interface> csfialias;
+    csfialias = csfialiasman->performAnalysis(cgraph,ccResults);
+    //interAlias = new OA::Alias::InterAliasResults(csfialias);
+    
+    // csfialias->output(*irInterface);
 
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
@@ -1876,6 +1891,19 @@ TestIR_OACSFSActivity(std::ostream& os, PU_Info* pu_forest,
     //printf("%6lf CallGraph seconds elapsed\n", t2-t1);
 
 
+    //! CallContexts
+    
+    // set CallContext k-level to 2
+    //OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+    
+    OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
+    ccman = new OA::Alias::ManagerCallContexts(irInterface);
+    OA::OA_ptr<OA::Alias::CCSetPerProc> ccResults;
+    ccResults = ccman->performAnalysis(cgraph);
+
+
+
+
     //! ================================
     //! AliasTagCSFIAlias Timings
     //! ================================
@@ -1884,19 +1912,17 @@ TestIR_OACSFSActivity(std::ostream& os, PU_Info* pu_forest,
     //t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
 
     //! CSFIAliasAliasMap
-    // set context level (default is 1)
-    //CallContext::setMaxDegree(1);
 
     OA::OA_ptr<OA::Alias::ManagerCSFIAliasAliasTag> csfialiasman;
     csfialiasman = new OA::Alias::ManagerCSFIAliasAliasTag(irInterface);
     OA::OA_ptr<OA::Alias::Interface> csfialias;
-    csfialias = csfialiasman->performAnalysis(cgraph);
+    csfialias = csfialiasman->performAnalysis(cgraph, ccResults);
     
     //csfialias->output(*irInterface);
 
     //gettimeofday(&tim, NULL);
     //t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
-    //printf("%6lf AliasTagFIAlias seconds elapsed\n", t2-t1);
+    //printf("%6lf AliasTagCSFIAlias seconds elapsed\n", t2-t1);
 
     
     //! =====================================
