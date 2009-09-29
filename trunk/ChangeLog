@@ -815,3 +815,8 @@
   - added code to enable correct calls to ManagerICFGCSReachConsts
   - compiles/regresses with Whirl2OA/trunk r926 and OpenAnalysis/trunk r925
 
+09/29/09  UseOA-Open64 svn trunk r366 Barbara Kreaseck
+  - added --oa-ICFGCSActive and associated TestResults and script files
+  - currently, only ICFGCSUseful output is being generated.
+  - compiles/regresses with Whirl2OA/trunk r926 and OpenAnalysis/trunk r937
+

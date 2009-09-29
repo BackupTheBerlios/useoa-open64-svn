@@ -1,0 +1,40 @@
+echo "Generating TestResults/ICFGCSActive/activity_int5.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/activity_int5.f
+mv -f activity_int5.B TestCases/Activity/activity_int5.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/activity_int5.B > TestResults/ICFGCSActive/activity_int5.B.out
+echo "Generating TestResults/ICFGCSActive/argumentArrayIndex3.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/argumentArrayIndex3.f
+mv -f argumentArrayIndex3.B TestCases/Activity/argumentArrayIndex3.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/argumentArrayIndex3.B > TestResults/ICFGCSActive/argumentArrayIndex3.B.out
+echo "Generating TestResults/ICFGCSActive/activity_proc_call1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/activity_proc_call1.f
+mv -f activity_proc_call1.B TestCases/Activity/activity_proc_call1.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/activity_proc_call1.B > TestResults/ICFGCSActive/activity_proc_call1.B.out
+echo "Generating TestResults/ICFGCSActive/simple_if2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/simple_if2.f
+mv -f simple_if2.B TestCases/Activity/simple_if2.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/simple_if2.B > TestResults/ICFGCSActive/simple_if2.B.out
+echo "Generating TestResults/ICFGCSActive/sideEffect_3.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/sideEffect_3.f
+mv -f sideEffect_3.B TestCases/Activity/sideEffect_3.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/sideEffect_3.B > TestResults/ICFGCSActive/sideEffect_3.B.out
+echo "Generating TestResults/ICFGCSActive/multiple_calls1.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/multiple_calls1.f
+mv -f multiple_calls1.B TestCases/Activity/multiple_calls1.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/multiple_calls1.B > TestResults/ICFGCSActive/multiple_calls1.B.out
+echo "Generating TestResults/ICFGCSActive/multiple_calls2.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/multiple_calls2.f
+mv -f multiple_calls2.B TestCases/Activity/multiple_calls2.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/multiple_calls2.B > TestResults/ICFGCSActive/multiple_calls2.B.out
+echo "Generating TestResults/ICFGCSActive/multiple_calls3.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/multiple_calls3.f
+mv -f multiple_calls3.B TestCases/Activity/multiple_calls3.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/multiple_calls3.B > TestResults/ICFGCSActive/multiple_calls3.B.out
+echo "Generating TestResults/ICFGCSActive/multiple_calls4.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/multiple_calls4.f
+mv -f multiple_calls4.B TestCases/Activity/multiple_calls4.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/multiple_calls4.B > TestResults/ICFGCSActive/multiple_calls4.B.out
+echo "Generating TestResults/ICFGCSActive/actualAsExpression.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/actualAsExpression.f
+mv -f actualAsExpression.B TestCases/Activity/actualAsExpression.B
+./test-open64 --oa-ICFGCSActivity TestCases/Activity/actualAsExpression.B > TestResults/ICFGCSActive/actualAsExpression.B.out

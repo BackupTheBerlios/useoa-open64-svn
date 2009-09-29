@@ -1,0 +1,881 @@
+
+CSFIAliasTagResults(
+    mMREwCToTags: MREwContext 	 => OA::OA_ptr<AliasTagSet> 
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::N)
+                    mStrictlyLocal: 0
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(main_::N)
+                    mStrictlyLocal: 0
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::sub1_)
+                    mStrictlyLocal: 0
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 3
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::L)
+                    mStrictlyLocal: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 4
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(main_::X)
+                    mStrictlyLocal: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 5
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(sub1_::F)
+                    mStrictlyLocal: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 6
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(L:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(main_::main_)
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(sub1_::F)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+
+    mTagToMREwCs: AliasTag	 => OA::OA_ptr<std::set<MREwContext> > 
+            
+            Tag(
+                mTagID: 1
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(main_::N)
+                        mStrictlyLocal: 0
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 2
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(main_::N)
+                        mStrictlyLocal: 0
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 3
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(main_::sub1_)
+                        mStrictlyLocal: 0
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 4
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(main_::L)
+                        mStrictlyLocal: 1
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 5
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: DEF
+                        mSymHandle: SymHandle(main_::X)
+                        mStrictlyLocal: 1
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 6
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(sub1_::F)
+                        mStrictlyLocal: 1
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                    )
+                ) ] 
+            
+            Tag(
+                mTagID: 7
+            )	 => [ 
+                MREwContext(
+                    mMRE: 
+                    UnnamedRef(
+                        mMemRefType: USE
+                        mExprHandle: ExprHandle(L:0:.predef_I4+1)
+                        mLocal: 1
+                        mProcHandle: ProcHandle(main_::main_)
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )
+                )    
+                MREwContext(
+                    mMRE: 
+                    Deref(
+                        mMemRefType: USE
+                        mMRE: 
+                        NamedRef(
+                            mMemRefType: USE
+                            mSymHandle: SymHandle(sub1_::F)
+                            mStrictlyLocal: 1
+                        )
+                        mNumDeref: 1
+                    )
+                    mCallContext: 
+                    CallContext(
+                        mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                    )
+                ) ] 
+
+    mMemRefwCToTags: MRHwContext	 => OA::OA_ptr<AliasTagSet> 
+            
+            MRHwContext(
+                mMRH: MemRefHandle(L:0:.predef_I4+1)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+            
+            MRHwContext(
+                mMRH: MemRefHandle(L:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 4
+                        ) ] 
+                )
+            )
+            
+            MRHwContext(
+                mMRH: MemRefHandle(X:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 5
+                        ) ] 
+                )
+            )
+            
+            MRHwContext(
+                mMRH: MemRefHandle(N:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 1
+                        ) ] 
+                )
+            )
+            
+            MRHwContext(
+                mMRH: MemRefHandle(N:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 2
+                        ) ] 
+                )
+            )
+            
+            MRHwContext(
+                mMRH: MemRefHandle(F:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 7
+                        ) ] 
+                )
+            )
+
+    mMREwCToMustFlag: MREwContext	 => bool
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::N)
+                    mStrictlyLocal: 0
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(main_::N)
+                    mStrictlyLocal: 0
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::sub1_)
+                    mStrictlyLocal: 0
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(main_::L)
+                    mStrictlyLocal: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: DEF
+                    mSymHandle: SymHandle(main_::X)
+                    mStrictlyLocal: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(sub1_::F)
+                    mStrictlyLocal: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                UnnamedRef(
+                    mMemRefType: USE
+                    mExprHandle: ExprHandle(L:0:.predef_I4+1)
+                    mLocal: 1
+                    mProcHandle: ProcHandle(main_::main_)
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MREwContext(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(sub1_::F)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 1
+
+    mMemRefwCToMustFlag: MRHwContext	 => bool
+            
+            MRHwContext(
+                mMRH: MemRefHandle(L:0:.predef_I4+1)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MRHwContext(
+                mMRH: MemRefHandle(L:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MRHwContext(
+                mMRH: MemRefHandle(X:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MRHwContext(
+                mMRH: MemRefHandle(N:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ CallHandle(0) ] 
+                )
+            )	 => 1
+            
+            MRHwContext(
+                mMRH: MemRefHandle(N:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 1
+            
+            MRHwContext(
+                mMRH: MemRefHandle(F:0:.predef_I4)
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                )
+            )	 => 1
+
+    mMREToCCSet: MemRefExpr	 => CallContextSet
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(main_::N)
+                mStrictlyLocal: 0
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    )    
+                    CallContext(
+                        mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(main_::sub1_)
+                mStrictlyLocal: 0
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(main_::L)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: DEF
+                mSymHandle: SymHandle(main_::X)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            NamedRef(
+                mMemRefType: USE
+                mSymHandle: SymHandle(sub1_::F)
+                mStrictlyLocal: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                    ) ] 
+            )
+            
+            UnnamedRef(
+                mMemRefType: USE
+                mExprHandle: ExprHandle(L:0:.predef_I4+1)
+                mLocal: 1
+                mProcHandle: ProcHandle(main_::main_)
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ CallHandle(0) ] 
+                    ) ] 
+            )
+            
+            Deref(
+                mMemRefType: USE
+                mMRE: 
+                NamedRef(
+                    mMemRefType: USE
+                    mSymHandle: SymHandle(sub1_::F)
+                    mStrictlyLocal: 1
+                )
+                mNumDeref: 1
+            )	 => 
+            CallContextSet([ 
+                    CallContext(
+                        mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                    ) ] 
+            )
+
+)
+
+InterUseful(
+    mProcToCSUsefulMap: ProcHandle	 => CSUseful
+            ProcHandle(main_::main_)	 => 
+            mNumIter(0
+            )
+            mStmtToUsefulSetsMap: StmtHwContext	 => UsefulSets
+                    
+                    StmtHwContext(
+                        mStmtH:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/Activity/actualAsExpression.f"
+PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(sub1_(&L:0:.predef_I4+1))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(X:0:.predef_I4 = N:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(_END())
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 5
+                            ) ] 
+                    )
+
+            mCallToUsefulSetsMap: CallHwContext	 => UsefulSets
+                    
+                    CallHwContext(
+                        mCallH: CallHandle(sub1_(&L:0:.predef_I4+1))
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ CallHandle(0) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+
+            ProcHandle(main_::sub1_)	 => 
+            mNumIter(0
+            )
+            mStmtToUsefulSetsMap: StmtHwContext	 => UsefulSets
+                    
+                    StmtHwContext(
+                        mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(N:0:.predef_I4 = F:0:.predef_I4)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 1
+                            ) ] 
+                    )
+
+            mCallToUsefulSetsMap: CallHwContext	 => UsefulSets
+
+
+)

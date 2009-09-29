@@ -1,0 +1,23 @@
+
+# comment in file.test
+# Regression tests for ICFGCSActive generation
+testname::ICFGCSActive
+inputdir::TestCases/Activity
+outputdir::TestResults/ICFGCSActive
+driverexec::./test-open64 --oa-ICFGCSActivity
+
+# list of tests
+#       input file,                 status
+
+test::activity_int5.B,              Tested by BK 09/28/09
+test::argumentArrayIndex3.B,        Tested by BK 09/29/09
+test::activity_proc_call1.B,        Tested by BK 09/29/09
+test::simple_if2.B,                 Tested by BK 09/29/09
+test::sideEffect_3.B,               Tested by BK 09/29/09 has NamedRef() leakage when SubSetRef(NamedRef()) is passed and killed
+test::multiple_calls1.B,            Tested by BK 09/29/09
+test::multiple_calls2.B,            Tested by BK 09/29/09
+test::multiple_calls3.B,            Tested by BK 09/29/09
+test::multiple_calls4.B,            Tested by BK 09/29/09
+test::actualAsExpression.B,         Tested by BK 09/29/09 sees COMMON variables as separate variables in different subroutines
+
+
