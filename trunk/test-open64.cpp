@@ -121,7 +121,7 @@ TestIR_OASideEffect(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
-                       OA::OA_ptr<Open64IRInterface> irInterface);
+                      OA::OA_ptr<Open64IRInterface> irInterface);
 
 
 static int
@@ -130,7 +130,8 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
-                           OA::OA_ptr<Open64IRInterface> irInterface);
+                           OA::OA_ptr<Open64IRInterface> irInterface,
+                           int ccmax);
 
 
 static int
@@ -171,17 +172,20 @@ TestIR_OAsac07ICFGActivity(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
-                       OA::OA_ptr<Open64IRInterface> irInterface);
+                           OA::OA_ptr<Open64IRInterface> irInterface,
+                           int ccmax);
 
 
 static int
 TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
-                       OA::OA_ptr<Open64IRInterface> irInterface);
+                        OA::OA_ptr<Open64IRInterface> irInterface,
+                        int ccmax);
 
 
 static int
 TestIR_OACallContexts(std::ostream& os, PU_Info* pu_forest,
-                      OA::OA_ptr<Open64IRInterface> irInterface);
+                      OA::OA_ptr<Open64IRInterface> irInterface,
+                      int ccmax);
 
 
 
@@ -371,25 +375,29 @@ main(int argc, char* argv[])
  
      case 38:
      {
-        TestIR_OACSFIAliasAliasTag(std::cout, pu_forest, irInterface);
+       TestIR_OACSFIAliasAliasTag(std::cout, pu_forest, irInterface,
+                                  args.ccmax);
         break;
      }
 
      case 39:
      {
-        TestIR_OAICFGCSActivity(std::cout, pu_forest, irInterface);
+        TestIR_OAICFGCSActivity(std::cout, pu_forest, irInterface,
+                                args.ccmax);
         break;
      }
 
      case 40:
      {
-        TestIR_OAICFGCSReachConsts(std::cout, pu_forest, irInterface);
+        TestIR_OAICFGCSReachConsts(std::cout, pu_forest, irInterface,
+                                   args.ccmax);
         break;
      }
      case 41:
      {
         //! CallContexts
-        TestIR_OACallContexts(std::cout, pu_forest, irInterface);
+        TestIR_OACallContexts(std::cout, pu_forest, irInterface,
+                              args.ccmax);
         break; 
      }
 
@@ -600,7 +608,8 @@ TestIR_OACallGraph(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OACallContexts(std::ostream& os, PU_Info* pu_forest,
-                         OA::OA_ptr<Open64IRInterface> irInterface)
+                      OA::OA_ptr<Open64IRInterface> irInterface,
+                      int ccmax)
 {
   Diag_Set_Phase("WHIRL tester: TestIR_OACallContexts");
 
@@ -624,8 +633,9 @@ TestIR_OACallContexts(std::ostream& os, PU_Info* pu_forest,
 
   //! CallContexts
 
-  // set CallContext k-level to 2
-  OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+  // set CallContext k-level to ccmax
+  OA::Alias::CallContext::setMaxDegree((unsigned int) ccmax);
+  std::cout << "CallContext::setMaxDegree(" << ccmax << ")\n\n";
 
   OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
   ccman = new OA::Alias::ManagerCallContexts(irInterface);
@@ -1651,7 +1661,8 @@ TestIR_OACSFIActivity(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
-                       OA::OA_ptr<Open64IRInterface> irInterface)
+                           OA::OA_ptr<Open64IRInterface> irInterface,
+                           int ccmax)
 {
 
     Diag_Set_Phase("WHIRL tester: TestIR_OACSFIAliasAliasTag (Context-Sensitive Flow-Insensitive)");
@@ -1696,8 +1707,9 @@ TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
 
     //! CallContexts
     
-    // set CallContext k-level to 2
-    //OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+    // set CallContext k-level to ccmax
+    OA::Alias::CallContext::setMaxDegree((unsigned int) ccmax);
+    std::cout << "CallContext::setMaxDegree(" << ccmax << ")\n\n";
     
     OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
     ccman = new OA::Alias::ManagerCallContexts(irInterface);
@@ -1723,7 +1735,8 @@ TestIR_OACSFIAliasAliasTag(std::ostream& os, PU_Info* pu_forest,
  
 static int
 TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
-                         OA::OA_ptr<Open64IRInterface> irInterface)
+                           OA::OA_ptr<Open64IRInterface> irInterface,
+                           int ccmax)
 {
 
   Diag_Set_Phase("WHIRL tester: TestIR_OAICFGCSReachConsts");
@@ -1755,8 +1768,9 @@ TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
 
     //! CallContexts
     
-    // set CallContext k-level to 2
-    //OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+    // set CallContext k-level to ccmax
+    OA::Alias::CallContext::setMaxDegree((unsigned int) ccmax);
+    std::cout << "CallContext::setMaxDegree(" << ccmax << ")\n\n";
     
     OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
     ccman = new OA::Alias::ManagerCallContexts(irInterface);
@@ -1799,7 +1813,8 @@ TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
 
 static int
 TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
-                       OA::OA_ptr<Open64IRInterface> irInterface)
+                        OA::OA_ptr<Open64IRInterface> irInterface,
+                        int ccmax)
 {
     //timeval tim;
     //double t1,t2;
@@ -1863,8 +1878,9 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
 
     //! CallContexts
     
-    // set CallContext k-level to 2
-    //OA::Alias::CallContext::setMaxDegree((unsigned int) 2);
+    // set CallContext k-level to ccmax
+    OA::Alias::CallContext::setMaxDegree((unsigned int) ccmax);
+    std::cout << "CallContext::setMaxDegree(" << ccmax << "\n\n";
     
     OA::OA_ptr<OA::Alias::ManagerCallContexts> ccman;
     ccman = new OA::Alias::ManagerCallContexts(irInterface);
@@ -1912,7 +1928,7 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     //printf("%6lf ICFG seconds elapsed\n", t2-t1);
 
     //! =====================================
-    //! ICFGUseful   (for testing)
+    //! ICFGCSUseful   (for testing)
     //! =====================================
 
     OA::OA_ptr<OA::Activity::ManagerICFGCSUseful> csusefulman;
@@ -1924,7 +1940,7 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
 
 
     //! ====================================
-    //! ICFGVaryActive
+    //! ICFGCSVaryActive
     //! ====================================
 
     // OA::OA_ptr<OA::Activity::ManagerICFGVaryActive> varyman;
@@ -1936,7 +1952,7 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
 
 
     //! ====================================
-    //! ICFGActivity
+    //! ICFGCSActivity
     //! ====================================
 
     //gettimeofday(&tim, NULL);

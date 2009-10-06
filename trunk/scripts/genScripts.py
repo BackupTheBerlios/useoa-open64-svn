@@ -36,12 +36,12 @@
 #   testname::MemRefExpr
 #   inputdir::TestCases/MemRefExpr
 #   outputdir::TestResults/MemRefExpr
-#   driverexec::./test-open64 --oa-MemRefExpr
+#   driverexec::./test-open64 --oa-MPI-ICFG
 #   
 #   # list of tests
-#   #       input file    status
-#   test::  arrays1.B,    error
-#   test::  arrays5.B,    checked by MMS
+#   #       input file  options      status
+#   test::  arrays1.B,  --ccmax 2,   error
+#   test::  arrays5.B,               checked by MMS
 #   
 #################################################################
 import sys
@@ -99,9 +99,20 @@ for line in filelines:
     if string.find(line,"test::") != -1:
         # first take off 'test::' then take off inputfile,
         tempstr = string.strip(string.split(line,"::")[1])
-        inputfile = string.strip(string.split(tempstr,',')[0])
-        status = string.strip(string.split(tempstr,',')[1])
-
+        commalist = string.split(tempstr,',')
+        inputfile = string.strip(commalist[0])
+        outputfile = inputfile
+        driverexecfinal = driverexec
+        lenCommalist = len(commalist)
+        # status is last in commaist
+        status = string.strip(commalist[lenCommalist - 1])
+        # options are between inputfile and status
+        for opNum in range(1,lenCommalist-1):
+            opstr = string.strip(commalist[opNum])
+            driverexecfinal = driverexecfinal + " " + opstr
+            opstr_ = string.replace(opstr," ","-")
+            outputfile = outputfile + opstr_
+        
         genfile.write("echo \"Generating %s/%s\"\n" \
             % (outputdir,inputfile+".out"))
         ### uncomment this to regenerate B files ################
@@ -116,19 +127,26 @@ for line in filelines:
 	  print "no match for "+inputdir+"/"+inputName+"*"
           print fFiles
           sys.exit(-1)
+        justfile = inputfile
+        if string.find(justfile,"/") != -1:
+            # take off subdirs
+            parts = string.split(justfile,"/")
+            numparts = len(parts)
+            justfile = parts[numparts-1]
+            #print "justfile is "+justfile
 	genfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
-	genfile.write("mv -f %s %s/%s\n" % (inputfile, inputdir,inputfile))
+	genfile.write("mv -f %s %s/%s\n" % (justfile, inputdir,inputfile))
 	regfile.write("${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 %s\n" % (fFiles[0][3:]))
 	regfile.write("mv -f %s %s/%s\n" % (inputfile, inputdir,inputfile))
         ### until here ##########################################
         genfile.write("%s %s/%s > %s/%s\n"  \
-            % (driverexec,inputdir,inputfile,outputdir,inputfile+".out"))
+            % (driverexecfinal,inputdir,inputfile,outputdir,outputfile+".out"))
         regfile.write("echo \"Testing %s/%s, %s/%s %s\"\n" \
-            % (inputdir,inputfile,outputdir,inputfile+".out", status))
+            % (inputdir,inputfile,outputdir,outputfile+".out", status))
         regfile.write("%s %s/%s > t\n" \
-            % (driverexec,inputdir,inputfile))
+            % (driverexecfinal,inputdir,inputfile))
         regfile.write("diff -I \"LOC 0 0 source files:\" t %s/%s\n\n" \
-            % (outputdir,inputfile+".out"))
+            % (outputdir,outputfile+".out"))
 
 # output
 print "generated scripts: " + genfilename + " and " + regfilename

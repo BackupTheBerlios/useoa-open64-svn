@@ -35,6 +35,8 @@ mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> >
         foo_(&P:0:.predef_I4, &Q:0:.predef_I4)	 => [ cat_::foo_ ] 
         bar_(&A:0:.predef_I4, &D:0:.predef_I4)	 => [ cat_::bar_ ] 
         bar_(&E:0:.predef_I4, &C:0:.predef_I4)	 => [ cat_::bar_ ] 
+CallContext::setMaxDegree(2)
+
 
 mProcToCCSets: ProcHandle	 => CallContextSet
         ProcHandle(cat_::cat_)	 => 

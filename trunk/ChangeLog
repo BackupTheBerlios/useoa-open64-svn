@@ -820,3 +820,10 @@
   - currently, only ICFGCSUseful output is being generated.
   - compiles/regresses with Whirl2OA/trunk r926 and OpenAnalysis/trunk r937
 
+10/06/09  UseOA-Open64 svn trunk r367 Barbara Kreaseck
+  - updated scripts/genScripts to allow options to be set within the 
+    test lines individually, and mark the option value in the .B.out filename.
+  - added --ccmax as an option to the --oa-CallContexts and the CS-routines
+  - added a couple of tests that include the --ccmax option
+  - compiles/regresses with Whirl2OA/trunk r926 and OpenAnalysis/trunk r937
+

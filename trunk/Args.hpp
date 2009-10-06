@@ -62,7 +62,8 @@ public:
   int runMode; // default: 0 (invalid)
   bool dumpIR; // default: false
   int debug;   // default: 0 (off)
-  
+  int ccmax;   // default: 1 (on - default one-level CallContext max)
+
   // Parsed Data: arguments
   std::string whirlFileNm;
   

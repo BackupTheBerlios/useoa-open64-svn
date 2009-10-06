@@ -34,3 +34,7 @@ echo "Generating TestResults/CSReachConsts/constprop_proc3.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/constprop_proc3.f90
 mv -f constprop_proc3.B TestCases/CSReachConsts/constprop_proc3.B
 ./test-open64 --oa-ICFGCSReachConsts TestCases/CSReachConsts/constprop_proc3.B > TestResults/CSReachConsts/constprop_proc3.B.out
+echo "Generating TestResults/CSReachConsts/multiple_calls8.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/multiple_calls8.f
+mv -f multiple_calls8.B TestCases/CSReachConsts/multiple_calls8.B
+./test-open64 --oa-ICFGCSReachConsts --ccmax 2 TestCases/CSReachConsts/multiple_calls8.B > TestResults/CSReachConsts/multiple_calls8.B--ccmax-2.out

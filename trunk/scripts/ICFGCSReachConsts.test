@@ -6,23 +6,24 @@ outputdir::TestResults/CSReachConsts
 driverexec::./test-open64 --oa-ICFGCSReachConsts
 
 # list of tests
-#       input file,                 status
-test::  constprop_if1a.B,       Checked by BK 07/08/09
-test::  constprop_if1.B,        Checked by BK 07/08/09
-test::  constprop_if1b.B,       Checked by BK 07/08/09
-test::  constprop_if1c.B,       Checked by BK 07/08/09
+#       input file,         option,        status
+test::  constprop_if1a.B,               Checked by BK 07/08/09
+test::  constprop_if1.B,                Checked by BK 07/08/09
+test::  constprop_if1b.B,               Checked by BK 07/08/09
+test::  constprop_if1c.B,               Checked by BK 07/08/09
 
 # constants set in loop do not survive meet at top
-test::  constprop_loop1.B,      Checked by BK 07/08/09
-test::  constprop_loop2.B,      Checked by BK 07/08/09
+test::  constprop_loop1.B,              Checked by BK 07/08/09
+test::  constprop_loop2.B,              Checked by BK 07/08/09
 
 # formal parameters CAN def constants 
-test::  constprop_proc1.B,      Checked by BK 07/09/09
+test::  constprop_proc1.B,              Checked by BK 07/09/09
 
 # with context-sensitive alias analysis, full precision
-test::  constprop_proc2.B,      Checked by BK 07/09/09
-test::  constprop_proc3.B,      Checked by BK 07/09/09
+test::  constprop_proc2.B,              Checked by BK 07/09/09
+test::  constprop_proc3.B,              Checked by BK 07/09/09
 
-
-
+# with higher CSAlias ccmax, full precision
+#      reminder: default ccmax is 1
+test::  multiple_calls8.B,  --ccmax 2,  Checked by BK 08/25/09
 

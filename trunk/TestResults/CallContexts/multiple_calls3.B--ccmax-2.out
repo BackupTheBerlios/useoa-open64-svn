@@ -17,6 +17,8 @@ graph DGraph:
 mCallToCalleeProcSetMap: CallHandle	 => OA_ptr<std::set<ProcHandle> > 
         bar_(&B:0:.predef_F8)	 => [ foo_::bar_ ] 
         bar_(&C:0:.predef_F8)	 => [ foo_::bar_ ] 
+CallContext::setMaxDegree(2)
+
 
 mProcToCCSets: ProcHandle	 => CallContextSet
         ProcHandle(foo_::foo_)	 => 

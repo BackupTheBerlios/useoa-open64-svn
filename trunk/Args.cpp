@@ -86,7 +86,8 @@ static const char* usage_details =
 
 "  -V, --version       print version information\n"
 "  -h, --help          print this help\n"
-"      --debug [lvl]   debug mode at level `lvl'\n";
+"      --debug [lvl]   debug mode at level `lvl'\n"
+"      --ccmax [lvl]   CallContext max level 'lvl'\n";
 //"      --ir            run a test routine on IR\n"
 //"      --oa-ujnum      test OA UJ numbering\n"
 //"      --whirl2f       test whirl2f\n"
@@ -146,6 +147,7 @@ CmdLineParser::OptArgDesc Args::optArgs[] = {
   { 'V', "version",    CLP::ARG_NONE, CLP::DUPOPT_CLOB, NULL },
   { 'h', "help",       CLP::ARG_NONE, CLP::DUPOPT_CLOB, NULL },
   {  0 , "debug",      CLP::ARG_OPT,  CLP::DUPOPT_CLOB, NULL },
+  {  0 , "ccmax",      CLP::ARG_OPT,  CLP::DUPOPT_CLOB, NULL },
   CmdLineParser::OptArgDesc_NULL
 };
 
@@ -170,6 +172,7 @@ void
 Args::Ctor()
 {
   debug = 0;      // default: 0 (off)
+  ccmax = 1;     // default: 1 (on - CallContext level 1)
   dumpIR = false;
 }
 
@@ -237,6 +240,24 @@ Args::Parse(int argc, const char* const argv[])
       exit(1);
     }
     
+    // the maximum length of Calls within the CallContext
+    // for context-sensitive analyses:
+    //     AliasTagCSAlias, CallContext, ICFGCSReachConsts,
+    //     ICFGCSActive,
+    // s/b >= 1  (0 ==> no context sensitivity, but not here)
+    //
+    if (parser.IsOpt("ccmax")) { 
+      ccmax = 1; 
+      if (parser.IsOptArg("ccmax")) {
+	const string& arg = parser.GetOptArg("ccmax");
+	ccmax = (int)CmdLineParser::ToLong(arg);
+        if (ccmax <= 1) {
+          ccmax = 1;
+        }
+          
+      }
+    }
+
     // Check for mode
 //    if (parser.IsOpt("ir")) { runMode = 1; }
 //    if (parser.IsOpt("oa-ujnum")) { runMode = 2; }

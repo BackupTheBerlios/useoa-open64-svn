@@ -24,7 +24,7 @@ diff -I "LOC 0 0 source files:" t TestResults/ICFGCSActive/simple_if2.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/sideEffect_3.f
 mv -f sideEffect_3.B TestCases/Activity/sideEffect_3.B
-echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/ICFGCSActive/sideEffect_3.B.out Tested by BK 09/29/09 has NamedRef() leakage when SubSetRef(NamedRef()) is passed and killed"
+echo "Testing TestCases/Activity/sideEffect_3.B, TestResults/ICFGCSActive/sideEffect_3.B.out Tested by BK 09/29/09"
 ./test-open64 --oa-ICFGCSActivity TestCases/Activity/sideEffect_3.B > t
 diff -I "LOC 0 0 source files:" t TestResults/ICFGCSActive/sideEffect_3.B.out
 
@@ -54,7 +54,7 @@ diff -I "LOC 0 0 source files:" t TestResults/ICFGCSActive/multiple_calls4.B.out
 
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/actualAsExpression.f
 mv -f actualAsExpression.B TestCases/Activity/actualAsExpression.B
-echo "Testing TestCases/Activity/actualAsExpression.B, TestResults/ICFGCSActive/actualAsExpression.B.out Tested by BK 09/29/09 sees COMMON variables as separate variables in different subroutines"
+echo "Testing TestCases/Activity/actualAsExpression.B, TestResults/ICFGCSActive/actualAsExpression.B.out Tested by BK 09/29/09 - ERROR - sees COMMON variables as separate variables in different subroutines"
 ./test-open64 --oa-ICFGCSActivity TestCases/Activity/actualAsExpression.B > t
 diff -I "LOC 0 0 source files:" t TestResults/ICFGCSActive/actualAsExpression.B.out
 

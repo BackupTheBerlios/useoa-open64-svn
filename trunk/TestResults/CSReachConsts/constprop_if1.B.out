@@ -1,3 +1,5 @@
+CallContext::setMaxDegree(1)
+
 
 mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ProcHandle(constprop_if1_::constprop_if1_)	 => 
