@@ -115,3 +115,48 @@ c      end subroutine
 
 ! =========================================================================
 
+! =====================================================================
+!
+!                 * ICFGCSActivity Analysis
+!                 =======================
+!
+
+c      subroutine head()
+c                         [u: y,y(),x()] [v: x,x()]         [iA: x()]
+c
+c         i=1             [Stmt: Active]
+c
+c                         [u: y,y(),x()] [v: x,x()]         [iA: x()]
+c
+c         do while (i<3)  [Stmt: Active]
+c
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c
+c          if (i<2) then  [Stmt: Active]
+c
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c
+c            y(2)=x(1)    [Stmt: Active]
+c
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c          else
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c
+c            y(1)=x(2)    [Stmt: Active]
+c
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c          end if 
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c
+c          i=i+1          [Stmt: Active]
+c
+c                         [u: y,y(),x()] [v: x,x(),y()]     [iA: x(),y()]
+c        end do
+c                         [u: y,y()]     [v: x,x(),y()]     [iA: y()]
+c
+c        y(2)=y(1)*y(2)   [Stmt: Active]
+c
+c                         [u: y,y()]     [v: x,x(),y()]     [iA: y()]
+c      end subroutine
+
+

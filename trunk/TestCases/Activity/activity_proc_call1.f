@@ -79,7 +79,8 @@ c$openad DEPENDENT(f)
 
 !     subroutine head(x, f) 
 !
-!                         [u: *f,t1,t2,*x]    [v: *x]             [iA: x]           !      
+!                         [u: *f,t1,t2,*x]    [v: *x]             [iA: x]
+!      
 !       t1=x*f            [Stmt: Active]
 !
 !                         [u: *f,t1,t2]       [v: *x,t1]          [iA: t1]
@@ -91,6 +92,47 @@ c$openad DEPENDENT(f)
 !       t3=f*30           [Stmt: InActive]
 !
 !                         [u: *f,t1,t2]       [v: *x,t1,t2]       [iA: t1,t2]
+!
+!       f=t1+t2           [Stmt: Active]
+!
+!                         [u: *f]             [v: *x,t1,t2,*f]    [iA: *f]  
+!
+!     end subroutine
+!
+!
+!     subroutine bar(a,b)
+!
+!                        [u: *a]    [v: *a]    [iA: *a]
+!
+!       b = a            [Stmt: Active]
+!
+!                        [u: *a,*b] [v: *a,*b] [iA: *a,*b]
+!       return
+!                        [u: *a,*b] [v: *a,*b] [iA: *a,*b]
+!
+!     end subroutine
+!
+! =====================================================================
+!
+!
+!                  * ICFGCSActivity Analysis
+!                  =======================
+!
+!     subroutine head(x, f) 
+!
+!                         [u: *x,*f]          [v: *x]             [iA: x]
+!      
+!       t1=x*f            [Stmt: Active]
+!
+!                         [u: t1]             [v: *x,t1]          [iA: t1]
+!
+!       call bar(t1,t2)   [Stmt: Active]
+!
+!                         [u: t1,t2]          [v: *x,t1,t2]       [iA: t1,t2]
+!
+!       t3=f*30           [Stmt: InActive]
+!
+!                         [u: t1,t2]          [v: *x,t1,t2]       [iA: t1,t2]
 !
 !       f=t1+t2           [Stmt: Active]
 !

@@ -73,6 +73,7 @@
 #include <OpenAnalysis/Alias/ManagerCallContexts.hpp>
 #include <OpenAnalysis/Alias/ManagerCSFIAliasAliasTag.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGCSUseful.hpp>
+#include <OpenAnalysis/Activity/ManagerICFGCSVaryActive.hpp>
 
 
 
@@ -918,7 +919,7 @@ TestIR_OAICFGActivity(std::ostream& os, PU_Info* pu_forest,
     // OA::OA_ptr<OA::Activity::ManagerICFGVaryActive> varyman;
     // varyman = new OA::Activity::ManagerICFGVaryActive(irInterface);
     // OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
-    // inActive = varyman->performAnalysis(icfg, parambind, alias,
+    // inActive = varyman->performAnalysis(icfg, alias,
     //                            icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
     // inActive->output(*irInterface);
 
@@ -1113,40 +1114,12 @@ TestIR_OAICFGReachConsts(std::ostream& os, PU_Info* pu_forest,
     //cgraph->dump(std::cout, irInterface);
 
 
-    //ParamBindings
-    OA::OA_ptr<OA::DataFlow::ManagerParamBindings> pbman;
-    pbman = new OA::DataFlow::ManagerParamBindings(irInterface);
-    OA::OA_ptr<OA::DataFlow::ParamBindings> parambind;
-    parambind = pbman->performAnalysis(cgraph);
-
-
     // ICFG
     OA::OA_ptr<OA::ICFG::ManagerICFGStandard> icfgman;
     icfgman = new OA::ICFG::ManagerICFGStandard(irInterface);
     OA::OA_ptr<OA::ICFG::ICFG> icfg;
     icfg = icfgman->performAnalysis(procIter,eachCFG,cgraph);
 
-    /* // **************************************************************
-      // BK:  doesn't seem as though the interSideEffects are used here
-
-    // intra side effects
-    OA::OA_ptr<OA::SideEffect::ManagerSideEffectStandard> intraSideEffectMgr;
-    intraSideEffectMgr
-        = new OA::SideEffect::ManagerSideEffectStandard(irInterface);
-
-    // inter side effects
-    OA::OA_ptr<OA::SideEffect::InterSideEffectStandard> interSideEffects;
-    OA::OA_ptr<OA::SideEffect::ManagerInterSideEffectStandard> interSideEffectMgr;
-    interSideEffectMgr =
-        new OA::SideEffect::ManagerInterSideEffectStandard(irInterface);
-    interSideEffects = interSideEffectMgr->performAnalysis(
-        cgraph,
-        parambind,
-        interAlias,
-        intraSideEffectMgr,
-        OA::DataFlow::ITERATIVE);
-
-    */ // ***************************************************************
 
     // ICFGReachConsts
     OA::OA_ptr<OA::ReachConsts::ManagerICFGReachConsts> ircsman;
@@ -1798,7 +1771,8 @@ TestIR_OAICFGCSReachConsts(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::ReachConsts::ManagerICFGCSReachConsts> iCSrcsman;
     iCSrcsman = new OA::ReachConsts::ManagerICFGCSReachConsts(irInterface);
     OA::OA_ptr<OA::ReachConsts::InterReachConsts> iCSrcs
-        = iCSrcsman->performAnalysis(icfg, csfialias, OA::DataFlow::ITERATIVE);
+      = iCSrcsman->performAnalysis(icfg, csfialias, ccResults, 
+                                   OA::DataFlow::ITERATIVE);
  
     iCSrcs->output(*irInterface,*csfialias);
 
@@ -1943,12 +1917,13 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     //! ICFGCSVaryActive
     //! ====================================
 
-    // OA::OA_ptr<OA::Activity::ManagerICFGVaryActive> varyman;
-    // varyman = new OA::Activity::ManagerICFGVaryActive(irInterface);
-    // OA::OA_ptr<OA::Activity::ActivePerStmt> inActive;
-    // inActive = varyman->performAnalysis(icfg, parambind, alias,
-    //                            icfgDep, icfgUseful, OA::DataFlow::ITERATIVE);
-    // inActive->output(*irInterface);
+    OA::OA_ptr<OA::Activity::ManagerICFGCSVaryActive> csvaryman;
+    csvaryman = new OA::Activity::ManagerICFGCSVaryActive(irInterface);
+    OA::OA_ptr<OA::Activity::ActivePerStmt> CSInActive;
+    CSInActive = csvaryman->performAnalysis(icfg, csfialias, ccResults,
+                                          csInterUseful,
+                                          OA::DataFlow::ITERATIVE);
+    CSInActive->output(*irInterface);
 
 
     //! ====================================

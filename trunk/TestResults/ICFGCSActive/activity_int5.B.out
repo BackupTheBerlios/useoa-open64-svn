@@ -1181,3 +1181,713 @@ StmtHandle()
 
 
 )
+*&*&*&*&*&*& --- CS VARY RESULTS (printed as ActivePerStmt)
+
+
+CSActiveSets: StmtHwContext	 => ActiveAliasTagSet
+        
+        StmtHwContext(
+            mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(I:0:.predef_I4 = 1)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(t__1:0:.log.4 = I:0:.predef_I4<3)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(while_do (I:0:.predef_I4<3))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(if (I:0:.predef_I4<2))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(2))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(t__1:0:.log.4 = I:0:.predef_I4<3)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(Y:0:anon_ptr.(2) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(2))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(return)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    )    
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+*&*&*&*&*&*& --- END of CS VARY RESULTS ---
+
+
+CSActiveSets: StmtHwContext	 => ActiveAliasTagSet
+        
+        StmtHwContext(
+            mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+StmtHandle()
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(I:0:.predef_I4 = 1)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(t__1:0:.log.4 = I:0:.predef_I4<3)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(while_do (I:0:.predef_I4<3))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(if (I:0:.predef_I4<2))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(Y:0:anon_ptr.(2) = 0:X:0:anon_ptr.(1))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(Y:0:anon_ptr.(1) = 0:X:0:anon_ptr.(2))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(I:0:.predef_I4 = I:0:.predef_I4+1)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(t__1:0:.log.4 = I:0:.predef_I4<3)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    )    
+                    Tag(
+                        mTagID: 5
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(Y:0:anon_ptr.(2) = 0:Y:0:anon_ptr.(1)*0:Y:0:anon_ptr.(2))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    ) ] 
+            )
+        )
+
+        
+        StmtHwContext(
+            mStmtH: StmtHandle(return)
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 6
+                    ) ] 
+            )
+        )
+

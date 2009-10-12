@@ -105,3 +105,36 @@ c$openad DEPENDENT(y)
 !       end subroutine
 !
 ! =========================================================================
+!                ICFGCSActivity Analysis
+!                =====================
+!
+!      subroutine bar(c,d)
+!
+!                         [u: y,*c]    [v: x,*c]        [iA: *c]
+!
+!          d=c*c               [Active Stmt]
+!
+!                         [u: y,*d]    [v: x,*c,*d]     [iA: *d]
+!       end subroutine
+!
+!
+!       subroutine foo(a,b)
+!
+!                         [u: y,*a]    [v: x,*a]        [iA: *a]
+!
+!         call bar(a,b)        [Active Stmt]
+!
+!                         [u: y,*b]    [v: x,*a,*b]     [iA: *b]
+!       end subroutine
+!
+!       subroutine head()
+!
+!                         [u: y,x()]   [v: x,x()]       [iA:x()] 
+!
+!         call foo(x(1),y(1))  [Active Stmt]
+!
+!                         [u: y,y()]   [v: x,x(),y()]   [iA:y()]
+!
+!       end subroutine
+!
+! =========================================================================

@@ -68,12 +68,15 @@ c$openad DEPENDENT(X)
 !      PROGRAM MAIN 
 !      INTEGER N,X,L 
 !      COMMON /GLOBALS/ N 
+!
+!c$openad INDEPENDENT(L) 
 ! 
 !                              [U: N, temp, L]  [V: L]              [A: L] 
 !      CALL SUB1(L+1)                    
 !                              [U: N]           [V: L, temp, N]     [A: N]   // temp=L+1 
 !      X=N 
 !                              [U: X]           [V: L, temp, N, X]  [A: X] 
+!c$openad DEPENDENT(X) 
 !      END 
 ! 
 !      SUBROUTINE SUB1(F) 
@@ -84,4 +87,43 @@ c$openad DEPENDENT(X)
 !                              [U: N]          [V: N, *F]          [A: N] 
 !      END 
 ! 
+
+! =====================================================================
+!
+!                 * ICFGCSActivity Analysis
+!                 =========================
+!
+!      PROGRAM MAIN 
+!      INTEGER N,X,L 
+!      COMMON /GLOBALS/ N 
+!
+!c$openad INDEPENDENT(L)  
+!                        [U: N<CH(0)>+#]  [V: L]                      [iA: ] 
+!      //temp=L+1 
+!      CALL SUB1(L+1)                    
+!                        [U: N<CH(0)>]    [V: L, temp, N<SUB1(L+1)>]  [iA: ]
+!      X=N 
+!                        [U: X]           [V: L, temp, N<SUB1(L+1)>]  [iA: ] 
+!c$openad DEPENDENT(X) 
+!      END 
+! 
+!      SUBROUTINE SUB1(F) 
+!      INTEGER N,F 
+!      COMMON /GLOBALS/ N 
+!                        [U: N<CH(0)>#]   [V: *F, L]                  [iA: ] 
+!      N=F 
+!                        [U: N<CH(0)>#]   [V: *F, L, N<SUB1(L+1)>]    [iA: ] 
+!      END 
+!
+! -----------------------------
+! ICFGCSActivity Notes 10/12/09 -- CSAlias is not handling globals correctly
+! ----------------------------------------------------------------------
+! + Global N should not be Useful here, as it should get def'd (i.e. Kill'd)
+!     in the Call SUB1(L+1).  CSAlias is having a problem with Globals ...
+! # Consequently, since the global N<SUB1(F)> is not recognized as an alias
+!     to global N<CH(0)>, it is not considered useful in the call to SUB1
+!     and thus F cannot become useful, and also neither temp nor L
+!
+! ======================================================================
+
 

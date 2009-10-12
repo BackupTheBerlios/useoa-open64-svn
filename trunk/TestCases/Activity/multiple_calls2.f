@@ -144,3 +144,33 @@ c$openad DEPENDENT(y)
 !      end subroutine
 !
 ! =========================================================================
+!
+!       Flow-sensitive ICFGCSActivity Analysis
+!       =====================================
+!
+!      subroutine foo
+!                          [u: x]  [v: x]      [iA: x]
+!
+!         call bar(x,a,y)  [Call1]
+!         
+!                          [u: x]  [v: x,a,y]  [iA: x]   
+!
+!         call bar(x,a,y)  [Call2]
+!
+!                          [u: y]  [v: x,a,y]  [iA: y]
+!      end subroutine
+!
+!
+!      subroutine bar(f,b,g)
+!                          [u1: *f] [v1: *f]       [iA1: *f]
+!                          [u2: *f] [v2: *f,*b,*g] [iA2: *f]
+!         b=f
+!                          [u1: *f] [v1: *f,*b]    [iA1: *f]
+!                          [u2: *b] [v2: *f,*b,*g] [iA2: *b]
+!         g=b
+!                          [u1: *f] [v1: *f,*b,*g] [iA1: *f]
+!                          [u2: *g] [v2: *f,*b,*g] [iA2: *g]
+!
+!      end subroutine
+!
+! =========================================================================

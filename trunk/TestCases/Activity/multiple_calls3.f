@@ -102,3 +102,49 @@ c$openad DEPENDENT(y)
 !13. y=a            a7->y13      [no active path]
 !
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!        ICFGCSActivity Results
+!        ======================
+!
+!
+!      subroutine foo()
+!          double precision ::x,a,b,c,y
+!c$openad INDEPENDENT(x)
+!                        [u: ]    [v: x]     [iA: ]
+!           a = x
+!                        [u: ]    [v: x,a]   [iA: ]
+!           b = 2
+!                        [u: ]    [v: x,a]   [iA: ]
+!
+!           call bar(b) [Call 1]
+!
+!                        [u: ]    [v: x,a]   [iA: ]
+!           b = 3
+!                        [u: ]    [v: x,a]   [iA: ]
+!           a = 4
+!                        [u: a]   [v: x]     [iA: ]
+!           b = 5
+!                        [u: a]   [v: x]     [iA: ]
+!
+!           call bar(c) [Call 2]
+!
+!                        [u: a]   [v: x]     [iA: ]
+!           b = 6
+!                        [u: a]   [v: x]     [iA: ]
+!           y = a           
+!                        [u: y]   [v: x]     [iA: ]
+!
+!c$openad DEPENDENT(y)
+!      end subroutine
+!
+!      subroutine bar(f)
+!          double precision :: f
+!
+!                        [u1: ]   [v1: x,a]  [iA1: ]
+!                        [u2: a]  [v2: x]    [iA2: ]
+!          f = 2*f
+!                        [u1: ]   [v1: x,a]  [iA1: ]
+!                        [u2: a]  [v2: x]    [iA2: ]
+!      end subroutine
+!
+!===============================================================

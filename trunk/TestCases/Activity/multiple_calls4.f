@@ -1,6 +1,7 @@
 
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! multiple_calls3.f
+! multiple_calls4.f
+! (like multiple_calls3.f, but with no calls around the stmt  a = 4 )
 !
 !                   ICFGActivity
 !                   ============

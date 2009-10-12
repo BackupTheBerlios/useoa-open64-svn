@@ -136,4 +136,38 @@ c$openad DEPENDENT(y)
 !     end subroutine
 !
 ! ===================================================================== 
+!
+!                   ICFGCSActivity Analysis
+!                   ======================
+!
+!
+!      subroutine foo()
+!          double precision ::x,a,y
+!
+!                           [u: x]     [v: x]         [iA: x]
+!
+!          call bar(x,a,y)  [Active Stmt]  [Call1]
+!
+!                           [u: a]     [v: a,x]       [iA: a]
+! 
+!          call bar(x,a,y)  [Active Stmt]  [Call2]
+!
+!                           [u: y]     [v: a,x,y]     [iA: y]
+!     end subroutine
+!
+!
+!     subroutine bar(f,b,g)
+!                          [u1: *f]    [v1: *f]       [iA1: *f]
+!                          [u2: *b]    [v2: *f,*b]    [iA2: *b]
+!         g=b
+!                          [u1: *f]    [v1: *f]       [iA1: *f]
+!                          [u2: *g]    [v2: *f,*b,*g] [iA2: *g]
+!         b=f
+!                          [u1: *b]    [v1: *f,*b]    [iA1: *b]
+!                          [u2: *g]    [v2: *f,*b,g]  [iA2: *g]
+!
+!     end subroutine
+!
+! ===================================================================== 
+     
      

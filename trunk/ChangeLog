@@ -827,3 +827,8 @@
   - added a couple of tests that include the --ccmax option
   - compiles/regresses with Whirl2OA/trunk r926 and OpenAnalysis/trunk r937
 
+10/12/09  UseOA-Open64 svn trunk r368 Barbara Kreaseck
+  - updated test-open64.cpp, ICFGCSActive scripts, TestCases/Activity and
+    TestResults/ICFGCSActive to include ICFGCSVaryActive interim results
+  - compiles/regresses with Whirl2OA/trunk r933 and OpenAnalysis/trunk r938
+
