@@ -90,7 +90,36 @@ c$openad DEPENDENT(X)
 
 ! =====================================================================
 !
-!                 * ICFGCSActivity Analysis
+!                 * ICFGCSActivity Analysis after CSAlias change (10/14/09)
+!                 =========================
+!
+!      PROGRAM MAIN 
+!      INTEGER N,X,L 
+!      COMMON /GLOBALS/ N 
+!
+!c$openad INDEPENDENT(L)  
+!                        [U: L<null>]     [V: L]              [iA: L] 
+!
+!      //CALL SUB(L+1) becomes:
+!      temp=L+1 // bundled as an assignPair with call, results below unseen
+!                        [U: temp<ch(0)>] [V: L, temp]        [iA: temp]
+!      CALL SUB1(temp)                    
+!                        [U: N<null>]     [V: L, temp, N]     [iA: N]
+!      X=N 
+!                        [U: X<null>]     [V: L, temp, N, X]  [iA: X] 
+!c$openad DEPENDENT(X) 
+!      END 
+! 
+!      SUBROUTINE SUB1(F) 
+!      INTEGER N,F 
+!      COMMON /GLOBALS/ N 
+!                        [U: *F<SUB1(L+1)>]  [V: L, *F]       [iA: *F] 
+!      N=F 
+!                        [U: N<null>]        [V: L, *F, N]    [iA: N] 
+!      END 
+! =====================================================================
+!
+!                 * ICFGCSActivity Analysis before CSAlias change
 !                 =========================
 !
 !      PROGRAM MAIN 

@@ -8,12 +8,16 @@ AliasTagResults(
                 mStrictlyLocal: 0
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 1
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::foo_)
+                                mStrictlyLocal: 0
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -22,12 +26,16 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 3
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::A)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -36,12 +44,16 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 5
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::B)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -50,12 +62,16 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 7
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::X)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -64,12 +80,16 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 9
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::Y)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -78,18 +98,108 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 10
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 11
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 14
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            SubSetRef(
+                                mMemRefType: USE
+                                mMRE: 
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::A)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                )
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -98,12 +208,36 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 13
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PY)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
             
             Deref(
@@ -117,18 +251,108 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 10
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 11
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 14
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            SubSetRef(
+                                mMemRefType: USE
+                                mMRE: 
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::A)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                )
+                            ) ]  ] 
             )
             
             Deref(
@@ -142,15 +366,60 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 12
-                        )    
+                        )	 => [ 
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 13
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PY)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
             
             Deref(
@@ -164,18 +433,108 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 10
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 11
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 14
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            SubSetRef(
+                                mMemRefType: USE
+                                mMRE: 
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::A)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                )
+                            ) ]  ] 
             )
             
             Deref(
@@ -189,15 +548,60 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 12
-                        )    
+                        )	 => [ 
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 13
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PY)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
             
             SubSetRef(
@@ -215,12 +619,50 @@ AliasTagResults(
                 )
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 14
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            SubSetRef(
+                                mMemRefType: USE
+                                mMRE: 
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::A)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                )
+                            ) ]  ] 
             )
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
@@ -427,51 +869,180 @@ AliasTagResults(
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<AliasTagSet> 
             MemRefHandle(B:0:.predef_F8)	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 12
-                        )    
+                        )	 => [ 
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 13
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PY)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::B)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::Y)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
             MemRefHandle(0:A:0:anon_ptr.(1))	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 14
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            SubSetRef(
+                                mMemRefType: USE
+                                mMRE: 
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::A)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                )
+                            ) ]  ] 
             )
             MemRefHandle(0:A:0:anon_ptr.(2))	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 14
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::PX)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::A)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(head_::X)
+                                    mStrictlyLocal: 1
+                                )
+                                mNumDeref: 1
+                            )    
+                            SubSetRef(
+                                mMemRefType: USE
+                                mMRE: 
+                                Deref(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::A)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mNumDeref: 1
+                                )
+                            ) ]  ] 
             )
             MemRefHandle(&0:X:0:anon_ptr.)	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 7
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::X)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             MemRefHandle(&Y:0:.predef_F8)	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 9
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(head_::Y)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool

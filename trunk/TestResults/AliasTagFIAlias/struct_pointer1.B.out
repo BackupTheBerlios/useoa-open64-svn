@@ -8,18 +8,44 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 1
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::FIRST)
+                                mStrictlyLocal: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 2
-                        )    
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::FIRST)
+                                mStrictlyLocal: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 7
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::FIRST)
+                                mStrictlyLocal: 1
+                            )    
+                            FieldAccess(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::FIRST)
+                                    mStrictlyLocal: 1
+                                )
+                                mFieldName: INSURANCE
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -28,12 +54,31 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 4
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                FieldAccess(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::FIRST)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mFieldName: INSURANCE
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
             
             NamedRef(
@@ -42,12 +87,16 @@ AliasTagResults(
                 mStrictlyLocal: 1
             )	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 6
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: DEF
+                                mSymHandle: SymHandle(foo_::Y)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             
             Deref(
@@ -66,15 +115,50 @@ AliasTagResults(
                 mNumDeref: 1
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 3
-                        )    
+                        )	 => [ 
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                FieldAccess(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::FIRST)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mFieldName: INSURANCE
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 4
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                FieldAccess(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::FIRST)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mFieldName: INSURANCE
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
             
             FieldAccess(
@@ -88,12 +172,26 @@ AliasTagResults(
                 mFieldName: INSURANCE
             )	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 7
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::FIRST)
+                                mStrictlyLocal: 1
+                            )    
+                            FieldAccess(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::FIRST)
+                                    mStrictlyLocal: 1
+                                )
+                                mFieldName: INSURANCE
+                            ) ]  ] 
             )
 
     mTagToMREs: AliasTag	 => OA::OA_ptr<std::set<OA::OA_ptr<MemRefExpr> > > 
@@ -188,38 +286,91 @@ AliasTagResults(
                 ) ] 
 
     mMemRefToTags: MemRefHandle	 => OA::OA_ptr<AliasTagSet> 
-             LOC 0 0 source files:	1	"/nfs/mcs-homes15/malusare/slocal/UseOA-Open64/TestCases/AliasTagFIAlias/struct_pointer1.f"
+             LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/AliasTagFIAlias/struct_pointer1.f"
 U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,8> <field_id:3>
 MemRefHandle(0:)	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 7
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::FIRST)
+                                mStrictlyLocal: 1
+                            )    
+                            FieldAccess(
+                                mMemRefType: DEF
+                                mMRE: 
+                                NamedRef(
+                                    mMemRefType: USE
+                                    mSymHandle: SymHandle(foo_::FIRST)
+                                    mStrictlyLocal: 1
+                                )
+                                mFieldName: INSURANCE
+                            ) ]  ] 
             )
             MemRefHandle(Y:0:.predef_F4)	 => 
             mIsMust: true
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 6
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: DEF
+                                mSymHandle: SymHandle(foo_::Y)
+                                mStrictlyLocal: 1
+                            ) ]  ] 
             )
             U8U8STRCTFLD T<10,.predef_F4,4> T<29,REPAIR_BILL,8> <field_id:3>
 MemRefHandle(0:)	 => 
             mIsMust: false
-            mTags(
-                DataFlowSet([ 
+            mTags([ 
+                        
                         Tag(
                             mTagID: 3
-                        )    
+                        )	 => [ 
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                FieldAccess(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::FIRST)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mFieldName: INSURANCE
+                                )
+                                mNumDeref: 1
+                            ) ] 
+                        
                         Tag(
                             mTagID: 4
-                        ) ] 
-                )
+                        )	 => [ 
+                            NamedRef(
+                                mMemRefType: USE
+                                mSymHandle: SymHandle(foo_::X)
+                                mStrictlyLocal: 1
+                            )    
+                            Deref(
+                                mMemRefType: USE
+                                mMRE: 
+                                FieldAccess(
+                                    mMemRefType: USE
+                                    mMRE: 
+                                    NamedRef(
+                                        mMemRefType: USE
+                                        mSymHandle: SymHandle(foo_::FIRST)
+                                        mStrictlyLocal: 1
+                                    )
+                                    mFieldName: INSURANCE
+                                )
+                                mNumDeref: 1
+                            ) ]  ] 
             )
 
     mMREToMustFlag: OA::OA_ptr<MemRefExpr> 	 => bool

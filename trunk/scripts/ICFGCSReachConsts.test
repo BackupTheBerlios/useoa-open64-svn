@@ -26,4 +26,5 @@ test::  constprop_proc3.B,              Checked by BK 07/09/09
 # with higher CSAlias ccmax, full precision
 #      reminder: default ccmax is 1
 test::  multiple_calls8.B,  --ccmax 2,  Checked by BK 08/25/09
+test::  multiple_calls10.B, --ccmax 2,  Checked by BK 10/15/09
 

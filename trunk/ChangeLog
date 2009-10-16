@@ -832,3 +832,9 @@
     TestResults/ICFGCSActive to include ICFGCSVaryActive interim results
   - compiles/regresses with Whirl2OA/trunk r933 and OpenAnalysis/trunk r938
 
+10/15/09  UseOA-Open64 svn trunk r369 Barbara Kreaseck
+  - reGen'd AliasTagFIAlias results to include new output in OA r940
+  - verified new CSFIAliasTag in OA r941 impact on CSReachConsts output,
+    added one new testcase, and reGen'd where needed.
+  - compiles/regresses with Whirl2OA/trunk r940 and OpenAnalysis/trunk r941
+

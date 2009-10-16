@@ -38,3 +38,7 @@ echo "Generating TestResults/CSReachConsts/multiple_calls8.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/multiple_calls8.f
 mv -f multiple_calls8.B TestCases/CSReachConsts/multiple_calls8.B
 ./test-open64 --oa-ICFGCSReachConsts --ccmax 2 TestCases/CSReachConsts/multiple_calls8.B > TestResults/CSReachConsts/multiple_calls8.B--ccmax-2.out
+echo "Generating TestResults/CSReachConsts/multiple_calls10.B.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/CSReachConsts/multiple_calls10.f
+mv -f multiple_calls10.B TestCases/CSReachConsts/multiple_calls10.B
+./test-open64 --oa-ICFGCSReachConsts --ccmax 2 TestCases/CSReachConsts/multiple_calls10.B > TestResults/CSReachConsts/multiple_calls10.B--ccmax-2.out
