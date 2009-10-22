@@ -114,7 +114,7 @@ for line in filelines:
             outputfile = outputfile + opstr_
         
         genfile.write("echo \"Generating %s/%s\"\n" \
-            % (outputdir,inputfile+".out"))
+            % (outputdir,outputfile+".out"))
         ### uncomment this to regenerate B files ################
 	inputName=inputfile[:-1]
 	fFiles=glob.glob("../"+inputdir+"/"+inputName+"f")

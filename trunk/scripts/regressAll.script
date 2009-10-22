@@ -57,3 +57,7 @@ source scripts/regressCallContexts.script
 
 echo "########################### running regressICFGCSReachConsts.script"
 source scripts/regressICFGCSReachConsts.script
+
+echo "########################### running regressICFGCSActive.script"
+source scripts/regressICFGCSActive.script
+

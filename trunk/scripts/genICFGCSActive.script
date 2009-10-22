@@ -38,3 +38,7 @@ echo "Generating TestResults/ICFGCSActive/actualAsExpression.B.out"
 ${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/actualAsExpression.f
 mv -f actualAsExpression.B TestCases/Activity/actualAsExpression.B
 ./test-open64 --oa-ICFGCSActivity TestCases/Activity/actualAsExpression.B > TestResults/ICFGCSActive/actualAsExpression.B.out
+echo "Generating TestResults/ICFGCSActive/multiple_calls11a.B--ccmax-3.out"
+${OPEN64TARG}/crayf90/sgi/mfef90 -z -F -N132 TestCases/Activity/multiple_calls11a.f
+mv -f multiple_calls11a.B TestCases/Activity/multiple_calls11a.B
+./test-open64 --oa-ICFGCSActivity --ccmax 3 TestCases/Activity/multiple_calls11a.B > TestResults/ICFGCSActive/multiple_calls11a.B--ccmax-3.out
