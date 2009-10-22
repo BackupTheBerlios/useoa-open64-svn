@@ -1,354 +1,11 @@
 CallContext::setMaxDegree(1
 
-*&*&*&*&*&*& --- CS VARY RESULTS (printed as ActivePerStmt)
+====================== InterActiveFortran
 
 
-CSStmtActiveSets: StmtHwContext	 => ActiveAliasTagSet
-        
-        StmtHwContext(
-            mStmtH:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/Activity/actualAsExpression.f"
-PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
+ ----- first, dump of ActiveStandard per Proc ----
 
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(sub1_(&L:0:.predef_I4+1))
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(X:0:.predef_I4 = N:0:.predef_I4)
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 4
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(_END())
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 4
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 4
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(return)
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 4
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 4
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(return)
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([  ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([  ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
-StmtHandle()
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(N:0:.predef_I4 = F:0:.predef_I4)
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        
-        StmtHwContext(
-            mStmtH: StmtHandle(return)
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ sub1_(&L:0:.predef_I4+1) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    )    
-                    Tag(
-                        mTagID: 1
-                    ) ] 
-            )
-        )
-
-
-CSCallActiveSets: CallHwContext	 => ActiveAliasTagSet
-        
-        CallHwContext(
-            mCallH: CallHandle(sub1_(&L:0:.predef_I4+1))
-            mCallContext: 
-            CallContext(
-                mMaxDegree: 1[ CallHandle(0) ] 
-            )
-        )
-	 => 
-        CSInActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
-
-        CSOutActiveSet(
-            DataFlowSet([ 
-                    Tag(
-                        mTagID: 7
-                    )    
-                    Tag(
-                        mTagID: 3
-                    ) ] 
-            )
-        )
-
-*&*&*&*&*&*& --- END of CS VARY RESULTS ---
-
-Mapping ActiveStandard for Proc main_::main_ ============
+main_::main_
 ActiveTagSet = 
 {not-universal, , tag(1), tag(3), tag(4)}
 ActiveSymSet = 
@@ -393,7 +50,8 @@ CSActiveStmtLists ===============
 CSActiveMemRefLists =============== 
 
 
-Mapping ActiveStandard for Proc main_::sub1_ ============
+
+main_::sub1_
 ActiveTagSet = 
 {not-universal, , tag(1), tag(7)}
 ActiveSymSet = 
@@ -436,6 +94,17 @@ CSActiveStmtLists ===============
 CSActiveMemRefLists =============== 
 
 
+
+
+
+ ----- then, regular InterActiveFortran dump -----
+
+	ActiveSymList
+		main_::N hval = 9906672, active = 1
+		main_::L hval = 9948376, active = 1
+		main_::X hval = 9948456, active = 1
+		sub1_::F hval = 9965848, active = 1
+	getActiveSizeInBytes() = 0
 
 InterActiveFortran(
     Procedure( main_::main_ ): 

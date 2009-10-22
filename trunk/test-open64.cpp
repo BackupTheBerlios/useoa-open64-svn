@@ -1946,6 +1946,10 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     //t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
     //printf("%6lf ICFGActivity seconds elapsed\n", t2-t1);
 
+    // get CS output from ActiveStandard map in csactive
+    csactive->dump(std::cout, irInterface);
+
+    // print regular csactive output
     csactive->output(*irInterface,*alias);
 
 }
