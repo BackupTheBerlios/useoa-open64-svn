@@ -13,7 +13,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -34,7 +34,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -55,7 +55,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -76,7 +76,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -97,7 +97,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -113,12 +113,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::F)
+                    mSymHandle: SymHandle(bar_::B)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -134,12 +134,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::B)
+                    mSymHandle: SymHandle(bar_::G)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -147,69 +147,6 @@ CSFIAliasTagResults(
                 DataFlowSet([ 
                         Tag(
                             mTagID: 7
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::B)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 8
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::G)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 9
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::G)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 10
                         ) ] 
                 )
             )
@@ -384,7 +321,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -400,7 +337,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 )    
                 MREwContext(
@@ -450,7 +387,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 )    
                 MREwContext(
@@ -500,7 +437,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 )    
                 MREwContext(
@@ -550,7 +487,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -561,12 +498,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::F)
+                        mSymHandle: SymHandle(bar_::B)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -577,60 +514,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::B)
-                        mStrictlyLocal: 1
-                    )
-                    mCallContext: 
-                    CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                    )
-                ) ] 
-            
-            Tag(
-                mTagID: 8
-            )	 => [ 
-                MREwContext(
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::B)
-                        mStrictlyLocal: 1
-                    )
-                    mCallContext: 
-                    CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                    )
-                ) ] 
-            
-            Tag(
-                mTagID: 9
-            )	 => [ 
-                MREwContext(
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
                         mSymHandle: SymHandle(bar_::G)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                    )
-                ) ] 
-            
-            Tag(
-                mTagID: 10
-            )	 => [ 
-                MREwContext(
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(bar_::G)
-                        mStrictlyLocal: 1
-                    )
-                    mCallContext: 
-                    CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
 
@@ -775,7 +664,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -788,7 +677,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -801,7 +690,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -814,7 +703,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -827,20 +716,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                )
-            )	 => 1
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::F)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -853,20 +729,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                )
-            )	 => 1
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::B)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -879,20 +742,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                )
-            )	 => 1
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(bar_::G)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1079,7 +929,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1090,7 +940,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1101,7 +951,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1112,7 +962,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1123,10 +973,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                    )    
-                    CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1137,10 +984,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                    )    
-                    CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1151,10 +995,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
-                    )    
-                    CallContext(
-                        mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1216,6 +1057,7 @@ CSFIAliasTagResults(
             )
 
 )
+Calling csusefulman->performAnalysis() ...
 
 InterUseful(
     mProcToCSUsefulMap: ProcHandle	 => CSUseful
@@ -1519,10 +1361,11 @@ StmtHandle()
 
 
 )
+Calling csvaryman->performAnalysis() ...
 *&*&*&*&*&*& --- CS VARY RESULTS (printed as ActivePerStmt)
 
 
-CSActiveSets: StmtHwContext	 => ActiveAliasTagSet
+CSStmtActiveSets: StmtHwContext	 => ActiveAliasTagSet
         
         StmtHwContext(
             mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -1895,6 +1738,64 @@ StmtHandle()
                     Tag(
                         mTagID: 4
                     )    
+                    Tag(
+                        mTagID: 2
+                    )    
+                    Tag(
+                        mTagID: 3
+                    ) ] 
+            )
+        )
+
+
+CSCallActiveSets: CallHwContext	 => ActiveAliasTagSet
+        
+        CallHwContext(
+            mCallH: CallHandle(bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 3
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 3
+                    ) ] 
+            )
+        )
+
+        
+        CallHwContext(
+            mCallH: CallHandle(bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 2
+                    )    
+                    Tag(
+                        mTagID: 3
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
                     Tag(
                         mTagID: 2
                     )    
@@ -1907,7 +1808,7 @@ StmtHandle()
 *&*&*&*&*&*& --- END of CS VARY RESULTS ---
 
 
-CSActiveSets: StmtHwContext	 => ActiveAliasTagSet
+CSStmtActiveSets: StmtHwContext	 => ActiveAliasTagSet
         
         StmtHwContext(
             mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -2211,3 +2112,431 @@ StmtHandle()
             )
         )
 
+
+CSCallActiveSets: CallHwContext	 => ActiveAliasTagSet
+        
+        CallHwContext(
+            mCallH: CallHandle(bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 3
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 3
+                    ) ] 
+            )
+        )
+
+        
+        CallHwContext(
+            mCallH: CallHandle(bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 2
+                    ) ] 
+            )
+        )
+
+In transfer, stmt(hval=140528491124232)= return
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491123920)= bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491123608)= bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125304)= return
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125200)= B:0:.predef_F8 = F:0:.predef_F8
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125096)= G:0:.predef_F8 = B:0:.predef_F8
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125032)= PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125304)= return
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125200)= B:0:.predef_F8 = F:0:.predef_F8
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125096)= G:0:.predef_F8 = B:0:.predef_F8
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 4
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491125032)= PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 2
+        ) ] 
+)
+
+In transfer, stmt(hval=140528491123544)= PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 3
+        ) ] 
+)
+
+Mapping ActiveStandard for Proc foo_::foo_ ============
+ActiveTagSet = 
+{not-universal, , tag(2), tag(3), tag(4)}
+ActiveSymSet = 
+foo_::A
+foo_::X
+foo_::Y
+bar_::F
+bar_::B
+bar_::G
+mUnknownLocActive = 0
+
+ActiveStmtList = 
+
+ActiveMemRefList = 
+
+CSActiveTagSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	CallHandle(0)
+>
+activeTagSet ==
+{not-universal, , tag(2), tag(3), tag(4)}
+
+
+
+CSActiveSymSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	CallHandle(0)
+>
+activeSymSet ==
+	foo_::A
+	foo_::X
+	foo_::Y
+	bar_::F
+	bar_::B
+	bar_::G
+
+
+
+===== mUnknownLocActive = 0
+
+
+CSActiveStmtLists =============== 
+
+
+
+CSActiveMemRefLists =============== 
+
+
+Mapping ActiveStandard for Proc foo_::bar_ ============
+ActiveTagSet = 
+{not-universal, , tag(2), tag(3), tag(4)}
+ActiveSymSet = 
+foo_::A
+foo_::X
+foo_::Y
+bar_::F
+bar_::B
+bar_::G
+mUnknownLocActive = 0
+
+ActiveStmtList = 
+
+ActiveMemRefList = 
+
+CSActiveTagSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)
+>
+activeTagSet ==
+{not-universal, , tag(2), tag(3)}
+
+<mMaxDegree: 1, CallContext: 
+	bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)
+>
+activeTagSet ==
+{not-universal, , tag(2), tag(4)}
+
+
+
+CSActiveSymSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)
+>
+activeSymSet ==
+	foo_::A
+	foo_::X
+	bar_::F
+	bar_::B
+
+
+<mMaxDegree: 1, CallContext: 
+	bar_(&X:0:.predef_F8, &A:0:.predef_F8, &Y:0:.predef_F8)
+>
+activeSymSet ==
+	foo_::A
+	foo_::Y
+	bar_::B
+	bar_::G
+
+
+
+===== mUnknownLocActive = 0
+
+
+CSActiveStmtLists =============== 
+
+
+
+CSActiveMemRefLists =============== 
+
+
+ICFGCSActive took 2 iterations.
+
+InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 2
+            )    
+            Tag(
+                mTagID: 3
+            )    
+            Tag(
+                mTagID: 4
+            ) ] 
+    )
+    Procedure( foo_::bar_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 2
+            )    
+            Tag(
+                mTagID: 3
+            )    
+            Tag(
+                mTagID: 4
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::A)
+            SymHandle(foo_::X)
+            SymHandle(foo_::Y)
+            SymHandle(bar_::F)
+            SymHandle(bar_::B)
+            SymHandle(bar_::G) ] 
+    mNumIterUseful: 3
+    mNumIterVary: 3
+)

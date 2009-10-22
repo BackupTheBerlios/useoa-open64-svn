@@ -120,7 +120,7 @@ c$openad DEPENDENT(f)
 !
 !     subroutine head(x, f) 
 !
-!                         [u: *x,*f]          [v: *x]             [iA: x]
+!                         [u: *x,*f]          [v: *x]             [iA: *x]
 !      
 !       t1=x*f            [Stmt: Active]
 !

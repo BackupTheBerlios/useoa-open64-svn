@@ -74,6 +74,7 @@
 #include <OpenAnalysis/Alias/ManagerCSFIAliasAliasTag.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGCSUseful.hpp>
 #include <OpenAnalysis/Activity/ManagerICFGCSVaryActive.hpp>
+#include <OpenAnalysis/Activity/ManagerICFGCSActive.hpp>
 
 
 
@@ -1827,6 +1828,8 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Alias::Interface> alias;
     alias = fialiasman->performAnalysis(procIter);
 
+    //alias->output(*irInterface);
+
     //gettimeofday(&tim, NULL);
     //t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
     //printf("%6lf AliasTagFIAlias seconds elapsed\n", t2-t1);
@@ -1878,7 +1881,7 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     OA::OA_ptr<OA::Alias::Interface> csfialias;
     csfialias = csfialiasman->performAnalysis(cgraph, ccResults);
     
-    csfialias->output(*irInterface);
+    //csfialias->output(*irInterface);
 
     //gettimeofday(&tim, NULL);
     //t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
@@ -1905,25 +1908,25 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     //! ICFGCSUseful   (for testing)
     //! =====================================
 
-    OA::OA_ptr<OA::Activity::ManagerICFGCSUseful> csusefulman;
-    csusefulman = new OA::Activity::ManagerICFGCSUseful(irInterface);
-    OA::OA_ptr<OA::Activity::InterUseful> csInterUseful;
-    csInterUseful = csusefulman->performAnalysis(icfg, csfialias, ccResults,
-                                            OA::DataFlow::ITERATIVE);
-    csInterUseful->output(*irInterface);
+    //OA::OA_ptr<OA::Activity::ManagerICFGCSUseful> csusefulman;
+    //csusefulman = new OA::Activity::ManagerICFGCSUseful(irInterface);
+    //OA::OA_ptr<OA::Activity::InterUseful> csInterUseful;
+    //csInterUseful = csusefulman->performAnalysis(icfg, csfialias, ccResults,
+    //                                        OA::DataFlow::ITERATIVE);
+    //csInterUseful->output(*irInterface);
 
 
     //! ====================================
     //! ICFGCSVaryActive
     //! ====================================
 
-    OA::OA_ptr<OA::Activity::ManagerICFGCSVaryActive> csvaryman;
-    csvaryman = new OA::Activity::ManagerICFGCSVaryActive(irInterface);
-    OA::OA_ptr<OA::Activity::ActivePerStmt> CSInActive;
-    CSInActive = csvaryman->performAnalysis(icfg, csfialias, ccResults,
-                                          csInterUseful,
-                                          OA::DataFlow::ITERATIVE);
-    CSInActive->output(*irInterface);
+    //OA::OA_ptr<OA::Activity::ManagerICFGCSVaryActive> csvaryman;
+    //csvaryman = new OA::Activity::ManagerICFGCSVaryActive(irInterface);
+    //OA::OA_ptr<OA::Activity::ActivePerStmt> CSInActive;
+    //CSInActive = csvaryman->performAnalysis(icfg, csfialias, ccResults,
+    //                                      csInterUseful,
+    //                                      OA::DataFlow::ITERATIVE);
+    //CSInActive->output(*irInterface);
 
 
     //! ====================================
@@ -1933,17 +1936,17 @@ TestIR_OAICFGCSActivity(std::ostream& os, PU_Info* pu_forest,
     //gettimeofday(&tim, NULL);
     //t1 = tim.tv_sec+(tim.tv_usec/1000000.0);
 
-    // OA::OA_ptr<OA::Activity::ManagerICFGActive> activeman;
-    // activeman = new OA::Activity::ManagerICFGActive(irInterface);
-    // OA::OA_ptr<OA::Activity::InterActiveFortran> active;
-    // active = activeman->performAnalysis(icfg, parambind,
-    //                                     alias, OA::DataFlow::ITERATIVE);
+    OA::OA_ptr<OA::Activity::ManagerICFGCSActive> csactiveman;
+    csactiveman = new OA::Activity::ManagerICFGCSActive(irInterface);
+    OA::OA_ptr<OA::Activity::InterActiveFortran> csactive;
+    csactive = csactiveman->performAnalysis(icfg, csfialias, ccResults,
+                                            OA::DataFlow::ITERATIVE);
 
     //gettimeofday(&tim, NULL);
     //t2 = tim.tv_sec+(tim.tv_usec/1000000.0);
     //printf("%6lf ICFGActivity seconds elapsed\n", t2-t1);
 
-    // active->output(*irInterface,*alias);
+    csactive->output(*irInterface,*alias);
 
 }
 

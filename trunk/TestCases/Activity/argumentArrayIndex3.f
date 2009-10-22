@@ -116,5 +116,61 @@ c$openad DEPENDENT(y)
 !      end subroutine
 !
 ! ===========================================================
+! ========================================================================
+
+!                * ICFGCSActivity Analysis
+!                =======================
+! *** { } surround mres assoc. with same AliasTag
+!
+!     subroutine foo(a,b) 
+!
+!          C1:   [u:  {*x,*x(),*foo_a[C1]} ]
+!                [v:  {*x,*x(),*foo_a[C1]},{*x} ]
+!                [iA: {*x,*x(),*foo_a[C1]} ]
+!
+!          C2: [u:  {*y,*foo_b[C1]}]
+!              [v:  {*x,*x(),*foo_a[C1]},{*x}{*y,*foo_b[C1]} ]
+!              [iA: {*y,*foo_b[C1]} ]
+!
+!       b=a*2              [Stmt: Active]
+!
+!          C1:   [u:  {*y,*foo_b[C1]}]            
+!                [v:  {*x,*x(),*foo_a[C1]},{*x}{*y,*foo_b[C1]} ]
+!                [iA: {*y,*foo_b[C1]} ]
+!
+!          C2: [u:  {*y,*foo_b[C1]}]
+!              [v:  {*x,*x(),*foo_a[C1]},{*x}{*y,*foo_b[C1]} ]
+!              [iA: {*y,*foo_b[C1]} ]
+!
+!     end subroutine
+!
+!
+!     subroutine head(x,y) 
+!
+!  Indep(x)
+!
+!                             [u:  {*x,*x(),*foo_a[C1]} ]  
+!                             [v:  {*x,*x(),*foo_a[C1]},{*x} ]  
+!                             [iA: {*x,*x(),*foo_a[C1]} ]
+!
+!  Call # C1:
+!       call foo(x(k),y)      [Stmt: Active]  
+!
+!                             [u:  {*y,*foo_b[C1]} ] 
+!                             [v:  {*x,*x(),*foo_a[C1]},{*x}{*y,*foo_b[C1]} ]
+!                             [iA: {*y,*foo_b[C1]} ]
+!
+!  Call # C2:
+!       call foo(p(k),q(l))   [Stmt: Active]
+!
+!                             [u:  {*y,*foo_B[C1]} ]
+!                             [v:  {*x,*x(),*foo_a[C1]},{*x}{*y,*foo_b[C1]} ]
+!                             [iA: {*y,*foo_b[C1]} ]
+!
+!  Dep(y)==> *y in head(x,y)
+!
+!      end subroutine
+!
+! ===========================================================
 
 

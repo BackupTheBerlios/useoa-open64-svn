@@ -838,3 +838,10 @@
     added one new testcase, and reGen'd where needed.
   - compiles/regresses with Whirl2OA/trunk r940 and OpenAnalysis/trunk r941
 
+10/22/09  UseOA-Open64 svn trunk r370 Barbara Kreaseck
+  - reGen'd ICFGCSReachConsts results to include new output in OA r946
+  - reGen'd ICFGCSActive results, still checking (not in regressAll)
+  - verified new CSFIAliasTag in OA r946 on most of above
+  - compiles/regresses with Whirl2OA/trunk r947 and OpenAnalysis/trunk r946
+
+

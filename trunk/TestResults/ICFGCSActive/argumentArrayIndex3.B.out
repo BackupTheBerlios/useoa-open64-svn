@@ -13,7 +13,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -34,7 +34,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -50,12 +50,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(foo_::A)
+                    mSymHandle: SymHandle(foo_::B)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -71,12 +71,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(foo_::B)
+                    mSymHandle: SymHandle(head_::X)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -92,12 +92,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(foo_::B)
+                    mSymHandle: SymHandle(head_::Y)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -113,12 +113,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(head_::X)
+                    mSymHandle: SymHandle(head_::K)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -134,12 +134,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(head_::Y)
+                    mSymHandle: SymHandle(head_::L)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -155,12 +155,12 @@ CSFIAliasTagResults(
                 mMRE: 
                 NamedRef(
                     mMemRefType: USE
-                    mSymHandle: SymHandle(head_::K)
+                    mSymHandle: SymHandle(head_::P)
                     mStrictlyLocal: 1
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
@@ -168,51 +168,9 @@ CSFIAliasTagResults(
                 DataFlowSet([ 
                         Tag(
                             mTagID: 8
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(head_::L)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 9
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(head_::P)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 10
                         )    
                         Tag(
-                            mTagID: 13
+                            mTagID: 11
                         ) ] 
                 )
             )
@@ -226,17 +184,17 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 11
+                            mTagID: 9
                         )    
                         Tag(
-                            mTagID: 15
+                            mTagID: 13
                         ) ] 
                 )
             )
@@ -249,6 +207,58 @@ CSFIAliasTagResults(
                     NamedRef(
                         mMemRefType: USE
                         mSymHandle: SymHandle(foo_::A)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 10
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                Deref(
+                    mMemRefType: USE
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::A)
+                        mStrictlyLocal: 1
+                    )
+                    mNumDeref: 1
+                )
+                mCallContext: 
+                CallContext(
+                    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                )
+            )	 => 
+            mIsMust: true
+            mTags(
+                DataFlowSet([ 
+                        Tag(
+                            mTagID: 11
+                        ) ] 
+                )
+            )
+            
+            MREwContext(
+                mMRE: 
+                Deref(
+                    mMemRefType: DEF
+                    mMRE: 
+                    NamedRef(
+                        mMemRefType: USE
+                        mSymHandle: SymHandle(foo_::B)
                         mStrictlyLocal: 1
                     )
                     mNumDeref: 1
@@ -270,11 +280,11 @@ CSFIAliasTagResults(
             MREwContext(
                 mMRE: 
                 Deref(
-                    mMemRefType: USE
+                    mMemRefType: DEF
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::A)
+                        mSymHandle: SymHandle(foo_::B)
                         mStrictlyLocal: 1
                     )
                     mNumDeref: 1
@@ -289,58 +299,6 @@ CSFIAliasTagResults(
                 DataFlowSet([ 
                         Tag(
                             mTagID: 13
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                Deref(
-                    mMemRefType: DEF
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::B)
-                        mStrictlyLocal: 1
-                    )
-                    mNumDeref: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 14
-                        ) ] 
-                )
-            )
-            
-            MREwContext(
-                mMRE: 
-                Deref(
-                    mMemRefType: DEF
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::B)
-                        mStrictlyLocal: 1
-                    )
-                    mNumDeref: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
-                )
-            )	 => 
-            mIsMust: true
-            mTags(
-                DataFlowSet([ 
-                        Tag(
-                            mTagID: 15
                         ) ] 
                 )
             )
@@ -366,10 +324,10 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 12
+                            mTagID: 10
                         )    
                         Tag(
-                            mTagID: 16
+                            mTagID: 14
                         ) ] 
                 )
             )
@@ -395,7 +353,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 14
+                            mTagID: 12
                         ) ] 
                 )
             )
@@ -413,14 +371,14 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: false
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 13
+                            mTagID: 11
                         ) ] 
                 )
             )
@@ -438,14 +396,14 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: false
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 15
+                            mTagID: 13
                         ) ] 
                 )
             )
@@ -475,7 +433,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 12
+                            mTagID: 10
                         ) ] 
                 )
             )
@@ -494,7 +452,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -510,7 +468,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -521,12 +479,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::A)
+                        mSymHandle: SymHandle(foo_::B)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -537,12 +495,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::B)
+                        mSymHandle: SymHandle(head_::X)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -553,12 +511,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(foo_::B)
+                        mSymHandle: SymHandle(head_::Y)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -569,12 +527,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(head_::X)
+                        mSymHandle: SymHandle(head_::K)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -585,12 +543,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(head_::Y)
+                        mSymHandle: SymHandle(head_::L)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -601,12 +559,12 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(head_::K)
+                        mSymHandle: SymHandle(head_::P)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
@@ -617,49 +575,17 @@ CSFIAliasTagResults(
                     mMRE: 
                     NamedRef(
                         mMemRefType: USE
-                        mSymHandle: SymHandle(head_::L)
-                        mStrictlyLocal: 1
-                    )
-                    mCallContext: 
-                    CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
-                    )
-                ) ] 
-            
-            Tag(
-                mTagID: 10
-            )	 => [ 
-                MREwContext(
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
-                        mSymHandle: SymHandle(head_::P)
-                        mStrictlyLocal: 1
-                    )
-                    mCallContext: 
-                    CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
-                    )
-                ) ] 
-            
-            Tag(
-                mTagID: 11
-            )	 => [ 
-                MREwContext(
-                    mMRE: 
-                    NamedRef(
-                        mMemRefType: USE
                         mSymHandle: SymHandle(head_::Q)
                         mStrictlyLocal: 1
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
             Tag(
-                mTagID: 12
+                mTagID: 10
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -718,7 +644,7 @@ CSFIAliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 13
+                mTagID: 11
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -729,7 +655,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 )    
                 MREwContext(
@@ -762,12 +688,12 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
             Tag(
-                mTagID: 14
+                mTagID: 12
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -805,7 +731,7 @@ CSFIAliasTagResults(
                 ) ] 
             
             Tag(
-                mTagID: 15
+                mTagID: 13
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -816,7 +742,7 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 )    
                 MREwContext(
@@ -849,12 +775,12 @@ CSFIAliasTagResults(
                     )
                     mCallContext: 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     )
                 ) ] 
             
             Tag(
-                mTagID: 16
+                mTagID: 14
             )	 => [ 
                 MREwContext(
                     mMRE: 
@@ -887,7 +813,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 14
+                            mTagID: 12
                         ) ] 
                 )
             )
@@ -903,7 +829,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 15
+                            mTagID: 13
                         ) ] 
                 )
             )
@@ -919,7 +845,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 12
+                            mTagID: 10
                         ) ] 
                 )
             )
@@ -935,7 +861,7 @@ CSFIAliasTagResults(
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 13
+                            mTagID: 11
                         ) ] 
                 )
             )
@@ -944,14 +870,14 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(K:0:.predef_I4)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 8
+                            mTagID: 6
                         ) ] 
                 )
             )
@@ -960,14 +886,14 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(&Y:0:.predef_F8)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 7
+                            mTagID: 5
                         ) ] 
                 )
             )
@@ -976,14 +902,14 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(K:0:.predef_I4)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 8
+                            mTagID: 6
                         ) ] 
                 )
             )
@@ -992,14 +918,14 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(L:0:.predef_I4)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 
             mIsMust: true
             mTags(
                 DataFlowSet([ 
                         Tag(
-                            mTagID: 9
+                            mTagID: 7
                         ) ] 
                 )
             )
@@ -1015,7 +941,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1028,20 +954,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
-                )
-            )	 => 1
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(foo_::A)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1054,20 +967,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
-                )
-            )	 => 1
-            
-            MREwContext(
-                mMRE: 
-                NamedRef(
-                    mMemRefType: USE
-                    mSymHandle: SymHandle(foo_::B)
-                    mStrictlyLocal: 1
-                )
-                mCallContext: 
-                CallContext(
-                    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1080,7 +980,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1093,7 +993,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1106,7 +1006,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1119,7 +1019,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1132,7 +1032,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1145,7 +1045,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1270,7 +1170,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 0
             
@@ -1287,7 +1187,7 @@ CSFIAliasTagResults(
                 )
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 0
             
@@ -1351,7 +1251,7 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(K:0:.predef_I4)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1359,7 +1259,7 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(&Y:0:.predef_F8)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1367,7 +1267,7 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(K:0:.predef_I4)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
             
@@ -1375,7 +1275,7 @@ CSFIAliasTagResults(
                 mMRH: MemRefHandle(L:0:.predef_I4)
                 mCallContext: 
                 CallContext(
-                    mMaxDegree: 1[ CallHandle(0) ] 
+                    mMaxDegree: 1[  ] 
                 )
             )	 => 1
 
@@ -1388,7 +1288,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1399,10 +1299,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
-                    )    
-                    CallContext(
-                        mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1413,10 +1310,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
-                    )    
-                    CallContext(
-                        mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1427,7 +1321,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1438,7 +1332,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1449,7 +1343,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1460,7 +1354,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1471,7 +1365,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1482,7 +1376,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1567,7 +1461,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1582,7 +1476,7 @@ CSFIAliasTagResults(
             )	 => 
             CallContextSet([ 
                     CallContext(
-                        mMaxDegree: 1[ CallHandle(0) ] 
+                        mMaxDegree: 1[  ] 
                     ) ] 
             )
             
@@ -1607,6 +1501,7 @@ CSFIAliasTagResults(
             )
 
 )
+Calling csusefulman->performAnalysis() ...
 
 InterUseful(
     mProcToCSUsefulMap: ProcHandle	 => CSUseful
@@ -1627,13 +1522,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     
@@ -1648,18 +1543,58 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     
                     StmtHwContext(
                         mStmtH: StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 10
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 12
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000)
+                        mCallContext: 
+                        CallContext(
+                            mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+                        )
+                    )	 => 
+                    InUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 12
+                            ) ] 
+                    )
+                    OutUsefulSet: 
+                    DataFlowSet([ 
+                            Tag(
+                                mTagID: 12
+                            ) ] 
+                    )
+                    
+                    StmtHwContext(
+                        mStmtH: StmtHandle(return)
                         mCallContext: 
                         CallContext(
                             mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
@@ -1674,47 +1609,7 @@ StmtHandle()
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
-                            ) ] 
-                    )
-                    
-                    StmtHwContext(
-                        mStmtH: StmtHandle(B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000)
-                        mCallContext: 
-                        CallContext(
-                            mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
-                        )
-                    )	 => 
-                    InUsefulSet: 
-                    DataFlowSet([ 
-                            Tag(
-                                mTagID: 14
-                            ) ] 
-                    )
-                    OutUsefulSet: 
-                    DataFlowSet([ 
-                            Tag(
-                                mTagID: 14
-                            ) ] 
-                    )
-                    
-                    StmtHwContext(
-                        mStmtH: StmtHandle(return)
-                        mCallContext: 
-                        CallContext(
-                            mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
-                        )
-                    )	 => 
-                    InUsefulSet: 
-                    DataFlowSet([ 
-                            Tag(
-                                mTagID: 14
-                            ) ] 
-                    )
-                    OutUsefulSet: 
-                    DataFlowSet([ 
-                            Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     
@@ -1728,13 +1623,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
 
@@ -1756,13 +1651,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     
@@ -1777,13 +1672,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     
@@ -1797,13 +1692,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     
@@ -1817,13 +1712,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     
@@ -1837,13 +1732,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
 
@@ -1859,13 +1754,13 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 12
+                                mTagID: 10
                             ) ] 
                     )
                     
@@ -1879,22 +1774,23 @@ StmtHandle()
                     InUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
                     OutUsefulSet: 
                     DataFlowSet([ 
                             Tag(
-                                mTagID: 14
+                                mTagID: 12
                             ) ] 
                     )
 
 
 )
+Calling csvaryman->performAnalysis() ...
 *&*&*&*&*&*& --- CS VARY RESULTS (printed as ActivePerStmt)
 
 
-CSActiveSets: StmtHwContext	 => ActiveAliasTagSet
+CSStmtActiveSets: StmtHwContext	 => ActiveAliasTagSet
         
         StmtHwContext(
             mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -1908,10 +1804,10 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -1919,10 +1815,10 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -1940,13 +1836,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -1954,13 +1850,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -1977,10 +1873,10 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -1988,13 +1884,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2011,13 +1907,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2025,13 +1921,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2048,13 +1944,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2062,13 +1958,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2085,13 +1981,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2099,13 +1995,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2123,10 +2019,10 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2134,10 +2030,10 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2155,10 +2051,10 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2166,10 +2062,10 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2186,13 +2082,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2200,13 +2096,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2223,13 +2119,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2237,13 +2133,13 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2260,13 +2156,13 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
-                    )    
-                    Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2274,13 +2170,83 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     )    
+                    Tag(
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
+                    ) ] 
+            )
+        )
+
+
+CSCallActiveSets: CallHwContext	 => ActiveAliasTagSet
+        
+        CallHwContext(
+            mCallH: CallHandle(foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
+                    ) ] 
+            )
+        )
+
+        
+        CallHwContext(
+            mCallH: CallHandle(foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
                     Tag(
                         mTagID: 12
                     )    
                     Tag(
-                        mTagID: 16
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 12
+                    )    
+                    Tag(
+                        mTagID: 10
+                    )    
+                    Tag(
+                        mTagID: 14
                     ) ] 
             )
         )
@@ -2288,7 +2254,7 @@ StmtHandle()
 *&*&*&*&*&*& --- END of CS VARY RESULTS ---
 
 
-CSActiveSets: StmtHwContext	 => ActiveAliasTagSet
+CSStmtActiveSets: StmtHwContext	 => ActiveAliasTagSet
         
         StmtHwContext(
             mStmtH: PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
@@ -2302,7 +2268,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2310,7 +2276,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2328,7 +2294,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2336,7 +2302,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2353,7 +2319,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2361,7 +2327,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2378,7 +2344,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2386,7 +2352,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2403,7 +2369,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2411,7 +2377,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2428,7 +2394,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2436,7 +2402,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2454,7 +2420,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2462,7 +2428,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2480,7 +2446,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2488,7 +2454,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 12
+                        mTagID: 10
                     ) ] 
             )
         )
@@ -2505,7 +2471,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2513,7 +2479,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2530,7 +2496,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2538,7 +2504,7 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2555,7 +2521,7 @@ StmtHandle()
         CSInActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
@@ -2563,8 +2529,403 @@ StmtHandle()
         CSOutActiveSet(
             DataFlowSet([ 
                     Tag(
-                        mTagID: 14
+                        mTagID: 12
                     ) ] 
             )
         )
 
+
+CSCallActiveSets: CallHwContext	 => ActiveAliasTagSet
+        
+        CallHwContext(
+            mCallH: CallHandle(foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 10
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 10
+                    ) ] 
+            )
+        )
+
+        
+        CallHwContext(
+            mCallH: CallHandle(foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)))
+            mCallContext: 
+            CallContext(
+                mMaxDegree: 1[ CallHandle(0) ] 
+            )
+        )
+	 => 
+        CSInActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 12
+                    ) ] 
+            )
+        )
+
+        CSOutActiveSet(
+            DataFlowSet([ 
+                    Tag(
+                        mTagID: 12
+                    ) ] 
+            )
+        )
+
+In transfer, stmt(hval=140459629968304)= return
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629967824)= foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4))
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629967472)= foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8)
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629966304)= return
+With cc: 
+CallContext(
+    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629966120)= B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000
+With cc: 
+CallContext(
+    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629966056)= PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629966304)= return
+With cc: 
+CallContext(
+    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629966120)= B:0:.predef_F8 = A:0:.predef_F8*    2.000000000000000
+With cc: 
+CallContext(
+    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629966056)= PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4)) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 12
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629967408)= PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+
+In transfer, stmt(hval=140459629967344)= PRAGMA 0 188 <1,23,"Template_ad_template.f"> 0 (0x0) # OPENAD_XXX
+
+With cc: 
+CallContext(
+    mMaxDegree: 1[ CallHandle(0) ] 
+)
+	InActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+	OutActive = 
+DataFlowSet([ 
+        Tag(
+            mTagID: 10
+        ) ] 
+)
+
+Mapping ActiveStandard for Proc foo_::foo_ ============
+ActiveTagSet = 
+{not-universal, , tag(10), tag(12)}
+ActiveSymSet = 
+foo_::A
+foo_::B
+head_::X
+head_::Y
+mUnknownLocActive = 0
+
+ActiveStmtList = 
+
+ActiveMemRefList = 
+
+CSActiveTagSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8)
+>
+activeTagSet ==
+{not-universal, , tag(10), tag(12)}
+
+<mMaxDegree: 1, CallContext: 
+	foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4))
+>
+activeTagSet ==
+{not-universal, , tag(12)}
+
+
+
+CSActiveSymSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	foo_(&X:0:anon_ptr.(K:0:.predef_I4), &Y:0:.predef_F8)
+>
+activeSymSet ==
+	foo_::A
+	foo_::B
+	head_::X
+	head_::Y
+
+
+<mMaxDegree: 1, CallContext: 
+	foo_(&P:0:anon_ptr.(K:0:.predef_I4), &Q:0:anon_ptr.(L:0:.predef_I4))
+>
+activeSymSet ==
+	foo_::B
+	head_::Y
+
+
+
+===== mUnknownLocActive = 0
+
+
+CSActiveStmtLists =============== 
+
+
+
+CSActiveMemRefLists =============== 
+
+
+Mapping ActiveStandard for Proc foo_::head_ ============
+ActiveTagSet = 
+{not-universal, , tag(10), tag(12)}
+ActiveSymSet = 
+foo_::A
+foo_::B
+head_::X
+head_::Y
+mUnknownLocActive = 0
+
+ActiveStmtList = 
+
+ActiveMemRefList = 
+
+CSActiveTagSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	CallHandle(0)
+>
+activeTagSet ==
+{not-universal, , tag(10), tag(12)}
+
+
+
+CSActiveSymSets =============== 
+
+<mMaxDegree: 1, CallContext: 
+	CallHandle(0)
+>
+activeSymSet ==
+	foo_::A
+	foo_::B
+	head_::X
+	head_::Y
+
+
+
+===== mUnknownLocActive = 0
+
+
+CSActiveStmtLists =============== 
+
+
+
+CSActiveMemRefLists =============== 
+
+
+ICFGCSActive took 2 iterations.
+
+InterActiveFortran(
+    Procedure( foo_::foo_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 10
+            )    
+            Tag(
+                mTagID: 12
+            ) ] 
+    )
+    Procedure( foo_::head_ ): 
+    ActiveStmtSet([  ] 
+    )
+    ActiveTagSet => MemRefExprSet([ 
+            Tag(
+                mTagID: 10
+            )    
+            Tag(
+                mTagID: 12
+            ) ] 
+    )
+    ActiveSymSet: [ 
+        SymHandle(foo_::A)
+            SymHandle(foo_::B)
+            SymHandle(head_::X)
+            SymHandle(head_::Y) ] 
+    mNumIterUseful: 3
+    mNumIterVary: 3
+)

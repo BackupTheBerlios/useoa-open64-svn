@@ -21,10 +21,10 @@ c$openad INDEPENDENT(i)
           i = 9            !formal x in foo should get 9
           j = 8
           k = 1
-          call foo(i,j)    ! j <== 18
+          call foo(i,j)    ! j <== 18 + 4 = 22
           j = 9            !formal x in foo should get 9
           k = 2
-          call foo(j,i)    ! i <== 18
+          call foo(j,i)    ! i <== 18 + 4 = 22
           k = j
 c$openad DEPENDENT(k)
       end subroutine
@@ -33,7 +33,7 @@ c$openad DEPENDENT(k)
           integer :: p,q,r
           p = 9            !formal x in foo should get 9
           r = 1
-          call foo(p,q)    ! q <== 18
+          call foo(p,q)    ! q <== 18 + 4 = 22
           r = q
 
       end subroutine
