@@ -242,15 +242,15 @@ CSActiveMemRefLists ===============
  ----- then, regular InterActiveFortran dump -----
 
 	ActiveSymList
-		cat_::I hval = 9949488, active = 1
-		cat_::J hval = 9949528, active = 1
-		cat_::K hval = 9949568, active = 1
-		foo_::X hval = 9966920, active = 1
-		foo_::Y hval = 9966960, active = 1
-		foo_::A hval = 9967000, active = 1
-		foo_::C hval = 9967120, active = 1
-		bar_::F hval = 9984392, active = 1
-		bar_::G hval = 9984432, active = 1
+		cat_::I, active = 1
+		cat_::J, active = 1
+		cat_::K, active = 1
+		foo_::X, active = 1
+		foo_::Y, active = 1
+		foo_::A, active = 1
+		foo_::C, active = 1
+		bar_::F, active = 1
+		bar_::G, active = 1
 	getActiveSizeInBytes() = 0
 
 InterActiveFortran(

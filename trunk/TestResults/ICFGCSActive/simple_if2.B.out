@@ -60,11 +60,11 @@ CSActiveMemRefLists ===============
  ----- then, regular InterActiveFortran dump -----
 
 	ActiveSymList
-		head_::X hval = 9947784, active = 1
-		head_::Y hval = 9947824, active = 1
-		head_::A hval = 9947864, active = 1
-		head_::B hval = 9947904, active = 1
-		head_::C hval = 9947944, active = 1
+		head_::X, active = 1
+		head_::Y, active = 1
+		head_::A, active = 1
+		head_::B, active = 1
+		head_::C, active = 1
 	getActiveSizeInBytes() = 0
 
 InterActiveFortran(
