@@ -5,7 +5,7 @@ ParamBindings(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
-                mStrictlyLocal: 0
+                mStrictlyLocal: 1
             )	 => 
             graph EXPRESSION TREE:
 
@@ -26,7 +26,7 @@ ParamBindings(
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(MODULE_MERGE_SORT::A)
-            mStrictlyLocal: 0
+            mStrictlyLocal: 1
         )	 => 
         graph EXPRESSION TREE:
 
@@ -45,7 +45,7 @@ ParamBindings(
         NamedRef(
             mMemRefType: USE
             mSymHandle: SymHandle(MODULE_MERGE_SORT::ASCEND)
-            mStrictlyLocal: 0
+            mStrictlyLocal: 1
         )	 => 
         graph EXPRESSION TREE:
 

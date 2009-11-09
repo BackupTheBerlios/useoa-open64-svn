@@ -7,7 +7,7 @@ CallContext::setMaxDegree(1
 
 head_::head_
 ActiveTagSet = 
-{not-universal, , tag(6), tag(7), tag(13), tag(14)}
+{not-universal, , tag(4), tag(5), tag(9), tag(10)}
 ActiveSymSet = 
 head_::X
 head_::F
@@ -27,7 +27,7 @@ CSActiveTagSets ===============
 	CallHandle(0)
 >
 activeTagSet ==
-{not-universal, , tag(6), tag(7), tag(13), tag(14)}
+{not-universal, , tag(4), tag(5), tag(9), tag(10)}
 
 
 
@@ -59,7 +59,7 @@ CSActiveMemRefLists ===============
 
 head_::bar_
 ActiveTagSet = 
-{not-universal, , tag(6), tag(7)}
+{not-universal, , tag(4), tag(5)}
 ActiveSymSet = 
 head_::T1
 head_::T2
@@ -77,7 +77,7 @@ CSActiveTagSets ===============
 	bar_(&T1:0:.predef_F8, &T2:0:.predef_F8)
 >
 activeTagSet ==
-{not-universal, , tag(6), tag(7)}
+{not-universal, , tag(4), tag(5)}
 
 
 
@@ -124,16 +124,16 @@ InterActiveFortran(
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 6
+                mTagID: 4
             )    
             Tag(
-                mTagID: 7
+                mTagID: 5
             )    
             Tag(
-                mTagID: 13
+                mTagID: 9
             )    
             Tag(
-                mTagID: 14
+                mTagID: 10
             ) ] 
     )
     Procedure( head_::bar_ ): 
@@ -141,10 +141,10 @@ InterActiveFortran(
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
-                mTagID: 6
+                mTagID: 4
             )    
             Tag(
-                mTagID: 7
+                mTagID: 5
             ) ] 
     )
     ActiveSymSet: [ 

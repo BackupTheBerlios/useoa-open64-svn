@@ -5,7 +5,7 @@ ParamBindings(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(solve_::A)
-                mStrictlyLocal: 0
+                mStrictlyLocal: 1
             )	 => 
             graph EXPRESSION TREE:
 
@@ -24,7 +24,7 @@ ParamBindings(
             NamedRef(
                 mMemRefType: USE
                 mSymHandle: SymHandle(solve_::N)
-                mStrictlyLocal: 0
+                mStrictlyLocal: 1
             )	 => 
             graph EXPRESSION TREE:
 

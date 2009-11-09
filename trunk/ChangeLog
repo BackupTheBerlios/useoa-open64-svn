@@ -856,3 +856,12 @@
   - re-worked ICFGCSActive output. Re-Gen'd ICFGCSActive results.
   - compiles/regresses with Whirl2OA/trunk r947 and OpenAnalysis/trunk r949
 
+11/09/09  UseOA-Open64 svn trunk r374 Barbara Kreaseck
+  - re-gen'd ParamBindings output due to isRefParam() no longer indicicating
+  non-local for formals in Whirl2OA
+  - re-gen'd AliasTagFIAlias, ICFGCSActive, ICFGCSReachConsts output due to
+  changes in FIAlias and CSFIAlias treatment of isLocal==true for formal
+  NamedRefs and CSFIAlias change to OuterRefOp w/o context
+  - compiles/regresses withWhirl2OA/trunk r9955 and OpenAnalysis/trunk r956
+
+

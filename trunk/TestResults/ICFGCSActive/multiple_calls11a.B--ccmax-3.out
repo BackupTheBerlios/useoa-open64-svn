@@ -57,7 +57,7 @@ CSActiveMemRefLists ===============
 
 cat_::foo_
 ActiveTagSet = 
-{not-universal, , tag(3), tag(5), tag(13), tag(17)}
+{not-universal, , tag(3), tag(5), tag(11), tag(15)}
 ActiveSymSet = 
 cat_::I
 cat_::K
@@ -80,7 +80,7 @@ CSActiveTagSets ===============
 	foo_(&I:0:.predef_I4, &K:0:.predef_I4)
 >
 activeTagSet ==
-{not-universal, , tag(3), tag(5), tag(13), tag(17)}
+{not-universal, , tag(3), tag(5), tag(11), tag(15)}
 
 <mMaxDegree: 3, CallContext: 
 	CallHandle(0), 
@@ -131,7 +131,7 @@ CSActiveMemRefLists ===============
 
 cat_::bar_
 ActiveTagSet = 
-{not-universal, , tag(5), tag(13), tag(17)}
+{not-universal, , tag(5), tag(11), tag(15)}
 ActiveSymSet = 
 cat_::K
 foo_::Y
@@ -153,7 +153,7 @@ CSActiveTagSets ===============
 	bar_(&A:0:.predef_I4, &D:0:.predef_I4)
 >
 activeTagSet ==
-{not-universal, , tag(13)}
+{not-universal, , tag(11)}
 
 <mMaxDegree: 3, CallContext: 
 	CallHandle(0), 
@@ -161,7 +161,7 @@ activeTagSet ==
 	bar_(&A:0:.predef_I4, &C:0:.predef_I4)
 >
 activeTagSet ==
-{not-universal, , tag(13), tag(17)}
+{not-universal, , tag(11), tag(15)}
 
 <mMaxDegree: 3, CallContext: 
 	CallHandle(0), 
@@ -279,10 +279,10 @@ InterActiveFortran(
                 mTagID: 5
             )    
             Tag(
-                mTagID: 13
+                mTagID: 11
             )    
             Tag(
-                mTagID: 17
+                mTagID: 15
             ) ] 
     )
     Procedure( cat_::bar_ ): 
@@ -293,10 +293,10 @@ InterActiveFortran(
                 mTagID: 5
             )    
             Tag(
-                mTagID: 13
+                mTagID: 11
             )    
             Tag(
-                mTagID: 17
+                mTagID: 15
             ) ] 
     )
     ActiveSymSet: [ 

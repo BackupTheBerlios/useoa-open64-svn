@@ -7,7 +7,7 @@ CallContext::setMaxDegree(1
 
 head_::head_
 ActiveTagSet = 
-{not-universal, , tag(5), tag(6), tag(7), tag(8), tag(9)}
+{not-universal, , tag(3), tag(4), tag(5), tag(6), tag(7)}
 ActiveSymSet = 
 head_::X
 head_::Y
@@ -26,7 +26,7 @@ CSActiveTagSets ===============
 	CallHandle(0)
 >
 activeTagSet ==
-{not-universal, , tag(5), tag(6), tag(7), tag(8), tag(9)}
+{not-universal, , tag(3), tag(4), tag(5), tag(6), tag(7)}
 
 
 
@@ -73,6 +73,12 @@ InterActiveFortran(
     )
     ActiveTagSet => MemRefExprSet([ 
             Tag(
+                mTagID: 3
+            )    
+            Tag(
+                mTagID: 4
+            )    
+            Tag(
                 mTagID: 5
             )    
             Tag(
@@ -80,12 +86,6 @@ InterActiveFortran(
             )    
             Tag(
                 mTagID: 7
-            )    
-            Tag(
-                mTagID: 8
-            )    
-            Tag(
-                mTagID: 9
             ) ] 
     )
     ActiveSymSet: [ 
