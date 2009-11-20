@@ -864,4 +864,9 @@
   NamedRefs and CSFIAlias change to OuterRefOp w/o context
   - compiles/regresses withWhirl2OA/trunk r9955 and OpenAnalysis/trunk r956
 
+11/20/09  UseOA-Open64 svn trunk r375 Barbara Kreaseck
+  - re-gen'd Active and CSActive output to include new InterActiveFortran output
+  - compiles/regresses with Whirl2OA/trunk r959 and OpenAnalysis/trunk r958
+
+
 

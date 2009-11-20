@@ -1,5 +1,9 @@
 CallContext::setMaxDegree(1
 
+ManagerICFGCSActive: sym = main_::N, size = <4>, bytes = 4
+ManagerICFGCSActive: sym = main_::L, size = <4>, bytes = 8
+ManagerICFGCSActive: sym = main_::X, size = <4>, bytes = 12
+ManagerICFGCSActive: sym = sub1_::F, size = <4>, bytes = 12, refParam
 ====================== InterActiveFortran
 
 
@@ -104,7 +108,7 @@ CSActiveMemRefLists ===============
 		main_::L, active = 1
 		main_::X, active = 1
 		sub1_::F, active = 1
-	getActiveSizeInBytes() = 0
+	getActiveSizeInBytes() = 12
 
 InterActiveFortran(
     Procedure( main_::main_ ): 
@@ -139,4 +143,6 @@ InterActiveFortran(
             SymHandle(sub1_::F) ] 
     mNumIterUseful: 2
     mNumIterVary: 2
+    mNumIterActive: 2
+    mSizeInBytes: 12
 )

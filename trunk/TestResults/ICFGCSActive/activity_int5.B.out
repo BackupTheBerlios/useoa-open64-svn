@@ -1,5 +1,7 @@
 CallContext::setMaxDegree(1
 
+ManagerICFGCSActive: sym = head_::X, size = <16>, bytes = 16
+ManagerICFGCSActive: sym = head_::Y, size = <16>, bytes = 32
 ====================== InterActiveFortran
 
 
@@ -56,7 +58,7 @@ CSActiveMemRefLists ===============
 	ActiveSymList
 		head_::X, active = 1
 		head_::Y, active = 1
-	getActiveSizeInBytes() = 0
+	getActiveSizeInBytes() = 32
 
 InterActiveFortran(
     Procedure( head_::head_ ): 
@@ -75,4 +77,6 @@ InterActiveFortran(
             SymHandle(head_::Y) ] 
     mNumIterUseful: 3
     mNumIterVary: 3
+    mNumIterActive: 2
+    mSizeInBytes: 32
 )

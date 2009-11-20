@@ -1,5 +1,9 @@
 CallContext::setMaxDegree(1
 
+ManagerICFGCSActive: sym = foo_::A, size = <8>, bytes = 0, refParam
+ManagerICFGCSActive: sym = foo_::B, size = <8>, bytes = 0, refParam
+ManagerICFGCSActive: sym = head_::X, size = <8>, bytes = 0, refParam
+ManagerICFGCSActive: sym = head_::Y, size = <8>, bytes = 0, refParam
 ====================== InterActiveFortran
 
 
@@ -156,4 +160,6 @@ InterActiveFortran(
             SymHandle(head_::Y) ] 
     mNumIterUseful: 3
     mNumIterVary: 3
+    mNumIterActive: 2
+    mSizeInBytes: 0
 )
