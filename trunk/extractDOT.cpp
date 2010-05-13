@@ -69,7 +69,7 @@ main(int argc, char* argv[])
     int posI  = line.find("I8SRCTRIPLET",0);
     int posG  = line.find("GOTO L",0);
     int posC  = line.find("COMMENT",0);
-    int posIO  = line.find("IO",0);
+    int posIO  = line.find("IO <",0);
     while(posL  != string::npos || 
           posP  != string::npos ||
           posLL != string::npos ||

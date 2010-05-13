@@ -1,6 +1,11 @@
 CallContext::setMaxDegree(1)
 
 
+
+ManagerICFGCSReachConsts numIter = 2
+
+
+
 mProcToReachConstsMap: ProcHandle	 => ReachConsts
         ProcHandle(constprop_if1_::constprop_if1_)	 => 
         ReachConstStandard: 
@@ -8,7 +13,7 @@ mProcToReachConstsMap: ProcHandle	 => ReachConsts
             mReachConsts: StmtHwContext	 => OA::OA_ptr<RCPairSet> 
                     
                     StmtHwContext(
-                        mStmtH:  LOC 0 0 source files:	1	"/sandbox/kreaseck/ANL/UseOA-Open64/TestCases/CSReachConsts/constprop_if1.f90"
+                        mStmtH:  LOC 0 0 source files:	1	"/home/kreaseck/ANL/UseOA-Open64/TestCases/CSReachConsts/constprop_if1.f90"
 PRAGMA 0 120 <null-st> 0 (0x0) # PREAMBLE_END
 StmtHandle()
                         mCallContext: 

@@ -868,5 +868,11 @@
   - re-gen'd Active and CSActive output to include new InterActiveFortran output
   - compiles/regresses with Whirl2OA/trunk r959 and OpenAnalysis/trunk r958
 
+05/12/10  UseOA-Open64 svn trunk r376 Barbara Kreaseck
+  - re-gen'd ICFGCSReachCOnsts output (includes number of iterations)
+  - updated extractDOT.cpp to handle IO as a variable name while removing Open64
+    IO output strings that are not part of the statements.
+  - compiles/regresses with Whirl2OA/trunk r964 and OpenAnalysis/trunk r965
+
 
 
